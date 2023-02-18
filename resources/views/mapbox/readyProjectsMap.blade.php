@@ -228,7 +228,15 @@
 @section('content')
 
 
-
+    <section>
+        <div class="container-fluid containerization">
+            <div class="row mx-auto mb-4">
+                <span class=" mx-auto text-center " style="font-size: 2rem">
+                    DUBAI READY PROJECTS
+                </span>
+            </div>
+        </div>
+    </section>
     <div id='map' class="map" style='width: 100%; height: 100vh'></div>
 
     {{-- {{ json_encode($allfeatures) }} --}}

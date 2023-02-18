@@ -2214,7 +2214,7 @@ class FronthomeController extends Controller
         // $uploadPath = "uploads/properties/"
         // return json_encode($allfeatures, JSON_PRETTY_PRINT);
 
-        return view('mapbox.luxuryProjectsMap',$this->data);
+        return view('mapbox.readyProjectsMap',$this->data);
     }
 
 
@@ -2329,7 +2329,7 @@ class FronthomeController extends Controller
         // $uploadPath = "uploads/properties/"
         // return json_encode($allfeatures, JSON_PRETTY_PRINT);
 
-        return view('mapbox.luxuryProjectsMap',$this->data);
+        return view('mapbox.offplanProjectsMap',$this->data);
     }
 
 

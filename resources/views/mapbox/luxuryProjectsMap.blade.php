@@ -10,7 +10,6 @@
 ?>
 
 @section('meta_detail')
-
         {{-- <title>{{$landingpageseo ?? ''->$meta_var }}</title>
         <meta name="description" content="{{$landingpageseo ?? ''->$meta_description_var}}"/>
         <meta name="keywords" content=" {{$landingpageseo ?? ''->$meta_keywords_var}} "/> --}}
@@ -228,7 +227,15 @@
 @section('content')
 
 
-
+    <section>
+        <div class="container-fluid containerization">
+            <div class="row mx-auto mb-4">
+                <span class=" mx-auto text-center " style="font-size: 2rem">
+                    DUBAI LUXURY PROJECTS
+                </span>
+            </div>
+        </div>
+    </section>
     <div id='map' class="map" style='width: 100%; height: 90vh'></div>
 
     {{-- {{ json_encode($allfeatures) }} --}}
