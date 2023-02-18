@@ -323,9 +323,11 @@ else
                             Show all photos
                         </button>
                     </a>
-                    <button class="desktop-show position-absolute btn btn-lg btn-outline-white rounded-0 bg-dark text-white my-auto" style="bottom: 45px; left: 330px; z-index: 100 !important;">
-                        View Map
-                    </button>
+                    <a href="{{ URL::asset('properties/map') }}">
+                        <button class="desktop-show position-absolute btn btn-lg btn-outline-white rounded-0 bg-dark text-white my-auto" style="bottom: 45px; left: 330px; z-index: 100 !important;">
+                            View Map
+                        </button>
+                    </a>
                     <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 
                         <div class="carousel-inner">
@@ -1267,9 +1269,11 @@ else
                             Show all photos
                         </button>
                     </a>
-                    <button class="desktop-show position-absolute btn btn-lg btn-outline-white rounded-0 bg-dark text-white my-auto" style="bottom: 45px; left: 330px; z-index: 100 !important;">
-                        View Map
-                    </button>
+                    <a href="{{ URL::asset('properties/map') }}">
+                        <button class="desktop-show position-absolute btn btn-lg btn-outline-white rounded-0 bg-dark text-white my-auto" style="bottom: 45px; left: 330px; z-index: 100 !important;">
+                            View Map
+                        </button>
+                    </a>
                     <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 
                         <div class="carousel-inner">
