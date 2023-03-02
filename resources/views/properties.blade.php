@@ -1,10 +1,33 @@
+
+@extends('layout.master')
+
+<?php
+
+		$meta_var = "meta_title_" . trans('backLang.boxCode');
+		$meta_description_var = "meta_description_" . trans('backLang.boxCode');
+		$meta_keywords_var = "meta_keywords_" . trans('backLang.boxCode');
+
+
+?>
+
+@section('meta_detail')
+
+        <title>{{$landingpageseo->$meta_var }}</title>
+        <meta name="description" content="{{$landingpageseo->$meta_description_var}}"/>
+        <meta name="keywords" content=" {{$landingpageseo->$meta_keywords_var}} "/>
+
+
+@endsection
+
+@section('content')
+
 <style>
     p{
         line-height: 1.6 !important;
     }
     .nav-pills .nav-link .nav-pills .show > .nav-link {
         border: 0.5px solid #fff !important;
-        box-shadow: 3px 3px 5px 0px #888888;
+        /* box-shadow: 3px 3px 5px 0px #888888; */
     }
     h6 {
         color: #fff !important;
@@ -14,14 +37,14 @@
         background-color: #000 !important;
     }
 
-
+    /*
 
     html, body {
         max-width: 100%;
         overflow-x: hidden;
         height: 100%;
         scroll-behavior: smooth;
-    }
+    } */
 
     input, select {
         background-color: #000 !important;
@@ -39,8 +62,8 @@
         }
 
     .nav-link {
-        /* background-color: #000 !important; */
-        color: #000 !important;
+        background-color: #000 !important;
+        color: #fff !important;
         border: 1px solid #fff !important;
         border-radius: 0 !important;
 
@@ -76,10 +99,10 @@
     }
     /* .card:hover {*/
         /*box-shadow: 0px 0px 5px #fff !important;*/
-    /*    opacity: 1 !important;*/
-    /*    transform: scale(1.02) !important;*/
-    /*    transition-duration: 0.1s !important;*/
-    /*    z-index: 1000 !important;*/
+        /*opacity: 1 !important;*/
+        /*transform: scale(1.02) !important;*/
+        /*transition-duration: 0.1s !important;*/
+        /*z-index: 1000 !important;*/
         /*margin-left: 20px !important;*/
         /*margin-right: 20px !important;*/
         /*border: 5px solid #000 !important;*/
@@ -87,44 +110,20 @@
 
 
 </style>
-@extends('layout.master')
 
 <?php
 
-		$meta_var = "meta_title_" . trans('backLang.boxCode');
-		$meta_description_var = "meta_description_" . trans('backLang.boxCode');
-		$meta_keywords_var = "meta_keywords_" . trans('backLang.boxCode');
+    $name_var = "name_" . trans('backLang.boxCode');
 
+    $title_var = "title_" . trans('backLang.boxCode');
 
-?>
+    $type_name_var= "type_name_" . trans('backLang.boxCode');
 
-@section('meta_detail')
+    $cat_name_var= "cat_name_" . trans('backLang.boxCode');
 
-        <title>{{$landingpageseo->$meta_var }}</title>
-        <meta name="description" content="{{$landingpageseo->$meta_description_var}}"/>
-        <meta name="keywords" content=" {{$landingpageseo->$meta_keywords_var}} "/>
+    $address_var = "address_" . trans('backLang.boxCode');
 
-
-@endsection
-
-@section('content')
-
-<?php
-
-
-		$name_var = "name_" . trans('backLang.boxCode');
-
-		$title_var = "title_" . trans('backLang.boxCode');
-
-		$type_name_var= "type_name_" . trans('backLang.boxCode');
-
-		$cat_name_var= "cat_name_" . trans('backLang.boxCode');
-
-		$address_var = "address_" . trans('backLang.boxCode');
-
-		$description_var = "description_" . trans('backLang.boxCode');
-
-
+    $description_var = "description_" . trans('backLang.boxCode');
 
 ?>
 <?php
@@ -152,7 +151,6 @@
 <section>
 
     <header>
-
 
         <!-- Background image -->
         <div id="intro-page-properties" class="bg-image shadow-2-strong">
@@ -829,7 +827,7 @@
                                         <input style="direction: rtl" type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
 
                                     </div>
-                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block">
+                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block rounded-0 mb-4">
                                         {{ trans('frontLang.submit') }}
                                     </button>
                                 </form>
@@ -843,7 +841,9 @@
                                 <div class="communities-newlaunch"></div>
                                 @foreach($property->images  as $single_img)
                                     @if($property->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" ><img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="Listing"></a>
+                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                        <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="Listing">
+                                    </a>
                                     @endif
                                 @endforeach
 
@@ -1066,7 +1066,7 @@
                                         <input style="direction: rtl" type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
                                     </div>
 
-                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block">
+                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block rounded-0 mb-4">
                                         {{ trans('frontLang.submit') }}
                                     </button>
                                 </form>
@@ -1305,7 +1305,7 @@
                                         <input  type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
 
                                     </div>
-                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block">
+                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block rounded-0 ">
                                         {{ trans('frontLang.submit') }}
                                     </button>
                                 </form>
@@ -1574,7 +1574,7 @@
                                         <input  type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
 
                                     </div>
-                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block">
+                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block rounded-0 mb-4">
                                         {{ trans('frontLang.submit') }}
                                     </button>
                                 </form>

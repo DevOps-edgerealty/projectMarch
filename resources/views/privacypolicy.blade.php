@@ -1,8 +1,4 @@
-<style>
-  p{
-    line-height: 1.6 !important;
-  }
-</style>    
+
 @extends('layout.master')
 
 <?php
@@ -36,6 +32,12 @@ $langSeg = 'en';
 
 @endsection
 @section('content')
+
+<style>
+  p{
+    line-height: 1.6 !important;
+  }
+</style>
 
 <section>
 

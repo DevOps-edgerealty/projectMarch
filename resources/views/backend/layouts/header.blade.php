@@ -53,7 +53,7 @@
 
               <span class="fa fa-user"></span>
               <i class="fas fa-caret-down"></i>
-            </a>Fwhatsa
+            </a>
             @php
                 $userId = \Auth::user()->id;
                 $userName = \Auth::user()->name;

@@ -578,6 +578,11 @@ Route::get('user_email',  function(){
 } );
 
 
+Route::get('test-page',  function(){
+    return view('mapbox.maps');
+} );
+
+
 
 
 
@@ -588,7 +593,8 @@ Route::get('admin/leads/show', 'LeadController@index')->name('lead-index');
 
 // MAPS
 Route::get('/maps', 'FronthomeController@maps')->name('maps');
-Route::get('/properties/map', 'FronthomeController@maps2')->name('maps2');
+Route::get('/maps7', 'FronthomeController@maps7')->name('maps');
+Route::get('/{lang}/properties/map', 'FronthomeController@maps2')->name('maps2');
 Route::get('/admin/properties/locations', 'PropertyLocationController@index')->name('property-location');
 Route::get('/admin/properties/location/make/{id}', 'PropertyLocationController@make')->name('property-location-make');
 Route::POST('/admin/properties/location/update-create', 'PropertyLocationController@update_create')->name('property-location-update-create');

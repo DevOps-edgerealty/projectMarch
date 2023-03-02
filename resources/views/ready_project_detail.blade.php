@@ -1,33 +1,4 @@
-<style>
-  p{
-    line-height: 1.6 !important;
-  }
-  input, select {
-        background-color: #000 !important;
-        color: #fff !important;
-        border-radius: 0px !important;
-        border: 1px solid #fff !important;
-    }
-    .btn {
-        border-radius: 0px !important;
-    }
-    .btn:hover {
-        box-shadow: 0px 0px 20px #9a9a9a !important;
-        opacity: 1 !important;
-    }
-    .card {
-        background-color: #000 !important;
-        color: #fff !important;
-    }
-    td > a {
-        color: #fff !important;
-    }
-    @media only screen and (max-width: 800px) {
-        .slick-track {
-            height: 200px !important;
-        }
-    }
-</style>
+
 @extends('layout.master')
 
 <?php
@@ -51,72 +22,98 @@
 
 @section('content')
 
+<style>
+  p{
+    line-height: 1.6 !important;
+  }
+  input, select {
+        background-color: #000 !important;
+        color: #fff !important;
+        border-radius: 0px !important;
+        border: 1px solid #fff !important;
+    }
+    .card {
+        background-color: #000 !important;
+        color: #fff !important;
+    }
+    td > a {
+        color: #fff !important;
+    }
+    @media only screen and (max-width: 800px) {
+        .slick-track {
+            height: 200px !important;
+        }
+    }
+</style>
 
 <?php
-$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
 
-$uri_segments = explode('/', $uri_path);
+    $uri_segments = explode('/', $uri_path);
 
-$seg1 = $uri_segments[1];
+    $seg1 = $uri_segments[1];
 
-if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
-{
-    $langSeg = $uri_segments[1];
-}
-else
-{
-    $langSeg = 'en';
-}
+    if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+    {
+        $langSeg = $uri_segments[1];
+    }
+    else
+    {
+        $langSeg = 'en';
+    }
 
 ?>
-          <?php
-          $finalUrl = '/ar/home';
-          $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-          if($uri_path == '/' || $uri_path == '/home' )
-          {
-              $finalUrl = '/ar/home';
+
+<?php
+    $finalUrl = '/ar/home';
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    if($uri_path == '/' || $uri_path == '/home' )
+    {
+        $finalUrl = '/ar/home';
 
 
-          }
+    }
 
 
-          else
-          {
-              $uri_segments = explode('/', $uri_path);
-              $seg1 = $uri_segments[1];
-              if($seg1)
-              {
-                  if($seg1 == 'en')
-                  {
-                      $replacements2 = array(1 => "ar");
-                      $basket = array_replace($uri_segments, $replacements2);
-                      $finalUrl = implode("/",$basket);
+    else
+    {
+        $uri_segments = explode('/', $uri_path);
+        $seg1 = $uri_segments[1];
+        if($seg1)
+        {
+            if($seg1 == 'en')
+            {
+                $replacements2 = array(1 => "ar");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
 
 
-                  }
-                  elseif($seg1 == 'ar')
-                  {
-                      $replacements2 = array(1 => "en");
-                      $basket = array_replace($uri_segments, $replacements2);
-                      $finalUrl = implode("/",$basket);
+            }
+            elseif($seg1 == 'ar')
+            {
+                $replacements2 = array(1 => "en");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
 
 
-                  }
-              }
-              else
-              {
-                      $replacements2 = array(1 => "ar");
-                      $basket = array_replace($uri_segments, $replacements2);
-                      $finalUrl = implode("/",$basket);
+            }
+        }
+        else
+        {
+                $replacements2 = array(1 => "ar");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
 
-              }
-          }
+        }
+    }
 
 
-      ?>
-   <?php
+?>
+
+<?php
+
 
    $project_title_var = "title_" . trans('backLang.boxCode');
    $type_title_var = "name_" . trans('backLang.boxCode');
@@ -137,7 +134,9 @@ else
 
 
 
-   ?>
+?>
+
+
 <section class="mobile-show">
 
 
@@ -179,14 +178,30 @@ else
                 <div  style=" position: absolute; top: 250px; color:#fff ">
                     <h1 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->$title_var}}</b></h1>
                     <h3 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->locationz->$name_var}}</b></h3>
+                    <style>
+                        .testbutton:hover {
+                            background-color: #ffffff !important;
+                            color: black !important;
+                            border: #fff solid !important;
 
-                    <button class="first btn btn-info btn-lg mt-4 " style="background-color: #009efb">{{ trans('frontLang.requestdetail') }} </button>
+                        }
+                    </style>
+                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn bg-black text-white btn-lg mt-4 rounded-0 w-100 testbutton shadow-none">
+                        {{ trans('frontLang.requestdetail') }}
+                    </a>
 
                 </div>
             @endif
     @endforeach
     </div>
 </section>
+
+
+
+
+
+
+
 
 @if ($langSeg == 'ar')
     <section class="desktop-show" style="direction: rtl">
@@ -265,7 +280,20 @@ else
                     <p><b> {{ trans('frontLang.bedrooms') }} </b>: {{$project_detail->bedrooms}} </p>
                     <p><b> {{ trans('frontLang.communitytype') }} </b> : تملك حر</p>
                     <div class="col-lg-12">
-                        <button class="first btn btn-info btn-lg btn-block mt-4 " style="background-color: #009efb">{{ trans('frontLang.requestdetail') }}  </button>
+                        <style>
+                            .testbutton:hover {
+                                background-color: #ffffff !important;
+                                color: black !important;
+                                border: 0.5px #fff solid !important;
+
+                            }
+                        </style>
+                        {{-- <a data-mdb-toggle="modal" data-mdb-target="#requestDetails"  class="btn bg-black text-white testbutton btn-lg btn-block mt-4 rounded-0 shadow-none" style="border: 0.5px #fff solid">
+                            {{ trans('frontLang.requestdetail') }}
+                        </a> --}}
+                        <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn bg-black text-white btn-lg rounded-0 w-100 p-0 m-0 testbutton shadow-none">
+                            {{ trans('frontLang.requestdetail') }}
+                        </a>
                     </div>
 
                 </div>
@@ -283,11 +311,21 @@ else
                 <div class="col-lg-7" >
                     <div class="row">
                         <div class="col-lg-4">
+                            <h3>
+                                <b>
+                                    {{ trans('frontLang.startingfrom') }}
+                                </b>
+                            </h3>
                             <h5><b>{{ trans('frontLang.projectname') }}</b> </h5>
                             <h5><b>{{ trans('frontLang.projectType') }} </b></h5>
                             <h5><b>{{ trans('frontLang.Developer') }}</b></h5>
                         </div>
                         <div class="col-lg-8">
+                            <h3>
+                                <b>
+                                    Price On Request
+                                </b>
+                            </h3>
                             <h5> <span style="font-weight:400;font-size: 15px;">{{$project_detail->$title_var}}</span></h5>
                             <h5>
 
@@ -298,7 +336,13 @@ else
                                 </span>
 
                             </h5>
-                            <h5> <span style="font-weight:400;font-size: 15px;"> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}" class="text-white"> {{$developers->$name_var}}</a></span></h5>
+                            <h5>
+                                <span style="font-weight:400;font-size: 15px;">
+                                    <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}" class="text-white">
+                                        {{$developers->$name_var}}
+                                    </a>
+                                </span>
+                            </h5>
                         </div>
                     </div>
 
@@ -311,6 +355,7 @@ else
                 <div class="col-lg-5">
                     <div class="row">
                         <div class="col-lg-5">
+
                             <h5><b>{{ trans('frontLang.location') }}</b></h5>
                             <h5><b>{{ trans('frontLang.bedrooms') }}</b> </h5>
                             <h5><b>{{ trans('frontLang.communitytype') }}</b></h5>
@@ -342,14 +387,33 @@ else
                     <h3>{{$project_detail->$title_var}}</h3>
                     <p><b>{{ trans('frontLang.location') }}</b> : {{$project_detail->locationz->$name_var}}</p>
                     <p><b> {{ trans('frontLang.Developer') }} </b> :  <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}" class="text-white"> {{$developers->$name_var}}</a></p>
-                    <p><b>{{ trans('frontLang.projectType') }} </b>:   @foreach ($project_detail->project_types as $project_type)
-                                    {{$project_type->$type_title_var}}
-                                    @endforeach  </p>
+                    <p>
+                        <b>{{ trans('frontLang.projectType') }} </b>:
+
+                        @foreach ($project_detail->project_types as $project_type)
+                            {{$project_type->$type_title_var}}
+                        @endforeach
+                    </p>
 
                     <p><b> {{ trans('frontLang.communitytype') }} </b> : {{$project_detail->$ownership_var}}</p>
                     <p><b> {{ trans('frontLang.bedrooms') }} </b>: {{$project_detail->bedrooms}} </p>
+                    <p><b>{{ trans('frontLang.startingfrom') }}</b> : Price On Request</p>
+
                     <div class="col-lg-12">
-                        <button class="first btn btn-info btn-lg btn-block mt-4 " style="background-color: #009efb">{{ trans('frontLang.requestdetail') }} </button>
+                        <style>
+                            .testbutton:hover {
+                                background-color: #ffffff !important;
+                                color: black !important;
+                                border: 0.5px #fff solid !important;
+                            }
+
+                            .testbutton {
+                                border: 0.5px #848484 solid !important;
+                            }
+                        </style>
+                        <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn bg-black text-white btn-lg rounded-0 w-100 m-0 testbutton shadow-none">
+                            {{ trans('frontLang.requestdetail') }}
+                        </a>
                     </div>
 
                 </div>
@@ -360,11 +424,76 @@ else
     </section>
 @endif
 
+{{-- modal request details --}}
+<div class="modal fade" style="background-color: rgb(0, 0, 0, .2);"  id="requestDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
+        <div class="modal-content rounded-0">
+            {{-- <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
+                <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div> --}}
+            <div class="modal-body bg-black rounded-0">
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        @foreach($project_detail->images  as $single_img)
+                            @if($project_detail->images->first()==$single_img)
+                                <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$single_img->image) }}"  class="modal-img-height" alt="{{$project_detail->$project_title_var}}">
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="text-center mb-4">{{$project_detail->$project_title_var}}</h4>
+
+                        <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
+                            @csrf
+                            <input type="hidden" name="project" value="{{$project_detail->id}}" />
+                            <div class="mb-4">
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
+
+                            </div>
+
+                            <!-- Email input -->
+                            <div class="mb-4">
+                                <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
+
+                            </div>
+
+                            <!-- Email input -->
+                            <div class="mb-4">
+                                <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
+
+                            </div>
+                            @honeypot
+                            {{-- <button type="submit" class="btn btn-dark btn-lg btn-block">
+                                {{ trans('frontLang.submit') }}
+                            </button> --}}
+
+                            <button class="submit btn btn-outline-white btn-lg btn-block rounded-0" type="submit">
+                                <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
+
+                                {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
+
+                                <span class="btn-txt">
+                                    {{ trans('frontLang.submit') }}
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
 
 
-@if ( $project_detail->pro_status == '1')
+
+{{-- @if ( $project_detail->pro_status == '1')
     @if  ($project_detail->payment_en != '')
         <section class="mt-4 desktop-show">
             <div class="container-fluid containerization">
@@ -393,15 +522,15 @@ else
         </section>
 
     @endif
-@endif
+@endif --}}
 
 @if ($langSeg == 'ar')
     <section class="mt-5 mb-5" style="direction: rtl">
         <div class="container-fluid containerization">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <h3 class="mb-5">عن المشروع</h3>
-                    <span style="text-align: justify !important;">
+                    <h3 class="mb-3">عن المشروع</h3>
+                    <span style="text-align: justify !important; color: #848484 !important;">
                         {!! $project_detail->$description_var !!}
 
                     </span>
@@ -420,8 +549,8 @@ else
         <div class="container-fluid containerization">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <h3 class="mb-5">{{ trans('frontLang.aboutproject') }}</h3>
-                    <span style="text-align: justify !important;">
+                    <h3 class="mb-3">{{ trans('frontLang.aboutproject') }}</h3>
+                    <span style="text-align: justify !important; color: #848484 !important;">
                         {!! $project_detail->$description_var !!}
 
                     </span>
@@ -582,11 +711,10 @@ else
 
             <div class="carousel-2">
                 @foreach ($project_detail->images as $image)
-                    <div><img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height"></div>
-
+                    <div>
+                        <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height">
+                    </div>
                 @endforeach
-
-
             </div>
         </div>
     </div>
@@ -606,7 +734,7 @@ else
 
                             @if($feature == $feature_id)
 
-                                <div class="col-lg-3 mb-4">
+                                <div class="col-lg-3 mb-4" style="color: #848484 !important;">
                                     <i class="far fa-check-circle"> </i> {!!  $feature_name[$name_var] !!}
                                 </div>
                             @endif
@@ -629,7 +757,7 @@ else
 
                         @if($feature == $feature_id)
 
-                            <div class="col-lg-3 mb-2" style="width: 50%;">
+                            <div class="col-lg-3 mb-2" style="width: 50%; color: #848484 !important;">
                                 <i class="far fa-check-circle"> </i> {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
@@ -639,8 +767,8 @@ else
         </div>
     </section>
 
-    <section class="second mt-5 mb-5">
-        <div class="container-fluid containerization">
+    {{-- <section class="second mt-5 mb-5">
+        <div class="container-fluid containerization mobile-show">
             <div class=" row">
                 <h3 class="text-center mb-5">{{ trans('frontLang.requestdetail') }}</h3>
                 <div class="col-lg-4 offset-md-4">
@@ -673,9 +801,9 @@ else
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="mt-5 mb-5 " style="direction: rtl">
+    {{-- <section class="mt-5 mb-5 " style="direction: rtl">
         <div class="container-fluid containerization">
             <div class="row">
                 <h3 class="mb-5">مناطق قريبة</h3>
@@ -694,7 +822,7 @@ else
             </div>
 
         </div>
-    </section>
+    </section> --}}
 
     <section class="mt-5 mb-5" style="direction: rtl">
         <div class="container-fluid containerization">
@@ -704,26 +832,46 @@ else
 
             </div>
 
-        </div>
-    </section>
+            <div class="row d-flex h-100">
 
-    <section class="mt-5 mb-5" style="direction: rtl;">
-        <div class="container-fluid containerization">
-            <div class="row">
-                <h3 class="mb-5">خريطة الموقع</h3>
-                {!!html_entity_decode($project_detail->map_embed_code)!!}
+                <div class="col-md-6">
+                    <h3 class="mb-3">عن المنطقة</h3>
+                    <style>
+                        p {
+                            color: #848484 !important;
+                        }
+                    </style>
+                    {!!html_entity_decode($project_detail->community_ar)!!}
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="mb-3">
+                        {{ trans('frontLang.Aboutthecoomunity') }}
+                    </h3>
+                    <style>
+                        p {
+                            color: #848484 !important;
+                            text-align: justify !important;
+                        }
+                        iframe {
+                            width: 100% !important;
+                            max-height: 350px !important;
+                        }
+                    </style>
+                    {!!html_entity_decode($project_detail->$community_var)!!}
+                </div>
+
+
 
             </div>
 
         </div>
     </section>
-
-
 @else
     <section class="mt-5 mb-5 desktop-show">
         <div class="container-fluid containerization">
             <div class="row">
-                    <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
+                    <h3 class="mb-3">{{ trans('frontLang.amenities') }}</h3>
 
                     @foreach ($features_array as $feature_id => $feature_name)
                         @foreach ($features as $feature)
@@ -731,7 +879,7 @@ else
 
                             @if($feature == $feature_id)
 
-                                <div class="col-lg-3 mb-4">
+                                <div class="col-lg-3 mb-4" style="color: #848484 !important;">
                                     <i class="far fa-check-circle"> </i> {!!  $feature_name[$name_var] !!}
                                 </div>
                             @endif
@@ -746,14 +894,13 @@ else
     <section class="mt-5 mobile-show">
         <div class="container">
             <div class="row">
-                <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
+                <h3 class="mb-3">{{ trans('frontLang.amenities') }}</h3>
                 @foreach ($features_array as $feature_id => $feature_name)
                     @foreach ($features as $feature)
 
 
                         @if($feature == $feature_id)
-
-                            <div class="col-lg-3 mb-2" style="width: 50%;">
+                            <div class="col-lg-3 mb-1" style="width: 50%; color: #848484 !important;">
                                 <i class="far fa-check-circle"> </i> {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
@@ -764,7 +911,7 @@ else
         </div>
     </section>
 
-    <section class="second mt-5 mb-5">
+    {{-- <section class="second mt-5 mb-5">
         <div class="container-fluid containerization">
             <div class=" row">
                 <h3 class="text-center mb-5">{{ trans('frontLang.requestdetail') }}</h3>
@@ -797,7 +944,7 @@ else
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- <section class="mt-5 mb-5 ">
         <div class="container">
@@ -816,23 +963,38 @@ else
 
     <section class="mt-5 mb-5">
         <div class="container-fluid containerization">
-            <div class="row">
-                <h3 class="mb-5">
-                    {{ trans('frontLang.Aboutthecoomunity') }}
-                </h3>
-                {!!html_entity_decode($project_detail->$community_var)!!}
+            <div class="row d-flex h-100">
+
+                <div class="col-md-6">
+                    <h3 class="mb-3">{{ trans('frontLang.locationMap') }}</h3>
+                    <style>
+                        p {
+                            color: #848484 !important;
+                        }
+                    </style>
+                    {!!html_entity_decode($project_detail->map_embed_code)!!}
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="mb-3">
+                        {{ trans('frontLang.Aboutthecoomunity') }}
+                    </h3>
+                    <style>
+                        p {
+                            color: #848484 !important;
+                            text-align: justify !important;
+                        }
+                        iframe {
+                            width: 100% !important;
+                            max-height: 350px !important;
+                        }
+                    </style>
+                    {!!html_entity_decode($project_detail->$community_var)!!}
+                </div>
+
+
+
             </div>
-        </div>
-    </section>
-
-    <section class="mt-5 mb-5">
-        <div class="container-fluid containerization">
-            <div class="row">
-                <h3 class="mb-5">{{ trans('frontLang.locationMap') }}</h3>
-                {!!html_entity_decode($project_detail->map_embed_code)!!}
-
-            </div>
-
         </div>
     </section>
 @endif
@@ -873,7 +1035,7 @@ else
 
                                 @foreach($projects->images  as $single_img)
                                     @if($projects->images->first()==$single_img)
-                                    <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="{{$projects->$project_title_var}}">
+                                    <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}">
                                     @endif
                                 @endforeach
 
@@ -883,9 +1045,8 @@ else
                                 <p><i class="fas fa-map-marker-alt" style="color: green"></i> {{$project_detail->locationz->$name_var}}</p>
                                 <p>{{ trans('frontLang.Developer') }} : {{$projects->developer->$name_var}}</p>
 
-
-
                                 <hr>
+
                                 <p class="card-text">
                                     {{ trans('frontLang.projectType') }} : @foreach ($projects->project_types as $project_type)
                                     {{$project_type->$type_title_var}}
@@ -1049,7 +1210,7 @@ else
 
                                 @foreach($projects->images  as $single_img)
                                     @if($projects->images->first()==$single_img)
-                                    <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="{{$projects->$project_title_var}}">
+                                    <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}">
                                     @endif
                                 @endforeach
 

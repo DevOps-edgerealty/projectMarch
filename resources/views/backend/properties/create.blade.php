@@ -48,7 +48,7 @@
                         </div><!-- /.card-header -->
                         <div class="card-body">
                         <div class="tab-content">
-                                <div class="tab-pane active" id="tab_1">
+                            <div class="tab-pane active" id="tab_1">
                                     <div class="form-group row">
 
                                         <div class="col-sm-3">
@@ -234,6 +234,7 @@
 
                             </div>
                             <!-- /.tab-pane -->
+
                             <div class="tab-pane" id="tab_2">
 
 
@@ -344,6 +345,7 @@
 
                             </div>
                             <!-- /.tab-pane -->
+
                             <div class="tab-pane" id="tab_3">
                                 <div class="form-group row">
                                     <div class="col-sm-12">

@@ -195,7 +195,7 @@
 
 
         <section class="mt-2" style="direction: rtl">
-            <div class="container">
+            <div class="container-fluid containerization">
                 <div class="row">
 
                     <div class="col-lg-3">
@@ -238,7 +238,7 @@
 
 
         <section class="mt-3">
-            <div class="container">
+            <div class="container-fluid containerization">
                 <div class="row">
 
                     <div class="col-lg-3">
@@ -280,7 +280,7 @@
         </section>
 
         <section class="mt-3">
-            <div class="container">
+            <div class="container-fluid containerization">
                 <div class="row">
 
                     <div class="col-lg-3 d-md-block d-lg-block d-none">
@@ -311,7 +311,7 @@
     @if ($langSeg == 'ar')
 
         <section class="mt-5">
-            <div class="container">
+            <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-8 text-white">
@@ -404,7 +404,7 @@
     @elseif( $langSeg == 'ru' )
 
         <section class="mt-5">
-            <div class="container">
+            <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-8 text-white">
@@ -501,7 +501,7 @@
     @else
 
         <section class="mt-5">
-            <div class="container">
+            <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-8 text-white">
@@ -606,7 +606,7 @@
     @if ($langSeg == 'ar')
 
         <section class="mt-5">
-            <div class="container">
+            <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-4 text-white">
@@ -671,7 +671,7 @@
     @elseif( $langSeg == 'ru' )
 
         <section class="mt-5">
-            <div class="container">
+            <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-4 text-white">
@@ -736,7 +736,7 @@
     @else
 
         <section class="mt-5">
-            <div class="container">
+            <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-4 text-white">
@@ -758,7 +758,7 @@
 
 
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 400px; height: 430px !important;">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 430px !important;">
                             <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/company.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -778,7 +778,7 @@
 
 
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 400px; height: 430px !important;">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 430px !important;">
                             <a href="{{url( $langSeg .'/'.'career')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/hire.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>

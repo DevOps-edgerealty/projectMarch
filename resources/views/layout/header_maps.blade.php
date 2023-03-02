@@ -66,10 +66,47 @@
         color: #fff !important;
         border: 0.25px #848484 solid !important;
     }
+
     .containerization {
-        padding-right: 130px !important;
-        padding-left: 130px !important;
+        padding-right: 200px !important;
+        padding-left: 200px !important;
     }
+
+    @media only screen and (max-device-width: 480px) {
+        .containerization {
+            padding-right: 100px !important;
+            padding-left: 100px !important;
+        }
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .containerization {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+    }
+
+    @media only screen and (max-device-width: 1024px) {
+        .containerization {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+    }
+
+    @media only screen and (max-device-width: 1200px) {
+        .containerization {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+    }
+
+    /* .container {
+        margin-right: 130px !important;
+        margin-left: 130px !important;
+        text-align: center;
+    } */
+
+
 </style>
 <?php
 $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -186,9 +223,9 @@ else
 
 
 @if ($langSeg == 'ar')
-<header class="header fixed-top position-relative" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); direction: rtl;">
+<header class="header" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); direction: rtl;">
 
-    <div class="container-fluid containerization">
+    <div class="container py-0" style="margin-right: 130px !important;">
         <div class="wrapper">
             <div class="header-item-left">
 
@@ -286,7 +323,7 @@ else
 
 
                         <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color">{{ trans('frontLang.Aboutus') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                            <a href="#" class="menu-color">{{ trans('frontLang.Aboutus') }} <i class="ioFwhatsan ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/aboutus');?>">{{ trans('frontLang.aboutcompany') }}</a></li>
@@ -297,6 +334,33 @@ else
                                 </ul>
                             </div>
                         </li>
+                        {{-- <li class="menu-item-has-children">
+                            <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i></a>
+                            <div class="menu-subs menu-column-1 lang" >
+                                <ul style="padding-left: 0rem;">
+                                    <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
+                                    <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
+                                </ul>
+                            </div>
+                        </li> --}}
+
+
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-item-right">
+
+                {{-- <a href="<?php echo $finalUrl ; ?>"> <img src="{{URL('public/assets/images/uk-flag.png')}}" alt=""></a> --}}
+
+                <nav class="menu text-dark">
+                    <div class="menu-mobile-header">
+                        <button type="button" class="menu-mobile-arrow"><i class="ion ion-ios-arrow-back"></i></button>
+                        <div class="menu-mobile-title"></div>
+                        <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close text-white"></i></button>
+                    </div>
+                    <ul class="menu-section " style="padding-left: 0px;">
+
                         <li class="menu-item-has-children">
                             <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1 lang" >
@@ -312,15 +376,8 @@ else
 
                     </ul>
                 </nav>
-            </div>
-
-            <div class="header-item-right">
-
-                {{-- <a href="<?php echo $finalUrl ; ?>"> <img src="{{URL('public/assets/images/uk-flag.png')}}" alt=""></a> --}}
 
                 <a style="margin-right: 1rem;"  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight"><img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt=""></a>
-
-
 
                 <button type="button" class="menu-mobile-trigger"  >
                     <span></span>
@@ -338,9 +395,9 @@ else
                     <div class="offcanvas-header">
                         <h5 id="offcanvasRightLabel">{{ trans('frontLang.searchh') }}</h5>
                         @if ($langSeg == 'ar')
-                            <button type="button" class="btn-close text-reset text-white" style="margin:0;" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
+                            <button type="button" class="btn-close text-reset" style="margin:0;" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
                         @else
-                            <button type="button" class="btn-close text-reset text-white" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
+                            <button type="button" class="btn-close text-reset" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
                         @endif
 
                     </div>
@@ -696,10 +753,10 @@ else
 
 
 @else
-<header class="header fixed-top position-relative" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%);">
+<header class="header" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%);">
 
-    <div class="container-fluid containerization">
-        <div class="wrapper">
+    <div class="container py-0">
+        <div class="wrapper " >
             <div class="header-item-left">
 
                     <a href="{{URL('/'.$langSeg.'/home')}}" class="brand"><img src="{{URL::asset('public/assets/asset/logo.png')}}" class="logo-height" alt=""></a>
@@ -803,10 +860,57 @@ else
                                     <li><a href="<?php echo  url('/'.$langSeg.'/team');?>">{{ trans('frontLang.team') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/contactus');?>"> {{ trans('frontLang.contactUs') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/career');?>">{{ trans('frontLang.Careers') }}</a></li>
-
                                 </ul>
                             </div>
                         </li>
+
+                        {{-- @if ($langSeg == 'ru')
+                            <li class="menu-item-has-children" >
+                                <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU <i class="ion ion-ios-arrow-down"> </i></a>
+                                <div class="menu-subs menu-column-1 lang" >
+                                    <ul style="padding-left: 0rem;">
+                                        <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
+                                        <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @else
+                            <li class="menu-item-has-children" >
+                                <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN <i class="ion ion-ios-arrow-down"> </i></a>
+                                <div class="menu-subs menu-column-1 lang" >
+                                    <ul style="padding-left: 0rem;">
+                                        <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
+                                        <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif --}}
+
+
+
+                    </ul>
+                </nav>
+            </div>
+
+
+
+
+
+
+
+            <div class="header-item-right">
+
+                {{-- <a href="<?php echo $finalUrl ; ?>"><img src="{{URL('public/assets/images/uae-flag.png')}}" alt=""></a> --}}
+
+
+
+                <nav class="menu navbar-dark">
+                    <div class="menu-mobile-header">
+                        <button type="button" class="menu-mobile-arrow"><i class="ion ion-ios-arrow-back"></i></button>
+                        <div class="menu-mobile-title"></div>
+                        <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close"></i></button>
+                    </div>
+                    <ul class="menu-section " style="padding-left: 0px; margin-bottom: 0px;">
 
                         @if ($langSeg == 'ru')
                             <li class="menu-item-has-children" >
@@ -831,27 +935,10 @@ else
                                 </div>
                             </li>
                         @endif
-
-
-
                     </ul>
                 </nav>
-            </div>
-
-
-
-
-
-
-
-            <div class="header-item-right">
-
-                {{-- <a href="<?php echo $finalUrl ; ?>"><img src="{{URL('public/assets/images/uae-flag.png')}}" alt=""></a> --}}
-
 
                 <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight"><img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt=""></a>
-
-
 
                 <button type="button" class="menu-mobile-trigger"  >
                     <span></span>

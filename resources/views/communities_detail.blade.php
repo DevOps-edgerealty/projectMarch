@@ -85,64 +85,66 @@ else
 }
 
 ?>
-        <?php
-            $finalUrl = '/ar/home';
-            $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-            if($uri_path == '/' || $uri_path == '/home' )
+<?php
+    $finalUrl = '/ar/home';
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    if($uri_path == '/' || $uri_path == '/home' )
+    {
+        $finalUrl = '/ar/home';
+
+    }
+
+
+    else
+    {
+        $uri_segments = explode('/', $uri_path);
+        $seg1 = $uri_segments[2];
+        if($seg1)
+        {
+            if($seg1 == 'en')
             {
-                $finalUrl = '/ar/home';
+                $replacements2 = array(2 => "ar");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
+
 
             }
-
-
-            else
+            elseif($seg1 == 'ar')
             {
-                $uri_segments = explode('/', $uri_path);
-                $seg1 = $uri_segments[2];
-                if($seg1)
-                {
-                    if($seg1 == 'en')
-                    {
-                        $replacements2 = array(2 => "ar");
-                        $basket = array_replace($uri_segments, $replacements2);
-                        $finalUrl = implode("/",$basket);
+                $replacements2 = array(2 => "en");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
 
 
-                    }
-                    elseif($seg1 == 'ar')
-                    {
-                        $replacements2 = array(2 => "en");
-                        $basket = array_replace($uri_segments, $replacements2);
-                        $finalUrl = implode("/",$basket);
-
-
-                    }
-                }
-                else
-                {
-                        $replacements2 = array(1 => "ar");
-                        $basket = array_replace($uri_segments, $replacements2);
-                        $finalUrl = implode("/",$basket);
-
-                }
             }
+        }
+        else
+        {
+                $replacements2 = array(1 => "ar");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
+
+        }
+    }
 
 
-        ?>
-        <?php
+?>
 
 
-        $community_title_var = "title_" . trans('backLang.boxCode');
-        $description_var = "description_" . trans('backLang.boxCode');
-        $project_title_var = "title_" . trans('backLang.boxCode');
-        $type_title_var = "name_" . trans('backLang.boxCode');
-        $name_var = "name_" . trans('backLang.boxCode');
-
-        $address_title_var = "address_" . trans('backLang.boxCode');
+<?php
 
 
+    $community_title_var = "title_" . trans('backLang.boxCode');
+    $description_var = "description_" . trans('backLang.boxCode');
+    $project_title_var = "title_" . trans('backLang.boxCode');
+    $type_title_var = "name_" . trans('backLang.boxCode');
+    $name_var = "name_" . trans('backLang.boxCode');
 
-    ?>
+    $address_title_var = "address_" . trans('backLang.boxCode');
+
+
+
+?>
     <style>
         .centered-community {
             position: absolute;

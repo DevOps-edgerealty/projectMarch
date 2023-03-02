@@ -60,7 +60,6 @@ else
         /* transition: transform 5s  !important; */
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
         transition-duration: 0.125s !important;
-
     }
     .btn:hover {
         /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
@@ -70,7 +69,6 @@ else
         color: #000 !important;
         transform: scale(1) !important;
         border: 2px solid #000 !important;
-
         cursor: pointer !important;
     }
     .card {
@@ -80,14 +78,13 @@ else
         border-radius: 0 !important;
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
         transition-duration: 0.125s !important;
-        z-index: -1000 !important;
-
+        /* z-index: -1000 !important; */
     }
-    .card:hover {
+    /* .card:hover { */
         /* box-shadow: 0px 0px 5px #fff !important; */
-        opacity: 1 !important;
+        /* opacity: 1 !important;
         transform: scale(1.07) !important;
-        z-index: -1000 !important;
+        z-index: -1000 !important; */
         /* margin-left: 20px !important;
         margin-right: 20px !important; */
         /* border: 5px solid #000 !important; */
@@ -260,14 +257,6 @@ else
                                 <span style="color: grey !important;" >{{$blog->language_en}}</span>
                             </p>
                         </div>
-                        {{-- <div class="card-footer px-0 mx-auto">
-                            <a href="https://wa.me/971585602665?text=Hello, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" class="btn btn-sm text-white m-2 " style="float: right; color: rgb(31, 190, 31); border: 0.5px solid grey;">
-                                <i style=" font-size: 1rem !important;" class="fab fa-whatsapp"></i>
-                            </a>
-                            <a  href="{{url( $langSeg .'/'.'agent_detail'.'/'.$blog->id)}}" class="btn btn-sm text-white m-2 " style="float: right; border: 0.5px solid grey !important;">
-                                <i class="fas fa-share" style=" font-size: 1rem !important;"> </i>&nbsp; <span class="my-auto">{{ trans('frontLang.viewprofile') }} </span>
-                            </a>
-                        </div> --}}
                     </div>
                 </div>
                 @endforeach

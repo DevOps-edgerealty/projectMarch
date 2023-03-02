@@ -886,13 +886,7 @@ class FronthomeController extends Controller
     public function check_invoice($lang = "")
     {
 
-        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
-        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
-
-        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
-
-        $this->data['footerCommunities'] = $footerCommunities;
 
 
         if ($lang != "") {
@@ -904,6 +898,14 @@ class FronthomeController extends Controller
 		// General Webmaster Settings
 
 		$conLag = App::getLocale();
+
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+        $this->data['footerCommunities'] = $footerCommunities;
 
         $landingpageseo = Landingpageseos::where('id','5')->first();
 
@@ -941,7 +943,7 @@ class FronthomeController extends Controller
 			$invoice_details = Invoice::where('invoice_no', $invoice_no)->first();
 
 
-			return view('invoice',compact("invoice_details"));
+			return view('invoice-2',compact("invoice_details"));
 
         }
 
@@ -1046,8 +1048,6 @@ class FronthomeController extends Controller
 
 		$Leads = new Leads();
 
-
-
 		$Leads->full_name = $request->name;
 		$Leads->lead_name = $Project->title_en;
 		$Leads->phone = $request->phone;
@@ -1057,44 +1057,47 @@ class FronthomeController extends Controller
 		$Leads->type_id = 1;
 		$Leads->save();
 
-        // \Mail::send('email/project_email',
-        // array(
-        //     'project_name' => $Project->title_en,
-        //     'name' => $request->get('name'),
-        //     'email' => $request->get('email'),
-        //     'phone_number' => $request->get('phone'),
-        // ), function($message) use ($request)
-        //   {
+        \Mail::send('email/project_email',
+        array(
+            'project_name' => $Project->title_en,
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'phone_number' => $request->get('phone'),
+        ), function($message) use ($request)
+          {
+             $message->to('lead@edgerealty.ae')->subject('Edge Realty');
+          });
 
-        //      $message->to('lead@edgerealty.ae')->subject('Edge Realty');
-        //   });
 
-
-        $mj = new \Mailjet\Client('4167d66f4899cf11e786c48d160c4e43','88345b5201f534a26a6123b82f75a5fa',true,['version' => 'v3.1']);
-        $body = [
-            'Messages' => [
-            [
-                'From' => [
-                    'Email' => "alert@dubai-offers.online",
-                    'Name' => "EDGE REALTY REAL ESTATE"
-                ],
-                'To' => [
-                    [
-                        'Email' => "web@edgerealty.ae",
-                        'Name' => "Edge"
-                    ]
-                ],
-                    'Subject' => "Greetings from Mailjet.",
-                    'TextPart' => "My first Mailjet email",
-                    'HTMLPart' => "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-                    'CustomID' => "AppGettingStartedTest"
-                ]
-            ]
-        ];
-        $response = $mj->post(Resources::$Email, ['body' => $body]);
-        $response->success() && var_dump($response->getData());
-
-        dd($response);
+        /**
+         * Mail Jet Mail Method
+         */
+        // $mj = new \Mailjet\Client('4167d66f4899cf11e786c48d160c4e43','88345b5201f534a26a6123b82f75a5fa',true,['version' => 'v3.1']);
+        // $body = [
+        //     'Messages' => [
+        //     [
+        //         'From' => [
+        //             'Email' => "alert@dubai-offers.online",
+        //             'Name' => "EDGE REALTY REAL ESTATE"
+        //         ],
+        //         'To' => [
+        //             [
+        //                 'Email' => "web@edgerealty.ae",
+        //                 'Name' => "Edge"
+        //             ]
+        //         ],
+        //             'Subject' => "Greetings from Mailjet.",
+        //             'TextPart' => "My first Mailjet email",
+        //             'HTMLPart' => "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+        //             'CustomID' => "AppGettingStartedTest"
+        //         ]
+        //     ]
+        // ];
+        // $response = $mj->post(Resources::$Email, ['body' => $body]);
+        // $response->success() && var_dump($response->getData());
+        /**
+         * Mail Jet Mail Method ---end--
+         */
 
 
         //   \Mail::send('email/user_email',
@@ -1174,6 +1177,7 @@ class FronthomeController extends Controller
     public function request_detail_property(Request $request)
     {
 
+
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
@@ -1186,6 +1190,15 @@ class FronthomeController extends Controller
 
 		$property = Property::find($property_id);
 
+        $field_ip = $_SERVER['REMOTE_ADDR'];
+
+        $currentURL = $request->page_url;
+
+        $agent = Agents::where('id', $request->agent_id)->get();
+
+        $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->where('id', $request->property_id)->get();
+
+        // dd($agent[0]->name_en);
 
 
 
@@ -1193,6 +1206,7 @@ class FronthomeController extends Controller
 
 		$Leads->full_name = $request->name;
 		$Leads->lead_name = $property->title_en;
+		$Leads->agent = $agent[0]->name_en;
 		$Leads->phone = $request->phone;
 		$Leads->email = $request->email;
 		$Leads->page_url = url()->previous();
@@ -1207,6 +1221,10 @@ class FronthomeController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'phone_number' => $request->get('phone'),
+            'field_ip' => $field_ip,
+            'property_name' => $properties[0]->title_en,
+            'agent_name' => $agent[0]->name_en,
+            'currentURL' => $currentURL,
         ), function($message) use ($request)
         {
 
@@ -1868,6 +1886,56 @@ class FronthomeController extends Controller
         return view('mapbox.maps',$this->data);
     }
 
+    public function maps7($lang = '')
+    {
+        if ($lang != "") {
+            // Set Language
+            App::setLocale($lang);
+            \Session::put('locale', $lang);
+        }
+
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+        $this->data['footerCommunities'] = $footerCommunities;
+
+        $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->take(3)->get();
+
+
+        $original_data = json_decode($properties, JSON_PRETTY_PRINT);
+
+        // dd($original_data);
+
+        $features = array();
+
+        foreach($original_data as $key => $value) {
+
+            // dd($value['property_locations']['longitude']);
+
+            $features[] = array(
+                    'type' => 'Feature',
+                    'properties' => array('name' => $value['title_en'], 'id' => $value['id'], 'price' => $value['price'], 'address' => $value['address_en']),
+                    'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['latitude'],(float)$value['property_locations']['longitude'])),
+                    );
+            };
+
+        $allfeatures = array('type' => 'FeatureCollection', 'features' => $features);
+
+        $this->data['allfeatures'] = json_encode($allfeatures, JSON_PRETTY_PRINT);
+
+        Storage::disk('public')->put("Geospatial/properties.geojson",  response()->json($allfeatures));
+
+        $file2 = URL::asset('public/assets/asset/geojson/dubai_metro_stations.geojson');
+        $this->data['file2'] = json_encode($file2, JSON_PRETTY_PRINT);
+
+        $this->data['allfeatures'] = $allfeatures;
+
+        return view('mapbox.map7',$this->data);
+    }
+
 
 
 
@@ -1926,6 +1994,7 @@ class FronthomeController extends Controller
                     )
                 );
 
+
                 $features[] = array(
                     'type' => 'Feature',
                     'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
@@ -1941,6 +2010,7 @@ class FronthomeController extends Controller
                         'bed' => $value['bedrooms'],
                         'bath' => $value['bathrooms'],
                         'area' => $value['area'],
+                        'description' => $value['description_en'],
                         )
                     );
             }
@@ -2065,6 +2135,7 @@ class FronthomeController extends Controller
                         'bed' => $value['bedrooms'],
                         'floors' => $value['no_floors'],
                         'area' => $area,
+                        'description' => $value['description_en'],
                         )
                     );
             }
@@ -2182,6 +2253,7 @@ class FronthomeController extends Controller
                         'bed' => $value['bedrooms'],
                         'floors' => $value['no_floors'],
                         'area' => $area,
+                        'description' => $value['description_en'],
                         )
                     );
             }
@@ -2297,6 +2369,7 @@ class FronthomeController extends Controller
                         'bed' => $value['bedrooms'],
                         'floors' => $value['no_floors'],
                         'area' => $area,
+                        'description' => $value['description_en'],
                         )
                     );
             }
@@ -2331,6 +2404,10 @@ class FronthomeController extends Controller
 
         return view('mapbox.offplanProjectsMap',$this->data);
     }
+
+
+
+
 
 
 }

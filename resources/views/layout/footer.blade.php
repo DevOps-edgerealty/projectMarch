@@ -340,7 +340,6 @@
                     <!-- Linkedin -->
                     <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-youtube"></i></a>
 
-
             </section>
             <!-- Section: Social media -->
         </div>
@@ -348,7 +347,7 @@
 
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="background-color: #000;">
-        © {{ now()->year }} All Right Reserved. ORN : 12040
+            © {{ now()->year }} All Right Reserved. ORN : 12040
 
         </div>
         <!-- Copyright -->
@@ -367,12 +366,12 @@
 
 
         <!-- Section: Links  -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 text-white" style="background-color: #000;border-top: 1px solid #fff;">
+        <section class="d-flex justify-content-center justify-content-lg-between py-3 text-white" style="background-color: #000;border-top: 0.5px solid #848484;">
             <div class="container-fluid containerization text-center text-md-start mt-5">
                 <!-- Grid row -->
                 <div class="row mt-3">
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4" style="text-align: right !important">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0" style="text-align: right !important">
                     <!-- Content -->
                     <a href="{{URL('')}}" class="brand mb-4"><img src="{{URL::asset('public/assets/asset/logo.png')}}" style="height: 85px;" alt=""></a>
 
@@ -410,7 +409,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4" style="text-align: right !important">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0" style="text-align: right !important">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
                         {{ trans('frontLang.Aboutus') }}
@@ -455,7 +454,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4" style="text-align: right !important">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0" style="text-align: right !important">
 
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
@@ -474,7 +473,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="text-align: right !important">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-0" style="text-align: right !important">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
                         {{ trans('frontLang.Dubaicommunities') }}
@@ -658,16 +657,16 @@
     <!-- Footer -->
 @else
    <!-- Footer -->
-    <footer class="px-3 text-center text-lg-start bg-light text-muted desktop-show" style="text-transform: uppercase;">
+    <footer class="px-3 text-center text-lg-start bg-light text-muted desktop-show " style="text-transform: uppercase;">
 
 
         <!-- Section: Links  -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 text-white" style="background-color: #000;border-top: 1px solid #fff;">
-            <div class="container-fluid containerization text-center text-md-start mt-5">
+        <section class="d-flex justify-content-center justify-content-lg-between py-3 text-white" style="background-color: #000;border-top: 0.5px solid #848484;">
+            <div class="container-fluid containerization text-center text-md-start mt-0">
                 <!-- Grid row -->
                 <div class="row mt-3">
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0">
                     <!-- Content -->
                     <a href="{{URL('')}}" class="brand mb-4"><img src="{{URL::asset('public/assets/asset/logo.png')}}" style="height: 85px;" alt=""></a>
 
@@ -691,7 +690,6 @@
                         <!-- Twitter -->
                         <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
 
-
                         <!-- Instagram -->
                         <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
 
@@ -705,7 +703,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
                         {{ trans('frontLang.Aboutus') }}
@@ -750,7 +748,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0">
 
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
@@ -769,7 +767,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-0">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
                         {{ trans('frontLang.Dubaicommunities') }}
@@ -819,7 +817,7 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0">
                         <!-- Links -->
 
                         <p class="my-2">
@@ -841,7 +839,7 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0">
                         <!-- Links -->
 
                         <p class="my-2">
@@ -867,7 +865,7 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-0">
                         <!-- Links -->
 
                         <p>
@@ -894,13 +892,13 @@
             </div>
         </section>
 
-        <hr class="" ><br>
+        {{-- <hr class="my-0"><br> --}}
 
         <section class="text-center mx-auto text-white d-flex mb-4 px-5" style="background-color: #000">
 
 
             <div class=" float-left mx-auto">
-                <div class="text-white mt- mb-3">
+                <div class="text-white mt-0 mb-0">
                     <span>
                         <a style="color:white;" href="<?php echo  url('/'.$langSeg.'/privacyandpolicy');?>">
                             {{ trans('frontLang.privacyandpolicy') }}

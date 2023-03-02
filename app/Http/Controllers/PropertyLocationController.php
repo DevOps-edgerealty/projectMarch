@@ -29,15 +29,11 @@ class PropertyLocationController extends Controller
 {
     public function index()
     {
-        $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->get();
+        $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->orderBy('id', 'desc')->get();
 
         $this->data['properties'] = $properties;
 
-        // dd($properties);
-
-
         return view('backend.properties.location.locationmgt',$this->data);
-
     }
 
     public function make($id)
@@ -45,7 +41,6 @@ class PropertyLocationController extends Controller
         $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->where('id', $id)->get();
 
         $this->data['properties'] = $properties[0];
-
 
         return view('backend.properties.location.make2',$this->data);
     }

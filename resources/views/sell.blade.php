@@ -1,50 +1,4 @@
-<style>
-  p{
-    line-height: 1.6 !important;
-  }
-  input, select {
-        background-color: #000 !important;
-        color: #fff !important;
-        border-radius: 0px !important;
-        border: 1px solid #fff !important;
-    }
-    .btn {
-        /* transition: transform 5s  !important; */
-        transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
-        transition-duration: 0.125s !important;
 
-    }
-    .btn:hover {
-        /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
-        /* translate: 2px -2px !important; */
-        opacity: 1 !important;
-        background-color: #fff !important;
-        color: #000 !important;
-        transform: scale(1) !important;
-        border: 2px solid #000 !important;
-
-        cursor: pointer !important;
-    }
-    .card {
-        color: #fff !important;
-        background-color: #000 !important;
-        border: 0.5px solid gray !important;
-        border-radius: 0 !important;
-        transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
-        transition-duration: 0.5s !important;
-
-
-    }
-    .card:hover {
-        /* box-shadow: 0px 0px 5px #fff !important; */
-        opacity: 1 !important;
-        transform: scale(1.07) !important;
-        z-index: 1000 !important;
-        /* margin-left: 20px !important;
-        margin-right: 20px !important; */
-        /* border: 5px solid #000 !important; */
-    }
-</style>
 @extends('layout.master')
 
 <?php
@@ -130,6 +84,54 @@ else
         ?>
 
 @section('content')
+
+<style>
+  p{
+    line-height: 1.6 !important;
+  }
+  input, select {
+        background-color: #000 !important;
+        color: #fff !important;
+        border-radius: 0px !important;
+        border: 1px solid #fff !important;
+    }
+    .btn {
+        /* transition: transform 5s  !important; */
+        transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+        transition-duration: 0.125s !important;
+
+    }
+    .btn:hover {
+        /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
+        /* translate: 2px -2px !important; */
+        opacity: 1 !important;
+        background-color: #fff !important;
+        color: #000 !important;
+        transform: scale(1) !important;
+        border: 2px solid #000 !important;
+
+        cursor: pointer !important;
+    }
+    .card {
+        color: #fff !important;
+        background-color: #000 !important;
+        border: 0.5px solid gray !important;
+        border-radius: 0 !important;
+        /* transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+        transition-duration: 0.5s !important; */
+
+
+    }
+    /* .card:hover {
+        /* box-shadow: 0px 0px 5px #fff !important; */
+        opacity: 1 !important;
+        transform: scale(1.07) !important;
+        z-index: 1000 !important;
+        /* margin-left: 20px !important;
+        margin-right: 20px !important; */
+        /* border: 5px solid #000 !important; */
+    } */
+</style>
 
 <section>
 

@@ -20,16 +20,16 @@
         display: none;
     }
     .card{
-        height: 500px;
+        height: 700px;
         width: 100%;
     }
 </style>
       <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section class="content-header pb-0">
       <div class="container-fluid">
-        <div class="row mb-2">
+        {{-- <div class="row mb-2 mt-4" >
           <div class="col-sm-6">
             <h1>Property Locations</h1>
             <p>
@@ -42,6 +42,19 @@
               <li class="breadcrumb-item active">Properties</li>
             </ol>
           </div>
+        </div> --}}
+
+        <div class="row mb-2 mt-4  my-0 py-0" >
+          <div class="col-sm-6 my-0 py-0">
+            <p class="my-0">
+                Propety Name : <b>{{ $properties->title_en }}</b>
+            </p>
+          </div>
+           <div class="col-sm-6 my-0 py-0">
+            <p class="my-0">
+                Propety Address : <b>{{ $properties->address_en }}</b>
+            </p>
+          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -53,16 +66,16 @@
             <form  method="POST" action="{{url('admin/properties/location/update-create/')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="properties_id" value="{{ $properties->id }}">
-                <div class="row my-3">ac
+                <div class="row my-3">
                         <div class="col-md-5">
                             <div class="input-group">
-                                <span class="input-group-text bg-black text-white rounde-0">Longitude</span>
+                                <span class="input-group-text bg-black text-white rounded-0">Longitude</span>
                                 <input type="text" aria-label="coordinate_lng" id="coordinate_lng" name="coordinate_lng" class="form-control rounded-0">
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="input-group">
-                                <span class="input-group-text bg-black text-white rounde-0">Latitude</span>
+                                <span class="input-group-text bg-black text-white rounded-0">Latitude</span>
                                 <input type="text" aria-label="coordinate_lat" id="coordinate_lat" name="coordinate_lat" class="form-control rounded-0">
                             </div>
                         </div>
@@ -111,9 +124,7 @@
             // zoom: 11,
             center: [55.220091, 25.060663],
             // center: [-103.5917, 40.6699],
-            zoom: 11,
-            bearing: -52.40
-,
+            zoom: 8,
             pitch: 0.00,
             projection: 'mercator'
         });
@@ -129,17 +140,17 @@
         // .addTo(map); // Add the marker to the map
 
         const geocoder = new MapboxGeocoder({
-        // Initialize the geocoder
-        accessToken: mapboxgl.accessToken, // Set the access token
-        mapboxgl: mapboxgl, // Set the mapbox-gl instance
-        marker: false, // Do not use the default marker style
-        placeholder: 'Search for places in Berkeley', // Placeholder text for the search bar
-        bbox: [54.849215, 24.973704, 55.779991, 25.171733], // Boundary for Berkeley
-        proximity: {
-            longitude: -122.25948,
-            latitude: 37.87221
-        }, // Coordinates of UC Berkeley
-        zoom: 12
+            // Initialize the geocoder
+            accessToken: mapboxgl.accessToken, // Set the access token
+            mapboxgl: mapboxgl, // Set the mapbox-gl instance
+            marker: false, // Do not use the default marker style
+            placeholder: 'Search for places in UAE', // Placeholder text for the search bar
+            bbox: [51.558829, 24.404687, 57.237669, 24.475583], // Boundary for Berkeley
+            proximity: {
+                longitude: -122.25948,
+                latitude: 37.87221
+            },  // Coordinates of UAE All Emirates
+            zoom: 11    // zoom level after search
         });
 
         // Add the geocoder to the map
@@ -148,28 +159,40 @@
         // After the map style has loaded on the page,
         // add a source layer and default styling for a single point
         map.on('load', () => {
-        map.addSource('single-point', {
-        'type': 'geojson',
-        'data': {
-        'type': 'FeatureCollection',
-        'features': []
-        }
-        });
+            map.addSource('single-point', {
+                'type': 'geojson',
+                'data': {
+                'type': 'FeatureCollection',
+                'features': []
+                }
+            });
 
-        map.addLayer({
-        'id': 'point',
-        'source': 'single-point',
-        'type': 'circle',
-        'paint': {
-        'circle-radius': 10,
-        'circle-color': '#448ee4'
-        }
-        });
+            map.addLayer({
+                'id': 'point',
+                'source': 'single-point',
+                'type': 'circle',
+                'paint': {
+                'circle-radius': 10,
+                'circle-color': '#448ee4'
+                }
+            });
 
-        // Listen for the `result` event from the Geocoder // `result` event is triggered when a user makes a selection
-        //  Add a marker at the result's coordinates
-        geocoder.on('result', (event) => {
-            map.getSource('single-point').setData(event.result.geometry);
+            map.on('click', function(e) {
+                var lngLat = e.lngLat;
+                // new mapboxgl.Popup()
+                // .setLngLat(lngLat)
+                // .setHTML('you clicked here: <br/>' + lngLat)
+                // .addTo(map);
+                coordinates.style.display = 'block';
+                coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+                document.getElementById('coordinate_lng').value = lngLat.lng;
+                document.getElementById('coordinate_lat').value = lngLat.lat;
+            });
+
+            // Listen for the `result` event from the Geocoder // `result` event is triggered when a user makes a selection
+            //  Add a marker at the result's coordinates
+            geocoder.on('result', (event) => {
+                map.getSource('single-point').setData(event.result.geometry);
             });
         });
 

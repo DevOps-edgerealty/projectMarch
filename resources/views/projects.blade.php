@@ -1,3 +1,26 @@
+
+@extends('layout.master')
+<?php
+
+		$meta_var = "meta_title_" . trans('backLang.boxCode');
+		$meta_description_var = "meta_description_" . trans('backLang.boxCode');
+		$meta_keywords_var = "meta_keywords_" . trans('backLang.boxCode');
+
+
+?>
+
+@section('meta_detail')
+
+        <title>{{$landingpageseo->$meta_var }}</title>
+        <meta name="description" content="{{$landingpageseo->$meta_description_var}}"/>
+        <meta name="keywords" content=" {{$landingpageseo->$meta_keywords_var}} "/>
+
+
+@endsection
+
+
+@section('content')
+
 <style>
     p{
         line-height: 1.6 !important;
@@ -29,15 +52,15 @@
 
 
     }
-    .card:hover {
+    /* .card:hover { */
         /* box-shadow: 0px 0px 5px #fff !important; */
-        opacity: 1 !important;
+        /* opacity: 1 !important;
         transform: scale(1.07) !important;
-        z-index: 1000 !important;
+        z-index: 1000 !important; */
         /* margin-left: 20px !important;
         margin-right: 20px !important; */
         /* border: 5px solid #000 !important; */
-    }
+    /* } */
 
     input, select {
         background-color: #000 !important;
@@ -48,32 +71,14 @@
 
     html, body {
         max-width: 100%;
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
         height: 100%;
         scroll-behavior: smooth;
     }
+    a {
+        text-decoration: none !important;
+    }
 </style>
-@extends('layout.master')
-<?php
-
-		$meta_var = "meta_title_" . trans('backLang.boxCode');
-		$meta_description_var = "meta_description_" . trans('backLang.boxCode');
-		$meta_keywords_var = "meta_keywords_" . trans('backLang.boxCode');
-
-
-?>
-
-@section('meta_detail')
-
-        <title>{{$landingpageseo->$meta_var }}</title>
-        <meta name="description" content="{{$landingpageseo->$meta_description_var}}"/>
-        <meta name="keywords" content=" {{$landingpageseo->$meta_keywords_var}} "/>
-
-
-@endsection
-
-
-@section('content')
 
 <?php
 
@@ -108,31 +113,29 @@ else
 ?>
 
 <section>
-
     <header>
-
-
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
             <div class="mask" style="background-color: rgb(0 0 0);">
             <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
-                    <h3 class="mt-5 mb-5"  style="text-transform: uppercase;">{{ trans('frontLang.Offplan') }}  </h3><br>
+                    <h3 class="mt-5 mb-5"  style="text-transform: uppercase;">
+                        {{ trans('frontLang.Offplan') }}
+                    </h3>
+                    <br>
                     <div class="row search-width" >
 
                     </div>
                     <!-- Pills content -->
-
                 </div>
             </div>
             </div>
         </div>
         <!-- Background image -->
-        </header>
-
-
-
+    </header>
 </section>
+
+
 @if ($langSeg == 'ar')
 
 
@@ -196,7 +199,11 @@ else
                                         <h5 class="my-3" style="font-size: 1.3rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
                                     @endif
 
-                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><h5 class="card-title">{{$projects->$project_title_var}}</h5></a>
+                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" >
+                                        <h5 class="card-title" style="color: #fff !important;">
+                                            {{$projects->$project_title_var}}
+                                        </h5>
+                                    </a>
 
 
 
@@ -332,13 +339,11 @@ else
                         </ol>
                     </nav>
                 </div>
-
             </div>
             <h3 class="text-left mb-3">{{ trans('frontLang.Offplan') }}</h3>
             <P style="font-size: 16px; line-height: 25px;">{{ trans('frontLang.Offplan_detail') }}</P>
 
         </div>
-
     </section>
 
     <section class="mt-5 mb-5">
@@ -379,7 +384,9 @@ else
 
                                     @endif
                                     <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" >
-                                        <h5 class="card-title fw-light" style="font-color: #fff !important;">{{$projects->$project_title_var}}</h5>
+                                        <h5 class="card-title fw-light" style="color: #fff !important;">
+                                            {{$projects->$project_title_var}}
+                                        </h5>
                                     </a>
 
                                     <p class="my-0 fw-light" style="font-size: .8rem !important;"> {{$projects->locationz->$name_var}}</p>
@@ -531,12 +538,12 @@ else
 
     <script>
         $(document).ready(function() {
-        $("#getInTouch").submit(function() {
-            $(".result").text("");
-            $(".loading-icon").removeClass("d-none");
-            $(".submit").attr("disabled", true);
-            $(".btn-txt").text("Processing ...");
-        });
+            $("#getInTouch").submit(function() {
+                $(".result").text("");
+                $(".loading-icon").removeClass("d-none");
+                $(".submit").attr("disabled", true);
+                $(".btn-txt").text("Processing ...");
+            });
         });
     </script>
 @endif

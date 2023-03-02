@@ -26,6 +26,9 @@
         background-color: #000 !important;
         color: #fff !important;
     }
+
+
+
     li > div > div > a > h4,
     li > a {
         color: #fff !important;
@@ -211,7 +214,7 @@ else
 @if ($langSeg == 'ar')
 <header class="header" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); direction: rtl;">
 
-    <div class="container py-0" style="margin-right: 130px !important;">
+    <div class="container-fluid containerization py-0" style="margin-right: 130px !important;">
         <div class="wrapper">
             <div class="header-item-left">
 
@@ -741,13 +744,10 @@ else
 @else
 <header class="header" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%);">
 
-    <div class="container py-0">
-        <div class="wrapper">
+    <div class="container-fluid containerization py-0">
+        <div class="wrapper " >
             <div class="header-item-left">
-
-                    <a href="{{URL('/'.$langSeg.'/home')}}" class="brand"><img src="{{URL::asset('public/assets/asset/logo.png')}}" class="logo-height" alt=""></a>
-
-
+                <a href="{{URL('/'.$langSeg.'/home')}}" class="brand"><img src="{{URL::asset('public/assets/asset/logo.png')}}" class="logo-height" alt=""></a>
             </div>
             <!-- Section: Navbar Menu -->
             <div class="header-item-center ">

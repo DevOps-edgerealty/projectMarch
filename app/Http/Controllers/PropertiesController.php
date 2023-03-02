@@ -65,13 +65,7 @@ class PropertiesController extends Controller
 
     public function properties_search_arabic(Request $request , $lang = '')
     {
-        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
-        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
-
-        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
-
-        $this->data['footerCommunities'] = $footerCommunities;
 
         //return $request;
 
@@ -118,6 +112,14 @@ class PropertiesController extends Controller
 
         $this->data = $request->all();
 
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+        $this->data['footerCommunities'] = $footerCommunities;
+
         if ($lang == 'ar') {
             $Pageheading = "عقارات في دبي";
         }
@@ -148,13 +150,9 @@ class PropertiesController extends Controller
 
     public function properties_search(Request $request , $lang = '')
     {
-        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
-        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
-
-        $this->data['footerCommunities'] = $footerCommunities;
+        // dd($this->data);
 
         //return $request;
 
@@ -199,6 +197,14 @@ class PropertiesController extends Controller
 
         $this->data = $request->all();
 
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+        $this->data['footerCommunities'] = $footerCommunities;
+
         if ($lang == 'ar') {
             $Pageheading = "عقارات في دبي";
         }
@@ -225,6 +231,8 @@ class PropertiesController extends Controller
 
 
         $this->data['properties'] = $properties;
+
+
 
         return view('properties',$this->data);
     }
@@ -581,8 +589,7 @@ class PropertiesController extends Controller
 
     public function furnished_properties_for_sale($lang = '')
     {
-    //
-    $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
@@ -1158,6 +1165,7 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -1192,7 +1200,8 @@ class PropertiesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {$footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+    {
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 

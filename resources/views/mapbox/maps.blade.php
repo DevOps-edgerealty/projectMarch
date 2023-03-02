@@ -224,7 +224,7 @@
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiZWRnZXJlYWx0eSIsImEiOiJjbGNvcnE3eDgwYzBvM3JsYTB4dXpxa3I3In0.prc7SeJwtNYofG3O-fv61w';
 
-        var allpropertyfeatures = {!! json_encode($allfeatures) !!};
+        // var allpropertyfeatures = {!! json_encode($allfeatures) !!};
 
         // var map = new mapboxgl.Map({
         //     container: 'map',
@@ -253,7 +253,8 @@
 
         const stores = {
             type: 'geojson',
-            data: allpropertyfeatures,
+            // data: allpropertyfeatures,
+            data: '{{ URL::asset('public/assets/asset/geojson/dubai_metro_stations.geojson') }}',
             cluster: true,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)

@@ -1,30 +1,4 @@
-<style>
-  p{
-    line-height: 1.6 !important;
-    color: grey !important;
-  }
-  .card {
-        color: #fff !important;
-        background-color: #000 !important;
-        border: 0.5px solid gray !important;
-        border-radius: 0 !important;
-    }
-    td > a {
-        color: #fff !important;
-    }
-    input, select {
-        background-color: #000 !important;
-        color: #fff !important;
-        border-radius: 0px !important;
-        border: 1px solid #fff !important;
-    }
 
-    @media only screen and (max-width: 800px) {
-        .slick-track {
-            height: 200px !important;
-        }
-    }
-</style>
 @extends('layout.master')
 
 <?php
@@ -53,6 +27,38 @@
     </style>
 
 @section('content')
+
+<style>
+  p{
+    line-height: 1.6 !important;
+    color: grey !important;
+  }
+  .card {
+        color: #fff !important;
+        background-color: #000 !important;
+        border: 0.5px solid gray !important;
+        border-radius: 0 !important;
+    }
+    td > a {
+        color: #fff !important;
+    }
+    input, select {
+        background-color: #000 !important;
+        color: #fff !important;
+        border-radius: 0px !important;
+        border: 1px solid #fff !important;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .slick-track {
+            height: 200px !important;
+        }
+    }
+
+    .card {
+        z-index: 1 !important;
+    }
+</style>
 
 
 <?php
@@ -201,7 +207,18 @@ else
                     <h1 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->$title_var}}</b></h1>
                     <h3 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->locationz->$name_var}}</b></h3>
 
-                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class=" btn btn-outline-white btn-lg mt-4 rounded-0 w-75" style="background-color: #000">{{ trans('frontLang.requestdetail') }} </a>
+                    <style>
+                        .testbutton:hover {
+                            background-color: #ffffff !important;
+                            color: black !important;
+                            border: #fff solid !important;
+
+                        }
+                    </style>
+
+                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-dark btn-lg mt-4 rounded-0 w-75 testbutton" style="background-color: #000">
+                        {{ trans('frontLang.requestdetail') }}
+                    </a>
 
                 </div>
             @endif
@@ -210,7 +227,7 @@ else
 </section>
 
 {{-- modal request details --}}
-<div class="modal fade" style="background-color: rgb(0, 0, 0, .7);"  id="requestDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="background-color: rgb(0, 0, 0, .2);"  id="requestDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
         <div class="modal-content rounded-0">
             {{-- <div class="modal-header">
@@ -253,7 +270,7 @@ else
                                 {{ trans('frontLang.submit') }}
                             </button> --}}
 
-                            <button class="submit btn btn-outline-white btn-lg btn-block" type="submit">
+                            <button class="submit btn btn-outline-white btn-lg btn-block rounded-0" type="submit">
                                 <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
 
                                 {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
@@ -344,10 +361,10 @@ else
                     <p><b> {{ trans('frontLang.bedrooms') }}  </b> : {{$project_detail->bedrooms}} </p>
                     <p><b> {{ trans('frontLang.completionYear') }} </b> : {{$project_detail->est_completion_en}}</p>
                     <p><b> {{ trans('frontLang.communitytype') }} </b> :  تملك حر</p>
-                        <h3>{{ trans('frontLang.startingfrom') }} <b> :  {{$project_detail->project_price}} {{ trans('frontLang.AED') }} </b></h3>
+                    <h3>{{ trans('frontLang.startingfrom') }} <b> :  {{$project_detail->project_price}} {{ trans('frontLang.AED') }} </b></h3>
 
                     <div class="col-lg-12">
-                        <button class="first btn btn-info btn-lg btn-block mt-4 " style="background-color: #009efb">{{ trans('frontLang.requestdetail') }} </button>
+                        <button class="first btn btn-white rounded-0 shadow-none btn-lg btn-block mt-4 " >{{ trans('frontLang.requestdetail') }} </button>
                     </div>
 
                 </div>
@@ -365,14 +382,15 @@ else
 
                 <div class="row">
                     <div class="col-lg-12" style="display: flex; flex-direction: row; align-items: center;">
+                    
                         <div class="AED skill_mobile" style="display: block !important"><h3>{{ trans('frontLang.startingfrom') }} <b> : {{$project_detail->project_price}} {{ trans('frontLang.AED') }} </b></h3></div>
                         <div class="USD skill_mobile"><h3>{{ trans('frontLang.startingfrom') }} <b> : {{$project_detail->project_price_usd}} USD </b></h3></div>
-                        <select class="" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px;margin-left:10px;margin-top: -9px;">
+                        {{-- <select class="" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px;margin-left:10px;margin-top: -9px;">
 
                             <option value="AED">AED</option>
                             <option value="USD">USD</option>
 
-                        </select>
+                        </select> --}}
                     </div>
 
                 </div>
@@ -447,14 +465,14 @@ else
 
                         <div class="AED skill" style="display: block !important"> <h6 style="color: #fff"> {{$project_detail->project_price}} {{ trans('frontLang.AED') }}</h6></div>
                         <div class="USD skill"> <h6 style="color: #fff">  {{ $project_detail->project_price_usd }} USD </h6></div>
-                        <select class="" name="skill_dropdown" id="skill_dropdown" style="width: 80px;margin-left:10px;margin-top: -9px;">
+                        {{-- <select class="" name="skill_dropdown" id="skill_dropdown" style="width: 80px;margin-left:10px;margin-top: -9px;">
 
                             <option value="AED">AED</option>
                             <option value="USD">USD</option>
 
-                        </select>
+                        </select> --}}
                     </div>
-                        <button class="first btn btn-info btn-lg btn-block mt-4 " style="background-color: #009efb">{{ trans('frontLang.requestdetail') }} </button>
+                        <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button>
                     </div>
 
                 </div>
@@ -517,11 +535,21 @@ else
     @else
 
     @if ( $project_detail->pro_status == '1')
-        {{-- @if  ($project_detail->payment_en != '')
+        @if  ($project_detail->payment_en != '')
             <section class="mt-4 desktop-show">
                 <div class="container">
                         <h3 class="text-center mb-4"><b> {{ trans('frontLang.payment') }}</b></h3>
-                        <div class="row">
+                        <div class="row bg-black">
+                            <style>
+                                .inner {
+                                    background-color: #000 !important;
+                                    color: #fff !important;
+                                    border: 0.5px #848484 solid !important;
+                                }
+                                .icon {
+                                    color: #fff !important;
+                                }
+                            </style>
                             {!! $project_detail->$payment_var !!}
                         </div>
 
@@ -539,14 +567,14 @@ else
                     </div>
                 </div>
             </section>
-        @endif --}}
+        @endif
     @endif
 
 
     <section class="mt-5 mb-5">
         <div class="container-fluid containerization">
             <div class="row">
-                <div class="col-lg-12 " style="color: grey !important;">
+                <div class="col-lg-12 " >
                     <h3 class="mb-5">{{ trans('frontLang.aboutproject') }}</h3>
 
                     <span style="color: grey !important;">{!! $project_detail->$description_var !!}</span>
@@ -848,8 +876,9 @@ else
 
                             @if($feature == $feature_id)
 
-                                <div class="col-lg-3 mb-4">
-                                    <i class="far fa-check-circle"> </i> {!!  $feature_name[$name_var] !!}
+                                <div class="col-lg-3 mb-4" style="color: #848484">
+                                    <i class="far fa-check-circle"> </i>
+                                    <span >{!!  $feature_name[$name_var] !!}</span>
                                 </div>
                             @endif
                         @endforeach
@@ -866,12 +895,9 @@ else
                 <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
                 @foreach ($features_array as $feature_id => $feature_name)
                     @foreach ($features as $feature)
-
-
                         @if($feature == $feature_id)
-
-                            <div class="col-lg-3 mb-2" style="width: 50%;">
-                                <i class="far fa-check-circle"> </i> {!!  $feature_name[$name_var] !!}
+                            <div class="col-lg-3 mb-2" style="width: 50%; color: #848484 !important;" >
+                                <i class="far fa-check-circle"></i> {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
                     @endforeach
@@ -881,7 +907,7 @@ else
         </div>
     </section>
 
-    <section class="second mt-5 mb-5">
+    {{-- <section class="second mt-5 mb-5">
         <div class="container-fluid containerization">
             <div class=" row">
                 <h3 class="text-center mb-5">{{ trans('frontLang.requestdetail') }}</h3>
@@ -915,27 +941,40 @@ else
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    {{-- <section class="mt-5 mb-5 ">
-        <div class="container">
+    <section class="mt-5 mb-5 ">
+        <div class="container-fluid containerization">
             <div class="row">
                 <h3 class="mb-5">{{ trans('frontLang.Nearbyplaces') }}</h3>
                     <div class="col-lg-12">
                         <div class="row" >
+                            <style>
+                                .table-bordered {
+                                    background-color: #000 !important;
+                                    border: 0.5px #848484 solid !important;
+                                }
+                                td {
+                                    color: #848484 !important;
+                                }
+                            </style>
                             {!!html_entity_decode($project_detail->$near_by_places_var)!!}
                         </div>
                     </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
     <section class="mt-5 mb-5">
         <div class="container-fluid containerization">
             <div class="row">
                 <h3 class="mb-5">{{ trans('frontLang.Aboutthecoomunity') }}</h3>
 
-
+                <style>
+                    p {
+                        text-align: justify !important;
+                    }
+                </style>
                 {!!html_entity_decode($project_detail->$community_var)!!}
 
             </div>
@@ -996,7 +1035,7 @@ else
 
                                 @foreach($projects->images  as $single_img)
                                     @if($projects->images->first()==$single_img)
-                                    <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="{{$projects->$project_title_var}}">
+                                    <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top  rounded-0" alt="{{$projects->$project_title_var}}">
                                     @endif
                                 @endforeach
 
@@ -1015,7 +1054,7 @@ else
                                     @if ($projects->project_price == '')
                                     <b> Prices On Request</b>
                                     @else
-                                    <h5>{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }} </span></h5>
+                                        <h5>{{ trans('frontLang.startingfrom') }} <span style="color: #848484">  {{$projects->project_price}} {{ trans('frontLang.AED') }} </span></h5>
                                     @endif
 
                                 </p>
@@ -1127,7 +1166,7 @@ else
 
                                 @foreach($projects->images  as $single_img)
                                     @if($projects->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="{{$projects->$project_title_var}}"></a>
+                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}"></a>
                                     @endif
                                 @endforeach
 
@@ -1146,7 +1185,35 @@ else
                                     @if ($projects->project_price == '')
                                     <b> Prices On Request</b>
                                     @else
-                                    <h5>{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
+                                        <div class="AED skill_mobile" style="display: block !important">
+                                            <p>
+
+                                                    {{ trans('frontLang.startingfrom') }}
+                                                    <span style="color: #848484;">
+                                                        {{ $projects->project_price }}
+                                                        {{ trans('frontLang.AED') }}
+
+                                                    </span>
+
+                                            </p>
+                                        </div>
+
+                                        <div class="USD skill_mobile">
+                                            <p>
+
+                                                    {{ trans('frontLang.startingfrom') }}
+                                                    <span style="color: #848484;">
+                                                        {{ $projects->project_price }} USD
+                                                    </span>
+
+                                            </p>
+                                        </div>
+                                        {{-- <h5>
+                                            <span style="color: #fff">
+                                                {{$projects->project_price}}
+                                                {{ trans('frontLang.AED') }}
+                                            </span>
+                                        </h5> --}}
                                     @endif
 
                                 </p>
@@ -1318,6 +1385,7 @@ else
             var inputVal = $(this).val();
             var eleBox = $("." + inputVal);
             $(".skill").hide();
+            $(".skill_mobile").hide();
             $(eleBox).show();
         });
     });
@@ -1327,6 +1395,7 @@ else
         $("#skill_dropdown_mobile").change(function () {
             var inputVal = $(this).val();
             var eleBox = $("." + inputVal);
+            $(".skill").hide();
             $(".skill_mobile").hide();
             $(eleBox).show();
         });

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Agents;
+use App\Models\Property;
+use App\Models\Community;
 use App\Models\Developer;
 use App\Models\Developer_image;
 use App\Models\Project;
@@ -21,8 +24,6 @@ class DeveloperController extends Controller
      */
     public function index( $lang = '')
     {
-        //
-
         if ($lang != "") {
             // Set Language
             App::setLocale($lang);
@@ -42,6 +43,15 @@ class DeveloperController extends Controller
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
          $this->data['developer'] = $developer;
+
+
+        $footerLuxuryProjects = Project::with(['images','developers','project_types',])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+        $this->data['footerCommunities'] = $footerCommunities;
 
         //return $developer;
 
@@ -70,6 +80,14 @@ class DeveloperController extends Controller
 
 
          $developer_id = $developer->id ;
+
+         $footerLuxuryProjects = Project::with(['images','developers','project_types',])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+        $this->data['footerCommunities'] = $footerCommunities;
 
          //return  $developer_id;
 
