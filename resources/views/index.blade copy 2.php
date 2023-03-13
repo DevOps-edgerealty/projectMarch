@@ -75,7 +75,7 @@
                 margin: 12px !important;
                 color: #fff !important;
                 background-color: #000 !important;
-                border: 0.5px solid rgb(86, 86, 86) !important;
+                border: 0px solid rgb(86, 86, 86) !important;
                 border-radius: 0 !important;
                 transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
                 transition-duration: 0.5s !important;
@@ -1036,7 +1036,7 @@
                                 @foreach($property->images  as $single_img)
                                     @if($property->images->first()==$single_img)
                                         <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$property->slug_link)}}" >
-                                            <img src="{{ URL::asset('uploads/projects/images/'.$property->id.'/'.$single_img->image) }}" style="height: 230px; width: 100%" class="card-img-top rounded-0 w-100" alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                            <img src="{{ URL::asset('uploads/projects/images/'.$property->id.'/'.$single_img->image) }}" style="height: 320px; width: 100%" class="card-img-top rounded-0 w-100" alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
 
                                             {{-- <img src="{{ URL::asset('uploads/2.webp') }}" style="height: 300px" class="card-img-top rounded-0" alt="Listing"> --}}
                                         </a>
@@ -1058,7 +1058,7 @@
 
                                             @if ($property->type_id == '1')
                                                 @if ($langSeg == 'ru')
-                                                    <p  class="fw-bold mt-0"> <span style="color: #fff;">  {{ ($property->project_price_usd) }} $</span></p>
+                                                    <p  class="fw-light mt-0"> <span style="color: #fff;">  {{ ($property->project_price_usd) }} $</span></p>
                                                 @else
                                                     <div class="AED skill_project_1" style="display: block !important">
                                                         <p>
@@ -1086,7 +1086,7 @@
                                                 @endif
                                             @else
                                                 <div class="AED skill_project" style="display: block !important">
-                                                    <p class="fw-bold mt-0">
+                                                    <p class="fw-light mt-0">
                                                         <b>
                                                             <span style="color: #fff;">
                                                                 {{ trans('frontLang.AED') }}
@@ -1098,7 +1098,7 @@
                                                 </div>
 
                                                 <div class="USD skill_project">
-                                                    <p class="fw-bold mt-0">
+                                                    <p class="fw-light mt-0">
                                                         <b>
                                                             <span style="color: #fff;">
                                                                 USD {{ $property->project_price_usd }}
@@ -1466,14 +1466,14 @@
                         <div class="row">
                             @foreach ($properties_for_sale as $property)
 
-                            <div class="col-lg-4 d-flex mb-5">
+                            <div class="col-lg-3 mb-5 px-0 ">
                                 @if ($langSeg == 'ar')
 
-                                <div class="card " style="direction: rtl;  margin: 0.55vw !important">
+                                <div class="card px-0 mx-3" style="direction: rtl;  ">
 
                                 @else
 
-                                <div class="card " style="  margin: 0.55vw !important">
+                                <div class="card px-0 mx-3" style="">
 
                                 @endif
 
@@ -1489,14 +1489,14 @@
 
 
 
-                                    <div class="card-body d-flex flex-column h-100 p-3 pb-0" >
+                                    <div class="card-body d-flex flex-column h-100 p-3" >
                                         <div class="row d-flex h-100">
                                             <div class="col-8 d-flex flex-column h-100 pe-0">
 
                                                 {{-- Price section --}}
                                                 @if ($property->type_id == '1')
                                                     @if ($langSeg == 'ru')
-                                                        <h5 style=" font-size: 20px;" class="fw-bolder mt-0"> <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
+                                                        <h5 style=" font-size: 1.3rem;" class="fw-bolder mt-0"> <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
                                                     @else
                                                         <div class="AED skill_property_buy" style="display: block !important">
                                                             <h5 style=" font-size: 20px;" class="fw-light mt-0">
@@ -1547,13 +1547,11 @@
                                                     {{-- <h5 style=" font-size: 1.5rem;" class="fw-bolder mt-0"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.yealry') }} </b> </span></h5> --}}
                                                 @endif
 
-                                                <div style="height: 50px;">
-                                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                                        <p class="card-title mt-3 flex-grow-1" style="font-size: 16px; line-height: 1.3 !important; color: #848484">
-                                                            {{ Str::limit($property->$title_var, 65) }}
-                                                        </p>
-                                                    </a>
-                                                </div>
+                                                <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                    <p class="card-title mt-3 flex-grow-1" style="font-size: 1rem; line-height: 1.3 !important; color: #848484">
+                                                        {{ Str::limit($property->$title_var, 55) }}
+                                                    </p>
+                                                </a>
                                                 {{-- <p class="fw-light" style="color: #848484">
                                                     {{ $property->locationss->$name_var }}
                                                 </p> --}}
@@ -1563,11 +1561,11 @@
 
                                                 @foreach($agents  as $agent)
                                                     @if($property->agent_id==$agent->id)
-                                                        @if (file_exists(public_path().'uploads/properties/'.$property->id.'/'.$single_img->image))
+                                                        @if (file_exists(public_path().'assets/images/agents'.$agent->id.'/'.$agent->image))
                                                             {{-- <img src="{{ URL::asset('public/assets/images/agents'.$agent->id.'/'.$agent->image) }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0"  alt="agent"> --}}
-                                                            <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: " class="card-img-top rounded-0 pe-0 " alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                                            <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0 " alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
                                                         @else
-                                                            <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0 pe-0"  alt="agent">
+                                                            <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0"  alt="agent">
                                                         @endif
                                                     @endif
                                                 @endforeach
@@ -1579,11 +1577,11 @@
 
                                         <div class="row my-2 px-2" style="display:block; bottom: 0% !important; " >
 
-                                                <span class="fw-light px-1" style="color: #848484;font-size: 16px !important;" > <i class="fas fa-bed"> </i>  {{$property->bedrooms}}  </span> <span style="color: #848484 !important;"> &#x2022; </span>
+                                                <span class="fw-light px-1" style="color: #848484;font-size: 16px !important;" > <i class="fas fa-bed"> </i>  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484 !important;"> &#x2022; </span>
 
-                                                <span class="fw-light px-1" style="color: #848484; font-size: 16px !important;" > <i class="fas fa-bath"> </i> {{$property->bathrooms}}  </span> <span style="color: #848484 !important;"> &#x2022; </span>
+                                                <span class="fw-light px-1" style="color: #848484; font-size: 16px !important;" > <i class="fas fa-bath"> </i> {{$property->bathrooms}} {{ trans('frontLang.bath') }} </span> <span style="color: #848484 !important;"> &#x2022; </span>
 
-                                                <span class="fw-light px-1" style="color: #848484; font-size: 16px !important;" > <i class="fas fa-chart-area"> </i>  {{$property->area}}  {{ trans('frontLang.sqFt') }} </span>
+                                                <span class="fw-light px-1" style="color: #848484; font-size: 16px !important;" > <i class="fas fa-chart-area"> </i> {{$property->area}}  {{ trans('frontLang.sqFt') }} </span>
 
                                         </div>
 
@@ -1594,8 +1592,8 @@
                                         <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem;">
                                             <table style="width: 100%">
                                                 <tr>
-                                                    <td style="text-align: center; font-weight: bold; border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="color: #000"><i class="far fa-envelope"></i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                    <td style="text-align: center; font-weight: bold; width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color:  #1e961e !important; font-size 16px;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                    <td style="text-align: center; font-weight: bold; border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="color: #000; "><i class="far fa-envelope"></i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                    <td style="text-align: center; font-weight: bold; width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); "> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -1603,8 +1601,8 @@
                                         <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem;">
                                             <table style="width: 100%">
                                                 <tr>
-                                                    <td style="text-align: center; font-weight: bold; border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="color: #000; font-size: 16px;"><i class="far fa-envelope"></i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                    <td style="text-align: center; font-weight: bold; width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color:  #1e961e !important; font-size 16px;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                    <td style="text-align: center; font-weight: bold; border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="color: #000; "><i class="far fa-envelope"></i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                    <td style="text-align: center; font-weight: bold; width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); "> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -1630,25 +1628,25 @@
                     <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
                         <div class="row">
                             @foreach ($properties_for_rent as $property)
-                            <div class="col-lg-4 mb-5 d-flex" >
+                            <div class="col-lg-4 mb-5 d-flex px-3">
                                 @if ($langSeg == 'ar')
-                                    <div class="card" style="direction: rtl; margin: 0.45vw !important;">
+                                    <div class="card" style="direction: rtl;">
                                 @else
-                                    <div class="card" style="   margin: 0.45vw !important;">
+                                    <div class="card">
                                 @endif
                                     <div class="communities-newlaunch"></div>
 
                                     @foreach($property->images  as $single_img)
                                         @if($property->images->first()==$single_img)
-                                            <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" sty >
-                                                <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px; " class="card-img-top rounded-0" alt="Listing"onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                            <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="Listing"onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
                                             </a>
                                         @endif
                                     @endforeach
 
 
 
-                                    <div class="card-body d-flex flex-column h-100 p-3 pb-0" >
+                                    <div class="card-body d-flex flex-column h-100 p-3" >
                                     <div class="row d-flex h-100">
                                         <div class="col-8 d-flex flex-column h-100 pe-0">
 
@@ -1724,13 +1722,12 @@
 
 
                                             @endif
-                                            <div style="height: 50px;">
-                                                <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                                    <p class="card-title  mt-3 flex-grow-1" style="font-size: 16px; line-height: 1.3 !important; color: #848484">
-                                                        {{ Str::limit($property->$title_var, 58) }}
-                                                    </p>
-                                                </a>
-                                            </div>
+
+                                            <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                <h6 class="card-title  mt-3 flex-grow-1" style="font-size: 1rem; line-height: 1.2 !important; color: #848484">
+                                                    {{ Str::limit($property->$title_var, 58) }}
+                                                </h6>
+                                            </a>
                                             {{-- <p class="fw-light mt-0" style="font-size: 1.2 !important"> {{ $property->locationss->$name_var }}</p> --}}
                                         </div>
                                         <div class="col-4">
@@ -1767,8 +1764,8 @@
                                     <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem;">
                                         <table style="width: 100%">
                                             <tr>
-                                                <td style="text-align: center; font-weight: bold; border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="color: #000; font-size 16px;"><i class="far fa-envelope"></i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center; font-weight: bold; width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color:  #1e961e !important; font-size 16px;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                <td style="text-align: center; font-weight: bold; border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="color: #000; font-weight: bold;"><i class="far fa-envelope"></i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center; font-weight: bold; width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); font-weight: bold;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -1776,8 +1773,8 @@
                                     <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem;">
                                         <table style="width: 100%">
                                             <tr>
-                                                <td style="text-align: center; font-weight: bold; border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="color: #000; font-size 16px;"><i class="far fa-envelope"></i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center; font-weight: bold; width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color:  #1e961e !important; font-size 16px;"> <i  class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                <td style="text-align: center; font-weight: bold; border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="color: #000; font-weight: bold;"><i class="far fa-envelope"></i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center; font-weight: bold; width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); font-weight: bold;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -2427,13 +2424,13 @@
             <a href="{{url( $langSeg .'/'.'dubai-communities/city-walk')}}">
                 <div class="img-wrapper" >
 
-                    <div class="centered-communities"> <h3 class="text-white">{{ trans('frontLang.palmJumeirah') }}</h3></div>
+                    <div class="centered-communities"> <h3 class="text-white">{{ trans('frontLang.citywalk') }}</h3></div>
 
-                        <img src="{{URL::asset('public/assets/asset/desktop/Palm-Jumeirah3-edgerealty.ae.webp')}}" class="img-responsive">
+                        <img src="{{URL::asset('public/assets/asset/desktop/city-walk-dubai-edgerealty.ae.jpg')}}" class="img-responsive">
 
                     <div class="img-overlay">
 
-                        <h3 class="text-white">{{ trans('frontLang.palmJumeirah') }}</h3>
+                        <h3 class="text-white">{{ trans('frontLang.citywalk') }}</h3>
 
                     </div>
                 </div>
@@ -2455,7 +2452,7 @@
             <a href="{{url( $langSeg .'/'.'dubai-communities/difc')}}">
                 <div class="img-wrapper">
                     <div class="centered-communities"> <h3 class="text-white">{{ trans('frontLang.difc') }}</h3></div>
-                    <img src="{{URL::asset('public/assets/asset/desktop/DIFC-edgerealty.ae.webp')}}" class="img-responsive">
+                    <img src="{{URL::asset('public/assets/asset/desktop/difc-edgerealty.ae.jpg')}}" class="img-responsive">
                 <div class="img-overlay">
                     <h3 class="text-white">{{ trans('frontLang.difc') }}</h3>
                 </div>
@@ -2477,7 +2474,7 @@
             <a href="{{url( $langSeg .'/'.'dubai-communities/bluewaters')}}">
                 <div class="img-wrapper">
                     <div class="centered-communities"> <h3 class="text-white">{{ trans('frontLang.Bluewaters') }}</h3></div>
-                    <img src="{{URL::asset('public/assets/asset/desktop/bluewaters-edgerealty.ae.webp')}}" style="width: 100%" class="img-responsive">
+                    <img src="{{URL::asset('public/assets/asset/desktop/bluewaiters-edgerealty.ae.jpg')}}" style="width: 100%" class="img-responsive">
                 <div class="img-overlay">
                     <h3 class="text-white">{{ trans('frontLang.Bluewaters') }}</h3>
                 </div>
@@ -2689,7 +2686,6 @@
         });
     });
 </script>
-
 <script>
     $(document).ready(function() {
     $("#getInTouch").submit(function() {
@@ -2700,7 +2696,6 @@
     });
     });
 </script>
-
 <script scope>
     function PopUp(hideOrshow) {
         if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";

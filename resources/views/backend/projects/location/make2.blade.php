@@ -27,7 +27,7 @@
       <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header pb-0">
+    <section class="content-header p-0">
       <div class="container-fluid">
 
         {{-- <div class="row mb-2 mt-4" >
@@ -130,8 +130,7 @@
             center: [55.220091, 25.060663],
             // center: [-103.5917, 40.6699],
             zoom: 11,
-            bearing: -52.40
-,
+            bearing:0,
             pitch: 0.00,
             projection: 'mercator'
         });

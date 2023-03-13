@@ -40,6 +40,10 @@ class DeveloperController extends Controller
 
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
          $this->data['developer'] = $developer;
@@ -48,6 +52,10 @@ class DeveloperController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types',])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -84,6 +92,10 @@ class DeveloperController extends Controller
          $footerLuxuryProjects = Project::with(['images','developers','project_types',])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 

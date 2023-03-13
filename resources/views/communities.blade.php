@@ -112,7 +112,7 @@ else
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
             <div class="mask" style="background-color: rgb(0 0 0);">
-                <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
+                <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" >
                     <div>
                         <h3 class="text-white"  style="text-transform: uppercase;">{{ trans('frontLang.dubaiCommunities') }}</h3>
 
@@ -130,10 +130,10 @@ else
 </section>
 
 @if ($langSeg == 'ar')
-<section class="mt-5" style="direction: rtl">
+<section class="" style="direction: rtl">
     <div class="container-fluid containerization">
         <div class="row">
-            <h3 class="text-left">{{ trans('frontLang.dubaiCommunities') }}</h3>
+            {{-- <h3 class="text-left">{{ trans('frontLang.dubaiCommunities') }}</h3> --}}
             <p class="text-right">هل تبحث عن أفضل منطقة للعيش في دبي؟ مع بيانات إيدج ريالتي الشاملة عن منطقة دبي، يمكنك اكتشاف المناطق الأفضل للعيش في دبي. اعثر على المزيد من المعلومات عن المناطق، وكذلك ما تتطلع إليه في أحد الأحياء الأكثر شهرة في دبي.</p>
 
         </div>
@@ -142,10 +142,10 @@ else
 
 </section>
 @else
-<section class="mt-5">
+<section class="">
     <div class="container-fluid containerization">
         <div class="row">
-            <h3 class="text-left">{{ trans('frontLang.dubaiCommunities') }}</h3>
+            {{-- <h3 class="text-left">{{ trans('frontLang.dubaiCommunities') }}</h3> --}}
             <P style="font-size: 16px;line-height: 25px;">Are you looking for the best area to live in Dubai? With Edge Realty comprehensive Dubai area guides, you can discover which areas are best for living in Dubai. Learn more about the best in the area, as well as what you can expect to get in one of the most popular neighbourhoods within Dubai.</p>
 
         </div>
@@ -257,13 +257,13 @@ else
 
 
 
-                        <div class="modal modal-lg fade rounded-0" id="exampleModal-{{ $community->id }}" tabindex="-1" aria-labelledby="get_in_touch_desktop" aria-hidden="true"  >
+                        <div class="modal modal-md fade rounded-0" id="exampleModal-{{ $community->id }}" tabindex="-1" aria-labelledby="get_in_touch_desktop" aria-hidden="true"  >
                             <div class="modal-dialog modal-dialog-centered " style="width: 1800px !important;">
                                 <div class="modal-content rounded-0 rounded-0 border border-1 border-white m-3 p-0">
 
                                     <div class="modal-body p-0 bg-black">
                                         <div class="desktop-show row p-0 m-0">
-                                            <div class="col-lg-4 text-white m-0 p-0 bg-black d-flex flex-column">
+                                            {{-- <div class="col-lg-4 text-white m-0 p-0 bg-black d-flex flex-column">
                                                 <div class="my-auto mx-auto p-3">
 
                                                     <p class="fw-bold" style="font-size: 2rem !important;">
@@ -274,9 +274,14 @@ else
                                                     <p style="font-size: .9rem !important;">{{ trans('frontLang.tele') }}</p>
                                                     <p style="font-size: .9rem !important;">{{ trans('frontLang.website') }}</p>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-8 m-0 p-0 bg-white">
-                                                <div class="p-5">
+                                            </div> --}}
+                                            <div class="col-lg-12 m-0 p-0 bg-white">
+                                                <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                                    <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                        {{ trans('frontLang.getintouch') }}
+                                                    </p>
+                                                </div>
+                                                <div class="p-3">
                                                     {{-- <form class="contact-form" id="getInTouch" action="javascript:void(0)"> --}}
                                                     <form class="contact-form" id="getInTouch" method="post" action="{{URL('/contactus/submit')}}">
                                                         @csrf
@@ -310,7 +315,7 @@ else
                                                                 {{ trans('frontLang.submit') }}
                                                             </button> --}}
 
-                                                            <button class="submit btn btn-block btn-lg mx-auto btn-outline-dark" type="submit">
+                                                            <button class="submit btn btn-block btn-lg mx-auto btn-outline-dark rounded-0" type="submit">
                                                                 <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
 
                                                                 {{-- <i class="czi-user mr-2 ml-n1"></i> --}}

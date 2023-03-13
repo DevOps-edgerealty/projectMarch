@@ -51,7 +51,71 @@ else
 
 @endsection
 @section('content')
+<style>
 
+            html, body {
+                overflow-x: hidden;
+                scroll-behavior: smooth !important;
+            }
+            body {
+                position: relative
+            }
+            p{
+                line-height: 1.6 !important;
+            }
+
+            .nav-pills .nav-link.active {
+                background-color: #fff !important;
+                color: #000 !important;
+                border: 0.25px #848484 solid !important;
+                border: 0.5 #848484 solid !important;
+                border-radius: 0 !important;
+
+            }
+
+            .nav-link {
+                /* background-color: #000 !important; */
+                background-color: #000 !important;
+                color: #fff !important;
+                border: 0.25px #848484 solid !important;
+                border: 0.5 #848484 solid !important;
+                border-radius: 0 !important;
+
+            }
+            a {
+                color: #fff !important;
+            }
+
+            .form-select-sm {
+                border: 0.5px #848484 solid !important;
+                color: #fff !important;
+                border-radius: 0px !important;
+                transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+                transition-duration: 0.125s !important;
+            }
+
+            .btn {
+                padding: 4px 8px 4px 8px !important;
+                border: 0.5px #848484 solid !important;
+                color: #fff !important;
+                border-radius: 0px !important;
+                transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+                transition-duration: 0.125s !important;
+
+            }
+            .btn:hover {
+                /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
+                /* translate: 2px -2px !important; */
+                opacity: 1 !important;
+                background-color: #fff !important;
+                color: #000 !important;
+                transform: scale(1) !important;
+                border: 0.5px solid #000 !important;
+                cursor: pointer !important;
+            }
+
+
+        </style>
 <section>
 
     <header>
@@ -78,8 +142,31 @@ else
 
 
 
-<section class="mt-5 mb-5">
-    <div class="container">
+<section class=" mb-5">
+    <div class="container-fluid containerization">
+
+        <div class="row">
+            <div class="d-flex flex-row-reverse bd-highlight">
+
+                <div class="p-2 bd-highlight">
+                    <form action="{{URL('/'.$langSeg.'/blogs-sortby')}}" method="POST" >
+                    @csrf
+                    <input type="hidden" value="{{$langSeg}}" name="lang"/>
+                        <select class="form-select-sm" name="sort_by" aria-label="Default select example">
+                            {{-- <option selected>Sort By</option> --}}
+                            <option value="1">Newest to Oldest</option>
+                            <option value="2">Oldest to Newest</option>
+                        </select>
+                        <button class="btn btn-sm w-auto">
+                            search
+                        </button>
+                    </form>
+                </div>
+                <div class="p-2 bd-highlight">
+                    Sort By
+                </div>
+            </div>
+        </div>
 
         <div class="row">
 
@@ -105,12 +192,16 @@ else
                             {{$blog->$name_var}}
                         </a>
                     </h4>
-                    <div class="card-body d-flex align-items-end flex-column px-0">
+                    <div class="card-body d-flex align-items-end flex-column px-0 h-100">
 
                         <p class="card-text mb-3 d-flex align-items-baseline mt-auto" style="line-height: 1.3 !important; color: gray !important; font-size: .9rem !important; text-align: justify !important;">
+
                             {{ \Illuminate\Support\Str::limit(strip_tags($blog->$description_var), $limit = 150, $end = '...') }}
                         </p>
-                        <small class="fw-light" style="color:  !important; font-size: 0.8rem !important;">{{ $blog->created_at->diffForHumans() }}</small>
+
+                        <a href="{{url( $langSeg .'/'.'blogs_detail'.'/'.$blog->slug_link)}}" class="text-white text-decoration-underline">Read More</a>
+
+                        {{-- <small class="fw-light" style="color:  !important; font-size: 0.8rem !important;">{{ $blog->updated_at->diffForHumans() }}</small> --}}
 
                     </div>
                     <div class="card-footer px-0">

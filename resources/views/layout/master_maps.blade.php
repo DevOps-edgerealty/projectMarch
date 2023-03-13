@@ -344,9 +344,11 @@
         <script src="{{URL::asset('public/assets/js/map.js')}}" type="text/javascript"></script>
         <script src="{{URL::asset('public/assets/js/lightbox.js')}}" type="text/javascript" ></script>
         <script src="{{URL::asset('public/assets/js/intlTelInput.js')}}" type="text/javascript" ></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVBe2TsNsN5oi3blO8iR18VsMFd4YHRI8&callback=initAutocomplete&libraries=places&v=weekly&channel=2" async>
+        {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVBe2TsNsN5oi3blO8iR18VsMFd4YHRI8&callback=initAutocomplete&libraries=places&v=weekly&channel=2" async> --}}
         </script>
 
 

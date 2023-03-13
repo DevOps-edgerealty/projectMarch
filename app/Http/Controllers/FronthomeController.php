@@ -17,6 +17,7 @@ use App\Models\Location;
 use App\Models\Leads;
 use Illuminate\Support\Facades\DB;
 use App;
+use App\Models\Developer;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
 use App\Models\Dld;
@@ -80,12 +81,12 @@ class FronthomeController extends Controller
             $data = DB::table('opt_locations')
                 ->where('name_en', 'LIKE', "%{$query}%")
                 ->get();
-            $output = '<ul class="dropdown-menu" style="display:block; position:relative;  list-style-type: none;padding: 0; border: 1px solid #ddd;border-radius: 0px;">';
+            $output = '<ul class="dropdown-menu bg-black text-white" style="display:block; position:relative;  list-style-type: none; padding: 0; border: 0.5px solid #848484; border-radius: 0px;">';
             foreach($data as $row)
             {
-            $output .= '
-            <li class="li-2" style="padding: 3px; font-size: 16px;"><a href="#">'.$row->name_en.'</a></li>
-            ';
+                $output .= '
+                    <li class="li-2 text-white" style="padding: 3px; font-size: 16px;"><a href="#">'.$row->name_en.'</a></li>
+                ';
             }
             $output .= '</ul>';
             echo $output;
@@ -190,9 +191,14 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
 
         $project = Project::with(['images','developers','project_types'])->orderBy('id', 'desc')->take(6)->get();
@@ -252,6 +258,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -289,6 +299,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -321,6 +335,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -344,6 +362,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -402,6 +424,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -442,6 +468,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -475,6 +505,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -513,6 +547,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -610,6 +648,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -647,6 +689,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -679,6 +725,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -713,6 +763,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -746,6 +800,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -777,6 +835,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -810,6 +872,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -826,6 +892,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -859,6 +929,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -903,6 +977,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -922,6 +1000,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1035,6 +1117,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -1123,6 +1209,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -1181,6 +1271,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1253,6 +1347,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -1310,6 +1408,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -1356,6 +1458,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1409,6 +1515,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -1457,6 +1567,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1513,6 +1627,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -1565,6 +1683,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1631,12 +1753,15 @@ class FronthomeController extends Controller
 
 
     public function book_valuation_email(Request $request)
-
     {
 
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1690,11 +1815,14 @@ class FronthomeController extends Controller
 
 
     public function project_documentSubmit(Request $request)
-
     {
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1766,6 +1894,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -1799,6 +1931,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1847,6 +1983,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1897,6 +2037,10 @@ class FronthomeController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1952,9 +2096,15 @@ class FronthomeController extends Controller
             \Session::put('locale', $lang);
         }
 
+        // dd($lang);
+
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1962,11 +2112,7 @@ class FronthomeController extends Controller
 
         $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->orderBy('id', 'desc')->get();
 
-
         $original_data = json_decode($properties, JSON_PRETTY_PRINT);
-
-        // dd($original_data);
-
 
         $features = array();
 
@@ -1985,35 +2131,99 @@ class FronthomeController extends Controller
                 $x_display .= $x_parts[$x_count_parts - 1];
             }
 
-            if($value['property_locations'] != null)
-            {
-                $crs = array(
-                    "type" => "name",
-                    "properties" => array(
-                        "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
-                    )
-                );
-
-
-                $features[] = array(
-                    'type' => 'Feature',
-                    'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
-                    'properties' => array(
-                        'name' => $value['title_en'],
-                        'id' => $value['id'],
-                        'priceLong' => 'AED '.number_format($value['price']),
-                        'price' => $x_display,
-                        'address' => $value['address_en'],
-                        'image' => $value['images'][0]['image'],
-                        'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
-                        'slug_link' => $value['slug_link'],
-                        'bed' => $value['bedrooms'],
-                        'bath' => $value['bathrooms'],
-                        'area' => $value['area'],
-                        'description' => $value['description_en'],
+            if($lang == 'ar') {
+                if($value['property_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
                         )
                     );
+
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ar'],
+                            'id' => $value['id'],
+                            'priceLong' => 'AED '.number_format($value['price']),
+                            'price' => $x_display,
+                            'address' => $value['address_ar'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'bath' => $value['bathrooms'],
+                            'area' => $value['area'],
+                            'description' => $value['description_ar'],
+                            )
+                        );
+                }
+            } elseif ( $lang == 'ru') {
+                if($value['property_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ru'],
+                            'id' => $value['id'],
+                            'priceLong' => 'AED '.number_format($value['price']),
+                            'price' => $x_display,
+                            'address' => $value['address_ru'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'bath' => $value['bathrooms'],
+                            'area' => $value['area'],
+                            'description' => $value['description_ru'],
+                            )
+                        );
+                }
+            } else {
+                if($value['property_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_en'],
+                            'id' => $value['id'],
+                            'priceLong' => 'AED '.number_format($value['price']),
+                            'price' => $x_display,
+                            'address' => $value['address_en'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'bath' => $value['bathrooms'],
+                            'area' => $value['area'],
+                            'description' => $value['description_en'],
+                            )
+                        );
+                }
             }
+
+
         };
 
         $allfeatures = array(
@@ -2072,6 +2282,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -2103,8 +2317,84 @@ class FronthomeController extends Controller
                 $x_display .= $x_parts[$x_count_parts - 1];
             }
 
-            if($value['project_locations'] != null)
-            {
+            if ($lang == 'ar') {
+                if($value['project_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+                    $area = 0;
+                    if($value['size'] == null )
+                    {
+                        $area = 'n/a';
+                    } else {
+                        $area = $value['size'];
+                    }
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ar'],
+                            'id' => $value['id'],
+                            // 'priceLong' => 'AED '.number_format($value['project_price']),
+                            // 'price' => $x_display,
+                            'address' => $value['address_ar'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'floors' => $value['no_floors'],
+                            'area' => $area,
+                            'description' => $value['description_ar'],
+                            )
+                        );
+                }
+            } elseif ($lang == 'ru') {
+                if($value['project_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                    )
+                );
+
+                    $area = 0;
+                    if($value['size'] == null )
+                    {
+                        $area = 'n/a';
+                    } else {
+                        $area = $value['size'];
+                    }
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ru'],
+                            'id' => $value['id'],
+                            // 'priceLong' => 'AED '.number_format($value['project_price']),
+                            // 'price' => $x_display,
+                            'address' => $value['address_ru'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'floors' => $value['no_floors'],
+                            'area' => $area,
+                            'description' => $value['description_ru'],
+                            )
+                        );
+                    }
+
+            } else {
+                if($value['project_locations'] != null)
+                {
                 $crs = array(
                     "type" => "name",
                     "properties" => array(
@@ -2138,7 +2428,10 @@ class FronthomeController extends Controller
                         'description' => $value['description_en'],
                         )
                     );
+                }
             }
+
+
         };
 
         $allfeatures = array(
@@ -2189,6 +2482,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -2221,42 +2518,120 @@ class FronthomeController extends Controller
                 $x_display .= $x_parts[$x_count_parts - 1];
             }
 
-            if($value['project_locations'] != null)
-            {
-                $crs = array(
-                    "type" => "name",
-                    "properties" => array(
-                        "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
-                    )
-                );
-
-                $area = 0;
-                if($value['size'] == null )
+            if ($lang == 'ar') {
+                if($value['project_locations'] != null)
                 {
-                    $area = 'n/a';
-                } else {
-                    $area = $value['size'];
-                }
-
-                $features[] = array(
-                    'type' => 'Feature',
-                    'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
-                    'properties' => array(
-                        'name' => $value['title_en'],
-                        'id' => $value['id'],
-                        // 'priceLong' => 'AED '.number_format($value['project_price']),
-                        // 'price' => $x_display,
-                        'address' => $value['address_en'],
-                        'image' => $value['images'][0]['image'],
-                        'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
-                        'slug_link' => $value['slug_link'],
-                        'bed' => $value['bedrooms'],
-                        'floors' => $value['no_floors'],
-                        'area' => $area,
-                        'description' => $value['description_en'],
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
                         )
                     );
-            }
+
+                    $area = 0;
+                    if($value['size'] == null )
+                    {
+                        $area = 'n/a';
+                    } else {
+                        $area = $value['size'];
+                    }
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ar'],
+                            'id' => $value['id'],
+                            // 'priceLong' => 'AED '.number_format($value['project_price']),
+                            // 'price' => $x_display,
+                            'address' => $value['address_ar'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'floors' => $value['no_floors'],
+                            'area' => $area,
+                            'description' => $value['description_ar'],
+                            )
+                        );
+
+                }
+            } elseif ($lang == 'ru') {
+                if($value['project_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+                    $area = 0;
+                    if($value['size'] == null )
+                    {
+                        $area = 'n/a';
+                    } else {
+                        $area = $value['size'];
+                    }
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ru'],
+                            'id' => $value['id'],
+                            // 'priceLong' => 'AED '.number_format($value['project_price']),
+                            // 'price' => $x_display,
+                            'address' => $value['address_ru'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'floors' => $value['no_floors'],
+                            'area' => $area,
+                            'description' => $value['description_ru'],
+                            )
+                        );
+
+                }
+            }elseif ($lang == 'en')
+                if($value['project_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+                    $area = 0;
+                    if($value['size'] == null )
+                    {
+                        $area = 'n/a';
+                    } else {
+                        $area = $value['size'];
+                    }
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_en'],
+                            'id' => $value['id'],
+                            // 'priceLong' => 'AED '.number_format($value['project_price']),
+                            // 'price' => $x_display,
+                            'address' => $value['address_en'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'floors' => $value['no_floors'],
+                            'area' => $area,
+                            'description' => $value['description_en'],
+                            )
+                        );
+
+                }
         };
 
         $allfeatures = array(
@@ -2305,6 +2680,10 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -2337,42 +2716,120 @@ class FronthomeController extends Controller
                 $x_display .= $x_parts[$x_count_parts - 1];
             }
 
-            if($value['project_locations'] != null)
-            {
-                $crs = array(
-                    "type" => "name",
-                    "properties" => array(
-                        "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
-                    )
-                );
-
-                $area = 0;
-                if($value['size'] == null )
+            if ($lang == 'ar') {
+                if($value['project_locations'] != null)
                 {
-                    $area = 'n/a';
-                } else {
-                    $area = $value['size'];
-                }
-
-                $features[] = array(
-                    'type' => 'Feature',
-                    'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
-                    'properties' => array(
-                        'name' => $value['title_en'],
-                        'id' => $value['id'],
-                        // 'priceLong' => 'AED '.number_format($value['project_price']),
-                        // 'price' => $x_display,
-                        'address' => $value['address_en'],
-                        'image' => $value['images'][0]['image'],
-                        'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
-                        'slug_link' => $value['slug_link'],
-                        'bed' => $value['bedrooms'],
-                        'floors' => $value['no_floors'],
-                        'area' => $area,
-                        'description' => $value['description_en'],
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
                         )
                     );
+
+                    $area = 0;
+                    if($value['size'] == null )
+                    {
+                        $area = 'n/a';
+                    } else {
+                        $area = $value['size'];
+                    }
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ar'],
+                            'id' => $value['id'],
+                            // 'priceLong' => 'AED '.number_format($value['project_price']),
+                            // 'price' => $x_display,
+                            'address' => $value['address_ar'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'floors' => $value['no_floors'],
+                            'area' => $area,
+                            'description' => $value['description_ar'],
+                            )
+                        );
+                }
+            } elseif ($lang == 'ru'){
+                if($value['project_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+                    $area = 0;
+                    if($value['size'] == null )
+                    {
+                        $area = 'n/a';
+                    } else {
+                        $area = $value['size'];
+                    }
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ru'],
+                            'id' => $value['id'],
+                            // 'priceLong' => 'AED '.number_format($value['project_price']),
+                            // 'price' => $x_display,
+                            'address' => $value['address_ru'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'floors' => $value['no_floors'],
+                            'area' => $area,
+                            'description' => $value['description_ru'],
+                            )
+                        );
+                }
+            } else {
+                if($value['project_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+                    $area = 0;
+                    if($value['size'] == null )
+                    {
+                        $area = 'n/a';
+                    } else {
+                        $area = $value['size'];
+                    }
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['project_locations']['longitude'], (float)$value['project_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_en'],
+                            'id' => $value['id'],
+                            // 'priceLong' => 'AED '.number_format($value['project_price']),
+                            // 'price' => $x_display,
+                            'address' => $value['address_en'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/projects/images/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'floors' => $value['no_floors'],
+                            'area' => $area,
+                            'description' => $value['description_en'],
+                            )
+                        );
+                }
             }
+
+
         };
 
         $allfeatures = array(

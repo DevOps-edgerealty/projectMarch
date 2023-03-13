@@ -58,6 +58,48 @@ class BlogsController extends Controller
     }
 
 
+
+    public function blogs_sortBy(Request $request)
+    {
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+        $this->data['footerCommunities'] = $footerCommunities;
+        //
+        if ($request->lang != "") {
+            // Set Language
+            App::setLocale($request->lang);
+            \Session::put('locale', $request->lang);
+        }
+
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+		// General Webmaster Settings
+
+		$conLag = App::getLocale();
+
+        if($request->sort_by == '1')
+        {
+            $blogs = blogs::orderby('created_at','DESC')->paginate(16);
+
+        } elseif($request->sort_by == '2') {
+            $blogs = blogs::orderby('created_at','ASC')->paginate(16);
+        }
+
+        $this->data['blogs'] = $blogs;
+
+
+
+
+        return view('blogs',$this->data);
+    }
+
+
     public function detail( $lang = '', $id )
     {
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();

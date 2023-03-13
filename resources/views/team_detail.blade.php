@@ -248,12 +248,12 @@ else
         <div class="col-md-12  mx-0 px-0">
             <!-- Pills navs -->
             <ul class="nav nav-pills mb-3 nav-justified  mx-0 px-0 "  id="ex1" role="tablist" >
-                <li class="nav-item " role="presentation">
+                {{-- <li class="nav-item " role="presentation">
                     <a class="nav-link active switcher-btn" id="ex1-tab-1-mobile" data-mdb-toggle="pill" href="#ex1-pills-1-mobile" role="tab" aria-controls="ex1-pills-1-mobile" aria-selected="true" >{{ trans('frontLang.projects') }}</a>
-                </li>
-                <li class="nav-item " role="presentation">
-                    <a class="nav-link switcher-btn " id="ex1-tab-2-mobile" data-mdb-toggle="pill" href="#ex1-pills-2-mobile" role="tab" aria-controls="ex1-pills-2-mobile" aria-selected="false" >{{ trans('frontLang.property') }}</a >
-                </li>
+                </li> --}}
+                {{-- <li class="nav-item " role="presentation">
+                    <a class="nav-link active switcher-btn " id="ex1-tab-2-mobile" data-mdb-toggle="pill" href="#ex1-pills-2-mobile" role="tab" aria-controls="ex1-pills-2-mobile" aria-selected="false" >{{ trans('frontLang.property') }}</a >
+                </li> --}}
             </ul>
 
 
@@ -261,7 +261,7 @@ else
                 <div class="tab-content" id="properties-mobile-ex1-content">
 
                     {{-- Projects --}}
-                    <div class="tab-pane fade show active" id="ex1-pills-1-mobile" role="tabpanel" aria-labelledby="ex1-tab-1" >
+                    {{-- <div class="tab-pane fade show active" id="ex1-pills-1-mobile" role="tabpanel" aria-labelledby="ex1-tab-1" >
                         <div class="row mx-0 px-0 mx-auto">
                              <h3 class="fw-bold text-uppercase text-white mx-2">
                                 Projects
@@ -284,8 +284,6 @@ else
                                             @foreach($project->images  as $single_img)
                                                 @if($project->images->first()==$single_img)
                                                     <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$project->slug_link)}}" >
-                                                        {{-- <img src="{{ URL::asset('uploads/projects/images/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="Listing"> --}}
-                                                        {{-- <img src="{{ URL::asset('uploads/2.webp') }}" style="height: 300px; width: 100%;" class="card-img-top rounded-0 mx-0 px-0" alt="Listing"> --}}
                                                         <img src="{{ URL::asset('uploads/projects/images/'.$project->id.'/'.$single_img->image) }}" style="height: 250px" class="card-img-top rounded-0" alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
                                                     </a>
                                                 @endif
@@ -335,7 +333,7 @@ else
 
 
 
-                    </div>
+                    </div> --}}
 
                     {{-- Properties --}}
                     <div class="tab-pane fade" id="ex1-pills-2-mobile" role="tabpanel" aria-labelledby="ex1-tab-2">
@@ -496,16 +494,16 @@ else
             <div class="col-lg-12 mx-auto">
                 <!-- Pills navs -->
                 <ul class="nav nav-pills mb-3 d-flex justify-content-left mx-2"  id="ex1" role="tablist">
-                    <li class="nav-item" role="presentation">
+                    {{-- <li class="nav-item" role="presentation">
                         <a class="nav-link active mx-0 px-5 py-3" id="ex1-tab-1" data-mdb-toggle="pill" href="#ex1-pills-1" role="tab" aria-controls="ex1-pills-1" aria-selected="true" >
                             {{ trans('frontLang.projects') }}
                         </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link mx-0 px-5 py-3" id="ex1-tab-2" data-mdb-toggle="pill" href="#ex1-pills-2" role="tab" aria-controls="ex1-pills-2" aria-selected="false" >
+                    </li> --}}
+                    {{-- <li class="nav-item" role="presentation">
+                        <a class="nav-link active mx-0 px-5 py-3" id="ex1-tab-2" data-mdb-toggle="pill" href="#ex1-pills-2" role="tab" aria-controls="ex1-pills-2" aria-selected="false" >
                             {{ trans('frontLang.property') }}
                         </a >
-                    </li>
+                    </li> --}}
                 </ul>
                 <!-- Pills navs -->
 
@@ -513,7 +511,7 @@ else
                 <div class="tab-content" id="properties-desktop-ex1-content">
 
                     {{-- Projects --}}
-                    <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1" >
+                    {{-- <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1" >
                         <div class="row mx-0 px-0 mx-auto">
                              <h3 class="fw-bold text-uppercase text-white mx-2">
                                 Projects
@@ -536,9 +534,9 @@ else
                                             @foreach($project->images  as $single_img)
                                                 @if($project->images->first()==$single_img)
                                                     <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$project->slug_link)}}" >
-                                                        {{-- <img src="{{ URL::asset('uploads/projects/images/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="Listing"> --}}
+
                                                         <img src="{{ URL::asset('uploads/projects/images/'.$project->id.'/'.$single_img->image) }}" style="height: 250px" class="card-img-top rounded-0" alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
-                                                        {{-- <img src="{{ URL::asset('uploads/2.webp') }}" style="height: 300px; width: 100%;" class="card-img-top rounded-0 mx-0 px-0" alt="Listing"> --}}
+
                                                     </a>
                                                 @endif
                                             @endforeach
@@ -585,7 +583,7 @@ else
 
 
                         </div>
-                    </div>
+                    </div> --}}
 
 
 

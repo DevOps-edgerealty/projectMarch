@@ -42,31 +42,27 @@ else
 @section('content')
 <style>
     .center-images {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
 </style>
 <section>
 
     <header>
-
-
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
             <div class="mask" style="background-color: rgb(0 0 0);">
-            <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
-                <div class="text-white">
-                    <h3 style="text-transform: uppercase;">{{ trans('frontLang.Mortgagecalculator') }}</h3>
+                <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
+                    <div class="text-white">
+                        <h3 style="text-transform: uppercase;">{{ trans('frontLang.Mortgagecalculator') }}</h3>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         <!-- Background image -->
     </header>
-
-
 
 </section>
 

@@ -1,21 +1,21 @@
 
     <?php
-    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
 
-    $uri_segments = explode('/', $uri_path);
+        $uri_segments = explode('/', $uri_path);
 
-    $seg1 = $uri_segments[1];
+        $seg1 = $uri_segments[1];
 
-    if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
-    {
-        $langSeg = $uri_segments[1];
-    }
-    else
-    {
-        $langSeg = 'en';
-    }
+        if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+        {
+            $langSeg = $uri_segments[1];
+        }
+        else
+        {
+            $langSeg = 'en';
+        }
 
     ?>
     <?php
@@ -159,10 +159,10 @@
                             <div id="flush-collapsefour"  class="accordion-collapse collapse" aria-labelledby="flush-headingfour" data-mdb-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <ul style="padding-left: 0rem;">
-                                    <li style="text-align: right;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/onlinepayments');?>">{{ trans('frontLang.onlinepayment') }}</a></li>
+                                    <li style="text-align: right;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>">{{ trans('frontLang.onlinepayment') }}</a></li>
                                     <li style="text-align: right;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/blogs');?>">{{ trans('frontLang.blogs') }}</a></li>
                                     <li style="text-align: right;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/sitemap');?>">{{ trans('frontLang.sitemap') }}</a></li>
-                                    <li style="text-align: right;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>">{{ trans('frontLang.dubaiDevelopers') }}</a></li>
+                                    <li style="text-align: right;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>">{{ trans('frontLang.Dubaideveloper') }}</a></li>
                                     <div class="text-white float-left me-3" style="text-align: right;">
                                         {{ trans('frontLang.footerCurrency2') }} &nbsp;
                                         <select class="my-auto float-left rounded-0" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px; border: 0.5px solid grey !Important; border-radius: 0px !important;">
@@ -302,10 +302,10 @@
                             <div id="flush-collapsefour"  class="accordion-collapse collapse" aria-labelledby="flush-headingfour" data-mdb-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <ul style="padding-left: 0rem;">
-                                    <li style="text-align: left;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/onlinepayments');?>">{{ trans('frontLang.onlinepayment') }}</a></li>
+                                    <li style="text-align: left;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>">{{ trans('frontLang.onlinepayment') }}</a></li>
                                     <li style="text-align: left;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/blogs');?>">{{ trans('frontLang.blogs') }}</a></li>
                                     <li style="text-align: left;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/sitemap');?>">{{ trans('frontLang.sitemap') }}</a></li>
-                                    <li style="text-align: left;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>">{{ trans('frontLang.dubaiDevelopers') }}</a></li>
+                                    <li style="text-align: left;" class="text-uppercase"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>">{{ trans('frontLang.Dubaideveloper') }}</a></li>
                                     <div class="text-white float-left me-3" style="text-align: left;">
                                         {{ trans('frontLang.footerCurrency2') }} &nbsp;
                                         <select class="my-auto float-left rounded-0" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px; border: 0.5px solid grey !Important; border-radius: 0px !important;">
@@ -435,16 +435,16 @@
                     </p>
 
                     <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/onlinepayments');?>" class="text-reset">{{ trans('frontLang.onlinepayment') }}</a>
+                        <a href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>" class="text-reset">{{ trans('frontLang.Dubaideveloper') }}</a>
                     </p>
 
                     <p class="my-1">
                         <a href="<?php echo  url('/'.$langSeg.'/sitemap');?>" class="text-reset">{{ trans('frontLang.sitemap') }}</a>
                     </p>
 
-                    <p class="my-1">
+                    {{-- <p class="my-1">
                         <a href="<?php echo  url('/'.$langSeg.'/rate-our-service');?>" class="text-reset text-uppercase">{{ trans('frontLang.rateourservice') }}</a>
-                    </p>
+                    </p> --}}
 
                     <p class="my-1">
                         <a href="<?php echo  url('/'.$langSeg.'/invoice');?>" class="text-reset text-uppercase">{{ trans('frontLang.checkyourinvoice') }}</a>
@@ -663,126 +663,142 @@
         <!-- Section: Links  -->
         <section class="d-flex justify-content-center justify-content-lg-between py-3 text-white" style="background-color: #000;border-top: 0.5px solid #848484;">
             <div class="container-fluid containerization text-center text-md-start mt-0">
+
                 <!-- Grid row -->
                 <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0">
-                    <!-- Content -->
-                    <a href="{{URL('')}}" class="brand mb-4"><img src="{{URL::asset('public/assets/asset/logo.png')}}" style="height: 85px;" alt=""></a>
 
-                    <p class="mt-4 mb-2">
-                        <a href="tel:00971045807142" style="color: #fff"><i class="fas fa-phone-alt me-3"></i> +97143881856</a>
-                    </p>
-                    <p class="my-4">
-                        <a style="color: #fff" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
-                        <i class="fab fa-whatsapp me-3"></i> +971585602665</a>
-                    </p>
-                    <p class="my-4">
-                        <a style="color: #fff ;text-transform: lowercase;" href="mailto:info@edgerealty.ae" class="__cf_email__" data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8">
-                        <i class="fas fa-envelope me-3"></i>
-                        info@edgerealty.ae
-                        </a>
-                    </p>
-                    <!-- Facebook -->
-                    <div class="m-0 p-0" style="margin-left: -20px !important;">
-                        <a class="btn btn-link btn-floating btn-lg text-white m-1"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
+                        <!-- Content -->
+                        <a href="{{URL('')}}" class="brand mb-4"><img src="{{URL::asset('public/assets/asset/logo.png')}}" style="height: 85px;" alt=""></a>
 
-                        <!-- Twitter -->
-                        <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
+                        <p class="mt-4 mb-2">
+                            <a href="tel:00971045807142" style="color: #fff"><i class="fas fa-phone-alt me-3"></i> +97143881856</a>
+                        </p>
+                        <p class="my-4">
+                            <a style="color: #fff" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
+                            <i class="fab fa-whatsapp me-3"></i> +971585602665</a>
+                        </p>
+                        <p class="my-4">
+                            <a style="color: #fff ;text-transform: lowercase;" href="mailto:info@edgerealty.ae" class="__cf_email__" data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8">
+                            <i class="fas fa-envelope me-3"></i>
+                            info@edgerealty.ae
+                            </a>
+                        </p>
+                        <!-- Facebook -->
+                        <div class="m-0 p-0" style="margin-left: -40px !important;">
+                            <a class="btn btn-link btn-floating btn-lg text-white m-1"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
 
-                        <!-- Instagram -->
-                        <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
+                            <!-- Twitter -->
+                            <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
 
-                        <!-- Linkedin -->
-                        <a  class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
+                            <!-- Instagram -->
+                            <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
 
-                        <!-- Linkedin -->
-                        <a  class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
+                            <!-- Linkedin -->
+                            <a  class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
+
+                            <!-- Linkedin -->
+                            <a  class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
-                </div>
-                <!-- Grid column -->
 
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
-                        {{ trans('frontLang.Aboutus') }}
-                    </h6>
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/aboutus');?>" class="text-reset">{{ trans('frontLang.companyOverView') }}</a>
-                    </p>
-
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/contactus');?>" class="text-reset">{{ trans('frontLang.contactUs') }} </a>
-                    </p>
-
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/career');?>" class="text-reset">{{ trans('frontLang.Careers') }}</a>
-                    </p>
-
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/faqs');?>" class="text-reset">{{ trans('frontLang.faqs') }}</a>
-                    </p>
-
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/blogs');?>" class="text-reset">{{ trans('frontLang.blogs') }}</a>
-                    </p>
-
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/onlinepayments');?>" class="text-reset">{{ trans('frontLang.onlinepayment') }}</a>
-                    </p>
-
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/sitemap');?>" class="text-reset">{{ trans('frontLang.sitemap') }}</a>
-                    </p>
-
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/rate-our-service');?>" class="text-reset text-uppercase">{{ trans('frontLang.rateourservice') }}</a>
-                    </p>
-
-                    <p class="my-1">
-                        <a href="<?php echo  url('/'.$langSeg.'/invoice');?>" class="text-reset text-uppercase">{{ trans('frontLang.checkyourinvoice') }}</a>
-                    </p>
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0">
-
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
-                        {{ trans('frontLang.Luxuryprojects') }}
-                    </h6>
-                    {{-- {{$footerLuxuryProjects}} --}}
-                    @foreach($footerLuxuryProjects as $data)
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                            {{ trans('frontLang.Aboutus') }}
+                        </h6>
                         <p class="my-1">
-                            <a href="<?php echo  url($langSeg .'/'.'dubai-luxury-projects'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
-                                {{ $data->title_en }}
-                            </a>
+                            <a href="<?php echo  url('/'.$langSeg.'/aboutus');?>" class="text-reset">{{ trans('frontLang.companyOverView') }}</a>
                         </p>
-                    @endforeach
 
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-0">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
-                        {{ trans('frontLang.Dubaicommunities') }}
-                    </h6>
-
-                    @foreach($footerCommunities as $data)
                         <p class="my-1">
-                            <a href="<?php echo  url( $langSeg .'/'.'dubai-communities'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
-                                {{ $data->title_en }}
-                            </a>
+                            <a href="<?php echo  url('/'.$langSeg.'/contactus');?>" class="text-reset">{{ trans('frontLang.contactUs') }} </a>
                         </p>
-                    @endforeach
 
-                </div>
-                <!-- Grid column -->
+                        <p class="my-1">
+                            <a href="<?php echo  url('/'.$langSeg.'/career');?>" class="text-reset">{{ trans('frontLang.Careers') }}</a>
+                        </p>
+
+                        <p class="my-1">
+                            <a href="<?php echo  url('/'.$langSeg.'/faqs');?>" class="text-reset">{{ trans('frontLang.faqs') }}</a>
+                        </p>
+
+                        <p class="my-1">
+                            <a href="<?php echo  url('/'.$langSeg.'/blogs');?>" class="text-reset">{{ trans('frontLang.blogs') }}</a>
+                        </p>
+
+                        <p class="my-1">
+                            <a href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>" class="text-reset">{{ trans('frontLang.Dubaideveloper') }}</a>
+                        </p>
+
+                        <p class="my-1">
+                            <a href="<?php echo  url('/'.$langSeg.'/sitemap');?>" class="text-reset">{{ trans('frontLang.sitemap') }}</a>
+                        </p>
+
+                        {{-- <p class="my-1">
+                            <a href="<?php echo  url('/'.$langSeg.'/rate-our-service');?>" class="text-reset text-uppercase">{{ trans('frontLang.rateourservice') }}</a>
+                        </p> --}}
+
+                        <p class="my-1">
+                            <a href="<?php echo  url('/'.$langSeg.'/invoice');?>" class="text-reset text-uppercase">{{ trans('frontLang.checkyourinvoice') }}</a>
+                        </p>
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                            {{ trans('frontLang.Luxuryprojects') }}
+                        </h6>
+                        {{-- {{$footerLuxuryProjects}} --}}
+                        @foreach($footerLuxuryProjects as $data)
+                            <p class="my-1">
+                                <a href="<?php echo  url($langSeg .'/'.'dubai-luxury-projects'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                    {{ $data->title_en }}
+                                </a>
+                            </p>
+                        @endforeach
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                            {{ trans('frontLang.Dubaicommunities') }}
+                        </h6>
+
+                        @foreach($footerCommunities as $data)
+                            <p class="my-1">
+                                <a href="<?php echo  url( $langSeg .'/'.'dubai-communities'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                    {{ $data->title_en }}
+                                </a>
+                            </p>
+                        @endforeach
+
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                            {{ trans('frontLang.Dubaidevelopers') }}
+                        </h6>
+
+                        @foreach($footerDevelopers as $data)
+                            <p class="my-1">
+                                <a href="<?php echo  url( $langSeg .'/'.'dubai-developers'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                    {{ $data->$name_var }}
+                                </a>
+                            </p>
+                        @endforeach
+
+                    </div>
+
                 </div>
                 <!-- Grid row -->
 
@@ -887,7 +903,6 @@
                     </div>
                     <!-- Grid column -->
                 </div>
-                <!-- Grid row -->
 
             </div>
         </section>
@@ -945,6 +960,18 @@
 
 
 
+
+<script>
+    const navEl = document.querySelector('.navbar1');
+
+    window.addEventListener('scroll', () => {
+        if(window.scrollY >= 56) {
+            navEl.classList.add('navbar-scrolled');
+        } else if (window.scrollY < 56) {
+            navEl.classList.remove('navbar-scrolled');
+        }
+    })
+</script>
 
 <script>
     $(document).ready(function () {

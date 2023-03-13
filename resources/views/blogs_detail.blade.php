@@ -89,6 +89,14 @@ else
 
     <div class="row mt-5">
         <div class="container px-4">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item text-white "><a href="{{URL('$langSeg/')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.blogs') }}</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">{{ trans('frontLang.blogsdetails') }}</li>
+                    </ol>
+                </nav>
+            </div>
                 <div class="row">
                     <div class="col-lg-12">
                     <h3>{{$blogs->$name_var}}</h3>

@@ -14,8 +14,6 @@
         <title>{{$landingpageseo->$meta_var }}</title>
         <meta name="description" content="{{$landingpageseo->$meta_description_var}}"/>
         <meta name="keywords" content=" {{$landingpageseo->$meta_keywords_var}} "/>
-
-
 @endsection
 
 
@@ -25,12 +23,13 @@
     p{
         line-height: 1.6 !important;
     }
+
     .btn {
         /* transition: transform 5s  !important; */
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
         transition-duration: 0.125s !important;
-
     }
+
     .btn:hover {
         /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
         /* translate: 2px -2px !important; */
@@ -42,6 +41,7 @@
 
         cursor: pointer !important;
     }
+
     .card {
         color: #fff !important;
         background-color: #000 !important;
@@ -49,9 +49,8 @@
         border-radius: 0 !important;
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
         transition-duration: 0.125s !important;
-
-
     }
+
     /* .card:hover { */
         /* box-shadow: 0px 0px 5px #fff !important; */
         /* opacity: 1 !important;
@@ -75,6 +74,7 @@
         height: 100%;
         scroll-behavior: smooth;
     }
+
     a {
         text-decoration: none !important;
     }
@@ -117,15 +117,14 @@ else
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
             <div class="mask" style="background-color: rgb(0 0 0);">
-            <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
+            <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" >
                 <div class="text-white">
-                    <h3 class="mt-5 mb-5"  style="text-transform: uppercase;">
+                    <h3 class="mt-5 "  style="text-transform: uppercase;">
                         {{ trans('frontLang.Offplan') }}
                     </h3>
-                    <br>
-                    <div class="row search-width" >
-
-                    </div>
+                    {{-- <div class="row search-width" >
+                        <P style="font-size: 16px; ">{{ trans('frontLang.Offplan_detail') }}</P>
+                    </div> --}}
                     <!-- Pills content -->
                 </div>
             </div>
@@ -148,7 +147,7 @@ else
         }
     </style>
 
-    <section class="mt-5" style="direction: rtl">
+    <section class="" style="direction: rtl">
         <div class="container-fluid containerization">
             <div class="row">
                 <div class="col-lg-12 mb-4">
@@ -161,7 +160,7 @@ else
                 </div>
 
             </div>
-            <h3 class="text-left mb-5">{{ trans('frontLang.Offplan') }}</h3>
+            {{-- <h3 class="text-left mb-5">{{ trans('frontLang.Offplan') }}</h3> --}}
             <P style="font-size: 16px; line-height: 25px;">{{ trans('frontLang.Offplan_detail') }}</P>
 
         </div>
@@ -239,6 +238,11 @@ else
                                         <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div> --}}
                                     <div class="modal-body bg-black rounded-0">
+                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                {{ trans('frontLang.requestdetail') }}
+                                            </p>
+                                        </div>
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($projects->images  as $single_img)
@@ -328,10 +332,10 @@ else
 
 
 @else
-    <section class="mt-5">
+    <section class="">
         <div class="container-fluid containerization">
             <div class="row">
-                <div class="col-lg-12 mb-4">
+                <div class="col-lg-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item text-white "><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
@@ -340,7 +344,7 @@ else
                     </nav>
                 </div>
             </div>
-            <h3 class="text-left mb-3">{{ trans('frontLang.Offplan') }}</h3>
+            {{-- <h3 class="text-left mb-3">{{ trans('frontLang.Offplan') }}</h3> --}}
             <P style="font-size: 16px; line-height: 25px;">{{ trans('frontLang.Offplan_detail') }}</P>
 
         </div>
@@ -428,6 +432,11 @@ else
                                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div> --}}
                                     <div class="modal-body bg-black rounded-0" >
+                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                {{ trans('frontLang.requestdetail') }}
+                                            </p>
+                                        </div>
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($projects->images  as $single_img)

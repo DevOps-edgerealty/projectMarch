@@ -57,169 +57,194 @@
         height: auto;
         display: flex;
     }
+
+    .mapBtn {
+        border: 0 !important;
+    }
+
+    .mapBtn:hover {
+        border: 0 !important;
+    }
+
+    .bookViewingBtn{
+        color: #fff !important;
+
+    }
+
+    .bookViewingBtn:hover {
+        color: black !important;
+        background-color: #fff !important;
+    }
 </style>
 
 
 <?php
-$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
 
-$uri_segments = explode('/', $uri_path);
+    $uri_segments = explode('/', $uri_path);
 
-$seg1 = $uri_segments[1];
+    $seg1 = $uri_segments[1];
 
-if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
-{
-    $langSeg = $uri_segments[1];
-}
-else
-{
-    $langSeg = 'en';
-}
+    if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+    {
+        $langSeg = $uri_segments[1];
+    }
+    else
+    {
+        $langSeg = 'en';
+    }
 
 ?>
 
-        <?php
+<?php
+    $finalUrl = '/ar/home';
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    if($uri_path == '/' || $uri_path == '/home' )
+    {
         $finalUrl = '/ar/home';
-        $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        if($uri_path == '/' || $uri_path == '/home' )
+
+
+    }
+
+
+    else
+    {
+        $uri_segments = explode('/', $uri_path);
+        $seg1 = $uri_segments[2];
+        if($seg1)
         {
-            $finalUrl = '/ar/home';
+            if($seg1 == 'en')
+            {
+                $replacements2 = array(2 => "ar");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
 
 
+            }
+            elseif($seg1 == 'ar')
+            {
+                $replacements2 = array(2 => "en");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
+
+
+            }
         }
-
-
         else
         {
-            $uri_segments = explode('/', $uri_path);
-            $seg1 = $uri_segments[2];
-            if($seg1)
-            {
-                if($seg1 == 'en')
-                {
-                    $replacements2 = array(2 => "ar");
-                    $basket = array_replace($uri_segments, $replacements2);
-                    $finalUrl = implode("/",$basket);
+                $replacements2 = array(1 => "ar");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
 
-
-                }
-                elseif($seg1 == 'ar')
-                {
-                    $replacements2 = array(2 => "en");
-                    $basket = array_replace($uri_segments, $replacements2);
-                    $finalUrl = implode("/",$basket);
-
-
-                }
-            }
-            else
-            {
-                    $replacements2 = array(1 => "ar");
-                    $basket = array_replace($uri_segments, $replacements2);
-                    $finalUrl = implode("/",$basket);
-
-            }
         }
+    }
 
 
 ?>
+
 <?php
 
-        $name_var = "name_" . trans('backLang.boxCode');
+    $name_var = "name_" . trans('backLang.boxCode');
 
-        $language_var = "language_" . trans('backLang.boxCode');
+    $language_var = "language_" . trans('backLang.boxCode');
 
-        $designation_var = "designation_" . trans('backLang.boxCode');
+    $designation_var = "designation_" . trans('backLang.boxCode');
 
-        $title_var = "title_" . trans('backLang.boxCode');
+    $title_var = "title_" . trans('backLang.boxCode');
 
-        $type_name_var= "type_name_" . trans('backLang.boxCode');
+    $type_name_var= "type_name_" . trans('backLang.boxCode');
 
-        $cat_name_var= "cat_name_" . trans('backLang.boxCode');
+    $cat_name_var= "cat_name_" . trans('backLang.boxCode');
 
-        $address_var = "address_" . trans('backLang.boxCode');
+    $address_var = "address_" . trans('backLang.boxCode');
 
-        $amenity_name_var= "amenity_name_" . trans('backLang.boxCode');
+    $amenity_name_var= "amenity_name_" . trans('backLang.boxCode');
 
-        $description_var = "description_" . trans('backLang.boxCode');
+    $description_var = "description_" . trans('backLang.boxCode');
 
-        $location_var = "location_" . trans('backLang.boxCode');
+    $location_var = "location_" . trans('backLang.boxCode');
 
-        $facilities_var = "facilities_" . trans('backLang.boxCode');
+    $facilities_var = "facilities_" . trans('backLang.boxCode');
 
-        $city_name_var="city_name_" . trans('backLang.boxCode');
+    $city_name_var="city_name_" . trans('backLang.boxCode');
 
-        $unit_view_var="unit_view_" . trans('backLang.boxCode');
+    $unit_view_var="unit_view_" . trans('backLang.boxCode');
 
-        $sub_community_var="sub_community_" . trans('backLang.boxCode');
+    $sub_community_var="sub_community_" . trans('backLang.boxCode');
 
-        $amenity_image = "";
+    $amenity_image = "";
 
-        $firstimage=true;
+    $firstimage=true;
 
-        $secondimage=true;
+    $secondimage=true;
 
-        // $para21 = strip_tags(substr($property_detail->$description_var, 0, 100));
+    // $para21 = strip_tags(substr($property_detail->$description_var, 0, 100));
 
-        // {{-- {!! substr(html_entity_decode($property_detail->$description_var), 0, 100) !!} --}}
+    // {{-- {!! substr(html_entity_decode($property_detail->$description_var), 0, 100) !!} --}}
 
 
 
 
 ?>
-    <style>
 
-        .skill{
+<style>
 
-
-            display: none;
-
-        }
-        .skill_mobile{
+    .skill{
 
 
         display: none;
 
-        }
-        .skill_rent{
+    }
+    .skill_mobile{
 
 
+    display: none;
+
+    }
+    .skill_rent{
+
+
+    display: none;
+
+    }
+    .skill_rent_mobile{
+
+
+    display: none;
+
+    }
+
+    .scroll-card {
+        padding: 0;
+        float: right !important;
+        right: 150px;
+        top: -200 !important;
+        position: absolute !important;
+        /* padding-top: 45px !important; */
+        transition: top 0.3s;
         display: none;
+        /* z-index: 1000 !important; */
+    }
 
-        }
-        .skill_rent_mobile{
-
-
+    .scroll_card_ar {
+        padding: 0;
+        float: left !important;
+        left: 150px;
+        top: -200 !important;
+        position: absolute !important;
+        /* padding-top: 45px !important; */
+        transition: top 0.3s;
         display: none;
+        /* z-index: 1000 !important; */
+    }
 
-        }
-
-        .scroll-card {
-            padding: 0;
-            float: right !important;
-            right: 150px;
-            top: -200 !important;
-            position: absolute !important;
-            /* padding-top: 45px !important; */
-            transition: top 0.3s;
-            display: none;
-            /* z-index: 1000 !important; */
-        }
-
-        .scroll_card_ar {
-            padding: 0;
-            float: left !important;
-            left: 150px;
-            top: -200 !important;
-            position: absolute !important;
-            /* padding-top: 45px !important; */
-            transition: top 0.3s;
-            display: none;
-            /* z-index: 1000 !important; */
-        }
-    </style>
+    p {
+        font-size: 16px !important;
+        text-align: justify !important;
+    }
+</style>
 
 
 
@@ -292,18 +317,19 @@ else
 
                             <div class="AED skill" style="display: block !important">
                                 <h2>
-                                    {{ trans('frontLang.Price') }} <b> :
+                                    {{-- {{ trans('frontLang.Price') }} <b> : --}}
                                     <span style="color: #fff;">
-                                        {{ number_format($property_detail->price) }} {{ trans('frontLang.AED') }}
+                                        {{ trans('frontLang.AED') }}
+                                        {{ number_format($property_detail->price) }}
                                     </span></b>
                                 </h2>
                             </div>
 
                             <div class="USD skill">
                                 <h2>
-                                    {{ trans('frontLang.Price') }} <b> :
+                                    {{-- {{ trans('frontLang.Price') }} <b> : --}}
                                     <span style="color: #fff;">
-                                        {{ number_format($property_detail->price_usd) }} USD </b>
+                                        USD {{ number_format($property_detail->price_usd) }}  </b>
                                     </span>
                                 </h2>
                             </div>
@@ -315,12 +341,14 @@ else
                         <div class="col-lg-12" style="display: flex; flex-direction: row; align-items: center;">
                             <div class="AED skill_rent" style="display: block !important">
                                 <h4>
-                                    {{ trans('frontLang.yearly') }}
+                                    {{-- {{ trans('frontLang.yearly') }} --}}
                                     <b>
                                     <span style="color: #fff;">
-                                        {{ number_format($property_detail->price) }}
-
                                         {{ trans('frontLang.AED') }}
+                                        {{ number_format($property_detail->price) }}
+                                        <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.yearly') }}</span>
+
+
                                     </span>
                                     </b>
                                 </h4>
@@ -373,7 +401,12 @@ else
                             View Map
                         </button>
                     </a>
-                    <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+                    <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}">
+                        <img src="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}"
+                        style="height: 100% !important;" class="d-block w-100 slider-property mb-1 mx-0 px-0 pb-1" alt="..."
+                        onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                    </a>
+                    {{-- <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 
                         <div class="carousel-inner">
                             @foreach ($property_detail->images as $image)
@@ -390,7 +423,7 @@ else
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                    </div>
+                    </div> --}}
 
                 </div>
 
@@ -474,9 +507,9 @@ else
         </div>
     </div> --}}
 
-    <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; left: 150px; float: left !important;">
+    <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; left: 150px; float: left !important; z-index: 30000 !important;">
         <div class="container-fluid" style="width: 380px; float: right; height: 135px;">
-            <div class="row" style="border: 0.5px #848484 solid; box-shadow: 2px 3px 0px #4f4f4f;">
+            <div class="row" style="border: 0.5px #848484 solid;">
                 <div class="col-lg-4 d-flex my-auto">
                     @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
                         <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
@@ -498,14 +531,16 @@ else
                             </p>
                             <div class="row mx-auto my-2 w-100">
                                 <div class="col-lg-6 p-0">
-                                    <button class="btn btn-sm rounded-0 btn-white w-100 text-decoration-none shadow-none " style="font-size: .8em;">
-                                        EMAIL
-                                    </button>
+                                    <a href="mailto:lead@edgerealty.ae" class="btn btn-sm rounded-0 btn-outline-white w-100 text-decoration-none " style="font-size: .8em;">
+                                        {{ trans('frontLang.email_footer') }}
+                                    </a>
                                 </div>
                                 <div class="col-lg-6 p-0 ps-1">
-                                    <button class="btn btn-sm rounded-0 btn-white w-100 text-decoration-none shadow-none " style="font-size: .8em;">
-                                        WhatsApp
-                                    </button>
+                                    <a href="https://wa.me/?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks"
+                                        class="btn btn-sm rounded-0 btn-outline-white w-100 text-decoration-none " style="font-size: .8em;">
+                                        {{ trans('frontLang.whatsapp') }}
+
+                                    </a>
                                 </div>
                             </div>
                             <div class="mx-auto ">
@@ -627,15 +662,15 @@ else
                     <hr>
                     <div class="row">
                         <div class="col-lg-6" style="width: 50%">
-                            <p class="my-1" style="color: grey !important;"><b> {{ trans('frontLang.propertyType') }} </b> {{$property_detail->property_type->$cat_name_var}}</p>
-                            <p class="my-1" style="color: grey !important;"><b>{{ trans('frontLang.permitno') }}</b> : {{$property_detail->permit_no}}</p>
-                            <p class="my-1" style="color: grey !important;"><b>{{ trans('frontLang.bedrooms') }}</b> : {{$property_detail->bedrooms}}</p>
+                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b> {{ trans('frontLang.propertyType') }} </b> {{$property_detail->property_type->$cat_name_var}}</p>
+                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.permitno') }}</b> : {{$property_detail->permit_no}}</p>
+                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.bedrooms') }}</b> : {{$property_detail->bedrooms}}</p>
 
                         </div>
                         <div class="col-lg-6" style="width: 50%">
-                            <p class="my-1" style="color: grey !important;"><b>{{ trans('frontLang.unitsize') }}</b> : {{$property_detail->area}}</p>
-                            <p class="my-1" style="color: grey !important;"><b>{{ trans('frontLang.bathrooms') }}</b> : {{$property_detail->bathrooms}}</p>
-                            <p class="my-1" style="color: grey !important;"><b>{{ trans('frontLang.Parking') }}</b> : {{ $property_detail->parking }}</p>
+                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.unitsize') }}</b> : {{$property_detail->area}}</p>
+                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.bathrooms') }}</b> : {{$property_detail->bathrooms}}</p>
+                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.Parking') }}</b> : {{ $property_detail->parking }}</p>
                         </div>
                     </div>
 
@@ -1348,7 +1383,7 @@ else
 
                                                     <!-- Email input -->
                                                     <div class="mb-4">
-                                                        <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
+                                                        <input type="phone" name="phone" class="form-control form-control-lg iti-phone" place holder="{{ trans('frontLang.phone') }}" required />
 
                                                     </div>
 
@@ -1393,6 +1428,7 @@ else
         <div class="container-fluid containerization">
             <div class="row">
                 <div class="col-lg-10 mb-4">
+
                     {{-- <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class="text-white"><i class="fas fa-home"> </i> {{ trans('frontLang.Home') }}</a></li>
@@ -1413,18 +1449,18 @@ else
 
                             <div class="AED skill" style="display: block !important">
                                 <h2>
-                                    {{ trans('frontLang.Price') }} <b> :
+
                                     <span style="color: #fff;">
-                                        {{ number_format($property_detail->price) }} {{ trans('frontLang.AED') }}
+                                         {{ trans('frontLang.AED') }} {{ number_format($property_detail->price) }}
                                     </span></b>
                                 </h2>
                             </div>
 
                             <div class="USD skill">
                                 <h2>
-                                    {{ trans('frontLang.Price') }} <b> :
+                                    {{-- {{ trans('frontLang.Price') }} <b> : --}}
                                     <span style="color: #fff;">
-                                        {{ number_format($property_detail->price_usd) }} USD </b>
+                                        USD {{ number_format($property_detail->price_usd) }}  </b>
                                     </span>
                                 </h2>
                             </div>
@@ -1440,11 +1476,12 @@ else
                         <div class="col-lg-12" style="display: flex; flex-direction: row; align-items: center;">
                             <div class="AED skill_rent" style="display: block !important">
                                 <h4>
-                                    {{ trans('frontLang.yearly') }}
+                                    {{-- {{ trans('frontLang.yearly') }} --}}
                                     <b>
                                         <span style="color: #fff;">
-                                            {{ number_format($property_detail->price) }}
                                             {{ trans('frontLang.AED') }}
+                                            {{ number_format($property_detail->price) }}
+                                            <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.yearly') }}</span>
                                         </span>
                                     </b>
                                 </h4>
@@ -1485,7 +1522,7 @@ else
                     <div class="row h-100 my-auto">
 
                         <a href="#"  data-mdb-toggle="modal" data-mdb-target="#book_a_viewing_desktop" class="my-auto">
-                            <button class="btn btn-outline-white px-2 w-100 rounded-0 py-2 text-capitalize my-auto" style="font-size: .8rem !important; border: 0.5px #848484 solid !important; background-color: #292828 !important;">
+                            <button class="btn btn-outline-white px-2 w-100 rounded-0 py-2 text-capitalize my-auto bookViewingBtn" style="font-size: .8rem !important; border: 0.5px #848484 solid !important; background-color: #292828 !important;">
                                 <i class="far fa-eye"></i>
                                 {{ trans('frontLang.bookaviewing') }}
                             </button>
@@ -1505,16 +1542,21 @@ else
             <div class="row">
                 <div class="col-md-6 position-relative">
                     <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}">
-                        <button class="desktop-show position-absolute btn btn-lg btn-outline-white rounded-0 bg-dark text-white my-auto" style="bottom: 45px; left: 130px; z-index: 100 !important;">
+                        <button class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn" style="bottom: 45px; left: 130px; z-index: 100 !important;">
                             Show all photos
                         </button>
                     </a>
                     <a href="{{url($langSeg .'/'.'properties/map')}}">
-                        <button class="desktop-show position-absolute btn btn-lg btn-outline-white rounded-0 bg-dark text-white my-auto" style="bottom: 45px; left: 330px; z-index: 100 !important;">
+                        <button class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn" style="bottom: 45px; left: 330px; z-index: 100 !important;">
                             View Map
                         </button>
                     </a>
-                    <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+                    <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}">
+                        <img src="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}"
+                        style="height: 100% !important;" class="d-block w-100 slider-property mb-1 mx-0 px-0 pb-1" alt="..."
+                        onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                    </a>
+                    {{-- <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 
                         <div class="carousel-inner">
                             @foreach ($property_detail->images as $image)
@@ -1525,15 +1567,7 @@ else
 
                             @endforeach
                         </div>
-                        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
+                    </div> --}}
 
                 </div>
                 <div class="col-md-6 d-md-block d-lg-block d-none">
@@ -1609,165 +1643,174 @@ else
 
 
     {{-- AGENT CARD STICKY TOP --}}
-        <style>
-            .sticky-example {
-                /* background: cornflowerblue; */
-                padding: 0;
-                float: right;
-                width: 365px;
-                margin-right: 200px;
-                padding: 0;
-                top: 0;
-                margin-top: 30px;
-                position: relative;
-                padding-top: 40px;
-            }
+    <style>
+        .sticky-example {
+            /* background: cornflowerblue; */
+            padding: 0;
+            float: right;
+            width: 365px;
+            margin-right: 200px;
+            padding: 0;
+            top: 0;
+            margin-top: 30px;
+            position: relative;
+            padding-top: 40px;
+        }
 
-            .sticky {
-                position: sticky;
-                top: 0;
-                overflow: hidden;
-                z-index: 10 !important;
-            }
-
-
-
-        </style>
-        {{-- <div class="sticky-example desktop-show d-md-block d-lg-block d-none" id="">
-            <div class="col-lg-12 p-0 m-0" style="z-index: -1000 !important;" >
+        .sticky {
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+            z-index: 10 !important;
+        }
+    </style>
+    {{-- <div class="sticky-example desktop-show d-md-block d-lg-block d-none" id="">
+        <div class="col-lg-12 p-0 m-0" style="z-index: -1000 !important;" >
 
 
+        </div>
+    </div> --}}
+
+    <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; right: 150px; float: right !important; z-index: 5000000; background-color: #000 !important;">
+        <div class="container-fluid" style="width: 380px; float: right; height: 135px;">
+            <div class="row" style="border: 0.5px #848484 solid; ">
+                <div class="col-lg-4 d-flex my-auto">
+                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
+                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
+                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
+                        </a>
+                    @else
+                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
+                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 100px; height: 100px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                        </a>
+                    @endif
+                </div>
+                <div class="col-lg-8">
+                    <div class=" py-4">
+                            <h5 class="card-title" style="font-size: 1.1em;">
+                                {{ $agent->name_en }}
+                            </h5>
+                            <p class="card-text" style="font-size: .9em;">
+                                {{ $agent->language_en }}
+                            </p>
+                            <div class="row mx-auto my-2 w-100">
+                                {{-- <div class="col-lg-6 p-0">
+                                    <a href="mailto:lead@edgerealty.ae" class="btn btn-sm rounded-0 btn-white w-100 text-decoration-none shadow-none " style="font-size: .8em;">
+                                        {{ trans('frontLang.email_footer') }}
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 p-0 ps-1">
+                                    <a href="https://wa.me/?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" class="btn btn-sm rounded-0 btn-white w-100 text-decoration-none shadow-none " style="font-size: .8em;">
+                                        {{ trans('frontLang.whatsapp') }}
+                                    </a>
+                                </div> --}}
+                                <div class="col-lg-6 p-0">
+                                    <a href="mailto:lead@edgerealty.ae" class="btn btn-sm rounded-0 btn-outline-white w-100 text-decoration-none " style="font-size: .8em;">
+                                        {{ trans('frontLang.email_footer') }}
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 p-0 ps-1">
+                                    <a href="https://wa.me/?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks"
+                                        class="btn btn-sm rounded-0 btn-outline-white w-100 text-decoration-none " style="font-size: .8em;">
+                                        {{ trans('frontLang.whatsapp') }}
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mx-auto ">
+                                <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
+                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
             </div>
-        </div> --}}
-
-        <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; right: 150px; float: right !important;">
-            <div class="container-fluid" style="width: 380px; float: right; height: 135px;">
-                <div class="row" style="border: 0.5px #848484 solid; box-shadow: 2px 3px 5px #4f4f4f;">
-                    <div class="col-lg-4 d-flex my-auto">
+        </div>
+        {{-- <div class="row">
+            <div class="card " style="max-width: 540px; min-width: 540px;">
+                <div class="row">
+                    <div class="col-md-4 d-flex my-auto">
                         @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
                             <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                                <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
+                                <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 130px; height: 130px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
                             </a>
                         @else
                             <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                                <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 100px; height: 100px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 130px; height: 130px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
                             </a>
                         @endif
                     </div>
-                    <div class="col-lg-8">
-                        <div class=" py-4">
-                                <h5 class="card-title" style="font-size: 1.1em;">
-                                    {{ $agent->name_en }}
-                                </h5>
-                                <p class="card-text" style="font-size: .9em;">
-                                    {{ $agent->language_en }}
-                                </p>
-                                <div class="row mx-auto my-2 w-100">
-                                    <div class="col-lg-6 p-0">
-                                        <button class="btn btn-sm rounded-0 btn-outline-white w-100 text-decoration-none " style="font-size: .8em;">
-                                            {{ trans('frontLang.email_footer') }}
-                                        </button>
-                                    </div>
-                                    <div class="col-lg-6 p-0 ps-1">
-                                        <button class="btn btn-sm rounded-0 btn-outline-white w-100 text-decoration-none " style="font-size: .8em;">
-                                            {{ trans('frontLang.whatsapp') }}
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="mx-auto ">
-                                    <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
-                                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
-                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
-                                                <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
-                                            </a>
-                                        </li>
-
-                                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                            <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
-                                                <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
-                                            </a>
-                                        </li>
-
-                                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
-                                                <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
-                                            </a>
-                                        </li>
-
-                                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
-                                                <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                    <div class="col-md-8 py-0">
+                        <div class="card-body py-4">
+                            <h5 class="card-title">
+                                {{ $agent->name_en }}
+                            </h5>
+                            <p class="card-text">
+                                {{ $agent->language_en }}
+                            </p>
+                            <div class="mx-auto my-2 w-100">
+                                <button class="btn btn-sm rounded-0 btn-outline-white" >
+                                    EMAIL
+                                </button>
+                                <button class="btn btn-sm rounded-0 btn-outline-white" >
+                                    WhatsApp
+                                </button>
                             </div>
+                            <div class="mx-auto ">
+                                <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
+                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            {{-- <div class="row">
-                <div class="card " style="max-width: 540px; min-width: 540px;">
-                    <div class="row">
-                        <div class="col-md-4 d-flex my-auto">
-                            @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
-                                <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                                    <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 130px; height: 130px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
-                                </a>
-                            @else
-                                <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                                    <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 130px; height: 130px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
-                                </a>
-                            @endif
-                        </div>
-                        <div class="col-md-8 py-0">
-                            <div class="card-body py-4">
-                                <h5 class="card-title">
-                                    {{ $agent->name_en }}
-                                </h5>
-                                <p class="card-text">
-                                    {{ $agent->language_en }}
-                                </p>
-                                <div class="mx-auto my-2 w-100">
-                                    <button class="btn btn-sm rounded-0 btn-outline-white" >
-                                        EMAIL
-                                    </button>
-                                    <button class="btn btn-sm rounded-0 btn-outline-white" >
-                                        WhatsApp
-                                    </button>
-                                </div>
-                                <div class="mx-auto ">
-                                    <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
-                                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
-                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
-                                                <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
-                                            </a>
-                                        </li>
-
-                                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                            <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
-                                                <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
-                                            </a>
-                                        </li>
-
-                                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
-                                                <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
-                                            </a>
-                                        </li>
-
-                                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
-                                                <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-        </section>
+        </div> --}}
+    </section>
 
     {{-- AGENT CARD STICKY TOP --}}
 
@@ -1796,10 +1839,10 @@ else
                                 <h4 class="fw-light"> <b>Price <span style="color: #fff;"> {{ number_format($property_detail->price_usd) }} USD </b> </span></h4>
                             </div>
 
-                            <select class="" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px;margin-left:10px;margin-top: -9px;border: 2px solid;border-radius: 4px;">
+                            {{-- <select class="" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px;margin-left:10px;margin-top: -9px;border: 2px solid;border-radius: 4px;">
                                 <option value="AED">AED</option>
                                 <option value="USD">USD</option>
-                            </select>
+                            </select> --}}
                         </div>
 
                     @else
@@ -1819,16 +1862,16 @@ else
                     <hr>
 
                     <div class="row">
-                        <div class="col-lg-6" style="width: 50%">
-                            <p style="font-size: 14px; color: grey !important;" class="fw-light my-1"><b>{{ trans('frontLang.propertyType') }} </b> {{$property_detail->property_type->$cat_name_var}}</p>
-                            <p style="font-size: 14px; color: grey !important;" class="fw-light my-1"><b>{{ trans('frontLang.permitno') }}</b> : {{$property_detail->permit_no}}</p>
-                            <p style="font-size: 14px; color: grey !important;" class="fw-light my-1"><b>{{ trans('frontLang.bedrooms') }}</b> : {{$property_detail->bedrooms}}</p>
+                        <div class="col-lg-7" style="width: 60%">
+                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.propertyType') }} : </b> {{$property_detail->property_type->$cat_name_var}}</p>
+                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.permitno') }}</b> : {{$property_detail->permit_no}}</p>
+                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.bedrooms') }}</b> : {{$property_detail->bedrooms}}</p>
                         </div>
 
-                        <div class="col-lg-6" style="width: 50%">
-                            <p style="font-size: 14px; color: grey !important;" class="fw-light my-1"><b>{{ trans('frontLang.unitsize') }}</b> : {{$property_detail->area}}</p>
-                            <p style="font-size: 14px; color: grey !important;" class="fw-light my-1"><b>{{ trans('frontLang.bathrooms') }}</b> : {{$property_detail->bathrooms}}</p>
-                            <p style="font-size: 14px; color: grey !important;" class="fw-light my-1"><b>{{ trans('frontLang.Parking') }}</b> : {{ $property_detail->parking }}</p>
+                        <div class="col-lg-5" style="width: 40%">
+                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.unitsize') }}</b> : {{$property_detail->area}}</p>
+                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.bathrooms') }}</b> : {{$property_detail->bathrooms}}</p>
+                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.Parking') }}</b> : {{ $property_detail->parking }}</p>
                         </div>
                     </div>
                 </div>
@@ -1866,8 +1909,8 @@ else
                     </p>
                 </div>
 
-                <div class="row mt-4 mb-0 mx-auto">
-                    <div class="col-lg-12 mx-auto">
+                <div class="row mt-0 mb-0 mx-auto">
+                    {{-- <div class="col-lg-12 mx-auto">
                         <a style="width:32%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white rounded-0 "><i class="fas fa-phone-alt fa-2x"> </i>  </a>
 
                         <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-mobile-property" class="btn btn-outline-white rounded-0 "><i class="far fa-calendar-check fa-2x"> </i></a>
@@ -1876,7 +1919,7 @@ else
                             <i class="fab fa-whatsapp fa-2x"> </i>
                         </a>
 
-                    </div>
+                    </div> --}}
 
                     {{-- mobile book a viewing --}}
                     <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1958,7 +2001,7 @@ else
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
             </div>
 
 
@@ -1983,7 +2026,7 @@ else
                 </div>
 
                 <div class="col-lg-3 scroll_card_2">
-                    <div class="card bg-black rounded-0 p-0 m-0 agent-card" style="border: 0.5px #848484 solid !important; transform: scale(1) !important; margin: 0 !important;">
+                    <div class="card bg-black rounded-0 p-0 m-0 agent-card shadow-none" style="border: 0.5px #848484 solid !important; transform: scale(1) !important; margin: 0 !important;">
                         <div class="bg-image hover-overlay ripple mt-4 mb-0" data-mdb-ripple-color="light">
                             @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
                                 <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
@@ -2167,23 +2210,24 @@ else
 
                     <h3 class="mb-2 mt-2 fw-light ">
                         {{ trans('frontLang.aboutthisproperty') }}
-
                     </h3>
                     <style>
                         #more  {display:  none;}
                     </style>
 
-                    <span id="about_mobile" class="" style="text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important; ">
+                    <span id="about_mobile" class="" style=" color: grey !important; font-size: 1em !important; line-height: 1 !important; text-align: justify !important;">
 
-                        <span id="lessmobile" style="display: inline !important; text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important;">
+                        {{ strip_tags($property_detail->$description_var) }}
+
+                        {{-- <span id="lessmobile" style="display: inline !important; text-align: justify !important; color: grey !important; font-size: 1em !important; line-height: 1 !important;">
                             {{ strip_tags(substr($property_detail->$description_var, 0, 250)) }} ...
                         </span>
 
-                        <br>
+                        <br> --}}
 
-                        @if ( strlen(($property_detail->$description_var)) > 250 )
+                        {{-- @if ( strlen(($property_detail->$description_var)) > 250 )
 
-                            <span id="moremobile" style="display: none !important; text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important;">
+                            <span id="moremobile" style="display: none !important; text-align: justify !important; color: grey !important; font-size: 1em !important; line-height: 1 !important;">
                                 {{ strip_tags(html_entity_decode($property_detail->$description_var)) }}
                             </span>
 
@@ -2192,7 +2236,7 @@ else
                             <button onclick="myFunction2mobile()" class="btn btn-outline-white btn-sm" id="readMoreBtnmobile">
                                 Read more
                             </button>
-                        @endif
+                        @endif --}}
                     </span>
                 </div>
 
@@ -2524,7 +2568,6 @@ else
 @endif
 
 
-
 {{-- Modal --- Get In Touch --}}
 <div class="modal modal-lg fade rounded-0" id="get_in_touch_desktop" tabindex="-1" aria-labelledby="get_in_touch_desktop" aria-hidden="true"  >
     <div class="modal-dialog modal-dialog-centered " style="width: 1800px !important;">
@@ -2599,7 +2642,6 @@ else
     </div>
 </div>
 
-
 {{-- Modal --- Book A Viewing --- Desktop --}}
 <div class="modal modal-lg fade rounded-0" id="book_a_viewing_desktop" tabindex="-1" aria-labelledby="book_a_viewing_desktop" aria-hidden="true"  >
     <div class="modal-dialog modal-dialog-centered " style="width: 1800px !important;">
@@ -2607,7 +2649,7 @@ else
 
             <div class="modal-body p-0 bg-black">
                 <div class="desktop-show row p-0 m-0">
-                    <div class="col-lg-4 text-white m-0 p-0 bg-black d-flex flex-column">
+                    {{-- <div class="col-lg-4 text-white m-0 p-0 bg-black d-flex flex-column">
                         <div class="my-auto mx-auto p-3">
                             <p class="text-left">
                                 <i class="fas fa-calendar-check text-white mx-auto" style="font-size: 2.5rem !important;"  aria-hidden="true"></i>
@@ -2622,8 +2664,14 @@ else
                             <p style="font-size: .9rem !important;">{{ trans('frontLang.tele') }}</p>
                             <p style="font-size: .9rem !important;">{{ trans('frontLang.website') }}</p>
                         </div>
-                    </div>
-                    <div class="col-lg-8 m-0 p-0 bg-white">
+                    </div> --}}
+                    <div class="col-lg-12 m-0 p-0 bg-white">
+                        <div class="m-0 w-100 p-0 mx-auto bg-black py-2">
+                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                {{ trans('frontLang.bookaviewing') }}
+                            </p>
+                        </div>
+
                         <div class="p-5">
                             {{-- <form class="contact-form" id="getInTouch" action="javascript:void(0)"> --}}
                             <form class="contact-form" method="post" id="bookAViewing" action="{{URL('/book_view/submit')}}">
@@ -2633,7 +2681,7 @@ else
                                 <div class="row mb-4">
                                     <div class="col-lg-6">
                                         <label class="text-dark" for="">{{ trans('frontLang.date') }}</label>
-                                        <input name="book_date" type="date" class="form-control form-control-input form-control-lg border border-dark text-dark"  name="viewing Date">
+                                        <input name="book_date" type="date" class="form-control form-control-input form-control-lg border border-dark text-dark mydate " id="datepicker-desk" data-provide="datepicker"  name="viewing Date">
 
                                     </div>
                                     <div class="col-lg-6">
@@ -2690,7 +2738,6 @@ else
         </div>
     </div>
 </div>
-
 
 {{-- Modal --- Book A Viewing --- Mobile --}}
 <div class="modal modal-sm fade rounded-0" id="book_a_viewing_mobile" tabindex="-1" aria-labelledby="book_a_viewing_mobile" aria-hidden="true"  >
@@ -2760,6 +2807,9 @@ else
     </div>
 </div>
 
+<script type="text/javascript">
+    $("#datepicker-desk").datepicker({ minDate: 0 });
+</script>
 
 <script>
     // $(function() {
@@ -2767,6 +2817,8 @@ else
     //         $('.sticky-example').css({'display: 'none'});
     //     };
     // });
+
+
 
     window.onscroll = function() {
         if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
@@ -2826,6 +2878,7 @@ else
     // });
 
 </script>
+
 <script>
     $(document).ready(function() {
         // if($(document).scrollTop() > 500){
@@ -2874,6 +2927,7 @@ else
             });
         });
 </script> --}}
+
 <script>
     function myFunction(id) {
         document.getElementById(id).reset();
@@ -2943,6 +2997,7 @@ else
             var inputVal = $(this).val();
             var eleBox = $("." + inputVal);
             $(".skill_rent").hide();
+            $(".skill_rent_mobile").hide();
             $(".skill").hide();
             $(eleBox).show();
         });
@@ -2953,6 +3008,8 @@ else
         $("#skill_dropdown_mobile").change(function () {
             var inputVal = $(this).val();
             var eleBox = $("." + inputVal);
+            $(".skill").hide();
+            $(".skill_rent").hide();
             $(".skill_mobile").hide();
             $(eleBox).show();
         });
@@ -2963,6 +3020,7 @@ else
             var inputVal = $(this).val();
             var eleBox = $("." + inputVal);
             $(".skill_rent").hide();
+            $(".skill_rent_mobile").hide();
             $(".skill").hide();
             $(eleBox).show();
         });
@@ -2972,6 +3030,8 @@ else
         $("#skill_dropdown_rent_mobile").change(function () {
             var inputVal = $(this).val();
             var eleBox = $("." + inputVal);
+            $(".skill").hide();
+            $(".skill_rent").hide();
             $(".skill_rent_mobile").hide();
             $(eleBox).show();
         });

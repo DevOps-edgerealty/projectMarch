@@ -47,6 +47,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -90,6 +94,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -120,6 +128,35 @@ class ProjectController extends Controller
             $project = Project::with(['images','developer','locationz'])->orderBy('id', 'desc')->where('pro_status', '=' , 1 )->where('status', '1')->paginate(15);
         }
 
+        if($request->search != null){
+            if ($lang == 'ar') {
+                $Pageheading = " مشاريع تحت الإنشاء" . "$request->search";
+            }
+            elseif($lang == 'ru'){
+
+                $Pageheading = "Проекты в Стадии Строительства в " . "$request->search";
+            }
+            else {
+                $Pageheading = "Off Plan Projects in " . "$request->search";
+            }
+        } else {
+            if ($lang == 'ar') {
+                $Pageheading = " عقارات في دبي";
+            }
+
+            elseif($lang == 'ru'){
+                $Pageheading = "Проекты в процессе стройки " ;
+            }
+
+            else {
+                $Pageheading = "Off Plan Projects In Dubai";
+            }
+        }
+
+
+
+        $this->data['PageHeading'] = $Pageheading;
+
         $landingpageseo = Landingpageseos::where('id','10')->first();
 
         $this->data['landingpageseo'] = $landingpageseo;
@@ -136,6 +173,10 @@ class ProjectController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -169,6 +210,36 @@ class ProjectController extends Controller
             $project = Project::with(['images','developer','locationz'])->orderBy('id', 'desc')->where('pro_status', '=' , 1 )->where('status', '1')->paginate(15);
         }
 
+
+        if($request->search != null){
+            if ($lang == 'ar') {
+                $Pageheading = " عقارات في" . "$request->search";
+            }
+            elseif($lang == 'ru'){
+
+                $Pageheading = "Недвижимость в " . "$request->search";
+            }
+            else {
+                $Pageheading = "Off Plan Projects in " . "$request->search";
+            }
+        } else {
+            if ($lang == 'ar') {
+                $Pageheading = " عقارات في دبي";
+            }
+
+            elseif($lang == 'ru'){
+                $Pageheading = "Проекты в процессе стройки " ;
+            }
+
+            else {
+                $Pageheading = "Off Plan Projects In Dubai";
+            }
+        }
+
+
+
+        $this->data['PageHeading'] = $Pageheading;
+
         $landingpageseo = Landingpageseos::where('id','10')->first();
 
         $this->data['landingpageseo'] = $landingpageseo;
@@ -185,6 +256,10 @@ class ProjectController extends Controller
          $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -275,6 +350,10 @@ class ProjectController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -371,6 +450,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -463,6 +546,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -503,6 +590,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -542,6 +633,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -571,6 +666,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -597,6 +696,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -622,6 +725,10 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -646,6 +753,10 @@ class ProjectController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -673,6 +784,10 @@ class ProjectController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 

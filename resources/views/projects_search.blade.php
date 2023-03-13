@@ -1,11 +1,4 @@
-<style>
-  p{
-    line-height: 1.6 !important;
-  }
-  .card {
-    color: #000 !important;
-  }
-</style>
+
 @extends('layout.master')
 <?php
 
@@ -27,6 +20,97 @@
 
 
 @section('content')
+
+
+<style>
+    p{
+        line-height: 1.6 !important;
+    }
+    .nav-pills .nav-link .nav-pills .show > .nav-link {
+        border: 0.5px solid #fff !important;
+        /* box-shadow: 3px 3px 5px 0px #888888; */
+    }
+    h6 {
+        color: #fff !important;
+    }
+
+    #List{
+        background-color: #000 !important;
+    }
+
+    /*
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: 100%;
+        scroll-behavior: smooth;
+    } */
+
+    input, select {
+        background-color: #000 !important;
+        color: #fff !important;
+        border-radius: 0px !important;
+        border: 1px solid #fff !important;
+    }
+
+    .nav-pills .nav-link.active {
+        background-color: #fff !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+        border-radius: 0 !important;
+
+        }
+
+    .nav-link {
+        background-color: #000 !important;
+        color: #fff !important;
+        border: 1px solid #fff !important;
+        border-radius: 0 !important;
+
+    }
+    a {
+        color: #fff !important;
+    }
+
+    .btn {
+        /* transition: transform 5s  !important; */
+        transition-timing-function: cubic-bezier(.52,.56,.53,.51) !important;
+        transition-duration: 0.1s !important;
+    }
+    .btn:hover {
+        /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
+        /* translate: 2px -2px !important; */
+        opacity: 1 !important;
+        background-color: #fff !important;
+        color: #000 !important;
+        transform: scale(1) !important;
+        border: 2px solid #000 !important;
+
+        cursor: pointer !important;
+    }
+    .card {
+        color: #fff !important;
+        background-color: #000 !important;
+        border: 0.5px solid gray !important;
+        border-radius: 0 !important;
+        transition-timing-function: cubic-bezier(.52,.56,.53,.51) !important;
+        transition-duration: 0.1s !important;
+
+    }
+    /* .card:hover {*/
+        /*box-shadow: 0px 0px 5px #fff !important;*/
+        /*opacity: 1 !important;*/
+        /*transform: scale(1.02) !important;*/
+        /*transition-duration: 0.1s !important;*/
+        /*z-index: 1000 !important;*/
+        /*margin-left: 20px !important;*/
+        /*margin-right: 20px !important;*/
+        /*border: 5px solid #000 !important;*/
+    /*} */
+
+
+</style>
 
 <?php
 
@@ -68,7 +152,7 @@ else
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
             <div class="mask" style="background-color: rgb(0 0 0);">
-            <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
+            <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3 class="mt-5 mb-5"  style="text-transform: uppercase;">{{ trans('frontLang.Offplan') }}  </h3><br>
                     <div class="row search-width" >
@@ -91,76 +175,52 @@ else
 
 
 </section>
+
 @if ($langSeg == 'ar')
+
+
     <style>
         .breadcrumb-item + .breadcrumb-item:before {
-            float: right;
-            padding-right: 0.5rem;
-            color: #757575;
-            content: var( --mdb-breadcrumb-divider, "/" );
+        float: right;
+        padding-right: 0.5rem;
+        color: #757575;
+        content: var( --mdb-breadcrumb-divider, "/" );
         }
     </style>
 
-    <section class="mt-5" style="direction: rtl">
-        <div class="container">
+    <section class="" style="direction: rtl">
+        <div class="container-fluid containerization">
             <div class="row">
                 <div class="col-lg-12 mb-4">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{URL('')}}"><i class="fas fa-home"> </i> {{ trans('frontLang.Home') }} </a></li>
-                        <li class="breadcrumb-item active" aria-current="page"> {{ trans('frontLang.Offplan') }}</li>
+                        <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class=" text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }} </a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page"> {{ trans('frontLang.Offplan') }}</li>
                         </ol>
                     </nav>
                 </div>
 
             </div>
-            <h3 class="text-left mb-5">{{ trans('frontLang.Offplan') }}</h3>
+            {{-- <h3 class="text-left mb-5">{{ trans('frontLang.Offplan') }}</h3> --}}
             <P style="font-size: 16px; line-height: 25px;">{{ trans('frontLang.Offplan_detail') }}</P>
 
         </div>
 
     </section>
+
     <section class="mt-5 mb-5" style="direction: rtl">
-        <div class="container ">
+        <div class="container-fluid containerization ">
 
             <div class="row">
-                @if($project->total() == 0)
-                <div class="col-lg-8 offset-md-2">
-
-                    <form class="contact-form" method="post" action="{{URL('/request_detail/submit')}}">
-                        @csrf
-
-                        <div class=" mb-4">
-                            <input style="direction: rtl" type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                        </div>
-
-                        <!-- Email input -->
-                        <div class="mb-4">
-                            <input style="direction: rtl" type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                        </div>
-
-                        <!-- Email input -->
-                        <div class="mb-4">
-                            <input style="direction: rtl" type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
-                        </div>
-                        <button type="submit" class="btn btn-dark btn-lg btn-block">
-                            {{ trans('frontLang.submit') }}
-                        </button>
-                    </form>
-                </div>
-                @else
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project as $projects)
                         <div class="col-lg-4 mb-5">
-                            <div class="card">
+                            <div class="card bg-black text-white"  style="height: 550px !important;">
                                 @if ($projects->project_status == '1')
                                     <div class="communities-newlaunch">إطلاق <br> جديد </div>
                                 @elseif ($projects->project_status == '0')
-                                <div class="communities-newlaunch">تحت <br> الإنشاء</div>
+                                    <div class="communities-newlaunch">تحت <br> الإنشاء</div>
                                 @else
                                 @endif
 
@@ -172,31 +232,38 @@ else
 
 
                                 <div class="card-body" style="padding: 0.5rem">
-                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><h5 class="card-title">{{$projects->$project_title_var}}</h5></a>
-                                <p><i class="fas fa-map-marker-alt" style="color: green"></i> {{$projects->locationz->$name_var}}</p>
-                                <p>{{ trans('frontLang.Developer') }} : {{$projects->developer->$name_var}}</p>
-                                @if ($projects->project_price == '')
-                                    <b> Prices On Request</b>
+
+                                    @if ($projects->project_price == '')
+                                        <b class="my-3"> Prices On Request</b>
                                     @else
-                                    <h5>{{ trans('frontLang.startingfrom') }} <span style="color: orange">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
+                                        <h5 class="my-3" style="font-size: 1.3rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
                                     @endif
 
+                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" >
+                                        <h5 class="card-title" style="color: #fff !important;">
+                                            {{$projects->$project_title_var}}
+                                        </h5>
+                                    </a>
 
-                                <hr>
-                                <p class="card-text">
 
-                                    @foreach ($projects->project_types as $project_type)
-                                    {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}
-                                    @endforeach
 
-                                </p>
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Developer') }} : {{$projects->developer->$name_var}}</p>
+
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Developer') }} : {{$projects->est_completion_en}}</p>
+
+                                    <p class="card-text">
+
+                                        @foreach ($projects->project_types as $project_type)
+                                            {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}
+                                        @endforeach
+                                    </p>
 
                                 </div>
                                 <div class="card-footer text-muted" style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
-                                            <td style="text-align: center;border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31)"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
+                                            <td style="text-align: center;border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: #fff"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -204,14 +271,19 @@ else
                             </div>
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal-{{ $projects->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
+                        <div class="modal fade" style="background-color: rgb(0, 0, 0, .7);"  id="exampleModal-{{ $projects->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
+                                <div class="modal-content rounded-0">
+                                    {{-- <div class="modal-header">
                                         <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                         <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body ">
+                                    </div> --}}
+                                    <div class="modal-body bg-black rounded-0">
+                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                {{ trans('frontLang.requestdetail') }}
+                                            </p>
+                                        </div>
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($projects->images  as $single_img)
@@ -222,7 +294,8 @@ else
                                             </div>
                                             <div class="col-lg-6">
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
-                                                <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
+
+                                                <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class="mb-4">
@@ -241,8 +314,19 @@ else
                                                         <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
 
                                                     </div>
-                                                    <button type="submit" class="btn btn-dark btn-lg btn-block">
+                                                    @honeypot
+                                                    {{-- <button type="submit" class="btn btn-dark btn-lg btn-block">
                                                         {{ trans('frontLang.submit') }}
+                                                    </button> --}}
+
+                                                    <button class="submit btn btn-outline-white btn-lg btn-block" type="submit">
+                                                        <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
+
+                                                        {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
+
+                                                        <span class="btn-txt">
+                                                            {{ trans('frontLang.submit') }}
+                                                        </span>
                                                     </button>
                                                 </form>
                                             </div>
@@ -260,11 +344,14 @@ else
 
                     </div>
 
+
+
+
+
                 </div>
                 <div class="col-lg-12 mt-5 text-center">
                     {!! $project->links() !!}
                 </div>
-                @endif
 
             </div>
             <!-- Button trigger modal -->
@@ -272,118 +359,125 @@ else
 
 
         </div>
+        <script>
+            $(document).ready(function() {
+                $("#getInTouch").submit(function() {
+                    $(".result").text("");
+                    $(".loading-icon").removeClass("d-none");
+                    $(".submit").attr("disabled", true);
+                    $(".btn-txt").text("Processing ...");
+                });
+            });
+        </script>
     </section>
+
+
 @else
-    <section class="mt-5 m">
-        <div class="container">
+    <section class="">
+        <div class="container-fluid containerization">
             <div class="row">
-                <div class="col-lg-12 mb-4">
+                <div class="col-lg-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{URL('')}}"><i class="fas fa-home"> </i> {{ trans('frontLang.Home') }}</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{ trans('frontLang.Offplan') }}</li>
+                        <li class="breadcrumb-item text-white "><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">{{ trans('frontLang.Offplan') }}</li>
                         </ol>
                     </nav>
                 </div>
-
             </div>
-            <h3 class="text-left mb-3">{{ trans('frontLang.Offplan') }}</h3>
+            <h3 class="text-left mb-3">{{ $PageHeading }}</h3>
             <P style="font-size: 16px; line-height: 25px;">{{ trans('frontLang.Offplan_detail') }}</P>
 
         </div>
-
     </section>
+
     <section class="mt-5 mb-5">
-        <div class="container ">
-
+        <div class="container-fluid containerization ">
             <div class="row">
-            @if($project->total() == 0)
-                <div class="col-lg-8 offset-md-2 mb-4">
-
-                    <form class="contact-form" method="post" action="{{URL('/request_detail/submit')}}">
-                        @csrf
-
-                        <div class=" mb-4">
-                            <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                        </div>
-
-                        <!-- Email input -->
-                        <div class="mb-4">
-                            <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                        </div>
-
-                        <!-- Email input -->
-                        <div class="mb-4">
-                            <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
-                        </div>
-                        <button type="submit" class="btn btn-dark btn-lg btn-block rounded-0 ">
-                            {{ trans('frontLang.submit') }}
-                        </button>
-                    </form>
-                </div>
-            @else
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project as $projects)
                         <div class="col-lg-4 mb-5">
-                            <div class="card">
+                            <div class="card bg-black text-white rounded-0 border border-1 border-white"  style="height: 550px !important;">
+
                                 @if ($projects->project_status == '1')
-                                    <div class="communities-newlaunch">New <br> Launch</div>
+                                    <div class="communities-newlaunch">{{ trans('frontLang.new') }}<br>{{ trans('frontLang.launch') }}</div>
                                 @elseif ($projects->project_status == '0')
-                                <div class="communities-newlaunch">Off <br> Plan</div>
+
+                                    <div class="communities-newlaunch">{{ trans('frontLang.off') }} <br> {{ trans('frontLang.plan') }}</div>
                                 @else
                                 @endif
 
                                 @foreach($projects->images  as $single_img)
                                     @if($projects->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="{{$projects->$project_title_var}}"></a>
+                                        <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" >
+                                            <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}">
+                                        </a>
                                     @endif
                                 @endforeach
 
 
                                 <div class="card-body" style="padding: 0.5rem">
-                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><h5 class="card-title">{{$projects->$project_title_var}}</h5></a>
-                                <p><i class="fas fa-map-marker-alt" style="color: green"></i> {{$projects->locationz->$name_var}}</p>
-                                <p>{{ trans('frontLang.Developer') }} : {{$projects->developer->$name_var}}</p>
-                                @if ($projects->project_price == '')
-                                    <b> Prices On Request</b>
+                                    @if ($projects->project_price == '')
+                                        <b class="my-3" style="font-size: 1.5rem !important;"> Prices On Request</b>
                                     @else
-                                    <h5>{{ trans('frontLang.startingfrom') }} <span style="color: orange">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
+                                        @if ($langSeg == 'ru')
+                                            <h5  class="my-3" style="font-size: 1.5rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price_usd}} $</span></h5>
+                                        @else
+                                            <h5  class="my-3" style="font-size: 1.5rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
+                                        @endif
+
                                     @endif
+                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" >
+                                        <h5 class="card-title fw-light" style="color: #fff !important;">
+                                            {{$projects->$project_title_var}}
+                                        </h5>
+                                    </a>
 
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;"> {{$projects->locationz->$name_var}}</p>
 
-                                <hr>
-                                <p class="card-text">
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Developer') }} : {{$projects->developer->$name_var}}</p>
 
-                                    @foreach ($projects->project_types as $project_type)
-                                    {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}
-                                    @endforeach
-                                </p>
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Developer') }} : {{$projects->est_completion_en}}</p>
+
+                                    <p class="card-text">
+
+                                        @foreach ($projects->project_types as $project_type)
+                                        {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}
+                                        @endforeach
+                                    </p>
 
                                 </div>
                                 <div class="card-footer text-muted" style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
-                                            <td style="text-align: center;border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31)"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
+                                            <td style="text-align: center;border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: #fff"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>
                                 </div>
 
                             </div>
                         </div>
+
+
+
+
+
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal-{{ $projects->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
+                        <div class="modal fade" style="background-color: rgb(0, 0, 0, .7);"  id="exampleModal-{{ $projects->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
+                                <div class="modal-content rounded-0">
+                                    {{-- <div class="modal-header">
                                         <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body ">
+                                    </div> --}}
+                                    <div class="modal-body bg-black rounded-0" >
+                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                {{ trans('frontLang.requestdetail') }}
+                                            </p>
+                                        </div>
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($projects->images  as $single_img)
@@ -394,27 +488,39 @@ else
                                             </div>
                                             <div class="col-lg-6">
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
-                                                <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
+
+                                                <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
-                                                        <input type="text" name="name" class="form-control form-control-lg" placeholder="Full Name"  required />
+                                                        <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
                                                     </div>
 
                                                     <!-- Email input -->
                                                     <div class="mb-4">
-                                                        <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="Phone Number" required />
+                                                        <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
 
                                                     </div>
 
                                                     <!-- Email input -->
                                                     <div class="mb-4">
-                                                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required />
+                                                        <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
 
                                                     </div>
-                                                    <button type="submit" class="btn btn-dark btn-lg btn-block ">
-                                                        Submit
+                                                    @honeypot
+                                                    {{-- <button type="submit" class="btn btn-dark btn-lg btn-block ">
+                                                        {{ trans('frontLang.submit') }}
+                                                    </button> --}}
+
+                                                    <button class="submit btn btn-outline-white btn-lg btn-block" type="submit">
+                                                        <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
+
+                                                        {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
+
+                                                        <span class="btn-txt">
+                                                            {{ trans('frontLang.submit') }}
+                                                        </span>
                                                     </button>
                                                 </form>
                                             </div>
@@ -436,11 +542,42 @@ else
 
 
 
+
+
                 </div>
-                <div class="col-lg-12 mt-5 text-center">
-                    {!! $project->links() !!}
+                <div class="col-lg-12 mt-5">
+                    <style>
+                        .pagination > li > a,
+                        .pagination > li > span {
+                            color: #fff !important; // use your own color here
+                        }
+
+
+                        .pagination > .disabled > a,
+                        .pagination > .disabled > a:focus,
+                        .pagination > .disabled > a:hover,
+                        .pagination > .disabled > span,
+                        .pagination > .disabled > span:focus,
+                        .pagination > .disabled > span:hover {
+                            background-color: #000 !important;
+                            border-color: green;
+                            color: #fff !important;
+                        }
+
+                        .pagination > .active > a,
+                        .pagination > .active > a:focus,
+                        .pagination > .active > a:hover,
+                        .pagination > .active > span,
+                        .pagination > .active > span:focus,
+                        .pagination > .active > span:hover {
+                            background-color: #fff;
+                            border-color: green;
+                            color: #000 !important;
+                        }
+                    </style>
+                    {!! $project->appends($_GET)->links() !!}
                 </div>
-            @endif
+
             </div>
             <!-- Button trigger modal -->
 
@@ -448,6 +585,17 @@ else
 
         </div>
     </section>
+
+    <script>
+        $(document).ready(function() {
+            $("#getInTouch").submit(function() {
+                $(".result").text("");
+                $(".loading-icon").removeClass("d-none");
+                $(".submit").attr("disabled", true);
+                $(".btn-txt").text("Processing ...");
+            });
+        });
+    </script>
 @endif
 
 

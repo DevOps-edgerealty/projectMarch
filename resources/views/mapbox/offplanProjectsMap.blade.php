@@ -236,6 +236,20 @@
 
 @section('content')
 
+<?php
+        $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $uri_segments = explode('/', $uri_path);
+        $seg1 = $uri_segments[1];
+        if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+        {
+            $langSeg = $uri_segments[1];
+        }
+        else
+        {
+            $langSeg = 'en';
+        }
+    ?>
+
 
     <section>
         <div class="container">
@@ -245,14 +259,77 @@
                     DUBAI OFF PLAN PROJECTS
                 </span>
 
-                <span class=" mx-auto text-center d-none d-md-block d-lg-block" style="font-size: 1.8rem; text-align: center !important; margin: auto !imp">
-                    DUBAI OFF PLAN PROJECTS
-                </span>
+                <div class="d-flex bd-highlight px-0    ">
+                    <div class="p-2 ps-0 flex-fill bd-highlight d-none d-md-block d-lg-block" style="font-size: 1.8rem; " >
+                        <a href="{{ url()->previous() }}" class="btn btn-outline-white btn-lg rounded-0 text-white bg-black">
+                            {{ trans('frontLang.exitMap') }}
+                        </a>
+                    </div>
+                    <div class="p-2 flex-fill bd-highlight d-none d-md-block d-lg-block text-center" style="font-size: 1.8rem; text-align: center !important; ">{{ trans('frontLang.dubaioffplan    Projects') }}</div>
+                    <div class="p-2 flex-fill bd-highlight d-none d-md-block d-lg-block"></div>
+                </div>
             </div>
         </div>
     </section>
-    </section>
+</section>
 
+@if($langSeg == 'ar')
+
+    <div class='sidebar ' id="listing-card" style="display: none;" dir="rtl">
+        <div id='listings' class='listings ' style="margin-top: 60px;">
+            <div class="card rounded-0 bg-black " style="width: 100%;">
+                <div id="listing-image">
+
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title " >
+
+                    </h3>
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <h3 class="p-2 ps-0 bd-highlight" id="listing-price"></h3>
+                        <div class="p-2 bd-highlight float-right ms-auto" id="listing-btn"></div>
+                    </div>
+                    <p style="font-size: 1.3em" class="mt-3" id="listing-location"></p>
+                    <p class="card-text m-0" id="listing-title"></p>
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="p-0 bd-highlight" id="listing-beds"></div>
+                    </div>
+                    <p id="listing-description" class="" style="color: #848484 !important;"></p>
+                </div>
+            </div>
+        </div>
+        <p id="listing_id" class="text-white" style="font-size: 1.2em !important;"></p>
+    </div>
+
+
+    <div class="bottombar fixed-bottom" id="listing-card-mobile" style="border-radius: 20px 20px 0px 0px; display: none;" dir="rtl">
+        <div class="card bg-black" style="border-radius: 20px 20px 0px 0px;">
+            <div class="card-body">
+                {{-- <div class="card-title">
+                    <p style="font-size: 1.8em" class="text-white mb-0" id="listing-price-mobile"></p>
+                </div> --}}
+                <div class="d-flex flex-row bd-highlight mb-0">
+                    <h3 class="p-2 ps-0 bd-highlight mb-0" style="font-size: 1.8em" id="listing-title-mobile"></h3>
+                    {{-- <div class="p-2 bd-highlight float-right ms-auto" style="font-size: .9em;" id="listing-btn-mobile"></div> --}}
+                </div>
+
+                <p style="font-size: 1em; text-decoration: underline;" class="text-white mb-0" id="listing-location-mobile"></p>
+                <p style="font-size: 1em;" class="text-white mb-0" id="listing-price-mobile"></p>
+                {{-- <p style="font-size: 1em;" class="m-0" id="listing-title-mobile"></p> --}}
+
+
+                <div class="d-flex flex-row bd-highlight mb-0">
+                    <div class="p-2 bd-highlight" id="listing-beds-mobile"></div>
+                </div>
+                <div class="row" id="listing-btn-mobile">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='map' class="map" style='width: 100%; height: 100vh'></div>
+
+@else
     <div class='sidebar ' id="listing-card" style="display: none;">
         <div id='listings' class='listings ' style="margin-top: 60px;">
             <div class="card rounded-0 bg-black " style="width: 100%;">
@@ -306,6 +383,7 @@
         </div>
     </div>
     <div id='map' class="map" style='width: 100%; height: 100vh'></div>
+@endif
 
     {{-- {{ json_encode($allfeatures) }} --}}
 
@@ -324,7 +402,7 @@
             // zoom: 11,
             center: [55.220091, 25.060663],
             // center: [-103.5917, 40.6699],
-            zoom: 11,
+            zoom: 9,
             bearing: -52.40,
             pitch: 0.00,
             projection: 'mercator'
@@ -869,6 +947,8 @@
             });
 
         });
+
+        map.addControl(new mapboxgl.NavigationControl());
 
 
 

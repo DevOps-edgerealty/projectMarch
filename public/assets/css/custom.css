@@ -692,13 +692,13 @@ p {
   }
 
   /* Slider */
-  .slick-loading .slick-list
+  /* .slick-loading .slick-list
   {
       background: #fff url('http://maggiesadler.com/wp-content/uploads/2015/10/ajax-loader.gif') center center no-repeat;
-  }
+  } */
 
   /* Icons */
-  @font-face
+  /* @font-face
   {
       font-family: 'slick';
       font-weight: normal;
@@ -706,7 +706,7 @@ p {
 
       src: url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.eot');
       src: url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.eot?#iefix') format('embedded-opentype'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.woff') format('woff'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.ttf') format('truetype'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.svg#slick') format('svg');
-  }
+  } */
   /* Arrows */
   .slick-prev,
   .slick-next
@@ -1036,7 +1036,7 @@ section#counter-stats {
 
     .crousal-img-height
     {
-        height:  800px;
+        height:  400px;
 
 
     }
@@ -1283,7 +1283,7 @@ section#counter-stats {
     text-align:center;
   }
   .carousel-2{
-    width:100%;
+    width:90%;
     margin:0px auto;
   }
   .slick-slide{

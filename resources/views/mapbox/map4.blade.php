@@ -6,7 +6,6 @@
     $meta_description_var = "meta_description_" . trans('backLang.boxCode');
     $meta_keywords_var = "meta_keywords_" . trans('backLang.boxCode');
 
-
 ?>
 
 @section('meta_detail')
@@ -14,6 +13,7 @@
         {{-- <title>{{$landingpageseo ?? ''->$meta_var }}</title>
         <meta name="description" content="{{$landingpageseo ?? ''->$meta_description_var}}"/>
         <meta name="keywords" content=" {{$landingpageseo ?? ''->$meta_keywords_var}} "/> --}}
+
         <style>
             html, body {
                 overflow-x: hidden;
@@ -62,7 +62,7 @@
             }
 
             .bottombar {
-                height: 200px;
+                height: 210px;
                 background-color: #000 !important;
                 top:auto;
                 right:auto;
@@ -236,91 +236,197 @@
 
 @section('content')
 
+    <?php
+        $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $uri_segments = explode('/', $uri_path);
+        $seg1 = $uri_segments[1];
+        if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+        {
+            $langSeg = $uri_segments[1];
+        }
+        else
+        {
+            $langSeg = 'en';
+        }
+    ?>
+
 
     <section>
         <div class="container">
             <div class="row py-5"></div>
             <div class="row mx-auto mb-3">
-                <span class=" mx-auto text-center d-block d-sm-block d-md-none" style="font-size: 1.3rem; text-align: center !important; margin: auto !imp">
-                    DUBAI PROPERTIES
-                </span>
+                @if($langSeg == 'ar')
+                    <span class=" mx-auto text-center d-block d-sm-block d-md-none" style="font-size: 1.3rem; text-align: center !important; margin: auto !imp">
+                        {{ trans('frontLang.dubaiProperties') }}
+                    </span>
 
-                <span class=" mx-auto text-center d-none d-md-block d-lg-block" style="font-size: 1.8rem; text-align: center !important; margin: auto !imp">
-                    DUBAI PROPERTIES
-                </span>
+                    <span class=" mx-auto text-center d-none d-md-block d-lg-block" style="font-size: 1.8rem; text-align: center !important; margin: auto !imp">
+                        {{ trans('frontLang.dubaiProperties') }}
+                    </span>
+                @elseif($langSeg == 'ru')
+                    <span class=" mx-auto text-center d-block d-sm-block d-md-none" style="font-size: 1.3rem; text-align: center !important; margin: auto !imp">
+                        {{ trans('frontLang.exitMap') }}
+                    </span>
+
+                    <span class=" mx-auto text-center d-none d-md-block d-lg-block" style="font-size: 1.8rem; text-align: center !important; margin: auto !imp">
+                        {{ trans('frontLang.dubaiProperties') }}
+                    </span>
+                @else
+                    <div class="d-flex bd-highlight px-0    ">
+                        <div class="p-2 ps-0 flex-fill bd-highlight d-none d-md-block d-lg-block" style="font-size: 1.8rem; " >
+                            <a href="{{ url()->previous() }}" class="btn btn-outline-white btn-lg rounded-0 text-white bg-black">
+                                {{ trans('frontLang.exitMap') }}
+                            </a>
+                        </div>
+                        <div class="p-2 flex-fill bd-highlight d-none d-md-block d-lg-block text-center" style="font-size: 1.8rem; text-align: center !important; ">
+                            {{ trans('frontLang.dubaiProperties') }}
+                        </div>
+                        {{-- <div class="p-2 flex-fill bd-highlight d-none d-md-block d-lg-block"></div> --}}
+                    </div>
+
+                    <span class=" mx-auto text-center d-block d-sm-block d-md-none" style="font-size: 1.3rem; text-align: center !important; ">
+                        {{ trans('frontLang.dubaiProperties') }}
+                    </span>
+                    {{--
+                    <span class=" mx-auto text-center d-none d-md-block d-lg-block" style="font-size: 1.8rem; text-align: center !important; ">
+                        DUBAI PROPERTIES
+                    </span> --}}
+                @endif
+
             </div>
         </div>
     </section>
-    </section>
+</section>
 
-    <div class='sidebar ' id="listing-card" style="display: none;">
-        <div id='listings' class='listings ' style="margin-top: 60px;">
-            <div class="card rounded-0 bg-black " style="width: 100%;">
-                <div id="listing-image">
+    @if ($langSeg == 'ar')
+        <div class='sidebar ' id="listing-card" style="display: none;">
+            <div id='listings' class='listings ' style="margin-top: 60px;">
+                <div class="card rounded-0 bg-black " style="width: 100%;">
+                    <div id="listing-image">
 
+                    </div>
+                    <div class="card-body" dir="rtl">
+                        <h3 class="card-title " >
+
+                        </h3>
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <h3 class="p-2 ps-0 bd-highlight" id="listing-price"></h3>
+                            <div class="p-2 bd-highlight float-right ms-auto" id="listing-btn"></div>
+                        </div>
+
+                        <p style="font-size: 1.3em" class="mt-3" id="listing-location"></p>
+
+                        <p class="card-text m-0" id="listing-title"></p>
+
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <div class="p-2 ps-0 bd-highlight" id="listing-baths"></div>
+                            <div class="p-2 bd-highlight" id="listing-beds"></div>
+                            <div class="p-2 bd-highlight" id="listing-area"></div>
+                        </div>
+                        <p id="listing-description" class="" style="color: #848484 !important;"></p>
+                    </div>
                 </div>
+            </div>
+            <p id="listing_id" class="text-white" style="font-size: 1.2em !important;"></p>
+        </div>
 
-                {{-- <img
-                    src=""
-                    class="card-img-top rounded-0 ps-1"
-                    id="listing-image"
-                    alt=""
-                    style="height: 400px;"
-                > --}}
+        <div class="bottombar fixed-bottom" dir="rtl" id="listing-card-mobile" style="border-radius: 20px 20px 0px 0px; display: none;">
+            {{-- <hr class="border-white w-25" style=""> --}}
 
+            <div class="card bg-black" style="border-radius: 20px 20px 0px 0px;">
                 <div class="card-body">
-                    <h3 class="card-title " >
 
-                    </h3>
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                        <h3 class="p-2 ps-0 bd-highlight" id="listing-price"></h3>
-                        <div class="p-2 bd-highlight float-right ms-auto" id="listing-btn"></div>
+                    {{-- <div class="card-title">
+                        <p style="font-size: 1.8em" class="text-white mb-0" id="listing-price-mobile"></p>
+                    </div> --}}
+
+                    <div class="d-flex flex-row bd-highlight mb-0">
+                        <h3 class="p-2 ps-0 bd-highlight mb-0" style="font-size: 1.8em" id="listing-price-mobile"></h3>
+                        {{-- <div class="p-2 bd-highlight float-right ms-auto" style="font-size: .9em;" id="listing-btn-mobile"></div> --}}
                     </div>
-                    <p style="font-size: 1.3em" class="mt-3" id="listing-location"></p>
-                    <p class="card-text m-0" id="listing-title"></p>
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                        <div class="p-2 ps-0 bd-highlight" id="listing-baths"></div>
-                        <div class="p-2 bd-highlight" id="listing-beds"></div>
-                        <div class="p-2 bd-highlight" id="listing-area"></div>
+
+                    <p style="font-size: 1em; text-decoration: underline;" class="text-white mb-0" id="listing-location-mobile"></p>
+                    {{-- <p style="font-size: 1em;" class="m-0" id="listing-title-mobile"></p> --}}
+
+
+                    <div class="d-flex flex-row bd-highlight mb-0">
+                        <div class="p-2 ps-0 bd-highlight" id="listing-baths-mobile"></div>
+                        <div class="p-2 bd-highlight" id="listing-beds-mobile"></div>
+                        <div class="p-2 bd-highlight" id="listing-area-mobile"></div>
                     </div>
-                    <p id="listing-description" class="" style="color: #848484 !important;"></p>
+                    <div class="row" id="listing-btn-mobile">
+
+                    </div>
                 </div>
             </div>
         </div>
-        <p id="listing_id" class="text-white" style="font-size: 1.2em !important;"></p>
-    </div>
+    @else
+        <div class='sidebar ' id="listing-card" style="display: none;">
+            <div id='listings' class='listings ' style="margin-top: 60px;">
+                <div class="card rounded-0 bg-black " style="width: 100%;">
+                    <div id="listing-image">
 
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title " >
 
-    <div class="bottombar fixed-bottom" id="listing-card-mobile" style="border-radius: 20px 20px 0px 0px; display: none;">
-            <hr class="border-white w-25" style="">
+                        </h3>
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <h3 class="p-2 ps-0 bd-highlight" id="listing-price"></h3>
+                            <div class="p-2 bd-highlight float-right ms-auto" id="listing-btn"></div>
+                        </div>
 
-        <div class="card bg-black" style="border-radius: 20px 20px 0px 0px;">
-            <div class="card-body">
+                        <p style="font-size: 1.3em" class="mt-3" id="listing-location"></p>
 
-                {{-- <div class="card-title">
-                    <p style="font-size: 1.8em" class="text-white mb-0" id="listing-price-mobile"></p>
-                </div> --}}
+                        <p class="card-text m-0" id="listing-title"></p>
 
-                <div class="d-flex flex-row bd-highlight mb-0">
-                    <h3 class="p-2 ps-0 bd-highlight mb-0" style="font-size: 1.8em" id="listing-price-mobile"></h3>
-                    {{-- <div class="p-2 bd-highlight float-right ms-auto" style="font-size: .9em;" id="listing-btn-mobile"></div> --}}
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <div class="p-2 ps-0 bd-highlight" id="listing-baths"></div>
+                            <div class="p-2 bd-highlight" id="listing-beds"></div>
+                            <div class="p-2 bd-highlight" id="listing-area"></div>
+                        </div>
+                        <p id="listing-description" class="" style="color: #848484 !important;"></p>
+                    </div>
                 </div>
+            </div>
+            <p id="listing_id" class="text-white" style="font-size: 1.2em !important;"></p>
+        </div>
 
-                <p style="font-size: 1em; text-decoration: underline;" class="text-white mb-0" id="listing-location-mobile"></p>
-                {{-- <p style="font-size: 1em;" class="m-0" id="listing-title-mobile"></p> --}}
+        <div class="bottombar fixed-bottom" id="listing-card-mobile" style="border-radius: 20px 20px 0px 0px; display: none;">
+            {{-- <hr class="border-white w-25" style=""> --}}
+
+            <div class="card bg-black" style="border-radius: 20px 20px 0px 0px;">
+                <div class="card-body">
+
+                    {{-- <div class="card-title">
+                        <p style="font-size: 1.8em" class="text-white mb-0" id="listing-price-mobile"></p>
+                    </div> --}}
+
+                    <div class="d-flex flex-row bd-highlight mb-0">
+                        <h3 class="p-2 ps-0 bd-highlight mb-0" style="font-size: 1.8em" id="listing-price-mobile"></h3>
+                        {{-- <div class="p-2 bd-highlight float-right ms-auto" style="font-size: .9em;" id="listing-btn-mobile"></div> --}}
+                    </div>
+
+                    <p style="font-size: 1em; text-decoration: underline;" class="text-white mb-0" id="listing-location-mobile"></p>
+                    {{-- <p style="font-size: 1em;" class="m-0" id="listing-title-mobile"></p> --}}
 
 
-                <div class="d-flex flex-row bd-highlight mb-0">
-                    <div class="p-2 ps-0 bd-highlight" id="listing-baths-mobile"></div>
-                    <div class="p-2 bd-highlight" id="listing-beds-mobile"></div>
-                    <div class="p-2 bd-highlight" id="listing-area-mobile"></div>
-                </div>
-                <div class="row" id="listing-btn-mobile">
+                    <div class="d-flex flex-row bd-highlight mb-0">
+                        <div class="p-2 ps-0 bd-highlight" id="listing-baths-mobile"></div>
+                        <div class="p-2 bd-highlight" id="listing-beds-mobile"></div>
+                        <div class="p-2 bd-highlight" id="listing-area-mobile"></div>
+                    </div>
+                    <div class="row" id="listing-btn-mobile">
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
+
+
+
+
 
 
     <div id='map' class="map" style='width: 100%; height: 100vh'></div>
@@ -333,13 +439,15 @@
 
         var allpropertyfeatures = {!! json_encode($allfeatures) !!};
 
+        var langSeg = {!! json_encode($langSeg) !!};
+
         var map = new mapboxgl.Map({
             container: 'map',
             // style: 'mapbox://styles/edgerealty/clde93eip003001nm4dkn4izw',
             style: 'mapbox://styles/edgerealty/cldfzjqvo003r01lkn5msoiyu',
             // center: [55.220108, 25.111407], // starting position [lng, lat],
             // zoom: 11,
-            center: [55.516273, 24.976611],
+            center: [55.30253792885708,24.823567393047057],
             // center: [-103.5917, 40.6699],
             zoom: 9,
             bearing: -52.40,
@@ -686,9 +794,9 @@
                     document.getElementById('listing-btn').innerHTML = `<a href="{{url('en/dubai-property/${slug_link}')}}" class="btn btn-outline-white rounded-0 text-white">View Property</a>`;
                     document.getElementById('listing-title').innerHTML = `${name}`;
                     document.getElementById('listing-location').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
-                    document.getElementById('listing-beds').innerHTML = `Bed : ${bed}`;
-                    document.getElementById('listing-baths').innerHTML = `Bath : ${bath}`;
-                    document.getElementById('listing-area').innerHTML = `Area : ${area} Sq.Ft.`;
+                    document.getElementById('listing-beds').innerHTML = `Bed  ${bed}`;
+                    document.getElementById('listing-baths').innerHTML = `Bath  ${bath}`;
+                    document.getElementById('listing-area').innerHTML = `Area  ${area} Sq.Ft.`;
                     document.getElementById('listing-image').innerHTML = `
                         <a href="{{url('en/dubai-property/${slug_link}')}}" >
                             <img src="{{ URL::asset('${image_url}') }}" style="height: 400px; width: 100%" class="card-img-top rounded-0 px-1" alt="${image}_link_1"/>
@@ -769,7 +877,7 @@
                                                 text-align: justify !important;
                                             "
                                         >
-                                            Bed: ${bed} | Bath: ${bath} | Area: ${area} Sq. Ft
+                                             ${bed} Bed  :  ${bath} Bath  : ${area} Sq. Ft
                                         </span>
                                     </div>
                                 </div>
@@ -804,115 +912,206 @@
                 const name = e.features[0].properties.name;
                 const priceLong = e.features[0].properties.priceLong;
                 const route = e.features[0].properties.address;
+                const image = e.features[0].properties.image;
+                const image_url = e.features[0].properties.image_url;
                 const slug_link = e.features[0].properties.slug_link;
                 const id = e.features[0].properties.id;
                 const bed = e.features[0].properties.bed;
                 const bath = e.features[0].properties.bath;
                 const area = e.features[0].properties.area;
+                const description = e.features[0].properties.description;
 
-                // image variables
-                const image = e.features[0].properties.image;
-                const image_url = e.features[0].properties.image_url;
+                // a function to check if device is a MOBILE or DESKTOP view.
+                const isMobile = {
+                    Android: function() {
+                        return navigator.userAgent.match(/Android/i);
+                    },
+                    BlackBerry: function() {
+                        return navigator.userAgent.match(/BlackBerry/i);
+                    },
+                    iOS: function() {
+                        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                    },
+                    Opera: function() {
+                        return navigator.userAgent.match(/Opera Mini/i);
+                    },
+                    Windows: function() {
+                        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+                    },
+                    any: function() {
+                        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                    }
+                };
 
-                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                }
+                if( isMobile.any() ) {
+                    document.getElementById('listing-card-mobile').style.display = 'block';
+                    document.getElementById('listing-price-mobile').innerHTML = `${priceLong}`;
+                    document.getElementById('listing-btn-mobile').innerHTML = `<a href="{{url('en/dubai-property/${slug_link}')}}" class="btn btn-outline-white btn-block rounded-0 text-white">View Property</a>`;
+                    // document.getElementById('listing-title-mobile').innerHTML = `${name}`;
+                    document.getElementById('listing-location-mobile').innerHTML = `community ${route}`;
+                    // document.getElementById('listing-location-mobile').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
+                    document.getElementById('listing-beds-mobile').innerHTML = `<i class="fas fa-bed"></i> : ${bed}`;
+                    document.getElementById('listing-baths-mobile').innerHTML = `<i class="fas fa-bath"></i> : ${bath}`;
+                    document.getElementById('listing-area-mobile').innerHTML = `<i class="fas fa-chart-area"></i> : ${area} Sq.Ft.`;
+                    // document.getElementById('listing-description').innerHTML = description.substring(0, 400) + `... <a href="{{url('en/dubai-property/${slug_link}')}}" class="text-white text-decoration-underline">Read More</a>`;
 
-                popup
-                .setLngLat(coordinates)
-                .setHTML(
-                    `
-                        <div class="card bg-black rounded-0 py-0" style="max-width: 540px; ">
-                            <div class="row p-0">
-                                <div class="col-md-5 p-0">
-                                    <a href="{{url('en/dubai-property/${slug_link}')}}" >
-                                        <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
-                                    </a>
+
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+
+                    /**
+                     * Design the property cards on popup using bootstrap CSS
+                     * and standard CSS
+                    */
+                    popup
+                    .setLngLat(coordinates)
+                    .setHTML(
+                        `
+                            <div class="card bg-black rounded-0 py-0" style="max-width: 340px !important; ">
+                                <div class="row p-0">
+                                    <div class="col-md-5 p-0">
+                                        <a href="{{url('en/dubai-property/${slug_link}')}}" >
+                                            <img src="{{ URL::asset('${image_url}') }}" style="height: 200px; width: 200%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7 pt-2 px-0">
+                                        <span class="card-title fw-bold" style="
+                                            font-size: 1.1em !important;
+                                            line-height: 1.1 !important;
+                                            margin-top: 40px !important;
+                                            text-align: justify !important;
+                                            ">
+                                            ${name}
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="col-md-7 p-0">
-                                    <span class="card-title fw-bold" style="
-                                        font-size: 1.4em !important;
-                                        line-height: 1.1 !important;
-                                        margin-top: 10px !important;
-                                        text-align: justify !important;
-                                        ">
-                                        ${priceLong}
-                                    </span>
 
-                                    <br>
-                                    <br>
-
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
-                                            line-height: 1.1 !important;
-                                            margin-top: 10px !important;
-                                            text-align: justify !important;
-                                            text-decoration: underline !important;
-                                        "
-                                    >
-                                        ${route}
-                                    </span>
-
-                                    <br>
-                                    <br>
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
-                                            line-height: 1.1 !important;
-                                            margin-top: 10px !important;
-                                            text-align: justify !important;
-                                        "
-                                    >
-                                        ${name}
-                                    </span>
-
-                                    <br>
-                                    <br>
-
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
-                                            line-height: 1.1 !important;
-                                            margin-top: 10px !important;
-                                            text-align: justify !important;
-                                        "
-                                    >
-                                        Bed: ${bed} | Bath: ${bath} | Area: ${area} Sq. Ft
-                                    </span>
-                                </div>
                             </div>
+                        `
+                    )
+                    .addTo(map)
+                    .togglePopup();
 
-                        </div>
-                    `
-                )
-                .addTo(map);
+                } else {
+                    document.getElementById('listing-card').style.display = 'block';
+                    document.getElementById('map').style.left = '-25%';
+                    document.getElementById('listing-price').innerHTML = `${priceLong}`;
+                    document.getElementById('listing-btn').innerHTML = `<a href="{{url('en/dubai-property/${slug_link}')}}" class="btn btn-outline-white rounded-0 text-white">View Property</a>`;
+                    document.getElementById('listing-title').innerHTML = `${name}`;
+                    document.getElementById('listing-location').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
+                    document.getElementById('listing-beds').innerHTML = `  ${bed} Bed`;
+                    document.getElementById('listing-baths').innerHTML = `  ${bath} Bath`;
+                    document.getElementById('listing-area').innerHTML = `  ${area} Sq.Ft. `;
+                    document.getElementById('listing-image').innerHTML = `
+                        <a href="{{url('en/dubai-property/${slug_link}')}}" >
+                            <img src="{{ URL::asset('${image_url}') }}" style="height: 400px; width: 100%" class="card-img-top rounded-0 px-1" alt="${image}_link_1"/>
+                        </a>
+                    `;
+                    document.getElementById('listing-description').innerHTML = description.substring(0, 400) + `... <a href="{{url('en/dubai-property/${slug_link}')}}" class="text-white text-decoration-underline">Read More</a>`;
+
+
+
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+
+                    /**
+                     * Design the property cards on popup using bootstrap CSS
+                     * and standard CSS
+                    */
+                    popup
+                    .setLngLat(coordinates)
+                    .setHTML(
+                        `
+                            <div class="card bg-black rounded-0 py-0" style="max-width: 540px; ">
+                                <div class="row p-0">
+                                    <div class="col-md-5 p-0">
+                                        <a href="{{url('en/dubai-property/${slug_link}')}}" >
+                                            <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7 p-0">
+                                        <span class="card-title fw-bold" style="
+                                            font-size: 1.4em !important;
+                                            line-height: 1.1 !important;
+                                            margin-top: 10px !important;
+                                            text-align: justify !important;
+                                            ">
+                                            ${priceLong}
+                                        </span>
+
+                                        <br>
+                                        <br>
+
+                                        <span class="card-text"
+                                                style="
+                                                font-size: 1em !important;
+                                                line-height: 1.1 !important;
+                                                margin-top: 10px !important;
+                                                text-align: justify !important;
+                                                text-decoration: underline !important;
+                                            "
+                                        >
+                                            ${route}
+                                        </span>
+
+                                        <br>
+                                        <br>
+                                        <span class="card-text"
+                                                style="
+                                                font-size: 1em !important;
+                                                line-height: 1.1 !important;
+                                                margin-top: 10px !important;
+                                                text-align: justify !important;
+                                            "
+                                        >
+                                            ${name}
+                                        </span>
+
+                                        <br>
+                                        <br>
+
+                                        <span class="card-text"
+                                                style="
+                                                font-size: 1em !important;
+                                                line-height: 1.1 !important;
+                                                margin-top: 10px !important;
+                                                text-align: justify !important;
+                                            "
+                                        >
+                                             ${bed} Bed  :  ${bath} Bath  : ${area} Sq. Ft
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        `
+                    )
+                    .addTo(map)
+                    .togglePopup();
+                };
             });
-
-
-
-
-
-
-            // map.on('mouseleave', 'clusters', () => {
-            //     map.getCanvas().style.cursor = '';
-            //     popup.remove();
-            // });
-
-            // console.log(earthquakes);
-
-            // buildLocationList(earthquakes);
 
 
             map.setFog({
-                color: 'rgb(186, 210, 235)', // Lower atmosphere
-                'high-color': 'rgb(36, 92, 223)', // Upper atmosphere
-                'horizon-blend': 0.02, // Atmosphere thickness (default 0.2 at low zooms)
-                'space-color': 'rgb(11, 11, 25)', // Background color
-                'star-intensity': 0.35 // Background star brightness (default 0.35 at low zoooms )
+                color: 'rgb(186, 210, 235)',        // Lower atmosphere
+                'high-color': 'rgb(36, 92, 223)',   // Upper atmosphere
+            'horizon-blend': 0.02,                  // Atmosphere thickness (default 0.2 at low zooms)
+                'space-color': 'rgb(11, 11, 25)',   // Background color
+            'star-intensity': 0.35                  // Background star brightness (default 0.35 at low zoooms )
             });
 
         });
+
+        map.addControl(new mapboxgl.NavigationControl());
+
 
 
 

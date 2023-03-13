@@ -36,10 +36,12 @@
 
         <link rel="icon" type="image/png" href="{{URL::asset('public/assets/asset/15708667243400.png')}}"/>
 
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+		{{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet"> --}}
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+		{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> --}}
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <script src="https://www.google.com/recaptcha/api.js?render=6Lfg3zocAAAAAPZX4jNGTNMpl5CmoG4fGCbTCte2"></script>
 
@@ -198,7 +200,7 @@
 
 
             <!-- Pinterest Tag -->
-            <script>
+            <script>h
                 !function(e){if(!window.pintrk){window.pintrk = function () {
                 window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
                 n=window.pintrk;n.queue=[],n.version="3.0";var
@@ -267,34 +269,37 @@
 
             }
             .whats_icon_btn {
-            position: relative;
-            bottom: 10px;
-            right: auto;
-            width: 33.3%;
-            float: left;
-            font-size: xx-large;
+                position: relative;
+                bottom: 10px;
+                right: auto;
+                width: 33.3%;
+                float: left;
+                font-size: xx-large;
 
 
             }
             .enquiry_btn_right {
-            position: relative;
-            right: 0;
+                position: relative;
+                /* right: 0; */
 
-            bottom: 10px;
+                bottom: 10px;
 
-            width: 33.3%;
+                width: 33.3%;
 
 
-            z-index: 9999;
+                z-index: 9999;
 
-            float: left;
-            font-size: xx-large;
+                /* float: left; */
+                font-size: xx-large;
 
-            display: block
+                display: block
             }
 
             .grecaptcha-badge {
                 visibility: hidden;
+            }
+            .text-reset {
+                text-transform: capitalize !important;
             }
 
 
@@ -332,17 +337,25 @@
 
         @include('layout.footer')
 
-        <div class="mobile_bottom">
+        <div class="mobile_bottom bg-transparent">
 
-            <div class="call_mobile"><a href="javascript:void(Tawk_API.toggle())" class="btn btn-black" style="background-color: #686a68;padding: 12px 30px;"><i class="far fa-comment-alt"> </i> {{ trans('frontLang.chat') }}</a>
+            <div class="mb-4" style="">
+                <a href="#" style=" width: 200px !important;"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"  class="btn btn-outline-dark bg-white rounded-5 text-black mx-auto text-center">{{ trans('frontLang.contact_us') }}</a>
             </div>
-            <div class="enquiry_btn_right"><a href="#" style="background-color: #686a68;padding: 12px 28px;"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"  class="btn btn-danger"><i class="fas fa-envelope"> </i> {{ trans('frontLang.email_footer') }}</a>
+
+
+
+            {{-- <div class="call_mobile">
+                <a href="javascript:void(Tawk_API.toggle())" class="btn btn-black" style="background-color: #686a68;padding: 12px 30px;"><i class="far fa-comment-alt"> </i> {{ trans('frontLang.chat') }}</a>
+            </div>
+            <div class="enquiry_btn_right">
+                <a href="#" style="background-color: #686a68;padding: 12px 28px;"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"  class="btn btn-danger"><i class="fas fa-envelope"> </i> {{ trans('frontLang.email_footer') }}</a>
             </div>
             <div class="whats_icon_btn">
 
                 <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" class="btn btn-success" style="padding: 12px 15px;" ><i class="fab fa-whatsapp"> </i> {{ trans('frontLang.whatsapp') }}</a>
 
-            </div>
+            </div> --}}
 
 
         </div>
@@ -353,38 +366,36 @@
         </a>
 
         <div class="modal fade" id="exampleModal-request" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered bg-black">
+                <div class="modal-content rounded-0 bg-black border border-white">
                     <div class="modal-header">
                         <h5 class="modal-title text-center" id="exampleModalLabel">Email Us</h5>
-                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close" ></button>
+                        <button type="button " class="btn-close bg-white" data-mdb-dismiss="modal" aria-label="Close" ></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body bg-black">
                         <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
                             @csrf
 
                             <div class=" mb-4">
                                 <input type="text" name="name" class="form-control form-control-lg" placeholder="Full Name"  required />
-
                             </div>
 
                             <!-- Email input -->
                             <div class="mb-4">
                                 <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="Phone Number" required />
-
                             </div>
 
                             <!-- Email input -->
                             <div class="mb-4">
                                 <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required />
-
                             </div>
+
                             <div class="mb-4">
-                                <textarea name="message" class="form-control" id="textAreaExample" rows="3" placeholder="Message"></textarea>
-
+                                <textarea name="message" class="form-control bg-black text-white rounded-0" id="textAreaExample" rows="3" placeholder="Message"></textarea>
                             </div>
+
                             @honeypot
-                            <button type="submit" class="btn btn-dark btn-lg btn-block">
+                            <button type="submit" class="btn btn-outline-white bg-black rounded-0 btn-lg btn-block">
                                 Submit
                             </button>
                         </form>
@@ -407,11 +418,9 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVBe2TsNsN5oi3blO8iR18VsMFd4YHRI8&callback=initAutocomplete&libraries=places&v=weekly&channel=2" async>
         </script>
 
-
 		<!-- MDB -->
 		{{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script> --}}
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
-
 
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
@@ -426,7 +435,6 @@
             })();
         </script>
         <!--End of Tawk.to Script-->
-
 
         <script>
             var itiPhone = $(".iti-phone");
@@ -465,7 +473,6 @@
 
         </script>
 
-
         {{-- <script>
           $(document).ready(function() {
               $("body").on("contextmenu", function(e) {
@@ -478,8 +485,6 @@
                 });
             });
     </script> --}}
-
-
 
     <script src="{{URL::asset('public/assets/js/fslightbox.js')}}"></script>
 

@@ -1,10 +1,12 @@
+
+@extends('layout.master')
+@section('content')
 <style>
   p{
     line-height: 1.6 !important;
   }
 </style>
-@extends('layout.master')
-@section('content')
+
 <?php
 $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri_segments = explode('/', $uri_path);
@@ -30,7 +32,7 @@ $langSeg = 'en';
             <div class="mask" style="background-color: rgb(0 0 0);">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
-                    <h3>Thank You</h3>
+                    {{-- <h3>Thank You</h3> --}}
                 </div>
             </div>
             </div>

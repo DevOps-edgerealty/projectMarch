@@ -6,6 +6,29 @@
         color: #000 !important;
     }
 
+    .nav-pills .nav-link.active {
+        background-color: #fff !important;
+        color: #000 !important;
+        border: 0.25px #848484 solid !important;
+        border: 0.5 #848484 solid !important;
+        border-radius: 0 !important;
+
+    }
+
+    .nav-link {
+        /* background-color: #000 !important; */
+        background-color: #000 !important;
+        color: #fff !important;
+        border: 0.25px #848484 solid !important;
+        border: 0.5 #848484 solid !important;
+        border-radius: 0 !important;
+
+    }
+    a {
+        color: #fff !important;
+    }
+
+
     .menu-mobile-header, .menu-mobile-header > .menu-section, .menu-mobile-header > button  {
         background-color: #000 !important;
         color: #fff !important;
@@ -61,8 +84,8 @@
         cursor: pointer !important;
     }
     .containerization {
-        padding-right: 200px !important;
-        padding-left: 200px !important;
+        padding-right: 150px !important;
+        padding-left: 150px !important;
     }
 
     @media only screen and (max-device-width: 480px) {
@@ -103,27 +126,35 @@
         z-index: 100 !important;
     }
 
+    .navbar1 {
+        transition:all 0.5s !important;
+    }
+
+    .navbar-scrolled {
+        background-color: #000 !important;
+    }
+
 </style>
 <?php
-$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-$uri_segments = explode('/', $uri_path);
-$seg1 = $uri_segments[1];
-if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
-{
-    $langSeg = $uri_segments[1];
-
-
+    $uri_segments = explode('/', $uri_path);
+    $seg1 = $uri_segments[1];
+    if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+    {
+        $langSeg = $uri_segments[1];
 
 
 
-}
-else
-{
-    $langSeg = 'en';
 
 
-}
+    }
+    else
+    {
+        $langSeg = 'en';
+
+
+    }
 
 ?>
     <?php
@@ -212,7 +243,7 @@ else
 
 
 @if ($langSeg == 'ar')
-<header class="header" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); direction: rtl;">
+<header class="header position-fixed navbar1" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); direction: rtl; z-index: 20000 !important; ">
 
     <div class="container-fluid containerization py-0" style="margin-right: 130px !important;">
         <div class="wrapper">
@@ -269,19 +300,19 @@ else
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-new-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Offplan Project 2.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/SEXSEN-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">  {{ trans('frontLang.Offplan') }}</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-ready-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Dubai Ready Project.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/desktop/Asayel-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">{{ trans('frontLang.readyProjects') }}</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-luxury-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Luxury Project Option 2.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/desktop/Bvlg-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">{{ trans('frontLang.Luxuryprojects') }}</h4>
                                     </a>
                                 </div>
@@ -323,7 +354,7 @@ else
                                 </ul>
                             </div>
                         </li>
-                        {{-- <li class="menu-item-has-children">
+                        <li class="menu-item-has-children">
                             <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1 lang" >
                                 <ul style="padding-left: 0rem;">
@@ -331,7 +362,7 @@ else
                                     <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
                                 </ul>
                             </div>
-                        </li> --}}
+                        </li>
 
 
                     </ul>
@@ -348,14 +379,14 @@ else
                         <div class="menu-mobile-title"></div>
                         <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close text-white"></i></button>
                     </div>
-                    <ul class="menu-section " style="padding-left: 0px;">
+                     {{-- <ul class="menu-section " style="padding-left: 0px;">
 
                         <li class="menu-item-has-children">
                             <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1 lang" >
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
-                                    {{-- <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li> --}}
+                                    <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
                                     <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
 
                                 </ul>
@@ -363,8 +394,10 @@ else
                         </li>
 
 
-                    </ul>
+                    </ul> --}}
                 </nav>
+
+
 
                 <a style="margin-right: 1rem;"  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight"><img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt=""></a>
 
@@ -742,17 +775,17 @@ else
 
 
 @else
-<header class="header" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%);">
+<header class="header position-fixed  navbar1 " style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); z-index: 20000 !important;">
 
     <div class="container-fluid containerization py-0">
-        <div class="wrapper " >
+        <div class="wrapper   px-3" >
             <div class="header-item-left">
                 <a href="{{URL('/'.$langSeg.'/home')}}" class="brand"><img src="{{URL::asset('public/assets/asset/logo.png')}}" class="logo-height" alt=""></a>
             </div>
             <!-- Section: Navbar Menu -->
             <div class="header-item-center ">
                 <div class="overlay" ></div>
-                <nav class="menu navbar-dark">
+                <nav class="menu  navbar-dark">
                     <div class="menu-mobile-header">
                         <button type="button" class="menu-mobile-arrow"><i class="ion ion-ios-arrow-back"></i></button>
                         <div class="menu-mobile-title"></div>
@@ -796,19 +829,19 @@ else
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-new-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Offplan Project 2.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/SEXSEN-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">  {{ trans('frontLang.Offplan') }}</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-ready-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Dubai Ready Project.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/desktop/Asayel-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">{{ trans('frontLang.readyProjects') }}</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-luxury-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Luxury Project Option 2.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/desktop/Bvlg-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">{{ trans('frontLang.Luxuryprojects') }}</h4>
                                     </a>
                                 </div>
@@ -837,7 +870,6 @@ else
                         </li>
 
 
-
                         <li class="menu-item-has-children">
                             <a href="#" class="menu-color">{{ trans('frontLang.Aboutus') }} <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1">
@@ -850,9 +882,9 @@ else
                             </div>
                         </li>
 
-                        {{-- @if ($langSeg == 'ru')
-                            <li class="menu-item-has-children" >
-                                <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU <i class="ion ion-ios-arrow-down"> </i></a>
+                        @if ($langSeg == 'ru')
+                            <li class="menu-item-has-children " >
+                                <a href="#" class="menu-color "><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU <i class="ion ion-ios-arrow-down"> </i></a>
                                 <div class="menu-subs menu-column-1 lang" >
                                     <ul style="padding-left: 0rem;">
                                         <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
@@ -861,8 +893,8 @@ else
                                 </div>
                             </li>
                         @else
-                            <li class="menu-item-has-children" >
-                                <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN <i class="ion ion-ios-arrow-down"> </i></a>
+                            <li class="menu-item-has-children " >
+                                <a href="#" class="menu-color "><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN <i class="ion ion-ios-arrow-down"> </i></a>
                                 <div class="menu-subs menu-column-1 lang" >
                                     <ul style="padding-left: 0rem;">
                                         <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
@@ -870,7 +902,7 @@ else
                                     </ul>
                                 </div>
                             </li>
-                        @endif --}}
+                        @endif
 
 
 
@@ -892,11 +924,18 @@ else
 
                 <nav class="menu navbar-dark">
                     <div class="menu-mobile-header">
-                        <button type="button" class="menu-mobile-arrow"><i class="ion ion-ios-arrow-back"></i></button>
-                        <div class="menu-mobile-title"></div>
-                        <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close"></i></button>
+                        <button type="button" class="menu-mobile-arrow">
+                            <i class="ion ion-ios-arrow-back"></i>
+                        </button>
+
+                        <div class="menu-mobile-title">Search</div>
+
+                        <button type="button" class="menu-mobile-close">
+                            <i class="ion ion-ios-close"></i>
+                        </button>
+
                     </div>
-                    <ul class="menu-section " style="padding-left: 0px; margin-bottom: 0px;">
+                    {{-- <ul class="menu-section " style="padding-left: 0px; margin-bottom: 0px;">
 
                         @if ($langSeg == 'ru')
                             <li class="menu-item-has-children" >
@@ -905,7 +944,6 @@ else
                                     <ul style="padding-left: 0rem;">
                                         <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
                                         <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
-                                        {{-- <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li> --}}
                                     </ul>
                                 </div>
                             </li>
@@ -914,15 +952,19 @@ else
                                 <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN <i class="ion ion-ios-arrow-down"> </i></a>
                                 <div class="menu-subs menu-column-1 lang" >
                                     <ul style="padding-left: 0rem;">
-                                        {{-- <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li> --}}
                                         <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
                                         <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
                                     </ul>
                                 </div>
                             </li>
                         @endif
-                    </ul>
+                    </ul> --}}
+
                 </nav>
+
+                <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" ><i class="fab fa-whatsapp bg-success rounded-pill m-0 p-0 "> </i> </a>
+
+                <a href="javascript:void(Tawk_API.toggle())" class="menu-icon mobile-show d-md-block d-block d-lg-none" ><i class="far fa-comment-alt" > </i> </a>
 
                 <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight"><img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt=""></a>
 
@@ -939,7 +981,7 @@ else
                 <div class="offcanvas bg-black offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
                     <div class="offcanvas-header">
                         <h5 id="offcanvasRightLabel">{{ trans('frontLang.searchh') }}</h5>
-                        <button type="button" class="btn-close text-reset text-white" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
+                        <button type="button" class="btn-close text-reset" style="background-color: #fff !important;" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
                     </div>
                     <div class="offcanvas-body ">
                         <div class="row">
@@ -948,17 +990,20 @@ else
 
                                 <!-- Pills navs -->
                                 <ul class="nav nav-pills nav-fill mb-3" id="ex1" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1" role="tab" aria-controls="ex2-pills-1" aria-selected="true">{{ trans('frontLang.buy') }}</a>
+                                    <li class="nav-item w-100" role="presentation">
+                                        <a class="nav-link rounded-0" href="{{ url($langSeg.'/properties/map') }}">{{ trans('frontLang.map') }}</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="ex2-tab-2" data-mdb-toggle="pill" href="#ex2-pills-2" role="tab" aria-controls="ex2-pills-2" aria-selected="false">{{ trans('frontLang.Rent') }}</a>
+                                        <a class="nav-link active rounded-0  " id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1" role="tab" aria-controls="ex2-pills-1" aria-selected="true">{{ trans('frontLang.buy') }}</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="ex2-tab-3" data-mdb-toggle="pill" href="#ex2-pills-3" role="tab" aria-controls="ex2-pills-3" aria-selected="false">{{ trans('frontLang.off-plan') }}</a>
+                                        <a class="nav-link rounded-0  " id="ex2-tab-2" data-mdb-toggle="pill" href="#ex2-pills-2" role="tab" aria-controls="ex2-pills-2" aria-selected="false">{{ trans('frontLang.Rent') }}</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link rounded-0  " id="ex2-tab-3" data-mdb-toggle="pill" href="#ex2-pills-3" role="tab" aria-controls="ex2-pills-3" aria-selected="false">{{ trans('frontLang.off-plan') }}</a>
                                     </li>
                                 </ul>
-                                    <!-- Pills navs -->
+                                <!-- Pills navs -->
                                 <!-- Pills content -->
                                 <div class="tab-content" id="ex2-content">
                                     <div class="tab-pane fade show active" id="ex2-pills-1" role="tabpanel" aria-labelledby="ex2-tab-1">
@@ -971,10 +1016,8 @@ else
 
                                                 <div class="col-lg-12 mt-3 mb-4">
                                                     <div class="input-group has-search">
-
                                                         <span class="fa fa-search form-control-feedback"></span>
                                                         <input type="search" name="search" id="search-mobile" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
-
                                                     </div>
                                                     <div id="List-mobile"></div>
                                                     {{ csrf_field() }}

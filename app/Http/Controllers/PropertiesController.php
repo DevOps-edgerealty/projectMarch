@@ -41,6 +41,10 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -55,7 +59,7 @@ class PropertiesController extends Controller
 
         $this->data['beds'] = Bed::all();
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','1')->where('type_id','1')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','1')->where('type_id','1')->paginate(15);
 
         $this->data['properties'] = $properties;
 
@@ -116,22 +120,37 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
 
-        if ($lang == 'ar') {
-            $Pageheading = "عقارات في دبي";
-        }
+        if($request->search != null){
+            if ($lang == 'ar') {
+                $Pageheading = " عقارات في" . "$request->search";
+            }
+            elseif($lang == 'ru'){
 
-        elseif($lang == 'ru'){
+                $Pageheading = "Недвижимость в " . "$request->search";
+            }
+            else {
+                $Pageheading = "Properties In " . "$request->search";
+            }
+        } else {
+            if ($lang == 'ar') {
+                $Pageheading = " عقارات في دبي";
+            }
 
-            $Pageheading = "Квартиры на продажу в Дубай";
+            elseif($lang == 'ru'){
+                $Pageheading = "Проекты в процессе стройки " ;
+            }
 
-        }
-
-        else {
-            $Pageheading = "Properties In Dubai";
+            else {
+                $Pageheading = "Properties In Dubai";
+            }
         }
 
         $landingpageseo = Landingpageseos::where('id','5')->first();
@@ -201,23 +220,44 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
 
-        if ($lang == 'ar') {
-            $Pageheading = "عقارات في دبي";
+        if($request->search != null){
+            if ($lang == 'ar') {
+                $Pageheading = " عقارات في" . "$request->search";
+            }
+            elseif($lang == 'ru'){
+
+                $Pageheading = "Недвижимость в " . "$request->search";
+            }
+            else {
+                $Pageheading = "Properties In " . "$request->search";
+            }
+        } else {
+            if ($lang == 'ar') {
+                $Pageheading = " عقارات في دبي";
+            }
+
+            elseif($lang == 'ru'){
+                $Pageheading = "Проекты в процессе стройки " ;
+            }
+
+            else {
+                $Pageheading = "Properties In Dubai";
+            }
         }
 
-        elseif($lang == 'ru'){
 
-            $Pageheading = "Квартиры на продажу в Дубай";
 
-        }
 
-        else {
-            $Pageheading = "Properties In Dubai";
-        }
+
+        // dd($Pageheading);
 
         $landingpageseo = Landingpageseos::where('id','5')->first();
 
@@ -243,6 +283,10 @@ class PropertiesController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -274,7 +318,6 @@ class PropertiesController extends Controller
         $amenities = array();
 
         $db_amenities = $property_detail->amenities;
-
 
         if($db_amenities!='')
         {
@@ -325,6 +368,10 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
@@ -371,7 +418,7 @@ class PropertiesController extends Controller
 
 
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','1')->where('type_id','1')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','1')->where('type_id','1')->orderby('id','DESC')->paginate(15);
 
 
 
@@ -392,6 +439,10 @@ class PropertiesController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -423,7 +474,7 @@ class PropertiesController extends Controller
 
         $this->data['landingpageseo'] = $landingpageseo;
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','2')->where('type_id','1')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','2')->where('type_id','1')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
@@ -459,6 +510,10 @@ class PropertiesController extends Controller
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -505,7 +560,7 @@ class PropertiesController extends Controller
         $this->data['landingpageseo'] = $landingpageseo;
 
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','3')->where('type_id','1')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','3')->where('type_id','1')->orderby('id','DESC')->paginate(15);
 
 
 
@@ -525,6 +580,10 @@ class PropertiesController extends Controller
     {$footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -572,16 +631,11 @@ class PropertiesController extends Controller
 
         $this->data['landingpageseo'] = $landingpageseo;
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','8')->where('type_id','1')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','8')->where('type_id','1')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
         $this->data['properties'] = $properties;
-
-
-
-
-
 
         return view('properties',$this->data);
 
@@ -638,7 +692,7 @@ class PropertiesController extends Controller
         $this->data['landingpageseo'] = $landingpageseo;
 
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','5')->where('type_id','1')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','5')->where('type_id','1')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
@@ -706,7 +760,7 @@ class PropertiesController extends Controller
 
         $this->data['PageHeading'] = $Pageheading;
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','6')->where('type_id','1')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','6')->where('type_id','1')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
@@ -775,7 +829,7 @@ class PropertiesController extends Controller
 
         $this->data['landingpageseo'] = $landingpageseo;
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','1')->where('type_id','2')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','1')->where('type_id','2')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
@@ -839,7 +893,7 @@ class PropertiesController extends Controller
 
         $this->data['landingpageseo'] = $landingpageseo;
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','2')->where('type_id','2')->where('status','1')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','2')->where('type_id','2')->where('status','1')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
@@ -905,7 +959,7 @@ class PropertiesController extends Controller
         $this->data['landingpageseo'] = $landingpageseo;
 
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','3')->where('type_id','2')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','3')->where('type_id','2')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
@@ -971,7 +1025,7 @@ class PropertiesController extends Controller
 
         $this->data['landingpageseo'] = $landingpageseo;
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','4')->where('type_id','2')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','4')->where('type_id','2')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
@@ -1037,7 +1091,7 @@ class PropertiesController extends Controller
         $this->data['landingpageseo'] = $landingpageseo;
 
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','5')->where('type_id','2')->orderby('id','DESC')->paginate(12);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','5')->where('type_id','2')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 
@@ -1090,9 +1144,7 @@ class PropertiesController extends Controller
 
             $Pageheading = "Квартиры на продажу в Дубай";
 
-        }
-
-        else {
+        } else {
             $Pageheading = "Luxury Properties For Rent in Dubai";
         }
 
@@ -1102,16 +1154,9 @@ class PropertiesController extends Controller
 
         $this->data['landingpageseo'] = $landingpageseo;
 
-
-
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','6')->where('type_id','2')->orderby('id','DESC')->paginate(12);
-
-        //return $properties;
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','6')->where('type_id','2')->orderby('id','DESC')->paginate(15);
 
         $this->data['properties'] = $properties;
-
-
-
 
         return view('properties',$this->data);
 

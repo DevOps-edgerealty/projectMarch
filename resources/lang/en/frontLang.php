@@ -265,7 +265,7 @@ return array (
 
   'Premium' => 'Premium',
   'Feature' => 'Feature',
-  'contactUs' => 'CONTACT',
+  'contactUs' => 'Contact',
   'recentlyListedProperties' => 'Recently Listed Properties',
   'details' => 'Details',
   'propertyStatus' => 'Property Status',
@@ -328,7 +328,7 @@ return array (
   'Ourcompnay' => 'Our Company',
   'Mission' => 'Mission and Vision',
   'Contactus' => 'Contact Us',
-  'Careers' => 'CAREERS',
+  'Careers' => 'Careers',
   'Team' => 'Our Team',
 
   'startingfrom' => 'Starting From',
@@ -546,7 +546,7 @@ return array (
   'apartmentindex' => 'APARTMENT ',
   'villaindex' => 'VILLA ',
   'plotindex' => 'PLOT ',
-  'townhouseindex' => 'TOWN HOUSE ',
+  'townhouseindex' => 'TOWNHOUSE ',
   'commercialindex' => 'COMMERCIAL ',
   'exploremoreindex' => 'EXPLORE MORE ',
 
@@ -570,6 +570,22 @@ return array (
     'aboutHiringBody' => 'Do What You Love, Love What You Do. Join Us To Discover Your Potential',
 
     'agentCardShare' => 'Share',
+    'latestProjectHome' => 'Discover our latest real estate projects! Browse through a curated selection of exciting new developments, from modern condos to sprawling estates. With detailed information, stunning visuals, and access to our team of experienced agents, finding your dream property has never been easier.',
+
+    'map' => 'Map View',
+
+    'palmJumeirah' => 'Palm Jumeirah',
+
+    'dubaiProperties' => 'Dubai Properties',
+
+    'exitMap' => 'Exit Map',
+    'dubaioffplanProjects' => 'Dubai Off Plan Projects',
+    'dubaiReadyProjects' => 'Dubai Ready Projects',
+    'dubaiLuxuryProjects' => 'Dubai Luxury Projects',
+    'blogsdetails' => 'Blog Details',
+    'contact_us' => 'Contact Us',
+
+
 
 );
 

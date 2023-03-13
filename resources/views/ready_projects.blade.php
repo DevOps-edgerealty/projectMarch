@@ -124,12 +124,12 @@
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
             <div class="mask" style="background-color: rgba(0, 0, 0);">
-            <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
+            <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100">
                 <div class="text-white">
-                    <h3 class="mt-5 mb-5"  style="text-transform: uppercase;"> {{ trans('frontLang.readyProjects') }} </h3><br>
-                    <div class="row search-width" >
+                    <h3 class="mt-5"  style="text-transform: uppercase;"> {{ trans('frontLang.readyProjects') }} </h3><br>
+                    {{-- <div class="row search-width" >
 
-                    </div>
+                    </div> --}}
                     <!-- Pills content -->
 
                 </div>
@@ -154,10 +154,10 @@
         content: var( --mdb-breadcrumb-divider, "/" );
         }
     </style>
-    <section class="mt-5" style="direction: rtl">
+    <section class="" style="direction: rtl">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 mb-4">
+                <div class="col-lg-12 ">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item text-white "><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }} </a></li>
@@ -167,7 +167,7 @@
                 </div>
 
             </div>
-            <h3 class="text-left">{{ trans('frontLang.readyProjects') }}</h3>
+            {{-- <h3 class="text-left">{{ trans('frontLang.readyProjects') }}</h3> --}}
             <P>ينتهي البحث عن منزل أحلامك في دبي مع شركة إيدج ريالتي.  ابحث عن العقارات الجاهزة للسكن، حيث يمكنك شراء الفلل والشقق والبنتهاوس ومنازل التاون هاوس في دبي، التي ستتوافق مع معاييرك المثالية فيما يتعلق بمعيشتك، ذلك من خلال المنازل الفخمة التي حصلت على لمستها النهائية بواسطة عدة أكبر الشركات في مجال التطوير والإنشاء.</P>
 
 
@@ -227,6 +227,11 @@
                                         <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body ">
+                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                {{ trans('frontLang.requestdetail') }}
+                                            </p>
+                                        </div>
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($projects->images  as $single_img)
@@ -236,6 +241,11 @@
                                                 @endforeach
                                             </div>
                                             <div class="col-lg-6">
+                                                <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                                    <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                        {{ trans('frontLang.requestdetail') }}
+                                                    </p>
+                                                </div>
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                 <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
@@ -309,10 +319,10 @@
         });
     </script>
 @else
-    <section class="mt-5">
+    <section class="">
         <div class="container-fluid containerization">
             <div class="row">
-                <div class="col-lg-12 mb-4">
+                <div class="col-lg-12 ">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
@@ -324,9 +334,9 @@
                 </div>
 
             </div>
-            <h3 class="text-left">{{ trans('frontLang.readyProjects') }}</h3>
+            {{-- <h3 class="text-left">{{ trans('frontLang.readyProjects') }}</h3> --}}
 
-            <div class="row mt-3">
+            <div class="row ">
                 <div class="col-lg-12">
                     <p>The search for your dream home in Dubai ends with Edge Realty. Find the ready to move in properties, where you can buy villas, apartments, penthouses, and townhouses in Dubai that meet your ideal parameters in relation to homes for sale within Dubai by the largest property developers.</p>
                 </div>
@@ -391,6 +401,11 @@
                                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div> --}}
                                     <div class="modal-body bg-black rounded-0 border border-1 border-white">
+                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                {{ trans('frontLang.requestdetail') }}
+                                            </p>
+                                        </div>
                                         <div class="row p-4">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($projects->images  as $single_img)

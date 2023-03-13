@@ -564,5 +564,7 @@ return array (
   'plotindex' => 'أرض ',
   'townhouseindex' => 'تاون هاوس ',
   'commercialindex' => 'تجارى ',
-  'exploremoreindex' => ' إكتشف المزيد'
+  'exploremoreindex' => ' إكتشف المزيد',
+  'projectname' => 'اسم المشروع',
+  'companyOverView' => 'نبذة عن الشركة',
 );
