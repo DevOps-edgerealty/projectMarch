@@ -602,6 +602,9 @@ Route::get('/admin/properties/location/make/{id}', 'PropertyLocationController@m
 Route::POST('/admin/properties/location/update-create', 'PropertyLocationController@update_create')->name('property-location-update-create');
 Route::get('/admin/properties/location/delete/{id}', 'PropertyLocationController@delete')->name('property-location-delete');
 
+Route::get('/{lang}/properties/map/{id}', 'FronthomeController@show_property')->name('property-location-show');
+
+
 Route::get('/{lang}/luxury-projects/map', 'FronthomeController@luxury_projects_map')->name('luxury_projects_map');
 Route::get('/{lang}/ready-projects/map', 'FronthomeController@ready_projects_map')->name('ready_projects_map');
 Route::get('/{lang}/offplan-projects/map', 'FronthomeController@offplan_projects_map')->name('offplan_projects_map');
@@ -610,6 +613,8 @@ Route::get('/admin/projects/locations-mgt', 'ProjectLocationController@index')->
 Route::get('/admin/projects/location/make/{id}', 'ProjectLocationController@make')->name('project-location-make');
 Route::POST('/admin/projects/location/update-create', 'ProjectLocationController@update_create')->name('project-location-update-create');
 Route::get('/admin/projects/location/delete/{id}', 'ProjectLocationController@delete')->name('project-location-delete');
+
+
 
 
 

@@ -92,7 +92,7 @@
         background-color: #fff !important;
         color: #000 !important;
         transform: scale(1) !important;
-        border: 2px solid #000 !important;
+        /* border: 2px solid #000 !important; */
 
         cursor: pointer !important;
     }
@@ -500,7 +500,7 @@
     <section class="mt-5">
         <div class="container-fluid containerization">
             <div class="row">
-                <div class="col-lg-12 mb-4">
+                <div class="col-lg-12 mb-0">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
@@ -513,14 +513,14 @@
                 <div class="col-lg-12">
                     <!-- Pills navs -->
                     <ul class="nav nav-pills nav-fill mb-3" id="ex1" role="tablist" >
-                            <li class="nav-item" role="presentation" >
-                                <a class="nav-link border border-1 border-white" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map") }}" ><i class="fas fa-map-marker-alt"> </i> {{ trans('frontLang.map') }}</a>
-                            </li>
+                            {{-- <li class="nav-item" role="presentation" >
+                                <a class="nav-link border border-1 border-white" style="background-color: #848484 !important; font-size: 1em; " id="ex2-tab-3"  href="{{ url($langSeg."/properties/map") }}" > {{ trans('frontLang.map') }}</a>
+                            </li> --}}
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active border border-1 border-white"  id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1-pro" role="tab" aria-controls="ex2-pills-1" aria-selected="true" >{{ trans('frontLang.buy') }}</a>
+                                <a class="nav-link active border border-1 border-white"  style=" font-size: 1em; " id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1-pro" role="tab" aria-controls="ex2-pills-1" aria-selected="true" >{{ trans('frontLang.buy') }}</a>
                             </li>
                             <li class="nav-item" role="presentation" >
-                                <a class="nav-link border border-1 border-white" id="ex2-tab-2"  data-mdb-toggle="pill" href="#ex2-pills-2-pro" role="tab" aria-controls="ex2-pills-2" aria-selected="false">{{ trans('frontLang.Rent') }}</a>
+                                <a class="nav-link border border-1 border-white" id="ex2-tab-2" style=" font-size: 1em; "  data-mdb-toggle="pill" href="#ex2-pills-2-pro" role="tab" aria-controls="ex2-pills-2" aria-selected="false">{{ trans('frontLang.Rent') }}</a>
                             </li>
 
                     </ul>
@@ -534,12 +534,26 @@
                                     @csrf
                                     @honeypot
                                     <input type="hidden" name="property_type_id" value="1" />
-                                    <div class="input-group">
-                                        <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -5px !important;"></span>
-                                        <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
-                                        <button type="submit" class="btn btn-white rounded-0"><i class="fas fa-search"></i></button>
-                                        <a id="flip"  class="float-end mt-2 mx-4 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">More Filter</a>
+
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <div class="input-group">
+                                                <a class="btn btn-outline-white px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 1em; " id="ex2-tab-3"  href="{{ url($langSeg."/properties/map") }}" > {{ trans('frontLang.map') }}</a> &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-11">
+                                            <div class="input-group">
+                                                <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -6px !important;"></span>
+                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
+                                                <button type="submit" class="btn btn-white rounded-0"><i class="fas fa-search"></i></button>
+                                            </div>
+                                        </div>
                                     </div>
+
+
+
+                                    <a id="flip"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">More Filter</a>
 
                                     <div id="List"></div>
                                     {{ csrf_field() }}
@@ -662,10 +676,27 @@
                                     @honeypot
                                     <input type="hidden" name="property_type_id" value="2" />
                                     <div class="input-group">
-                                        <span class="fa fa-search form-control-feedback"></span>
-                                        <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
-                                        <a id="flip2"  class="float-end mt-2 mx-4 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">More Filter</a>
+
+
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <div class="input-group">
+                                                <a class="btn btn-outline-white px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 1em; " id="ex2-tab-3"  href="{{ url($langSeg."/properties/map") }}" > {{ trans('frontLang.map') }}</a> &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-11">
+                                            <div class="input-group">
+                                                <span class="fa fa-search form-control-feedback"></span>
+                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
+                                                <button type="submit" class="btn btn-white rounded-0"><i class="fas fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <a id="flip2"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">More Filter</a>
 
                                     <div id="panel2" style="display: none;">
                                         <div id="List-1"></div>

@@ -244,6 +244,10 @@
         font-size: 16px !important;
         text-align: justify !important;
     }
+
+    #about_mobile {
+        text-align: justify !important;
+    }
 </style>
 
 
@@ -398,7 +402,7 @@
                     </a>
                     <a href="{{url($langSeg .'/'.'properties/map')}} ">
                         <button class="desktop-show position-absolute btn btn-lg btn-outline-white rounded-0 bg-dark text-white my-auto" style="bottom: 45px; left: 330px; z-index: 100 !important;">
-                            View Map
+                            {{ trans('frontLang.map') }}
                         </button>
                     </a>
                     <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}">
@@ -653,10 +657,10 @@
 
 
                     @if ($property_detail->type_id == '1')
-                        <h5> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property_detail->price) }}  {{ trans('frontLang.AED') }} </span></b></h5>
+                        <h5> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property_detail->price) }}   </span></b></h5>
                     @else
 
-                        <h5> <b>{{ trans('frontLang.yearly') }} <span style="color: #fff;">   {{ number_format($property_detail->price) }}  {{ trans('frontLang.AED') }}</b> </span></h5>
+                        <h5> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">   {{ number_format($property_detail->price) }} {{ trans('frontLang.yearly') }} </b> </span></h5>
                     @endif
 
                     <hr>
@@ -1546,9 +1550,9 @@
                             Show all photos
                         </button>
                     </a>
-                    <a href="{{url($langSeg .'/'.'properties/map')}}">
+                    <a href="{{url($langSeg .'/'.'properties/map/'.$property_detail->id)}}">
                         <button class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn" style="bottom: 45px; left: 330px; z-index: 100 !important;">
-                            View Map
+                            {{ trans('frontLang.map') }}
                         </button>
                     </a>
                     <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}">
@@ -1816,10 +1820,6 @@
 
 
 
-
-
-
-
     {{-- mobile images --}}
     <section class=" mobile-show">
         <div class="container mt-2 ">
@@ -1833,10 +1833,10 @@
                         <div class="col-lg-12 text-center" style="display:flex;align-items: center;">
 
                             <div class="AED skill_mobile" style="display: block !important">
-                                <h4 class="fw-light"> <b>Price <span style="color: #fff;">{{ number_format($property_detail->price) }} {{ trans('frontLang.AED') }} </b> </span></h4>
+                                <h4 class="fw-light"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">{{ number_format($property_detail->price) }}  </b> </span></h4>
                             </div>
                             <div class="USD skill_mobile">
-                                <h4 class="fw-light"> <b>Price <span style="color: #fff;"> {{ number_format($property_detail->price_usd) }} USD </b> </span></h4>
+                                <h4 class="fw-light"> <b>USD <span style="color: #fff;"> {{ number_format($property_detail->price_usd) }}  </b> </span></h4>
                             </div>
 
                             {{-- <select class="" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px;margin-left:10px;margin-top: -9px;border: 2px solid;border-radius: 4px;">
@@ -1851,10 +1851,10 @@
                         <div class="col-lg-12 text-center" style="display:flex;align-items: center;">
 
                             <div class="AED skill_rent_mobile" style="display: block !important">
-                                <h4 class="fw-light"> <b>Yealry <span style="color: #fff;">{{ number_format($property_detail->price) }} {{ trans('frontLang.AED') }} </b> </span></h4>
+                                <h4 class="fw-light"> <b>  {{ trans('frontLang.AED') }} <span style="color: #fff;">{{ number_format($property_detail->price) }} {{ trans('frontLang.yearly') }}</b> </span></h4>
                             </div>
                             <div class="USD skill_rent_mobile">
-                                <h4 class="fw-light"> <b>Yealry <span style="color: ##fff;"> {{ number_format($property_detail->price_usd) }} USD </b> </span></h4>
+                                <h4 class="fw-light"> <b> USD<span style="color: ##fff;"> {{ number_format($property_detail->price_usd) }}  {{ trans('frontLang.yearly') }}</b> </span></h4>
                             </div>
                         </div>
                     @endif
@@ -2007,8 +2007,6 @@
 
         </div>
     </section>
-
-
 
 
     {{-- short description & agent form desktop --}}

@@ -70,8 +70,8 @@
         <!-- Grid container -->
 
         <div class="container pt-4" style="background: #000;">
-            <section class="mb-1">
-                <div class="row">
+            <section class="mb-1 w-100">
+                <div class="row w-100">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
 
                         <div class="accordion-item">
@@ -210,15 +210,13 @@
 
     </footer>
 @else
-    <footer class="text-center text-white mt-5 mobile-show" style="background-color: #000;">
+    <footer class="text-center text-white mt-5 mobile-show w-100" style="background-color: #000;">
         <!-- Grid container -->
 
         <div class="container pt-4" style="background: #000;">
-            <section class="mb-1">
-                <div class="row">
-
-
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
+            <section class="mb-1 w-100">
+                <div class="row w-100">
+                    <div class="accordion accordion-flush w-100" id="accordionFlushExample">
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
@@ -640,17 +638,6 @@
 
 
         </section>
-
-        <section class="text-center text-white" style="background-color: #000">
-
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Links  -->
-        <section class="d-flex justify-content-center  p-4" style="background-color: #000" >
-
-        </section>
-
 
 
     </footer>

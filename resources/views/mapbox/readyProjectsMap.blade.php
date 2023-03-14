@@ -62,7 +62,7 @@
             }
 
             .bottombar {
-                height: 200px;
+                height: 180px;
                 background-color: #000 !important;
                 top:auto;
                 right:auto;
@@ -255,18 +255,32 @@
         <div class="container">
             <div class="row py-5"></div>
             <div class="row mx-auto mb-3">
-                <span class=" mx-auto text-center d-block d-sm-block d-md-none" style="font-size: 1.3rem; text-align: center !important; margin: auto !imp">
-                    {{ trans('frontLang.dubaiReadyProjects') }}
-                </span>
 
-                <div class="d-flex bd-highlight px-0    ">
-                    <div class="p-2 ps-0 flex-fill bd-highlight d-none d-md-block d-lg-block" style="font-size: 1.8rem; " >
-                        <a href="{{ url()->previous() }}" class="btn btn-outline-white btn-lg rounded-0 text-white bg-black">
-                            {{ trans('frontLang.exitMap') }}
-                        </a>
-                    </div>
-                    <div class="p-2 flex-fill bd-highlight d-none d-md-block d-lg-block text-center" style="font-size: 1.8rem; text-align: center !important; ">{{ trans('frontLang.dubaiReadyProjects') }}</div>
-                    <div class="p-2 flex-fill bd-highlight d-none d-md-block d-lg-block"></div>
+                <div class="col-2 px-0 mt-3">
+                    <a href="{{ url()->previous() }}" class="btn btn-outline-white btn-lg rounded-0 text-white bg-black d-none d-md-block d-lg-block">
+                        {{ trans('frontLang.exitMap') }}
+                    </a>
+                </div>
+                <div class="col-10 px-0 mt-3">
+                    <span class=" mx-auto text-center d-none d-md-block d-lg-block" style="font-size: 1.8rem; text-align: center !important; margin: auto !imp">
+                        {{ trans('frontLang.dubaiReadyProjects') }}
+                    </span>
+                </div>
+            </div>
+
+
+
+            <div class="row mx-auto mb-3">
+
+                <div class="col-4 px-0">
+                    <a href="{{ url()->previous() }}" class="btn btn-outline-white btn-md rounded-0 text-white bg-black d-block d-sm-block d-md-none">
+                        {{ trans('frontLang.exitMap') }}
+                    </a>
+                </div>
+                <div class="col-8 px-0">
+                    <span class=" mx-auto text-right d-block d-sm-block d-md-none" style="font-size: 1.3rem; text-align: right !important; ">
+                        {{ trans('frontLang.dubaiReadyProjects') }}
+                    </span>
                 </div>
             </div>
         </div>
@@ -274,21 +288,13 @@
 </section>
 
 @if($langSeg == 'ar')
-     <div class='sidebar ' id="listing-card" style="display: none;" dir="rtl">
+
+    <div class='sidebar ' id="listing-card" style="display: none;" dir="rtl">
         <div id='listings' class='listings ' style="margin-top: 60px;">
             <div class="card rounded-0 bg-black " style="width: 100%;">
                 <div id="listing-image">
 
                 </div>
-
-                {{-- <img
-                    src=""
-                    class="card-img-top rounded-0 ps-1"
-                    id="listing-image"
-                    alt=""
-                    style="height: 400px;"
-                > --}}
-
                 <div class="card-body">
                     <h3 class="card-title " >
 
@@ -300,8 +306,7 @@
                     <p style="font-size: 1.3em" class="mt-3" id="listing-location"></p>
                     <p class="card-text m-0" id="listing-title"></p>
                     <div class="d-flex flex-row bd-highlight mb-3">
-                        <div class="p-2 bd-highlight" id="listing-beds"></div>
-                        <div class="p-2 bd-highlight" id="listing-area"></div>
+                        <div class="p-0 bd-highlight" id="listing-beds"></div>
                     </div>
                     <p id="listing-description" class="" style="color: #848484 !important;"></p>
                 </div>
@@ -312,27 +317,18 @@
 
 
     <div class="bottombar fixed-bottom" id="listing-card-mobile" style="border-radius: 20px 20px 0px 0px; display: none;" dir="rtl">
-            {{-- <hr class="border-white w-25" style=""> --}}
-
         <div class="card bg-black" style="border-radius: 20px 20px 0px 0px;">
             <div class="card-body">
-
-                {{-- <div class="card-title">
-                    <p style="font-size: 1.8em" class="text-white mb-0" id="listing-price-mobile"></p>
-                </div> --}}
-
                 <div class="d-flex flex-row bd-highlight mb-0">
-                    <h3 class="p-2 ps-0 bd-highlight mb-0" style="font-size: 1.8em" id="listing-price-mobile"></h3>
-                    {{-- <div class="p-2 bd-highlight float-right ms-auto" style="font-size: .9em;" id="listing-btn-mobile"></div> --}}
+                    <h3 class="p-2 ps-0 bd-highlight mb-0" style="font-size: 1.8em" id="listing-title-mobile"></h3>
                 </div>
 
                 <p style="font-size: 1em; text-decoration: underline;" class="text-white mb-0" id="listing-location-mobile"></p>
-                {{-- <p style="font-size: 1em;" class="m-0" id="listing-title-mobile"></p> --}}
+                <p style="font-size: 1em;" class="text-white mb-0" id="listing-price-mobile"></p>
 
 
                 <div class="d-flex flex-row bd-highlight mb-0">
                     <div class="p-2 bd-highlight" id="listing-beds-mobile"></div>
-                    <div class="p-2 bd-highlight" id="listing-area-mobile"></div>
                 </div>
                 <div class="row" id="listing-btn-mobile">
 
@@ -343,21 +339,12 @@
     <div id='map' class="map" style='width: 100%; height: 100vh'></div>
 
 @else
-     <div class='sidebar ' id="listing-card" style="display: none;">
+    <div class='sidebar ' id="listing-card" style="display: none;">
         <div id='listings' class='listings ' style="margin-top: 60px;">
             <div class="card rounded-0 bg-black " style="width: 100%;">
                 <div id="listing-image">
 
                 </div>
-
-                {{-- <img
-                    src=""
-                    class="card-img-top rounded-0 ps-1"
-                    id="listing-image"
-                    alt=""
-                    style="height: 400px;"
-                > --}}
-
                 <div class="card-body">
                     <h3 class="card-title " >
 
@@ -369,8 +356,7 @@
                     <p style="font-size: 1.3em" class="mt-3" id="listing-location"></p>
                     <p class="card-text m-0" id="listing-title"></p>
                     <div class="d-flex flex-row bd-highlight mb-3">
-                        <div class="p-2 bd-highlight" id="listing-beds"></div>
-                        <div class="p-2 bd-highlight" id="listing-area"></div>
+                        <div class="p-0 bd-highlight" id="listing-beds"></div>
                     </div>
                     <p id="listing-description" class="" style="color: #848484 !important;"></p>
                 </div>
@@ -381,36 +367,48 @@
 
 
     <div class="bottombar fixed-bottom" id="listing-card-mobile" style="border-radius: 20px 20px 0px 0px; display: none;">
-            {{-- <hr class="border-white w-25" style=""> --}}
-
         <div class="card bg-black" style="border-radius: 20px 20px 0px 0px;">
-            <div class="card-body">
 
-                {{-- <div class="card-title">
-                    <p style="font-size: 1.8em" class="text-white mb-0" id="listing-price-mobile"></p>
-                </div> --}}
+            <div class="card  bg-black rounded-0 py-0">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <div id="listing-image-mobile">
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-0 px-2 py-2">
+                            <h5 class="card-title" id="listing-price-mobile"></h5>
+                            <p class="card-text" id="listing-location-mobile"></p>
+                            <div class="d-flex flex-row bd-highlight mb-0">
+                                <div class="p-2 ps-0 bd-highlight" id="listing-baths-mobile"></div>
+                                <div class="p-2 bd-highlight" id="listing-beds-mobile"></div>
+                                <div class="p-2 bd-highlight" id="listing-area-mobile"></div>
+                            </div>
+                            <div  id="listing-btn-mobile"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            {{-- <div class="card-body">
                 <div class="d-flex flex-row bd-highlight mb-0">
-                    <h3 class="p-2 ps-0 bd-highlight mb-0" style="font-size: 1.8em" id="listing-price-mobile"></h3>
-                    {{-- <div class="p-2 bd-highlight float-right ms-auto" style="font-size: .9em;" id="listing-btn-mobile"></div> --}}
+                    <h3 class="p-2 ps-0 bd-highlight mb-0" style="font-size: 1.8em" id="listing-title-mobile"></h3>
                 </div>
 
                 <p style="font-size: 1em; text-decoration: underline;" class="text-white mb-0" id="listing-location-mobile"></p>
-                {{-- <p style="font-size: 1em;" class="m-0" id="listing-title-mobile"></p> --}}
+                <p style="font-size: 1em;" class="text-white mb-0" id="listing-price-mobile"></p>
 
 
                 <div class="d-flex flex-row bd-highlight mb-0">
                     <div class="p-2 bd-highlight" id="listing-beds-mobile"></div>
-                    <div class="p-2 bd-highlight" id="listing-area-mobile"></div>
                 </div>
                 <div class="row" id="listing-btn-mobile">
 
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div id='map' class="map" style='width: 100%; height: 100vh'></div>
-
 @endif
 
 
@@ -681,19 +679,17 @@
                 // Copy coordinates array.
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const name = e.features[0].properties.name;
-                var priceLong = e.features[0].properties.priceLong;
+                const priceLong = e.features[0].properties.priceLong;
                 const route = e.features[0].properties.address;
                 const image = e.features[0].properties.image;
                 const image_url = e.features[0].properties.image_url;
                 const slug_link = e.features[0].properties.slug_link;
                 const id = e.features[0].properties.id;
                 const bed = e.features[0].properties.bed;
-                const bath = e.features[0].properties.bath;
                 const area = e.features[0].properties.area;
                 const description = e.features[0].properties.description;
-                priceLong = 'Price On Request';
 
-
+                // a function to check if device is a MOBILE or DESKTOP view.
                 const isMobile = {
                     Android: function() {
                         return navigator.userAgent.match(/Android/i);
@@ -715,15 +711,22 @@
                     }
                 };
 
+
+
+
                 if( isMobile.any() ) {
                     document.getElementById('listing-card-mobile').style.display = 'block';
-                    document.getElementById('listing-price-mobile').innerHTML = `${priceLong}`;
-                    document.getElementById('listing-btn-mobile').innerHTML = `<a href="{{url('en/dubai-ready-projects/${slug_link}')}}" class="btn btn-outline-white btn-block rounded-0 text-white">View Property</a>`;
+                    document.getElementById('listing-price-mobile').innerHTML = `Price on request`;
+                    document.getElementById('listing-btn-mobile').innerHTML = `<a href="{{url('en/dubai-new-projects/${slug_link}')}}" class="btn btn-outline-white btn-block rounded-0 text-white">View Property</a>`;
                     // document.getElementById('listing-title-mobile').innerHTML = `${name}`;
-                    document.getElementById('listing-location-mobile').innerHTML = `community ${route}`;
-                    // document.getElementById('listing-location-mobile').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
+                    document.getElementById('listing-location-mobile').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
                     document.getElementById('listing-beds-mobile').innerHTML = `<i class="fas fa-bed"></i> : ${bed}`;
-                    document.getElementById('listing-area-mobile').innerHTML = `<i class="fas fa-chart-area"></i> : ${area}`;
+
+                    document.getElementById('listing-image-mobile').innerHTML = `
+                        <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" >
+                            <img src="{{ URL::asset('${image_url}') }}" style="height: 150px;" class="rounded-0" alt="${image}"/>
+                        </a>
+                    `;
                     // document.getElementById('listing-description').innerHTML = description.substring(0, 400) + `... <a href="{{url('en/dubai-property/${slug_link}')}}" class="text-white text-decoration-underline">Read More</a>`;
 
 
@@ -738,79 +741,50 @@
                      * Design the property cards on popup using bootstrap CSS
                      * and standard CSS
                     */
-                    popup
-                    .setLngLat(coordinates)
-                    .setHTML(
-                        `
-                            <div class="card bg-black rounded-0 py-0" style="max-width: 540px; ">
-                            <div class="row p-0">
-                                <div class="col-md-5 p-0">
-                                    <a href="{{url('en/dubai-ready-projects/${slug_link}')}}" >
-                                        <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
-                                    </a>
-                                </div>
-                                <div class="col-md-7 pt-3 px-0">
-                                    <span class="card-title fw-bold" style="
-                                        font-size: 1.4em !important;
-                                        line-height: 1.1 !important;
-                                        margin-top: 10px !important;
-                                        text-align: justify !important;
-                                        ">
-                                        ${name}
-                                    </span>
+                    // popup
+                    // .setLngLat(coordinates)
+                    // .setHTML(
+                    //     `
+                    //         <div class="card bg-black rounded-0 py-0" style="max-width: 540px; ">
+                    //             <div class="row p-0">
+                    //                 <div class="col-md-5 p-0">
+                    //                     <a href="{{url('en/dubai-new-projects/${slug_link}')}}" >
+                    //                         <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
+                    //                     </a>
+                    //                 </div>
+                    //                 <div class="col-md-7 pt-2 px-0">
+                    //                     <span class="card-title fw-bold mt-3 px-0 pb-0" style="
+                    //                         font-size: 1.4em !important;
+                    //                         line-height: 1.1 !important;
+                    //                         margin-top: 40px !important;
+                    //                         text-align: justify !important;
+                    //                         ">
+                    //                         <i class="fa fa-map-marker-alt"></i>
+                    //                         ${route}
+                    //                     </span>
+                    //                 </div>
+                    //             </div>
 
-                                    <br>
-                                    <br>
-
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
-                                            line-height: 1.1 !important;
-                                            margin-top: 10px !important;
-                                            text-align: justify !important;
-                                            text-decoration: underline !important;
-                                        "
-                                    >
-                                        ${route}
-                                    </span>
-
-                                    <br>
-                                    <br>
-
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
-                                            line-height: 1.1 !important;
-                                            margin-top: 10px !important;
-                                            text-align: justify !important;
-                                        "
-                                    >
-                                        Bed: ${bed} | Area: ${area}
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                        `
-                    )
-                    .addTo(map)
-                    .togglePopup();
-
+                    //         </div>
+                    //     `
+                    // )
+                    // .addTo(map);
                 } else {
+
                     document.getElementById('listing-card').style.display = 'block';
                     document.getElementById('map').style.left = '-25%';
-                    document.getElementById('listing-price').innerHTML = `${priceLong}`;
-                    document.getElementById('listing-btn').innerHTML = `<a href="{{url('en/dubai-ready-projects/${slug_link}')}}" class="btn btn-outline-white rounded-0 text-white">View Property</a>`;
+                    document.getElementById('listing-price').innerHTML = `Price on Request`;
+                    document.getElementById('listing-btn').innerHTML = `<a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" class="btn btn-outline-white rounded-0 text-white">View Property</a>`;
                     document.getElementById('listing-title').innerHTML = `${name}`;
                     document.getElementById('listing-location').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
                     document.getElementById('listing-beds').innerHTML = `Bed : ${bed}`;
-                    document.getElementById('listing-area').innerHTML = `Area : ${area}`;
                     document.getElementById('listing-image').innerHTML = `
-                        <a href="{{url('en/dubai-property/${slug_link}')}}" >
-                            <img src="{{ URL::asset('${image_url}') }}" style="height: 400px; width: 100%" class="card-img-top rounded-0 px-1" alt="${image}_link_1"/>
+                        <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" >
+                            <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
                         </a>
                     `;
-                    document.getElementById('listing-description').innerHTML = description.substring(0, 400) + `... <a href="{{url('en/dubai-property/${slug_link}')}}" class="text-white text-decoration-underline">Read More</a>`;
+                    document.getElementById('listing-description').innerHTML = description.substring(0, 400) + `... <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" class="text-white text-decoration-underline">Read More</a>`;
+
 
 
 
@@ -830,61 +804,59 @@
                     .setHTML(
                         `
                             <div class="card bg-black rounded-0 py-0" style="max-width: 540px; ">
-                            <div class="row p-0">
-                                <div class="col-md-5 p-0">
-                                    <a href="{{url('en/dubai-ready-projects/${slug_link}')}}" >
-                                        <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
-                                    </a>
-                                </div>
-                                <div class="col-md-7 pt-3 px-0">
-                                    <span class="card-title fw-bold" style="
-                                        font-size: 1.4em !important;
-                                        line-height: 1.1 !important;
-                                        margin-top: 10px !important;
-                                        text-align: justify !important;
-                                        ">
-                                        ${name}
-                                    </span>
-
-                                    <br>
-                                    <br>
-
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
+                                <div class="row p-0">
+                                    <div class="col-md-5 p-0">
+                                        <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" >
+                                            <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7 p-0">
+                                        <span class="card-title fw-bold" style="
+                                            font-size: 1.4em !important;
                                             line-height: 1.1 !important;
                                             margin-top: 10px !important;
                                             text-align: justify !important;
-                                            text-decoration: underline !important;
-                                        "
-                                    >
-                                        ${route}
-                                    </span>
+                                            ">
+                                            ${name}
+                                        </span>
 
-                                    <br>
-                                    <br>
+                                        <br>
+                                        <br>
 
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
-                                            line-height: 1.1 !important;
-                                            margin-top: 10px !important;
-                                            text-align: justify !important;
-                                        "
-                                    >
-                                        Bed: ${bed} | Area: ${area}
-                                    </span>
+                                        <span class="card-text"
+                                                style="
+                                                font-size: 1em !important;
+                                                line-height: 1.1 !important;
+                                                margin-top: 10px !important;
+                                                text-align: justify !important;
+                                                text-decoration: underline !important;
+                                            "
+                                        >
+                                            ${route}
+                                        </span>
+
+                                        <br>
+                                        <br>
+
+                                        <span class="card-text"
+                                                style="
+                                                font-size: 1em !important;
+                                                line-height: 1.1 !important;
+                                                margin-top: 10px !important;
+                                                text-align: justify !important;
+                                            "
+                                        >
+                                            Bed: ${bed}
+                                        </span>
+                                    </div>
                                 </div>
+
                             </div>
-
-                        </div>
                         `
                     )
-                    .addTo(map)
-                    .togglePopup();
-                };
+                    .addTo(map);
 
-
+                }
 
 
             });
@@ -924,66 +896,174 @@
                     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                 }
 
-                /**
-                 * Design the property cards on popup using bootstrap CSS
-                 * and standard CSS
-                */
-                popup
-                .setLngLat(coordinates)
-                .setHTML(
-                    `
-                        <div class="card bg-black rounded-0 py-0" style="max-width: 540px; ">
-                            <div class="row p-0">
-                                <div class="col-md-5 p-0">
-                                    <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" >
-                                        <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
-                                    </a>
-                                </div>
-                                <div class="col-md-7 pt-3 px-0">
-                                    <span class="card-title fw-bold" style="
-                                        font-size: 1.4em !important;
-                                        line-height: 1.1 !important;
-                                        margin-top: 10px !important;
-                                        text-align: justify !important;
-                                        ">
-                                        ${name}
-                                    </span>
 
-                                    <br>
-                                    <br>
 
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
+                // a function to check if device is a MOBILE or DESKTOP view.
+                const isMobile = {
+                    Android: function() {
+                        return navigator.userAgent.match(/Android/i);
+                    },
+                    BlackBerry: function() {
+                        return navigator.userAgent.match(/BlackBerry/i);
+                    },
+                    iOS: function() {
+                        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                    },
+                    Opera: function() {
+                        return navigator.userAgent.match(/Opera Mini/i);
+                    },
+                    Windows: function() {
+                        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+                    },
+                    any: function() {
+                        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                    }
+                };
+
+
+                if( isMobile.any() ) {
+                    document.getElementById('listing-card-mobile').style.display = 'block';
+                    document.getElementById('listing-price-mobile').innerHTML = `Price on request`;
+                    document.getElementById('listing-btn-mobile').innerHTML = `<a href="{{url('en/dubai-new-projects/${slug_link}')}}" class="btn btn-outline-white btn-block rounded-0 text-white">View Property</a>`;
+                    // document.getElementById('listing-title-mobile').innerHTML = `${name}`;
+                    document.getElementById('listing-location-mobile').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
+                    document.getElementById('listing-beds-mobile').innerHTML = `<i class="fas fa-bed"></i> : ${bed}`;
+
+                    document.getElementById('listing-image-mobile').innerHTML = `
+                        <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" >
+                            <img src="{{ URL::asset('${image_url}') }}" style="height: 150px;" class="rounded-0" alt="${image}"/>
+                        </a>
+                    `;
+                    // document.getElementById('listing-description').innerHTML = description.substring(0, 400) + `... <a href="{{url('en/dubai-property/${slug_link}')}}" class="text-white text-decoration-underline">Read More</a>`;
+
+
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+
+                    /**
+                     * Design the property cards on popup using bootstrap CSS
+                     * and standard CSS
+                    */
+                    // popup
+                    // .setLngLat(coordinates)
+                    // .setHTML(
+                    //     `
+                    //         <div class="card bg-black rounded-0 py-0" style="max-width: 540px; ">
+                    //             <div class="row p-0">
+                    //                 <div class="col-md-5 p-0">
+                    //                     <a href="{{url('en/dubai-new-projects/${slug_link}')}}" >
+                    //                         <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
+                    //                     </a>
+                    //                 </div>
+                    //                 <div class="col-md-7 pt-2 px-0">
+                    //                     <span class="card-title fw-bold mt-3 px-0 pb-0" style="
+                    //                         font-size: 1.4em !important;
+                    //                         line-height: 1.1 !important;
+                    //                         margin-top: 40px !important;
+                    //                         text-align: justify !important;
+                    //                         ">
+                    //                         <i class="fa fa-map-marker-alt"></i>
+                    //                         ${route}
+                    //                     </span>
+                    //                 </div>
+                    //             </div>
+
+                    //         </div>
+                    //     `
+                    // )
+                    // .addTo(map);
+                } else {
+
+                    document.getElementById('listing-card').style.display = 'block';
+                    document.getElementById('map').style.left = '-25%';
+                    document.getElementById('listing-price').innerHTML = `Price on Request`;
+                    document.getElementById('listing-btn').innerHTML = `<a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" class="btn btn-outline-white rounded-0 text-white">View Property</a>`;
+                    document.getElementById('listing-title').innerHTML = `${name}`;
+                    document.getElementById('listing-location').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
+                    document.getElementById('listing-beds').innerHTML = `Bed : ${bed}`;
+                    document.getElementById('listing-image').innerHTML = `
+                        <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" >
+                            <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
+                        </a>
+                    `;
+                    // document.getElementById('listing-description').innerHTML = description.substring(0, 400) + `... <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" class="text-white text-decoration-underline">Read More</a>`;
+
+
+
+
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+
+                    /**
+                     * Design the property cards on popup using bootstrap CSS
+                     * and standard CSS
+                    */
+                    popup
+                    .setLngLat(coordinates)
+                    .setHTML(
+                        `
+                            <div class="card bg-black rounded-0 py-0" style="max-width: 540px; ">
+                                <div class="row p-0">
+                                    <div class="col-md-5 p-0">
+                                        <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" >
+                                            <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7 p-0">
+                                        <span class="card-title fw-bold" style="
+                                            font-size: 1.4em !important;
                                             line-height: 1.1 !important;
                                             margin-top: 10px !important;
                                             text-align: justify !important;
-                                            text-decoration: underline !important;
-                                        "
-                                    >
-                                        ${route}
-                                    </span>
+                                            ">
+                                            ${name}
+                                        </span>
 
-                                    <br>
-                                    <br>
+                                        <br>
+                                        <br>
 
-                                    <span class="card-text"
-                                            style="
-                                            font-size: 1em !important;
-                                            line-height: 1.1 !important;
-                                            margin-top: 10px !important;
-                                            text-align: justify !important;
-                                        "
-                                    >
-                                        Bed: ${bed} | Area: ${area}
-                                    </span>
+                                        <span class="card-text"
+                                                style="
+                                                font-size: 1em !important;
+                                                line-height: 1.1 !important;
+                                                margin-top: 10px !important;
+                                                text-align: justify !important;
+                                                text-decoration: underline !important;
+                                            "
+                                        >
+                                            ${route}
+                                        </span>
+
+                                        <br>
+                                        <br>
+
+                                        <span class="card-text"
+                                                style="
+                                                font-size: 1em !important;
+                                                line-height: 1.1 !important;
+                                                margin-top: 10px !important;
+                                                text-align: justify !important;
+                                            "
+                                        >
+                                            Bed: ${bed}
+                                        </span>
+                                    </div>
                                 </div>
+
                             </div>
+                        `
+                    )
+                    .addTo(map);
 
-                        </div>
-                    `
-                )
-                .addTo(map);
+                }
             });
 
 

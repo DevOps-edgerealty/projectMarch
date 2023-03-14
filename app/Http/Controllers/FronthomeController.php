@@ -2865,6 +2865,173 @@ class FronthomeController extends Controller
 
 
 
+    public function show_property($lang = '', $id)
+    {
+        if ($lang != "") {
+            // Set Language
+            App::setLocale($lang);
+            \Session::put('locale', $lang);
+        }
+
+        // dd($lang);
+
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+        $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
+        $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+        $this->data['footerCommunities'] = $footerCommunities;
+
+
+        $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->where('id', $id)->get();
+
+        $original_data = json_decode($properties, JSON_PRETTY_PRINT);
+
+        $features = array();
+
+        foreach($original_data as $key => $value) {
+
+            // dd($value['images'][0]['image']);
+            if( $value['price'] > 1000 ) {
+
+                $x = round($value['price']);
+                $x_number_format = number_format($x);
+                $x_array = explode(',', $x_number_format);
+                $x_parts = array('k', 'm', 'b', 't');
+                $x_count_parts = count($x_array) - 1;
+                $x_display = $x;
+                $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
+                $x_display .= $x_parts[$x_count_parts - 1];
+            }
+
+            if($lang == 'ar') {
+                if($value['property_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ar'],
+                            'id' => $value['id'],
+                            'priceLong' => 'AED '.number_format($value['price']),
+                            'price' => $x_display,
+                            'address' => $value['address_ar'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'bath' => $value['bathrooms'],
+                            'area' => $value['area'],
+                            'description' => $value['description_ar'],
+                            )
+                        );
+                }
+            } elseif ( $lang == 'ru') {
+                if($value['property_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_ru'],
+                            'id' => $value['id'],
+                            'priceLong' => 'AED '.number_format($value['price']),
+                            'price' => $x_display,
+                            'address' => $value['address_ru'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'bath' => $value['bathrooms'],
+                            'area' => $value['area'],
+                            'description' => $value['description_ru'],
+                            )
+                        );
+                }
+            } else {
+                if($value['property_locations'] != null)
+                {
+                    $crs = array(
+                        "type" => "name",
+                        "properties" => array(
+                            "name" => "urn:ogc:def:crs:OGC:1.3:CRS84"
+                        )
+                    );
+
+
+                    $features[] = array(
+                        'type' => 'Feature',
+                        'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
+                        'properties' => array(
+                            'name' => $value['title_en'],
+                            'id' => $value['id'],
+                            'priceLong' => 'AED '.number_format($value['price']),
+                            'price' => $x_display,
+                            'address' => $value['address_en'],
+                            'image' => $value['images'][0]['image'],
+                            'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
+                            'slug_link' => $value['slug_link'],
+                            'bed' => $value['bedrooms'],
+                            'bath' => $value['bathrooms'],
+                            'area' => $value['area'],
+                            'description' => $value['description_en'],
+                            )
+                        );
+                }
+            }
+
+
+        };
+
+        $allfeatures = array(
+            'type' => 'FeatureCollection',
+            // 'crs' => $crs,
+            'features' => $features
+        );
+
+        $this->data['allfeatures'] = json_encode($allfeatures, JSON_PRETTY_PRINT);
+
+        Storage::disk('public')->put("Geospatial/properties.geojson",  response()->json($allfeatures));
+
+        $file2 = URL::asset('public/assets/asset/geojson/dubai_metro_stations.geojson');
+        $this->data['file2'] = json_encode($file2, JSON_PRETTY_PRINT);
+
+        $this->data['allfeatures'] = $allfeatures;
+
+
+        $long = $properties[0]->property_locations->longitude;
+        $lat = $properties[0]->property_locations->latitude;
+
+        $this->data['long'] = $long;
+        $this->data['lat'] = $lat;
+
+        return view('property_map.propertyMap',$this->data);
+    }
+
+
+
+
 
 
 }
