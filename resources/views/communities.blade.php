@@ -16,6 +16,8 @@
 
 
 @endsection
+
+@section('content')
 <style>
     p{
         line-height: 1.5 !important;
@@ -69,9 +71,11 @@
         /* border: 5px solid #000 !important; */
     }
 
-</style>
-@section('content')
+    .card-footer {
+        font-weight: 700 !important;
+    }
 
+</style>
 
 <?php
 
@@ -186,7 +190,6 @@ else
                                             <h5 class="card-title text-white"  style="font-size: 1.2rem">{{$community->$title_var}} </h5>
                                             <b>{{ trans('frontLang.projects') }} : {{$community->projects_count}}</b>
                                         </a>
-
                                     </div>
                                     @endif
 
@@ -201,7 +204,7 @@ else
                                                 </a>
                                             </td>
                                             <td style="text-align: center;width: 50%; color: #fff !important;">
-                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: #fff !important">
+                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important;">
                                                     <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }}
                                                 </a>
                                             </td>

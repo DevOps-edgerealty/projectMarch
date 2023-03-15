@@ -360,19 +360,14 @@ else
                                 <div class="col-lg-12" >
                                     <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" class="btn btn-outline-white btn-lg rounded-0">{{ trans('frontLang.readMore') }} </a>
 
-                                    <a href="#" class="btn btn-outline-white btn-lg rounded-0" data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}">{{ trans('frontLang.requestdetail') }}</a>
+                                    <a href="#" class="btn btn-lg rounded-0" data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}">{{ trans('frontLang.requestdetail') }}</a>
                                 </div>
-
-
-
-                            </div>
-
-
                             </div>
                         </div>
-                        </div>
-
                     </div>
+                </div>
+
+                </div>  
                     {{-- <hr style="color:#fff;"> --}}
                     <div class="modal fade" style="background-color: rgb(0, 0, 0, .3);" id="exampleModal-{{ $projects->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">

@@ -78,6 +78,11 @@
     a {
         text-decoration: none !important;
     }
+
+    .card-footer {
+        font-weight: 700 !important;
+    }
+
 </style>
 
 <?php
@@ -175,7 +180,7 @@ else
                     <div class="row">
                         @foreach ($project as $projects)
                         <div class="col-lg-4 mb-5">
-                            <div class="card bg-black text-white"  style="height: 550px !important;">
+                            <div class="card bg-black text-white"  style="height: 625px !important;">
                                 @if ($projects->project_status == '1')
                                     <div class="communities-newlaunch">إطلاق <br> جديد </div>
                                 @elseif ($projects->project_status == '0')
@@ -222,7 +227,7 @@ else
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: #fff"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
+                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -411,7 +416,7 @@ else
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: #fff"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
+                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>
                                 </div>

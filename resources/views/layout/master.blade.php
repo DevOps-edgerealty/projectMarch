@@ -339,8 +339,12 @@
 
         <div class="mobile_bottom bg-transparent">
 
-            <div class="mb-4" style="">
-                <a href="#" style=" width: 200px !important;"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"  class="btn btn-outline-dark bg-white rounded-5 text-black mx-auto text-center">{{ trans('frontLang.contact_us') }}</a>
+            <div class="mb-2" style="">
+                <a href="#" style=" width: 70% !important; font-size: 1em !important;" data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"
+                    class="btn btn-outline-white bg-black rounded-pill text-white mx-auto text-center py-3">
+                    <i class="fa fa-phone   "></i> &nbsp;
+                    {{ trans('frontLang.contact_us') }}
+                </a>
             </div>
 
 
@@ -366,7 +370,7 @@
         </a>
 
         <div class="modal fade" id="exampleModal-request" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
-            <div class="modal-dialog modal-dialog-centered bg-black">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content rounded-0 bg-black border border-white">
                     <div class="modal-header">
                         <h5 class="modal-title text-center" id="exampleModalLabel">Email Us</h5>
@@ -446,7 +450,7 @@
                 utilsScript: "/build/js/utils.js",
                 geoIpLookup: function(success) {
                 // Get your api-key at https://ipdata.co/
-                fetch("https://api.ipdata.co/?api-key=1f9ecc1670c915b3ddd397d233297968ccf720c0861abf9ecac1a8ef")
+                fetch("https://api.ipdata.co/?api-key=45d0f84419de10d4fc3d28ef76df4d29641ec78cd1c429aeb875bbfc")
                 .then(function(response) {
                     if (!response.ok) return success("");
                     return response.json();

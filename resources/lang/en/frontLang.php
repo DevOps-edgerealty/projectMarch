@@ -583,7 +583,9 @@ return array (
     'dubaiReadyProjects' => 'Dubai Ready Projects',
     'dubaiLuxuryProjects' => 'Dubai Luxury Projects',
     'blogsdetails' => 'Blog Details',
-    'contact_us' => 'Contact Us',
+    'contact_us' => 'Request Call Back',
+    'aboutCompanyMobile' => 'About Company',
+    'Dubaidevelopers' => 'Dubai Developers',
 
 
 

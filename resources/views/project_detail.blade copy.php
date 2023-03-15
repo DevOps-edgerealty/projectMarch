@@ -62,96 +62,96 @@
 
 
 <?php
-$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
 
-$uri_segments = explode('/', $uri_path);
+    $uri_segments = explode('/', $uri_path);
 
-$seg1 = $uri_segments[1];
+    $seg1 = $uri_segments[1];
 
-if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
-{
-    $langSeg = $uri_segments[1];
-}
-else
-{
-    $langSeg = 'en';
-}
+    if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+    {
+        $langSeg = $uri_segments[1];
+    }
+    else
+    {
+        $langSeg = 'en';
+    }
 
 ?>
-    <?php
+<?php
+    $finalUrl = '/ar/home';
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    if($uri_path == '/' || $uri_path == '/home' )
+    {
         $finalUrl = '/ar/home';
-        $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        if($uri_path == '/' || $uri_path == '/home' )
+
+
+    }
+
+
+    else
+    {
+        $uri_segments = explode('/', $uri_path);
+        $seg1 = $uri_segments[1];
+        if($seg1)
         {
-            $finalUrl = '/ar/home';
+            if($seg1 == 'en')
+            {
+                $replacements2 = array(1 => "ar");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
 
 
+            }
+            elseif($seg1 == 'ar')
+            {
+                $replacements2 = array(1 => "en");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
+
+
+            }
         }
-
-
         else
         {
-            $uri_segments = explode('/', $uri_path);
-            $seg1 = $uri_segments[1];
-            if($seg1)
-            {
-                if($seg1 == 'en')
-                {
-                    $replacements2 = array(1 => "ar");
-                    $basket = array_replace($uri_segments, $replacements2);
-                    $finalUrl = implode("/",$basket);
+                $replacements2 = array(1 => "ar");
+                $basket = array_replace($uri_segments, $replacements2);
+                $finalUrl = implode("/",$basket);
 
-
-                }
-                elseif($seg1 == 'ar')
-                {
-                    $replacements2 = array(1 => "en");
-                    $basket = array_replace($uri_segments, $replacements2);
-                    $finalUrl = implode("/",$basket);
-
-
-                }
-            }
-            else
-            {
-                    $replacements2 = array(1 => "ar");
-                    $basket = array_replace($uri_segments, $replacements2);
-                    $finalUrl = implode("/",$basket);
-
-            }
         }
+    }
 
 
-    ?>
-   <?php
+?>
+<?php
 
-    $project_title_var = "title_" . trans('backLang.boxCode');
-    $type_title_var = "name_" . trans('backLang.boxCode');
-    $address_title_var = "address_" . trans('backLang.boxCode');
-    $name_var = "name_" . trans('backLang.boxCode');
-    $title_var = "title_" . trans('backLang.boxCode');
-    $near_by_places_var = "near_by_places_" . trans('backLang.boxCode');
-    $address_var = "address_" . trans('backLang.boxCode');
-    $payment_var = "payment_" . trans('backLang.boxCode');
-    $payment_plan_mob_var = "payment_plan_mob_" . trans('backLang.boxCode');
-    $ownership_var = "ownership_" . trans('backLang.boxCode');
-    $bedrooms_var = "bedrooms_" . trans('backLang.boxCode');
-
-
-
-    $community_var = "community_" . trans('backLang.boxCode');
-    $feature_title_var = "name_" . trans('backLang.boxCode');
-    $description_var = "description_" . trans('backLang.boxCode');
-    $payment_plan_var = "payment_plan_" . trans('backLang.boxCode');
-    $unit_size_var = "unit_size_" . trans('backLang.boxCode');
-    $firstimage=true;
-    $secondimage=true;
+$project_title_var = "title_" . trans('backLang.boxCode');
+$type_title_var = "name_" . trans('backLang.boxCode');
+$address_title_var = "address_" . trans('backLang.boxCode');
+$name_var = "name_" . trans('backLang.boxCode');
+$title_var = "title_" . trans('backLang.boxCode');
+$near_by_places_var = "near_by_places_" . trans('backLang.boxCode');
+$address_var = "address_" . trans('backLang.boxCode');
+$payment_var = "payment_" . trans('backLang.boxCode');
+$payment_plan_mob_var = "payment_plan_mob_" . trans('backLang.boxCode');
+$ownership_var = "ownership_" . trans('backLang.boxCode');
+$bedrooms_var = "bedrooms_" . trans('backLang.boxCode');
 
 
 
-   ?>
+$community_var = "community_" . trans('backLang.boxCode');
+$feature_title_var = "name_" . trans('backLang.boxCode');
+$description_var = "description_" . trans('backLang.boxCode');
+$payment_plan_var = "payment_plan_" . trans('backLang.boxCode');
+$unit_size_var = "unit_size_" . trans('backLang.boxCode');
+$firstimage=true;
+$secondimage=true;
+
+
+
+?>
 
 <style>
 
@@ -169,10 +169,12 @@ else
     }
 </style>
 
+
+
 <section class="mobile-show">
 
 
-        <div id="carouselExampleInterval" class="carousel slide" data-mdb-ride="carousel">
+        <!-- <div id="carouselExampleInterval" class="carousel slide" data-mdb-ride="carousel">
             <div class="carousel-inner">
                 @foreach ($project_detail->images as $image)
                 <div class="carousel-item <?php if($firstimage){ echo "active"; $firstimage=false;}?>">
@@ -190,7 +192,7 @@ else
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-        </div>
+        </div> -->
 
 </section>
 

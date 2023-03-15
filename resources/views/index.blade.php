@@ -1128,7 +1128,7 @@
 
 {{-- Latest PROJECTS Cards | Mobile --}}
 <section class="mobile-show">
-    <div class="container">
+    <div class="container mb-3">
 
         <div class="row mb-5">
             @foreach ($off_plan_projects as $property)
@@ -1143,7 +1143,7 @@
                                 @endif
                             @endforeach
                         </div>
-                        <div class="col-7 px-3 py-2">
+                        <div class="col-7 px-2 py-2">
                             <div class="" >
                                     {{-- <h6 class="card-title"  style="font-size: 1.2rem;"><b>{{ trans('frontLang.Price') }} <span style="color: #fff">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h6> --}}
 
@@ -2244,8 +2244,8 @@
                                                 </p>
                                                 <table style="width: 100%">
                                                     <tr>
-                                                        <td style="width: 50%; text-align: left; font-size: .9em"><i class="fas fa-bed"> </i> {{$property->bedrooms}} {{ trans('frontLang.bedrooms') }} <span style="color: #848484">.</span></td>
-                                                        <td style="width: 50%; text-align: center; font-size: .9em"><i class="fas fa-bath"> </i> {{$property->bathrooms}} {{ trans('frontLang.bathrooms') }}</td>
+                                                        <td style="width: 50%; text-align: left; font-size: .9em"><i class="fas fa-bed"> </i> {{$property->bedrooms}} {{ trans('frontLang.bed') }} <span style="color: #848484">.</span></td>
+                                                        <td style="width: 50%; text-align: center; font-size: .9em"><i class="fas fa-bath"> </i> {{$property->bathrooms}} {{ trans('frontLang.bath') }}</td>
                                                     </tr>
                                                 </table>
                                             </div>

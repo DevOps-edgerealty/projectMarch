@@ -62,6 +62,8 @@
     .slick-slide {
         height: auto !important;
     }
+
+
 </style>
 
 <?php
@@ -158,6 +160,8 @@
 
 ?>
 
+
+
 <style>
 
     .skill{
@@ -172,11 +176,46 @@
     display: none;
 
     }
+
+    #mobile-info-section {
+        scroll-margin-top: 75px !important;
+    }
+
+
 </style>
 
+
+{{-- Mobile Header image --}}
 <section class="mobile-show">
 
-        <div id="carouselExampleInterval" class="carousel slide" data-mdb-ride="carousel">
+    <div class="d-flex justify-content-center">
+
+
+    @foreach($project_detail->images  as $single_img)
+            @if($project_detail->images->first()==$single_img)
+                <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$single_img->image) }}" style="height: 650px" class="card-img-top" alt="">
+                <div class="mx-auto" style=" position: absolute; top: 250px; color:#fff; width: 100%">
+                    <h1 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->$title_var}}</b></h1>
+                    <h3 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->locationz->$name_var}}</b></h3>
+
+                    <style>
+                        .testbutton:hover {
+                            background-color: #ffffff !important;
+                            color: black !important;
+                            border: #fff solid !important;
+                        }
+                    </style>
+
+                    {{-- <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-dark btn-lg mt-4 rounded-0 w-75 testbutton" style="background-color: #000">
+                        {{ trans('frontLang.requestdetail') }}
+                    </a> --}}
+
+                </div>
+            @endif
+    @endforeach
+    </div>
+
+        {{-- <div id="carouselExampleInterval" class="carousel slide" data-mdb-ride="carousel">
             <div class="carousel-inner">
                 @foreach ($project_detail->images as $image)
                 <div class="carousel-item <?php if($firstimage){ echo "active"; $firstimage=false;}?>">
@@ -192,8 +231,10 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-        </div>
+        </div> --}}
 </section>
+
+
 
 
 <section class="desktop-show " style="text-align: center">
@@ -405,7 +446,7 @@
 
 
 
-    <section class="mobile-show" style="direction: rtl">
+    {{-- <section class="mobile-show" style="direction: rtl">
         <div class="container">
             <div class="row" style="margin-top: -40px; position: relative; padding-right: 10px; padding-left: 10px;">
                 <div class="col-lg-12 shadow p-3 mb-5  bg-black text-white border border-1 border-white" >
@@ -420,6 +461,73 @@
                     <div class="col-lg-12">
                         <button class="first btn btn-white rounded-0 shadow-none btn-lg btn-block mt-4 " >{{ trans('frontLang.requestdetail') }} </button>
                     </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section> --}}
+
+    <section class="mobile-show" >
+        <div class="container-fluid containerization" id="mobile-info-section" dir="rtl">
+            <div class="row" style="margin-top: 0; position: relative; padding-right: 10px; padding-left: 10px;">
+                <div class="col-lg-12 shadow py-3 px-1 mb-0 bg-black text-white" >
+
+                    {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
+                    <div class="row">
+                        <div class="col-6" style="">
+                            <p style="margin-right: 10px; margin-bottom: 10px !important;" class="my-0">
+                                {{ trans('frontLang.startingfrom') }}
+                            </p>
+
+                            <div class="AED skill " style="display: block !important">
+                                <p style="color: #fff; font-size: 1em" class="">
+                                    {{ trans('frontLang.AED') }}
+                                    {{ $project_detail->project_price }}
+                                </p>
+                            </div>
+                            <div class="USD skill ">
+                                <p style="color: #fff; font-size: 1em" class="">
+                                    USD
+                                    {{ $project_detail->project_price_usd }}
+                                </p>
+                            </div>
+                            {{-- <select class="" name="skill_dropdown" id="skill_dropdown" style="width: 80px;margin-left:10px;margin-top: -9px;">
+                                <option value="AED">AED</option>
+                                <option value="USD">USD</option>
+                            </select> --}}
+                        </div>
+
+                        <div class="col-6">
+                            <a href="#mobile-info-section" >
+                                <div class="btn btn-outline-white w-100 rounded-0">
+                                    {{ trans('frontLang.Readmore') }}
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p> {{ trans('frontLang.bedrooms') }}   <br> {{$project_detail->bedrooms}}</p>
+
+                    <p>{{ trans('frontLang.location') }} <br> {{$project_detail->locationz->$name_var}}</p>
+
+                    <p>{{$project_detail->$title_var}}</p>
+
+                    <p>
+                        @foreach ($project_detail->project_types as $project_type)
+                            {{ trans('frontLang.projectType') }} <br> {{$project_type->$type_title_var}}
+                        @endforeach
+                    </p>
+
+                    <p> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> {{$developers->$name_var}}</a></p>
+
+                    <p> {{ trans('frontLang.completionYear') }}  <br> {{$project_detail->est_completion_en}}</p>
+
+                    <p> {{ trans('frontLang.communitytype') }} <br> {{$project_detail->$ownership_var}}</p>
+
+                    {{-- <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button> --}}
+
 
                 </div>
             </div>
@@ -540,30 +648,64 @@
         </div>
     </section>
 
-    <section class="mobile-show">
-        <div class="container">
-            <div class="row" style="margin-top: -40px; position: relative; padding-right: 10px; padding-left: 10px;">
-                <div class="col-lg-12 shadow p-3 mb-5 bg-black text-white border border-1 borrder-white" >
-                    <h3>{{$project_detail->$title_var}}</h3>
-                    <p><b>{{ trans('frontLang.location') }}</b> : {{$project_detail->locationz->$name_var}}</p>
-                    <p><b> {{ trans('frontLang.Developer') }} </b> : <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> {{$developers->$name_var}}</a></p>
-                    <p><b> {{ trans('frontLang.bedrooms') }}  </b> : {{$project_detail->bedrooms}}</p>
-                    <p><b> {{ trans('frontLang.completionYear') }}  </b> : {{$project_detail->est_completion_en}}</p>
-                    <p><b> {{ trans('frontLang.communitytype') }} </b> : {{$project_detail->$ownership_var}}</p>
-                    <div class="col-lg-12" style="display:flex;align-items: baseline">
-                        <p style="margin-right: 10px"><b>{{ trans('frontLang.startingfrom') }}</b> </p>
+    <section class="mobile-show" >
+        <div class="container-fluid containerization" id="mobile-info-section">
+            <div class="row" style="margin-top: 0; position: relative; padding-right: 10px; padding-left: 10px;">
+                <div class="col-lg-12 shadow py-3 px-1 mb-0 bg-black text-white" >
 
-                        <div class="AED skill" style="display: block !important"> <h6 style="color: #fff"> {{$project_detail->project_price}} {{ trans('frontLang.AED') }}</h6></div>
-                        <div class="USD skill"> <h6 style="color: #fff">  {{ $project_detail->project_price_usd }} USD </h6></div>
-                        {{-- <select class="" name="skill_dropdown" id="skill_dropdown" style="width: 80px;margin-left:10px;margin-top: -9px;">
+                    {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
+                    <div class="row">
+                        <div class="col-6" style="">
+                            <p style="margin-right: 10px" class="my-0">
+                                {{ trans('frontLang.startingfrom') }}
+                            </p>
+                            <div class="AED skill " style="display: block !important">
+                                <p style="color: #fff; font-size: 1em" class="">
+                                    {{ trans('frontLang.AED') }}
+                                    {{ $project_detail->project_price }}
+                                </p>
+                            </div>
+                            <div class="USD skill ">
+                                <p style="color: #fff; font-size: 1em" class="">
+                                    USD
+                                    {{ $project_detail->project_price_usd }}
+                                </p>
+                            </div>
+                            {{-- <select class="" name="skill_dropdown" id="skill_dropdown" style="width: 80px;margin-left:10px;margin-top: -9px;">
+                                <option value="AED">AED</option>
+                                <option value="USD">USD</option>
+                            </select> --}}
+                        </div>
 
-                            <option value="AED">AED</option>
-                            <option value="USD">USD</option>
-
-                        </select> --}}
+                        <div class="col-6">
+                            <a href="#mobile-info-section" >
+                                <div class="btn btn-outline-white w-100 rounded-0">
+                                    {{ trans('frontLang.Readmore') }}
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                        <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button>
-                    </div>
+
+                    <p> {{ trans('frontLang.bedrooms') }}   <br> {{$project_detail->bedrooms}}</p>
+
+                    <p>{{ trans('frontLang.location') }} <br> {{$project_detail->locationz->$name_var}}</p>
+
+                    <p>{{$project_detail->$title_var}}</p>
+
+                    <p>
+                        @foreach ($project_detail->project_types as $project_type)
+                            {{ trans('frontLang.projectType') }} <br> {{$project_type->$type_title_var}}
+                        @endforeach
+                    </p>
+
+                    <p> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> {{$developers->$name_var}}</a></p>
+
+                    <p> {{ trans('frontLang.completionYear') }}  <br> {{$project_detail->est_completion_en}}</p>
+
+                    <p> {{ trans('frontLang.communitytype') }} <br> {{$project_detail->$ownership_var}}</p>
+
+                    {{-- <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button> --}}
+
 
                 </div>
             </div>
@@ -573,6 +715,342 @@
     </section>
 @endif
 
+
+
+
+{{-- Overview Mobile --}}
+@if($langSeg == 'ar')
+    <section class="my-1 mobile-show" dir="rtl">
+        <div class="container-fluid containerization my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="mb-3">Overview</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{-- <span style="color: grey !important; text-align: justify">
+                        {!! $project_detail->$description_var !!}
+                    </span> --}}
+
+                    <style>
+                        #lessen {
+                            text-align: justify !important;
+                        }
+
+                        #moreen {
+                            text-align: justify !important;
+                        }
+
+                        #text {
+                            text-align: justify !important;
+                        }
+                    </style>
+
+
+                    <span id="lessen" style="display: inline !important; font-size: 1em !important; line-height: 1.4 !important; font-weight: 300 !important; text-align: justify !important">
+                        {{ strip_tags(substr($project_detail->$description_var, 0, 200)) }} ...
+                    </span>
+
+                    <br>
+
+                    @if ( strlen(($project_detail->$description_var)) > 100 )
+
+                        <span id="moreen" style="display: none !important; font-size: 1em !important; line-height: 1.4 !important;  font-weight: 300 !important; text-align: justify !important">
+                            {{ strip_tags(html_entity_decode($project_detail->$description_var)) }}
+                        </span>
+
+                        <br>
+
+                        <button onclick="myFunction2en()" class="btn btn-outline-white btn-sm rounded-0" id="readMoreBtnen">
+                            Read more
+                        </button>
+                    @else
+                        <br>
+                        {!! html_entity_decode($project_detail->$description_var) !!}
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
+@else
+    <section class="my-1 mobile-show">
+        <div class="container-fluid containerization my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="mb-3">Overview</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{-- <span style="color: grey !important; text-align: justify">
+                        {!! $project_detail->$description_var !!}
+                    </span> --}}
+
+                    <style>
+                        #lessen {
+                            text-align: justify !important;
+                        }
+
+                        #moreen {
+                            text-align: justify !important;
+                        }
+
+                        #text {
+                            text-align: justify !important;
+                        }
+                    </style>
+
+
+                    <span id="lessen" style="display: inline !important; font-size: 1em !important; line-height: 1.4 !important; font-weight: 300 !important; text-align: justify !important">
+                        {{ strip_tags(substr($project_detail->$description_var, 0, 400)) }} ...
+                    </span>
+
+                    <br>
+
+                    @if ( strlen(($project_detail->$description_var)) > 100 )
+
+                        <span id="moreen" style="display: none !important; font-size: 1em !important; line-height: 1.4 !important;  font-weight: 300 !important; text-align: justify !important">
+                            {{ strip_tags(html_entity_decode($project_detail->$description_var)) }}
+                        </span>
+
+                        <br>
+
+                        <button onclick="myFunction2en()" class="btn btn-outline-white btn-sm rounded-0" id="readMoreBtnen">
+                            Read more
+                        </button>
+                    @else
+                        <br>
+                        {!! html_entity_decode($project_detail->$description_var) !!}
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+
+
+{{-- Image Slider MOBILE --}}
+<section class="mobile-show my-5">
+    <div class="container-fluid" style="padding-right: 0px; padding-left: 0px;">
+        <style>
+            .crousal-img-height {
+                height: 400px !important;
+            }
+        </style>
+
+        <div class="">
+
+            <div class=" autoplay  slick-dotted">
+                @foreach ($project_detail->images as $image)
+                    <div>
+                        <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height" style="">
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{{-- Amenities Mobile --}}
+@if($langSeg == 'ar')
+    <section class="mt-5 mb-5 mobile-show" dir="rtl">
+        <div class="container">
+            <div class="row">
+                <h3 class="mb-4">{{ trans('frontLang.amenities') }}</h3>
+                @foreach ($features_array as $feature_id => $feature_name)
+                    @foreach ($features as $feature)
+                        @if($feature == $feature_id)
+                            <div class="col-lg-12 mb-2" style="width: 100%; color: #fff !important;" >
+                                {!!  $feature_name[$name_var] !!}
+                            </div>
+                        @endif
+                    @endforeach
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+@else
+    <section class="mt-5 mb-5 mobile-show">
+        <div class="container">
+            <div class="row">
+                <h3 class="mb-4">{{ trans('frontLang.amenities') }}</h3>
+                @foreach ($features_array as $feature_id => $feature_name)
+                    @foreach ($features as $feature)
+                        @if($feature == $feature_id)
+                            <div class="col-lg-12 mb-2" style="width: 100%; color: #fff !important;" >
+                                {!!  $feature_name[$name_var] !!}
+                            </div>
+                        @endif
+                    @endforeach
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+@endif
+
+
+
+{{-- Payment Plan Mobile --}}
+@if($langSeg == 'ar')
+    @if ($project_detail->pro_status == '1')
+        @if  ($project_detail->payment_en != '')
+
+            <section class="mobile-show" dir="rtl">
+                <div class="container-fluid containerization mt-5">
+                        <h3 class="text-left mb-4">
+                            <b>
+                                {{ trans('frontLang.payment') }}
+                            </b>
+                        </h3>
+                        <div class="row">
+                            <style>
+                                .property-info {
+                                    width: 100% !important;
+                                }
+
+                                .inner {
+                                    padding-top: 0 !important;
+                                    padding-bottom: 15 !important;
+                                    font-weight: 400 !important;
+                                    font-size: 1em !important;
+                                }
+                                .icon {
+                                    font-weight: 400 !important;
+                                    font-size: 1em !important;
+                                    margin-bottom: 0px !important;
+                                }
+                            </style>
+
+                            {!! $project_detail->$payment_plan_mob_var !!}
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
+    @endif
+@else
+    @if ($project_detail->pro_status == '1')
+        @if  ($project_detail->payment_en != '')
+
+            <section class="mt-5 mobile-show">
+                <div class="container-fluid containerization mt-5">
+                        <h3 class="text-left mb-4">
+                            <b>
+                                {{ trans('frontLang.payment') }}
+                            </b>
+                        </h3>
+                        <div class="row">
+                            <style>
+                                .property-info {
+                                    width: 100% !important;
+                                }
+
+                                .inner {
+                                    padding-top: 0 !important;
+                                    padding-bottom: 15 !important;
+                                    font-weight: 400 !important;
+                                    font-size: 1em !important;
+                                }
+                                .icon {
+                                    font-weight: 400 !important;
+                                    font-size: 1em !important;
+                                    margin-bottom: 0px !important;
+                                }
+                            </style>
+
+                            {!! $project_detail->$payment_plan_mob_var !!}
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
+    @endif
+@endif
+
+
+
+
+{{-- ABOUT THE COMMUNITY --}}
+@if($langSeg =='ar')
+    <section class="mb-5 mobile-show" dir="rtl">
+        <div class="container-fluid containerization">
+
+            <hr>
+
+            <div class="row mb-5">
+
+                <div class="col-md-6">
+                    <h3 class="my-3">{{ trans('frontLang.Aboutthecoomunity') }}</h3>
+
+                    <style>
+                        p {
+                            text-align: justify !important;
+                            font-weight: 300 !important;
+                        }
+                    </style>
+                    {!!html_entity_decode($project_detail->$community_var)!!}
+                </div>
+
+
+                <div class="col-md-6">
+                    <style>
+                        iframe{
+                            width: 100%;
+                            height: 300px !important;
+                        }
+                    </style>
+                    {!!html_entity_decode($project_detail->map_embed_code)!!}
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+@else
+    <section class="mb-5 mobile-show">
+        <div class="container-fluid containerization">
+
+            <hr>
+
+            <div class="row mb-5">
+
+                <div class="col-md-6">
+                    <h3 class="my-3">{{ trans('frontLang.Aboutthecoomunity') }}</h3>
+
+                    <style>
+                        p {
+                            text-align: justify !important;
+                            font-weight: 300 !important;
+                            line-height: 1.3 !important;
+                        }
+                    </style>
+                    {!!html_entity_decode($project_detail->$community_var)!!}
+                </div>
+
+
+                <div class="col-md-6">
+                    <style>
+                        iframe{
+                            width: 100%;
+                            height: 300px !important;
+                        }
+                    </style>
+                    {!!html_entity_decode($project_detail->map_embed_code)!!}
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+@endif
 
 
 
@@ -730,6 +1208,7 @@
                 height: 400px !important;
             }
         </style>
+
         <div class="">
 
             <div class=" autoplay  slick-dotted">
@@ -838,24 +1317,6 @@
         </div>
     </section>
 
-    <section class="mt-5 mb-5 mobile-show">
-        <div class="container">
-            <div class="row">
-                <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
-                @foreach ($features_array as $feature_id => $feature_name)
-                    @foreach ($features as $feature)
-                        @if($feature == $feature_id)
-                            <div class="col-lg-3 mb-2" style="width: 50%; color: #fff !important;" >
-                                <i class="far fa-check-circle"></i> {!!  $feature_name[$name_var] !!}
-                            </div>
-                        @endif
-                    @endforeach
-                @endforeach
-
-            </div>
-        </div>
-    </section>
-
     @if ( $project_detail->pro_status == '1')
         @if  ($project_detail->payment_en != '')
             <section class="mt-4 desktop-show">
@@ -881,7 +1342,7 @@
                 </div>
             </section>
 
-            <section class="mt-4 mobile-show">
+            {{-- <section class="mt-4 mobile-show">
                 <div class="container">
                         <h3 class="text-center mb-4"><b> {{ trans('frontLang.payment') }}</b></h3>
                         <div class="row">
@@ -889,13 +1350,13 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
         @endif
     @endif
 
 
 
-    <section class="mt-5 mb-5 ">
+    <section class="desktop-show mt-5 mb-5 ">
         <div class="container-fluid containerization">
             <div class="row">
                 <h3 class="mb-5">{{ trans('frontLang.Nearbyplaces') }}</h3>
@@ -917,7 +1378,7 @@
         </div>
     </section>
 
-    <section class="my-5 mobile-show">
+    {{-- <section class="my-5 mobile-show">
         <div class="container my-5">
             <div class="row">
                 <div class="col-md-12">
@@ -930,7 +1391,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- <section class="second mt-5 mb-5">
         <div class="container-fluid containerization">
@@ -991,7 +1452,7 @@
     </section> --}}
 
 
-    <section class="mb-5">
+    <section class="mb-5 desktop-show">
         <div class="container-fluid containerization">
 
             <hr>
@@ -1209,5 +1670,24 @@
     });
 
 
+</script>
+
+<script>
+    function myFunction2en() {
+        var dots = document.getElementById("lessen");
+        var moreText = document.getElementById("moreen");
+        var btnText = document.getElementById("readMoreBtnen");
+
+        if (moreText.style.display === "none")
+        {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        } else {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        }
+    }
 </script>
 @endsection

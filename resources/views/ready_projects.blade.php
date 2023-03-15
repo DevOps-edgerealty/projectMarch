@@ -73,6 +73,10 @@
 
 
     }
+
+    .card-footer {
+        font-weight: 700 !important;
+    }
     /* .card:hover {
         /* box-shadow: 0px 0px 5px #fff !important; */
         /* opacity: 1 !important;
@@ -211,7 +215,7 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31)"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
+                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -232,7 +236,7 @@
                                                 {{ trans('frontLang.requestdetail') }}
                                             </p>
                                         </div>
-                                        <div class="row">
+                                        <div class="row p-0">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($projects->images  as $single_img)
                                                     @if($projects->images->first()==$single_img)
@@ -385,7 +389,7 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31)"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
+                                            <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -406,7 +410,7 @@
                                                 {{ trans('frontLang.requestdetail') }}
                                             </p>
                                         </div>
-                                        <div class="row p-4">
+                                        <div class="row p-0">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($projects->images  as $single_img)
                                                     @if($projects->images->first()==$single_img)

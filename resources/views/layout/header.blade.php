@@ -134,6 +134,10 @@
         background-color: #000 !important;
     }
 
+    /* .fa-whatsapp  {
+        height: 30px !important;
+    } */
+
 </style>
 <?php
     $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -911,16 +915,9 @@
             </div>
 
 
-
-
-
-
-
             <div class="header-item-right">
 
                 {{-- <a href="<?php echo $finalUrl ; ?>"><img src="{{URL('public/assets/images/uae-flag.png')}}" alt=""></a> --}}
-
-
 
                 <nav class="menu navbar-dark">
                     <div class="menu-mobile-header">
@@ -962,13 +959,19 @@
 
                 </nav>
 
-                <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" ><i class="fab fa-whatsapp bg-success rounded-pill m-0 p-0 "> </i> </a>
+                <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" >
+                    <i class="fab fa-whatsapp  rounded-pill m-0 p-0" style="font-size: 1.3em; "></i>
+                </a>
 
-                <a href="javascript:void(Tawk_API.toggle())" class="menu-icon mobile-show d-md-block d-block d-lg-none" ><i class="far fa-comment-alt" > </i> </a>
+                <a href="javascript:void(Tawk_API.toggle())" class="menu-icon mobile-show d-md-block d-block d-lg-none">
+                    <i class="far fa-comment-alt" style="font-size: 1.15em; "></i>
+                </a>
 
-                <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight"><img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt=""></a>
+                <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt="loupe-image" style="height: 28px;">
+                </a>
 
-                <button type="button" class="menu-mobile-trigger"  >
+                <button type="button" class="menu-mobile-trigger" >
                     <span></span>
                     <span></span>
                     <span></span>

@@ -47,6 +47,8 @@ class CommunitiesController extends Controller
 
         $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        // dd($footerDevelopers);
+
         $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;

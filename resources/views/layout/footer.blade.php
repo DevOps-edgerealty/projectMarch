@@ -18,6 +18,21 @@
         }
 
     ?>
+
+    <?php
+        $name_var = "name_" . trans('backLang.boxCode');
+
+		$title_var = "title_" . trans('backLang.boxCode');
+
+		$type_name_var= "type_name_" . trans('backLang.boxCode');
+
+		$cat_name_var= "cat_name_" . trans('backLang.boxCode');
+
+		$address_var = "address_" . trans('backLang.boxCode');
+
+		$description_var = "description_" . trans('backLang.boxCode');
+    ?>
+
     <?php
         $finalUrl = '/ar/home';
         $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -63,6 +78,21 @@
 
     ?>
 
+
+<style>
+    .accordion-header .collapsed {
+        color: #fff;
+    }
+
+    .accordion-header {
+        color: #000 !important;
+    }
+
+    .accordion-button {
+        color: #000;
+    }
+
+</style>
 
 {{-- MOBILE --}}
 @if ($langSeg == 'ar')
@@ -150,6 +180,27 @@
                             </div>
                         </div>
 
+
+                        {{-- developers --}}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed text-uppercase"  type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    {{ trans('frontLang.Dubaidevelopers') }}
+                                </button>
+                            </h2>
+                            <div id="flush-collapsefive"  class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-mdb-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    @foreach($footerDevelopers as $data)
+                                        <p class="my-1" style="text-align: left !important; padding-left: 0rem;">
+                                            <a href="<?php echo  url( $langSeg .'/'.'dubai-developers'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                                {{ $data->name_ar }}
+                                            </a>
+                                        </p>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingThree">
                                 <button class="accordion-button collapsed text-uppercase"  type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
@@ -218,6 +269,7 @@
                 <div class="row w-100">
                     <div class="accordion accordion-flush w-100" id="accordionFlushExample">
 
+                        {{-- about company --}}
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
                                 <button class="accordion-button collapsed"  type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -227,7 +279,7 @@
                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-mdb-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                     <ul style="padding-left: 0rem;">
-                                        <li style="text-align: left;"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/aboutus');?>">{{ trans('frontLang.aboutcompany') }}</a></li>
+                                        <li style="text-align: left;"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/aboutus');?>">{{ trans('frontLang.aboutCompanyMobile') }}</a></li>
                                         <li style="text-align: left;"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/contactus');?>">{{ trans('frontLang.contactUs') }}</a></li>
                                         <li style="text-align: left;"><a style="color: #fff" href="<?php echo  url('/'.$langSeg.'/career');?>">{{ trans('frontLang.Careers') }}</a></li>
                                     </ul>
@@ -235,6 +287,7 @@
                             </div>
                         </div>
 
+                        {{-- projects --}}
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingTwo">
                                 <button class="accordion-button collapsed text-uppercase" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -264,6 +317,7 @@
                             </div>
                         </div>
 
+                        {{-- commmunities --}}
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingThree">
                                 <button class="accordion-button collapsed text-uppercase"  type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
@@ -291,6 +345,30 @@
                             </div>
                         </div>
 
+
+
+                        {{-- developers --}}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed text-uppercase"  type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    {{ trans('frontLang.Dubaidevelopers') }}
+                                </button>
+                            </h2>
+                            <div id="flush-collapsefive"  class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-mdb-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    @foreach($footerDevelopers as $data)
+                                        <p class="my-1" style="text-align: left !important; padding-left: 0rem;">
+                                            <a href="<?php echo  url( $langSeg .'/'.'dubai-developers'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                                {{ $data->name_en }}
+                                            </a>
+                                        </p>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {{-- quick links --}}
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingThree">
                             <button class="accordion-button collapsed text-uppercase"  type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
@@ -645,7 +723,6 @@
 @else
    <!-- Footer -->
     <footer class="px-3 text-center text-lg-start bg-light text-muted desktop-show " style="text-transform: uppercase;">
-
 
         <!-- Section: Links  -->
         <section class="d-flex justify-content-center justify-content-lg-between py-3 text-white" style="background-color: #000;border-top: 0.5px solid #848484;">
