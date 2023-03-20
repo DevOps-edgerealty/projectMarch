@@ -191,7 +191,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -258,7 +258,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -299,7 +299,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -335,7 +335,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -363,7 +363,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -424,7 +424,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -468,7 +468,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -506,7 +506,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -548,7 +548,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -648,7 +648,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -689,7 +689,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -726,7 +726,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -763,7 +763,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -800,7 +800,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -836,7 +836,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -872,7 +872,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -893,7 +893,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -930,7 +930,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -977,7 +977,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1001,7 +1001,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1117,7 +1117,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1209,7 +1209,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1272,7 +1272,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1347,7 +1347,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1408,7 +1408,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1459,7 +1459,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1515,7 +1515,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1568,7 +1568,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1627,7 +1627,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1684,7 +1684,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1759,7 +1759,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1820,7 +1820,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1894,7 +1894,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1911,7 +1911,7 @@ class FronthomeController extends Controller
 
 		$conLag = App::getLocale();
 
-        $agents = Agents::orderBy('id', 'asc')->where('status', 1)->get();
+        $agents = Agents::orderBy('id', 'asc')->where('status', 1)->where('id','!=', '1')->get();
 
 
         $this->data['blogs'] = $agents;
@@ -1923,8 +1923,6 @@ class FronthomeController extends Controller
 
 
 
-
-
     public function team_detail($lang = '', $id)
     {
 
@@ -1932,7 +1930,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -1970,8 +1968,6 @@ class FronthomeController extends Controller
     }
 
 
-
-
     public function maps($lang = '')
     {
         if ($lang != "") {
@@ -1984,7 +1980,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -2038,7 +2034,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -2088,21 +2084,45 @@ class FronthomeController extends Controller
 
 
 
-    public function maps2($lang = '')
+
+
+
+
+
+    /**
+     *  Map controller functions
+     *
+     * We recieve the route for each map controller with two variables
+     * 01 ==> language
+     * 02 ==> currency type
+     *
+     * These two variables play a vital part in the front-end for user friendly design
+     *
+     */
+
+    public function maps2($lang = '', $currency)
     {
+
+        // dd($currency);
+
+        // check if language variable is null and
+        // set the language read by the session data
         if ($lang != "") {
-            // Set Language
             App::setLocale($lang);
             \Session::put('locale', $lang);
         }
 
-        // dd($lang);
+        $currency = $currency;
 
+
+        /**
+         *  FOOTER VARIABLES INCASE FOOTER WILL BE DISPLAYED BELOW THE MAP
+         */
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -2110,28 +2130,55 @@ class FronthomeController extends Controller
 
         $this->data['footerCommunities'] = $footerCommunities;
 
+
+
         $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->orderBy('id', 'desc')->get();
 
-        $original_data = json_decode($properties, JSON_PRETTY_PRINT);
+        $original_data = json_decode($properties, JSON_PRETTY_PRINT);       // CONVERT TO JSON STRUCTURE
 
-        $features = array();
+        $features = array();        // CREATE A NEW ARRAY TO ASSIGN THE GEOJSON FORMAT
 
+
+        // LOOP THROUGH EACH OF THE JSON STRUCTURE CREATED ABOVE
         foreach($original_data as $key => $value) {
 
-            // dd($value['images'][0]['image']);
-            if( $value['price'] > 1000 ) {
 
-                $x = round($value['price']);
-                $x_number_format = number_format($x);
-                $x_array = explode(',', $x_number_format);
-                $x_parts = array('k', 'm', 'b', 't');
-                $x_count_parts = count($x_array) - 1;
-                $x_display = $x;
-                $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
-                $x_display .= $x_parts[$x_count_parts - 1];
-            }
-
+            /**
+             *  RUN A IF STATEMENT TO SHOW DIFFERENT GEOJSON
+             *  STRUCTURES FOR DIFFERENT LANGUAGE TYPES
+             */
             if($lang == 'ar') {
+                if( $value['price'] > 1000 ) {
+
+                    // THIS WILL CHECK IF THE CURRENCY TO BE SHOWN MUST BE DOLLARS OR DHIRAMS
+                    if($currency == '1')
+                    {
+                        $x = round($value['price']);
+
+                    } else {
+                        $x = round($value['price_usd']);
+                    }
+                    $x_number_format = number_format($x);
+                    $x_array = explode(',', $x_number_format);
+                    $x_parts = array('k', 'm', 'b', 't');
+                    $x_count_parts = count($x_array) - 1;
+                    $x_display = $x;
+                    $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
+                    $x_display .= $x_parts[$x_count_parts - 1];
+                }
+
+
+
+                if($currency == '1')
+                {
+                    $price = 'AED '.$x_display;
+                    $priceLong = 'AED '.number_format($value['price']);
+
+                } else {
+                    $price = 'USD '.$x_display;
+                    $priceLong = 'USD '.number_format($value['price_usd']);
+                }
+
                 if($value['property_locations'] != null)
                 {
                     $crs = array(
@@ -2148,8 +2195,8 @@ class FronthomeController extends Controller
                         'properties' => array(
                             'name' => $value['title_ar'],
                             'id' => $value['id'],
-                            'priceLong' => 'AED '.number_format($value['price']),
-                            'price' => $x_display,
+                            'priceLong' => $priceLong,
+                            'price' => $price,
                             'address' => $value['address_ar'],
                             'image' => $value['images'][0]['image'],
                             'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
@@ -2158,10 +2205,41 @@ class FronthomeController extends Controller
                             'bath' => $value['bathrooms'],
                             'area' => $value['area'],
                             'description' => $value['description_ar'],
+                            'sqft' => 'قدم مربع',
                             )
                         );
                 }
             } elseif ( $lang == 'ru') {
+                if( $value['price'] > 1000 ) {
+
+                    // THIS WILL CHECK IF THE CURRENCY TO BE SHOWN MUST BE DOLLARS OR DHIRAMS
+                    if($currency == '1')
+                    {
+                        $x = round($value['price']);
+
+                    } else {
+                        $x = round($value['price_usd']);
+                    }
+                    $x_number_format = number_format($x);
+                    $x_array = explode(',', $x_number_format);
+                    $x_parts = array('k', 'm', 'b', 't');
+                    $x_count_parts = count($x_array) - 1;
+                    $x_display = $x;
+                    $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
+                    $x_display .= $x_parts[$x_count_parts - 1];
+                }
+
+
+                if($currency == '1')
+                {
+                    $price = 'AED '.$x_display;
+                    $priceLong = 'AED '.number_format($value['price']);
+
+                } else {
+                    $price = 'USD '.$x_display;
+                    $priceLong = 'USD '.number_format($value['price_usd']);
+                }
+
                 if($value['property_locations'] != null)
                 {
                     $crs = array(
@@ -2178,20 +2256,71 @@ class FronthomeController extends Controller
                         'properties' => array(
                             'name' => $value['title_ru'],
                             'id' => $value['id'],
-                            'priceLong' => 'AED '.number_format($value['price']),
-                            'price' => $x_display,
+                            'priceLong' => $priceLong,
+                            'price' => $price,
                             'address' => $value['address_ru'],
                             'image' => $value['images'][0]['image'],
                             'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
                             'slug_link' => $value['slug_link'],
                             'bed' => $value['bedrooms'],
                             'bath' => $value['bathrooms'],
-                            'area' => $value['area'],
+                            'area' =>round($value['area']/10.764, 2),
                             'description' => $value['description_ru'],
+                            'sqft' => 'кв.м',
                             )
                         );
                 }
             } else {
+
+                /**
+                 * THIS WILL SHOW EACH PROPERTY PRICES IN A SHORT FORM AS
+                 * GRAND (K) METHOD SUCH AS 4.5K, 12K, 2M, 50M
+                 */
+                if( $value['price'] > 1000 ) {
+
+
+                    // THIS WILL CHECK IF THE CURRENCY TO BE SHOWN MUST BE DOLLARS OR DHIRAMS
+                    if($currency == '1')
+                    {
+                        $x = round($value['price']);
+
+                    } else {
+                        $x = round($value['price_usd']);
+                    }
+
+                    $x_number_format = number_format($x);
+                    $x_array = explode(',', $x_number_format);
+                    $x_parts = array('k', 'm', 'b', 't');
+                    $x_count_parts = count($x_array) - 1;
+                    $x_display = $x;
+                    $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
+                    $x_display .= $x_parts[$x_count_parts - 1];
+
+                    $x2 = round($value['price']);
+                    $x2_number_format = number_format($x);
+                    $x2_array = explode(',', $x_number_format);
+                    $x2_parts = array('k', 'm', 'b', 't');
+                    $x2_count_parts = count($x_array) - 1;
+                    $x2_display = $x;
+                    $x2_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
+                    $x2_display .= $x_parts[$x_count_parts - 1];
+                }
+
+
+                // REPLACE THE FIGURES CONTRAINING THE CURRENCY
+                if($currency == '1')
+                {
+                    $price = 'AED '.$x_display;
+                    $priceLong = 'AED '.number_format($value['price']);
+
+                } else {
+                    $price = 'USD '.$x_display;
+                    $priceLong = 'USD '.number_format($value['price_usd']);
+                }
+
+
+                // THIS WILL CREATE THE GEOJSON FILE BY ASSIGNING EACH VARIABLE TO
+                // THE FEATURES ARRAY WHICH WILL BE INSIDE THE PROPERTIES
                 if($value['property_locations'] != null)
                 {
                     $crs = array(
@@ -2201,15 +2330,15 @@ class FronthomeController extends Controller
                         )
                     );
 
-
                     $features[] = array(
                         'type' => 'Feature',
                         'geometry' => array('type' => 'Point', 'coordinates' => array((float)$value['property_locations']['longitude'], (float)$value['property_locations']['latitude'])),
                         'properties' => array(
                             'name' => $value['title_en'],
                             'id' => $value['id'],
-                            'priceLong' => 'AED '.number_format($value['price']),
-                            'price' => $x_display,
+                            'priceLong' => $priceLong,
+                            'price' => $price,
+                            'price_usd' => 'USD '.$x2_display,
                             'address' => $value['address_en'],
                             'image' => $value['images'][0]['image'],
                             'image_url' => 'uploads/properties/'.$value['id'].'/'.$value['images'][0]['image'],
@@ -2218,6 +2347,7 @@ class FronthomeController extends Controller
                             'bath' => $value['bathrooms'],
                             'area' => $value['area'],
                             'description' => $value['description_en'],
+                            'sqft' => 'Sq.Ft',
                             )
                         );
                 }
@@ -2259,18 +2389,7 @@ class FronthomeController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    public function luxury_projects_map($lang = '')
+    public function luxury_projects_map($currency, $lang = '')
     {
         if ($lang != "") {
             // Set Language
@@ -2282,7 +2401,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -2290,24 +2409,17 @@ class FronthomeController extends Controller
 
         $this->data['footerCommunities'] = $footerCommunities;
 
-
-
         $luxuryProjects = Project::with(['images','developers','project_types', 'project_locations'])->where('project_status', '3')->orderBy('id', 'desc')->get();
 
-
         $original_data = json_decode($luxuryProjects, JSON_PRETTY_PRINT);
-
-        // dd($original_data);
-
 
         $features = array();
 
         foreach($original_data as $key => $value) {
 
-            // dd($value['images'][0]['image']);
             if( $value['project_price'] > 1000 ) {
 
-                $x = round($value['project_price']);
+                $x = round($value['project_price_usd']);
                 $x_number_format = number_format($x);
                 $x_array = explode(',', $x_number_format);
                 $x_parts = array('k', 'm', 'b', 't');
@@ -2351,6 +2463,7 @@ class FronthomeController extends Controller
                             'floors' => $value['no_floors'],
                             'area' => $area,
                             'description' => $value['description_ar'],
+                            'sqft' => 'قدم مربع',
                             )
                         );
                 }
@@ -2369,7 +2482,7 @@ class FronthomeController extends Controller
                     {
                         $area = 'n/a';
                     } else {
-                        $area = $value['size'];
+                        $area = round($value['area']/10.764, 2);
                     }
 
                     $features[] = array(
@@ -2388,6 +2501,7 @@ class FronthomeController extends Controller
                             'floors' => $value['no_floors'],
                             'area' => $area,
                             'description' => $value['description_ru'],
+                            'sqft' => 'кв.м',
                             )
                         );
                     }
@@ -2426,6 +2540,7 @@ class FronthomeController extends Controller
                         'floors' => $value['no_floors'],
                         'area' => $area,
                         'description' => $value['description_en'],
+                        'sqft' => 'Sq.Ft.',
                         )
                     );
                 }
@@ -2468,9 +2583,7 @@ class FronthomeController extends Controller
 
 
 
-
-
-    public function ready_projects_map($lang = '')
+    public function ready_projects_map($currency, $lang = '')
     {
         if ($lang != "") {
             // Set Language
@@ -2482,7 +2595,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -2533,7 +2646,7 @@ class FronthomeController extends Controller
                     {
                         $area = 'n/a';
                     } else {
-                        $area = $value['size'];
+                        $area = round($value['area']/10.764, 2);
                     }
 
                     $features[] = array(
@@ -2552,6 +2665,7 @@ class FronthomeController extends Controller
                             'floors' => $value['no_floors'],
                             'area' => $area,
                             'description' => $value['description_ar'],
+                            'sqft' => 'قدم مربع',
                             )
                         );
 
@@ -2590,6 +2704,7 @@ class FronthomeController extends Controller
                             'floors' => $value['no_floors'],
                             'area' => $area,
                             'description' => $value['description_ru'],
+                            'sqft' => 'кв.м',
                             )
                         );
 
@@ -2628,6 +2743,7 @@ class FronthomeController extends Controller
                             'floors' => $value['no_floors'],
                             'area' => $area,
                             'description' => $value['description_en'],
+                            'sqft' => 'Sq. Ft.',
                             )
                         );
 
@@ -2668,7 +2784,7 @@ class FronthomeController extends Controller
 
 
 
-    public function offplan_projects_map($lang = '')
+    public function offplan_projects_map($currency, $lang = '')
     {
         if ($lang != "") {
             // Set Language
@@ -2680,7 +2796,7 @@ class FronthomeController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -2731,7 +2847,7 @@ class FronthomeController extends Controller
                     {
                         $area = 'n/a';
                     } else {
-                        $area = $value['size'];
+                        $area = round($value['area']/10.764, 2);
                     }
 
                     $features[] = array(
@@ -2750,6 +2866,7 @@ class FronthomeController extends Controller
                             'floors' => $value['no_floors'],
                             'area' => $area,
                             'description' => $value['description_ar'],
+                            'sqft' => 'قدم مربع',
                             )
                         );
                 }
@@ -2787,6 +2904,7 @@ class FronthomeController extends Controller
                             'floors' => $value['no_floors'],
                             'area' => $area,
                             'description' => $value['description_ru'],
+                            'sqft' => 'кв.м',
                             )
                         );
                 }
@@ -2824,6 +2942,7 @@ class FronthomeController extends Controller
                             'floors' => $value['no_floors'],
                             'area' => $area,
                             'description' => $value['description_en'],
+                            'sqft' => 'Sq. Ft.',
                             )
                         );
                 }
@@ -2865,7 +2984,7 @@ class FronthomeController extends Controller
 
 
 
-    public function show_property($lang = '', $id)
+    public function show_property( $lang = '', $currency, $id)
     {
         if ($lang != "") {
             // Set Language
@@ -2875,11 +2994,13 @@ class FronthomeController extends Controller
 
         // dd($lang);
 
+
+        // FOOTER CODE
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -2888,6 +3009,9 @@ class FronthomeController extends Controller
         $this->data['footerCommunities'] = $footerCommunities;
 
 
+
+
+        // FUNCTIONAL CODE
         $properties = Property::with(['images', 'locationss','cityss', 'property_locations'])->where('id', $id)->get();
 
         $original_data = json_decode($properties, JSON_PRETTY_PRINT);
@@ -2936,6 +3060,7 @@ class FronthomeController extends Controller
                             'bath' => $value['bathrooms'],
                             'area' => $value['area'],
                             'description' => $value['description_ar'],
+                            'sqft' => 'قدم مربع',
                             )
                         );
                 }
@@ -2964,8 +3089,9 @@ class FronthomeController extends Controller
                             'slug_link' => $value['slug_link'],
                             'bed' => $value['bedrooms'],
                             'bath' => $value['bathrooms'],
-                            'area' => $value['area'],
+                            'area' => round($value['area']/10.764, 2),
                             'description' => $value['description_ru'],
+                            'sqft' => 'кв.м',
                             )
                         );
                 }
@@ -2996,6 +3122,7 @@ class FronthomeController extends Controller
                             'bath' => $value['bathrooms'],
                             'area' => $value['area'],
                             'description' => $value['description_en'],
+                            'sqft' => 'Sq. Ft.',
                             )
                         );
                 }
@@ -3015,9 +3142,23 @@ class FronthomeController extends Controller
         Storage::disk('public')->put("Geospatial/properties.geojson",  response()->json($allfeatures));
 
         $file2 = URL::asset('public/assets/asset/geojson/dubai_metro_stations.geojson');
+
         $this->data['file2'] = json_encode($file2, JSON_PRETTY_PRINT);
 
         $this->data['allfeatures'] = $allfeatures;
+
+        // dd($properties[0]->property_locations);
+
+        // if($properties[0]->property_locations != null)
+        // {
+        //     $long = $properties[0]->property_locations->longitude;
+        //     $lat = $properties[0]->property_locations->latitude;
+
+        //     $this->data['long'] = $long;
+        //     $this->data['lat'] = $lat;
+        // } else {
+        //     return view('property_map.propertyMap',$this->data);
+        // }
 
 
         $long = $properties[0]->property_locations->longitude;
@@ -3028,10 +3169,6 @@ class FronthomeController extends Controller
 
         return view('property_map.propertyMap',$this->data);
     }
-
-
-
-
 
 
 }

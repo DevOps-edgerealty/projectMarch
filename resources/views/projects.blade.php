@@ -30,17 +30,17 @@
         transition-duration: 0.125s !important;
     }
 
-    .btn:hover {
+    /* .btn:hover { */
         /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
         /* translate: 2px -2px !important; */
-        opacity: 1 !important;
+        /* opacity: 1 !important;
         background-color: #fff !important;
         color: #000 !important;
         transform: scale(1) !important;
         border: 2px solid #000 !important;
 
-        cursor: pointer !important;
-    }
+        cursor: pointer !important; */
+    /* } */
 
     .card {
         color: #fff !important;
@@ -145,25 +145,28 @@ else
 
     <style>
         .breadcrumb-item + .breadcrumb-item:before {
-        float: right;
-        padding-right: 0.5rem;
-        color: #757575;
-        content: var( --mdb-breadcrumb-divider, "/" );
+            float: right;
+            padding-right: 0.5rem;
+            color: #757575;
+            content: var( --mdb-breadcrumb-divider, "/" );
         }
     </style>
 
     <section class="" style="direction: rtl">
         <div class="container-fluid containerization">
-            <div class="row">
-                <div class="col-lg-12 mb-4">
+            <div class="row mb-3">
+                <div class="col-lg-9">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class=" text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }} </a></li>
-                        <li class="breadcrumb-item active text-white" aria-current="page"> {{ trans('frontLang.Offplan') }}</li>
+                        <li class="breadcrumb-item text-white "><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">{{ trans('frontLang.Offplan') }}</li>
                         </ol>
                     </nav>
                 </div>
 
+                <div class="col-lg-3">
+                    <a href="{{ url($langSeg."/offplan-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-100 mx-auto text-center " style="background-color: #0c5e03 !important;">Map View</a>
+                </div>
             </div>
             {{-- <h3 class="text-left mb-5">{{ trans('frontLang.Offplan') }}</h3> --}}
             <P style="font-size: 16px; line-height: 25px;">{{ trans('frontLang.Offplan_detail') }}</P>
@@ -339,8 +342,8 @@ else
 @else
     <section class="">
         <div class="container-fluid containerization">
-            <div class="row">
-                <div class="col-lg-12">
+            <div class="row mb-3">
+                <div class="col-lg-9">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item text-white "><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
@@ -348,9 +351,13 @@ else
                         </ol>
                     </nav>
                 </div>
+
+                <div class="col-lg-3">
+                    <a href="{{ url($langSeg."/offplan-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-100 mx-auto text-center " style="background-color: #0c5e03 !important;">Map View</a>
+                </div>
             </div>
             {{-- <h3 class="text-left mb-3">{{ trans('frontLang.Offplan') }}</h3> --}}
-            <P style="font-size: 16px; line-height: 25px;">{{ trans('frontLang.Offplan_detail') }}</P>
+            <P style="font-size: 16px !important; line-height: 25px;">{{ trans('frontLang.Offplan_detail') }}</P>
 
         </div>
     </section>
@@ -561,8 +568,6 @@ else
         });
     </script>
 @endif
-
-
 
 
 

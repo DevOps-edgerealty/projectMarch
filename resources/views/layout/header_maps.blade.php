@@ -109,28 +109,29 @@
 
 </style>
 <?php
-$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-$uri_segments = explode('/', $uri_path);
-$seg1 = $uri_segments[1];
-if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
-{
-    $langSeg = $uri_segments[1];
-
-
+    $uri_segments = explode('/', $uri_path);
+    $seg1 = $uri_segments[1];
+    if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+    {
+        $langSeg = $uri_segments[1];
 
 
 
-}
-else
-{
-    $langSeg = 'en';
 
 
-}
+    }
+    else
+    {
+        $langSeg = 'en';
+
+
+    }
 
 ?>
-    <?php
+
+<?php
         $finalUrl = '/ar/home';
         $finalUrlru = '/ru/home';
         $finalUrlen = '/en/home';
@@ -275,24 +276,27 @@ else
 
                         <li><a href="<?php echo  url('/'.$langSeg.'/sell');?>" class="menu-color"> {{ trans('frontLang.Sell') }}</a></li>
 
-                        <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color"> {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i></a>
+                        <li class="menu-item-has-children">
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i>
+                            </a>
+
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-new-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Offplan Project 2.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/SEXSEN-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">  {{ trans('frontLang.Offplan') }}</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-ready-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Dubai Ready Project.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/desktop/Asayel-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">{{ trans('frontLang.readyProjects') }}</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-luxury-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Luxury Project Option 2.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/desktop/Bvlg-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">{{ trans('frontLang.Luxuryprojects') }}</h4>
                                     </a>
                                 </div>
@@ -306,7 +310,7 @@ else
                         </li>
 
                         <li><a href="<?php echo  url('/'.$langSeg.'/services');?>" class="menu-color">{{ trans('frontLang.services') }}</a></li>
-                        <li class="menu-item-has-children" style="margin-left:3rem !important">
+                        {{-- <li class="menu-item-has-children" style="margin-left:3rem !important">
                             <a href="#" class="menu-color">{{ trans('frontLang.marketstatistics') }} <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
@@ -318,7 +322,7 @@ else
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
 
 
@@ -806,23 +810,26 @@ else
                         <li><a href="<?php echo  url('/'.$langSeg.'/sell');?>" class="menu-color"> {{ trans('frontLang.Sell') }}</a></li>
 
                         <li class="menu-item-has-children">
-                            <a href="#" class="menu-color"> {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i></a>
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i>
+                            </a>
+
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-new-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Offplan Project 2.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/SEXSEN-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">  {{ trans('frontLang.Offplan') }}</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-ready-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Dubai Ready Project.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/desktop/Asayel-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">{{ trans('frontLang.readyProjects') }}</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-luxury-projects');?>">
-                                        <img src="{{URL::asset('public/assets/asset/Luxury Project Option 2.webp')}}" class="responsive" alt="New Product">
+                                        <img src="{{URL::asset('public/assets/asset/desktop/Bvlg-edgerealty.ae.webp')}}" class="responsive" alt="New Product">
                                         <h4 class="title">{{ trans('frontLang.Luxuryprojects') }}</h4>
                                     </a>
                                 </div>
@@ -836,7 +843,7 @@ else
                         </li>
 
                         <li><a href="<?php echo  url('/'.$langSeg.'/services');?>" class="menu-color">{{ trans('frontLang.services') }}</a></li>
-                        <li class="menu-item-has-children">
+                        {{-- <li class="menu-item-has-children">
                             <a href="#" class="menu-color">{{ trans('frontLang.marketstatistics') }} <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
@@ -848,7 +855,7 @@ else
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
 
 
@@ -864,7 +871,7 @@ else
                             </div>
                         </li>
 
-                        {{-- @if ($langSeg == 'ru')
+                        @if ($langSeg == 'ru')
                             <li class="menu-item-has-children" >
                                 <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU <i class="ion ion-ios-arrow-down"> </i></a>
                                 <div class="menu-subs menu-column-1 lang" >
@@ -884,7 +891,7 @@ else
                                     </ul>
                                 </div>
                             </li>
-                        @endif --}}
+                        @endif
 
 
 
@@ -902,9 +909,7 @@ else
 
                 {{-- <a href="<?php echo $finalUrl ; ?>"><img src="{{URL('public/assets/images/uae-flag.png')}}" alt=""></a> --}}
 
-
-
-                <nav class="menu navbar-dark">
+                {{-- <nav class="menu navbar-dark">
                     <div class="menu-mobile-header">
                         <button type="button" class="menu-mobile-arrow"><i class="ion ion-ios-arrow-back"></i></button>
                         <div class="menu-mobile-title"></div>
@@ -919,7 +924,6 @@ else
                                     <ul style="padding-left: 0rem;">
                                         <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
                                         <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
-                                        {{-- <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li> --}}
                                     </ul>
                                 </div>
                             </li>
@@ -928,7 +932,6 @@ else
                                 <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN <i class="ion ion-ios-arrow-down"> </i></a>
                                 <div class="menu-subs menu-column-1 lang" >
                                     <ul style="padding-left: 0rem;">
-                                        {{-- <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li> --}}
                                         <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
                                         <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
                                     </ul>
@@ -936,7 +939,15 @@ else
                             </li>
                         @endif
                     </ul>
-                </nav>
+                </nav> --}}
+
+                <div class="my-auto">
+                    <select name="formal" class="rounded-0 px-2" onchange="javascript:handleSelect(this)">
+                        <option value="0">Currency</option>
+                        <option value="1">AED</option>
+                        <option value="2">USD</option>
+                    </select>
+                </div>
 
                 <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight"><img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt=""></a>
 

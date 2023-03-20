@@ -885,6 +885,7 @@
                 const bed = e.features[0].properties.bed;
                 const bath = e.features[0].properties.bath;
                 const area = e.features[0].properties.area;
+                const sqft = e.features[0].properties.sqft;
 
                 // Ensure that if the map is zoomed out such that multiple
                 // copies of the feature are visible, the popup appears

@@ -160,16 +160,21 @@
     </style>
     <section class="" style="direction: rtl">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 ">
+            <div class="row mb-3">
+                <div class="col-lg-9 ">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item text-white "><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }} </a></li>
-                        <li class="breadcrumb-item active text-white" aria-current="page"> {{ trans('frontLang.readyProjects') }}</li>
+                        <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">
+                            {{ trans('frontLang.readyProjects') }}
+                        </li>
                         </ol>
                     </nav>
                 </div>
 
+                <div class="col-lg-3">
+                    <a href="{{ url($langSeg."/ready-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-100 mx-auto text-center project_btn" style="background-color: #0c5e03 !important;">Map View</a>
+                </div>
             </div>
             {{-- <h3 class="text-left">{{ trans('frontLang.readyProjects') }}</h3> --}}
             <P>ينتهي البحث عن منزل أحلامك في دبي مع شركة إيدج ريالتي.  ابحث عن العقارات الجاهزة للسكن، حيث يمكنك شراء الفلل والشقق والبنتهاوس ومنازل التاون هاوس في دبي، التي ستتوافق مع معاييرك المثالية فيما يتعلق بمعيشتك، ذلك من خلال المنازل الفخمة التي حصلت على لمستها النهائية بواسطة عدة أكبر الشركات في مجال التطوير والإنشاء.</P>
@@ -325,8 +330,8 @@
 @else
     <section class="">
         <div class="container-fluid containerization">
-            <div class="row">
-                <div class="col-lg-12 ">
+            <div class="row mb-3">
+                <div class="col-lg-9 ">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
@@ -337,6 +342,9 @@
                     </nav>
                 </div>
 
+                <div class="col-lg-3">
+                    <a href="{{ url($langSeg."/offplan-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-100 mx-auto text-center " style="background-color: #0c5e03 !important;">Map View</a>
+                </div>
             </div>
             {{-- <h3 class="text-left">{{ trans('frontLang.readyProjects') }}</h3> --}}
 
@@ -350,6 +358,9 @@
         </div>
 
     </section>
+
+
+
     <section class="mt-5 mb-5">
         <div class="container-fluid containerization ">
 

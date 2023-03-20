@@ -54,7 +54,7 @@
             .sidebar {
                 position: absolute;
                 width: 25%;
-                height: 100vh;
+                height: 80vh;
                 top: 98px;
                 right: 0;
                 overflow: scroll;
@@ -89,7 +89,7 @@
             }
 
             listings {
-                height: ;
+                height: auto%;
                 overflow: auto;
                 padding-bottom: 0;
             }
@@ -339,7 +339,37 @@
     <div id='map' class="map" style='width: 100%; height: 100vh'></div>
 
 @else
-    <div class='sidebar ' id="listing-card" style="display: none;">
+    <div class='sidebar ' id="listing-card" style="display: none; margin-top: 75px">
+        <div id='listings' class='listings ' style="margin-top: 0px;">
+            <div class="card rounded-0 bg-black position-relative" style="width: 100%;">
+                <div id="listing-image">
+
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title my-0 py-0" >
+
+                    </h3>
+                    <div class="d-flex flex-row bd-highlight mb-0">
+                        <h3 class="p-2 ps-0 bd-highlight" id="listing-price"></h3>
+                        <div class="p-2 bd-highlight float-right ms-auto" id="listing-btn"></div>
+                    </div>
+
+                    <p style="font-size: 1.3em" class="my-1" id="listing-location"></p>
+
+                    <p class="card-text m-0" id="listing-title"></p>
+
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="p-2 ps-0 bd-highlight" id="listing-baths"></div>
+                        <div class="p-2 bd-highlight" id="listing-beds"></div>
+                        <div class="p-2 bd-highlight" id="listing-area"></div>
+                    </div>
+                    <p id="listing-description" class="" style="color: #848484 !important;"></p>
+                </div>
+            </div>
+        </div>
+        <p id="listing_id" class="text-white" style="font-size: 1.2em !important;"></p>
+    </div>
+    {{-- <div class='sidebar ' id="listing-card" style="display: none;">
         <div id='listings' class='listings ' style="margin-top: 60px;">
             <div class="card rounded-0 bg-black " style="width: 100%;">
                 <div id="listing-image">
@@ -363,7 +393,7 @@
             </div>
         </div>
         <p id="listing_id" class="text-white" style="font-size: 1.2em !important;"></p>
-    </div>
+    </div> --}}
 
 
     <div class="bottombar fixed-bottom" id="listing-card-mobile" style="border-radius: 20px 20px 0px 0px; display: none;">
@@ -686,6 +716,7 @@
                 const id = e.features[0].properties.id;
                 const bed = e.features[0].properties.bed;
                 const area = e.features[0].properties.area;
+                const sqft = e.features[0].properties.sqft;
                 const description = e.features[0].properties.description;
 
                 // a function to check if device is a MOBILE or DESKTOP view.
@@ -776,7 +807,7 @@
                     document.getElementById('listing-btn').innerHTML = `<a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" class="btn btn-outline-white rounded-0 text-white">View Property</a>`;
                     document.getElementById('listing-title').innerHTML = `${name}`;
                     document.getElementById('listing-location').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
-                    document.getElementById('listing-beds').innerHTML = `Bed : ${bed}`;
+                    document.getElementById('listing-beds').innerHTML = `<i class="fas fa-bed"></i> : ${bed}`;
                     document.getElementById('listing-image').innerHTML = `
                         <a href="{{url('en/dubai-luxury-projects/${slug_link}')}}" >
                             <img src="{{ URL::asset('${image_url}') }}" style="height: 100%; width: 100%" class="card-img-top rounded-0 pe-1" alt="${image}"/>
@@ -845,7 +876,7 @@
                                                 text-align: justify !important;
                                             "
                                         >
-                                            Bed: ${bed}
+                                            <i class="fas fa-bed"></i> ${bed}
                                         </span>
                                     </div>
                                 </div>

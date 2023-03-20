@@ -51,6 +51,7 @@
 
         cursor: pointer !important;
     }
+
     .card {
         color: #fff !important;
         background-color: #000 !important;
@@ -60,15 +61,6 @@
         transition-duration: 0.125s !important;
 
 
-    }
-    .card:hover {
-        /* box-shadow: 0px 0px 5px #fff !important; */
-        opacity: 1 !important;
-        transform: scale(1.07) !important;
-        z-index: 1000 !important;
-        /* margin-left: 20px !important;
-        margin-right: 20px !important; */
-        /* border: 5px solid #000 !important; */
     }
 
     .card-footer {
@@ -170,7 +162,7 @@ else
                 <div class="row">
 
                     @foreach ($communities as $community)
-                        <div class="col-lg-3 mt-5">
+                        <div class="col-lg-4 mt-5">
                             <div class="card border border-1 p-0 rounded-0 border-white bg-black text-white">
                                 @foreach ($community->images as $image)
                                     <a href="{{url( $langSeg .'/'.'dubai-communities'.'/'.$community->slug_link)}}" class="border-bottom border-white">
@@ -195,7 +187,7 @@ else
 
                                 @endforeach
 
-                                <div class="card-footer text-muted border-top border-white" style="padding: 0.75rem 0rem;">
+                                <div class="card-footer text-muted " style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%; color: #000 !important;">

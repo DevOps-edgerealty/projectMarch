@@ -41,7 +41,7 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -120,7 +120,7 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -220,7 +220,7 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -280,28 +280,36 @@ class PropertiesController extends Controller
 
     public function detail( $lang = '' , $slug_link )
     {
+        // FOOTER CODE----
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
-        //
-         //
-         if ($lang != "") {
+        // FOOTER CODE ----- ENDS
+
+
+
+        if ($lang != "") {
             // Set Language
             App::setLocale($lang);
             \Session::put('locale', $lang);
         }
-
 		$conLag = App::getLocale();
 
-        $property_detail = Property::with(['images', 'locationss', 'property_type','agentss'])->where('slug_link',$slug_link)->first();
+
+
+
+        // FUNCTIONAL CODE
+        $property_detail = Property::with(['images', 'locationss', 'property_type','agentss', 'property_locations'])->where('slug_link',$slug_link)->first();
+
+        // DD($property_detail->property_locations->longitude);
 
         $agent = Agents::where('status', 1)->where('id', $property_detail->agent_id)->first();
 
@@ -311,13 +319,22 @@ class PropertiesController extends Controller
 
         $Amenities = Aminities::where('id', '>=', '1')->orderby('amenity_name_en', 'asc')->get();
 
+
+
+
+
         foreach($Amenities as $Amenity)
         {
             $amenities_array[$Amenity->id]=array('amenity_name_en'=>$Amenity->amenity_name_en,'amenity_name_ru'=>$Amenity->amenity_name_ru,'amenity_name_ar'=>$Amenity->amenity_name_ar,'amenity_image'=>$Amenity->image);
         }
+
+
+
         $amenities = array();
 
         $db_amenities = $property_detail->amenities;
+
+
 
         if($db_amenities!='')
         {
@@ -334,9 +351,23 @@ class PropertiesController extends Controller
 
 
 
-        $properties = Property::with(['images', 'locationss','cityss','agentss'])->where('location' , $location_id )->where('cat_id','1')->where('type_id','1')->paginate(3);
+        if (empty($property_detail->property_locations))
+        {
+            $mapLocation = 'false';
+            $this->data['mapLocation'] = $mapLocation;
+        } else {
+            $mapLocation = 'true';
+            $this->data['mapLocation'] = $mapLocation;
+        }
 
-        // dd($amenities);
+        // FUNCTIONAL CODE ------ ENDS
+
+
+
+        // SIMILAR PROPERTIES CODE
+        $properties = Property::with(['images', 'locationss','cityss','agentss'])->where('location' , $location_id )->where('cat_id','1')->where('type_id','1')->paginate(3);
+        // SIMILAR PROPERTIES CODE -----ENDS
+
 
 
         $this->data['properties'] = $properties;
@@ -345,15 +376,9 @@ class PropertiesController extends Controller
 
         $this->data['property_detail'] = $property_detail;
 
-        // $this->data['property_detail'] = $property_detail->;
-
         $this->data['amenities_array'] = $amenities_array;
 
         $this->data['amenities'] = $amenities;
-
-
-
-
 
 
         return view('properties_detail',$this->data);
@@ -368,7 +393,7 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -440,7 +465,7 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -511,7 +536,7 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -581,14 +606,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
-    //
+        //
 
         //
         if ($lang != "") {
@@ -647,9 +672,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
         //
         if ($lang != "") {
@@ -712,9 +742,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
 
 
@@ -783,9 +818,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
 
         //
@@ -849,9 +889,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
         //
         if ($lang != "") {
@@ -913,9 +958,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
         //
         if ($lang != "") {
@@ -979,9 +1029,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
         //
         if ($lang != "") {
@@ -1044,9 +1099,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
         //
         if ($lang != "") {
@@ -1110,9 +1170,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
         //
         if ($lang != "") {
             // Set Language
@@ -1185,9 +1250,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
 
         $properties = Property::with(['images', 'locationss','cityss'])->get();
 
@@ -1210,6 +1280,9 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
@@ -1250,9 +1323,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
         //
 
         //return $request;
@@ -1379,9 +1457,14 @@ class PropertiesController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+        $this->data['footerDevelopers'] = $footerDevelopers;
+
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
 
         $this->data['footerCommunities'] = $footerCommunities;
+
         $this->data['banners'] = Banner::all()->where('status','1');
     }
 

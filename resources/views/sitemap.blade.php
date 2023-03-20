@@ -63,18 +63,18 @@ $langSeg = 'en';
     </header>
 </section>
 
-<section class="mt-5">
+{{-- <section class="mt-5">
     <div class="container">
 
         <h3 class="text-center">{{ trans('frontLang.sitemap') }}</h3>
 
     </div>
-</section>
+</section> --}}
 
 
-<section class="mt-5 mb-5">
+<section class="mt-0 mb-5">
     <div class="container">
-        <div class="row p-3 mb-3" style="    background-color: #fbfbfb; border: 1px solid #f4f4f4 !important;">
+        <div class="row p-3 mb-3" style="    background-color: #000; border: 1px solid #f4f4f4 !important;">
             <h3 class="text-left mb-4">{{ trans('frontLang.dubaiCommunities') }}</h3>
 
             @foreach ($dubaicommunity as $area)
@@ -86,7 +86,7 @@ $langSeg = 'en';
 
         </div>
 
-        <div class="row p-3 mb-3" style="    background-color: #fbfbfb; border: 1px solid #f4f4f4 !important;">
+        <div class="row p-3 mb-3" style="    background-color: #000; border: 1px solid #f4f4f4 !important;">
             <h3 class="text-left mb-4">{{ trans('frontLang.Offplan') }}</h3>
 
             @foreach ($dubaiprojects as $project)
@@ -98,7 +98,7 @@ $langSeg = 'en';
 
         </div>
 
-        <div class="row p-3 mb-3" style="    background-color: #fbfbfb; border: 1px solid #f4f4f4 !important;">
+        <div class="row p-3 mb-3" style="    background-color: #000; border: 1px solid #f4f4f4 !important;">
             <h3 class="text-left mb-4">{{ trans('frontLang.readyProjects') }}</h3>
 
             @foreach ($dubaireadyprojects as $project)
@@ -110,7 +110,7 @@ $langSeg = 'en';
 
         </div>
 
-        <div class="row p-3 mb-3" style="    background-color: #fbfbfb; border: 1px solid #f4f4f4 !important;">
+        <div class="row p-3 mb-3" style="    background-color: #000; border: 1px solid #f4f4f4 !important;">
             <h3 class="text-left mb-4">{{ trans('frontLang.Luxuryprojects') }}</h3>
 
             @foreach ($dubailuxuryprojects as $project_luxury)
@@ -122,7 +122,7 @@ $langSeg = 'en';
 
         </div>
 
-        <div class="row p-3 mb-3" style="    background-color: #fbfbfb; border: 1px solid #f4f4f4 !important;">
+        <div class="row p-3 mb-3" style="    background-color: #000; border: 1px solid #f4f4f4 !important;">
             <h3 class="text-left mb-4">{{ trans('frontLang.propertiesForSaleInDubai') }}</h3>
 
             @foreach ($properties_sale as $properties)
@@ -134,7 +134,7 @@ $langSeg = 'en';
 
         </div>
 
-        <div class="row p-3 mb-3" style="    background-color: #fbfbfb; border: 1px solid #f4f4f4 !important;">
+        <div class="row p-3 mb-3" style="    background-color: #000; border: 1px solid #f4f4f4 !important;">
             <h3 class="text-left mb-4">{{ trans('frontLang.propertiesForRentInDubai') }}</h3>
 
             @foreach ($properties_rent as $properties_for_rent)

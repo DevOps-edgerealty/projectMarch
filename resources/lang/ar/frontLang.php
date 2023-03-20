@@ -567,4 +567,60 @@ return array (
   'exploremoreindex' => ' إكتشف المزيد',
   'projectname' => 'اسم المشروع',
   'companyOverView' => 'نبذة عن الشركة',
+
+
+    'luxuryProjects' => 'مشاريع فاخرة',
+    'dubaiAreas' => 'مناطق دبي',
+    'footerCurrency' => 'العملة',
+    'footerCurrency2' => 'العملة',
+
+    'aboutMeetOurTeam' => 'تعرف على فريقنا',
+
+    'aboutMeetOurTeamBody' => 'تعرف على الأشخاص الذين يجعلوننا ما نحن عليه ، بما في ذلك قادتنا ذوي الرؤية وفريق العمليات المتفاني لدينا',
+
+    'aboutCompanyBrandGuideline' => 'دليل العلامة التجارية ',
+
+    'aboutCompanyBrandGuidelineBody' => 'البروشور / الهويه / الموقع الألكتروني ',
+
+    'aboutHiring' => 'التوظيف',
+
+    'aboutHiringBody' => 'افعل ما تحب ، أحب ما تفعله. انضم إلينا لاكتشاف إمكانياتك',
+
+    'agentCardShare' => 'شارك',
+
+    'latestProjectHome' => 'اكتشف أحدث مشاريعنا العقارية! تصفح مجموعة مختارة من التطورات الجديدة المثيرة ، من الشقق الحديثة إلى العقارات المترامية الأطراف. من خلال المعلومات التفصيلية والمرئيات المذهلة والوصول إلى فريقنا من الوكلاء ذوي الخبرة ، لم يكن العثور على عقار أحلامك أسهل من أي وقت مضى.',
+
+    'map' => 'عرض الخريطة',
+
+    'palmJumeirah' => 'نخلة جميرا',
+
+    'dubaiProperties' => 'عقارات دبي',
+
+    'exitMap' => 'خريطة الخروج',
+
+    'dubaioffplanProjects' => 'مشاريع تحت الإنشاء',
+
+    'dubaiReadyProjects' => 'مشاريع جاهزه',
+
+    'dubaiLuxuryProjects' => 'مشاريع دبي الفاخرة',
+
+    'blogsdetails' => 'تفاصيل المدونة',
+
+    'contact_us' => 'طلب معاودة الاتصال',
+
+    'aboutCompanyMobile' => 'عن الشركة ',
+
+    'Dubaidevelopers' => 'مطورين دبي',
+
+    'requestCallBack' => 'تواصل معنا الأن ',
+
+    'ContactUsHeader' => 'تواصل معنا',
+
+    'OurTeam' => 'فريق العمل',
+
+    'Careersheader' => 'الوظائف',
+
+    'MoreFilter' => 'المزيد من التصفيه',
+
+
 );

@@ -47,7 +47,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -94,7 +94,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -174,7 +174,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -257,7 +257,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -351,7 +351,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -450,7 +450,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -546,7 +546,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -590,7 +590,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -633,7 +633,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -666,7 +666,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -696,7 +696,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -725,7 +725,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -754,7 +754,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 
@@ -785,7 +785,7 @@ class ProjectController extends Controller
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
-        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+        $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
         $this->data['footerDevelopers'] = $footerDevelopers;
 

@@ -298,7 +298,7 @@
                                 <div class="accordion-body">
                                     @foreach($footerLuxuryProjects as $data)
                                         <p class="my-1 me-auto" style="text-align: left !important; padding-left: 0rem;">
-                                            <a href="<?php echo  url($langSeg .'/'.'dubai-luxury-projects'.'/'.$data->slug_link);?>" class="text-reset me-auto text-uppercase" >
+                                            <a href="<?php echo  url($langSeg .'/'.'dubai-luxury-projects'.'/'.$data->slug_link);?>" class="text-reset-1 me-auto text-uppercase" >
                                                 {{ $data->title_en }}
                                             </a>
                                         </p>
@@ -328,7 +328,7 @@
                                 <div class="accordion-body">
                                     @foreach($footerCommunities as $data)
                                         <p class="my-1" style="text-align: left !important; padding-left: 0rem;">
-                                            <a href="<?php echo  url( $langSeg .'/'.'dubai-communities'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                            <a href="<?php echo  url( $langSeg .'/'.'dubai-communities'.'/'.$data->slug_link);?>" class="text-reset-1 text-uppercase">
                                                 {{ $data->title_en }}
                                             </a>
                                         </p>
@@ -358,7 +358,7 @@
                                 <div class="accordion-body">
                                     @foreach($footerDevelopers as $data)
                                         <p class="my-1" style="text-align: left !important; padding-left: 0rem;">
-                                            <a href="<?php echo  url( $langSeg .'/'.'dubai-developers'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                            <a href="<?php echo  url( $langSeg .'/'.'dubai-developers'.'/'.$data->slug_link);?>" class="text-reset-1 text-uppercase">
                                                 {{ $data->name_en }}
                                             </a>
                                         </p>
@@ -449,37 +449,37 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0" style="text-align: right !important">
                     <!-- Content -->
-                    <a href="{{URL('')}}" class="brand mb-4"><img src="{{URL::asset('public/assets/asset/logo.png')}}" style="height: 85px;" alt=""></a>
+                    <a href="{{URL('')}}" class="brand mb-4"><img src="{{URL::asset('public/assets/asset/logo.png')}}" style="height: 4vw;" alt=""></a>
 
                     <p class="mt-4 mb-2">
-                        <a href="tel:00971045807142" style="color: #fff"><i class="fas fa-phone-alt me-3"></i> +97143881856</a>
+                        <a href="tel:00971045807142" style="color: #fff;  font-size: 0.95vw !important;"><i class="fas fa-phone-alt me-3"></i> +97143881856</a>
                     </p>
                     <p class="my-4">
-                        <a style="color: #fff" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
+                        <a style="color: #fff;  font-size: 0.95vw !important;" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
                         <i class="fab fa-whatsapp me-3"></i> +971585602665</a>
                     </p>
                     <p class="my-4">
-                        <a style="color: #fff ;text-transform: lowercase;" href="mailto:info@edgerealty.ae" class="__cf_email__" data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8">
+                        <a style="color: #fff ;text-transform: lowercase;  font-size: 0.95vw !important;" href="mailto:info@edgerealty.ae" class="__cf_email__" data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8">
                         <i class="fas fa-envelope me-3"></i>
                         info@edgerealty.ae
                         </a>
                     </p>
                     <!-- Facebook -->
                     <div class="m-0 p-0" style="margin-left: -20px !important;">
-                        <a class="btn btn-link btn-floating btn-lg text-white m-1"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-link btn-floating btn-lg text-white m-0"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
 
                         <!-- Twitter -->
-                        <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-link btn-floating btn-lg text-white m-0" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
 
 
                         <!-- Instagram -->
-                        <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-link btn-floating btn-lg text-white m-0" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
 
                         <!-- Linkedin -->
-                        <a  class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
+                        <a  class="btn btn-link btn-floating btn-lg text-white m-0" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
 
                         <!-- Linkedin -->
-                        <a  class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
+                        <a  class="btn btn-link btn-floating btn-lg text-white m-0" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <!-- Grid column -->
@@ -487,7 +487,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0" style="text-align: right !important">
                     <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
                         {{ trans('frontLang.Aboutus') }}
                     </h6>
                     <p class="my-1">
@@ -533,7 +533,7 @@
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-0" style="text-align: right !important">
 
                     <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
                         {{ trans('frontLang.Luxuryprojects') }}
                     </h6>
                     {{-- {{$footerLuxuryProjects}} --}}
@@ -551,7 +551,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-0" style="text-align: right !important">
                     <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
                         {{ trans('frontLang.Dubaicommunities') }}
                     </h6>
 
@@ -568,106 +568,56 @@
                 </div>
                 <!-- Grid row -->
 
-                <div class="row text-center" style="display: none; text-align: right !important">
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
 
-                    <a id="button" onclick="showhide()" id="show" style="color: #fff;" class="mb-5" >
-                        <b>{{ trans('frontLang.popularsearches') }} </b>
-                        <i class="fas fa-chevron-down"> </i>
-                    </a>
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
+                        {{ trans('frontLang.Luxuryprojects') }}
+                    </h6>
+                    {{-- {{$footerLuxuryProjects}} --}}
+                    @foreach($footerLuxuryProjects as $data)
+                        <p class="my-1">
+                            <a href="<?php echo  url($langSeg .'/'.'dubai-luxury-projects'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                {{ $data->title_ar }}
+                            </a>
+                        </p>
+                    @endforeach
+
                 </div>
 
-                <div class="row" id="newpost" style="display: none; text-align: right !important">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <p class="my-2">
-                            <a href="<?php echo  url('/'.$langSeg.'/properties_search');?>" class="text-reset">{{ trans('frontLang.propertiesForSaleInDubai') }}</a>
-                        </p>
-                        <p class="my-2">
-                            <a href="<?php echo  url('/'.$langSeg.'/properties_search');?>" class="text-reset">{{ trans('frontLang.propertiesForRentInDubai') }}</a>
-                        </p>
-                        <p class="my-2">
-                            <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/apartment-for-sale-in-Dubai');?>" class="text-reset">{{ trans('frontLang.apartmentforsaleindubai') }}</a>
-                        </p>
-                        <p class="my-2">
-                            <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/villas-for-sale-in-Dubai');?>" class="text-reset">{{ trans('frontLang.viilasforsaleindubai') }}</a>
-                        </p>
-                        <p class="my-2">
-                            <a href="<?php echo  url('/'.$langSeg.'/dubai-new-projects');?>" class="text-reset">{{ trans('frontLang.offplanprojectsindubai') }}</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
+                        {{ trans('frontLang.Dubaicommunities') }}
+                    </h6>
 
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                        <!-- Links -->
+                    @foreach($footerCommunities as $data)
+                        <p class="my-1">
+                            <a href="<?php echo  url( $langSeg .'/'.'dubai-communities'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                {{ $data->title_ar }}
+                            </a>
+                        </p>
+                    @endforeach
 
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.apartmentforrentindubaidowntown') }}</a>
-                        </p>
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.apartmentforrentindubaicitywalk') }}</a>
-                        </p>
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.apartmentforrentindubaipalmjumeriah') }}</a>
-                        </p>
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.apartmentforrentindubaibluewaters') }}</a>
-                        </p>
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.apartmentforrentindubaidubaimarina') }}</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
+                </div>
 
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                        <!-- Links -->
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
+                        {{ trans('frontLang.Dubaidevelopers') }}
+                    </h6>
 
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.buyoffplanapartmentindubai') }}</a>
+                    @foreach($footerDevelopers as $data)
+                        <p class="my-1">
+                            <a href="<?php echo  url( $langSeg .'/'.'dubai-developers'.'/'.$data->slug_link);?>" class="text-reset text-uppercase">
+                                {{ $data->$name_var }}
+                            </a>
                         </p>
+                    @endforeach
 
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.buyoffplanvillaindubai') }}</a>
-                        </p>
-
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.buyoffplanprojectsindubai') }} </a>
-                        </p>
-
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.buyoffplanpropertyindubai') }}</a>
-                        </p>
-
-                        <p class="my-2">
-                            <a href="#!" class="text-reset">{{ trans('frontLang.buyoffplantownhousesindubai') }} </a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-
-                        <p>
-                            <a href="#!" class="text-reset">{{ trans('frontLang.beachfrontapartmentforsale') }}</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">{{ trans('frontLang.beachfrontapartmentforrent') }}</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">{{ trans('frontLang.beachfrontvillasforsale') }}</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">{{ trans('frontLang.beachfrontvillasforrent') }}</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">{{ trans('frontLang.waterfrontpropertiesforsale') }}</a>
-                        </p>
-
-                    </div>
-                    <!-- Grid column -->
                 </div>
                 <!-- Grid row -->
 
@@ -681,11 +631,11 @@
             <div class=" float-left mx-auto" style="text-align: right !important">
                 <div class="text-white mt- mb-3">
                     <span>
-                        <a style="color:white;" href="<?php echo  url('/'.$langSeg.'/privacyandpolicy');?>">
+                        <a style="color:white;  font-size: 0.95vw !important;" href="<?php echo  url('/'.$langSeg.'/privacyandpolicy');?>">
                             {{ trans('frontLang.privacyandpolicy') }}
                         </a> |
 
-                        <a style="color:white;" href="<?php echo  url('/'.$langSeg.'/termsandconditions');?>">
+                        <a style="color:white;  font-size: 0.95vw !important;" href="<?php echo  url('/'.$langSeg.'/termsandconditions');?>">
                             {{ trans('frontLang.Termsandcondition') }}
                         </a>
                     </span>
@@ -693,7 +643,7 @@
             </div>
 
             <div class=" float-left text-center my-auto mx-auto" style="text-align: right !important">
-                <div class="text-white" >
+                <div class="text-white" style=" font-size: 0.95vw !important;">
                     {{ trans('frontLang.rightsandreserved') }}
                 </div>
 
@@ -701,11 +651,11 @@
 
             <div class=" float-left text-center my-auto mx-auto d-flex m" style="text-align: right !important">
 
-                <div class="text-white float-left me-3" >
+                <div class="text-white float-left me-3" style=" font-size: 0.95vw !important;">
                     {{ trans('frontLang.footerCurrency') }}
                 </div>
 
-                <select class="my-auto float-left rounded-0" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px; border: 0.5px solid grey !Important; border-radius: 0px !important;">
+                <select class="my-auto float-left rounded-0" name="skill_dropdown" id="skill_dropdown_mobile" style="width: 80px; border: 0.5px solid grey !Important; border-radius: 0px !important; font-size: 0.95vw !important;">
 
                     <option value="AED" class="rounded-0">AED</option>
                     <option value="USD" class="rounded-0">USD</option>
@@ -734,43 +684,43 @@
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
                         <!-- Content -->
-                        <a href="{{URL('')}}" class="brand mb-4"><img src="{{URL::asset('public/assets/asset/logo.png')}}" style="height: 85px;" alt=""></a>
+                        <a href="{{URL('')}}" class="brand mb-4"><img src="{{URL::asset('public/assets/asset/logo.png')}}" style="height: 4vw;" alt=""></a>
 
                         <p class="mt-4 mb-2">
-                            <a href="tel:00971045807142" style="color: #fff"><i class="fas fa-phone-alt me-3"></i> +97143881856</a>
+                            <a href="tel:00971045807142" style="color: #fff; font-size: 0.95vw !important;" ><i class="fas fa-phone-alt me-3"></i> +97143881856</a>
                         </p>
                         <p class="my-4">
-                            <a style="color: #fff" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
+                            <a style="color: #fff; font-size: 0.95vw !important;" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
                             <i class="fab fa-whatsapp me-3"></i> +971585602665</a>
                         </p>
                         <p class="my-4">
-                            <a style="color: #fff ;text-transform: lowercase;" href="mailto:info@edgerealty.ae" class="__cf_email__" data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8">
+                            <a style="color: #fff ;text-transform: lowercase; font-size: 0.95vw !important;" href="mailto:info@edgerealty.ae" class="__cf_email__" data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8">
                             <i class="fas fa-envelope me-3"></i>
                             info@edgerealty.ae
                             </a>
                         </p>
                         <!-- Facebook -->
                         <div class="m-0 p-0" style="margin-left: -40px !important;">
-                            <a class="btn btn-link btn-floating btn-lg text-white m-1"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-link btn-floating btn-lg text-white m-0" style=" font-size: 16px !important;"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
 
                             <!-- Twitter -->
-                            <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-link btn-floating btn-lg text-white m-0" style=" font-size: 16px !important;" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
 
                             <!-- Instagram -->
-                            <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-link btn-floating btn-lg text-white m-0" style=" font-size: 16px !important;" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
 
                             <!-- Linkedin -->
-                            <a  class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
+                            <a  class="btn btn-link btn-floating btn-lg text-white m-0" style=" font-size: 16px !important;" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
 
                             <!-- Linkedin -->
-                            <a  class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
+                            <a  class="btn btn-link btn-floating btn-lg text-white m-0" style=" font-size: 16px !important;" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
 
                     <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-0 mb-0">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
                             {{ trans('frontLang.Aboutus') }}
                         </h6>
                         <p class="my-1">
@@ -812,10 +762,10 @@
                     </div>
 
                     <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto px-0 mb-0">
 
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
                             {{ trans('frontLang.Luxuryprojects') }}
                         </h6>
                         {{-- {{$footerLuxuryProjects}} --}}
@@ -830,9 +780,9 @@
                     </div>
 
                     <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-0 mb-md-0 mb-0">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
                             {{ trans('frontLang.Dubaicommunities') }}
                         </h6>
 
@@ -849,7 +799,7 @@
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline">
+                        <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
                             {{ trans('frontLang.Dubaidevelopers') }}
                         </h6>
 
@@ -979,11 +929,11 @@
             <div class=" float-left mx-auto">
                 <div class="text-white mt-0 mb-0">
                     <span>
-                        <a style="color:white;" href="<?php echo  url('/'.$langSeg.'/privacyandpolicy');?>">
+                        <a style="color:white;  font-size: 0.95vw !important;" href="<?php echo  url('/'.$langSeg.'/privacyandpolicy');?>">
                             {{ trans('frontLang.privacyandpolicy') }}
                         </a> |
 
-                        <a style="color:white;" href="<?php echo  url('/'.$langSeg.'/termsandconditions');?>">
+                        <a style="color:white;  font-size: 0.95vw !important;" href="<?php echo  url('/'.$langSeg.'/termsandconditions');?>">
                             {{ trans('frontLang.Termsandcondition') }}
                         </a>
                     </span>
@@ -991,7 +941,7 @@
             </div>
 
             <div class=" float-left text-center my-auto mx-auto">
-                <div class="text-white" >
+                <div class="text-white" style=" font-size: 0.95vw !important;">
                     {{ trans('frontLang.rightsandreserved') }}
                 </div>
 
@@ -999,12 +949,12 @@
 
             <div class=" float-left text-center my-auto mx-auto d-flex m">
 
-                <div class="text-white float-left me-3" >
+                <div class="text-white float-left me-3" style=" font-size: 0.95vw !important;">
                     {{ trans('frontLang.footerCurrency') }}
                 </div>
 
 
-                <select class="my-auto float-left rounded-0" name="skill_dropdown" id="skill_dropdown" style="width: 80px; border: 0.5px solid grey !Important; border-radius: 0px !important;">
+                <select class="my-auto float-left rounded-0" name="skill_dropdown" id="skill_dropdown" style="width: 80px; border: 0.5px solid grey !Important; border-radius: 0px !important;  font-size: 0.95vw !important;">
 
                     <option value="AED" class="rounded-0">AED</option>
                     <option value="USD" class="rounded-0">USD</option>

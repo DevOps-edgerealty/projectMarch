@@ -248,6 +248,25 @@
     #about_mobile {
         text-align: justify !important;
     }
+
+
+    .tooltip-inner {
+        background-color: #000;
+        box-shadow: 0px 0px 4px black;
+        opacity: 1 !important;
+    }
+    .tooltip.bs-tooltip-right .tooltip-arrow::before {
+        border-right-color: #000 !important;
+    }
+    .tooltip.bs-tooltip-left .tooltip-arrow::before {
+        border-left-color: #000 !important;
+    }
+    .tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+        border-bottom-color: #000 !important;
+    }
+    .tooltip.bs-tooltip-top .tooltip-arrow::before {
+        border-top-color: #000 !important;
+    }
 </style>
 
 
@@ -405,7 +424,7 @@
                             {{ trans('frontLang.map') }}
                         </button>
                     </a>
-                    <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}">
+                    <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}">
                         <img src="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}"
                         style="height: 100% !important;" class="d-block w-100 slider-property mb-1 mx-0 px-0 pb-1" alt="..."
                         onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
@@ -433,8 +452,10 @@
 
                 <div class="col-lg-7 d-md-block d-lg-block d-none">
                     <div class="row">
+                        @if( $property_detail->images->count() ==  1 OR $property_detail->images->count() <  2 )
+                        @else
                         <div class="col-md-6 px-1">
-                            @if( $property_detail->images->count() > 1)
+                            @if( $property_detail->images->count() >  1)
                             <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}">
                                 <img src="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}"
                                 style="height: 286px !important;" class="d-block w-100 slider-property mb-1 mx-0 px-0 pb-1" alt="..."
@@ -471,6 +492,7 @@
                             </a>
                             @endif
                         </div>
+                        @endif
                     </div>
 
                 </div>
@@ -521,7 +543,7 @@
                         </a>
                     @else
                         <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 100px; height: 100px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 100px; height: 100px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
                         </a>
                     @endif
                 </div>
@@ -651,9 +673,9 @@
         <div class="container mt-2 ">
             <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-12 shadow p-3" >
-                    <h5>{{$property_detail->$title_var}}</h5>
-                    <p> {{$property_detail->locationss->$name_var}}</p>
+                    <h5 class=" mb-2" style="font-size: 1.5rem !important;">{{$property_detail->$title_var}}</h5>
 
+                    <p style="color: grey !important; font-size: 16px !important;" class="fw-light my-3"> {{$property_detail->locationss->$name_var}}</p>
 
 
                     @if ($property_detail->type_id == '1')
@@ -666,15 +688,13 @@
                     <hr>
                     <div class="row">
                         <div class="col-lg-6" style="width: 50%">
-                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b> {{ trans('frontLang.propertyType') }} </b> {{$property_detail->property_type->$cat_name_var}}</p>
-                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.permitno') }}</b> : {{$property_detail->permit_no}}</p>
-                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.bedrooms') }}</b> : {{$property_detail->bedrooms}}</p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.propertyType') }} <br> <span class="fw-bold">{{$property_detail->property_type->$cat_name_var}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.permitno') }}<br> <span class="fw-bold">{{$property_detail->permit_no}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.bedrooms') }}<br> <span class="fw-bold">{{$property_detail->bedrooms}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.bathrooms') }}<br> <span class="fw-bold">{{$property_detail->bathrooms}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.unitsize') }}<br> <span class="fw-bold">{{$property_detail->area}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.Parking') }}<br> <span class="fw-bold">{{ $property_detail->parking }} </span></p>
 
-                        </div>
-                        <div class="col-lg-6" style="width: 50%">
-                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.unitsize') }}</b> : {{$property_detail->area}}</p>
-                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.bathrooms') }}</b> : {{$property_detail->bathrooms}}</p>
-                            <p class="my-1" style="color: grey !important; font-size: 16px !important;"><b>{{ trans('frontLang.Parking') }}</b> : {{ $property_detail->parking }}</p>
                         </div>
                     </div>
 
@@ -686,205 +706,7 @@
 
 
         </div>
-        <div class="container">
-            <div class="row mt-5 mb-3">
 
-                <div class="col-lg-6" style="width: 40%" >
-                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
-                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="rounded-circle rounded-0 mx-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image"/>
-                        </a>
-                    @else
-                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="rounded-circle rounded-0 mx-auto" style="width: 100px; height: 100px;"  alt="agent-image">
-                        </a>
-                    @endif
-                </div>
-
-
-                <div class="col-lg-6" style="width: 60%" >
-                    <p class="text-white fw-bold my-2" style="font-size: 1.2rem !important">
-                        {{ $property_detail->agentss->$name_var }}
-                    </p>
-                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
-                        {{ $property_detail->agentss->$designation_var }}
-                    </p>
-                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
-                        {{ $property_detail->agentss->$language_var }}
-                    </p>
-                </div>
-
-
-
-
-
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a style="width:32%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white"><i class="fas fa-phone-alt fa-2x"> </i>  </a>
-
-                    <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#book_a_viewing_mobile" class="btn btn-outline-white"><i class="far fa-calendar-check fa-2x"> </i></a>
-
-                    <a style="width:32%" class=" btn btn-outline-white" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
-
-                        <i class="fab fa-whatsapp fa-2x"> </i>
-                    </a>
-                </div>
-
-                {{-- <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }}</h5>
-                                <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body ">
-                                <div class="row">
-
-                                    <div class="col-lg-12">
-                                        <h6 class="text-center mb-4">{{$property_detail->$title_var}}</h6>
-                                        <form class="contact-form" method="post" action="{{URL('/book_view/submit')}}">
-                                            @csrf
-                                            @honeypot
-                                            <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
-
-                                            <div class="mb-4">
-                                                <label for="">{{ trans('frontLang.date') }}</label>
-                                                <input name="book_date" type="date" class="form-control form-control-lg"  name="viewing Date">
-
-                                            </div>
-                                            <div class="mb-4">
-                                                <label for="">{{ trans('frontLang.Time') }}</label>
-                                                <select name="book_time" id="cars" class="form-control form-control-lg" >
-                                                    <option value="9:00 AM">9:00 AM</option>
-                                                    <option value="10:00 AM">10:00 AM</option>
-                                                    <option value="11:00 AM">11:00 AM</option>
-                                                    <option value="12:00 AM">12:00 AM</option>
-                                                    <option value="1:00 PM">1:00 PM</option>
-                                                    <option value="2:00 PM">2:00 PM</option>
-                                                    <option value="3:00 PM">3:00 PM</option>
-                                                    <option value="4:00 PM">4:00 PM</option>
-                                                    <option value="5:00 PM">5:00 PM</option>
-                                                    <option value="6:00 PM">6:00 PM</option>
-                                                    <option value="7:00 PM">7:00 PM</option>
-                                                    <option value="8:00 PM">8:00 PM</option>
-                                                    <option value="9:00 PM">9:00 PM</option>
-
-                                                </select>
-                                            </div>
-
-                                            <div class=" mb-4">
-                                                <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                                            </div>
-                                            <!-- Email input -->
-                                            <div class="mb-4">
-                                                <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                                            </div>
-
-                                            <!-- Email input -->
-                                            <div class="mb-4">
-                                                <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
-                                            </div>
-                                            <button type="submit" class="btn btn-dark btn-lg btn-block">
-                                                {{ trans('frontLang.submit') }}
-                                            </button>
-                                        </form>
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div> --}}
-
-                {{-- mobile book a viewing --}}
-                    <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
-                            <div class="modal-content bg-black">
-                                <div class="modal-header py-2">
-                                    <h5 class="modal-title text-center text-white" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }} </h5>
-                                    {{-- <button type="button" class="btn-close text-white bg-white" data-mdb-dismiss="modal" aria-label="Close"></button> --}}
-                                </div>
-                                <div class="modal-body bg-black">
-                                    <div class="row">
-
-                                        <div class="col-lg-12">
-                                            <h6 class="text-center text-white mb-4">{{$property_detail->$title_var}}</h6>
-                                            <form class="contact-form" method="post" action="{{URL('/book_view/submit')}}">
-                                                @csrf
-                                                @honeypot
-                                                <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
-
-                                                <div class="mb-4">
-                                                    <label for="" class="text-white">{{ trans('frontLang.selectdate') }}</label>
-                                                    <input name="book_date" type="date" class="form-control bg-black form-control-lg border border-white text-white"  name="viewing Date" required>
-
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for="" class="text-white">{{ trans('frontLang.selecttime') }}</label>
-                                                    <select name="book_time"  class="form-control bg-black form-control-lg border border-white text-white"  required>
-                                                        <option value="9:00 AM">9:00 AM</option>
-                                                        <option value="10:00 AM">10:00 AM</option>
-                                                        <option value="11:00 AM">11:00 AM</option>
-                                                        <option value="12:00 AM">12:00 AM</option>
-                                                        <option value="1:00 PM">1:00 PM</option>
-                                                        <option value="2:00 PM">2:00 PM</option>
-                                                        <option value="3:00 PM">3:00 PM</option>
-                                                        <option value="4:00 PM">4:00 PM</option>
-                                                        <option value="5:00 PM">5:00 PM</option>
-                                                        <option value="6:00 PM">6:00 PM</option>
-                                                        <option value="7:00 PM">7:00 PM</option>
-                                                        <option value="8:00 PM">8:00 PM</option>
-                                                        <option value="9:00 PM">9:00 PM</option>
-
-                                                    </select>
-                                                </div>
-
-                                                <div class=" mb-4">
-                                                    <input type="text" name="name" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                                                </div>
-
-                                                <!-- Email input -->
-                                                <div class="mb-4">
-                                                    <input type="phone" name="phone" class="form-control bg-black  form-control-lg iti-phone border border-white" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                                                </div>
-
-                                                <!-- Email input -->
-                                                <div class="mb-4">
-                                                    <input type="email" name="email" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.email') }}" required />
-
-                                                </div>
-
-                                                <button class="submit btn w-100 btn-block btn-lg btn-outline-white rounded-0" type="submit">
-                                                    <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
-
-                                                    {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
-
-                                                    <span class="btn-txt">
-                                                        {{ trans('frontLang.submit') }}
-                                                    </span>
-                                                </button>
-                                            </form>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
     </section>
 
     {{-- short description & agent form desktop --}}
@@ -1126,6 +948,206 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="container">
+            <div class="row mt-5 mb-3">
+
+                <div class="col-lg-6" style="width: 40%" >
+                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
+                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
+                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="rounded-circle rounded-0 mx-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image"/>
+                        </a>
+                    @else
+                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
+                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="rounded-circle rounded-0 mx-auto" style="width: 100px; height: 100px;"  alt="agent-image">
+                        </a>
+                    @endif
+                </div>
+
+
+                <div class="col-lg-6" style="width: 60%" >
+                    <p class="text-white fw-bold my-2" style="font-size: 1.2rem !important">
+                        {{ $property_detail->agentss->$name_var }}
+                    </p>
+                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
+                        {{ $property_detail->agentss->$designation_var }}
+                    </p>
+                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
+                        {{ $property_detail->agentss->$language_var }}
+                    </p>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a style="width:32%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white"><i class="fas fa-phone-alt fa-2x"> </i>  </a>
+
+                    <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#book_a_viewing_mobile" class="btn btn-outline-white"><i class="far fa-calendar-check fa-2x"> </i></a>
+
+                    <a style="width:32%" class=" btn btn-outline-white" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
+
+                        <i class="fab fa-whatsapp fa-2x"> </i>
+                    </a>
+                </div>
+
+                {{-- <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }}</h5>
+                                <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body ">
+                                <div class="row">
+
+                                    <div class="col-lg-12">
+                                        <h6 class="text-center mb-4">{{$property_detail->$title_var}}</h6>
+                                        <form class="contact-form" method="post" action="{{URL('/book_view/submit')}}">
+                                            @csrf
+                                            @honeypot
+                                            <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
+
+                                            <div class="mb-4">
+                                                <label for="">{{ trans('frontLang.date') }}</label>
+                                                <input name="book_date" type="date" class="form-control form-control-lg"  name="viewing Date">
+
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="">{{ trans('frontLang.Time') }}</label>
+                                                <select name="book_time" id="cars" class="form-control form-control-lg" >
+                                                    <option value="9:00 AM">9:00 AM</option>
+                                                    <option value="10:00 AM">10:00 AM</option>
+                                                    <option value="11:00 AM">11:00 AM</option>
+                                                    <option value="12:00 AM">12:00 AM</option>
+                                                    <option value="1:00 PM">1:00 PM</option>
+                                                    <option value="2:00 PM">2:00 PM</option>
+                                                    <option value="3:00 PM">3:00 PM</option>
+                                                    <option value="4:00 PM">4:00 PM</option>
+                                                    <option value="5:00 PM">5:00 PM</option>
+                                                    <option value="6:00 PM">6:00 PM</option>
+                                                    <option value="7:00 PM">7:00 PM</option>
+                                                    <option value="8:00 PM">8:00 PM</option>
+                                                    <option value="9:00 PM">9:00 PM</option>
+
+                                                </select>
+                                            </div>
+
+                                            <div class=" mb-4">
+                                                <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
+
+                                            </div>
+                                            <!-- Email input -->
+                                            <div class="mb-4">
+                                                <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
+
+                                            </div>
+
+                                            <!-- Email input -->
+                                            <div class="mb-4">
+                                                <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
+
+                                            </div>
+                                            <button type="submit" class="btn btn-dark btn-lg btn-block">
+                                                {{ trans('frontLang.submit') }}
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div> --}}
+
+                {{-- mobile book a viewing --}}
+                    <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
+                            <div class="modal-content bg-black">
+                                <div class="modal-header py-2">
+                                    <h5 class="modal-title text-center text-white" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }} </h5>
+                                    {{-- <button type="button" class="btn-close text-white bg-white" data-mdb-dismiss="modal" aria-label="Close"></button> --}}
+                                </div>
+                                <div class="modal-body bg-black">
+                                    <div class="row">
+
+                                        <div class="col-lg-12">
+                                            <h6 class="text-center text-white mb-4">{{$property_detail->$title_var}}</h6>
+                                            <form class="contact-form" method="post" action="{{URL('/book_view/submit')}}">
+                                                @csrf
+                                                @honeypot
+                                                <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
+
+                                                <div class="mb-4">
+                                                    <label for="" class="text-white">{{ trans('frontLang.selectdate') }}</label>
+                                                    <input name="book_date" type="date" class="form-control bg-black form-control-lg border border-white text-white"  name="viewing Date" required>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="" class="text-white">{{ trans('frontLang.selecttime') }}</label>
+                                                    <select name="book_time"  class="form-control bg-black form-control-lg border border-white text-white"  required>
+                                                        <option value="9:00 AM">9:00 AM</option>
+                                                        <option value="10:00 AM">10:00 AM</option>
+                                                        <option value="11:00 AM">11:00 AM</option>
+                                                        <option value="12:00 AM">12:00 AM</option>
+                                                        <option value="1:00 PM">1:00 PM</option>
+                                                        <option value="2:00 PM">2:00 PM</option>
+                                                        <option value="3:00 PM">3:00 PM</option>
+                                                        <option value="4:00 PM">4:00 PM</option>
+                                                        <option value="5:00 PM">5:00 PM</option>
+                                                        <option value="6:00 PM">6:00 PM</option>
+                                                        <option value="7:00 PM">7:00 PM</option>
+                                                        <option value="8:00 PM">8:00 PM</option>
+                                                        <option value="9:00 PM">9:00 PM</option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class=" mb-4">
+                                                    <input type="text" name="name" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.fullname') }}"  required />
+
+                                                </div>
+
+                                                <!-- Email input -->
+                                                <div class="mb-4">
+                                                    <input type="phone" name="phone" class="form-control bg-black  form-control-lg iti-phone border border-white" placeholder="{{ trans('frontLang.phone') }}" required />
+
+                                                </div>
+
+                                                <!-- Email input -->
+                                                <div class="mb-4">
+                                                    <input type="email" name="email" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.email') }}" required />
+
+                                                </div>
+
+                                                <button class="submit btn w-100 btn-block btn-lg btn-outline-white rounded-0" type="submit">
+                                                    <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
+
+                                                    {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
+
+                                                    <span class="btn-txt">
+                                                        {{ trans('frontLang.submit') }}
+                                                    </span>
+                                                </button>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </div>
         </div>
     </section>
 
@@ -1546,16 +1568,34 @@
             <div class="row">
                 <div class="col-md-6 position-relative">
                     <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}">
-                        <button class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn" style="bottom: 45px; left: 130px; z-index: 100 !important;">
+                        <button
+                            class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn"
+                            style="bottom: 45px; left: 130px; z-index: 100 !important;"
+                            >
                             Show all photos
                         </button>
                     </a>
-                    <a href="{{url($langSeg .'/'.'properties/map/'.$property_detail->id)}}">
-                        <button class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn" style="bottom: 45px; left: 330px; z-index: 100 !important;">
-                            {{ trans('frontLang.map') }}
-                        </button>
-                    </a>
-                    <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}">
+
+                        @isset($mapLocation)
+                            @if($mapLocation == 'true')
+                                <a href="{{url($langSeg .'/'.'properties/map/1/'.$property_detail->id)}}">
+                                    <button class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn" style="bottom: 45px; left: 330px; z-index: 100 !important;">
+                                        {{ trans('frontLang.map') }}
+                                    </button>
+                                </a>
+                            @else
+                                 <button
+                                    class="desktop-show position-absolute bg-black btn btn-lg rounded-0 text-white my-auto mapBtn"
+                                    style="bottom: 45px; left: 330px; z-index: 100 !important;"
+                                    data-mdb-toggle="tooltip"
+                                    title="Location Not Available"
+                                >
+                                    {{ trans('frontLang.map') }}
+                                </button>
+                            @endif
+                        @endisset
+
+                    <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}">
                         <img src="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}"
                         style="height: 100% !important;" class="d-block w-100 slider-property mb-1 mx-0 px-0 pb-1" alt="..."
                         onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
@@ -1576,6 +1616,8 @@
                 </div>
                 <div class="col-md-6 d-md-block d-lg-block d-none">
                     <div class="row">
+                        @if( $property_detail->images->count() ==  1 OR $property_detail->images->count() <  2 )
+                        @else
                         <div class="col-md-6 px-1">
                             @if( $property_detail->images->count() > 1)
                             <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[1]->image) }}">
@@ -1615,6 +1657,7 @@
                             </a>
                             @endif
                         </div>
+                        @endif
                     </div>
 
                 </div>
@@ -1658,7 +1701,7 @@
             top: 0;
             margin-top: 30px;
             position: relative;
-            padding-top: 40px;
+            padding-top: 50px;
         }
 
         .sticky {
@@ -1675,7 +1718,7 @@
         </div>
     </div> --}}
 
-    <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; right: 150px; float: right !important; z-index: 5000000; background-color: #000 !important;">
+    <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; right: 100px; float: right !important; z-index: 5000000; background-color: #000 !important;">
         <div class="container-fluid" style="width: 380px; float: right; height: 135px;">
             <div class="row" style="border: 0.5px #848484 solid; ">
                 <div class="col-lg-4 d-flex my-auto">
@@ -1825,12 +1868,13 @@
         <div class="container mt-2 ">
             <div class="row" style="padding-right: 10px; padding-left: 10px; margin-top: 10px;">
                 <div class="col-lg-12 shadow p-3 " >
-                    <h5 class="fw-light mb-0" style="font-size: 1.5rem !important;">{{$property_detail->$title_var}}</h5>
-                    <p style="color: grey !important;" class="fw-bold my-1"> {{$property_detail->locationss->$name_var}}</p>
+                    <h5 class=" mb-2" style="font-size: 1.5rem !important;">{{$property_detail->$title_var}}</h5>
+
+                    <p style="color: grey !important; font-size: 16px !important;" class="fw-light my-3"> {{$property_detail->locationss->$name_var}}</p>
 
                     @if ($property_detail->type_id == '1')
 
-                        <div class="col-lg-12 text-center" style="display:flex;align-items: center;">
+                        <div class="col-lg-12 text-center py-1" style="display:flex;align-items: center;">
 
                             <div class="AED skill_mobile" style="display: block !important">
                                 <h4 class="fw-light"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">{{ number_format($property_detail->price) }}  </b> </span></h4>
@@ -1843,12 +1887,13 @@
                                 <option value="AED">AED</option>
                                 <option value="USD">USD</option>
                             </select> --}}
+
                         </div>
 
                     @else
 
 
-                        <div class="col-lg-12 text-center" style="display:flex;align-items: center;">
+                        <div class="col-lg-12 text-center py-1" style="display:flex;align-items: center;">
 
                             <div class="AED skill_rent_mobile" style="display: block !important">
                                 <h4 class="fw-light"> <b>  {{ trans('frontLang.AED') }} <span style="color: #fff;">{{ number_format($property_detail->price) }} {{ trans('frontLang.yearly') }}</b> </span></h4>
@@ -1863,148 +1908,16 @@
 
                     <div class="row">
                         <div class="col-lg-7" style="width: 60%">
-                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.propertyType') }} : </b> {{$property_detail->property_type->$cat_name_var}}</p>
-                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.permitno') }}</b> : {{$property_detail->permit_no}}</p>
-                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.bedrooms') }}</b> : {{$property_detail->bedrooms}}</p>
-                        </div>
-
-                        <div class="col-lg-5" style="width: 40%">
-                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.unitsize') }}</b> : {{$property_detail->area}}</p>
-                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.bathrooms') }}</b> : {{$property_detail->bathrooms}}</p>
-                            <p style="font-size: 14px; color: grey !important; font-weight: 700 !important; font-size: 14px !important;" class="fw-light my-1"><b>{{ trans('frontLang.Parking') }}</b> : {{ $property_detail->parking }}</p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.propertyType') }} <br> <span class="fw-bold">{{$property_detail->property_type->$cat_name_var}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.permitno') }}<br> <span class="fw-bold">{{$property_detail->permit_no}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.bedrooms') }}<br> <span class="fw-bold">{{$property_detail->bedrooms}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.bathrooms') }}<br> <span class="fw-bold">{{$property_detail->bathrooms}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.unitsize') }}<br> <span class="fw-bold">{{$property_detail->area}} </span></p>
+                            <p style="font-size: 14px; color: #fff !important; font-size: 16px !important;" class="fw-light my-3">{{ trans('frontLang.Parking') }}<br> <span class="fw-bold">{{ $property_detail->parking }} </span></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-        <div class="container">
-            {{-- <div class="row mt-0 mb-3 border-top border-bottom border-white py-3"> --}}
-            <div class="row mt-0 mb-3 py-3">
-
-                <div class="col-lg-6" style="width: 40%" >
-                    {{-- <img src="{{URL::asset('uploads/agents/2/cpagent-1629363032.jpeg')}}" style="width: 130px" alt=""> --}}
-                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
-                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="rounded-circle rounded-0 mx-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image"/>
-                        </a>
-                    @else
-                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="rounded-circle rounded-0 mx-auto" style="width: 100px; height: 100px;"  alt="agent-image">
-                        </a>
-                    @endif
-                </div>
-
-                {{-- mobile agent card --}}
-                <div class="col-lg-6 my-auto" style="width: 60%" >
-                    <p class="text-white fw-bold my-2" style="font-size: 1.2rem !important">
-                            {{ $agent->name_en }}
-                    </p>
-                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
-                        {{ $agent->designation_en }}
-                    </p>
-                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
-                        {{ $agent->language_en }}
-                    </p>
-                </div>
-
-                <div class="row mt-0 mb-0 mx-auto">
-                    {{-- <div class="col-lg-12 mx-auto">
-                        <a style="width:32%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white rounded-0 "><i class="fas fa-phone-alt fa-2x"> </i>  </a>
-
-                        <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-mobile-property" class="btn btn-outline-white rounded-0 "><i class="far fa-calendar-check fa-2x"> </i></a>
-
-                        <a style="width:32%" class=" btn btn-outline-white rounded-0 " href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
-                            <i class="fab fa-whatsapp fa-2x"> </i>
-                        </a>
-
-                    </div> --}}
-
-                    {{-- mobile book a viewing --}}
-                    <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
-                            <div class="modal-content bg-black">
-                                <div class="modal-header py-2">
-                                    <h5 class="modal-title text-center text-white" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }} </h5>
-                                    {{-- <button type="button" class="btn-close text-white bg-white" data-mdb-dismiss="modal" aria-label="Close"></button> --}}
-                                </div>
-                                <div class="modal-body bg-black">
-                                    <div class="row">
-
-                                        <div class="col-lg-12">
-                                            <h6 class="text-center text-white mb-4">{{$property_detail->$title_var}}</h6>
-                                            <form class="contact-form" method="post" id="bookAViewingmobile" action="{{URL('/book_view/submit')}}">
-                                                @csrf
-                                                @honeypot
-                                                <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
-
-                                                <div class="mb-4">
-                                                    <label for="" class="text-white">{{ trans('frontLang.selectdate') }}</label>
-                                                    <input name="book_date" type="date" class="form-control bg-black form-control-lg border border-white text-white"  name="viewing Date" required>
-
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for="" class="text-white">{{ trans('frontLang.selecttime') }}</label>
-                                                    <select name="book_time"  class="form-control bg-black form-control-lg border border-white text-white"  required>
-                                                        <option value="9:00 AM">9:00 AM</option>
-                                                        <option value="10:00 AM">10:00 AM</option>
-                                                        <option value="11:00 AM">11:00 AM</option>
-                                                        <option value="12:00 AM">12:00 AM</option>
-                                                        <option value="1:00 PM">1:00 PM</option>
-                                                        <option value="2:00 PM">2:00 PM</option>
-                                                        <option value="3:00 PM">3:00 PM</option>
-                                                        <option value="4:00 PM">4:00 PM</option>
-                                                        <option value="5:00 PM">5:00 PM</option>
-                                                        <option value="6:00 PM">6:00 PM</option>
-                                                        <option value="7:00 PM">7:00 PM</option>
-                                                        <option value="8:00 PM">8:00 PM</option>
-                                                        <option value="9:00 PM">9:00 PM</option>
-
-                                                    </select>
-                                                </div>
-
-                                                <div class=" mb-4">
-                                                    <input type="text" name="name" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                                                </div>
-
-                                                <!-- Email input -->
-                                                <div class="mb-4">
-                                                    <input type="phone" name="phone" class="form-control bg-black  form-control-lg iti-phone border border-white" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                                                </div>
-
-                                                <!-- Email input -->
-                                                <div class="mb-4">
-                                                    <input type="email" name="email" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.email') }}" required />
-
-                                                </div>
-
-                                                <button class="submit btn w-100 btn-block btn-lg btn-outline-white rounded-0" type="submit">
-                                                    <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
-
-                                                    {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
-
-                                                    <span class="btn-txt">
-                                                        {{ trans('frontLang.submit') }}
-                                                    </span>
-                                                </button>
-                                            </form>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </section>
 
@@ -2038,10 +1951,10 @@
                             @endif
 
                             <div class="text-center mx-auto">
-                                <p class="text-white fw-bold mb-0 mt-2" style="font-size: 1.1rem !important">
+                                <p class="text-white fw-bold mb-0 mt-2 text-center" style="font-size: 1.1rem !important">
                                     {{ $agent->name_en }}
                                 </p>
-                                <p class=" fw-bold mb-0" style="font-size: .8rem !important; color: #848484 !important;">
+                                <p class=" fw-bold mb-0 text-center" style="font-size: .8rem !important; color: #848484 !important;">
                                     {{ $agent->language_en }}
                                 </p>
                             </div>
@@ -2250,6 +2163,134 @@
                     ?>
                 </div>
             </div>
+        </div>
+
+        <div class="container">
+            {{-- <div class="row mt-0 mb-3 border-top border-bottom border-white py-3"> --}}
+            <div class="row mt-0 mb-3 py-3">
+
+                <div class="col-lg-6" style="width: 40%" >
+                    {{-- <img src="{{URL::asset('uploads/agents/2/cpagent-1629363032.jpeg')}}" style="width: 130px" alt=""> --}}
+                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
+                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
+                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="rounded-circle rounded-0 mx-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image"/>
+                        </a>
+                    @else
+                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
+                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="rounded-circle rounded-0 mx-auto" style="width: 100px; height: 100px;"  alt="agent-image">
+                        </a>
+                    @endif
+                </div>
+
+                {{-- mobile agent card --}}
+                <div class="col-lg-6 my-auto" style="width: 60%" >
+                    <p class="text-white fw-bold my-2" style="font-size: 1.2rem !important">
+                            {{ $agent->name_en }}
+                    </p>
+                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
+                        {{ $agent->designation_en }}
+                    </p>
+                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
+                        {{ $agent->language_en }}
+                    </p>
+                </div>
+
+                <div class="row mt-0 mb-0 mx-auto">
+                    {{-- <div class="col-lg-12 mx-auto">
+                        <a style="width:32%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white rounded-0 "><i class="fas fa-phone-alt fa-2x"> </i>  </a>
+
+                        <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-mobile-property" class="btn btn-outline-white rounded-0 "><i class="far fa-calendar-check fa-2x"> </i></a>
+
+                        <a style="width:32%" class=" btn btn-outline-white rounded-0 " href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
+                            <i class="fab fa-whatsapp fa-2x"> </i>
+                        </a>
+
+                    </div> --}}
+
+                    {{-- mobile book a viewing --}}
+                    <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
+                            <div class="modal-content bg-black">
+                                <div class="modal-header py-2">
+                                    <h5 class="modal-title text-center text-white" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }} </h5>
+                                    {{-- <button type="button" class="btn-close text-white bg-white" data-mdb-dismiss="modal" aria-label="Close"></button> --}}
+                                </div>
+                                <div class="modal-body bg-black">
+                                    <div class="row">
+
+                                        <div class="col-lg-12">
+                                            <h6 class="text-center text-white mb-4">{{$property_detail->$title_var}}</h6>
+                                            <form class="contact-form" method="post" id="bookAViewingmobile" action="{{URL('/book_view/submit')}}">
+                                                @csrf
+                                                @honeypot
+                                                <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
+
+                                                <div class="mb-4">
+                                                    <label for="" class="text-white">{{ trans('frontLang.selectdate') }}</label>
+                                                    <input name="book_date" type="date" class="form-control bg-black form-control-lg border border-white text-white"  name="viewing Date" required>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="" class="text-white">{{ trans('frontLang.selecttime') }}</label>
+                                                    <select name="book_time"  class="form-control bg-black form-control-lg border border-white text-white"  required>
+                                                        <option value="9:00 AM">9:00 AM</option>
+                                                        <option value="10:00 AM">10:00 AM</option>
+                                                        <option value="11:00 AM">11:00 AM</option>
+                                                        <option value="12:00 AM">12:00 AM</option>
+                                                        <option value="1:00 PM">1:00 PM</option>
+                                                        <option value="2:00 PM">2:00 PM</option>
+                                                        <option value="3:00 PM">3:00 PM</option>
+                                                        <option value="4:00 PM">4:00 PM</option>
+                                                        <option value="5:00 PM">5:00 PM</option>
+                                                        <option value="6:00 PM">6:00 PM</option>
+                                                        <option value="7:00 PM">7:00 PM</option>
+                                                        <option value="8:00 PM">8:00 PM</option>
+                                                        <option value="9:00 PM">9:00 PM</option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class=" mb-4">
+                                                    <input type="text" name="name" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.fullname') }}"  required />
+
+                                                </div>
+
+                                                <!-- Email input -->
+                                                <div class="mb-4">
+                                                    <input type="phone" name="phone" class="form-control bg-black  form-control-lg iti-phone border border-white" placeholder="{{ trans('frontLang.phone') }}" required />
+
+                                                </div>
+
+                                                <!-- Email input -->
+                                                <div class="mb-4">
+                                                    <input type="email" name="email" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.email') }}" required />
+
+                                                </div>
+
+                                                <button class="submit btn w-100 btn-block btn-lg btn-outline-white rounded-0" type="submit">
+                                                    <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
+
+                                                    {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
+
+                                                    <span class="btn-txt">
+                                                        {{ trans('frontLang.submit') }}
+                                                    </span>
+                                                </button>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </section>
 
@@ -2825,7 +2866,7 @@
             var scroll_card_2 = document.getElementsByClassName("scroll_card_2");
 
             for(var i = 0, length = scroll_card_1.length; i < length; i++) {
-                scroll_card_1[i].style.top = '10px';
+                scroll_card_1[i].style.top = '100px';
             }
 
             for(var i = 0, length = scroll_card_2.length; i < length; i++) {

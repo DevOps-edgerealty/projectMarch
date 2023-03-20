@@ -248,7 +248,7 @@
                                 <div class="form-group row">
 
                                     <div class="col-sm-12">
-                                        <label for="exampleInputName">Meta Description [English]</label>
+                                        <label for="exampleInputName">Meta Description [Russian]</label>
                                         {!! Form::text('meta_description_ru',$communities->meta_description_ru, array('placeholder' => '','class' => 'form-control','id'=>'meta_description_ru','required'=>'')) !!}
                                     </div>
 

@@ -116,6 +116,13 @@
         }
     }
 
+    @media only screen and (max-device-width: 1200px) {
+        .containerization {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+    }
+
     /* .container {
         margin-right: 130px !important;
         margin-left: 130px !important;
@@ -269,7 +276,7 @@
                     <ul class="menu-section " style="padding-left: 0px;">
 
                         <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color">{{ trans('frontLang.buy') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                            <a href="#" class="menu-color" style=" ;">{{ trans('frontLang.buy') }} <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li class="text-dark"><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/apartment-for-sale-in-Dubai');?>">{{ trans('frontLang.Apartmentforsale') }}</a></li>
@@ -282,7 +289,7 @@
                             </div>
                         </li>
                         <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color">{{ trans('frontLang.Rent') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                            <a href="#" class="menu-color" style=" ;">{{ trans('frontLang.Rent') }} <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/apartment-for-rent-in-Dubai');?>">{{ trans('frontLang.Apartmentforrent') }}</a></li>
@@ -300,7 +307,7 @@
                         <li><a href="<?php echo  url('/'.$langSeg.'/sell');?>" class="menu-color"> {{ trans('frontLang.Sell') }}</a></li>
 
                         <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color"> {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i></a>
+                            <a href="#" class="menu-color" style=" ;"> {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i></a>
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-new-projects');?>">
@@ -330,8 +337,8 @@
                         </li>
 
                         <li><a href="<?php echo  url('/'.$langSeg.'/services');?>" class="menu-color">{{ trans('frontLang.services') }}</a></li>
-                        <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color">{{ trans('frontLang.marketstatistics') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                        {{-- <li class="menu-item-has-children" style="margin-left:3rem !important">
+                            <a href="#" class="menu-color" style=" ;">{{ trans('frontLang.marketstatistics') }} <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/sale_transaction');?>">{{ trans('frontLang.sale_transaction') }}</a></li>
@@ -342,16 +349,16 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
 
 
                         <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color">{{ trans('frontLang.Aboutus') }} <i class="ioFwhatsan ion-ios-arrow-down"> </i></a>
+                            <a href="#" class="menu-color" style=" ;">{{ trans('frontLang.Aboutus') }} <i class="ioFwhatsan ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/aboutus');?>">{{ trans('frontLang.aboutcompany') }}</a></li>
-                                    <li><a href="<?php echo  url('/'.$langSeg.'/team');?>">{{ trans('frontLang.team') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/team');?>">{{ trans('frontLang.OurTeam') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/contactus');?>"> {{ trans('frontLang.contactUs') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/career');?>">{{ trans('frontLang.Careers') }}</a></li>
 
@@ -359,7 +366,7 @@
                             </div>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i></a>
+                            <a href="#" class="menu-color" style=" ;"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i></a>
                             <div class="menu-subs menu-column-1 lang" >
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
@@ -434,6 +441,9 @@
 
                                 <!-- Pills navs -->
                                 <ul class="nav nav-pills nav-fill mb-3" id="ex1" role="tablist">
+                                    <li class="nav-item w-100" role="presentation">
+                                        <a class="nav-link rounded-0"  style="background-color: #0c5e03 !important; border: 0 !important;" href="{{ url($langSeg.'/properties/map/1') }}">{{ trans('frontLang.map') }}</a>
+                                    </li>
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link active" id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1" role="tab" aria-controls="ex2-pills-1" aria-selected="true">{{ trans('frontLang.buy') }}</a>
                                     </li>
@@ -779,7 +789,7 @@
 
 
 @else
-<header class="header position-fixed  navbar1 " style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); z-index: 20000 !important;">
+<header class="header position-fixed  navbar1 " style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); z-index: 20000 !important; ">
 
     <div class="container-fluid containerization py-0">
         <div class="wrapper   px-3" >
@@ -798,7 +808,10 @@
                     <ul class="menu-section " style="padding-left: 0px;">
 
                         <li class="menu-item-has-children">
-                            <a href="#" class="menu-color">{{ trans('frontLang.buy') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.buy') }}
+                                <i class="ion ion-ios-arrow-down"> </i>
+                            </a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/apartment-for-sale-in-Dubai');?>">{{ trans('frontLang.Apartmentforsale') }}</a></li>
@@ -811,7 +824,9 @@
                             </div>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#" class="menu-color">{{ trans('frontLang.Rent') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.Rent') }} <i class="ion ion-ios-arrow-down"> </i>
+                            </a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/apartment-for-rent-in-Dubai');?>">{{ trans('frontLang.Apartmentforrent') }}</a></li>
@@ -820,16 +835,19 @@
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/townhouses-for-rent-in-Dubai');?>">{{ trans('frontLang.Townhouseforrent') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/furnished-properties-for-rent-Dubai');?>">{{ trans('frontLang.Furnished') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/luxury-properties-for-rent-in-Dubai');?>">{{ trans('frontLang.Luxuryproperties') }}</a></li>
-
-
                                 </ul>
                             </div>
                         </li>
 
-                        <li><a href="<?php echo  url('/'.$langSeg.'/sell');?>" class="menu-color"> {{ trans('frontLang.Sell') }}</a></li>
+                        <li><a href="<?php echo  url('/'.$langSeg.'/sell');?>" class="menu-color" style=" ">
+                            {{ trans('frontLang.Sell') }}</a>
+                        </li>
 
                         <li class="menu-item-has-children">
-                            <a href="#" class="menu-color"> {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i></a>
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i>
+                            </a>
+
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-new-projects');?>">
@@ -858,37 +876,41 @@
                             </div>
                         </li>
 
-                        <li><a href="<?php echo  url('/'.$langSeg.'/services');?>" class="menu-color">{{ trans('frontLang.services') }}</a></li>
-                        <li class="menu-item-has-children">
-                            <a href="#" class="menu-color">{{ trans('frontLang.marketstatistics') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                        <li><a href="<?php echo  url('/'.$langSeg.'/services');?>" class="menu-color" style=" ">
+                            {{ trans('frontLang.services') }}</a>
+                        </li>
+                        {{-- <li class="menu-item-has-children">
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.marketstatistics') }} <i class="ion ion-ios-arrow-down"> </i>
+                            </a>
+
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/sale_transaction');?>">{{ trans('frontLang.sale_transaction') }}</a></li>
-
-
-
-
-
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
 
                         <li class="menu-item-has-children">
-                            <a href="#" class="menu-color">{{ trans('frontLang.Aboutus') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.Aboutus') }} <i class="ion ion-ios-arrow-down"> </i>
+                            </a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/aboutus');?>">{{ trans('frontLang.aboutcompany') }}</a></li>
-                                    <li><a href="<?php echo  url('/'.$langSeg.'/team');?>">{{ trans('frontLang.team') }}</a></li>
-                                    <li><a href="<?php echo  url('/'.$langSeg.'/contactus');?>"> {{ trans('frontLang.contactUs') }}</a></li>
-                                    <li><a href="<?php echo  url('/'.$langSeg.'/career');?>">{{ trans('frontLang.Careers') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/team');?>">{{ trans('frontLang.OurTeam') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/contactus');?>"> {{ trans('frontLang.ContactUsHeader') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/career');?>">{{ trans('frontLang.Careersheader') }}</a></li>
                                 </ul>
                             </div>
                         </li>
 
                         @if ($langSeg == 'ru')
                             <li class="menu-item-has-children " >
-                                <a href="#" class="menu-color "><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU <i class="ion ion-ios-arrow-down"> </i></a>
+                                <a href="#" class="menu-color " style=" ">
+                                    <img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU <i class="ion ion-ios-arrow-down"> </i>
+                                </a>
                                 <div class="menu-subs menu-column-1 lang" >
                                     <ul style="padding-left: 0rem;">
                                         <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
@@ -898,7 +920,9 @@
                             </li>
                         @else
                             <li class="menu-item-has-children " >
-                                <a href="#" class="menu-color "><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN <i class="ion ion-ios-arrow-down"> </i></a>
+                                <a href="#" class="menu-color " style=" ">
+                                    <img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN <i class="ion ion-ios-arrow-down"> </i>
+                                </a>
                                 <div class="menu-subs menu-column-1 lang" >
                                     <ul style="padding-left: 0rem;">
                                         <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
@@ -968,7 +992,8 @@
                 </a>
 
                 <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt="loupe-image" style="height: 28px;">
+                    <img class="d-md-block d-block d-lg-none" src="{{url::asset('public/assets/asset/loupe.png')}}" alt="loupe-image" style="height: 28px;">
+                    <img class="d-md-block d-lg-block d-none" src="{{url::asset('public/assets/asset/loupe.png')}}" alt="loupe-image">
                 </a>
 
                 <button type="button" class="menu-mobile-trigger" >
@@ -990,11 +1015,10 @@
                         <div class="row">
                             <div class="col-lg-12">
 
-
                                 <!-- Pills navs -->
                                 <ul class="nav nav-pills nav-fill mb-3" id="ex1" role="tablist">
                                     <li class="nav-item w-100" role="presentation">
-                                        <a class="nav-link rounded-0" href="{{ url($langSeg.'/properties/map') }}">{{ trans('frontLang.map') }}</a>
+                                        <a class="nav-link rounded-0" style="background-color: #0c5e03 !important; border: 0 !important;"  href="{{ url($langSeg.'/properties/map/1') }}">{{ trans('frontLang.map') }}</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link active rounded-0  " id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1" role="tab" aria-controls="ex2-pills-1" aria-selected="true">{{ trans('frontLang.buy') }}</a>

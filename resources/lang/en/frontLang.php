@@ -552,10 +552,15 @@ return array (
 
   'viewprofile' => 'View profile',
   'speaks' => 'Speaks',
-  'teampara' => "With founder Ashraf Mohamed Mohamed Elbendari at the helm, Edge Realty is led by a team of
-                experienced innovators. These proven pioneers across technology, real estate,
-                marketing, and finance are solving real estate’s most complex challenges. With our agents serving
-                vibrant communities across the Dubai, Edge Realty is now the country's largest independent real estate brokerage.",
+  'teampara' => "Edge Realty consists of highly
+                trained personnel who are carefully
+                selected to assure the success
+                of the company. Our employees are from diverse cultural and
+                professional backgrounds with expertise across
+                private markets, public markets, real estate service,
+                traditional and non-traditional property types,
+                development, repositioning and refurbishment, and
+                research at a local level.",
     'companyOverView' => 'Company Overview',
     'luxuryProjects' => 'Luxury Projects',
     'dubaiAreas' => 'Dubai Areas',
@@ -564,8 +569,8 @@ return array (
 
     'aboutMeetOurTeam' => 'Meet Our Team',
     'aboutMeetOurTeamBody' => 'Meet the people who make us what we are, including our visionary leaders and our dedicated operations team',
-    'aboutCompanyBrandGuideline' => 'Company brand Guideline',
-    'aboutCompanyBrandGuidelineBody' => 'Brochure / Logo / Web',
+    'aboutCompanyBrandGuideline' => 'Company Profile',
+    'aboutCompanyBrandGuidelineBody' => 'Edge Realty has the experience and expertise required to ensure our clients make data-backed investment decisions to maximize their returns',
     'aboutHiring' => 'Hiring',
     'aboutHiringBody' => 'Do What You Love, Love What You Do. Join Us To Discover Your Potential',
 
@@ -583,9 +588,16 @@ return array (
     'dubaiReadyProjects' => 'Dubai Ready Projects',
     'dubaiLuxuryProjects' => 'Dubai Luxury Projects',
     'blogsdetails' => 'Blog Details',
-    'contact_us' => 'Request Call Back',
+    'contact_us' => 'Request A Call Back',
     'aboutCompanyMobile' => 'About Company',
     'Dubaidevelopers' => 'Dubai Developers',
+    'ContactUsHeader' => 'CONTACT US',
+    'Careersheader' => 'CAREERS',
+    'requestCallBack' => 'REQUEST A CALL BACK',
+    'OurTeam' => 'OUR TEAM',
+    'MoreFilter' => 'More Filter',
+
+
 
 
 

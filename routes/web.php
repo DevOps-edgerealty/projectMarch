@@ -596,23 +596,26 @@ Route::get('admin/leads/show', 'LeadController@index')->name('lead-index');
 // MAPS
 Route::get('/maps', 'FronthomeController@maps')->name('maps');
 Route::get('/maps7', 'FronthomeController@maps7')->name('maps');
-Route::get('/{lang}/properties/map', 'FronthomeController@maps2')->name('maps2');
+
+Route::get('/{lang}/properties/map/{currency}', 'FronthomeController@maps2')->name('maps2');
 Route::get('/admin/properties/locations', 'PropertyLocationController@index')->name('property-location');
 Route::get('/admin/properties/location/make/{id}', 'PropertyLocationController@make')->name('property-location-make');
 Route::POST('/admin/properties/location/update-create', 'PropertyLocationController@update_create')->name('property-location-update-create');
 Route::get('/admin/properties/location/delete/{id}', 'PropertyLocationController@delete')->name('property-location-delete');
 
-Route::get('/{lang}/properties/map/{id}', 'FronthomeController@show_property')->name('property-location-show');
+Route::get('/{lang}/properties/map/{currency}/{id}', 'FronthomeController@show_property')->name('property-location-show');
 
-
-Route::get('/{lang}/luxury-projects/map', 'FronthomeController@luxury_projects_map')->name('luxury_projects_map');
-Route::get('/{lang}/ready-projects/map', 'FronthomeController@ready_projects_map')->name('ready_projects_map');
-Route::get('/{lang}/offplan-projects/map', 'FronthomeController@offplan_projects_map')->name('offplan_projects_map');
+Route::get('/{lang}/luxury-projects/map/{currency}', 'FronthomeController@luxury_projects_map')->name('luxury_projects_map');
+Route::get('/{lang}/ready-projects/map/{currency}', 'FronthomeController@ready_projects_map')->name('ready_projects_map');
+Route::get('/{lang}/offplan-projects/map/{currency}', 'FronthomeController@offplan_projects_map')->name('offplan_projects_map');
 
 Route::get('/admin/projects/locations-mgt', 'ProjectLocationController@index')->name('project-location');
 Route::get('/admin/projects/location/make/{id}', 'ProjectLocationController@make')->name('project-location-make');
 Route::POST('/admin/projects/location/update-create', 'ProjectLocationController@update_create')->name('project-location-update-create');
 Route::get('/admin/projects/location/delete/{id}', 'ProjectLocationController@delete')->name('project-location-delete');
+
+// Route::get('/{lang}/properties-usd/map', 'FronthomeController@maps2_usd')->name('maps2_usd');
+
 
 
 

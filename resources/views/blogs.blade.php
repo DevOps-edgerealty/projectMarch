@@ -153,7 +153,6 @@ else
                     @csrf
                     <input type="hidden" value="{{$langSeg}}" name="lang"/>
                         <select class="form-select-sm" name="sort_by" aria-label="Default select example">
-                            {{-- <option selected>Sort By</option> --}}
                             <option value="1">Newest to Oldest</option>
                             <option value="2">Oldest to Newest</option>
                         </select>

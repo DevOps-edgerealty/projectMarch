@@ -181,6 +181,12 @@
         scroll-margin-top: 75px !important;
     }
 
+    .testbutton:hover {
+        background-color: #ffffff !important;
+        color: black !important;
+        border: #848484 solid !important;
+    }
+
 
 </style>
 
@@ -197,14 +203,6 @@
                 <div class="mx-auto" style=" position: absolute; top: 250px; color:#fff; width: 100%">
                     <h1 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->$title_var}}</b></h1>
                     <h3 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->locationz->$name_var}}</b></h3>
-
-                    <style>
-                        .testbutton:hover {
-                            background-color: #ffffff !important;
-                            color: black !important;
-                            border: #fff solid !important;
-                        }
-                    </style>
 
                     {{-- <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-dark btn-lg mt-4 rounded-0 w-75 testbutton" style="background-color: #000">
                         {{ trans('frontLang.requestdetail') }}
@@ -232,6 +230,7 @@
               <span class="visually-hidden">Next</span>
             </button>
         </div> --}}
+
 </section>
 
 
@@ -338,28 +337,29 @@
 
 
 
-{{-- project description desktop & mobile--}}
+{{-- project Intro description desktop & mobile--}}
 @if ($langSeg == 'ar')
-    <section class="desktop-show" dir="RTL">
+    <section class="desktop-show" dir="rtl">
         <div class="container-fluid containerization mt-5" >
 
-            <div class="row">
-                <div class="col-md-8">
-                    <h3 class="mb-4">Overview</h3>
-                </div>
-                <div class="col-md-4 mx-auto text-left">
-                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-50 mx-auto testbutton" style="background-color: #000">
-                        {{ trans('frontLang.requestdetail') }}
-                    </a>
-                </div>
-            </div>
+             <div class="row">
+                <div class="col-md-9">
+                    <div class="row pe-4">
+                        <div class="col-md-7">
+                            <h3 class="mb-4">Overview</h3>
 
-            <div class="row">
-                <div class="col-md-8">
-                    <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
+                        </div>
+                        <div class="col-md-5 mx-auto">
+                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: #000;">
+                                {{ trans('frontLang.requestdetail') }}
+                            </a>
+                        </div>
+                        <span style="color: grey !important; text-align: justify; pe-5">{!! $project_detail->$description_var !!}</span>
+                    </div>
+
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3 text-left ps-5">
                     <style>
                         .bullet_points {
                             font-size: 20px !important;
@@ -375,10 +375,8 @@
                         <p class="m-0 p-0 bullet_points">
                             <div class="AED skill" style="display: block !important">
                                 <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
-
                                     {{ $project_detail->project_price }}
                                     {{ trans('frontLang.AED') }}
-
                                 </p>
                             </div>
 
@@ -423,7 +421,6 @@
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$developers->$name_var}} </p>
 
                     </span>
-
                 </div>
             </div>
 
@@ -477,14 +474,13 @@
                     {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
                     <div class="row">
                         <div class="col-6" style="">
-                            <p style="margin-right: 10px; margin-bottom: 10px !important;" class="my-0">
+                            <p style="margin-right: 10px" class="my-0">
                                 {{ trans('frontLang.startingfrom') }}
                             </p>
-
                             <div class="AED skill " style="display: block !important">
                                 <p style="color: #fff; font-size: 1em" class="">
-                                    {{ trans('frontLang.AED') }}
-                                    {{ $project_detail->project_price }}
+                                    <span class="fw-bold"> {{ trans('frontLang.AED') }}
+                                    {{ $project_detail->project_price }}</span>
                                 </p>
                             </div>
                             <div class="USD skill ">
@@ -508,23 +504,21 @@
                         </div>
                     </div>
 
-                    <p> {{ trans('frontLang.bedrooms') }}   <br> {{$project_detail->bedrooms}}</p>
-
-                    <p>{{ trans('frontLang.location') }} <br> {{$project_detail->locationz->$name_var}}</p>
-
-                    <p>{{$project_detail->$title_var}}</p>
-
+                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
+                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}}</span></p>
+                    <p> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
+                    <p> {{ trans('frontLang.name') }} <br> <span class="fw-bold"> {{$project_detail->$title_var}}</span></p>
                     <p>
                         @foreach ($project_detail->project_types as $project_type)
-                            {{ trans('frontLang.projectType') }} <br> {{$project_type->$type_title_var}}
+                            {{ trans('frontLang.projectType') }} <br> <span class="fw-bold"> {{$project_type->$type_title_var}}</span>
                         @endforeach
                     </p>
 
-                    <p> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> {{$developers->$name_var}}</a></p>
+                    <p> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> <span class="fw-bold"> {{$developers->$name_var}}</span></a></p>
 
-                    <p> {{ trans('frontLang.completionYear') }}  <br> {{$project_detail->est_completion_en}}</p>
+                    <p> {{ trans('frontLang.completionYear') }}  <br> <span class="fw-bold"> {{$project_detail->est_completion_en}}</span></p>
 
-                    <p> {{ trans('frontLang.communitytype') }} <br> {{$project_detail->$ownership_var}}</p>
+                    <p> {{ trans('frontLang.communitytype') }} <br> <span class="fw-bold"> {{$project_detail->$ownership_var}}</span></p>
 
                     {{-- <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button> --}}
 
@@ -542,23 +536,23 @@
         <div class="container-fluid containerization my-5" >
 
             <div class="row">
-                <div class="col-md-8">
-                    <h3 class="mb-4">Overview</h3>
+                <div class="col-md-9">
+                    <div class="row pe-4">
+                        <div class="col-md-7">
+                            <h3 class="mb-4">Overview</h3>
+
+                        </div>
+                        <div class="col-md-5 mx-auto">
+                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: #000;">
+                                {{ trans('frontLang.requestdetail') }}
+                            </a>
+                        </div>
+                        <span style="color: grey !important; text-align: justify; pe-5">{!! $project_detail->$description_var !!}</span>
+                    </div>
+
                 </div>
 
-                <div class="col-md-4 mx-auto text-left">
-                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-50 mx-auto testbutton" style="background-color: #000">
-                        {{ trans('frontLang.requestdetail') }}
-                    </a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-8">
-                    <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
-                </div>
-
-                <div class="col-md-4">
+                <div class="col-md-3 text-left ps-5">
                     <style>
                         .bullet_points {
                             font-size: 20px !important;
@@ -574,10 +568,8 @@
                         <p class="m-0 p-0 bullet_points">
                             <div class="AED skill" style="display: block !important">
                                 <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
-
                                     {{ $project_detail->project_price }}
                                     {{ trans('frontLang.AED') }}
-
                                 </p>
                             </div>
 
@@ -622,9 +614,21 @@
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$developers->$name_var}} </p>
 
                     </span>
-
                 </div>
             </div>
+
+
+
+            {{-- <div class="row">
+                <div class="col-md-9 pe-5">
+                    <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
+                </div>
+
+                <div class="col-md-3 ps-5">
+
+
+                </div>
+            </div> --}}
 
             {{-- <div class="row">
                 <div class="col-md-12">
@@ -661,8 +665,8 @@
                             </p>
                             <div class="AED skill " style="display: block !important">
                                 <p style="color: #fff; font-size: 1em" class="">
-                                    {{ trans('frontLang.AED') }}
-                                    {{ $project_detail->project_price }}
+                                    <span class="fw-bold"> {{ trans('frontLang.AED') }}
+                                    {{ $project_detail->project_price }}</span>
                                 </p>
                             </div>
                             <div class="USD skill ">
@@ -686,23 +690,21 @@
                         </div>
                     </div>
 
-                    <p> {{ trans('frontLang.bedrooms') }}   <br> {{$project_detail->bedrooms}}</p>
-
-                    <p>{{ trans('frontLang.location') }} <br> {{$project_detail->locationz->$name_var}}</p>
-
-                    <p>{{$project_detail->$title_var}}</p>
-
+                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
+                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}}</span></p>
+                    <p> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
+                    <p> {{ trans('frontLang.name') }} <br> <span class="fw-bold"> {{$project_detail->$title_var}}</span></p>
                     <p>
                         @foreach ($project_detail->project_types as $project_type)
-                            {{ trans('frontLang.projectType') }} <br> {{$project_type->$type_title_var}}
+                            {{ trans('frontLang.projectType') }} <br> <span class="fw-bold"> {{$project_type->$type_title_var}}</span>
                         @endforeach
                     </p>
 
-                    <p> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> {{$developers->$name_var}}</a></p>
+                    <p> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> <span class="fw-bold"> {{$developers->$name_var}}</span></a></p>
 
-                    <p> {{ trans('frontLang.completionYear') }}  <br> {{$project_detail->est_completion_en}}</p>
+                    <p> {{ trans('frontLang.completionYear') }}  <br> <span class="fw-bold"> {{$project_detail->est_completion_en}}</span></p>
 
-                    <p> {{ trans('frontLang.communitytype') }} <br> {{$project_detail->$ownership_var}}</p>
+                    <p> {{ trans('frontLang.communitytype') }} <br> <span class="fw-bold"> {{$project_detail->$ownership_var}}</span></p>
 
                     {{-- <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button> --}}
 
@@ -729,9 +731,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    {{-- <span style="color: grey !important; text-align: justify">
+                    <span style="color: grey !important; text-align: justify">
                         {!! $project_detail->$description_var !!}
-                    </span> --}}
+                    </span>
 
                     <style>
                         #lessen {
@@ -748,7 +750,7 @@
                     </style>
 
 
-                    <span id="lessen" style="display: inline !important; font-size: 1em !important; line-height: 1.4 !important; font-weight: 300 !important; text-align: justify !important">
+                    {{-- <span id="lessen" style="display: inline !important; font-size: 1em !important; line-height: 1.4 !important; font-weight: 300 !important; text-align: justify !important">
                         {{ strip_tags(substr($project_detail->$description_var, 0, 200)) }} ...
                     </span>
 
@@ -768,7 +770,7 @@
                     @else
                         <br>
                         {!! html_entity_decode($project_detail->$description_var) !!}
-                    @endif
+                    @endif --}}
                 </div>
             </div>
         </div>
@@ -783,9 +785,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    {{-- <span style="color: grey !important; text-align: justify">
+                    <span style="color: grey !important; text-align: justify">
                         {!! $project_detail->$description_var !!}
-                    </span> --}}
+                    </span>
 
                     <style>
                         #lessen {
@@ -802,7 +804,7 @@
                     </style>
 
 
-                    <span id="lessen" style="display: inline !important; font-size: 1em !important; line-height: 1.4 !important; font-weight: 300 !important; text-align: justify !important">
+                    {{-- <span id="lessen" style="display: inline !important; font-size: 1em !important; line-height: 1.4 !important; font-weight: 300 !important; text-align: justify !important">
                         {{ strip_tags(substr($project_detail->$description_var, 0, 400)) }} ...
                     </span>
 
@@ -822,7 +824,7 @@
                     @else
                         <br>
                         {!! html_entity_decode($project_detail->$description_var) !!}
-                    @endif
+                    @endif --}}
                 </div>
             </div>
         </div>
@@ -845,7 +847,9 @@
             <div class=" autoplay  slick-dotted">
                 @foreach ($project_detail->images as $image)
                     <div>
-                        <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height" style="">
+                        <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}">
+                            <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height" style="">
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -865,7 +869,7 @@
                     @foreach ($features as $feature)
                         @if($feature == $feature_id)
                             <div class="col-lg-12 mb-2" style="width: 100%; color: #fff !important;" >
-                                {!!  $feature_name[$name_var] !!}
+                                <i class="far fa-check-circle"></i> {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
                     @endforeach
@@ -883,7 +887,7 @@
                     @foreach ($features as $feature)
                         @if($feature == $feature_id)
                             <div class="col-lg-12 mb-2" style="width: 100%; color: #fff !important;" >
-                                {!!  $feature_name[$name_var] !!}
+                                <i class="far fa-check-circle"></i> {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
                     @endforeach
@@ -1214,7 +1218,9 @@
             <div class=" autoplay  slick-dotted">
                 @foreach ($project_detail->images as $image)
                     <div>
-                        <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height" style="">
+                        <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}">
+                            <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height" style="">
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -1306,7 +1312,7 @@
                         @foreach ($features as $feature)
                             @if($feature == $feature_id)
                                 <div class="col-lg-3 mb-4" style="color: #fff">
-                                    <span >{!!  $feature_name[$name_var] !!}</span>
+                                    <i class="far fa-check-circle"></i>  <span >{!!  $feature_name[$name_var] !!}</span>
                                 </div>
                             @endif
                         @endforeach

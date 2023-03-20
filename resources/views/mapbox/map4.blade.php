@@ -54,7 +54,7 @@
             .sidebar {
                 position: absolute;
                 width: 25%;
-                height: 100vh;
+                height: 80vh;
                 top: 98px;
                 right: 0;
                 overflow: scroll;
@@ -89,7 +89,7 @@
             }
 
             listings {
-                height: ;
+                height: auto%;
                 overflow: auto;
                 padding-bottom: 0;
             }
@@ -255,16 +255,29 @@
         <div class="container">
             <div class="row py-5"></div>
             <div class="row mx-auto mb-3">
-                <div class="col-2">
-                    <a href="{{ url()->previous() }}" class="btn btn-outline-white btn-lg rounded-0 text-white bg-black d-none d-md-block d-lg-block">
+                <div class="col-2 my-auto">
+                    <a href="{{ url()->previous() }}" class="btn btn-white btn-sm rounded-0 text-dark fw-bold shadow-none d-none d-md-block d-lg-block">
                         {{ trans('frontLang.exitMap') }}
                     </a>
+
                 </div>
-                <div class="col-10">
+
+                {{-- <div class="col-2 my-auto d-none d-md-block d-lg-block">
+                    <select name="formal" class="rounded-0 px-2" onchange="javascript:handleSelect(this)">
+                        <option value="0">Currency</option>
+                        <option value="1">AED</option>
+                        <option value="2">USD</option>
+                    </select>
+                </div> --}}
+
+
+                <div class="col-8 my-auto">
                     <span class=" mx-auto text-center d-none d-md-block d-lg-block" style="font-size: 1.8rem; text-align: center !important; margin: auto !imp">
                         {{ trans('frontLang.dubaiProperties') }}
                     </span>
                 </div>
+
+
             </div>
 
 
@@ -324,8 +337,8 @@
 </section>
 
     @if ($langSeg == 'ar')
-        <div class='sidebar ' id="listing-card" style="display: none;">
-            <div id='listings' class='listings ' style="margin-top: 60px;">
+        <div class='sidebar ' id="listing-card" style="display: none; margin-top: 75px">
+            <div id='listings' class='listings ' style="margin-top: 0px;">
                 <div class="card rounded-0 bg-black " style="width: 100%;">
                     <div id="listing-image">
 
@@ -402,22 +415,22 @@
             </div> --}}
         </div>
     @else
-        <div class='sidebar ' id="listing-card" style="display: none;">
-            <div id='listings' class='listings ' style="margin-top: 60px;">
-                <div class="card rounded-0 bg-black " style="width: 100%;">
+        <div class='sidebar ' id="listing-card" style="display: none; margin-top: 75px">
+            <div id='listings' class='listings ' style="margin-top: 0px;">
+                <div class="card rounded-0 bg-black position-relative" style="width: 100%;">
                     <div id="listing-image">
 
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title " >
+                        <h3 class="card-title my-0 py-0" >
 
                         </h3>
-                        <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="d-flex flex-row bd-highlight mb-0">
                             <h3 class="p-2 ps-0 bd-highlight" id="listing-price"></h3>
                             <div class="p-2 bd-highlight float-right ms-auto" id="listing-btn"></div>
                         </div>
 
-                        <p style="font-size: 1.3em" class="mt-3" id="listing-location"></p>
+                        <p style="font-size: 1.3em" class="my-1" id="listing-location"></p>
 
                         <p class="card-text m-0" id="listing-title"></p>
 
@@ -482,8 +495,14 @@
 
 
 
-    <div id='map' class="map" style='width: 100%; height: 100vh'></div>
+    <div id='map' class="map" style='width: 100%; height: 80vh'></div>
 
+    {{-- <script type="text/javascript">
+        function handleSelect(elm)
+        {
+            window.location = elm.value;
+        }
+    </script> --}}
 
     <script>
 
@@ -763,6 +782,7 @@
                 const bed = e.features[0].properties.bed;
                 const bath = e.features[0].properties.bath;
                 const area = e.features[0].properties.area;
+                const sqft = e.features[0].properties.sqft;
                 const description = e.features[0].properties.description;
 
                 // a function to check if device is a MOBILE or DESKTOP view.
@@ -854,7 +874,7 @@
                     document.getElementById('listing-location').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
                     document.getElementById('listing-beds').innerHTML = `Bed  ${bed}`;
                     document.getElementById('listing-baths').innerHTML = `Bath  ${bath}`;
-                    document.getElementById('listing-area').innerHTML = `Area  ${area} Sq.Ft.`;
+                    document.getElementById('listing-area').innerHTML = `Area  ${area} ${sqft}`;
                     document.getElementById('listing-image').innerHTML = `
                         <a href="{{url('en/dubai-property/${slug_link}')}}" >
                             <img src="{{ URL::asset('${image_url}') }}" style="height: 400px; width: 100%" class="card-img-top rounded-0 px-1" alt="${image}_link_1"/>
@@ -977,6 +997,7 @@
                 const bed = e.features[0].properties.bed;
                 const bath = e.features[0].properties.bath;
                 const area = e.features[0].properties.area;
+                const sqft = e.features[0].properties.sqft;
                 const description = e.features[0].properties.description;
 
                 // a function to check if device is a MOBILE or DESKTOP view.
@@ -1010,7 +1031,7 @@
                     // document.getElementById('listing-location-mobile').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
                     document.getElementById('listing-beds-mobile').innerHTML = `<i class="fas fa-bed"></i> : ${bed}`;
                     document.getElementById('listing-baths-mobile').innerHTML = `<i class="fas fa-bath"></i> : ${bath}`;
-                    document.getElementById('listing-area-mobile').innerHTML = `<i class="fas fa-chart-area"></i> : ${area} Sq.Ft.`;
+                    document.getElementById('listing-area-mobile').innerHTML = `<i class="fas fa-chart-area"></i> : ${area} ${sqft}`;
                     document.getElementById('listing-image-mobile').innerHTML = `
                         <a href="{{url('en/dubai-property/${slug_link}')}}" >
                             <img src="{{ URL::asset('${image_url}') }}" style="height: 150px;" class=" rounded-0" alt="${image}_link_1"/>
@@ -1068,7 +1089,7 @@
                     document.getElementById('listing-location').innerHTML = `<i class="fa fa-map-marker-alt"></i> ${route}`;
                     document.getElementById('listing-beds').innerHTML = `  ${bed} Bed`;
                     document.getElementById('listing-baths').innerHTML = `  ${bath} Bath`;
-                    document.getElementById('listing-area').innerHTML = `  ${area} Sq.Ft. `;
+                    document.getElementById('listing-area').innerHTML = `  ${area} ${sqft}`;
                     document.getElementById('listing-image').innerHTML = `
                         <a href="{{url('en/dubai-property/${slug_link}')}}" >
                             <img src="{{ URL::asset('${image_url}') }}" style="height: 400px; width: 100%" class="card-img-top rounded-0 px-1" alt="${image}_link_1"/>
@@ -1149,7 +1170,7 @@
                                                 text-align: justify !important;
                                             "
                                         >
-                                             ${bed} Bed  :  ${bath} Bath  : ${area} Sq. Ft
+                                            <i class="fas fa-bed"></i>  ${bed}  &nbsp; &nbsp;  <i class="fas fa-bath"></i> ${bath} &nbsp; &nbsp; <i class="fas fa-chart-area"></i> ${area} ${sqft}
                                         </span>
                                     </div>
                                 </div>

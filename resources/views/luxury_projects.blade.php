@@ -103,22 +103,22 @@
 
 ?>
 <?php
-$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
 
-$uri_segments = explode('/', $uri_path);
+    $uri_segments = explode('/', $uri_path);
 
-$seg1 = $uri_segments[1];
+    $seg1 = $uri_segments[1];
 
-if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
-{
-    $langSeg = $uri_segments[1];
-}
-else
-{
-    $langSeg = 'en';
-}
+    if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
+    {
+        $langSeg = $uri_segments[1];
+    }
+    else
+    {
+        $langSeg = 'en';
+    }
 
 ?>
 
@@ -302,8 +302,14 @@ else
         <div class="container-fluid containerization ">
             <div class="row mb-5">
                 @if ($langSeg == 'ru')
+                    <div class="col-lg-12">
+                        <a href="{{ url($langSeg."/luxury-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-25 mx-auto text-center float-right project_btn" style="background-color: #0c5e03 !important; float: right !important;">Map View</a>
+                    </div>
                         <p style="color: #848484">Лучшее место для покупки элитных квартир находится в Дубае, ОАЭ. Познакомьтесь с домами Вашей мечты и выберите среди наших современных вилл, квартир, особняков и пентхаусов. Самые роскошные апартаменты оснащены самыми современными удобствами и имеют захватывающий дух вид на центр Дубая и пляж.</p>
                 @else
+                    <div class="col-lg-12">
+                        <a href="{{ url($langSeg."/luxury-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-25 mx-auto text-center float-right project_btn" style="background-color: #0c5e03 !important; float: right !important;">Map View</a>
+                    </div>
                         <p style="color:#848484">Your destination for buying luxury apartments can be found in Dubai, United Arab Emirates. Explore your dream homes among our modern villas, apartments, mansions, and penthouses. The most luxurious apartments come with the latest facilities and breathtaking views from Downtown Dubai, or the Beach.</p>
                 @endif
 
@@ -360,14 +366,14 @@ else
                                 <div class="col-lg-12" >
                                     <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" class="btn btn-outline-white btn-lg rounded-0">{{ trans('frontLang.readMore') }} </a>
 
-                                    <a href="#" class="btn btn-lg rounded-0" data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}">{{ trans('frontLang.requestdetail') }}</a>
+                                    <a href="#" class="btn btn-outline-white btn-lg rounded-0" data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}">{{ trans('frontLang.requestdetail') }}</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                </div>  
+                </div>
                     {{-- <hr style="color:#fff;"> --}}
                     <div class="modal fade" style="background-color: rgb(0, 0, 0, .3);" id="exampleModal-{{ $projects->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">

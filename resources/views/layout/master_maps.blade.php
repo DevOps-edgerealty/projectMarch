@@ -310,7 +310,7 @@
                 visibility: hidden;
             }
 
-            </style>
+        </style>
 
 
 
@@ -356,6 +356,13 @@
 		{{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script> --}}
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
 
+
+        <script type="text/javascript">
+            function handleSelect(elm)
+            {
+                window.location = elm.value;
+            }
+        </script>
 
 
         <script>

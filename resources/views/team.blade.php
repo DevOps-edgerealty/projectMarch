@@ -100,7 +100,7 @@ else
             <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white mt-5">
                     <h3>{{ trans('frontLang.teamHead') }}</h3>
-                    <p class="col-10 mx-auto mt-3" style="color: grey !important; line-height: 1.3 !important">
+                    <p class="col-10 mx-auto mt-3" style="color: grey !important; line-height: 1.3 !important; text-align: center !important;">
                         {{ trans('frontLang.teampara') }}
                     </p>
                 </div>

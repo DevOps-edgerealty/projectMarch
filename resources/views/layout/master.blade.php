@@ -117,26 +117,26 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150425659-1"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'UA-150425659-1');
+            gtag('config', 'UA-150425659-1');
         </script>
 
         <script>
-        function gtag_report_conversion(url) {
-          var callback = function () {
-            if (typeof(url) != 'undefined') {
-              window.location = url;
+            function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-697745610/cftWCLiXm-kCEMqB28wC',
+                'event_callback': callback
+            });
+            return false;
             }
-          };
-          gtag('event', 'conversion', {
-              'send_to': 'AW-697745610/cftWCLiXm-kCEMqB28wC',
-              'event_callback': callback
-          });
-          return false;
-        }
         </script>
         <meta name="yandex-verification" content="64dfa255856fcfc6" />
         <!-- Yandex.Metrika counter -->
@@ -300,7 +300,21 @@
             }
             .text-reset {
                 text-transform: capitalize !important;
+                font-size: 0.85vw !important;
+                text-decoration: none !important;
             }
+
+            .text-reset-1 {
+                text-transform: capitalize !important;
+                font-size: 16px !important;
+                text-decoration: none !important;
+            }
+
+            .accordion-button, .collapsed {
+                background-color: #000 !important;
+                color: #fff !important;
+            }
+
 
 
             </style>
@@ -342,8 +356,8 @@
             <div class="mb-2" style="">
                 <a href="#" style=" width: 70% !important; font-size: 1em !important;" data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"
                     class="btn btn-outline-white bg-black rounded-pill text-white mx-auto text-center py-3">
-                    <i class="fa fa-phone   "></i> &nbsp;
-                    {{ trans('frontLang.contact_us') }}
+                    <i class="fa fa-phone-alt  "></i> &nbsp;
+                    {{ trans('frontLang.requestCallBack') }}
                 </a>
             </div>
 
@@ -371,9 +385,9 @@
 
         <div class="modal fade" id="exampleModal-request" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content rounded-0 bg-black border border-white">
+                <div class="modal-content rounded-0 bg-black">
                     <div class="modal-header">
-                        <h5 class="modal-title text-center" id="exampleModalLabel">Email Us</h5>
+                        <h5 class="modal-title text-center" id="exampleModalLabel"> {{ trans('frontLang.requestCallBack') }} </h5>
                         <button type="button " class="btn-close bg-white" data-mdb-dismiss="modal" aria-label="Close" ></button>
                     </div>
                     <div class="modal-body bg-black">
@@ -394,9 +408,9 @@
                                 <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required />
                             </div>
 
-                            <div class="mb-4">
+                            {{-- <div class="mb-4">
                                 <textarea name="message" class="form-control bg-black text-white rounded-0" id="textAreaExample" rows="3" placeholder="Message"></textarea>
-                            </div>
+                            </div> --}}
 
                             @honeypot
                             <button type="submit" class="btn btn-outline-white bg-black rounded-0 btn-lg btn-block">

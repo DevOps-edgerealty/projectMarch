@@ -200,7 +200,7 @@
         }
     </style>
 
-    <section class="mt-5" style="direction: rtl">
+    <section class="my-5" style="direction: rtl">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mb-4">
@@ -237,9 +237,9 @@
                                     <input type="hidden" name="property_type_id" value="1" />
 
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <div class="input-group">
-                                                <a class="btn btn-outline-white px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 1em; " id="ex2-tab-3"  href="{{ url($langSeg."/properties/map") }}" > {{ trans('frontLang.map') }}</a> &nbsp;
+                                        <div class="col-md-1 pe-0">
+                                            <div class="input-group py-auto" style="height: 100%">
+                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
                                             </div>
                                         </div>
 
@@ -247,14 +247,14 @@
                                             <div class="input-group">
                                                 <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -6px !important;"></span>
                                                 <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
-                                                <button type="submit" class="btn btn-white rounded-0"><i class="fas fa-search"></i></button>
+                                                <button type="submit" class="btn btn-white rounded-0 shadow-none"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
 
 
 
-                                    <a id="flip"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">More Filter</a>
+                                    <a id="flip"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">{{ trans('frontLang.MoreFilter')}}</a>
 
                                     <div id="List"></div>
                                     {{ csrf_field() }}
@@ -379,25 +379,23 @@
                                     <div class="input-group">
 
 
-                                    </div>
-
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <div class="input-group">
-                                                <a class="btn btn-outline-white px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: .9em; " id="ex2-tab-3"  href="{{ url($langSeg."/properties/map") }}" > {{ trans('frontLang.map') }}</a> &nbsp;
+                                        <div class="col-md-1 pe-0">
+                                            <div class="input-group py-auto" style="height: 100%">
+                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
                                             </div>
                                         </div>
 
                                         <div class="col-md-11">
                                             <div class="input-group">
-                                                <span class="fa fa-search form-control-feedback"></span>
-                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
-                                                <button type="submit" class="btn btn-white rounded-0"><i class="fas fa-search"></i></button>
+                                                <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -6px !important;"></span>
+                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
+                                                <button type="submit" class="btn btn-white rounded-0 shadow-none"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <a id="flip2"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">More Filter</a>
+                                    <a id="flip2"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">{{ trans('frontLang.MoreFilter')}}</a>
 
                                     <div id="panel2" style="display: none;">
                                         <div id="List-1"></div>
@@ -567,9 +565,9 @@
                                     <input type="hidden" name="property_type_id" value="1" />
 
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <div class="input-group">
-                                                <a class="btn btn-outline-white px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: .9em; " id="ex2-tab-3"  href="{{ url($langSeg."/properties/map") }}" > {{ trans('frontLang.map') }}</a> &nbsp;
+                                        <div class="col-md-1 pe-0">
+                                            <div class="input-group py-auto" style="height: 100%">
+                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
                                             </div>
                                         </div>
 
@@ -577,14 +575,14 @@
                                             <div class="input-group">
                                                 <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -6px !important;"></span>
                                                 <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
-                                                <button type="submit" class="btn btn-white rounded-0"><i class="fas fa-search"></i></button>
+                                                <button type="submit" class="btn btn-white rounded-0 shadow-none"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
 
 
 
-                                    <a id="flip"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">More Filter</a>
+                                    <a id="flip"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">{{ trans('frontLang.MoreFilter')}}</a>
 
                                     <div id="List"></div>
                                     {{ csrf_field() }}
@@ -712,22 +710,22 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <div class="input-group">
-                                                <a class="btn btn-outline-white px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: .9em; " id="ex2-tab-3"  href="{{ url($langSeg."/properties/map") }}" > {{ trans('frontLang.map') }}</a> &nbsp;
+                                        <div class="col-md-1 pe-0">
+                                            <div class="input-group py-auto" style="height: 100%">
+                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
                                             </div>
                                         </div>
 
                                         <div class="col-md-11">
                                             <div class="input-group">
-                                                <span class="fa fa-search form-control-feedback"></span>
-                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
-                                                <button type="submit" class="btn btn-white rounded-0"><i class="fas fa-search"></i></button>
+                                                <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -6px !important;"></span>
+                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
+                                                <button type="submit" class="btn btn-white rounded-0 shadow-none"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <a id="flip2"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">More Filter</a>
+                                    <a id="flip2"  class="float-end mt-2 mx-0 fw-bold  text-decoration-underline" style="color: #000" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"> {{ trans('frontLang.MoreFilter')}} </a>
 
                                     <div id="panel2" style="display: none;">
                                         <div id="List-1"></div>
@@ -869,7 +867,7 @@
 
 {{-- CARD SECTION ---- ENG - AR - RU --}}
 @if ($langSeg == 'ar')
-    <section class="mt-5 mb-5" >
+    <section class="mt-4 mb-5" >
         <div class="container-fluid ">
             <div class="row">
                 <div class="col-lg-12">
@@ -921,10 +919,10 @@
                                     <div class="card-body  px-3 py-0" style="direction: rtl">
 
                                         @if ($property->type_id == '1')
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
+                                            <h5 class="my-3" style="font-size: 0.95vw !important"> <b>{{ trans('frontLang.Price') }} <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
                                         @else
 
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
+                                            <h5 class="my-3" style="font-size: 0.95vw !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
                                         @endif
 
 
@@ -945,11 +943,11 @@
 
                                         <div class="row" >
                                             <div class="col-lg-12" style="display:block;" >
-                                                <span class="font-size-16 ps-0 pe-2" style="color: #848484;">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
+                                                <span class=" ps-0 pe-2" style="color: #848484; font-size: 0.95vw !important">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="font-size-16 px-2" style="color: #848484;">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
+                                                <span class=" px-2" style="color: #848484; font-size: 0.95vw !important">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="font-size-16 px-2" style="color: #848484;"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                <span class=" px-2" style="color: #848484; font-size: 0.95vw !important"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
 
                                             </div>
 
@@ -961,8 +959,8 @@
                                     <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; direction: rtl">
                                         <table style="width: 100%">
                                             <tr>
-                                                <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff; font-size: 0.95vw !important"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important; font-size: 0.95vw !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -971,18 +969,18 @@
 
                                         @if ($property->type_id == '1')
                                             @if ($langSeg == 'ru')
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
+                                                <h5 class="my-3" style="font-size: 1.2vw !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
                                             @else
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
+                                                <h5 class="my-3" style="font-size: 1.2vw !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
                                             @endif
 
                                         @else
 
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
+                                            <h5 class="my-3" style="font-size: 1.2vw !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
                                         @endif
 
                                         <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <h6 class="card-title" style="color: #848484">{{ $property->$title_var }}</h6>
+                                            <h6 class="card-title" style="color: #848484; font-size: 0.95vw !important">{{ $property->$title_var }}</h6>
                                         </a>
                                         <!--<p class="fw-light"> {{ $property->locationss->$name_var }} </p>-->
 
@@ -991,11 +989,11 @@
                                         {{-- <hr> --}}
                                         <div class="row" >
                                             <div class="col-lg-12" style="display:block;" >
-                                                <span class="font-size-16 ps-0 pe-2" style="color: #848484;">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
+                                                <span class="ps-0 pe-2" style="color: #848484; font-size: 0.95vw !important">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="font-size-16 px-2" style="color: #848484;">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
+                                                <span class="px-2" style="color: #848484; font-size: 0.95vw !important">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="font-size-16 px-2" style="color: #848484;"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                <span class="px-2" style="color: #848484; font-size: 0.95vw !important"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
 
                                             </div>
 
@@ -1007,8 +1005,8 @@
                                     <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; ">
                                         <table style="width: 100%">
                                             <tr>
-                                                <td style="text-align: center;border-right: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                <td style="text-align: center;border-right: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff; font-size: 0.95vw !important"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important; font-size: 0.95vw !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -1110,7 +1108,7 @@
 
 
 
-    <section class="mt-5 mb-5" >
+    <section class="mt-4 mb-5" >
         <div class="container-fluid ">
             <div class="row">
                 <div class="col-lg-12">
@@ -1158,10 +1156,10 @@
                                     <div class="card-body  px-3 py-0" style="direction: rtl">
 
                                         @if ($property->type_id == '1')
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
+                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b> {{ trans('frontLang.AED') }} <span style="color: ;">  {{ number_format($property->price) }}</span></b></h5>
                                         @else
 
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
+                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b> <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}</b> </span></h5>
                                         @endif
 
 
@@ -1403,10 +1401,10 @@
                                         <div class="card-body  px-3 py-0" style="direction: rtl">
 
                                             @if ($property->type_id == '1')
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color:;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
+                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b> {{ trans('frontLang.AED') }} <span style="color:;">  {{ number_format($property->price) }} </span></b></h5>
                                             @else
 
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.yearly') }} <span style="color:;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
+                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b> <span style="color:;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }} {{ trans('frontLang.yearly') }}</b> </span></h5>
                                             @endif
 
                                             <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
@@ -1446,14 +1444,14 @@
 
                                             @if ($property->type_id == '1')
                                                 @if ($langSeg == 'ru')
-                                                    <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
+                                                    <h5 class="my-3" style="font-size: 1.4rem !important"> <b> <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
                                                 @else
-                                                    <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
+                                                    <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} </span></b></h5>
                                                 @endif
 
                                             @else
 
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
+                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}</b> </span></h5>
                                             @endif
 
                                             <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
@@ -1673,14 +1671,14 @@
                                     <div class="card-body  px-3 py-0" style="direction: rtl">
 
                                         @if ($property->type_id == '1')
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color:;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
+                                            <h5 class="my-3" style=" font-size: 1vw !important;"> <b> <span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} </span></b></h5>
                                         @else
 
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.yearly') }} <span style="color:;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
+                                            <h5 class="my-3" style=" font-size: 1vw !important;"> <b><span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
                                         @endif
 
                                         <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <p class="card-title" style="color: #848484 !important;">{{ $property->$title_var }}</p>
+                                            <p class="card-title" style="color: #848484 !important; font-size: 0.75vw !important;">{{ $property->$title_var }}</p>
                                         </a>
                                         <!--<p><i class="fas fa-map-marker-alt fw-light" style="color: green"> </i> {{ $property->locationss->$name_var }} </p>-->
 
@@ -1689,11 +1687,11 @@
                                         {{-- <hr> --}}
                                         <div class="row" >
                                             <div class="col-lg-12" style="display:block;" >
-                                                <span class="font-size-16 ps-0 pe-2" style="color: #848484;margin-right: 15px;"> <i class="fas fa-bed"></i>  {{$property->bedrooms}} {{ trans('frontLang.bedrooms') }} </span> <span style="color: #848484">&#x2022;</span>
+                                                <span class="ps-0 pe-2" style="color: #848484;margin-right: 15px;  font-size: 0.75vw !important;"> <i class="fas fa-bed"></i>  {{$property->bedrooms}} {{ trans('frontLang.bedrooms') }} </span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="font-size-16 px-2" style="color: #848484;margin-right: 15px;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} {{ trans('frontLang.bathrooms') }}</span> <span style="color: #848484">&#x2022;</span>
+                                                <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.75vw !important;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} {{ trans('frontLang.bathrooms') }}</span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="font-size-16 px-2" style="color: #848484;margin-right: 15px;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.75vw !important;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
 
                                             </div>
 
@@ -1704,8 +1702,8 @@
                                     <div class="card-footer text-muted" style="padding: 0.75rem 0rem; direction: rtl">
                                         <table style="width: 100%">
                                             <tr>
-                                                <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff;  font-size: 0.75vw !important;"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important;  font-size: 0.75vw !important;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -1716,18 +1714,18 @@
 
                                         @if ($property->type_id == '1')
                                             @if ($langSeg == 'ru')
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
+                                                <h5 class="my-3" style=" font-size: 1.2vw !important;"> <b> <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
                                             @else
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
+                                                <h5 class="my-3" style=" font-size: 1.2vw !important;"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} </span></b></h5>
                                             @endif
 
                                         @else
 
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
+                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}</b> </span></h5>
                                         @endif
 
                                         <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <p class="card-title"  style="font-size: 16px; color: #848484 !important;">
+                                            <p class=""  style="  font-size: 0.95vw !important; color: #848484 !important;">
                                                 {{ $property->$title_var }}
                                             </p>
                                         </a>
@@ -1738,11 +1736,11 @@
                                         {{-- <hr> --}}
                                         <div class="row mt-2" >
                                             <div class="col-lg-12" style="display:block;" >
-                                                <span class="font-size-16 ps-0 pe-2" style="color: #848484;">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
+                                                <span class="ps-0 pe-2" style="color: #848484;  font-size: 0.95vw !important;">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="font-size-16 px-2" style="color: #848484;">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
+                                                <span class="px-2" style="color: #848484;  font-size: 0.95vw !important;">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="font-size-16 px-2" style="color: #848484;"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                <span class="px-2" style="color: #848484;  font-size: 0.95vw !important;"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
 
                                             </div>
 
@@ -1754,8 +1752,8 @@
                                     <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; ">
                                         <table style="width: 100%">
                                             <tr>
-                                                <td style="text-align: center;border-right: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-desk-{{ $property->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                <td style="text-align: center;border-right: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-desk-{{ $property->id }}" style="color: #fff; font-size: 0.95vw !important"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important; font-size: 0.95vw !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                             </tr>
                                         </table>
                                     </div>
