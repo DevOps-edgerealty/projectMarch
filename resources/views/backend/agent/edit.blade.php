@@ -46,6 +46,15 @@
 
 
                                         <div class="col-sm-6">
+                                            <label for="exampleInputNameName">Agent Order</label>
+                                            {!! Form::text('agent_order',$Agents->agent_order, array('placeholder' => '','class' => 'form-control','id'=>'agent_order','required'=>'')) !!}
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row">
+
+
+                                        <div class="col-sm-6">
                                             <label for="exampleInputNameName">Name [ English ]</label>
                                             {!! Form::text('name_en',$Agents->name_en, array('placeholder' => '','class' => 'form-control','id'=>'name_en','required'=>'')) !!}
                                         </div>

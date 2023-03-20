@@ -1911,7 +1911,7 @@ class FronthomeController extends Controller
 
 		$conLag = App::getLocale();
 
-        $agents = Agents::orderBy('id', 'asc')->where('status', 1)->where('id','!=', '1')->get();
+        $agents = Agents::orderBy('agent_order', 'asc')->where('status', 1)->where('id','!=', '1')->get();
 
 
         $this->data['blogs'] = $agents;

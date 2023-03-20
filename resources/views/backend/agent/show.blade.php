@@ -52,6 +52,7 @@
                         <th class="text-center">Name</th>
                         <th class="text-center">Phone</th>
                         <th class="text-center">Email</th>
+                        <th class="text-center">Order</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Action</th>
                       </tr>
@@ -63,6 +64,7 @@
                             <td class="text-center"> {{$data->name_en}} </td>
                             <td class="text-center"> {{$data->phone}} </td>
                             <td class="text-center"> {{$data->email}} </td>
+                            <td class="text-center"> {{$data->agent_order}} </td>
 
                             <td class="text-center">
                                 @if ($data->status == 1 )

@@ -88,6 +88,8 @@ class AgentsController extends Controller
             //
             $Agent = new Agents();
 
+
+
             $Agent->name_en = $request->name_en;
             $Agent->name_ar = $request->name_en;
             $Agent->name_ru = $request->name_en;
@@ -191,6 +193,8 @@ class AgentsController extends Controller
 
 
         if (!empty($Agent)) {
+
+            $Agent->agent_order = $request->agent_order;
 
 			$Agent->name_en = $request->name_en;
             $Agent->name_ar = $request->name_en;
