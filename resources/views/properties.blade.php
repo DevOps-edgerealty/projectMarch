@@ -239,7 +239,7 @@
                                     <div class="row">
                                         <div class="col-md-1 pe-0">
                                             <div class="input-group py-auto" style="height: 100%">
-                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
+                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none mapBtn2" style=" font-size: 0.75vw; background-color: #0c5e03 !important;  border: 0 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
                                             </div>
                                         </div>
 
@@ -382,7 +382,7 @@
                                     <div class="row">
                                         <div class="col-md-1 pe-0">
                                             <div class="input-group py-auto" style="height: 100%">
-                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
+                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none mapBtn2" style=" font-size: 0.75vw; background-color: #0c5e03 !important;  border: 0 !important; border: 0 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
                                             </div>
                                         </div>
 
@@ -567,7 +567,7 @@
                                     <div class="row">
                                         <div class="col-md-1 pe-0">
                                             <div class="input-group py-auto" style="height: 100%">
-                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
+                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important; border: 0 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
                                             </div>
                                         </div>
 
@@ -712,7 +712,7 @@
                                     <div class="row">
                                         <div class="col-md-1 pe-0">
                                             <div class="input-group py-auto" style="height: 100%">
-                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none" style=" font-size: 0.75vw; background-color: #0c5e03 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
+                                                <a class="btn  px-2 w-100 mx-0 rounded-0 shadow-none mapBtn2" style=" font-size: 0.75vw; background-color: #0c5e03 !important; border: 0 !important;" id="ex2-tab-3"  href="{{ url($langSeg."/properties/map/1") }}" > {{ trans('frontLang.map') }}</a>
                                             </div>
                                         </div>
 

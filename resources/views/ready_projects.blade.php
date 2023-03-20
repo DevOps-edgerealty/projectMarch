@@ -173,7 +173,7 @@
                 </div>
 
                 <div class="col-lg-3">
-                    <a href="{{ url($langSeg."/ready-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-100 mx-auto text-center project_btn" style="background-color: #0c5e03 !important;">Map View</a>
+                    <a href="{{ url($langSeg."/ready-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-100 mx-auto text-center project_btn mapBtn2" style="background-color: #0c5e03 !important; border: 0 !important;">Map View</a>
                 </div>
             </div>
             {{-- <h3 class="text-left">{{ trans('frontLang.readyProjects') }}</h3> --}}
@@ -343,7 +343,7 @@
                 </div>
 
                 <div class="col-lg-3">
-                    <a href="{{ url($langSeg."/offplan-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-100 mx-auto text-center " style="background-color: #0c5e03 !important;">Map View</a>
+                    <a href="{{ url($langSeg."/offplan-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-100 mx-auto text-center mapBtn2" style="background-color: #0c5e03 !important; border: 0 !important;">Map View</a>
                 </div>
             </div>
             {{-- <h3 class="text-left">{{ trans('frontLang.readyProjects') }}</h3> --}}

@@ -303,12 +303,12 @@
             <div class="row mb-5">
                 @if ($langSeg == 'ru')
                     <div class="col-lg-12">
-                        <a href="{{ url($langSeg."/luxury-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-25 mx-auto text-center float-right project_btn" style="background-color: #0c5e03 !important; float: right !important;">Map View</a>
+                        <a href="{{ url($langSeg."/luxury-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-25 mx-auto text-center float-right project_btn mapBtn2" style="background-color: #0c5e03 !important; float: right !important;  border: 0 !important;">Map View</a>
                     </div>
                         <p style="color: #848484">Лучшее место для покупки элитных квартир находится в Дубае, ОАЭ. Познакомьтесь с домами Вашей мечты и выберите среди наших современных вилл, квартир, особняков и пентхаусов. Самые роскошные апартаменты оснащены самыми современными удобствами и имеют захватывающий дух вид на центр Дубая и пляж.</p>
                 @else
                     <div class="col-lg-12">
-                        <a href="{{ url($langSeg."/luxury-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-25 mx-auto text-center float-right project_btn" style="background-color: #0c5e03 !important; float: right !important;">Map View</a>
+                        <a href="{{ url($langSeg."/luxury-projects/map/1") }}" class="btn shadow-none rounded-0 btn-lg w-25 mx-auto text-center float-right project_btn mapBtn2" style="background-color: #0c5e03 !important; float: right !important;  border: 0 !important;">Map View</a>
                     </div>
                         <p style="color:#848484">Your destination for buying luxury apartments can be found in Dubai, United Arab Emirates. Explore your dream homes among our modern villas, apartments, mansions, and penthouses. The most luxurious apartments come with the latest facilities and breathtaking views from Downtown Dubai, or the Beach.</p>
                 @endif
