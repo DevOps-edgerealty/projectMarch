@@ -599,6 +599,9 @@ return array (
 
 'MoreFilter' => 'Больше Фитров',
 
+'Handover' => 'Сдача',
+
+
 
 
 );

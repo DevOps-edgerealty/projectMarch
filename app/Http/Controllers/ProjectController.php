@@ -748,6 +748,14 @@ class ProjectController extends Controller
 
     }
 
+
+
+
+
+
+
+
+
     public function showindex()
     {
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
@@ -981,22 +989,22 @@ class ProjectController extends Controller
                  }
              }
 
-             if($request->hasfile('document'))
-             {
-                 $count=1;
-                 foreach($request->file('document') as $image)
-                 {
-                     $image_name = $image->getClientOriginalName();//'cpproject-'.$count.'-'.time().'.'.$image->guessExtension();
-                     $path = $this->uploadDocumentPath;
-                     $image->move($path."$project_id/", $image_name);
+            //  if($request->hasfile('document'))
+            //  {
+            //      $count=1;
+            //      foreach($request->file('document') as $image)
+            //      {
+            //          $image_name = $image->getClientOriginalName();//'cpproject-'.$count.'-'.time().'.'.$image->guessExtension();
+            //          $path = $this->uploadDocumentPath;
+            //          $image->move($path."$project_id/", $image_name);
 
-                     $ProjectDocument = new Project_Document;
-                     $ProjectDocument->project_id = $project_id;
-                     $ProjectDocument->document = $image_name;
-                     $ProjectDocument->save();
-                     $count++;
-                 }
-             }
+            //          $ProjectDocument = new Project_Document;
+            //          $ProjectDocument->project_id = $project_id;
+            //          $ProjectDocument->document = $image_name;
+            //          $ProjectDocument->save();
+            //          $count++;
+            //      }
+            //  }
 
 
 
@@ -1291,22 +1299,22 @@ class ProjectController extends Controller
                 }
             }
 
-            if($request->hasfile('document'))
-            {
-                $count=1;
-                foreach($request->file('document') as $image)
-                {
-                    $image_name = $image->getClientOriginalName();//'cpproject-'.$count.'-'.time().'.'.$image->guessExtension();
-                    $path = $this->uploadDocumentPath;
-                    $image->move($path."$project_id/", $image_name);
+            // if($request->hasfile('document'))
+            // {
+            //     $count=1;
+            //     foreach($request->file('document') as $image)
+            //     {
+            //         $image_name = $image->getClientOriginalName();//'cpproject-'.$count.'-'.time().'.'.$image->guessExtension();
+            //         $path = $this->uploadDocumentPath;
+            //         $image->move($path."$project_id/", $image_name);
 
-                    $ProjectDocument = new Project_Document;
-                    $ProjectDocument->project_id = $project_id;
-                    $ProjectDocument->document = $image_name;
-                    $ProjectDocument->save();
-                    $count++;
-                }
-            }
+            //         $ProjectDocument = new Project_Document;
+            //         $ProjectDocument->project_id = $project_id;
+            //         $ProjectDocument->document = $image_name;
+            //         $ProjectDocument->save();
+            //         $count++;
+            //     }
+            // }
 
 
             return redirect('admin/projects/show')->with('message','Record has Been Updated.');

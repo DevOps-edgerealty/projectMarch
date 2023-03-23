@@ -377,12 +377,6 @@
                                 </h4>
                             </div>
                             <div class="USD skill_rent"><h4>{{ trans('frontLang.yearly') }} <b>  <span style="color: #fff;"> {{ number_format($property_detail->price_usd) }} USD </b></span></h4></div>
-                            <select class="" name="skill_dropdown_rent" id="skill_dropdown_rent" style="width: 80px;margin-left:10px;margin-top: -9px;border: 2px solid; border-radius: 4px;">
-
-                                <option value="AED">AED</option>
-                                <option value="USD">USD</option>
-
-                            </select>
                         </div>
                     @endif
 
@@ -533,17 +527,17 @@
         </div>
     </div> --}}
 
-    <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; left: 150px; float: left !important; z-index: 30000 !important;">
+    <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; left: 100px; float: left !important; z-index: 30000 !important; background-color: ">
         <div class="container-fluid" style="width: 380px; float: right; height: 135px;">
             <div class="row" style="border: 0.5px #848484 solid;">
                 <div class="col-lg-4 d-flex my-auto">
-                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
+                    @if (file_exists('uploads/agents/'.$agent->id.'/'.$agent->image))
                         <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
+                            <img src="{{ URL::asset('uploads/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
                         </a>
                     @else
                         <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 100px; height: 100px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
+                            <img src="{{ URL::asset('public/assets/images/edge.webp') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 100px; height: 100px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
                         </a>
                     @endif
                 </div>
@@ -679,10 +673,12 @@
 
 
                     @if ($property_detail->type_id == '1')
-                        <h5> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property_detail->price) }}   </span></b></h5>
+                        <h5 class="USD skill" style="display: none;"> <b> <span style="color: #fff;">  {{ number_format($property_detail->price_usd) }}  $ </span></b></h5>
+                        <h5 class="AED skill" style="display: block !important;"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property_detail->price) }}   </span></b></h5>
                     @else
 
-                        <h5> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">   {{ number_format($property_detail->price) }} {{ trans('frontLang.yearly') }} </b> </span></h5>
+                        <h5 class="USD skill" style="display: none;"> <b> <span style="color: #fff;">   {{ number_format($property_detail->price_usd) }} $ {{ trans('frontLang.yearly') }} </b> </span></h5>
+                        <h5 class="AED skill" style="display: block !important;"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">   {{ number_format($property_detail->price) }} {{ trans('frontLang.yearly') }} </b> </span></h5>
                     @endif
 
                     <hr>
@@ -714,43 +710,36 @@
         <div class="container-fluid containerization mt-3">
             <div class="row">
                 <div class="col-lg-9 shadow p-3">
-
-                    <span id="about_mobile" class="" style="text-align: justify !important; color: grey !important; font-size: 1.5em !important; line-height: 1 !important; ">
-
+                    <span id="about_mobile" class="" style="text-align: justify !important; color: #fff !important; font-size: 1.5em !important; line-height: 1 !important; ">
                             {!! html_entity_decode($property_detail->$description_var) !!}
-
                     </span>
                 </div>
 
 
                 {{-- agent card --}}
-
                 <div class="col-lg-3 scroll_card_2">
                     <div class="card bg-black rounded-0 p-0 m-0 agent-card" style="border: 0.5px #848484 solid !important; transform: scale(1) !important; margin: 0 !important;">
                         <div class="bg-image hover-overlay ripple mt-4 mb-0" data-mdb-ripple-color="light">
-                            @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
-                                <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                                    <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="rounded-circle rounded-0 mx-auto" rounded-0 style="width: 130px; height: 130px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
+                            @if (file_exists('uploads/agents/'.$agent->id.'/'.$agent->image))
+                                <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
+                                    <img src="{{ URL::asset('uploads/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 130px; height: 130px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
                                 </a>
-
                             @else
-                                <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                                    <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="rounded-circle rounded-0 mx-auto" style="width: 130px; height: 130px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
+                                    <img src="{{ URL::asset('public/assets/images/edge.webp') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 130px; height: 130px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
                                 </a>
                             @endif
 
                             <div class="text-center mx-auto">
-                                <p class="text-white fw-bold mb-0 mt-2" style="font-size: 1.1rem !important">
+                                <p class="text-white fw-bold mb-0 mt-2 text-center" style="font-size: 1.1rem !important">
                                     {{ $agent->name_en }}
                                 </p>
-                                <p class=" fw-bold mb-0" style="font-size: .8rem !important; color: #848484 !important;">
+                                <p class=" fw-bold mb-0 text-center" style="font-size: .8rem !important; color: #848484 !important;">
                                     {{ $agent->language_en }}
                                 </p>
                             </div>
                         </div>
-
                         <div class="card-body px-2 py-0">
-
                             <div class="row my-3">
                                 <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_property/submit')}}">
                                     @csrf
@@ -902,14 +891,21 @@
 
     {{-- description & map mobile view --}}
     <section class="mobile-show mt-5 mb-5" style="direction: rtl">
-        <div class="container">
+        <div class="container-fluid containerization">
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="mb-2">حول هذا العقار</h3>
-                    <span style="text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important; ">
-                        {{-- {!!html_entity_decode($property_detail->$description_var)!!} --}}
+                    <span >
 
-                        <span id="lessmobilear" style="display: inline !important; text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important;">
+                        <style>
+                            p {
+                                color: #fff !important; font-size: 1rem !important; line-height: 1.8 !important; text-align: justify !important;
+                            }
+                        </style>
+
+                        {!! html_entity_decode($property_detail->$description_var) !!}
+
+                        {{-- <span id="lessmobilear" style="display: inline !important; text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important;">
                             {{ strip_tags(substr($property_detail->$description_var, 0, 400)) }} ...
                         </span>
 
@@ -929,145 +925,25 @@
                             </button>
                         @else
                             {!! html_entity_decode($property_detail->$description_var) !!}
-                        @endif
+                        @endif --}}
                     </span>
                 </div>
             </div>
-            <div class="row mx-auto">
 
-                <div class="col-lg-12">
-                    <?php
+            <div class="my-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a style="width:50%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white"><i class="fas fa-phone-alt fa-2x"> </i>  </a>
 
-                    $Property_map_embed_code=str_replace('style="border:0"','',$property_detail->map_embed_code);
+                        {{-- <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#book_a_viewing_mobile" class="btn btn-outline-white"><i class="far fa-calendar-check fa-2x"> </i></a> --}}
 
-                    $Property_map_embed_code=str_replace('frameborder="0"','',$Property_map_embed_code);
+                        <a style="width:50%" class=" btn btn-outline-white" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
 
-                    echo $Property_map_embed_code=str_replace('width="','style="height: 200px !important;width:100%!important" width="',$Property_map_embed_code);
-
-                    ?>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="container">
-            <div class="row mt-5 mb-3">
-
-                <div class="col-lg-6" style="width: 40%" >
-                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
-                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="rounded-circle rounded-0 mx-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image"/>
+                            <i class="fab fa-whatsapp fa-2x"> </i>
                         </a>
-                    @else
-                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="rounded-circle rounded-0 mx-auto" style="width: 100px; height: 100px;"  alt="agent-image">
-                        </a>
-                    @endif
-                </div>
-
-
-                <div class="col-lg-6" style="width: 60%" >
-                    <p class="text-white fw-bold my-2" style="font-size: 1.2rem !important">
-                        {{ $property_detail->agentss->$name_var }}
-                    </p>
-                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
-                        {{ $property_detail->agentss->$designation_var }}
-                    </p>
-                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
-                        {{ $property_detail->agentss->$language_var }}
-                    </p>
-                </div>
-
-
-
-
-
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a style="width:32%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white"><i class="fas fa-phone-alt fa-2x"> </i>  </a>
-
-                    <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#book_a_viewing_mobile" class="btn btn-outline-white"><i class="far fa-calendar-check fa-2x"> </i></a>
-
-                    <a style="width:32%" class=" btn btn-outline-white" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
-
-                        <i class="fab fa-whatsapp fa-2x"> </i>
-                    </a>
-                </div>
-
-                {{-- <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }}</h5>
-                                <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body ">
-                                <div class="row">
-
-                                    <div class="col-lg-12">
-                                        <h6 class="text-center mb-4">{{$property_detail->$title_var}}</h6>
-                                        <form class="contact-form" method="post" action="{{URL('/book_view/submit')}}">
-                                            @csrf
-                                            @honeypot
-                                            <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
-
-                                            <div class="mb-4">
-                                                <label for="">{{ trans('frontLang.date') }}</label>
-                                                <input name="book_date" type="date" class="form-control form-control-lg"  name="viewing Date">
-
-                                            </div>
-                                            <div class="mb-4">
-                                                <label for="">{{ trans('frontLang.Time') }}</label>
-                                                <select name="book_time" id="cars" class="form-control form-control-lg" >
-                                                    <option value="9:00 AM">9:00 AM</option>
-                                                    <option value="10:00 AM">10:00 AM</option>
-                                                    <option value="11:00 AM">11:00 AM</option>
-                                                    <option value="12:00 AM">12:00 AM</option>
-                                                    <option value="1:00 PM">1:00 PM</option>
-                                                    <option value="2:00 PM">2:00 PM</option>
-                                                    <option value="3:00 PM">3:00 PM</option>
-                                                    <option value="4:00 PM">4:00 PM</option>
-                                                    <option value="5:00 PM">5:00 PM</option>
-                                                    <option value="6:00 PM">6:00 PM</option>
-                                                    <option value="7:00 PM">7:00 PM</option>
-                                                    <option value="8:00 PM">8:00 PM</option>
-                                                    <option value="9:00 PM">9:00 PM</option>
-
-                                                </select>
-                                            </div>
-
-                                            <div class=" mb-4">
-                                                <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                                            </div>
-                                            <!-- Email input -->
-                                            <div class="mb-4">
-                                                <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                                            </div>
-
-                                            <!-- Email input -->
-                                            <div class="mb-4">
-                                                <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
-                                            </div>
-                                            <button type="submit" class="btn btn-dark btn-lg btn-block">
-                                                {{ trans('frontLang.submit') }}
-                                            </button>
-                                        </form>
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-                        </div>
                     </div>
-                </div> --}}
 
-                {{-- mobile book a viewing --}}
+
                     <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
                             <div class="modal-content bg-black">
@@ -1147,23 +1023,43 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
+            <div class="row mx-auto mb-4">
+
+                <div class="col-lg-12">
+                    <?php
+
+                    $Property_map_embed_code=str_replace('style="border:0"','',$property_detail->map_embed_code);
+
+                    $Property_map_embed_code=str_replace('frameborder="0"','',$Property_map_embed_code);
+
+                    echo $Property_map_embed_code=str_replace('width="','style="height: 200px !important;width:100%!important" width="',$Property_map_embed_code);
+
+                    ?>
+                </div>
+            </div>
+
         </div>
+
+
     </section>
 
     {{-- <hr class="container-fluid containerization mt-5 mb-3"> --}}
 
+
     {{-- similar properties --}}
-    <section class="mt-2 mobile-show">
+    {{-- similar properties --}}
+    <section class="mt-3 mobile-show" style="background-color: #000;">
+        <div class="container">
             <div class="row">
                 <br>
                 <h3 class="text-left my-3">{{ trans('frontLang.similarProperties') }}</h3>
 
                     @if($properties->count() != 0)
 
-
                     @foreach ($properties as $property)
-                        <div class="col-lg-4 mb-5 mt-2">
+                        <div class="col-lg- mb-5 mt-2">
                             <div class="card bg-black rounded-0 border border-white border-1" style="height: 460px;">
                                 <div class="communities-newlaunch"></div>
                                 @foreach($property->images  as $single_img)
@@ -1173,9 +1069,6 @@
                                     </a>
                                     @endif
                                 @endforeach
-
-
-
 
                                 <div class="card-body px-3" style="padding: 0rem">
                                     @if ($property->type_id == '1')
@@ -1213,10 +1106,12 @@
                                                 </span>
                                             </h5>
                                         </div>
-
                                     @endif
+
                                     <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}"  class="my-0">
-                                        <h6 class="card-title fw-light text-white mt-2 mb-0" style="font-size: 1rem !important">{{ $property->$title_var }}</h6>
+                                        <h6 class="card-title fw-light text-white mt-2 mb-0" style="font-size: 1rem !important">
+                                            {{ Str::limit($property->$title_var, 80) }}
+                                        </h6>
                                     </a>
                                     <p class="fw-light mt-0">
                                         {{ $property->locationss->$name_var }}
@@ -1230,7 +1125,12 @@
 
                                         <span style="color: #848484">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
 
-                                        <span style="color: #848484">  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                        <span style="color: #848484">
+                                            @if ($langSeg == 'en')
+                                                {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                            @else
+                                                {{ round($property->area/10.764, 2) }} {{ trans('frontLang.sqFt') }}
+                                            @endif
                                     </div>
                                 </div>
 
@@ -1239,11 +1139,11 @@
                         <div class="modal fade" id="exampleModal-{{ $property->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                 <div class="modal-content">
-                                    <div class="modal-header">
+                                    {{-- <div class="modal-header">
                                         <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body ">
+                                    </div> --}}
+                                    <div class="modal-body bg-dark">
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($property->images  as $single_img)
@@ -1260,12 +1160,12 @@
                                                     <input type="hidden" name="property" value="{{$property->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
+
                                                     </div>
 
                                                     <!-- Email input -->
                                                     <div class="mb-4">
                                                         <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
                                                     </div>
 
                                                     <!-- Email input -->
@@ -1274,6 +1174,7 @@
 
                                                     </div>
                                                     <button type="submit" class="btn btn-dark btn-lg btn-block">
+
                                                         {{ trans('frontLang.submit') }}
                                                     </button>
                                                 </form>
@@ -1287,11 +1188,12 @@
                                 </div>
                             </div>
                         </div>
+
                     @endforeach
 
                     @else
                         <p class="text-muted my-5">
-                            No Properties for Sale or Rent within the same area
+                            No Properties for Sale or Rent
                         </p>
                     @endif
 
@@ -1299,146 +1201,159 @@
         </div>
     </section>
 
-    <section class="mt-3 desktop-show" style="background-color: #000" dir="rtl">
-        <div class="container-fluid containerization">
+    <section class="mt-3 desktop-show" style="z-index: -100 !important; direction: RTL">
+        <div class="container-fluid containerization" style="background-color: #000 !important;" >
             <div class="row">
-                <br>
-                <h3 class="text-left my-3">{{ trans('frontLang.similarProperties') }}</h3>
 
-                    @if($properties->count() != 0)
+                <div class="col-lg-9">
+                    <div class="row">
+                        <br>
+                        <h3 class="text-left my-3">{{ trans('frontLang.similarProperties') }}</h3>
 
+                        @if($properties->count() != 0)
 
-                    @foreach ($properties as $property)
-                        <div class="col-lg-4 mb-5 mt-2">
-                            <div class="card bg-black rounded-0 border border-white border-1" style="height: 460px;">
-                                <div class="communities-newlaunch"></div>
-                                @foreach($property->images  as $single_img)
-                                    @if($property->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                        <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="Listing">
-                                    </a>
-                                    @endif
-                                @endforeach
+                        @foreach ($properties as $property)
+                            <div class="col-lg-4 mb-4 mt-2">
+                                <div class="card bg-black rounded-0 " style="height: 480px; border: 0.5px #848484 solid;">
+                                    <div class="communities-newlaunch"></div>
+                                    @foreach($property->images  as $single_img)
+                                        @if($property->images->first()==$single_img)
+                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                            <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="Listing">
+                                        </a>
+                                        @endif
+                                    @endforeach
 
+                                    <div class="card-body px-3 h-100" style="padding: 0rem">
 
-
-
-                                <div class="card-body px-3" style="padding: 0rem">
-                                    @if ($property->type_id == '1')
-                                        <div class="AED skill" style="display: block !important">
-                                            <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                <span style="color: #fff; ">
-                                                    AED {{ number_format($property->price) }}
-                                                </span>
-                                            </h5>
-                                        </div>
-
-                                        <div class="USD skill">
-                                            <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                <span style="color: #fff;">
-                                                    {{ number_format($property->price_usd) }} USD </b>
-                                                </span>
-                                            </h5>
-                                        </div>
-                                    @else
-                                        <div class="AED skill" style="display: block !important">
-                                            <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                {{ trans('frontLang.yearly') }}
-
-                                                <span style="color: #fff; ">
-                                                    AED {{ number_format($property->price) }}
-                                                </span>
-                                            </h5>
-                                        </div>
-
-                                        <div class="USD skill">
-                                            <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                {{ trans('frontLang.yearly') }}
-                                                <span style="color: #fff;">
-                                                    {{ number_format($property->price_usd) }} USD </b>
-                                                </span>
-                                            </h5>
-                                        </div>
-                                    @endif
-                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}"  class="my-0">
-                                        <h6 class="card-title fw-light text-white mt-2 mb-0" style="font-size: 1rem !important">{{ $property->$title_var }}</h6>
-                                    </a>
-                                    <p class="fw-light mt-0">
-                                        {{ $property->locationss->$name_var }}
-                                    </p>
-
-                                    <p class="card-text">
-                                    </p>
-
-                                    <div class="row" style="display:block;font-size: 15px;" >
-                                        <span style="color: #848484">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
-
-                                        <span style="color: #848484">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
-
-                                        <span style="color: #848484">  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="modal fade" id="exampleModal-{{ $property->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
-                                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body ">
-                                        <div class="row">
-                                            <div class="col-lg-6 mb-3">
-                                                @foreach($property->images  as $single_img)
-                                                    @if($property->images->first()==$single_img)
-                                                        <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}"  class="modal-img-height" alt="{{$property->$title_var}}">
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <h6 class="text-center mb-4">{{$property->$title_var}}</h6>
-                                                <form class="contact-form" method="post" action="{{URL('/request_detail_property/submit')}}">
-                                                    @csrf
-                                                    @honeypot
-                                                    <input type="hidden" name="property" value="{{$property->id}}" />
-                                                    <div class=" mb-4">
-                                                        <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-                                                    </div>
-
-                                                    <!-- Email input -->
-                                                    <div class="mb-4">
-                                                        <input type="phone" name="phone" class="form-control form-control-lg iti-phone" place holder="{{ trans('frontLang.phone') }}" required />
-
-                                                    </div>
-
-                                                    <!-- Email input -->
-                                                    <div class="mb-4">
-                                                        <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
-                                                    </div>
-                                                    <button type="submit" class="btn btn-dark btn-lg btn-block">
-                                                        {{ trans('frontLang.submit') }}
-                                                    </button>
-                                                </form>
+                                        @if ($property->type_id == '1')
+                                            <div class="AED skill" style="display: block !important">
+                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
+                                                    <span style="color: #fff; ">
+                                                        AED {{ number_format($property->price) }}
+                                                    </span>
+                                                </h5>
                                             </div>
 
+                                            <div class="USD skill">
+                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
+                                                    <span style="color: #fff;">
+                                                        {{ number_format($property->price_usd) }} USD </b>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        @else
+                                            <div class="AED skill" style="display: block !important">
+                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
+                                                    {{ trans('frontLang.yearly') }}
+
+                                                    <span style="color: #fff; ">
+                                                        AED {{ number_format($property->price) }}
+                                                    </span>
+                                                </h5>
+                                            </div>
+
+                                            <div class="USD skill">
+                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
+                                                    {{ trans('frontLang.yearly') }}
+                                                    <span style="color: #fff;">
+                                                        {{ number_format($property->price_usd) }} USD </b>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        @endif
+
+                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}"  class="my-0">
+                                            <h6 class="card-title fw-light mt-2 mb-0" style="color: #848484 !important; font-size: 1rem !important">
+                                                {{ Str::limit($property->$title_var, 50) }}
+                                            </h6>
+                                        </a>
+
+                                        <p class="fw-light mt-3" style="color: #848484 !important;">
+                                            {{ $property->locationss->$name_var }}
+                                        </p>
+
+                                        <div class="row" style="display:block;font-size: 15px;" >
+                                            <span style="color: #848484" class="fw-light">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
+
+                                            <span style="color: #848484" class="fw-light">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
+
+                                            <span style="color: #848484" class="fw-light">
+                                                @if ($langSeg == 'en')
+                                                    {{ $property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                @else
+                                                    {{ round($property->area/10.764, 2) }} {{ trans('frontLang.sqFt') }}
+                                                @endif
+                                            </span>
                                         </div>
-
-
                                     </div>
 
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                            <div class="modal fade" id="exampleModal-{{ $property->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                    <div class="modal-content">
+                                        {{-- <div class="modal-header">
+                                            <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
+                                            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                                        </div> --}}
+                                        <div class="modal-body bg-dark">
+                                            <div class="row">
+                                                <div class="col-lg-6 mb-3">
+                                                    @foreach($property->images  as $single_img)
+                                                        @if($property->images->first()==$single_img)
+                                                            <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}"  class="modal-img-height" alt="{{$property->$title_var}}">
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <h6 class="text-center mb-4">{{$property->$title_var}}</h6>
+                                                    <form class="contact-form" method="post" action="{{URL('/request_detail_property/submit')}}">
+                                                        @csrf
+                                                        @honeypot
+                                                        <input type="hidden" name="property" value="{{$property->id}}" />
+                                                        <div class=" mb-4">
+                                                            <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
-                    @else
-                        <p class="text-muted my-5">
-                            No Properties for Sale or Rent within the same area
-                        </p>
-                    @endif
+                                                        </div>
+
+                                                        <!-- Email input -->
+                                                        <div class="mb-4">
+                                                            <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
+                                                        </div>
+
+                                                        <!-- Email input -->
+                                                        <div class="mb-4">
+                                                            <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
+
+                                                        </div>
+                                                        <button type="submit" class="btn btn-dark btn-lg btn-block">
+
+                                                            {{ trans('frontLang.submit') }}
+                                                        </button>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        @endforeach
+
+                        @else
+                            <p class="text-muted my-5">
+                                No Properties for Sale or Rent
+                            </p>
+                        @endif
+                    </div>
+
+                </div>
+
 
             </div>
         </div>
@@ -1687,8 +1602,6 @@
     </section>
 
 
-
-
     {{-- AGENT CARD STICKY TOP --}}
     <style>
         .sticky-example {
@@ -1711,6 +1624,7 @@
             z-index: 10 !important;
         }
     </style>
+
     {{-- <div class="sticky-example desktop-show d-md-block d-lg-block d-none" id="">
         <div class="col-lg-12 p-0 m-0" style="z-index: -1000 !important;" >
 
@@ -1718,17 +1632,17 @@
         </div>
     </div> --}}
 
-    <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; right: 100px; float: right !important; z-index: 5000000; background-color: #000 !important;">
+    <section class="d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; right: 100px; float: right !important; z-index: 5000000; background-color: #000 !important;">
         <div class="container-fluid" style="width: 380px; float: right; height: 135px;">
             <div class="row" style="border: 0.5px #848484 solid; ">
                 <div class="col-lg-4 d-flex my-auto">
-                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
+                    @if (file_exists('uploads/agents/'.$agent->id.'/'.$agent->image))
                         <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
+                            <img src="{{ URL::asset('uploads/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
                         </a>
                     @else
                         <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 100px; height: 100px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                            <img src="{{ URL::asset('public/assets/images/edge.webp') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 100px; height: 100px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
                         </a>
                     @endif
                 </div>
@@ -1858,9 +1772,7 @@
             </div>
         </div> --}}
     </section>
-
     {{-- AGENT CARD STICKY TOP --}}
-
 
 
     {{-- mobile images --}}
@@ -1929,26 +1841,23 @@
 
                 {{-- description --}}
                 <div class="col-lg-9 shadow p-3" style="min-height: 500px !important;">
-                    <span id="about_mobile" class="" style="text-align: justify !important; color: grey !important; font-size: 1.5em !important; line-height: 1 !important; ">
-
-                            {!! html_entity_decode($property_detail->$description_var) !!}
-
+                    <span id="about_mobile" class="" style="text-align: justify !important; color: #fff !important; font-size: 1em !important; line-height: 1 !important; ">
+                        {!! html_entity_decode($property_detail->$description_var) !!}
                     </span>
                 </div>
 
                 <div class="col-lg-3 scroll_card_2">
                     <div class="card bg-black rounded-0 p-0 m-0 agent-card shadow-none" style="border: 0.5px #848484 solid !important; transform: scale(1) !important; margin: 0 !important;">
                         <div class="bg-image hover-overlay ripple mt-4 mb-0" data-mdb-ripple-color="light">
-                            @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
-                                <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                                    <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="rounded-circle rounded-0 mx-auto" rounded-0 style="width: 130px; height: 130px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
-                                </a>
-
-                            @else
-                                <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                                    <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="rounded-circle rounded-0 mx-auto" style="width: 130px; height: 130px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
-                                </a>
-                            @endif
+                            @if (file_exists('uploads/agents/'.$agent->id.'/'.$agent->image))
+                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
+                            <img src="{{ URL::asset('uploads/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 130px; height: 130px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
+                        </a>
+                    @else
+                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
+                            <img src="{{ URL::asset('public/assets/images/edge.webp') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 130px; height: 130px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
+                        </a>
+                    @endif
 
                             <div class="text-center mx-auto">
                                 <p class="text-white fw-bold mb-0 mt-2 text-center" style="font-size: 1.1rem !important">
@@ -2126,9 +2035,14 @@
                         #more  {display:  none;}
                     </style>
 
-                    <span id="about_mobile" class="" style=" color: grey !important; font-size: 1em !important; line-height: 1 !important; text-align: justify !important;">
+                    <span id="about_mobile">
+                        <style>
+                            p {
+                                color: #fff !important; font-size: 1rem !important; line-height: 1.8 !important; text-align: justify !important;
+                            }
+                        </style>
 
-                        {{ strip_tags($property_detail->$description_var) }}
+                        {!! html_entity_decode($property_detail->$description_var) !!}
 
                         {{-- <span id="lessmobile" style="display: inline !important; text-align: justify !important; color: grey !important; font-size: 1em !important; line-height: 1 !important;">
                             {{ strip_tags(substr($property_detail->$description_var, 0, 250)) }} ...
@@ -2169,34 +2083,8 @@
             {{-- <div class="row mt-0 mb-3 border-top border-bottom border-white py-3"> --}}
             <div class="row mt-0 mb-3 py-3">
 
-                <div class="col-lg-6" style="width: 40%" >
-                    {{-- <img src="{{URL::asset('uploads/agents/2/cpagent-1629363032.jpeg')}}" style="width: 130px" alt=""> --}}
-                    @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
-                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                            <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="rounded-circle rounded-0 mx-auto" rounded-0 style="width: 100px; height: 100px;" alt="agent-image"/>
-                        </a>
-                    @else
-                        <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}">
-                            <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="rounded-circle rounded-0 mx-auto" style="width: 100px; height: 100px;"  alt="agent-image">
-                        </a>
-                    @endif
-                </div>
-
-                {{-- mobile agent card --}}
-                <div class="col-lg-6 my-auto" style="width: 60%" >
-                    <p class="text-white fw-bold my-2" style="font-size: 1.2rem !important">
-                            {{ $agent->name_en }}
-                    </p>
-                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
-                        {{ $agent->designation_en }}
-                    </p>
-                    <p class="text-white fw-light my-2" style="font-size: .9rem !important">
-                        {{ $agent->language_en }}
-                    </p>
-                </div>
-
                 <div class="row mt-0 mb-0 mx-auto">
-                    {{-- <div class="col-lg-12 mx-auto">
+                    <div class="col-lg-12 mx-auto">
                         <a style="width:32%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white rounded-0 "><i class="fas fa-phone-alt fa-2x"> </i>  </a>
 
                         <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-mobile-property" class="btn btn-outline-white rounded-0 "><i class="far fa-calendar-check fa-2x"> </i></a>
@@ -2205,7 +2093,7 @@
                             <i class="fab fa-whatsapp fa-2x"> </i>
                         </a>
 
-                    </div> --}}
+                    </div>
 
                     {{-- mobile book a viewing --}}
                     <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -2293,6 +2181,7 @@
 
         </div>
     </section>
+
 
     {{-- similar properties --}}
     <section class="mt-3 mobile-show" style="background-color: #000;">
@@ -2445,6 +2334,7 @@
             </div>
         </div>
     </section>
+
 
     <section class="mt-3 desktop-show" style="z-index: -100 !important;">
         <div class="container-fluid containerization" style="background-color: #000 !important;" >

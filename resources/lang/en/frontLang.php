@@ -596,6 +596,7 @@ return array (
     'requestCallBack' => 'REQUEST A CALL BACK',
     'OurTeam' => 'OUR TEAM',
     'MoreFilter' => 'More Filter',
+    'Handover' => 'Handover',
 
 
 

@@ -236,32 +236,32 @@ class CommunitiesController extends Controller
          if($bool==0)
          {
 
-             //
-             $communities = new Community();
+            //
+            $communities = new Community();
 
 
-             $communities->title_en = $request->title_en;
-             $communities->title_ru = $request->title_ru;
-             $communities->title_ar = $request->title_ar;
-             $communities->slug_link = $this->createSlug($request->title_en);
-             $communities->location = $request->location;
-             $communities->address_en = $request->address_en;
-             $communities->address_ru = $request->address_ru;
-             $communities->address_ar = $request->address_ar;
-             $communities->map_embed_code = $request->map_embed;
-             $communities->description_en = $request->description_en;
-             $communities->description_ru = $request->description_ru;
-             $communities->description_ar = $request->description_ar;
-             $communities->meta_title_en = $request->meta_title_en;
-             $communities->meta_title_ru = $request->meta_title_ru;
-             $communities->meta_title_ar = $request->meta_title_ar;
-             $communities->meta_keywords_en = $request->meta_keyword_en;
-             $communities->meta_keywords_ru = $request->meta_keyword_ru;
-             $communities->meta_keywords_ar = $request->meta_keyword_ar;
-             $communities->meta_description_en = $request->meta_description_en;
-             $communities->meta_description_ru = $request->meta_description_ru;
-             $communities->meta_description_ar = $request->meta_description_ar;
-             $communities->status = 1;
+            $communities->title_en = $request->title_en;
+            $communities->title_ru = $request->title_ru;
+            $communities->title_ar = $request->title_ar;
+            $communities->slug_link = $this->createSlug($request->title_en);
+            $communities->location = $request->location;
+            $communities->address_en = $request->address_en;
+            $communities->address_ru = $request->address_ru;
+            $communities->address_ar = $request->address_ar;
+            $communities->map_embed_code = $request->map_embed;
+            $communities->description_en = $request->description_en;
+            $communities->description_ru = $request->description_ru;
+            $communities->description_ar = $request->description_ar;
+            $communities->meta_title_en = $request->meta_title_en;
+            $communities->meta_title_ru = $request->meta_title_ru;
+            $communities->meta_title_ar = $request->meta_title_ar;
+            $communities->meta_keywords_en = $request->meta_keyword_en;
+            $communities->meta_keywords_ru = $request->meta_keyword_ru;
+            $communities->meta_keywords_ar = $request->meta_keyword_ar;
+            $communities->meta_description_en = $request->meta_description_en;
+            $communities->meta_description_ru = $request->meta_description_ru;
+            $communities->meta_description_ar = $request->meta_description_ar;
+            $communities->status = 1;
 
 
 
@@ -404,9 +404,9 @@ class CommunitiesController extends Controller
             $communities->meta_title_en = $request->meta_title_en;
             $communities->meta_title_ru = $request->meta_title_ru;
             $communities->meta_title_ar = $request->meta_title_ar;
-            $communities->meta_keywords_en = $request->meta_keyword_en;
-            $communities->meta_keywords_ru = $request->meta_keyword_ru;
-            $communities->meta_keywords_ar = $request->meta_keyword_ar;
+            $communities->meta_keywords_en = $request->meta_keywords_en;
+            $communities->meta_keywords_ru = $request->meta_keywords_ru;
+            $communities->meta_keywords_ar = $request->meta_keywords_ar;
             $communities->meta_description_en = $request->meta_description_en;
             $communities->meta_description_ru = $request->meta_description_ru;
             $communities->meta_description_ar = $request->meta_description_ar;

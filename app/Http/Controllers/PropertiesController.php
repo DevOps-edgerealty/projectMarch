@@ -810,8 +810,6 @@ class PropertiesController extends Controller
 
 
 
-
-
     public function apartment_for_rent($lang = '')
     {
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
@@ -1259,7 +1257,7 @@ class PropertiesController extends Controller
         $this->data['footerCommunities'] = $footerCommunities;
 
 
-        $properties = Property::with(['images', 'locationss','cityss'])->get();
+        $properties = Property::with(['images', 'locationss','cityss'])->orderBy('id', 'desc')->get();
 
         $this->data['properties'] = $properties;
 

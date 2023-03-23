@@ -13,6 +13,7 @@
         {{-- <title>{{$landingpageseo ?? ''->$meta_var }}</title>
         <meta name="description" content="{{$landingpageseo ?? ''->$meta_description_var}}"/>
         <meta name="keywords" content=" {{$landingpageseo ?? ''->$meta_keywords_var}} "/> --}}
+
         <style>
             html, body {
                 overflow-x: hidden;
@@ -53,7 +54,7 @@
             .sidebar {
                 position: absolute;
                 width: 25%;
-                height: 100vh;
+                height: 80vh;
                 top: 98px;
                 right: 0;
                 overflow: scroll;
@@ -88,7 +89,7 @@
             }
 
             listings {
-                height: ;
+                height: auto%;
                 overflow: auto;
                 padding-bottom: 0;
             }
@@ -252,7 +253,7 @@
     <section>
         <div class="container">
             <div class="row py-5"></div>
-            <div class="row mx-auto mb-3">
+            <div class="row mx-auto mb-0">
 
                 <div class="col-2 px-0 mt-3">
                     <a href="{{ url()->previous() }}" class="btn btn-outline-white btn-lg rounded-0 text-white bg-black d-none d-md-block d-lg-block">
@@ -290,7 +291,7 @@
     <div class='sidebar ' id="listing-card" style="display: none;" dir="rtl">
         <div id='listings' class='listings ' style="margin-top: 60px;">
             <div class="card rounded-0 bg-black " style="width: 100%;">
-                <div id="listing-image">
+                <div id="listing-image" class="px-1">
 
                 </div>
                 <div class="card-body">
@@ -337,31 +338,36 @@
     <div id='map' class="map" style='width: 100%; height: 100vh'></div>
 
 @else
-    <div class='sidebar ' id="listing-card" style="display: none;">
-        <div id='listings' class='listings ' style="margin-top: 60px;">
-            <div class="card rounded-0 bg-black " style="width: 100%;">
-                <div id="listing-image">
+    <div class='sidebar ' id="listing-card" style="display: none; margin-top: 75px">
+            <div id='listings' class='listings ' style="margin-top: 0px;">
+                <div class="card rounded-0 bg-black position-relative" style="width: 100%;">
+                    <div id="listing-image" class="px-1">
 
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title " >
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title my-0 py-0" >
 
-                    </h3>
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                        <h3 class="p-2 ps-0 bd-highlight" id="listing-price"></h3>
-                        <div class="p-2 bd-highlight float-right ms-auto" id="listing-btn"></div>
+                        </h3>
+                        <div class="d-flex flex-row bd-highlight mb-0">
+                            <h3 class="p-2 ps-0 bd-highlight" id="listing-price"></h3>
+                            <div class="p-2 bd-highlight float-right ms-auto" id="listing-btn"></div>
+                        </div>
+
+                        <p style="font-size: 1.3em" class="my-1" id="listing-location"></p>
+
+                        <p class="card-text m-0" id="listing-title"></p>
+
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <div class="p-2 ps-0 bd-highlight" id="listing-baths"></div>
+                            <div class="p-2 bd-highlight" id="listing-beds"></div>
+                            <div class="p-2 bd-highlight" id="listing-area"></div>
+                        </div>
+                        <p id="listing-description" class="" style="color: #848484 !important;"></p>
                     </div>
-                    <p style="font-size: 1.3em" class="mt-3" id="listing-location"></p>
-                    <p class="card-text m-0" id="listing-title"></p>
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                        <div class="p-0 bd-highlight" id="listing-beds"></div>
-                    </div>
-                    <p id="listing-description" class="" style="color: #848484 !important;"></p>
                 </div>
             </div>
+            <p id="listing_id" class="text-white" style="font-size: 1.2em !important;"></p>
         </div>
-        <p id="listing_id" class="text-white" style="font-size: 1.2em !important;"></p>
-    </div>
 
 
     <div class="bottombar fixed-bottom" id="listing-card-mobile" style="border-radius: 20px 20px 0px 0px; display: none;">
@@ -406,7 +412,7 @@
             </div> --}}
         </div>
     </div>
-    <div id='map' class="map" style='width: 100%; height: 100vh'></div>
+    <div id='map' class="map" style='width: 100%; height: 80vh'></div>
 @endif
 
     {{-- {{ json_encode($allfeatures) }} --}}

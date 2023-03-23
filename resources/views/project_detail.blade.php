@@ -340,9 +340,9 @@
 {{-- project Intro description desktop & mobile--}}
 @if ($langSeg == 'ar')
     <section class="desktop-show" dir="rtl">
-        <div class="container-fluid containerization mt-5" >
+        <div class="container-fluid containerization my-5" >
 
-             <div class="row">
+            <div class="row">
                 <div class="col-md-9">
                     <div class="row pe-4">
                         <div class="col-md-7">
@@ -359,18 +359,18 @@
 
                 </div>
 
-                <div class="col-md-3 text-left ps-5">
+                <div class="col-md-3 text-right ps-5">
                     <style>
                         .bullet_points {
                             font-size: 20px !important;
-                            text-align: left !important;
+                            text-align: right !important;
                         }
 
                         .point_highlighted {
                             font-weight: 800 !important;
                         }
                     </style>
-                    <span class="text-left">
+                    <span class="text-right">
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.startingfrom') }} </p>
                         <p class="m-0 p-0 bullet_points">
                             <div class="AED skill" style="display: block !important">
@@ -425,6 +425,18 @@
             </div>
 
 
+
+            {{-- <div class="row">
+                <div class="col-md-9 pe-5">
+                    <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
+                </div>
+
+                <div class="col-md-3 ps-5">
+
+
+                </div>
+            </div> --}}
+
             {{-- <div class="row">
                 <div class="col-md-12">
                     <h3 class="mb-4">Overview</h3>
@@ -435,36 +447,17 @@
                 <div class="col-md-12">
                     <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
                 </div>
-            </div> --}}
-
-
-        </div>
-    </section>
-
-
-
-    {{-- <section class="mobile-show" style="direction: rtl">
-        <div class="container">
-            <div class="row" style="margin-top: -40px; position: relative; padding-right: 10px; padding-left: 10px;">
-                <div class="col-lg-12 shadow p-3 mb-5  bg-black text-white border border-1 border-white" >
-                    <h3>{{$project_detail->$title_var}}</h3>
-                    <p><b>{{ trans('frontLang.location') }}</b> : {{$project_detail->locationz->$name_var}}</p>
-                    <p><b> {{ trans('frontLang.Developer') }} </b> : <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> {{$developers->$name_var}}</a></p>
-                    <p><b> {{ trans('frontLang.bedrooms') }}  </b> : {{$project_detail->bedrooms}} </p>
-                    <p><b> {{ trans('frontLang.completionYear') }} </b> : {{$project_detail->est_completion_en}}</p>
-                    <p><b> {{ trans('frontLang.communitytype') }} </b> :  تملك حر</p>
-                    <h3>{{ trans('frontLang.startingfrom') }} <b> :  {{$project_detail->project_price}} {{ trans('frontLang.AED') }} </b></h3>
-
-                    <div class="col-lg-12">
-                        <button class="first btn btn-white rounded-0 shadow-none btn-lg btn-block mt-4 " >{{ trans('frontLang.requestdetail') }} </button>
-                    </div>
-
-                </div>
             </div>
 
-
+            <div class="row my-5">
+                <div class="col-md-12 mx-auto text-center">
+                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-50 mx-auto testbutton" style="background-color: #000">
+                        {{ trans('frontLang.requestdetail') }}
+                    </a>
+                </div>
+            </div> --}}
         </div>
-    </section> --}}
+    </section>
 
     <section class="mobile-show" >
         <div class="container-fluid containerization" id="mobile-info-section" dir="rtl">
@@ -496,16 +489,17 @@
                         </div>
 
                         <div class="col-6">
-                            <a href="#mobile-info-section" >
-                                <div class="btn btn-outline-white w-100 rounded-0">
-                                    {{ trans('frontLang.Readmore') }}
-                                </div>
-                            </a>
+                                {{-- <div class="btn btn-outline-white w-100 rounded-0">
+                                    {{ trans('frontLang.readMore') }} --}}
+
+                                <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white w-100 rounded-0">
+                                    {{ trans('frontLang.requestdetail') }}
+                                </a>
+                                {{-- </div> --}}
                         </div>
                     </div>
 
                     <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
-                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}}</span></p>
                     <p> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
                     <p> {{ trans('frontLang.name') }} <br> <span class="fw-bold"> {{$project_detail->$title_var}}</span></p>
                     <p>
@@ -682,16 +676,18 @@
                         </div>
 
                         <div class="col-6">
-                            <a href="#mobile-info-section" >
-                                <div class="btn btn-outline-white w-100 rounded-0">
-                                    {{ trans('frontLang.Readmore') }}
-                                </div>
+                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white w-100 rounded-0">
+                                {{ trans('frontLang.requestdetail') }}
                             </a>
+                            {{-- <a href="#mobile-info-section" >
+                                <div class="btn btn-outline-white w-100 rounded-0">
+                                    {{ trans('frontLang.readMore') }}
+                                </div>
+                            </a> --}}
                         </div>
                     </div>
 
                     <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
-                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}}</span></p>
                     <p> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
                     <p> {{ trans('frontLang.name') }} <br> <span class="fw-bold"> {{$project_detail->$title_var}}</span></p>
                     <p>
@@ -726,13 +722,13 @@
         <div class="container-fluid containerization my-3">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="mb-3">Overview</h3>
+                    <h3 class="mb-3">{{ trans('frontLang.overview')}}</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <span style="color: grey !important; text-align: justify">
-                        {!! $project_detail->$description_var !!}
+                    <span style="color: grey !important; text-align: justify; ">
+                        {!! $project_detail->description_ar !!}
                     </span>
 
                     <style>
@@ -751,7 +747,7 @@
 
 
                     {{-- <span id="lessen" style="display: inline !important; font-size: 1em !important; line-height: 1.4 !important; font-weight: 300 !important; text-align: justify !important">
-                        {{ strip_tags(substr($project_detail->$description_var, 0, 200)) }} ...
+                        {{ strip_tags(substr($project_detail->$description_var, 0, 400)) }} ...
                     </span>
 
                     <br>
@@ -785,7 +781,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <span style="color: grey !important; text-align: justify">
+                    <span style="color: grey !important; text-align: justify; ">
                         {!! $project_detail->$description_var !!}
                     </span>
 
@@ -848,7 +844,7 @@
                 @foreach ($project_detail->images as $image)
                     <div>
                         <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}">
-                            <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height" style="">
+                            <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$image->image) }}" class="crousal-img-height" style="height: 200px !important;">
                         </a>
                     </div>
                 @endforeach
@@ -869,7 +865,7 @@
                     @foreach ($features as $feature)
                         @if($feature == $feature_id)
                             <div class="col-lg-12 mb-2" style="width: 100%; color: #fff !important;" >
-                                <i class="far fa-check-circle"></i> {!!  $feature_name[$name_var] !!}
+                                <i class="far fa-check-circle"></i> &nbsp; {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
                     @endforeach
@@ -887,7 +883,7 @@
                     @foreach ($features as $feature)
                         @if($feature == $feature_id)
                             <div class="col-lg-12 mb-2" style="width: 100%; color: #fff !important;" >
-                                <i class="far fa-check-circle"></i> {!!  $feature_name[$name_var] !!}
+                                <i class="far fa-check-circle"></i> &nbsp; {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
                     @endforeach
@@ -905,7 +901,7 @@
     @if ($project_detail->pro_status == '1')
         @if  ($project_detail->payment_en != '')
 
-            <section class="mobile-show" dir="rtl">
+            <section class="mt-5 mobile-show" dir="rtl">
                 <div class="container-fluid containerization mt-5">
                         <h3 class="text-left mb-4">
                             <b>
@@ -919,12 +915,16 @@
                                 }
 
                                 .inner {
+                                    background-color: #000 !important;
+                                    text-align: right !important;
+                                    color: #fff !important;
                                     padding-top: 0 !important;
                                     padding-bottom: 15 !important;
                                     font-weight: 400 !important;
                                     font-size: 1em !important;
                                 }
                                 .icon {
+                                    color: #fff !important;
                                     font-weight: 400 !important;
                                     font-size: 1em !important;
                                     margin-bottom: 0px !important;
@@ -957,12 +957,16 @@
                                 }
 
                                 .inner {
+                                    background-color: #000 !important;
+                                    text-align: left !important;
+                                    color: #fff !important;
                                     padding-top: 0 !important;
                                     padding-bottom: 15 !important;
                                     font-weight: 400 !important;
                                     font-size: 1em !important;
                                 }
                                 .icon {
+                                    color: #fff !important;
                                     font-weight: 400 !important;
                                     font-size: 1em !important;
                                     margin-bottom: 0px !important;
@@ -1252,7 +1256,7 @@
         </div>
     </section>
 
-    <section class="mt-5 mobile-show"  dir="rtl">
+    {{-- <section class="mt-5 mobile-show"  dir="rtl">
         <div class="container">
             <div class="row">
                 <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
@@ -1268,10 +1272,10 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
-    <section class="mt-5 mb-5"  dir="rtl">
+    <section class="mt-5 mb-5 desktop-show"  dir="rtl">
         <div class="container-fluid containerization">
             <hr>
             <div class="row">
@@ -1303,6 +1307,7 @@
 
 @else
 
+    {{-- AMENITIES --}}
     <section class="mt-5 mb-5 desktop-show">
         <div class="container-fluid containerization my-5">
             <div class="row">
@@ -1323,6 +1328,7 @@
         </div>
     </section>
 
+    {{-- PAYMENT PLAN --}}
     @if ( $project_detail->pro_status == '1')
         @if  ($project_detail->payment_en != '')
             <section class="mt-4 desktop-show">
@@ -1361,7 +1367,7 @@
     @endif
 
 
-
+    {{-- NEARBY PLACES --}}
     <section class="desktop-show mt-5 mb-5 ">
         <div class="container-fluid containerization">
             <div class="row">
@@ -1458,13 +1464,12 @@
     </section> --}}
 
 
+
+    {{-- COMMUNITIES --}}
     <section class="mb-5 desktop-show">
         <div class="container-fluid containerization">
-
             <hr>
-
             <div class="row mb-5">
-
                 <div class="col-md-6">
                     <style>
                         iframe{
@@ -1475,13 +1480,12 @@
                     <h3 class="my-4"> {{ trans('frontLang.locationMap') }}</h3>
                     {!!html_entity_decode($project_detail->map_embed_code)!!}
                 </div>
-
                 <div class="col-md-6">
                     <h3 class="my-4">{{ trans('frontLang.Aboutthecoomunity') }}</h3>
-
                     <style>
                         p {
                             text-align: justify !important;
+                            line-height: 1.8 !important;
                         }
                     </style>
                     {!!html_entity_decode($project_detail->$community_var)!!}
@@ -1602,11 +1606,6 @@
         </div>
     </div>
 @endif
-
-
-
-
-
 
 <script>
     $('.autoplay').slick({

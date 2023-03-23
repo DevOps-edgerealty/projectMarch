@@ -254,7 +254,7 @@
     <section>
         <div class="container">
             <div class="row py-5"></div>
-            <div class="row mx-auto mb-3">
+            <div class="row mx-auto mb-0">
 
                 <div class="col-2 px-0 mt-3">
                     <a href="{{ url()->previous() }}" class="btn btn-outline-white btn-lg rounded-0 text-white bg-black d-none d-md-block d-lg-block">
@@ -292,7 +292,7 @@
     <div class='sidebar ' id="listing-card" style="display: none;" dir="rtl">
         <div id='listings' class='listings ' style="margin-top: 60px;">
             <div class="card rounded-0 bg-black " style="width: 100%;">
-                <div id="listing-image">
+                <div id="listing-image" class="px-1">
 
                 </div>
                 <div class="card-body">
@@ -342,7 +342,7 @@
     <div class='sidebar ' id="listing-card" style="display: none; margin-top: 75px">
         <div id='listings' class='listings ' style="margin-top: 0px;">
             <div class="card rounded-0 bg-black position-relative" style="width: 100%;">
-                <div id="listing-image">
+                <div id="listing-image" class="px-1">
 
                 </div>
                 <div class="card-body">
@@ -438,7 +438,7 @@
             </div> --}}
         </div>
     </div>
-    <div id='map' class="map" style='width: 100%; height: 100vh'></div>
+    <div id='map' class="map" style='width: 100%; height: 80vh'></div>
 @endif
 
     {{-- {{ json_encode($allfeatures) }} --}}

@@ -129,12 +129,12 @@
                                     </div>
                                     <div class="form-group row">
 
-                                        <div class="col-sm-6">
+                                        {{-- <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Contract No</label>
                                             <div class="col-sm-12">
                                                 {!! Form::text('contract_no','', array('class' => 'form-control','id'=>'phone','required'=>'')) !!}
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Trn Number</label>
                                             <div class="col-sm-12">
@@ -175,7 +175,7 @@
                                         </div>
 
                                     </div>
-                                    
+
                                     <div class="form-group row">
 
                                         <div class="col-sm-6">
@@ -239,8 +239,8 @@
                                         </div>
 
                                     </div>
-                                    
-                                    
+
+
 
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>

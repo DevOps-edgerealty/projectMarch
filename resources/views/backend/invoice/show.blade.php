@@ -65,7 +65,7 @@
                                 <th>SNo</th>
                                 <th>Title</th>
                                 <th>Invoice No</th>
-                                <th>Contract No</th>
+                                {{-- <th>Contract No</th> --}}
                                 <th class="text-center" style="width:200px;">Options</th>
                             </tr>
                         </thead>
@@ -82,9 +82,9 @@
                                 <td>
                                     {!! $invoices->invoice_no !!}
                                 </td>
-                                <td>
+                                {{-- <td>
                                     {!! $invoices->contract_no !!}
-                                </td>
+                                </td> --}}
                                 <td>
                                     {{-- <a href="" class="btn btn-sm btn-primary" ><small>View</small>  </a> --}}
                                     <a href="{{url('admin/invoice/edit').'/'. $invoices->id }}" class="btn btn-sm btn-info" ><i class="fas fa-edit"></i> Edit </a>

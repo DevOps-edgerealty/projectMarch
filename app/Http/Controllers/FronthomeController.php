@@ -959,10 +959,6 @@ class FronthomeController extends Controller
 
     public function check_invoice($lang = "")
     {
-
-
-
-
         if ($lang != "") {
             // Set Language
             App::setLocale($lang);
@@ -1011,27 +1007,23 @@ class FronthomeController extends Controller
 
 
 		$name = $request->name;
+
 		$invoice_no = $request->invoice_no;
-		$contract_no = $request->contract_no;
 
-		$invoice = Invoice::where('invoice_no', $invoice_no)->where('contract_no',$contract_no)->first();
+		// $contract_no = $request->contract_no;
 
+		// $invoice = Invoice::where('invoice_no', $invoice_no)->where('contract_no',$contract_no)->first();
+		$invoice = Invoice::where('invoice_no', $invoice_no)->first();
 
 
         if ( $invoice )
         {
-
-
 			$invoice_details = Invoice::where('invoice_no', $invoice_no)->first();
 
-
 			return view('invoice-2',compact("invoice_details"));
-
         }
-
         else
         {
-
             return Redirect::to('/invoice')->with('message','Your Invoice is Not Available !');
 
         }

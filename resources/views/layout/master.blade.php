@@ -200,7 +200,7 @@
 
 
             <!-- Pinterest Tag -->
-            <script>h
+            <script>
                 !function(e){if(!window.pintrk){window.pintrk = function () {
                 window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
                 n=window.pintrk;n.queue=[],n.version="3.0";var
@@ -233,15 +233,19 @@
 
 
         <style>
+
+            html {
+                overflow-x: hidden;
+            }
+
             .mobile_bottom {
                 display: none;
-
             }
 
             @media (min-width: 600px) {
-                    .lang {
-                        min-width: 4rem !important;
-                        max-width: 8rem !important;
+                .lang {
+                    min-width: 4rem !important;
+                    max-width: 8rem !important;
                 }
 
             }
@@ -308,11 +312,17 @@
                 text-transform: capitalize !important;
                 font-size: 16px !important;
                 text-decoration: none !important;
+                color: #ccc !important;
             }
 
             .accordion-button, .collapsed {
-                background-color: #000 !important;
-                color: #fff !important;
+                background-color: #1c1c1c !important;
+                color: #ccc !important;
+            }
+
+            .btn {
+                border-radius: 0 !important;
+                border: 0.5px #cccccc solid !important;
             }
 
 
@@ -337,7 +347,7 @@
 
 	</head>
 
-	<body class="bg-black text-white">
+	<body class=" text-white" style="background-color: #1c1c1c !important; color: #cccccc !important;">
 
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="dWIUAMD1"></script>
@@ -353,13 +363,13 @@
 
         <div class="mobile_bottom bg-transparent">
 
-            <div class="mb-2" style="">
-                <a href="#" style=" width: 70% !important; font-size: 1em !important;" data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"
-                    class="btn btn-outline-white bg-black rounded-pill text-white mx-auto text-center py-3">
+            {{-- <div class="mb-2" style="">
+                <a href="#" style=" width: 60% !important; font-size: 1em !important;" data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"
+                    class="btn btn-outline-white bg-black rounded-pill text-white mx-auto text-center py-2">
                     <i class="fa fa-phone-alt  "></i> &nbsp;
                     {{ trans('frontLang.requestCallBack') }}
                 </a>
-            </div>
+            </div> --}}
 
 
 

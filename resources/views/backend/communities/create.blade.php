@@ -212,7 +212,7 @@
 
                                     <div class="col-sm-12">
                                         <label for="exampleInputName">Meta Title [ العربية ]</label>
-                                        {!! Form::text('meta_title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'meta_title_en','required'=>'')) !!}
+                                        {!! Form::text('meta_title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'meta_title_ar','required'=>'')) !!}
                                     </div>
 
 
@@ -273,7 +273,7 @@
 
                                     <div class="col-sm-12">
                                         <label for="exampleInputName">Meta Discription [ العربية ]</label>
-                                        {!! Form::text('meta_discription_ar','', array('placeholder' => '','class' => 'form-control','id'=>'meta_discription_en','required'=>'')) !!}
+                                        {!! Form::text('meta_discription_ar','', array('placeholder' => '','class' => 'form-control','id'=>'meta_discription_ar','required'=>'')) !!}
                                     </div>
 
 

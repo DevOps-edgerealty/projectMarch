@@ -181,9 +181,10 @@ else
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
+
                         @foreach ($project as $projects)
                         <div class="col-lg-4 mb-5">
-                            <div class="card bg-black text-white"  style="height: 625px !important;">
+                            <div class="card bg-black text-white"  style="height: 575px !important;">
                                 @if ($projects->project_status == '1')
                                     <div class="communities-newlaunch">إطلاق <br> جديد </div>
                                 @elseif ($projects->project_status == '0')
@@ -199,29 +200,29 @@ else
 
 
                                 <div class="card-body" style="padding: 0.5rem">
-
                                     @if ($projects->project_price == '')
-                                        <b class="my-3"> Prices On Request</b>
+                                        <b class="my-3" style="font-size: 1.5rem !important;"> Prices On Request</b>
                                     @else
-                                        <h5 class="my-3" style="font-size: 1.3rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
-                                    @endif
+                                        <h5  class="my-3 USD skill" style="font-size: 1.5rem !important; display: none"> <span style="color: #fff"> {{$projects->project_price_usd}}  $ </span></h5>
+                                        <h5  class="my-3 AED skill" style="font-size: 1.5rem !important; display: block !important"> <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }} </span></h5>
 
+                                    @endif
                                     <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" >
-                                        <h5 class="card-title" style="color: #fff !important;">
+                                        <h5 class="card-title fw-light" style="color: #fff !important;">
                                             {{$projects->$project_title_var}}
                                         </h5>
                                     </a>
 
-
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;"> {{$projects->locationz->$name_var}}</p>
 
                                     <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Developer') }} : {{$projects->developer->$name_var}}</p>
 
-                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Developer') }} : {{$projects->est_completion_en}}</p>
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Handover') }} : {{$projects->est_completion_en}}</p>
 
                                     <p class="card-text">
 
                                         @foreach ($projects->project_types as $project_type)
-                                            {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}
+                                        {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}
                                         @endforeach
                                     </p>
 
@@ -229,7 +230,7 @@ else
                                 <div class="card-footer text-muted" style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
-                                            <td style="text-align: center;border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                            <td style="text-align: center;border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
                                             <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>
@@ -317,7 +318,7 @@ else
 
                 </div>
                 <div class="col-lg-12 mt-5 text-center">
-                    {!! $project->links() !!}
+                    {!! $project->onEachSide(1)->links() !!}
                 </div>
 
             </div>
@@ -393,9 +394,10 @@ else
                                         <b class="my-3" style="font-size: 1.5rem !important;"> Prices On Request</b>
                                     @else
                                         @if ($langSeg == 'ru')
-                                            <h5  class="my-3" style="font-size: 1.5rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price_usd}} $</span></h5>
+                                            <h5  class="my-3 USD skill" style="font-size: 1.5rem !important;"> <span style="color: #fff"> $ {{$projects->project_price_usd}} </span></h5>
                                         @else
-                                            <h5  class="my-3" style="font-size: 1.5rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
+                                            <h5  class="my-3 USD skill" style="font-size: 1.5rem !important; display: none"> <span style="color: #fff"> $ {{$projects->project_price_usd}} </span></h5>
+                                            <h5  class="my-3 AED skill" style="font-size: 1.5rem !important; display: block !important"> <span style="color: #fff"> {{ trans('frontLang.AED') }} {{$projects->project_price}} </span></h5>
                                         @endif
 
                                     @endif
@@ -409,12 +411,12 @@ else
 
                                     <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Developer') }} : {{$projects->developer->$name_var}}</p>
 
-                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Developer') }} : {{$projects->est_completion_en}}</p>
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Handover') }} : {{$projects->est_completion_en}}</p>
 
                                     <p class="card-text">
 
                                         @foreach ($projects->project_types as $project_type)
-                                        {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}
+                                            {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}
                                         @endforeach
                                     </p>
 
@@ -509,12 +511,6 @@ else
 
                     </div>
 
-
-
-
-
-
-
                 </div>
                 <div class="col-lg-12 mt-5">
                     <style>
@@ -546,7 +542,8 @@ else
                             color: #000 !important;
                         }
                     </style>
-                    {!! $project->appends($_GET)->links() !!}
+                    {{-- {!! $project->appends($_GET)->links() !!} --}}
+                    {!! $project->onEachSide(1)->links() !!}
                 </div>
 
             </div>

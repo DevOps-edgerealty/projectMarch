@@ -135,12 +135,12 @@
                                     </div>
                                     <div class="form-group row">
 
-                                        <div class="col-sm-6">
+                                        {{-- <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Contract No</label>
                                             <div class="col-sm-12">
                                                 {!! Form::text('contract_no',$invoice->contract_no, array('class' => 'form-control','id'=>'phone','required'=>'')) !!}
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">TRN Number</label>
                                             <div class="col-sm-12">

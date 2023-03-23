@@ -89,10 +89,10 @@ $name_var = "name_" . trans('backLang.boxCode');
             @foreach ($developer as $developers)
 
                 <div class="col-lg-3 mb-4">
-                    <div class="card border border-1 border-white rounded-2">
+                    <div class="card border border-1 border-white rounded-0">
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 
-                            <img src="{{ URL::asset('uploads/developers/'.$developers->id.'/'.$developers->image) }}" style="width: 100%" class="img-fluid" alt="Listing">
+                            <img src="{{ URL::asset('uploads/developers/'.$developers->id.'/'.$developers->image) }}" style="width: 100%; border-radius: 0 !important;" class=" rounded-0" alt="Listing">
 
                             <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>

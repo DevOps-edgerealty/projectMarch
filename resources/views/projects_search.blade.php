@@ -236,7 +236,8 @@ else
                                     @if ($projects->project_price == '')
                                         <b class="my-3"> Prices On Request</b>
                                     @else
-                                        <h5 class="my-3" style="font-size: 1.3rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
+                                        <h5  class="my-3 USD skill" style="font-size: 1.5rem !important; display: none"> <span style="color: #fff"> $ {{$projects->project_price_usd}} </span></h5>
+                                        <h5 class="my-3 AED skill" style="font-size: 1.3rem !important; display: block !important;"> <span style="color: #fff">  {{ trans('frontLang.AED') }} {{$projects->project_price}}</span></h5>
                                     @endif
 
                                     <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" >
@@ -422,9 +423,10 @@ else
                                         <b class="my-3" style="font-size: 1.5rem !important;"> Prices On Request</b>
                                     @else
                                         @if ($langSeg == 'ru')
-                                            <h5  class="my-3" style="font-size: 1.5rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price_usd}} $</span></h5>
+                                            <h5  class="my-3" style="font-size: 1.5rem !important;"> <span style="color: #fff"> $ {{$projects->project_price_usd}} </span></h5>
                                         @else
-                                            <h5  class="my-3" style="font-size: 1.5rem !important;">{{ trans('frontLang.startingfrom') }} <span style="color: #fff">  {{$projects->project_price}} {{ trans('frontLang.AED') }}</span></h5>
+                                            <h5  class="my-3 USD skill" style="font-size: 1.5rem !important; display: none"> <span style="color: #fff"> $ {{$projects->project_price_usd}} </span></h5>
+                                            <h5  class="my-3 AED skill" style="font-size: 1.5rem !important; display: block !important;"> <span style="color: #fff">  {{ trans('frontLang.AED') }} {{$projects->project_price}}</span></h5>
                                         @endif
 
                                     @endif

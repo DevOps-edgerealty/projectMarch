@@ -23,7 +23,7 @@
 
 <style>
     p{
-        line-height: 1.6 !important;
+        line-height: 1.8 !important;
     }
     .nav-pills .nav-link .nav-pills .show > .nav-link {
         border: 0.5px solid #fff !important;
@@ -171,15 +171,10 @@
                     <div class="text-white">
                         <h3 class="mt-5 mb-5"  style="text-transform: uppercase;">{{$PageHeading}}</h3><br>
                         <div class="row search-width desktop-show" >
-
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
 
     <!-- Background image -->
@@ -201,17 +196,16 @@
     </style>
 
     <section class="my-5" style="direction: rtl">
-        <div class="container">
+        <div class="container-fluid containerization">
             <div class="row">
-                <div class="col-lg-12 mb-4">
+                <div class="col-lg-12 mb-0">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item bg-black text-white border border-1 border-white"><a href="{{URL('ar/home')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
-                        <li class="breadcrumb-item active text-white border border-1 border-white" aria-current="page">{{$PageHeading}}</li>
+                        <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class="text-white"><i class="fas fa-home text-white"> </i> {{ trans('frontLang.Home') }}</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">{{$PageHeading}}</li>
                         </ol>
                     </nav>
                 </div>
-
             </div>
             <div class="row desktop-show">
                 <div class="col-lg-12">
@@ -520,7 +514,7 @@
                 </div>
             </div>
 
-            <h3 class="text-left">{{$PageHeading}}</h3>
+            <h3 class="text-left mt-4">{{$PageHeading}}</h3>
             <P style="font-size: 16px;line-height: 25px;">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
 
         </div>
@@ -740,8 +734,6 @@
                                                         <option value="3">{{ trans('frontLang.Commercial') }}</option>
                                                         <option value="7">{{ trans('frontLang.Duplex') }}</option>
                                                         <option value="2">{{ trans('frontLang.Villa') }}</option>
-
-
                                                     </select>
                                                 </div>
 
@@ -865,495 +857,15 @@
 
 
 
-{{-- CARD SECTION ---- ENG - AR - RU --}}
-@if ($langSeg == 'ar')
-    <section class="mt-4 mb-5" >
-        <div class="container-fluid ">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        @if($properties->total() == 0)
 
-                            <div class="col-lg-8 offset-md-2">
-
-                                <form class="contact-form" method="post" action="{{URL('/request_detail/submit')}}">
-                                    @csrf
-                                    @honeypot
-                                    <div class=" mb-4">
-                                        <input style="direction: rtl" type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                                    </div>
-
-                                    <!-- Phone input -->
-                                    <div class="mb-4">
-                                        <input style="direction: rtl" type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                                    </div>
-
-                                    <!-- Email input -->
-                                    <div class="mb-4">
-                                        <input style="direction: rtl" type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
-                                    </div>
-                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block rounded-0 mb-4">
-                                        {{ trans('frontLang.submit') }}
-                                    </button>
-                                </form>
-                            </div>
-
-                        @else
-
-                        @foreach ($properties as $property)
-                        <div class="col-lg-4 mb-5" style="direction: rtl;">
-                            <div class="card rounded-0"  style="height: 500px !important;">
-                                <div class="communities-newlaunch"></div>
-                                @foreach($property->images  as $single_img)
-                                    @if($property->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                        <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="Listing">
-                                    </a>
-                                    @endif
-                                @endforeach
-
-                                @if ($langSeg == 'ar')
-                                    <div class="card-body  px-3 py-0" style="direction: rtl">
-
-                                        @if ($property->type_id == '1')
-                                            <h5 class="my-3" style="font-size: 0.95vw !important"> <b>{{ trans('frontLang.Price') }} <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
-                                        @else
-
-                                            <h5 class="my-3" style="font-size: 0.95vw !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
-                                        @endif
-
-
-                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <h6 class="card-title" style="color: #848484 !important">
-                                                {{ $property->$title_var }}
-                                            </h6>
-                                        </a>
-
-
-                                        <!--<p>-->
-                                        <!--    {{ $property->locationss->$name_var }} -->
-                                        <!--</p>-->
-
-
-                                        {{-- <hr> --}}
-
-
-                                        <div class="row" >
-                                            <div class="col-lg-12" style="display:block;" >
-                                                <span class=" ps-0 pe-2" style="color: #848484; font-size: 0.95vw !important">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
-
-                                                <span class=" px-2" style="color: #848484; font-size: 0.95vw !important">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
-
-                                                <span class=" px-2" style="color: #848484; font-size: 0.95vw !important"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
-
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; direction: rtl">
-                                        <table style="width: 100%">
-                                            <tr>
-                                                <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff; font-size: 0.95vw !important"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important; font-size: 0.95vw !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                @else
-                                    <div class="card-body  px-3 py-0" style="">
-
-                                        @if ($property->type_id == '1')
-                                            @if ($langSeg == 'ru')
-                                                <h5 class="my-3" style="font-size: 1.2vw !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
-                                            @else
-                                                <h5 class="my-3" style="font-size: 1.2vw !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
-                                            @endif
-
-                                        @else
-
-                                            <h5 class="my-3" style="font-size: 1.2vw !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
-                                        @endif
-
-                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <h6 class="card-title" style="color: #848484; font-size: 0.95vw !important">{{ $property->$title_var }}</h6>
-                                        </a>
-                                        <!--<p class="fw-light"> {{ $property->locationss->$name_var }} </p>-->
-
-
-
-                                        {{-- <hr> --}}
-                                        <div class="row" >
-                                            <div class="col-lg-12" style="display:block;" >
-                                                <span class="ps-0 pe-2" style="color: #848484; font-size: 0.95vw !important">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
-
-                                                <span class="px-2" style="color: #848484; font-size: 0.95vw !important">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
-
-                                                <span class="px-2" style="color: #848484; font-size: 0.95vw !important"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
-
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; ">
-                                        <table style="width: 100%">
-                                            <tr>
-                                                <td style="text-align: center;border-right: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff; font-size: 0.95vw !important"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important; font-size: 0.95vw !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                @endif
-
-
-                            </div>
-                        </div>
-
-                        {{-- MODAL FOR REQUEST DETAILS - AR --}}
-                        <div class="modal fade" id="exampleModal-{{ $property->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
-                                        <button type="button" class="btn-close" style="margin: 0;" data-mdb-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body ">
-                                        <div class="row">
-                                            <div class="col-lg-6 mb-3">
-                                                @foreach($property->images  as $single_img)
-                                                    @if($property->images->first()==$single_img)
-                                                        <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}"  class="modal-img-height" alt="{{$property->$title_var}}">
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <h6 class="text-center mb-4">{{$property->$title_var}}</h6>
-
-
-                                                <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_property/submit')}}">
-                                                    @csrf
-                                                    @honeypot
-                                                    <input type="hidden" name="property" value="{{$property->id}}" />
-                                                    <div class=" mb-4">
-                                                        <input style="direction: rtl" type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                                                    </div>
-
-                                                    <!-- Email input -->
-                                                    <div class="mb-4">
-                                                        <input style="direction: rtl" type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                                                    </div>
-
-                                                    <!-- Email input -->
-                                                    <div class="mb-4">
-                                                        <input style="direction: rtl" type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
-                                                    </div>
-                                                    <button class="submit btn btn-outline-white btn-lg btn-block" type="submit">
-                                                        <i class="loading-icon fa-lg fas fa-spinner text-white fa-spin"></i> &nbsp;
-
-                                                        {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
-
-                                                        <span class="btn-txt">
-                                                            {{ trans('frontLang.submit') }}
-                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                    </div>
-
-                    {!! $properties->links() !!}
-
-                    @endif
-                </div>
-
-            </div>
-            <!-- Button trigger modal -->
-
-        </div>
-
-        {{-- SCRIPT FOR SUBMIT BUTTON --}}
-        <script>
-            $(document).ready(function() {
-            $("#getInTouch").submit(function() {
-                $(".result").text("");
-                $(".loading-icon").removeClass("d-none");
-                $(".submit").attr("disabled", true);
-                $(".btn-txt").text("Processing ...");
-            });
-            });
-        </script>
-
-    </section>
-
-
-
-
-    <section class="mt-4 mb-5" >
-        <div class="container-fluid ">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        @if($properties->total() == 0)
-
-                            <div class="col-lg-8 offset-md-2">
-
-                                <form class="contact-form" method="post" action="{{URL('/request_detail/submit')}}">
-                                    @csrf
-                                    @honeypot
-                                    <div class=" mb-4">
-                                        <input style="direction: rtl" type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-                                    </div>
-
-                                    <!-- Phone input -->
-                                    <div class="mb-4">
-                                        <input style="direction: rtl" type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-                                    </div>
-
-                                    <!-- Email input -->
-                                    <div class="mb-4">
-                                        <input style="direction: rtl" type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-                                    </div>
-
-                                    <button type="submit" class="btn btn-outline-white btn-lg btn-block rounded-0 mb-4">
-                                        {{ trans('frontLang.submit') }}
-                                    </button>
-                                </form>
-                            </div>
-
-                        @else
-
-                        @foreach ($properties as $property)
-                        <div class="col-lg-4 mb-5" style="direction: rtl;">
-                            <div class="card rounded-0"  style="height: 500px !important;">
-                                <div class="communities-newlaunch"></div>
-                                @foreach($property->images  as $single_img)
-                                    @if($property->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" ><img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="Listing"></a>
-                                    @endif
-                                @endforeach
-
-                                @if ($langSeg == 'ar')
-                                    <div class="card-body  px-3 py-0" style="direction: rtl">
-
-                                        @if ($property->type_id == '1')
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b> {{ trans('frontLang.AED') }} <span style="color: ;">  {{ number_format($property->price) }}</span></b></h5>
-                                        @else
-
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b> <span style="color: ;">  {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}</b> </span></h5>
-                                        @endif
-
-
-                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <h6 class="card-title" style="color: #848484 !important">
-                                                {{ $property->$title_var }}
-                                            </h6>
-                                        </a>
-
-
-                                        <!--<p>-->
-                                        <!--    {{ $property->locationss->$name_var }} -->
-                                        <!--</p>-->
-
-
-                                        {{-- <hr> --}}
-
-
-                                        <div class="row" >
-                                            <div class="col-lg-12" style="display:block;" >
-                                                <span class="font-size-16 ps-0 pe-2" style="color: #848484;">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">.</span>
-
-                                                <span class="font-size-16 px-2" style="color: #848484;">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">.</span>
-
-                                                <span class="font-size-16 px-2" style="color: #848484;"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
-
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; direction: rtl">
-                                        <table style="width: 100%">
-                                            <tr>
-                                                <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                @else
-                                    <div class="card-body  px-3 py-0" style="">
-
-                                        @if ($property->type_id == '1')
-                                            @if ($langSeg == 'ru')
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
-                                            @else
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.Price') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</span></b></h5>
-                                            @endif
-
-                                        @else
-
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.yearly') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }}</b> </span></h5>
-                                        @endif
-
-                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <h6 class="card-title" style="color: #848484">{{ $property->$title_var }}</h6>
-                                        </a>
-                                        <!--<p class="fw-light"> {{ $property->locationss->$name_var }} </p>-->
-
-
-
-                                        {{-- <hr> --}}
-                                        <div class="row" >
-                                            <div class="col-lg-12" style="display:block;" >
-                                                <span class="font-size-16 ps-0 pe-2" style="color: #848484;">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">.</span>
-
-                                                <span class="font-size-16 px-2" style="color: #848484;">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">.</span>
-
-                                                <span class="font-size-16 px-2" style="color: #848484;"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
-
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; ">
-                                        <table style="width: 100%">
-                                            <tr>
-                                                <td style="text-align: center;border-right: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                @endif
-
-
-                            </div>
-                        </div>
-
-                        {{-- MODAL FOR REQUEST DETAILS - AR --}}
-                        <div class="modal fade" id="exampleModal-{{ $property->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
-                                        <button type="button" class="btn-close" style="margin: 0;" data-mdb-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body ">
-                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
-                                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
-                                                {{ trans('frontLang.requestdetail') }}
-                                            </p>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6 mb-3">
-                                                @foreach($property->images  as $single_img)
-                                                    @if($property->images->first()==$single_img)
-                                                        <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}"  class="modal-img-height" alt="{{$property->$title_var}}">
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <h6 class="text-center mb-4">{{$property->$title_var}}</h6>
-
-
-                                                <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_property/submit')}}">
-                                                    @csrf
-                                                    @honeypot
-                                                    <input type="hidden" name="property" value="{{$property->id}}" />
-                                                    <div class=" mb-4">
-                                                        <input style="direction: rtl" type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
-                                                    </div>
-
-                                                    <!-- Email input -->
-                                                    <div class="mb-4">
-                                                        <input style="direction: rtl" type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
-                                                    </div>
-
-                                                    <!-- Email input -->
-                                                    <div class="mb-4">
-                                                        <input style="direction: rtl" type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
-                                                    </div>
-                                                    <button class="submit btn btn-outline-white btn-lg btn-block" type="submit">
-                                                        <i class="loading-icon fa-lg fas fa-spinner text-white fa-spin"></i> &nbsp;
-
-                                                        {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
-
-                                                        <span class="btn-txt">
-                                                            {{ trans('frontLang.submit') }}
-                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                    </div>
-
-                    {!! $properties->links() !!}
-
-                    @endif
-                </div>
-            </div>
-            <!-- Button trigger modal -->
-
-        </div>
-
-        {{-- SCRIPT FOR SUBMIT BUTTON --}}
-        <script>
-            $(document).ready(function() {
-            $("#getInTouch").submit(function() {
-                $(".result").text("");
-                $(".loading-icon").removeClass("d-none");
-                $(".submit").attr("disabled", true);
-                $(".btn-txt").text("Processing ...");
-            });
-            });
-        </script>
-
-    </section>
-
-
-@else
     <section class="mobile-show mt-4 mb-5">
         <div class="container ">
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
+
+                        {{-- SHOW FORM IF NO PROPERTIES --}}
                         @if($properties->total() == 0)
 
                             <div class="col-lg-8 offset-md-2">
@@ -1385,7 +897,6 @@
                             </div>
 
                         @else
-
                             @foreach ($properties as $property)
                             <div class="col-lg-4 mb-5">
                                 <div class="card rounded-0" style="height: 500px !important;">
@@ -1401,14 +912,15 @@
                                         <div class="card-body  px-3 py-0" style="direction: rtl">
 
                                             @if ($property->type_id == '1')
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b> {{ trans('frontLang.AED') }} <span style="color:;">  {{ number_format($property->price) }} </span></b></h5>
+                                                <h5 class="my-3 USD skill_mobile" style="font-size: 1.4rem !important; display: none;"> <b> <span style="color:;">  {{ number_format($property->price_usd) }} $ </span></b></h5>
+                                                <h5 class="my-3 AED skill_mobile" style="font-size: 1.4rem !important; display: block ;"> <b> {{ trans('frontLang.AED') }} <span style="color:;">  {{ number_format($property->price) }} </span></b></h5>
                                             @else
-
-                                                <h5 class="my-3" style="font-size: 1.4rem !important"> <b> <span style="color:;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }} {{ trans('frontLang.yearly') }}</b> </span></h5>
+                                                <h5 class="my-3 USD skill_mobile" style="font-size: 1.4rem !important; display: none"> <b> <span style="color:;">  {{ number_format($property->price_usd) }}  $  {{ trans('frontLang.yearly') }}</b> </span></h5>
+                                                <h5 class="my-3 AED skill_mobile" style="font-size: 1.4rem !important; display: block ;"> <b> <span style="color:;">  {{ number_format($property->price) }} {{ trans('frontLang.AED') }} {{ trans('frontLang.yearly') }}</b> </span></h5>
                                             @endif
 
                                             <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                                <p class="card-title" style="color: #848484 !important;">{{ $property->$title_var }}</p>
+                                                <p class="card-title" style="color: #848484 !important;">{{ $property->$title_ar }}</p>
                                             </a>
                                             <!--<p><i class="fas fa-map-marker-alt fw-light" style="color: green"> </i> {{ $property->locationss->$name_var }} </p>-->
 
@@ -1429,7 +941,7 @@
 
                                         </div>
 
-                                        <div class="card-footer text-muted" style="padding: 0.75rem 0rem; direction: rtl">
+                                        <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; direction: rtl">
                                             <table style="width: 100%">
                                                 <tr>
                                                     <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
@@ -1444,9 +956,11 @@
 
                                             @if ($property->type_id == '1')
                                                 @if ($langSeg == 'ru')
-                                                    <h5 class="my-3" style="font-size: 1.4rem !important"> <b> <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
+                                                    <h5 class="my-3 USD skill" style="font-size: 1.4rem !important; display: none" > <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
+                                                    <h5 class="my-3 AED skill" style="font-size: 1.4rem !important; display: block !important;"> <b> {{ trans('frontLang.AED') }}  <span style="color: #fff;">  {{ number_format($property->price) }}</span></b></h5>
                                                 @else
-                                                    <h5 class="my-3" style="font-size: 1.4rem !important"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} </span></b></h5>
+                                                    <h5 class="my-3 USD skill" style="font-size: 1.4rem !important; display: none" > <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }} </span></b></h5>
+                                                    <h5 class="my-3 AED skill" style="font-size: 1.4rem !important; display: block !important;"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} </span></b></h5>
                                                 @endif
 
                                             @else
@@ -1658,7 +1172,7 @@
 
                         @foreach ($properties as $property)
                         <div class="col-lg-4 mb-5 px-1">
-                            <div class="card rounded-0" style="height: 500px !important;">
+                            <div class="card rounded-0" style="height: 550px !important;">
 
                                 <div class="communities-newlaunch"></div>
                                 @foreach($property->images  as $single_img)
@@ -1671,14 +1185,16 @@
                                     <div class="card-body  px-3 py-0" style="direction: rtl">
 
                                         @if ($property->type_id == '1')
-                                            <h5 class="my-3" style=" font-size: 1vw !important;"> <b> <span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} </span></b></h5>
+                                            <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> <span style="color:;"> $ {{ number_format($property->price_usd) }} </span></b></h5>
+                                            <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> <span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} </span></b></h5>
                                         @else
 
-                                            <h5 class="my-3" style=" font-size: 1vw !important;"> <b><span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
+                                            <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b><span style="color:;"> $ {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
+                                            <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b><span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
                                         @endif
 
                                         <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <p class="card-title" style="color: #848484 !important; font-size: 0.75vw !important;">{{ $property->$title_var }}</p>
+                                            <p class="card-title" style="color: #848484 !important; font-size: 0.95vw !important;">{{ $property->$title_var }}</p>
                                         </a>
                                         <!--<p><i class="fas fa-map-marker-alt fw-light" style="color: green"> </i> {{ $property->locationss->$name_var }} </p>-->
 
@@ -1689,9 +1205,9 @@
                                             <div class="col-lg-12" style="display:block;" >
                                                 <span class="ps-0 pe-2" style="color: #848484;margin-right: 15px;  font-size: 0.75vw !important;"> <i class="fas fa-bed"></i>  {{$property->bedrooms}} {{ trans('frontLang.bedrooms') }} </span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.75vw !important;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} {{ trans('frontLang.bathrooms') }}</span> <span style="color: #848484">&#x2022;</span>
+                                                <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.95vw !important;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} {{ trans('frontLang.bathrooms') }}</span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.75vw !important;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.95vw !important;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
 
                                             </div>
 
@@ -1699,29 +1215,30 @@
 
                                     </div>
 
-                                    <div class="card-footer text-muted" style="padding: 0.75rem 0rem; direction: rtl">
+                                    <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; direction: rtl">
                                         <table style="width: 100%">
                                             <tr>
-                                                <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $property->id }}" style="color: #fff;  font-size: 0.75vw !important;"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
-                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important;  font-size: 0.75vw !important;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                                <td style="text-align: center;border-left: 1px solid #848484; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-desk-ar-{{ $property->id }}" style="color: #fff;  font-size: 0.95vw !important;"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important;  font-size: 0.95vw !important;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
                                             </tr>
                                         </table>
                                     </div>
                                 @else
-
-
                                     <div class="card-body px-3 py-0">
 
                                         @if ($property->type_id == '1')
                                             @if ($langSeg == 'ru')
-                                                <h5 class="my-3" style=" font-size: 1.2vw !important;"> <b> <span style="color: #fff;">  {{ number_format($property->price_usd) }} $</span></b></h5>
+                                                <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }}</span></b></h5>
+                                                <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }}</span></b></h5>
                                             @else
-                                                <h5 class="my-3" style=" font-size: 1.2vw !important;"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} </span></b></h5>
+                                                <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }} </span></b></h5>
+                                                <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} </span></b></h5>
                                             @endif
 
                                         @else
 
-                                            <h5 class="my-3" style="font-size: 1.4rem !important"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}</b> </span></h5>
+                                            <h5 class="my-3 USD skill" style="font-size: 1.4rem !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }} </b> </span></h5>
+                                            <h5 class="my-3 AED skill" style="font-size: 1.4rem !important; display: block !important"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}</b> </span></h5>
                                         @endif
 
                                         <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
@@ -1758,13 +1275,82 @@
                                         </table>
                                     </div>
                                 @endif
-
-
                             </div>
                         </div>
 
 
                         <div class="modal modal-lg fade" style="background-color: rgb(0, 0, 0, .5);" id="exampleModal-desk-{{ $property->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
+                                <div class="modal-content  rounded-0">
+                                    {{-- <div class="modal-header border border-1 border-white bg-black rounded-0">
+                                        <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
+                                        <button type="button" class="btn-close bg-white" style="color: white !important;" data-mdb-dismiss="modal" aria-label="Close"></button>
+                                    </div> --}}
+                                    <div class="modal-body bg-black " style="border: 0.25px solid grey !important; ">
+                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                            <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
+                                                {{ trans('frontLang.requestdetail') }}
+                                            </p>
+                                        </div>
+                                        <div class="row p-4">
+                                            <div class="col-lg-6 mb-3">
+                                                @foreach($property->images  as $single_img)
+                                                    @if($property->images->first()==$single_img)
+                                                        <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}"  class="modal-img-height" alt="{{$property->$title_var}}">
+                                                    @endif
+                                                @endforeach
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h6 class="text-center mb-4">
+                                                    {{$property->$title_var}}
+                                                </h6>
+                                                <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_property/submit')}}">
+                                                    @csrf
+                                                    @honeypot
+                                                    <input type="hidden" name="property" value="{{$property->id}}" />
+                                                    <div class=" mb-4">
+                                                        <input  type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
+
+                                                    </div>
+
+                                                    <!-- Email input -->
+                                                    <div class="mb-4">
+                                                        <input  type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
+
+                                                    </div>
+
+                                                    <!-- Email input -->
+                                                    <div class="mb-4">
+                                                        <input  type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
+
+                                                    </div>
+
+
+                                                    {{-- <button type="submit" class="btn btn-outline-white btn-lg btn-block">
+                                                        {{ trans('frontLang.submit') }}
+                                                    </button> --}}
+                                                    <button class="submit btn btn-block btn-outline-white" type="submit">
+                                                        <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
+
+                                                        {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
+
+                                                        <span class="btn-txt">
+                                                            {{ trans('frontLang.submit') }}
+                                                        </span>
+                                                    </button>
+                                                </form>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal modal-lg fade" style="background-color: rgb(0, 0, 0, .5);" id="exampleModal-desk-ar-{{ $property->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
                                 <div class="modal-content  rounded-0">
                                     {{-- <div class="modal-header border border-1 border-white bg-black rounded-0">
@@ -1890,7 +1476,6 @@
             });
         </script>
     </section>
-@endif
 
 
 

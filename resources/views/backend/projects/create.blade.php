@@ -720,7 +720,7 @@
                                     </div>
                                     </div>
                                     <hr>
-                                    <div class="col-sm-12">
+                                    {{-- <div class="col-sm-12">
                                         Note : Upload Documents (pdf,excel,doc,docx)
 
                                     </div>
@@ -733,7 +733,7 @@
                                             </div>
 
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                 </div>
 

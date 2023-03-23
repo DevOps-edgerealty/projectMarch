@@ -148,7 +148,7 @@
 
                                     </div>
                                     <div class="form-group row">
-                                        
+
                                         <div class="col-sm-4">
                                             <label for="exampleInputtitle">Title [ English ]</label>
                                             {!! Form::text('title_en', $projects->title_en , array('placeholder' => '','class' => 'form-control','id'=>'title','required'=>'')) !!}
@@ -676,7 +676,7 @@
 
                                     <hr>
                                     <hr>
-                                    <div class="col-sm-12">
+                                    {{-- <div class="col-sm-12">
                                         <p style="color: red">Note : Upload Documents (PDF ONLY)</p>
 
                                     </div>
@@ -694,7 +694,9 @@
                                         @foreach ($projects->documents as $item)
                                         <a href="{{ URL::asset('uploads/projects/documents/'.$projects->id.'/'.$item->document) }}" target="_blank">{{$item->document}}</a>
                                         @endforeach
-                                    </div><br>
+                                    </div> --}}
+
+                                    <br>
                                     <div class="form-group col-sm-6">
 
                                     </div>

@@ -106,6 +106,12 @@
         text-align: center;
     } */
 
+    .menu-color {
+        padding-left: 15px !important;
+        padding-left: 15px !important;
+    }
+
+
 
 </style>
 <?php

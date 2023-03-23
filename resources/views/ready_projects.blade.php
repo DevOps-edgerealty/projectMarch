@@ -158,6 +158,7 @@
         content: var( --mdb-breadcrumb-divider, "/" );
         }
     </style>
+
     <section class="" style="direction: rtl">
         <div class="container">
             <div class="row mb-3">
@@ -183,6 +184,7 @@
         </div>
 
     </section>
+
     <section class="mt-5 mb-5" style="direction: rtl">
         <div class="container-fluid containerization ">
 
@@ -297,12 +299,7 @@
                             </div>
                         </div>
                         @endforeach
-
-
                     </div>
-
-
-
 
 
                 </div>

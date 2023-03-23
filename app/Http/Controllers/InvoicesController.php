@@ -86,7 +86,7 @@ class InvoicesController extends Controller
                 $invoice->invoice_date = $request->invoice_date;
                 $invoice->trn = $request->trn_number;
                 $invoice->invoice_no = $request->invoice_number;
-                $invoice->contract_no = $request->contract_no;
+                // $invoice->contract_no = $request->contract_no;
                 $invoice->contract_date = $request->contract_date;
 
                 $invoice->unit_price = $request->unit_price;
@@ -191,7 +191,7 @@ class InvoicesController extends Controller
                 $invoice->invoice_date = $request->invoice_date;
                 $invoice->trn = $request->trn_number;
                 $invoice->invoice_no = $request->invoice_number;
-                $invoice->contract_no = $request->contract_no;
+                // $invoice->contract_no = $request->contract_no;
                 $invoice->contract_date = $request->contract_date;
 
                 $invoice->unit_price = $request->unit_price;

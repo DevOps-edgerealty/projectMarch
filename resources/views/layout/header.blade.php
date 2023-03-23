@@ -1,14 +1,14 @@
 <style scope>
     li {
-        color: #000 !important;
+        color: #ABB7B7 !important;
     }
     nav a {
-        color: #000 !important;
+        color: #ABB7B7 !important;
     }
 
     .nav-pills .nav-link.active {
         background-color: #fff !important;
-        color: #000 !important;
+        color: #ABB7B7 !important;
         border: 0.25px #848484 solid !important;
         border: 0.5 #848484 solid !important;
         border-radius: 0 !important;
@@ -17,37 +17,37 @@
 
     .nav-link {
         /* background-color: #000 !important; */
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #ABB7B7 !important;
         border: 0.25px #848484 solid !important;
         border: 0.5 #848484 solid !important;
         border-radius: 0 !important;
 
     }
     a {
-        color: #fff !important;
+        color: #cccccc !important;
     }
 
 
     .menu-mobile-header, .menu-mobile-header > .menu-section, .menu-mobile-header > button  {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #cccccc !important;
     }
 
     .menu-mobile-arrow {
-        background-color: #fff !important;
+        background-color: #cccccc !important;
     }
 
     @media only screen and (max-width: 800px) {
         .menu-section {
-            background: #000;
+            background: #1c1c1c;
         }
     }
 
 
     li > div {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #cccccc !important;
     }
 
 
@@ -57,13 +57,13 @@
         color: #fff !important;
     }
     .menu-color{
-        color: #fff !important;
+        color: #cccccc !important;
     }
     input, select {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #cccccc !important;
         border-radius: 0px !important;
-        border: 1px solid #fff !important;
+        border: 1px solid #cccccc !important;
     }
     .btn {
         /* transition: transform 5s  !important; */
@@ -76,7 +76,7 @@
         /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
         /* translate: 2px -2px !important; */
         opacity: 1 !important;
-        background-color: #fff !important;
+        background-color: #cccccc !important;
         color: #000 !important;
         transform: scale(1) !important;
         border: 2px solid #000 !important;
@@ -138,12 +138,18 @@
     }
 
     .navbar-scrolled {
-        background-color: #000 !important;
+        background-color: #1c1c1c !important;
     }
 
     /* .fa-whatsapp  {
         height: 30px !important;
     } */
+
+
+    .menu-color {
+        padding-left: 15px !important;
+        padding-left: 15px !important;
+    }
 
 </style>
 <?php
@@ -254,42 +260,44 @@
 
 
 @if ($langSeg == 'ar')
-<header class="header position-fixed navbar1" style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); direction: rtl; z-index: 20000 !important; ">
+<header class="header position-fixed  navbar1 " style="background: linear-gradient(180deg, rgba(21,21,21,0.5) 0, rgba(21,21,21,0) 100%); direction: rtl !important; z-index: 20000 !important; ">
 
-    <div class="container-fluid containerization py-0" style="margin-right: 130px !important;">
-        <div class="wrapper">
+    <div class="container-fluid containerization py-0">
+        <div class="wrapper   px-3" >
             <div class="header-item-left">
-
-                    <a href="{{URL('ar/home')}}" class="brand"><img src="{{URL::asset('public/assets/asset/logo-ar.png')}}" class="logo-height" alt=""></a>
-
-
+                <a href="{{URL('/'.$langSeg.'/home')}}" class="brand"><img src="{{URL::asset('public/assets/asset/logo-ar.png')}}" class="logo-height" alt=""></a>
             </div>
             <!-- Section: Navbar Menu -->
-            <div class="header-item-center">
-                <div class="overlay"></div>
-                <nav class="menu text-dark">
+            <div class="header-item-center ">
+                <div class="overlay" ></div>
+                <nav class="menu  navbar-dark">
                     <div class="menu-mobile-header">
                         <button type="button" class="menu-mobile-arrow"><i class="ion ion-ios-arrow-back"></i></button>
                         <div class="menu-mobile-title"></div>
-                        <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close text-white"></i></button>
+                        <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close"></i></button>
                     </div>
                     <ul class="menu-section " style="padding-left: 0px;">
 
-                        <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color" style=" ;">{{ trans('frontLang.buy') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                        <li class="menu-item-has-children">
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.buy') }}
+                                <i class="ion ion-ios-arrow-down"> </i>
+                            </a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
-                                    <li class="text-dark"><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/apartment-for-sale-in-Dubai');?>">{{ trans('frontLang.Apartmentforsale') }}</a></li>
-                                    <li class="text-dark"><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/villas-for-sale-in-Dubai');?>">{{ trans('frontLang.Villasforsale') }}</a></li>
-                                    <li class="text-dark"><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/commercial-for-sale-in-Dubai');?>">{{ trans('frontLang.Commercialforsale') }}</a></li>
-                                    <li class="text-dark"><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/townhouses-for-sale-in-Dubai');?>">{{ trans('frontLang.Townhouseforsale') }}</a></li>
-                                    <li class="text-dark"><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/furnished-properties-for-sale-Dubai');?>">{{ trans('frontLang.Furnished') }}</a></li>
-                                    <li class="text-dark"><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/plots-for-sale-in-Dubai');?>">{{ trans('frontLang.Plotforsale') }} </a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/apartment-for-sale-in-Dubai');?>">{{ trans('frontLang.Apartmentforsale') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/villas-for-sale-in-Dubai');?>">{{ trans('frontLang.Villasforsale') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/commercial-for-sale-in-Dubai');?>">{{ trans('frontLang.Commercialforsale') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/townhouses-for-sale-in-Dubai');?>">{{ trans('frontLang.Townhouseforsale') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/furnished-properties-for-sale-Dubai');?>">{{ trans('frontLang.Furnished') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/plots-for-sale-in-Dubai');?>">{{ trans('frontLang.Plotforsale') }} </a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color" style=" ;">{{ trans('frontLang.Rent') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                        <li class="menu-item-has-children">
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.Rent') }} <i class="ion ion-ios-arrow-down"> </i>
+                            </a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/apartment-for-rent-in-Dubai');?>">{{ trans('frontLang.Apartmentforrent') }}</a></li>
@@ -298,16 +306,19 @@
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/townhouses-for-rent-in-Dubai');?>">{{ trans('frontLang.Townhouseforrent') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/furnished-properties-for-rent-Dubai');?>">{{ trans('frontLang.Furnished') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/dubai-properties/rent/luxury-properties-for-rent-in-Dubai');?>">{{ trans('frontLang.Luxuryproperties') }}</a></li>
-
-
                                 </ul>
                             </div>
                         </li>
 
-                        <li><a href="<?php echo  url('/'.$langSeg.'/sell');?>" class="menu-color"> {{ trans('frontLang.Sell') }}</a></li>
+                        <li><a href="<?php echo  url('/'.$langSeg.'/sell');?>" class="menu-color" style=" ">
+                            {{ trans('frontLang.Sell') }}</a>
+                        </li>
 
-                        <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color" style=" ;"> {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i></a>
+                        <li class="menu-item-has-children">
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.Dubaiprojects') }} <i class="ion ion-ios-arrow-down"></i>
+                            </a>
+
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="<?php echo  url('/'.$langSeg.'/dubai-new-projects');?>">
@@ -336,83 +347,127 @@
                             </div>
                         </li>
 
-                        <li><a href="<?php echo  url('/'.$langSeg.'/services');?>" class="menu-color">{{ trans('frontLang.services') }}</a></li>
-                        {{-- <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color" style=" ;">{{ trans('frontLang.marketstatistics') }} <i class="ion ion-ios-arrow-down"> </i></a>
+                        <li><a href="<?php echo  url('/'.$langSeg.'/services');?>" class="menu-color" style=" ">
+                            {{ trans('frontLang.services') }}</a>
+                        </li>
+                        {{-- <li class="menu-item-has-children">
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.marketstatistics') }} <i class="ion ion-ios-arrow-down"> </i>
+                            </a>
+
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/sale_transaction');?>">{{ trans('frontLang.sale_transaction') }}</a></li>
-
-
-
-
-
                                 </ul>
                             </div>
                         </li> --}}
 
 
-
-                        <li class="menu-item-has-children" style="margin-left:3rem !important">
-                            <a href="#" class="menu-color" style=" ;">{{ trans('frontLang.Aboutus') }} <i class="ioFwhatsan ion-ios-arrow-down"> </i></a>
+                        <li class="menu-item-has-children">
+                            <a href="#" class="menu-color" style=" ">
+                                {{ trans('frontLang.Aboutus') }} <i class="ion ion-ios-arrow-down"> </i>
+                            </a>
                             <div class="menu-subs menu-column-1">
                                 <ul style="padding-left: 0rem;">
                                     <li><a href="<?php echo  url('/'.$langSeg.'/aboutus');?>">{{ trans('frontLang.aboutcompany') }}</a></li>
                                     <li><a href="<?php echo  url('/'.$langSeg.'/team');?>">{{ trans('frontLang.OurTeam') }}</a></li>
-                                    <li><a href="<?php echo  url('/'.$langSeg.'/contactus');?>"> {{ trans('frontLang.contactUs') }}</a></li>
-                                    <li><a href="<?php echo  url('/'.$langSeg.'/career');?>">{{ trans('frontLang.Careers') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/contactus');?>"> {{ trans('frontLang.ContactUsHeader') }}</a></li>
+                                    <li><a href="<?php echo  url('/'.$langSeg.'/career');?>">{{ trans('frontLang.Careersheader') }}</a></li>
+                                </ul>
+                            </div>
+                        </li>
 
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="#" class="menu-color" style=" ;"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i></a>
-                            <div class="menu-subs menu-column-1 lang" >
-                                <ul style="padding-left: 0rem;">
-                                    <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
-                                    <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        @if ($langSeg == 'ru')
+                            <li class="menu-item-has-children " >
+                                <a href="#" class="menu-color " style=" ">
+                                    <img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU <i class="ion ion-ios-arrow-down"> </i>
+                                </a>
+                                <div class="menu-subs menu-column-1 lang" >
+                                    <ul style="padding-left: 0rem;">
+                                        <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
+                                        <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> RU </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @else
+                            <li class="menu-item-has-children " >
+                                <a href="#" class="menu-color " style=" ">
+                                    <img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i>
+                                </a>
+                                <div class="menu-subs menu-column-1 lang" >
+                                    <ul style="padding-left: 0rem;">
+                                        <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
+                                        <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
+
 
 
                     </ul>
                 </nav>
             </div>
 
+
             <div class="header-item-right">
 
-                {{-- <a href="<?php echo $finalUrl ; ?>"> <img src="{{URL('public/assets/images/uk-flag.png')}}" alt=""></a> --}}
+                {{-- <a href="<?php echo $finalUrl ; ?>"><img src="{{URL('public/assets/images/uae-flag.png')}}" alt=""></a> --}}
 
-                <nav class="menu text-dark">
+                <nav class="menu navbar-dark">
                     <div class="menu-mobile-header">
-                        <button type="button" class="menu-mobile-arrow"><i class="ion ion-ios-arrow-back"></i></button>
-                        <div class="menu-mobile-title"></div>
-                        <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close text-white"></i></button>
+                        <button type="button" class="menu-mobile-arrow">
+                            <i class="ion ion-ios-arrow-back"></i>
+                        </button>
+
+                        <div class="menu-mobile-title">Search</div>
+
+                        <button type="button" class="menu-mobile-close">
+                            <i class="ion ion-ios-close"></i>
+                        </button>
+
                     </div>
-                     {{-- <ul class="menu-section " style="padding-left: 0px;">
+                    {{-- <ul class="menu-section " style="padding-left: 0px; margin-bottom: 0px;">
 
-                        <li class="menu-item-has-children">
-                            <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR <i class="ion ion-ios-arrow-down"> </i></a>
-                            <div class="menu-subs menu-column-1 lang" >
-                                <ul style="padding-left: 0rem;">
-                                    <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
-                                    <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
-                                    <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
-
-                                </ul>
-                            </div>
-                        </li>
-
-
+                        @if ($langSeg == 'ru')
+                            <li class="menu-item-has-children" >
+                                <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU <i class="ion ion-ios-arrow-down"> </i></a>
+                                <div class="menu-subs menu-column-1 lang" >
+                                    <ul style="padding-left: 0rem;">
+                                        <li><a href="<?php echo $finalUrlen ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN </a></li>
+                                        <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @else
+                            <li class="menu-item-has-children" >
+                                <a href="#" class="menu-color"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/en.png')}}" alt=""> EN <i class="ion ion-ios-arrow-down"> </i></a>
+                                <div class="menu-subs menu-column-1 lang" >
+                                    <ul style="padding-left: 0rem;">
+                                        <li><a href="<?php echo $finalUrl ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ar.png')}}" alt=""> AR </a></li>
+                                        <li><a href="<?php echo $finalUrlru ; ?>"><img style="display: inline;margin-top: -3px;" src="{{URL('public/assets/images/ru.png')}}" alt=""> RU </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
                     </ul> --}}
+
                 </nav>
 
+                <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" >
+                    <i class="fab fa-whatsapp text-success b-success  m-0 p-0" style="font-size: 1.3em; "></i>
+                </a>
 
+                <a href="javascript:void(Tawk_API.toggle())" class="menu-icon mobile-show d-md-block d-block d-lg-none">
+                    <i class="far fa-comment-alt" style="font-size: 1.15em; "><sup class="bg-danger rounded-pill" style="font-size: 14px; margin-left: -5px; padding: 2px;">1</sup></i>
+                </a>
 
-                <a style="margin-right: 1rem;"  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight"><img  src="{{url::asset('public/assets/asset/loupe.png')}}" alt=""></a>
+                <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <img class="d-md-block d-block d-lg-none" src="{{url::asset('public/assets/asset/loupe2.png')}}" alt="loupe-image" style="height: 28px;">
+                    <img class="d-md-block d-lg-block d-none" src="{{url::asset('public/assets/asset/loupe2.png')}}" alt="loupe-image" style="height: 35px;">
+                </a>
 
-                <button type="button" class="menu-mobile-trigger"  >
+                <button type="button" class="menu-mobile-trigger" >
                     <span></span>
                     <span></span>
                     <span></span>
@@ -422,43 +477,35 @@
 
             </div>
 
-
-
                 <div class="offcanvas bg-black offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
                     <div class="offcanvas-header">
                         <h5 id="offcanvasRightLabel">{{ trans('frontLang.searchh') }}</h5>
-                        @if ($langSeg == 'ar')
-                            <button type="button" class="btn-close text-reset" style="margin:0;" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
-                        @else
-                            <button type="button" class="btn-close text-reset" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
-                        @endif
-
+                        <button type="button" class="btn-close text-reset" style="background-color: #fff !important;" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
                     </div>
-                    <div class="offcanvas-body">
+                    <div class="offcanvas-body ">
                         <div class="row">
                             <div class="col-lg-12">
-
 
                                 <!-- Pills navs -->
                                 <ul class="nav nav-pills nav-fill mb-3" id="ex1" role="tablist">
                                     <li class="nav-item w-100" role="presentation">
-                                        <a class="nav-link rounded-0"  style="background-color: #0c5e03 !important; border: 0 !important;" href="{{ url($langSeg.'/properties/map/1') }}">{{ trans('frontLang.map') }}</a>
+                                        <a class="nav-link rounded-0" style="background-color: #0c5e03 !important; border: 0 !important;"  href="{{ url($langSeg.'/properties/map/1') }}">{{ trans('frontLang.map') }}</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1" role="tab" aria-controls="ex2-pills-1" aria-selected="true">{{ trans('frontLang.buy') }}</a>
+                                        <a class="nav-link active rounded-0  " id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1" role="tab" aria-controls="ex2-pills-1" aria-selected="true">{{ trans('frontLang.buy') }}</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="ex2-tab-2" data-mdb-toggle="pill" href="#ex2-pills-2" role="tab" aria-controls="ex2-pills-2" aria-selected="false">{{ trans('frontLang.Rent') }}</a>
+                                        <a class="nav-link rounded-0  " id="ex2-tab-2" data-mdb-toggle="pill" href="#ex2-pills-2" role="tab" aria-controls="ex2-pills-2" aria-selected="false">{{ trans('frontLang.Rent') }}</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="ex2-tab-3" data-mdb-toggle="pill" href="#ex2-pills-3" role="tab" aria-controls="ex2-pills-3" aria-selected="false">{{ trans('frontLang.off-plan') }}</a>
+                                        <a class="nav-link rounded-0  " id="ex2-tab-3" data-mdb-toggle="pill" href="#ex2-pills-3" role="tab" aria-controls="ex2-pills-3" aria-selected="false">{{ trans('frontLang.off-plan') }}</a>
                                     </li>
                                 </ul>
-                                    <!-- Pills navs -->
+                                <!-- Pills navs -->
                                 <!-- Pills content -->
                                 <div class="tab-content" id="ex2-content">
                                     <div class="tab-pane fade show active" id="ex2-pills-1" role="tabpanel" aria-labelledby="ex2-tab-1">
-                                        <form action="{{URL('/'.$langSeg.'/properties_search_ar')}}" method="post" >
+                                        <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="post" >
                                             @csrf
                                             @honeypot
                                             <input type="hidden" name="property_type_id" value="1" />
@@ -466,13 +513,11 @@
 
 
                                                 <div class="col-lg-12 mt-3 mb-4">
-                                                    <div class="input-group">
-
-
-                                                        <input type="search" name="search" id="search-mobile-arabic" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbysale') }}" aria-label="Search"/>
-
+                                                    <div class="input-group has-search">
+                                                        <span class="fa fa-search form-control-feedback"></span>
+                                                        <input type="search" name="search" id="search-mobile" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
                                                     </div>
-                                                    <div id="List-mobile-arabic"></div>
+                                                    <div id="List-mobile"></div>
                                                     {{ csrf_field() }}
                                                 </div>
 
@@ -486,7 +531,6 @@
                                                             <option  value="3">{{ trans('frontLang.Commercial') }}</option>
                                                             <option  value="7">{{ trans('frontLang.Duplex') }}</option>
                                                             <option  value="2">{{ trans('frontLang.Villa') }}</option>
-
 
 
                                                         </select>
@@ -513,7 +557,6 @@
                                                 <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
                                                     <select name="max_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
                                                             <option  value=""> {{ trans('frontLang.maxBedrooms') }}</option>
-
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -578,12 +621,10 @@
                                                         <option  value="60000000">60,000,000</option>
                                                         <option  value="70000000">70,000,000</option>
                                                         <option  value="80000000">80,000,000</option>
-
-
                                                 </select>
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    <button type="submit" class="btn btn-dark btn-block btn-lg" >
+                                                    <button type="submit" class="btn btn-outline-white btn-block btn-lg" >
                                                         {{ trans('frontLang.searchh') }}
                                                     </button>
                                                 </div>
@@ -593,20 +634,20 @@
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="ex2-pills-2" role="tabpanel" aria-labelledby="ex2-tab-2">
-                                        <form action="{{URL('/'.$langSeg.'/properties_search_ar')}}" method="post" >
+                                        <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="post" >
                                             @csrf
                                             @honeypot
                                             <div class="row">
 
                                                 <input type="hidden" name="property_type_id" value="2" />
                                                 <div class="col-lg-12 mt-3 mb-4">
-                                                    <div class="input-group">
+                                                    <div class="input-group has-search">
 
-
-                                                        <input type="search" name="search" id="search-mobile-1-arabic" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyrent') }}" aria-label="Search"/>
+                                                        <span class="fa fa-search form-control-feedback"></span>
+                                                        <input type="search" name="search" id="search-mobile-1" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
 
                                                     </div>
-                                                    <div id="List-mobile-1-arabic"></div>
+                                                    <div id="List-mobile-1"></div>
                                                     {{ csrf_field() }}
                                                 </div>
 
@@ -620,7 +661,6 @@
                                                             <option  value="3">{{ trans('frontLang.Commercial') }}</option>
                                                             <option  value="7">{{ trans('frontLang.Duplex') }}</option>
                                                             <option  value="2">{{ trans('frontLang.Villa') }}</option>
-
 
 
                                                         </select>
@@ -646,8 +686,7 @@
                                                 </div>
                                                 <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
                                                     <select name="max_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
-                                                    <option  value=""> {{ trans('frontLang.maxBedrooms') }}</option>
-                                                            <option value=""> Max Bedrooms</option>
+                                                            <option  value=""> {{ trans('frontLang.maxBedrooms') }}</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -717,7 +756,7 @@
                                                 </select>
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    <button type="submit" class="btn btn-dark btn-block btn-lg" >
+                                                    <button type="submit" class="btn btn-outline-white btn-block btn-lg" >
                                                         {{ trans('frontLang.searchh') }}
                                                     </button>
                                                 </div>
@@ -725,7 +764,7 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="ex2-pills-3" role="tabpanel" aria-labelledby="ex2-tab-3">
-                                        <form action="{{URL('/'.$langSeg.'/offplan_search_ar')}}" method="post" >
+                                        <form action="{{URL('/'.$langSeg.'/offplan_search')}}" method="post" >
                                             @csrf
                                             @honeypot
                                             <div class="row">
@@ -733,13 +772,13 @@
 
 
                                                 <div class="col-lg-12 mt-3 mb-4">
-                                                    <div class="input-group">
+                                                    <div class="input-group has-search">
 
-
-                                                        <input type="search" name="search" id="search-mobile-2-arabic" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyprojects') }}" aria-label="Search"/>
+                                                        <span class="fa fa-search form-control-feedback"></span>
+                                                        <input type="search" name="search" id="search-mobile-2" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
 
                                                     </div>
-                                                    <div id="List-mobile-2-arabic"></div>
+                                                    <div id="List-mobile-2"></div>
                                                     {{ csrf_field() }}
                                                 </div>
 
@@ -748,12 +787,13 @@
                                                     <div class=" mb-4">
 
                                                         <select name="property_type" class="form-select form-select-lg" aria-label="Default select example" >
+
+
                                                             <option  value=""> {{ trans('frontLang.propertyType') }}</option>
                                                             <option  value="1">{{ trans('frontLang.Apartment') }}</option>
                                                             <option  value="3">{{ trans('frontLang.Commercial') }}</option>
                                                             <option  value="7">{{ trans('frontLang.Duplex') }}</option>
                                                             <option  value="2">{{ trans('frontLang.Villa') }}</option>
-
 
 
                                                         </select>
@@ -799,13 +839,13 @@
             <!-- Section: Navbar Menu -->
             <div class="header-item-center ">
                 <div class="overlay" ></div>
-                <nav class="menu  navbar-dark">
+                <nav class="menu navbar-dark">
                     <div class="menu-mobile-header">
                         <button type="button" class="menu-mobile-arrow"><i class="ion ion-ios-arrow-back"></i></button>
                         <div class="menu-mobile-title"></div>
                         <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close"></i></button>
                     </div>
-                    <ul class="menu-section " style="padding-left: 0px;">
+                    <ul class="menu-section  " style="padding-left: 0px;">
 
                         <li class="menu-item-has-children">
                             <a href="#" class="menu-color" style=" ">
@@ -956,6 +996,7 @@
                         </button>
 
                     </div>
+
                     {{-- <ul class="menu-section " style="padding-left: 0px; margin-bottom: 0px;">
 
                         @if ($langSeg == 'ru')
@@ -984,16 +1025,16 @@
                 </nav>
 
                 <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" >
-                    <i class="fab fa-whatsapp  rounded-pill m-0 p-0" style="font-size: 1.3em; "></i>
+                    <i class="fab fa-whatsapp text-success b-success  m-0 p-0" style="font-size: 1.3em; "></i>
                 </a>
 
                 <a href="javascript:void(Tawk_API.toggle())" class="menu-icon mobile-show d-md-block d-block d-lg-none">
-                    <i class="far fa-comment-alt" style="font-size: 1.15em; "></i>
+                    <i class="far fa-comment-alt" style="font-size: 1.15em; "><sup class="bg-danger rounded-pill" style="font-size: 14px; z-index: -10 !important; margin-left: -2px; padding: 2px;">1</sup></i>
                 </a>
 
                 <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <img class="d-md-block d-block d-lg-none" src="{{url::asset('public/assets/asset/loupe.png')}}" alt="loupe-image" style="height: 28px;">
-                    <img class="d-md-block d-lg-block d-none" src="{{url::asset('public/assets/asset/loupe.png')}}" alt="loupe-image">
+                    <img class="d-md-block d-block d-lg-none" src="{{url::asset('public/assets/asset/loupe2.png')}}" alt="loupe-image" style="height: 28px;">
+                    <img class="d-md-block d-lg-block d-none" src="{{url::asset('public/assets/asset/loupe2.png')}}" alt="loupe-image" style="height: 35px;">
                 </a>
 
                 <button type="button" class="menu-mobile-trigger" >
@@ -1006,7 +1047,7 @@
 
             </div>
 
-                <div class="offcanvas bg-black offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"  style="background-color: #1c1c1c !important">
                     <div class="offcanvas-header">
                         <h5 id="offcanvasRightLabel">{{ trans('frontLang.searchh') }}</h5>
                         <button type="button" class="btn-close text-reset" style="background-color: #fff !important;" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>

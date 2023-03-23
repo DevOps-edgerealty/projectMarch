@@ -153,63 +153,66 @@
             <div class="row">
                 <div class="col-lg-12">
                     @foreach ($project as $projects)
-                    <div class="card mb-5" style="background-color: #000">
+                    <div class="card my-3" style="background-color: #000">
 
                         <div class="row g-0">
-                        <div class="col-md-4">
-                            @if ($projects->project_status == '1')
-                                {{-- <div class="communities-newlaunch">New <br> Launch</div> --}}
-                            @endif
-                            @foreach($projects->images  as $single_img)
-                                @if($projects->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 250px" class="card-img-top" alt="{{$projects->$project_title_var}}"></a>
+                            <div class="col-md-4">
+                                @if ($projects->project_status == '1')
+                                    {{-- <div class="communities-newlaunch">New <br> Launch</div> --}}
                                 @endif
-                            @endforeach
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" ><h2 class="card-title" style="color: #fff">{{$projects->$project_title_var}}</h2></a>
-
-                            <p class="card-text">
-                                <div class="row">
-
-                                    <div class="col-lg-6" style="width: 50%">
-
-                                        <div class="row mt-2">
-                                            <ul style="color: white" class="font-ul">
-                                                <li  class="text-white">{{ trans('frontLang.Price') }}   :  <span style="color: #777777">{{$projects->project_price}} {{ trans('frontLang.AED') }}</span> </li>
-                                                <li  class="text-white">{{ trans('frontLang.bedrooms') }} : <span style="color: #777777">{{$projects->bedrooms}}</span></li>
-                                                <li  class="text-white">{{ trans('frontLang.location') }} : <span style="color: #777777"> {{$projects->locationz->$name_var}}</span></li>
-                                            </ul>
-
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="col-lg-6" style="width: 50%">
-                                        <div class="row mt-2">
-                                            <ul style="color: white" class="font-ul">
-                                                <li class="text-white" >{{ trans('frontLang.projectType') }} :<span style="color: #777777"> @foreach ($projects->project_types as $project_type)
-                                                    {{$project_type->$type_title_var}}
-                                                @endforeach </span></li>
-                                                <li class="text-white" >{{ trans('frontLang.floorNo') }} : <span style="color: #777777"> {{$projects->no_floors}}</span></li>
-                                                <li class="text-white" >{{ trans('frontLang.unitsize') }} : <span style="color: #777777"> {{$projects->size}}</span></li>
-                                            </ul>
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </p>
-                            <p >
-                                <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}"  class="btn btn-outline-white btn-lg rounded-0">{{ trans('frontLang.readMore') }} </a>
-                                <a href="#" class="btn btn-outline-white btn-lg rounded-0" data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}">{{ trans('frontLang.requestdetail') }}</a>
-                            </p>
-
+                                @foreach($projects->images  as $single_img)
+                                    @if($projects->images->first()==$single_img)
+                                        <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 100%" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}"></a>
+                                    @endif
+                                @endforeach
                             </div>
-                        </div>
+
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" ><h2 class="card-title" style="color: #fff">{{$projects->$project_title_var}}</h2></a>
+
+                                <p class="card-text">
+                                    <div class="row">
+
+                                        <div class="col-lg-6" style="width: 50%">
+
+                                            <div class="row mt-2">
+                                                <ul style="color: white" class="font-ul">
+                                                    @if($projects->project_price == 'Price On Request')
+                                                        <li  class="text-white">{{ trans('frontLang.Price') }}   :  <span style="color: #777777"> تعرف علي السعر الأن </span> </li>
+                                                    @else
+                                                        <li  class="text-white USD skill" style="display: none">{{ trans('frontLang.Price') }}   :  <span style="color: #777777"> {{$projects->project_price_usd}} $</span> </li>
+                                                        <li  class="text-white AED skill" style="display: block !important">{{ trans('frontLang.Price') }}   :  <span style="color: #777777"> {{$projects->project_price}} {{ trans('frontLang.AED') }}</span> </li>
+                                                    @endif
+
+                                                    <li  class="text-white">{{ trans('frontLang.bedrooms') }} : <span style="color: #777777"> {{$projects->bedrooms}}</span></li>
+                                                    <li  class="text-white">{{ trans('frontLang.location') }} : <span style="color: #777777"> {{$projects->locationz->$name_var}}</span></li>
+                                                </ul>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="col-lg-6" style="width: 50%">
+                                            <div class="row mt-2">
+                                                <ul style="color: white" class="font-ul">
+                                                    <li class="text-white" >{{ trans('frontLang.projectType') }} :<span style="color: #777777"> @foreach ($projects->project_types as $project_type)
+                                                        {{$project_type->$type_title_var}}
+                                                    @endforeach </span></li>
+                                                    <li class="text-white" >{{ trans('frontLang.floorNo') }} : <span style="color: #777777"> {{$projects->no_floors}}</span></li>
+                                                    <li class="text-white" >{{ trans('frontLang.unitsize') }} : <span style="color: #777777"> {{$projects->size}}</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </p>
+                                <p >
+                                    <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}"  class="btn btn-outline-white btn-lg rounded-0">{{ trans('frontLang.readMore') }} </a>
+                                    <a href="#" class="btn btn-outline-white btn-lg rounded-0" data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}">{{ trans('frontLang.requestdetail') }}</a>
+                                </p>
+
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -298,7 +301,7 @@
     </section>
 @else
 
-    <section class="mt-5d desktop-show">
+    <section class="mt-5 desktop-show">
         <div class="container-fluid containerization ">
             <div class="row mb-5">
                 @if ($langSeg == 'ru')
@@ -342,7 +345,8 @@
                                                 @if ($langSeg == 'ru')
                                                     <li class="text-white">{{ trans('frontLang.Price') }}   : $ <span style="color: #848484">{{$projects->project_price_usd}}</span> </li>
                                                 @else
-                                                    <li class="text-white">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">{{ trans('frontLang.AED') }} {{$projects->project_price}}</span> </li>
+                                                    <li class="text-white USD skill" style="display: none">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">$ {{$projects->project_price}}</span> </li>
+                                                    <li class="text-white AED skill" style="display: block !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">{{ trans('frontLang.AED') }} {{$projects->project_price}}</span> </li>
                                                 @endif
                                                 <li class="text-white">{{ trans('frontLang.bedrooms') }} : <span style="color: #848484">{{$projects->bedrooms}}</span></li>
                                                 <li class="text-white">{{ trans('frontLang.location') }} : <span style="color: #848484"> {{$projects->locationz->$name_var}}</span></li>
@@ -510,7 +514,9 @@
                             @endif
                             @foreach($projects->images  as $single_img)
                                 @if($projects->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 100%" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}"></a>
+                                    <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" >
+                                        <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 100%" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}">
+                                    </a>
                                 @endif
                             @endforeach
                         </div>

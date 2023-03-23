@@ -116,7 +116,7 @@
                                         <div class="col-sm-6">
                                             <label for="exampleInputNameAboutAR">About [ تعيين ]</label>
                                             {{-- {!! Form::text('description_ar',$Agents->description_ar, array('placeholder' => '','class' => 'form-control','id'=>'description_ar','required'=>'', 'dir'=>'rtl')) !!} --}}
-                                            {!! Form::textarea('description_en','', array('placeholder' => '','class' => 'form-control','id'=>'description_en', 'style'=>'resize:none', 'rows'=>'4', 'cols' => '54', 'dir'=>'rtl')) !!}
+                                            {!! Form::textarea('description_ar','', array('placeholder' => '','class' => 'form-control','id'=>'description_ar', 'style'=>'resize:none', 'rows'=>'4', 'cols' => '54', 'dir'=>'rtl')) !!}
                                         </div>
                                     </div>
 

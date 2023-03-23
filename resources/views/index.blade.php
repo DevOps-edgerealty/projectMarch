@@ -24,12 +24,12 @@
                 position: relative
             }
             p{
-                line-height: 1.6 !important;
+                line-height: 1.8 !important;
             }
 
             .nav-pills .nav-link.active {
                 background-color: #fff !important;
-                color: #000 !important;
+                color: #ABB7B7 !important;
                 border: 0.25px #848484 solid !important;
                 border: 0.5 #848484 solid !important;
                 border-radius: 0 !important;
@@ -59,8 +59,8 @@
                 /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
                 /* translate: 2px -2px !important; */
                 opacity: 1 !important;
-                background-color: #fff !important;
-                color: #000 !important;
+                background-color: #cccccc !important;
+                color: #ABB7B7 !important;
                 transform: scale(1) !important;
                 border: 2px solid #000 !important;
 
@@ -73,12 +73,15 @@
             } */
             .card {
                 margin: 12px !important;
-                color: #fff !important;
-                background-color: #000 !important;
+                color: #cccccc !important;
+                background-color: #1c1c1c !important;
                 border: 0.5px solid rgb(86, 86, 86) !important;
                 border-radius: 0 !important;
                 transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
                 transition-duration: 0.5s !important;
+                box-shadow: 2px 2px 4px .1px rgba(0,0,0,0.74) !important;
+                -webkit-box-shadow: 2px 2px 4px .1px rgba(0,0,0,0.74) !important;
+                -moz-box-shadow: 2px 2px 4px .1px rgba(0,0,0,0.74) !important;
 
 
             /* }
@@ -841,9 +844,7 @@
 
         </section>
     @elseif ($langSeg == "ru")
-
-
-         <section class="mb-5" style="margin-top:20px " >
+        <section class="mb-5" style="margin-top:20px " >
 
             <style>
                 .slider {
@@ -870,33 +871,27 @@
                 }
             </style>
 
-            <div class="container-fluid p-0">
+            <div class="container-fluid  p-0">
 
                 {{-- mobile view --}}
                 <div class="slider d-md-block d-block d-md-none">
-                    <div class="d-flex justify-content-center mx-auto">
-                        <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/apartment-for-sale-in-Dubai');?>" target="_blank" class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
-                            {{ trans('frontLang.apartmentindex') }}
-                        </a>
-                        <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/villas-for-sale-in-Dubai');?>" target="_blank"  class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
-                            {{ trans('frontLang.villaindex') }}
-                        </a>
-                        <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/plots-for-sale-in-Dubai');?>" target="_blank"  class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
-                            {{ trans('frontLang.plotindex') }}
-                        </a>
-                        <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/townhouses-for-sale-in-Dubai');?>" target="_blank" class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
-                            {{ trans('frontLang.townhouseindex') }}
-                        </a>
-                        <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/commercial-for-sale-in-Dubai');?>" target="_blank" class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
-                            {{ trans('frontLang.commercialindex') }}
-                        </a>
-                    </div>
+                    <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/apartment-for-sale-in-Dubai');?>" target="_blank" class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
+                        {{ trans('frontLang.apartmentindex') }}
+                    </a>
+                    <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/villas-for-sale-in-Dubai');?>" target="_blank"  class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
+                        {{ trans('frontLang.villaindex') }}
+                    </a>
+                    <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/plots-for-sale-in-Dubai');?>" target="_blank"  class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
+                        {{ trans('frontLang.plotindex') }}
+                    </a>
+                    <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/townhouses-for-sale-in-Dubai');?>" target="_blank" class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
+                        {{ trans('frontLang.townhouseindex') }}
+                    </a>
+                    <a href="<?php echo  url('/'.$langSeg.'/dubai-properties/sale/commercial-for-sale-in-Dubai');?>" target="_blank" class="btn btn-outline-white text-white py-3 mx-2 my-2 rounded-0">
+                        {{ trans('frontLang.commercialindex') }}
+                    </a>
                 </div>
-
-
-
             </div>
-
         </section>
     @else
         <section class="mb-5" style="margin-top:20px " >
@@ -1023,11 +1018,11 @@
                         <div class="col-lg-3 mb-0 d-flex align-items-stretch px-0">
                             @if ($langSeg == 'ar')
 
-                            <div class="card px-0 mx-3" style="direction: rtl; border: 0px !important;  height: 370px !important;">
+                            <div class="card px-0 mx-3 shadow-md" style="direction: rtl; border: 0px !important;  height: 370px !important;">
 
                             @else
 
-                            <div class="card px-0 mx-3" style="border: 0px !important; height: 370px !important;">
+                            <div class="card px-0 mx-3 shadow-md" style="border: 0px !important; height: 370px !important;">
 
                             @endif
 
@@ -1048,22 +1043,22 @@
                                 <div class="card-body d-flex flex-column" style="padding: 0.5rem">
                                     <div class="row d-flex">
                                             <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$property->slug_link)}}" >
-                                                <h6 class="card-title fw-bold text-uppercase mt-3 flex-grow-1 mb-0" style="font-size: 1.2rem; line-height: 1.3 !important;">
-                                                {{ $property->$title_var }}
+                                                <h6 class="card-title fw-bold text-uppercase mt-3 flex-grow-1 mb-0" style="font-size: 1.2rem; line-height: 1.3 !important; color: #cccccc !important">
+                                                {{ Str::limit($property->$title_var, 20) }}
                                                 </h6>
                                             </a>
 
 
-                                            <p class="fw-light mt-1 my-0" style="color: #fff;"> {{ $property->locationss->$name_var }}</p>
+                                            <p class="fw-light mt-1 my-0" style="color: #cccccc !important;"> {{ $property->locationss->$name_var }}</p>
 
                                             @if ($property->type_id == '1')
                                                 @if ($langSeg == 'ru')
-                                                    <p  class="fw-bold mt-0"> <span style="color: #fff;">  {{ ($property->project_price_usd) }} $</span></p>
+                                                    <p  class="fw-bold mt-0"> <span style="color: #cccccc !important;">  {{ ($property->project_price_usd) }} $</span></p>
                                                 @else
                                                     <div class="AED skill_project_1" style="display: block !important">
                                                         <p>
                                                             <b>
-                                                                <span style="color: #fff;">
+                                                                <span style="color: #cccccc !important;">
                                                                     {{ trans('frontLang.AED') }}
                                                                     {{ $property->project_price }}
 
@@ -1075,7 +1070,7 @@
                                                     <div class="USD skill_project_1">
                                                         <p>
                                                             <b>
-                                                                <span style="color: #fff;">
+                                                                <span style="color: #cccccc !important;">
                                                                     USD {{ $property->project_price_usd }}
                                                                 </span>
                                                             </b>
@@ -1088,7 +1083,7 @@
                                                 <div class="AED skill_project" style="display: block !important">
                                                     <p class="fw-bold mt-0">
                                                         <b>
-                                                            <span style="color: #fff;">
+                                                            <span style="color: #cccccc !important;">
                                                                 {{ trans('frontLang.AED') }}
                                                                 {{ $property->project_price }}
 
@@ -1100,7 +1095,7 @@
                                                 <div class="USD skill_project">
                                                     <p class="fw-bold mt-0">
                                                         <b>
-                                                            <span style="color: #fff;">
+                                                            <span style="color: #cccccc !important;">
                                                                 USD {{ $property->project_price_usd }}
                                                             </span>
                                                         </b>
@@ -1138,7 +1133,7 @@
                             @foreach($property->images  as $single_img)
                                 @if($property->images->first()==$single_img)
                                     <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$property->slug_link)}}" >
-                                        <img  src="{{ URL::asset('uploads/projects/images/'.$property->id.'/'.$single_img->image) }}" style=" height: 156px; width: 160px !important; margin:0; padding:0;" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                        <img  src="{{ URL::asset('uploads/projects/images/'.$property->id.'/'.$single_img->image) }}" style="height: 156px; width: 160px !important; margin:0; padding:0;" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
                                     </a>
                                 @endif
                             @endforeach
@@ -1181,7 +1176,7 @@
                                     </p>
                                     <table style="width: 100%">
                                         <tr>
-                                            <td style="width: 50%; text-align: left; font-size: .9em"><i class="fas fa-bed"> </i> {{$property->bedrooms}} {{ trans('frontLang.bedrooms') }}</td>
+                                            <td style="width: 50%; text-align: right; font-size: .9em"><i class="fas fa-bed"> </i> {{$property->bedrooms}} {{ trans('frontLang.bedrooms') }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -1372,13 +1367,13 @@
 
 {{-- PROPERTIES Mobile & Desktop --}}
 @if ($langSeg == "ar")
-    <section class="mt-5 mb-5" style="direction: rtl">
+    {{-- <section class="mt-5 mb-5" style="direction: rtl">
         <div class="container-fluid containerization">
             <h3 class="text-center">{{ trans('frontLang.dubaiPropertiesForSale') }}</h3>
             <P style="font-size: 14px;line-height:1.3 !important;">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
         </div>
 
-    </section>
+    </section> --}}
 
 
     <section class="desktop-show mt-5 mb-5" style="direction: rtl">
@@ -1410,9 +1405,9 @@
         </div>
     </section> --}}
 
-    <section class="desktop-show mt-5 mb-5">
-        <div class="container-fluid containerization">
-            <div class="row col-lg-8 mx-auto">
+    <section class="desktop-show ">
+        <div class="container-fluid containerization pt-3">
+            <div class="row col-lg-8 mx-auto ">
                 <h3 class="text-center mb-3">{{ trans('frontLang.dubaiPropertiesForSale') }}</h3>
                 <P  style="font-size: 14px; line-height: 1.3 !important; text-align: center !important;" class="text-center">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
             </div>
@@ -1646,116 +1641,116 @@
 
 
                                     <div class="card-body d-flex flex-column h-100 p-3 pb-0" >
-                                    <div class="row d-flex h-100">
-                                        <div class="col-8 d-flex flex-column h-100 pe-0">
+                                        <div class="row d-flex h-100">
+                                            <div class="col-8 d-flex flex-column h-100 pe-0">
 
-                                            {{-- Price --}}
-                                            @if ($property->type_id == '1')
-                                                @if ($langSeg == 'ru')
-                                                    <h5 style=" font-size: 1vw;" class="mt-0 fw-light">
-                                                        <b>$ <span style="color: #fff;">
-                                                        {{ number_format($property->price_usd) }}
-                                                        <span class="fw-light" style="font-size: 1rem;">
-                                                            {{ trans('frontLang.Price') }}
-                                                        </span></span>
-                                                        </b>
-                                                    </h5>
-                                                @else
-                                                    <div class="AED skill_property_buy" style="display: block !important">
-                                                        <h5 style=" font-size: 1vw;" class="fw-light mt-0">
-                                                            <b>
-                                                                <span style="color: #fff;">
-                                                                    {{ trans('frontLang.AED') }}
-                                                                    {{ number_format($property->price) }}
-                                                                </span>
+                                                {{-- Price --}}
+                                                @if ($property->type_id == '1')
+                                                    @if ($langSeg == 'ru')
+                                                        <h5 style=" font-size: 1vw;" class="mt-0 fw-light">
+                                                            <b>$ <span style="color: #fff;">
+                                                            {{ number_format($property->price_usd) }}
+                                                            <span class="fw-light" style="font-size: 1rem;">
+                                                                {{ trans('frontLang.Price') }}
+                                                            </span></span>
                                                             </b>
                                                         </h5>
-                                                    </div>
-
-                                                    <div class="USD skill_property_buy">
-                                                        <h5 style=" font-size: 1vw;" class="fw-light mt-0">
-                                                            <b>
-                                                                <span style="color: #fff;">
-                                                                    USD {{ number_format($property->price_usd) }}
-                                                                </span>
-                                                            </b>
-                                                        </h5>
-                                                    </div>
-                                                    {{-- <h5 style=" font-size: 1.5rem;" class="mt-0"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.Price') }}</span></span></b></h5> --}}
-                                                @endif
-                                            @else
-                                                @if ($langSeg == 'ru')
-                                                    <h5 style=" font-size: 1vw;" class="mt-0 fw-light">
-                                                        <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }}
-                                                        <span class="fw-light" style="font-size: 1rem;">
-                                                            {{ trans('frontLang.yearly') }}
-                                                        </span>
-                                                        </b>
-                                                        </span>
-                                                    </h5>
-                                                @else
-                                                    <div class="AED skill_property_buy" style="display: block !important">
-                                                        <h5 style=" font-size: 1vw;" class="fw-light mt-0">
-                                                            <b>
-                                                                <span style="color: #fff;">
-                                                                    {{ trans('frontLang.AED') }}
-                                                                    {{ number_format($property->price) }}
-                                                                    <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.yearly') }}</span>
-                                                                </span>
-                                                            </b>
-                                                        </h5>
-                                                    </div>
-
-                                                    <div class="USD skill_property_buy">
-                                                        <h5 style=" font-size: 1vw;" class="fw-light mt-0">
-                                                            <b>
-                                                                <span style="color: #fff;">
-                                                                    USD {{ number_format($property->price_usd) }}
-                                                                    <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.yearly') }}</span>
-                                                                </span>
-                                                            </b>
-                                                        </h5>
-                                                    </div>
-                                                    {{-- <h5 style=" font-size: 1.5rem;" class="mt-0"> <b> {{ trans('frontLang.AED') }}<span style="color: #fff;">  {{ number_format($property->price) }} <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.yearly') }}</span></b> </span></h5> --}}
-                                                @endif
-
-
-                                            @endif
-                                            <div style="height: 50px;">
-                                                <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                                    <p class="card-title  mt-3 flex-grow-1" style="font-size: 0.75vw; line-height: 1.3 !important; color: #848484">
-                                                        {{ Str::limit($property->$title_var, 58) }}
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            {{-- <p class="fw-light mt-0" style="font-size: 1.2 !important"> {{ $property->locationss->$name_var }}</p> --}}
-                                        </div>
-                                        <div class="col-4">
-                                            @foreach($agents  as $agent)
-                                                @if($property->agent_id==$agent->id)
-                                                    @if (file_exists(public_path().'assets/images/agents'.$agent->id.'/'.$agent->image))
-                                                        <img src="{{ URL::asset('public/assets/images/agents'.$agent->id.'/'.$agent->image) }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0 "  alt="agent">
                                                     @else
-                                                        <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0 "  alt="agent">
+                                                        <div class="AED skill_property_buy" style="display: block !important">
+                                                            <h5 style=" font-size: 1vw;" class="fw-light mt-0">
+                                                                <b>
+                                                                    <span style="color: #fff;">
+                                                                        {{ trans('frontLang.AED') }}
+                                                                        {{ number_format($property->price) }}
+                                                                    </span>
+                                                                </b>
+                                                            </h5>
+                                                        </div>
+
+                                                        <div class="USD skill_property_buy">
+                                                            <h5 style=" font-size: 1vw;" class="fw-light mt-0">
+                                                                <b>
+                                                                    <span style="color: #fff;">
+                                                                        USD {{ number_format($property->price_usd) }}
+                                                                    </span>
+                                                                </b>
+                                                            </h5>
+                                                        </div>
+                                                        {{-- <h5 style=" font-size: 1.5rem;" class="mt-0"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.Price') }}</span></span></b></h5> --}}
                                                     @endif
-                                                    {{-- <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" style="border-bottom: 0.5px solid grey !important;" > --}}
+                                                @else
+                                                    @if ($langSeg == 'ru')
+                                                        <h5 style=" font-size: 1vw;" class="mt-0 fw-light">
+                                                            <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }}
+                                                            <span class="fw-light" style="font-size: 1rem;">
+                                                                {{ trans('frontLang.yearly') }}
+                                                            </span>
+                                                            </b>
+                                                            </span>
+                                                        </h5>
+                                                    @else
+                                                        <div class="AED skill_property_buy" style="display: block !important">
+                                                            <h5 style=" font-size: 1vw;" class="fw-light mt-0">
+                                                                <b>
+                                                                    <span style="color: #fff;">
+                                                                        {{ trans('frontLang.AED') }}
+                                                                        {{ number_format($property->price) }}
+                                                                        <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.yearly') }}</span>
+                                                                    </span>
+                                                                </b>
+                                                            </h5>
+                                                        </div>
 
-                                                    {{-- </a> --}}
+                                                        <div class="USD skill_property_buy">
+                                                            <h5 style=" font-size: 1vw;" class="fw-light mt-0">
+                                                                <b>
+                                                                    <span style="color: #fff;">
+                                                                        USD {{ number_format($property->price_usd) }}
+                                                                        <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.yearly') }}</span>
+                                                                    </span>
+                                                                </b>
+                                                            </h5>
+                                                        </div>
+                                                        {{-- <h5 style=" font-size: 1.5rem;" class="mt-0"> <b> {{ trans('frontLang.AED') }}<span style="color: #fff;">  {{ number_format($property->price) }} <span class="fw-light" style="font-size: 1rem;">{{ trans('frontLang.yearly') }}</span></b> </span></h5> --}}
+                                                    @endif
+
+
                                                 @endif
-                                            @endforeach
+                                                <div style="height: 50px;">
+                                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                        <p class="card-title  mt-3 flex-grow-1" style="font-size: 0.75vw; line-height: 1.3 !important; color: #848484">
+                                                            {{ Str::limit($property->$title_var, 58) }}
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                                {{-- <p class="fw-light mt-0" style="font-size: 1.2 !important"> {{ $property->locationss->$name_var }}</p> --}}
+                                            </div>
+                                            <div class="col-4">
+                                                @foreach($agents  as $agent)
+                                                    @if($property->agent_id==$agent->id)
+                                                        @if (file_exists(public_path().'assets/images/agents'.$agent->id.'/'.$agent->image))
+                                                            <img src="{{ URL::asset('public/assets/images/agents'.$agent->id.'/'.$agent->image) }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0 "  alt="agent">
+                                                        @else
+                                                            <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0 "  alt="agent">
+                                                        @endif
+                                                        {{-- <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" style="border-bottom: 0.5px solid grey !important;" > --}}
+
+                                                        {{-- </a> --}}
+                                                    @endif
+                                                @endforeach
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                    <div class="row my-2 px-2" style="display:block; bottom: 0% !important;"  >
+                                        <div class="row my-2 px-2" style="display:block; bottom: 0% !important;"  >
 
-                                        <span class="fw-light px-1" style="color: #848484; font-size: 0.75vw !important;"> <i class="fas fa-bed"> </i> {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
+                                            <span class="fw-light px-1" style="color: #848484; font-size: 0.75vw !important;"> <i class="fas fa-bed"> </i> {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
 
-                                        <span class="fw-light px-1" style="color: #848484; font-size: 0.75vw !important;"> <i class="fas fa-bath"> </i> {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
+                                            <span class="fw-light px-1" style="color: #848484; font-size: 0.75vw !important;"> <i class="fas fa-bath"> </i> {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
 
-                                        <span class="fw-light px-1" style="color: #848484; font-size: 0.75vw !important;"> <i class="fas fa-chart-area"> </i> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                            <span class="fw-light px-1" style="color: #848484; font-size: 0.75vw !important;"> <i class="fas fa-chart-area"> </i> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
 
-                                    </div>
+                                        </div>
 
                                     </div>
 
@@ -1994,8 +1989,8 @@
                                                     </p>
                                                     <table style="width: 100%">
                                                         <tr>
-                                                            <td style="text-align: left; font-size: .9em"> {{$property->bedrooms}} <i class="fas fa-bed"></i> {{ trans('frontLang.bed') }} </td>  <span style="color: #848484">.</span>
-                                                            <td style="text-align: center; font-size: .9em"> {{$property->bathrooms}} <i class="fas fa-bath"></i> {{ trans('frontLang.bath') }}</td>
+                                                            <td style="text-align: right; font-size: .9em"> {{$property->bedrooms}} <i class="fas fa-bed"></i> {{ trans('frontLang.bed') }} </td>
+                                                            <td style="text-align: right; font-size: .9em"> {{$property->bathrooms}} <i class="fas fa-bath"></i> {{ trans('frontLang.bath') }}</td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -2186,8 +2181,8 @@
                                                 </p>
                                                 <table style="width: 100%">
                                                     <tr>
-                                                        <td style="width: 50%; text-align: left; font-size: .9em"><i class="fas fa-bed"> </i> {{$property->bedrooms}} {{ trans('frontLang.bed') }} <span style="color: #848484">.</span></td>
-                                                        <td style="width: 50%; text-align: center; font-size: .9em"><i class="fas fa-bath"> </i> {{$property->bathrooms}} {{ trans('frontLang.bath') }}</td>
+                                                        <td style="width: 50%; text-align: right; font-size: .9em"><i class="fas fa-bed"> </i> {{$property->bedrooms}} {{ trans('frontLang.bed') }}
+                                                        <td style="width: 50%; text-align: right; font-size: .9em"><i class="fas fa-bath"> </i> {{$property->bathrooms}} {{ trans('frontLang.bath') }}</td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -2347,7 +2342,7 @@
 
             <div class="col-md-3 text-center my-auto mb-3" >
                 <a href="{{url( $langSeg .'/'.'dubai-communities/bluewaters')}}">
-                <div class="card card-block d-flex" style="height: 200px;background-image: url('{{URL::asset('public/assets/asset/bluewaters.jpg')}}');    background-size: cover; background-position: center; background-repeat: no-repeat;border-radius: 0px;">
+                <div class="card card-block d-flex" style="height: 200px;background-image: url('{{URL::asset('public/assets/asset/desktop/bluewaters-edgerealty.ae.webp')}}');    background-size: cover; background-position: center; background-repeat: no-repeat;border-radius: 0px;">
                 <div class="card-body align-items-center d-flex justify-content-center">
 
                     <h5 class="card-title" style="color:white">{{ trans('frontLang.Bluewaters') }}</h5>
@@ -2357,7 +2352,7 @@
             </div>
             <div class="col-md-3 text-center my-auto mb-3" >
                 <a href="{{url( $langSeg .'/'.'dubai-communities/downtown-dubai')}}">
-                <div class="card card-block d-flex" style="height: 200px;background-image: url('{{URL::asset('public/assets/asset/downtown.jpg')}}');    background-size: cover; background-position: center; background-repeat: no-repeat;border-radius: 0px;">
+                <div class="card card-block d-flex" style="height: 200px;background-image: url('{{URL::asset('public/assets/asset/desktop/downtowndubai-edgerealty.ae.jpg')}}');    background-size: cover; background-position: center; background-repeat: no-repeat;border-radius: 0px;">
                 <div class="card-body align-items-center d-flex justify-content-center">
                     <h5 class="card-title" style="color:white">{{ trans('frontLang.Downtown') }}</h5>
                 </div>
@@ -2366,7 +2361,7 @@
             </div>
             <div class="col-md-3 text-center my-auto mb-3" >
                 <a href="{{url( $langSeg .'/'.'dubai-communities/dubai-hills-estate')}}">
-                <div class="card card-block d-flex" style="height: 200px;background-image: url('{{URL::asset('public/assets/asset/dubaihills.jpg')}}');    background-size: cover; background-position: center; background-repeat: no-repeat;border-radius: 0px;">
+                <div class="card card-block d-flex" style="height: 200px;background-image: url('{{URL::asset('public/assets/asset/desktop/dubaihillsestate-edgerealty.ae.jpg')}}');    background-size: cover; background-position: center; background-repeat: no-repeat;border-radius: 0px;">
                 <div class="card-body align-items-center d-flex justify-content-center">
                     <h5 class="card-title" style="color:white">{{ trans('frontLang.Dubaihillestate') }}</h5>
                 </div>
@@ -2375,9 +2370,9 @@
             </div>
             <div class="col-md-3 text-center my-auto" >
                 <a href="{{url( $langSeg .'/'.'dubai-communities/city-walk')}}">
-                <div class="card card-block d-flex" style="height: 200px; background-image: url('{{URL::asset('public/assets/asset/citywalk.jpg')}}'); background-size: cover; background-position: center;background-repeat: no-repeat;border-radius: 0px;">
+                <div class="card card-block d-flex" style="height: 200px; background-image: url('{{URL::asset('public/assets/asset/desktop/Palm-Jumeirah3-edgerealty.ae.webp')}}'); background-size: cover; background-position: center;background-repeat: no-repeat;border-radius: 0px;">
                     <div class="card-body align-items-center d-flex justify-content-center">
-                        <h5 class="card-title" style="color:white">{{ trans('frontLang.citywalk') }}</h5>
+                        <h5 class="card-title" style="color:white">{{ trans('frontLang.palmJumeirah') }}</h5>
                     </div>
                 </div>
                 </a>

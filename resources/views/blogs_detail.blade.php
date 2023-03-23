@@ -121,7 +121,7 @@ else
                 </div>
             </div>
 
-            <div class="row mt-2 mb-5">
+            <div class="desktop-show row mt-2 mb-5">
                 <div class="col-12 mx-auto">
                     <ul class="list-group list-group-horizontal-sm bg-black mx-auto d-flex justify-content-center">
                         <li class="list-group-item bg-black text-white bg-black text-center">
@@ -142,6 +142,35 @@ else
 
                         <li class="list-group-item bg-black text-white bg-black text-center ">
                             <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" class="" style="height: 35px !important">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-show row mt-2 mb-5">
+                <div class="mx-auto mobile-show ">
+                    <ul class="mobile-show list-group list-group-horizontal position-relative overflow-auto w-75 mx-auto">
+                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 28px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                            <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 28px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 28px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 28px !important; width: auto !important">
+                            </a>
                         </li>
                     </ul>
                 </div>

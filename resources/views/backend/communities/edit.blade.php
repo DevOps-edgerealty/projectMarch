@@ -200,7 +200,7 @@
 
                                     <div class="col-sm-12">
                                         <label for="exampleInputName">Meta Title [ العربية ]</label>
-                                        {!! Form::text('meta_title_ar',$communities->meta_title_ar, array('placeholder' => '','class' => 'form-control','id'=>'meta_title_en','required'=>'')) !!}
+                                        {!! Form::text('meta_title_ar',$communities->meta_title_ar, array('placeholder' => '','class' => 'form-control','id'=>'meta_title_ar','required'=>'')) !!}
                                     </div>
 
 
@@ -210,7 +210,7 @@
 
                                     <div class="col-sm-12">
                                         <label for="exampleInputName">Meta Keyword [English]</label>
-                                        {!! Form::text('meta_keyword_en',$communities->meta_keywords_en, array('placeholder' => '','class' => 'form-control','id'=>'meta_keyword_en','required'=>'')) !!}
+                                        {!! Form::text('meta_keywords_en',$communities->meta_keywords_en, array('placeholder' => '','class' => 'form-control','id'=>'meta_keywords_en','required'=>'')) !!}
                                     </div>
 
 
@@ -220,17 +220,16 @@
 
                                     <div class="col-sm-12">
                                         <label for="exampleInputName">Meta Keyword [Russian]</label>
-                                        {!! Form::text('meta_keyword_ru',$communities->meta_keyword_ru, array('placeholder' => '','class' => 'form-control','id'=>'meta_keyword_ru','required'=>'')) !!}
+                                        {!! Form::text('meta_keywords_ru',$communities->meta_keywords_ru, array('placeholder' => '','class' => 'form-control','id'=>'meta_keywords_ru','required'=>'')) !!}
                                     </div>
 
 
                                 </div>
                                 <div class="form-group row">
 
-
                                     <div class="col-sm-12">
                                         <label for="exampleInputName">Meta Keyword [ العربية ]</label>
-                                        {!! Form::text('meta_keyword_ar',$communities->meta_keywords_ar, array('placeholder' => '','class' => 'form-control','id'=>'meta_keyword_en','required'=>'')) !!}
+                                        {!! Form::text('meta_keywords_ar',$communities->meta_keywords_ar, array('placeholder' => '','class' => 'form-control','id'=>'meta_keywords_ar','required'=>'')) !!}
                                     </div>
 
 
@@ -258,7 +257,7 @@
 
                                     <div class="col-sm-12">
                                         <label for="exampleInputName">Meta Description [ العربية ]</label>
-                                        {!! Form::text('meta_description_ar',$communities->meta_description_ar, array('placeholder' => '','class' => 'form-control','id'=>'meta_discription_en','required'=>'')) !!}
+                                        {!! Form::text('meta_description_ar',$communities->meta_description_ar, array('placeholder' => '','class' => 'form-control','id'=>'meta_description_ar','required'=>'')) !!}
                                     </div>
 
 

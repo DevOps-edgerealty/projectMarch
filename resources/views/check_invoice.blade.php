@@ -65,23 +65,23 @@
 
 
 
-                            <div class="col-lg-3 mb-4">
+                            <div class="col-lg-4 mb-4">
                                 {!! Form::text('name',"", array('placeholder' => trans('Enter Your First Name'),'class' => 'form-control form-control-lg','id'=>'name', 'data-msg'=> trans('frontLang.enterYourName'),'data-rule'=>'minlen:4')) !!}
 
                             </div>
 
                             <!-- Email input -->
-                            <div class="col-lg-3 mb-4">
+                            {{-- <div class="col-lg-3 mb-4">
                                 {!! Form::text('contract_no',"", array('placeholder' => trans('Enter You Contract No'),'class' => 'form-control  form-control-lg','id'=>'contract_no', 'data-msg'=> trans('frontLang.enterYourName'),'data-rule'=>'minlen:4')) !!}
 
-                            </div>
+                            </div> --}}
 
                             <!-- Email input -->
-                            <div class="col-lg-3 mb-4">
+                            <div class="col-lg-4 mb-4">
                                 {!! Form::text('invoice_no',"", array('placeholder' => trans('Enter You Invoice No'),'class' => 'form-control  form-control-lg','id'=>'invoice_no', 'data-msg'=> trans('frontLang.enterYourName'),'data-rule'=>'minlen:4')) !!}
 
                             </div>
-                            <div class="col-lg-3 mb-4">
+                            <div class="col-lg-4 mb-4">
                                 <button type="submit" class="btn btn-dark btn-block btn-lg" >
                                     Submit
                                 </button>
