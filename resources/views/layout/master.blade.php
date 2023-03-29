@@ -240,12 +240,13 @@
 
             .mobile_bottom {
                 display: none;
+
             }
 
             @media (min-width: 600px) {
-                .lang {
-                    min-width: 4rem !important;
-                    max-width: 8rem !important;
+                    .lang {
+                        min-width: 4rem !important;
+                        max-width: 8rem !important;
                 }
 
             }
@@ -258,7 +259,7 @@
                 background: #fff;
                 width: 100%;
                 text-align: center;
-                z-index: 1000;
+
                 line-height: 60px;
                 }
 
@@ -273,30 +274,30 @@
 
             }
             .whats_icon_btn {
-                position: relative;
-                bottom: 10px;
-                right: auto;
-                width: 33.3%;
-                float: left;
-                font-size: xx-large;
+            position: relative;
+            bottom: 10px;
+            right: auto;
+            width: 33.3%;
+            float: left;
+            font-size: xx-large;
 
 
             }
             .enquiry_btn_right {
-                position: relative;
-                /* right: 0; */
+            position: relative;
+            right: 0;
 
-                bottom: 10px;
+            bottom: 10px;
 
-                width: 33.3%;
+            width: 33.3%;
 
 
-                z-index: 9999;
+            z-index: 9999;
 
-                /* float: left; */
-                font-size: xx-large;
+            float: left;
+            font-size: xx-large;
 
-                display: block
+            display: block
             }
 
             .grecaptcha-badge {
@@ -361,7 +362,7 @@
 
         @include('layout.footer')
 
-        <div class="mobile_bottom bg-transparent">
+        <div class="mobile_bottom py-1" style="background-color: #1c1c1c !important; z-index: 20000 !important;">
 
             {{-- <div class="mb-2" style="">
                 <a href="#" style=" width: 60% !important; font-size: 1em !important;" data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"
@@ -373,17 +374,17 @@
 
 
 
-            {{-- <div class="call_mobile">
-                <a href="javascript:void(Tawk_API.toggle())" class="btn btn-black" style="background-color: #686a68;padding: 12px 30px;"><i class="far fa-comment-alt"> </i> {{ trans('frontLang.chat') }}</a>
+            <div class="call_mobile">
+                <a href="javascript:void(Tawk_API.toggle())" class="btn  shadow-none border-none" style="background-color: #1c1c1c; padding: 12px 30px; border: 0.5px #cccccc solid !important;;"><i class="far fa-comment-alt"> </i> {{ trans('frontLang.chat') }}</a>
             </div>
+
             <div class="enquiry_btn_right">
-                <a href="#" style="background-color: #686a68;padding: 12px 28px;"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"  class="btn btn-danger"><i class="fas fa-envelope"> </i> {{ trans('frontLang.email_footer') }}</a>
+                <a href="#" style="background-color: #1c1c1c;padding: 12px 28px; border: 0.5px #cccccc solid !important;;"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-request"  class="btn btn-danger shadow-none border-none"><i class="fas fa-envelope"> </i> {{ trans('frontLang.email_footer') }}</a>
             </div>
+
             <div class="whats_icon_btn">
-
-                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" class="btn btn-success" style="padding: 12px 15px;" ><i class="fab fa-whatsapp"> </i> {{ trans('frontLang.whatsapp') }}</a>
-
-            </div> --}}
+                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" class="btn btn-success shadow-none border-none" style="padding: 12px 15px; border: 0.5px #cccccc solid !important; ;" ><i class="fab fa-whatsapp"> </i> {{ trans('frontLang.whatsapp') }}</a>
+            </div>
 
 
         </div>

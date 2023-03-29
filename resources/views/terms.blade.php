@@ -45,7 +45,7 @@ $langSeg = 'en';
 
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgb(0 0 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3>{{ trans('frontLang.Termsandcondition') }}</h3>

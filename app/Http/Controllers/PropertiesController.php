@@ -63,6 +63,10 @@ class PropertiesController extends Controller
 
         $this->data['properties'] = $properties;
 
+        $agents = Agents::where('status', 1)->get();
+
+        $this->data['agents'] = $agents;
+
         return view('properties',$this->data);
     }
 
@@ -154,6 +158,10 @@ class PropertiesController extends Controller
         }
 
         $landingpageseo = Landingpageseos::where('id','5')->first();
+
+        $agents = Agents::where('status', 1)->get();
+
+        $this->data['agents'] = $agents;
 
 
         $this->data['landingpageseo'] = $landingpageseo;
@@ -260,6 +268,10 @@ class PropertiesController extends Controller
         // dd($Pageheading);
 
         $landingpageseo = Landingpageseos::where('id','5')->first();
+
+        $agents = Agents::where('status', 1)->get();
+
+        $this->data['agents'] = $agents;
 
 
         $this->data['landingpageseo'] = $landingpageseo;
@@ -395,6 +407,10 @@ class PropertiesController extends Controller
 
         $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
 
+        $agents = Agents::where('status', 1)->get();
+
+        $this->data['agents'] = $agents;
+
         $this->data['footerDevelopers'] = $footerDevelopers;
 
         $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
@@ -518,6 +534,10 @@ class PropertiesController extends Controller
             $Pageheading = "Villa For Sale in Dubai";
         }
 
+        $agents = Agents::where('status', 1)->get();
+
+        $this->data['agents'] = $agents;
+
         $this->data['properties'] = $properties;
 
         $this->data['PageHeading'] = $Pageheading;
@@ -587,6 +607,9 @@ class PropertiesController extends Controller
 
         $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','3')->where('type_id','1')->orderby('id','DESC')->paginate(15);
 
+        $agents = Agents::where('status', 1)->get();
+
+        $this->data['agents'] = $agents;
 
 
         //return $properties;
@@ -602,7 +625,8 @@ class PropertiesController extends Controller
 
 
     public function townhouses_for_sale($lang = '')
-    {$footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+    {
+        $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
         $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
 
@@ -661,6 +685,10 @@ class PropertiesController extends Controller
         //return $properties;
 
         $this->data['properties'] = $properties;
+
+        $agents = Agents::where('status', 1)->get();
+
+        $this->data['agents'] = $agents;
 
         return view('properties',$this->data);
 
@@ -728,8 +756,9 @@ class PropertiesController extends Controller
 
         $this->data['properties'] = $properties;
 
+        $agents = Agents::where('status', 1)->get();
 
-
+        $this->data['agents'] = $agents;
 
         return view('properties',$this->data);
 
@@ -801,8 +830,9 @@ class PropertiesController extends Controller
 
         $this->data['properties'] = $properties;
 
+        $agents = Agents::where('status', 1)->get();
 
-
+        $this->data['agents'] = $agents;
 
         return view('properties',$this->data);
 
@@ -873,8 +903,9 @@ class PropertiesController extends Controller
 
         $this->data['properties'] = $properties;
 
+        $agents = Agents::where('status', 1)->get();
 
-
+        $this->data['agents'] = $agents;
 
         return view('properties',$this->data);
 
@@ -942,7 +973,9 @@ class PropertiesController extends Controller
 
         $this->data['properties'] = $properties;
 
+        $agents = Agents::where('status', 1)->get();
 
+        $this->data['agents'] = $agents;
 
 
         return view('properties',$this->data);
@@ -1013,8 +1046,9 @@ class PropertiesController extends Controller
 
         $this->data['properties'] = $properties;
 
+        $agents = Agents::where('status', 1)->get();
 
-
+        $this->data['agents'] = $agents;
 
         return view('properties',$this->data);
 
@@ -1084,8 +1118,9 @@ class PropertiesController extends Controller
 
         $this->data['properties'] = $properties;
 
+        $agents = Agents::where('status', 1)->get();
 
-
+        $this->data['agents'] = $agents;
 
         return view('properties',$this->data);
 
@@ -1155,7 +1190,9 @@ class PropertiesController extends Controller
 
         $this->data['properties'] = $properties;
 
+        $agents = Agents::where('status', 1)->get();
 
+        $this->data['agents'] = $agents;
 
         return view('properties',$this->data);
 
@@ -1220,6 +1257,10 @@ class PropertiesController extends Controller
         $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','6')->where('type_id','2')->orderby('id','DESC')->paginate(15);
 
         $this->data['properties'] = $properties;
+
+        $agents = Agents::where('status', 1)->get();
+
+        $this->data['agents'] = $agents;
 
         return view('properties',$this->data);
 

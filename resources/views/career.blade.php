@@ -89,19 +89,19 @@
     line-height: 1.6 !important;
   }
   .card {
-        color: #fff !important;
-        background-color: #000 !important;
+        color: #ccc !important;
+        background-color: #1c1c1c !important;
         border: 1px solid gray !important;
         border-radius: 0 !important;
     }
     td > a {
-        color: #fff !important;
+        color: #ccc !important;
     }
     input, select, textarea {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #ccc !important;
         border-radius: 0px !important;
-        border: 1px solid #fff !important;
+        border: 1px solid #ccc !important;
     }
     /* button {
         background-color: #000 !important;
@@ -119,10 +119,10 @@
         /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
         /* translate: 2px -2px !important; */
         opacity: 1 !important;
-        background-color: #fff !important;
-        color: #000 !important;
+        background-color: #ccc !important;
+        color: #1c1c1c !important;
         transform: scale(1) !important;
-        border: 2px solid #000 !important;
+        border: 2px solid #1c1c1c  !important;
 
         cursor: pointer !important;
     }
@@ -135,7 +135,7 @@
 
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgb(0 0 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3  style="text-transform: uppercase;">{{ trans('frontLang.Careers') }}</h3>

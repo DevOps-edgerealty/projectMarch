@@ -28,8 +28,8 @@ $langSeg = 'en';
 <section>
     <header>
         <!-- Background image -->
-        <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgb(0 0 0);">
+        <div id="intro-page" class="bg-image ">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     {{-- <h3>Thank You</h3> --}}

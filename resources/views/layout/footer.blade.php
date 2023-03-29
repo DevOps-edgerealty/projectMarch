@@ -723,19 +723,19 @@
                         </p>
                         <!-- Facebook -->
                         <div class="m-0 p-0" style="margin-left: -40px !important;">
-                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 16px !important; color: #ABB7B7 !important; border: 0 !important;"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
 
                             <!-- Twitter -->
-                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 16px !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
 
                             <!-- Instagram -->
-                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 16px !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
 
                             <!-- Linkedin -->
-                            <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 16px !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
+                            <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
 
                             <!-- Linkedin -->
-                            <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 16px !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
+                            <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
 

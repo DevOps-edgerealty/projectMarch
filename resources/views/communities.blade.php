@@ -53,14 +53,13 @@
     }
 
     .card {
-        color: #fff !important;
-        background-color: #000 !important;
-        border: 0.5px solid gray !important;
+        margin: 12px !important;
+        color: #cccccc !important;
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
         border-radius: 0 !important;
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
-        transition-duration: 0.125s !important;
-
-
+        transition-duration: 0.5s !important;
     }
 
     .card-footer {
@@ -107,7 +106,7 @@ else
 
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgb(0 0 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
                 <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" >
                     <div>
                         <h3 class="text-white"  style="text-transform: uppercase;">{{ trans('frontLang.dubaiCommunities') }}</h3>
@@ -348,7 +347,7 @@ else
                 <style>
                     .pagination > li > a,
                     .pagination > li > span {
-                        color: #fff !important; // use your own color here
+                        color: #ccc !important; // use your own color here
                     }
 
 
@@ -358,9 +357,9 @@ else
                     .pagination > .disabled > span,
                     .pagination > .disabled > span:focus,
                     .pagination > .disabled > span:hover {
-                        background-color: #000 !important;
+                        background-color: #1c1c1c !important;
                         border-color: green;
-                        color: #fff !important;
+                        color: #ccc !important;
                     }
 
                     .pagination > .active > a,
@@ -369,9 +368,9 @@ else
                     .pagination > .active > span,
                     .pagination > .active > span:focus,
                     .pagination > .active > span:hover {
-                        background-color: #fff;
+                        background-color: #ccc;
                         border-color: green;
-                        color: #000 !important;
+                        color: #1c1c1c !important;
                     }
                 </style>
                 {!! $communities->links() !!}

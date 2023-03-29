@@ -19,10 +19,10 @@
 @endsection
 <style>
         a, h1, h2, h3, h4, h5, h6, p, {
-            color: #000 !important;
+            color: #1c1c1c !important;
         }
         a {
-            color: #000 !important;
+            color: #1c1c1c !important;
         }
     </style>
 
@@ -31,22 +31,16 @@
 <style>
   p{
     line-height: 1.6 !important;
-    color: #fff !important;
+    color: #ccc !important;
   }
-  .card {
-        color: #fff !important;
-        background-color: #000 !important;
-        border: 0.5px solid gray !important;
-        border-radius: 0 !important;
-    }
     td > a {
-        color: #fff !important;
+        color: #ccc !important;
     }
     input, select {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #ccc !important;
         border-radius: 0px !important;
-        border: 1px solid #fff !important;
+        border: 1px solid #ccc !important;
     }
 
     @media only screen and (max-width: 800px) {
@@ -56,7 +50,23 @@
     }
 
     .card {
-        z-index: 1 !important;
+        margin: 12px !important;
+        color: #cccccc !important;
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
+        border-radius: 0 !important;
+        transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+        transition-duration: 0.5s !important;
+    }
+
+    .modal-content {
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
+    }
+
+    .submitBtn {
+        background-color: #1c1c1c !important;
+        color: #fff;
     }
 
     .slick-slide {
@@ -249,9 +259,9 @@
 
                     <style>
                         .testbutton:hover {
-                            background-color: #ffffff !important;
-                            color: black !important;
-                            border: #fff solid !important;
+                            background-color: #ccc !important;
+                            color: 1c1c1c !important;
+                            border: #ccc solid !important;
                         }
                     </style>
 
@@ -277,7 +287,7 @@
                 <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                 <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
             </div> --}}
-            <div class="modal-body bg-black rounded-0">
+            <div class="modal-body rounded-0">
                 <div class="row">
                     <div class="col-lg-6 mb-3">
                         @foreach($project_detail->images  as $single_img)
@@ -350,7 +360,7 @@
 
                         </div>
                         <div class="col-md-5 mx-auto">
-                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: #000;">
+                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: #1c1c1c;">
                                 {{ trans('frontLang.requestdetail') }}
                             </a>
                         </div>
@@ -462,7 +472,7 @@
     <section class="mobile-show" >
         <div class="container-fluid containerization" id="mobile-info-section" dir="rtl">
             <div class="row" style="margin-top: 0; position: relative; padding-right: 10px; padding-left: 10px;">
-                <div class="col-lg-12 shadow py-3 px-1 mb-0 bg-black text-white" >
+                <div class="col-lg-12 shadow py-3 px-1 mb-0 " >
 
                     {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
                     <div class="row">
@@ -537,7 +547,7 @@
 
                         </div>
                         <div class="col-md-5 mx-auto">
-                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: #000;">
+                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: ##1c1c1c;">
                                 {{ trans('frontLang.requestdetail') }}
                             </a>
                         </div>
@@ -649,7 +659,7 @@
     <section class="mobile-show" >
         <div class="container-fluid containerization" id="mobile-info-section">
             <div class="row" style="margin-top: 0; position: relative; padding-right: 10px; padding-left: 10px;">
-                <div class="col-lg-12 shadow py-3 px-1 mb-0 bg-black text-white" >
+                <div class="col-lg-12 shadow py-3 px-1 mb-0 " style="color: #ccc !important;">
 
                     {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
                     <div class="row">
@@ -658,13 +668,13 @@
                                 {{ trans('frontLang.startingfrom') }}
                             </p>
                             <div class="AED skill " style="display: block !important">
-                                <p style="color: #fff; font-size: 1em" class="">
+                                <p style="color: #ccc; font-size: 1em" class="">
                                     <span class="fw-bold"> {{ trans('frontLang.AED') }}
                                     {{ $project_detail->project_price }}</span>
                                 </p>
                             </div>
                             <div class="USD skill ">
-                                <p style="color: #fff; font-size: 1em" class="">
+                                <p style="color: #ccc; font-size: 1em" class="">
                                     USD
                                     {{ $project_detail->project_price_usd }}
                                 </p>
@@ -781,7 +791,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <span style="color: grey !important; text-align: justify; ">
+                    <span style="color: #ccc !important; text-align: justify; ">
                         {!! $project_detail->$description_var !!}
                     </span>
 
@@ -1316,7 +1326,7 @@
                     @foreach ($features_array as $feature_id => $feature_name)
                         @foreach ($features as $feature)
                             @if($feature == $feature_id)
-                                <div class="col-lg-3 mb-4" style="color: #fff">
+                                <div class="col-lg-3 mb-4" style="color: #ccc">
                                     <i class="far fa-check-circle"></i>  <span >{!!  $feature_name[$name_var] !!}</span>
                                 </div>
                             @endif
@@ -1334,16 +1344,16 @@
             <section class="mt-4 desktop-show">
                 <div class="container-fluid containerization">
                         <h3 class="text-left mb-4"><b> {{ trans('frontLang.payment') }}</b></h3>
-                        <div class="row bg-black">
+                        <div class="row">
                             <style>
                                 .inner {
-                                    background-color: #000 !important;
-                                    color: #fff !important;
-                                    border: 0px #848484 solid !important;
+                                    background-color: #1c1c1c !important;
+                                    color: #ccc !important;
+                                    border: 0px #ccc solid !important;
                                     text-align: left !important;
                                 }
                                 .icon {
-                                    color: #fff !important;
+                                    color: #ccc !important;
                                 }
                             </style>
                             {!! $project_detail->$payment_var !!}
@@ -1376,11 +1386,11 @@
                         <div class="row" >
                             <style>
                                 .table-bordered {
-                                    background-color: #000 !important;
-                                    border: 0.5px #848484 solid !important;
+                                    background-color: #1c1c1c !important;
+                                    border: 0.5px #ccc solid !important;
                                 }
                                 td {
-                                    color: #fff !important;
+                                    color: #ccc !important;
                                 }
                             </style>
                             {!!html_entity_decode($project_detail->$near_by_places_var)!!}

@@ -73,13 +73,8 @@
         line-height: 1.5 !important;
     }
 
-    .card {
-        background-color: #000 !important;
-        color: #fff !important;
-    }
-
     .card-title {
-        color: #fff !important;
+        color: #ccc !important;
         font-size: 1.5em !important;
     }
 
@@ -90,6 +85,26 @@
     .skill_mobile{
         display: none;
     }
+
+    .card {
+        margin: 12px !important;
+        color: #cccccc !important;
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
+        border-radius: 0 !important;
+        transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+        transition-duration: 0.5s !important;
+    }
+
+    .modal-content {
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
+    }
+
+    .submitBtn {
+        background-color: #1c1c1c !important;
+        color: #fff;
+    }
 </style>
 
 {{-- header --}}
@@ -97,7 +112,7 @@
     <header>
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgba(0, 0, 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3 style="font-size: 3em !important;">
@@ -147,7 +162,7 @@
 
                                 </div>
                                 @honeypot
-                                <button type="submit" class="btn bg-black text-white rounded-0 btn-lg btn-block " style="border: 0.5px #848484 solid !important;">
+                                <button type="submit" class="btn  text-white rounded-0 btn-lg btn-block " style="border: 0.5px #848484 solid !important;">
                                     {{ trans('frontLang.submit') }}
                                 </button>
                             </form>
@@ -192,14 +207,14 @@
     </section>
 
     @if(count($project_luxury) > 0)
-    <section style="background-color: #eaeaea; direction: rtl">
+    <section style="background-color: #1c1c1c; direction: rtl">
         <div class="container">
             <div class="row">
                 <h3 class="mt-5 mb-4">مشاريع فاخرة {{ $developer->$name_var }}</h3>
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project_luxury as $projects)
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-5 px-0">
                             <div class="card">
 
 
@@ -232,14 +247,14 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%">
-                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="far fa-envelope"> </i>
                                                     {{ trans('frontLang.requestdetail') }}
                                                 </a>
                                             </td>
 
                                             <td style="text-align: center;width: 50%">
-                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="fab fa-whatsapp"></i>
                                                     {{ trans('frontLang.whatsapp') }}
                                                 </a>
@@ -289,7 +304,7 @@
 
                                                     </div>
                                                     @honeypot
-                                                    <button type="submit" class="btn btn-dark btn-lg btn-block ">
+                                                    <button type="submit" class="btn submitBtn btn-lg btn-block ">
                                                         {{ trans('frontLang.submit') }}
                                                     </button>
                                                 </form>
@@ -322,7 +337,7 @@
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project as $projects)
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-5 px-0">
                             <div class="card">
 
 
@@ -358,14 +373,14 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%">
-                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="far fa-envelope"> </i>
                                                     {{ trans('frontLang.requestdetail') }}
                                                 </a>
                                             </td>
 
                                             <td style="text-align: center;width: 50%">
-                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="fab fa-whatsapp"></i>
                                                     {{ trans('frontLang.whatsapp') }}
                                                 </a>
@@ -415,7 +430,7 @@
 
                                                     </div>
                                                     @honeypot
-                                                    <button type="submit" class="btn btn-dark btn-lg btn-block ">
+                                                    <button type="submit" class="btn submitBtn btn-lg btn-block ">
                                                         {{ trans('frontLang.submit') }}
                                                     </button>
                                                 </form>
@@ -441,14 +456,14 @@
 
 
     @if(count($project_ready) > 0)
-    <section style="background-color: #eaeaea;direction: rtl">
+    <section style="background-color: #1c1c1c;direction: rtl">
         <div class="container">
             <div class="row">
                 <h3 class="mt-5 mb-4">مشاريع جاهزة  {{ $developer->$name_var }}</h3>
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project_ready as $projects)
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-5 px-0">
                             <div class="card">
 
 
@@ -485,14 +500,14 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%">
-                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="far fa-envelope"> </i>
                                                     {{ trans('frontLang.requestdetail') }}
                                                 </a>
                                             </td>
 
                                             <td style="text-align: center;width: 50%">
-                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="fab fa-whatsapp"></i>
                                                     {{ trans('frontLang.whatsapp') }}
                                                 </a>
@@ -542,7 +557,7 @@
 
                                                     </div>
                                                     @honeypot
-                                                    <button type="submit" class="btn btn-dark btn-lg btn-block ">
+                                                    <button type="submit" class="btn submitBtn btn-lg btn-block ">
                                                         {{ trans('frontLang.submit') }}
                                                     </button>
                                                 </form>
@@ -627,7 +642,7 @@
                                 </div>
                                 @honeypot
 
-                                <button type="submit" class="btn bg-black text-white rounded-0 btn-lg btn-block " style="border: 0.5px #848484 solid !important;">
+                                <button type="submit" class="btn text-white rounded-0 btn-lg btn-block " style="border: 0.5px #848484 solid !important;">
                                     {{ trans('frontLang.submit') }}
                                 </button>
                             </form>
@@ -640,15 +655,15 @@
     </section>
 
     @if(count($project_luxury) > 0)
-        <section style="background-color: #000;">
+        <section style="background-color: #1c1c1c;">
             <div class="container">
                 <div class="row">
                     <h3 class="mt-5 mb-4">{{ trans('frontLang.luxuryprojectsby') }} {{ $developer->$name_var }}</h3>
                     <div class="col-lg-12">
                         <div class="row">
                             @foreach ($project_luxury as $projects)
-                            <div class="col-lg-4 mb-5">
-                                <div class="card" >
+                            <div class="col-lg-4 mb-5 px-0">
+                                <div class="card"  >
 
 
                                     @foreach($projects->images  as $single_img)
@@ -722,14 +737,14 @@
                                         <table style="width: 100%">
                                             <tr>
                                                 <td style="text-align: center;border-right: 1px solid; width: 50%">
-                                                    <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                    <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white rounded-0  shadow-none">
                                                         <i class="far fa-envelope"> </i>
                                                         {{ trans('frontLang.requestdetail') }}
                                                     </a>
                                                 </td>
 
                                                 <td style="text-align: center;width: 50%">
-                                                    <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                    <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white rounded-0 shadow-none ">
                                                         <i class="fab fa-whatsapp"></i>
                                                         {{ trans('frontLang.whatsapp') }}
                                                     </a>
@@ -779,7 +794,7 @@
 
                                                         </div>
                                                         @honeypot
-                                                        <button type="submit" class="btn btn-dark btn-lg btn-block ">
+                                                        <button type="submit" class="btn btn-lg btn-block submitBtn ">
                                                             {{ trans('frontLang.submit') }}
                                                         </button>
                                                     </form>
@@ -805,14 +820,14 @@
 
 
     @if(count($project) > 0)
-    <section style="background-color: #000 !important;">
+    <section style="background-color: #1c1c1c !important;">
         <div class="container">
             <div class="row">
                 <h3 class="mt-5 mb-4">{{ trans('frontLang.offplanprojectby') }}{{ $developer->$name_var }}</h3>
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project as $projects)
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-5 px-0">
                             <div class="card">
 
                                 @foreach($projects->images  as $single_img)
@@ -875,14 +890,14 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%">
-                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="far fa-envelope"> </i>
                                                     {{ trans('frontLang.requestdetail') }}
                                                 </a>
                                             </td>
 
                                             <td style="text-align: center;width: 50%">
-                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white  shadow-none rounded-0 ">
                                                     <i class="fab fa-whatsapp"></i>
                                                     {{ trans('frontLang.whatsapp') }}
                                                 </a>
@@ -932,7 +947,7 @@
 
                                                     </div>
                                                     @honeypot
-                                                    <button type="submit" class="btn btn-dark btn-lg btn-block ">
+                                                    <button type="submit" class="btn submitBtn btn-lg btn-block ">
                                                         {{ trans('frontLang.submit') }}
                                                     </button>
                                                 </form>
@@ -958,14 +973,14 @@
 
 
     @if(count($project_ready) > 0)
-    <section style="background-color: #000 !important;">
+    <section style="background-color: #1c1c1c !important;">
         <div class="container">
             <div class="row">
                 <h3 class="mt-5 mb-4 text-white">{{ trans('frontLang.readyprojectby') }} {{ $developer->$name_var }}</h3>
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project_ready as $projects)
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-5 px-0">
                             <div class="card">
 
 
@@ -1028,14 +1043,14 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%">
-                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000; border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="far fa-envelope"> </i>
                                                     {{ trans('frontLang.requestdetail') }}
                                                 </a>
                                             </td>
 
                                             <td style="text-align: center;width: 50%">
-                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white bg-black rounded-0 ">
+                                                <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31); border: 0 #848484 solid !important;" class="btn btn-block text-white shadow-none rounded-0 ">
                                                     <i class="fab fa-whatsapp"></i>
                                                     {{ trans('frontLang.whatsapp') }}
                                                 </a>
@@ -1085,7 +1100,7 @@
 
                                                     </div>
                                                     @honeypot
-                                                    <button type="submit" class="btn btn-dark btn-lg btn-block ">
+                                                    <button type="submit" class="btn submitBtn btn-lg btn-block ">
                                                         {{ trans('frontLang.submit') }}
                                                     </button>
                                                 </form>

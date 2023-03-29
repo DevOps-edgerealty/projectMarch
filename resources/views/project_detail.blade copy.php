@@ -17,14 +17,7 @@
         <meta name="keywords" content=" {{$project_detail->$meta_keywords_var}} "/>
 
 @endsection
-<style>
-        a, h1, h2, h3, h4, h5, h6, p, {
-            color: #000 !important;
-        }
-        a {
-            color: #000 !important;
-        }
-    </style>
+
 
 @section('content')
 

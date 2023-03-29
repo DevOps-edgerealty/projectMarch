@@ -73,8 +73,8 @@ else
 
     .card {
         margin: 12px !important;
-        color: #fff !important;
-        background-color: #000 !important;
+        color: #ccc !important;
+        background-color: #1c1c1c !important;
         border: 0.5px solid rgb(86, 86, 86) !important;
         border-radius: 0 !important;
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
@@ -82,17 +82,17 @@ else
     }
 
      .nav-pills .nav-link.active {
-        background-color: #fff !important;
-        color: #000 !important;
-        border: 1px solid #000 !important;
+        background-color: #ccc !important;
+        color: #1c1c1c !important;
+        border: 1px solid #1c1c1c !important;
         border-radius: 0 !important;
 
     }
 
     .nav-link {
-        background-color: #000 !important;
-        color: #fff !important;
-        border: 1px solid #fff !important;
+        background-color: #1c1c1c !important;
+        color: #ccc !important;
+        border: 1px solid #ccc !important;
         border-radius: 0 !important;
 
     }
@@ -143,7 +143,7 @@ else
                         </div>
 
                         <div class="col-3">
-                            <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" class="btn btn-lg btn-block btn-success text-white text-uppercase float-left rounded-0"
+                            <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" class="btn btn-lg btn-block btn-success text-white shadow-none text-uppercase float-left rounded-0"
                             target="_blank">
                                 <i class="fab fa-whatsapp"></i> &nbsp;
                                 WhatsApp

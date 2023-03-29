@@ -79,9 +79,7 @@
                 border-radius: 0 !important;
                 transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
                 transition-duration: 0.5s !important;
-                box-shadow: 2px 2px 4px .1px rgba(0,0,0,0.74) !important;
-                -webkit-box-shadow: 2px 2px 4px .1px rgba(0,0,0,0.74) !important;
-                -moz-box-shadow: 2px 2px 4px .1px rgba(0,0,0,0.74) !important;
+
 
 
             /* }
@@ -956,7 +954,7 @@
         <div class="container px-2">
             <div class="row col-lg-8 mx-auto">
                 <h3 class="text-center mb-3">{{ trans('frontLang.latestProjects') }}</h3>
-                <P  style="font-size: 14px; line-height: 1.3 !important; text-align: center !important;" class="text-center">{{ trans('frontLang.latestProjectsDetails') }}</P>
+                <P  style="font-size: 16px; line-height: 1.6 !important; text-align: center !important;" class="text-center">{{ trans('frontLang.latestProjectsDetails') }}</P>
             </div>
         </div>
     </section>
@@ -965,7 +963,7 @@
         <div class="container px-2">
             <div class="row col-lg-12 mx-auto px-0">
                 <h3 class="text-center mb-3">{{ trans('frontLang.latestProjects') }}</h3>
-                <P  style="font-size: 14px; line-height: 1.3 !important; text-align: justify !important;" class="text-justify px-0">
+                <P  style="font-size: 16px; line-height: 1.6 !important; text-align: justify !important;" class="text-justify px-0">
                     {{ trans('frontLang.latestProjectsDetails') }}
                 </P>
             </div>
@@ -977,7 +975,7 @@
         <div class="container-fluid containerization">
             <div class="row col-lg-8 mx-auto">
                 <h3 class="text-center mb-3">{{ trans('frontLang.latestProjects') }}</h3>
-                <P  style="font-size: 14px; line-height: 1.3 !important; text-align: center !important;" class="text-center">
+                <P  style="font-size: 16px; line-height: 1.6 !important; text-align: center !important;" class="text-center">
                     {{ trans('frontLang.latestProjectHome') }}
                 </P>
             </div>
@@ -989,7 +987,7 @@
         <div class="container px-2">
             <div class="row col-lg-12 mx-auto px-0">
                 <h3 class="text-center mb-3">{{ trans('frontLang.latestProjects') }}</h3>
-                <P  style="font-size: 14px; line-height: 1.3 !important; text-align: justify !important;" class="text-justify px-0">
+                <P  style="font-size: 16px; line-height: 1.6 !important; text-align: justify !important;" class="text-justify px-0">
                     {{ trans('frontLang.latestProjectHome') }}
                 </P>
             </div>
@@ -1380,7 +1378,7 @@
         <div class="container-fluid containerization">
             <div class="row col-lg-8 mx-auto">
                 <h3 class="text-center mb-3">{{ trans('frontLang.dubaiPropertiesForSale') }}</h3>
-                <P  style="font-size: 14px; line-height: 1.3 !important; text-align: center !important;" class="text-center">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
+                <P  style="font-size: 16px; line-height: 1.6 !important; text-align: center !important;" class="text-center">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
             </div>
         </div>
 
@@ -1390,7 +1388,7 @@
         <div class="container px-2">
             <div class="row col-lg-12 mx-auto px-0">
                 <h3 class="text-center mb-3">{{ trans('frontLang.dubaiPropertiesForSale') }}</h3>
-                <P  style="font-size: 14px; line-height: 1.3 !important; text-align: justify !important;" class="text-justify px-0">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
+                <P  style="font-size: 16px; line-height: 1.6 !important; text-align: justify !important;" class="text-justify px-0">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
             </div>
         </div>
 
@@ -1409,7 +1407,7 @@
         <div class="container-fluid containerization pt-3">
             <div class="row col-lg-8 mx-auto ">
                 <h3 class="text-center mb-3">{{ trans('frontLang.dubaiPropertiesForSale') }}</h3>
-                <P  style="font-size: 14px; line-height: 1.3 !important; text-align: center !important;" class="text-center">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
+                <P  style="font-size: 16px; line-height: 1.6 !important; text-align: center !important;" class="text-center">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
             </div>
         </div>
 
@@ -1419,7 +1417,7 @@
         <div class="container px-2">
             <div class="row col-lg-12 mx-auto px-0">
                 <h3 class="text-center mb-3">{{ trans('frontLang.dubaiPropertiesForSale') }}</h3>
-                <P  style="font-size: 14px; line-height: 1.3 !important; text-align: justify !important;" class="text-justify px-0">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
+                <P  style="font-size: 16px; line-height: 1.6 !important; text-align: justify !important;" class="text-justify px-0">{{ trans('frontLang.propertiesForSaleInDubai_detail') }}</P>
             </div>
         </div>
 
@@ -1554,10 +1552,12 @@
                                             <div class="col-4 ">
 
                                                 @foreach($agents  as $agent)
-                                                    @if($property->agent_id==$agent->id)
-                                                        @if (file_exists(public_path().'uploads/properties/'.$property->id.'/'.$single_img->image))
+                                                    @if($property->agent_id == $agent->id)
+                                                    {{$property->agent_id}}
+                                                    {{$agent->image}}
+                                                        @if (file_exists(public_path().'uploads/agents/'.$property->agent_id.'/'.$agent->image))
                                                             {{-- <img src="{{ URL::asset('public/assets/images/agents'.$agent->id.'/'.$agent->image) }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0"  alt="agent"> --}}
-                                                            <img src="{{ URL::asset('uploads/properties/'.$property->id.'/'.$single_img->image) }}" style="height: " class="card-img-top rounded-0 pe-0 " alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                                            <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: " class="card-img-top rounded-0 pe-0 " alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
                                                         @else
                                                             <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0 pe-0"  alt="agent">
                                                         @endif

@@ -1,75 +1,91 @@
 <style scope>
     li {
-        color: #000 !important;
+        color: #ABB7B7 !important;
     }
     nav a {
-        color: #000 !important;
+        color: #ABB7B7 !important;
     }
 
+    .nav-pills .nav-link.active {
+        background-color: #fff !important;
+        color: #ABB7B7 !important;
+        border: 0.25px #848484 solid !important;
+        border: 0.5 #848484 solid !important;
+        border-radius: 0 !important;
+
+    }
+
+    .nav-link {
+        /* background-color: #000 !important; */
+        background-color: #1c1c1c !important;
+        color: #ABB7B7 !important;
+        border: 0.25px #848484 solid !important;
+        border: 0.5 #848484 solid !important;
+        border-radius: 0 !important;
+
+    }
+    a {
+        color: #cccccc !important;
+    }
+
+
     .menu-mobile-header, .menu-mobile-header > .menu-section, .menu-mobile-header > button  {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #cccccc !important;
     }
 
     .menu-mobile-arrow {
-        background-color: #fff !important;
+        background-color: #cccccc !important;
     }
 
     @media only screen and (max-width: 800px) {
         .menu-section {
-            background: #000;
+            background: #1c1c1c;
         }
     }
 
 
     li > div {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #cccccc !important;
     }
+
+
+
     li > div > div > a > h4,
     li > a {
         color: #fff !important;
     }
     .menu-color{
-        color: #fff !important;
+        color: #cccccc !important;
     }
     input, select {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #cccccc !important;
         border-radius: 0px !important;
-        border: 0.25px #848484 solid !important;
-
+        border: 1px solid #cccccc !important;
     }
     .btn {
         /* transition: transform 5s  !important; */
 
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
         transition-duration: 0.125s !important;
-        border: 0.25px #848484 solid !important;
-
 
     }
     .btn:hover {
         /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
         /* translate: 2px -2px !important; */
         opacity: 1 !important;
-        background-color: #fff !important;
+        background-color: #cccccc !important;
         color: #000 !important;
         transform: scale(1) !important;
-        border: 0.25px #848484 solid !important;
-
+        border: 2px solid #000 !important;
 
         cursor: pointer !important;
     }
-    #ex2-tab-1, #ex2-tab-2, #ex2-tab-3 {
-        background-color: #000 !important;
-        color: #fff !important;
-        border: 0.25px #848484 solid !important;
-    }
-
     .containerization {
-        padding-right: 200px !important;
-        padding-left: 200px !important;
+        padding-right: 150px !important;
+        padding-left: 150px !important;
     }
 
     @media only screen and (max-device-width: 480px) {
@@ -100,18 +116,40 @@
         }
     }
 
+    @media only screen and (max-device-width: 1200px) {
+        .containerization {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+    }
+
     /* .container {
         margin-right: 130px !important;
         margin-left: 130px !important;
         text-align: center;
     } */
 
+    header {
+        z-index: 100 !important;
+    }
+
+    .navbar1 {
+        transition:all 0.5s !important;
+    }
+
+    .navbar-scrolled {
+        background-color: #1c1c1c !important;
+    }
+
+    /* .fa-whatsapp  {
+        height: 30px !important;
+    } */
+
+
     .menu-color {
         padding-left: 15px !important;
         padding-left: 15px !important;
     }
-
-
 
 </style>
 <?php

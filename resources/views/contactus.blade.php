@@ -68,30 +68,34 @@ else
         text-align: justify !important;
         letter-spacing: .05rem !important;
     }
-    .card {
-        color: #fff !important;
-        background-color: #000 !important;
-        border: 1px solid gray !important;
-        border-radius: 0 !important;
-    }
     td > a {
-        color: #fff !important;
+        color: #cccccc !important;
     }
     input, select, textarea {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #ccc !important;
         border-radius: 0px !important;
-        border: 1px solid #fff !important;
+        border: 1px solid #ccc !important;
     }
     button {
-        background-color: #000 !important;
-        color: #fff !important;
-        border: 1px solid #fff !important;
+        background-color: #1c1c1c !important;
+        color: #cccccc !important;
+        border: 1px solid #ccc !important;
     }
 
     .btn:hover {
         box-shadow: 0px 0px 30px #9a9a9a !important;
         opacity: 1 !important;
+    }
+
+    .card {
+        margin: 12px !important;
+        color: #cccccc !important;
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
+        border-radius: 0 !important;
+        transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+        transition-duration: 0.5s !important;
     }
 
 </style>
@@ -166,7 +170,7 @@ else
 
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgb(0 0 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3  style="text-transform: uppercase;">{{ trans('frontLang.Contactus') }}</h3>
@@ -182,31 +186,31 @@ else
 </section>
 
 <section class="desktop-show" >
-    <div class="container-fluid containerization" style="margin-top: -70px; ">
+    <div class="container-fluid containerization" style="margin-top: 0px; ">
         <div class="row">
             <div class="col-lg-4">
-                <div class="card text-center mb-3  text-white border border-1 border-white rounded-2">
+                <div class="card text-center mb-3   border border-1 border-white rounded-2">
                     <div class="card-body">
-                        <h4 class="card-title "><i class="fab fa-whatsapp fa-2x" style="color: #fff;"></i></h4>
+                        <h4 class="card-title "><i class="fab fa-whatsapp fa-2x" style="color: #ccc;"></i></h4>
 
-                        <p class="card-text text-white"><h4><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" class="  text-white" target="_blank"><b>+971 58 560 2665</b></a></h4></p>
+                        <p class="card-text "><h4><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" class="  text-white" target="_blank"><b>+971 58 560 2665</b></a></h4></p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="card text-center mb-3  text-white border border-1 border-white rounded-2">
+                <div class="card text-center mb-3   border border-1 border-white rounded-2">
                     <div class="card-body">
-                        <h4 class="card-title"><i class="fas fa-phone-alt fa-2x text-white"></i></h4>
+                        <h4 class="card-title"><i class="fas fa-phone-alt fa-2x "></i></h4>
 
-                        <p class="card-text   text-white"><h4>  <a href="tel:0097143881856" class="  text-white"> <b>+9714 388 1856</b></a></h4></p>
+                        <p class="card-text   "><h4>  <a href="tel:0097143881856" class="  "> <b>+9714 388 1856</b></a></h4></p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="card text-center mb-3  text-white border border-1 border-white rounded-2">
+                <div class="card text-center mb-3   border border-1 border-white rounded-2">
                     <div class="card-body">
-                        <h4 class="card-title"><i class="fas fa-at fa-2x text-white"></i></h4>
-                        <p class="card-text  text-white"><h4><a href="mailto:info@edgerealty.ae" class="__cf_email__  text-white" data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8"><b>info@edgerealty.ae</b></a></h4></p>
+                        <h4 class="card-title"><i class="fas fa-at fa-2x "></i></h4>
+                        <p class="card-text  text-white"><h4><a href="mailto:info@edgerealty.ae" class="__cf_email__  " data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8"><b>info@edgerealty.ae</b></a></h4></p>
                     </div>
                 </div>
             </div>
@@ -220,7 +224,7 @@ else
 </section>
 
 @if ($langSeg == 'ar')
-<section class="mt-5 mb-5" >
+<section class="mt-3 mb-5" >
     <div class="container-fluid containerization">
         <div class="row shadow bg-body" style="direction: rtl">
 
@@ -228,7 +232,7 @@ else
                 <h3>المكتب الرئيسي</h3>
                 <h6><i class="fas fa-map-marker-alt"> </i>  معرض رقم 4 مبنى أسوار - الوصل - شارع الشيخ زايد ، دبي</h6>
                 <h6><i class="far fa-clock"> </i> من الاثنين الى السبت 9 صباحا الى 6 مساءا </h6>
-                <h6> <a href="tel:0097143881856" class="text-white"> 97143881856+ </a> <i class="fas fa-phone-alt"> </i></h6>
+                <h6> <a href="tel:0097143881856" class=""> 97143881856+ </a> <i class="fas fa-phone-alt"> </i></h6>
 
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14440.226682186727!2d55.2671464!3d25.2013113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x424936f85dc4d24a!2sEdge%20Realty!5e0!3m2!1sen!2sae!4v1627281665507!5m2!1sen!2sae" width="100%" height="400"  allowfullscreen="" loading="lazy"></iframe>
@@ -239,7 +243,7 @@ else
             <div class="col-lg-6 mt-3 mb-3">
                 <h3>فرع</h3>
                 <h6 class="my-3 py-1"><i class="fas fa-map-marker-alt"> </i> معرض - 07 مبنى رقم 1 - سيتي ووك</h6>
-                <h6 class="my-3 py-1"> <a href="tel:0097145807142" class="text-white"> 97145807142+ </a> <i class="fas fa-phone-alt"> </i> </h6>
+                <h6 class="my-3 py-1"> <a href="tel:0097145807142" class=""> 97145807142+ </a> <i class="fas fa-phone-alt"> </i> </h6>
                 <h6 class="my-3 py-1"><i class="far fa-clock"> </i> من السبت إلى الخميس من الساعة 10 صباحًا حتى الساعة 10 مساءً </h6>
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57761.53267375268!2d55.253780429410945!3d25.1999918568654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4264371b53e7%3A0x8bd6cda3ab913cad!2sCity%20Walk!5e0!3m2!1sen!2sae!4v1627283517356!5m2!1sen!2sae" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -289,7 +293,7 @@ else
 </section>
 
 @elseif ( $langSeg == 'ru' )
-<section class="mt-5 mb-5">
+<section class="mt-3 mb-5">
     <div class="container-fluid containerization">
         <div class="row">
 
@@ -298,7 +302,7 @@ else
                 <h3 class="my-3">ГОЛОВНОЙ ОФИС</h3>
                 <h6 class="my-3"><i class="fas fa-map-marker-alt"></i> ДЕМОНСТРАЦИОННЫЙ ЗАЛ №4 ASWAR BUILDING - AL WASL - SHEIKH ZAYED ROAD, DUBAI</h6>
                 <h6 class="my-3"><i class="far fa-clock"></i>  С ПОНЕДЕЛЬНИКА ПО СУББОТУ С 09:00 УТРА ДО 06:00 ВЕЧЕРА</h6>
-                <h6 class="my-3"><i class="fas fa-phone-alt"></i> <a href="tel:0097143881856" class="text-white"> +97143881856 </a> </h6>
+                <h6 class="my-3"><i class="fas fa-phone-alt"></i> <a href="tel:0097143881856" class=""> +97143881856 </a> </h6>
 
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14440.226682186727!2d55.2671464!3d25.2013113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x424936f85dc4d24a!2sEdge%20Realty!5e0!3m2!1sen!2sae!4v1627281665507!5m2!1sen!2sae" width="100%" height="400"  allowfullscreen="" loading="lazy"></iframe>
@@ -310,7 +314,7 @@ else
                 <h3 class="my-3">ФИЛИАЛ</h3>
                 <h6 class="my-3"><i class="fas fa-map-marker-alt"></i> ДЕМОНСТРАЦИОННЫЙ ЗАЛ - 07 ЗДАНИЕ #1 - CITY WALK, ДУБАЙ</h6>
                 <h6 class="my-3"><i class="far fa-clock"></i> С ПОНЕДЕЛЬНИКА ПО СУББОТУ С 10:00 УТРА ДО 10:00 ВЕЧЕРА</h6>
-                <h6 class="my-3"><i class="fas fa-phone-alt"></i> <a href="tel:0097145807142" class="text-white"> +97145807142 </a> </h6>
+                <h6 class="my-3"><i class="fas fa-phone-alt"></i> <a href="tel:0097145807142" class=""> +97145807142 </a> </h6>
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14439.565875912738!2d55.2654178!3d25.2068823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82642d0792bb3c7!2sEdge%20Realty%20-%20Citywalk!5e0!3m2!1sen!2sae!4v1630221126274!5m2!1sen!2sae" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
@@ -358,8 +362,9 @@ else
 
     </div>
 </section>
+
 @else
-<section class="mt-5 mb-5">
+<section class="mt-3 mb-5">
     <div class="container-fluid containerization">
         <div class="row">
 
@@ -368,7 +373,7 @@ else
                 <h3 class="my-3">Head Office</h3>
                 <h6 class="my-3"><i class="fas fa-map-marker-alt"></i> Showroom #4 Aswar Building - Al Wasl - Sheikh Zayed Road, Dubai</h6>
                 <h6 class="my-3"><i class="far fa-clock"></i> Monday to Saturday 09:00 AM to 06:00 PM</h6>
-                <h6 class="my-3"><i class="fas fa-phone-alt"></i> <a href="tel:0097143881856" class="text-white"> +97143881856 </a> </h6>
+                <h6 class="my-3"><i class="fas fa-phone-alt"></i> <a href="tel:0097143881856" class=""> +97143881856 </a> </h6>
 
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14440.226682186727!2d55.2671464!3d25.2013113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x424936f85dc4d24a!2sEdge%20Realty!5e0!3m2!1sen!2sae!4v1627281665507!5m2!1sen!2sae" width="100%" height="400"  allowfullscreen="" loading="lazy"></iframe>
@@ -380,7 +385,7 @@ else
                 <h3 class="my-3">Branch Office</h3>
                 <h6 class="my-3"><i class="fas fa-map-marker-alt"></i> Showroom - 07 Building #1 - City Walk, Dubai</h6>
                 <h6 class="my-3"><i class="far fa-clock"></i> Monday to Saturday 10:00 AM to 10:00 PM</h6>
-                <h6 class="my-3"><i class="fas fa-phone-alt"></i> <a href="tel:0097145807142" class="text-white"> +97145807142 </a> </h6>
+                <h6 class="my-3"><i class="fas fa-phone-alt"></i> <a href="tel:0097145807142" class=""> +97145807142 </a> </h6>
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14439.565875912738!2d55.2654178!3d25.2068823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82642d0792bb3c7!2sEdge%20Realty%20-%20Citywalk!5e0!3m2!1sen!2sae!4v1630221126274!5m2!1sen!2sae" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>

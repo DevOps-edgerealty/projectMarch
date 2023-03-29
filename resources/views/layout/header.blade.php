@@ -454,13 +454,13 @@
 
                 </nav>
 
-                <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" >
+                {{-- <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" >
                     <i class="fab fa-whatsapp text-success b-success  m-0 p-0" style="font-size: 1.3em; "></i>
                 </a>
 
                 <a href="javascript:void(Tawk_API.toggle())" class="menu-icon mobile-show d-md-block d-block d-lg-none">
                     <i class="far fa-comment-alt" style="font-size: 1.15em; "><sup class="bg-danger rounded-pill" style="font-size: 14px; margin-left: -5px; padding: 2px;">1</sup></i>
-                </a>
+                </a> --}}
 
                 <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <img class="d-md-block d-block d-lg-none" src="{{url::asset('public/assets/asset/loupe2.png')}}" alt="loupe-image" style="height: 28px;">
@@ -981,9 +981,26 @@
 
             <div class="header-item-right">
 
-                {{-- <a href="<?php echo $finalUrl ; ?>"><img src="{{URL('public/assets/images/uae-flag.png')}}" alt=""></a> --}}
+                {{-- <div class="mobile-show">
+                    @if ($langSeg == 'ru')
+                        <a href="<?php echo $finalUrlen ; ?>" class="px-2">
+                            <img style="display: inline;margin-top: -3px; height: 17px;" src="{{URL('public/assets/images/en.png')}}" alt="">
+                        </a>
+                        <a href="<?php echo $finalUrl ; ?>" class="px-2">
+                            <img style="display: inline;margin-top: -3px; height: 17px;" src="{{URL('public/assets/images/ar.png')}}" alt="">
+                        </a>
+                    @else
 
-                <nav class="menu navbar-dark">
+                        <a href="<?php echo $finalUrl ; ?>" class="px-2">
+                            <img style="display: inline;margin-top: -3px; height: 17px;" src="{{URL('public/assets/images/ar.png')}}" alt="">
+                        </a>
+                        <a href="<?php echo $finalUrlru ; ?>" class="px-2">
+                            <img style="display: inline;margin-top: -3px; height: 17px;" src="{{URL('public/assets/images/ru.png')}}" alt="">
+                        </a>
+                    @endif
+                </div> --}}
+
+                {{-- <nav class="menu navbar-dark">
                     <div class="menu-mobile-header">
                         <button type="button" class="menu-mobile-arrow">
                             <i class="ion ion-ios-arrow-back"></i>
@@ -997,7 +1014,7 @@
 
                     </div>
 
-                    {{-- <ul class="menu-section " style="padding-left: 0px; margin-bottom: 0px;">
+                    <ul class="menu-section " style="padding-left: 0px; margin-bottom: 0px;">
 
                         @if ($langSeg == 'ru')
                             <li class="menu-item-has-children" >
@@ -1020,17 +1037,17 @@
                                 </div>
                             </li>
                         @endif
-                    </ul> --}}
+                    </ul>
 
-                </nav>
+                </nav> --}}
 
-                <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" >
+                {{-- <a class="menu-icon mobile-show d-md-block d-block d-lg-none" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" target="_blank" >
                     <i class="fab fa-whatsapp text-success b-success  m-0 p-0" style="font-size: 1.3em; "></i>
                 </a>
 
                 <a href="javascript:void(Tawk_API.toggle())" class="menu-icon mobile-show d-md-block d-block d-lg-none">
                     <i class="far fa-comment-alt" style="font-size: 1.15em; "><sup class="bg-danger rounded-pill" style="font-size: 14px; z-index: -10 !important; margin-left: -2px; padding: 2px;">1</sup></i>
-                </a>
+                </a> --}}
 
                 <a  class="menu-icon" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <img class="d-md-block d-block d-lg-none" src="{{url::asset('public/assets/asset/loupe2.png')}}" alt="loupe-image" style="height: 28px;">

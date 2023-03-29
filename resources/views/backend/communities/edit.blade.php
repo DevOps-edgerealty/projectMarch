@@ -176,8 +176,6 @@
 
                             <div class="tab-pane" id="tab_2">
                                 <div class="form-group row">
-
-
                                     <div class="col-sm-12">
                                         <label for="exampleInputName">Meta Title [English]</label>
                                         {!! Form::text('meta_title_en',$communities->meta_title_en, array('placeholder' => '','class' => 'form-control','id'=>'meta_title_en','required'=>'')) !!}

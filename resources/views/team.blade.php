@@ -72,14 +72,14 @@ else
         cursor: pointer !important;
     }
     .card {
-        color: #fff !important;
-        background-color: #000 !important;
-        /* border: 0.5px solid gray !important; */
+        margin: 12px !important;
+        color: #cccccc !important;
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
         border-radius: 0 !important;
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
-        transition-duration: 0.125s !important;
-        /* z-index: -1000 !important; */
-    }
+        transition-duration: 0.5s !important;
+
     /* .card:hover { */
         /* box-shadow: 0px 0px 5px #fff !important; */
         /* opacity: 1 !important;
@@ -96,7 +96,7 @@ else
     <header>
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgba(0, 0, 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white mt-5">
                     <h3>{{ trans('frontLang.teamHead') }}</h3>
@@ -146,7 +146,7 @@ else
 
                 @foreach($chunk as $blog)
                 <div class="col-lg-3 px-3 py-3">
-                    <div class="card bg-black rounded-0 mx-3 my-2" style="height: 450px !important;">
+                    <div class="card bg-black rounded-0 mx-3 my-2" style="height: 480px !important;">
 
                         @if (file_exists('uploads/agents/'.$blog->id.'/'.$blog->image))
                             <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$blog->id)}}">

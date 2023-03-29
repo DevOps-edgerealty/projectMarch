@@ -107,8 +107,8 @@ else
 
 
   button {
-    color: #fff !important;
-    background-color: #000 !important;
+    color: #ccc !important;
+    background-color: #1c1c1c !important;
     border-radius: 0 !important;
   }
 
@@ -117,7 +117,7 @@ else
   }
 
   textarea {
-    background-color: #000 !important;
+    background-color: #1c1c1c !important;
   }
 
 </style>
@@ -129,7 +129,7 @@ else
 
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgb(0 0 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3>{{ trans('frontLang.frequentlyask') }}</h3>
@@ -148,8 +148,6 @@ else
 
 <section class="mt-5">
     <div class="container">
-
-        <h3 class="text-center">{{ trans('frontLang.frequentlyask') }}</h3>
 
         @if ( $langSeg == 'ar' )
 
@@ -184,7 +182,7 @@ else
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" style="    background-color: #000;" type="button"  data-mdb-toggle="collapse" data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                            <button class="accordion-button" style="    background-color: #1c1c1c;" type="button"  data-mdb-toggle="collapse" data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
                                 What is Free Hold Property?
                             </button>
                         </h2>
@@ -200,7 +198,7 @@ else
                         </div>
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button  class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button  class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             What Is DLD?
                             </button>
                         </h2>
@@ -212,7 +210,7 @@ else
                         </div>
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             What is OFF-Plan?
                             </button>
                         </h2>
@@ -224,7 +222,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingfive">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
                                 How to sell an off-plan property in Dubai?
                             </button>
                             </h2>
@@ -236,7 +234,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingsix">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
                                 Can a foreigner purchase/own an off-plan property in Dubai?
                             </button>
                             </h2>
@@ -248,7 +246,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingseven">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
                                 Why is off-plan property in Dubai a good investment?
                             </button>
                             </h2>
@@ -272,7 +270,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingnine">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
                                 Can I sell an off plan property before its completion date?
                             </button>
                             </h2>
@@ -284,7 +282,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingten">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
                                 Which area in Dubai Offers the best off-plan property?
                             </button>
                             </h2>
@@ -296,7 +294,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingeleven">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseeleven" aria-expanded="false" aria-controls="collapseeleven">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseeleven" aria-expanded="false" aria-controls="collapseeleven">
                                 Can you get a mortgage on off plan?
                             </button>
                             </h2>
@@ -308,7 +306,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingtwelve">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsetwelve" aria-expanded="false" aria-controls="collapsetwelve">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsetwelve" aria-expanded="false" aria-controls="collapsetwelve">
                                 What is DLD Fee Waiver?
                             </button>
                             </h2>
@@ -320,7 +318,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" style="background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <button class="accordion-button collapsed" style="background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 What is RERA Dubai?
                             </button>
                             </h2>
@@ -394,7 +392,7 @@ else
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" style="    background-color: #000;" type="button"  data-mdb-toggle="collapse" data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                            <button class="accordion-button" style="    background-color: #1c1c1c;" type="button"  data-mdb-toggle="collapse" data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
                                 ЧТО ТАКОЕ НЕДВИЖИМОСТЬ В СВОБОДНОЙ СОБСТВЕННОСТИ?
                             </button>
                         </h2>
@@ -412,7 +410,7 @@ else
                         </div>
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button  class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button  class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 ЧТО ТАКОЕ DLD?
                             </button>
                         </h2>
@@ -424,7 +422,7 @@ else
                         </div>
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 ЧТО ТАКОЕ НЕДВИЖИМОСТЬ НА ЭТАПЕ СТРОИТЕЛЬСТВА?
                             </button>
                         </h2>
@@ -436,7 +434,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingfive">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
                                 КАК ПРОДАТЬ НЕДВИЖИМОСТЬ НА ЭТАПЕ СТРОИТЕЛЬСТВА В ДУБАЕ?
                             </button>
                             </h2>
@@ -452,7 +450,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingsix">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
                                 МОЖЕТ ЛИ ИНОСТРАНЕЦ ПРИОБРЕСТИ/ВЛАДЕТЬ НЕДВИЖИМОСТЬЮ НА ЭТАПЕ СТРОИТЕЛЬСТВА В ДУБАЕ?
                             </button>
                             </h2>
@@ -466,7 +464,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingseven">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
                                 ПОЧЕМУ НЕДВИЖИМОСТЬ НА ЭТАПЕ СТРОИТЕЛЬСТВА В ДУБАЕ ЯВЛЯЕТСЯ ХОРОШЕЙ ИНВЕСТИЦИЕЙ?
                             </button>
                             </h2>
@@ -478,7 +476,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingeight">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
                                 ЯВЛЯЕТСЯ ЛИ ПОКУПКА НЕДВИЖИМОСТИ НА ЭТАПЕ СТРОИТЕЛЬСТВА ХОРОШЕЙ ИДЕЕЙ ДЛЯ НАЧИНАЮЩИХ ПОКУПАТЕЛЕЙ?
                             </button>
                             </h2>
@@ -493,7 +491,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingnine">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
                                 МОГУ ЛИ Я ПРОДАТЬ НЕДВИЖИМОСТЬ НА ЭТАПЕ СТРОИТЕЛЬСТВА ДО ДАТЫ ЗАВЕРШЕНИЯ СТРОИТЕЛЬСТВА?
                             </button>
                             </h2>
@@ -505,7 +503,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingten">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
                                 КАКОЙ РАЙОН ДУБАЯ ПРЕДЛАГАЕТ ЛУЧШУЮ НЕДВИЖИМОСТЬ НА ЭТАПЕ СТРОИТЕЛЬСТВА?
                             </button>
                             </h2>
@@ -532,7 +530,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingtwelve">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsetwelve" aria-expanded="false" aria-controls="collapsetwelve">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsetwelve" aria-expanded="false" aria-controls="collapsetwelve">
                                 ЧТО ТАКОЕ ОСВОБОЖДЕНИЕ ОТ УПЛАТЫ НАЛОГА НА ЗЕМЛЮ?
                             </button>
                             </h2>
@@ -544,7 +542,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" style="background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <button class="accordion-button collapsed" style="background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 ЧТО ТАКОЕ RERA?
                             </button>
                             </h2>
@@ -620,7 +618,7 @@ else
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" style="    background-color: #000;" type="button"  data-mdb-toggle="collapse" data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                            <button class="accordion-button" style="    background-color: #1c1c1c;" type="button"  data-mdb-toggle="collapse" data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
                                 What is Free Hold Property?
                             </button>
                         </h2>
@@ -634,7 +632,7 @@ else
                         </div>
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button  class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button  class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             What Is DLD?
                             </button>
                         </h2>
@@ -646,7 +644,7 @@ else
                         </div>
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             What is OFF-Plan?
                             </button>
                         </h2>
@@ -658,7 +656,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingfive">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
                                 How to sell an off-plan property in Dubai?
                             </button>
                             </h2>
@@ -670,7 +668,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingsix">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
                                 Can a foreigner purchase/own an off-plan property in Dubai?
                             </button>
                             </h2>
@@ -682,7 +680,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingseven">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
                                 Why is off-plan property in Dubai a good investment?
                             </button>
                             </h2>
@@ -694,7 +692,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingeight">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
                                 Is buying an off-plan a good idea for first-time buyers?
                             </button>
                             </h2>
@@ -706,7 +704,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingnine">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
                                 Can I sell an off plan property before its completion date?
                             </button>
                             </h2>
@@ -718,7 +716,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingten">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
                                 Which area in Dubai Offers the best off-plan property?
                             </button>
                             </h2>
@@ -730,7 +728,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingeleven">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseeleven" aria-expanded="false" aria-controls="collapseeleven">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseeleven" aria-expanded="false" aria-controls="collapseeleven">
                                 Can you get a mortgage on off plan?
                             </button>
                             </h2>
@@ -742,7 +740,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingtwelve">
-                            <button class="accordion-button collapsed" style="    background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsetwelve" aria-expanded="false" aria-controls="collapsetwelve">
+                            <button class="accordion-button collapsed" style="    background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsetwelve" aria-expanded="false" aria-controls="collapsetwelve">
                                 What is DLD Fee Waiver?
                             </button>
                             </h2>
@@ -754,7 +752,7 @@ else
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" style="background-color: #000;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <button class="accordion-button collapsed" style="background-color: #1c1c1c;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 What is RERA Dubai?
                             </button>
                             </h2>

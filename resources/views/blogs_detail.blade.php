@@ -51,11 +51,21 @@ else
 <style>
   p {
     line-height: 1.4 !important;
+    color: #ccc !important;
   }
 
   a {
-    color: #fff !important;
+    color: #ccc !important;
   }
+  .card {
+        margin: 12px !important;
+        color: #cccccc !important;
+        background-color: #1c1c1c !important;
+        /* border: 0.5px solid rgb(86, 86, 86) !important; */
+        border-radius: 0 !important;
+        transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+        transition-duration: 0.5s !important;
+    }
 </style>
 
 
@@ -123,24 +133,24 @@ else
 
             <div class="desktop-show row mt-2 mb-5">
                 <div class="col-12 mx-auto">
-                    <ul class="list-group list-group-horizontal-sm bg-black mx-auto d-flex justify-content-center">
-                        <li class="list-group-item bg-black text-white bg-black text-center">
+                    <ul class="list-group list-group-horizontal-sm mx-auto d-flex justify-content-center" style="background-color: #1c1c1c !important; color: #ccc !important;">
+                        <li class="list-group-item text-center" style="background-color: #1c1c1c !important; color: #ccc !important">
                             <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" class="" style="height: 35px !important">
                         </li>
 
-                        <li class="list-group-item bg-black text-white bg-black text-center ">
+                        <li class="list-group-item text-center " style="background-color: #1c1c1c !important; color: #ccc !important">
                             <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" class="" style="height: 35px !important">
                         </li>
 
-                        <li class="list-group-item bg-black text-white bg-black text-center ">
+                        <li class="list-group-item text-center " style="background-color: #1c1c1c !important; color: #ccc !important">
                             <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" class="" style="height: 35px !important">
                         </li>
 
-                        <li class="list-group-item bg-black text-white bg-black text-center ">
+                        <li class="list-group-item text-center " style="background-color: #1c1c1c !important; color: #ccc !important">
                             <img src="{{ URL::asset('public/assets/asset/sm/yt.png') }}" class="" style="height: 35px !important">
                         </li>
 
-                        <li class="list-group-item bg-black text-white bg-black text-center ">
+                        <li class="list-group-item text-center " style="background-color: #1c1c1c !important; color: #ccc !important">
                             <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" class="" style="height: 35px !important">
                         </li>
                     </ul>
@@ -149,25 +159,25 @@ else
             <div class="mobile-show row mt-2 mb-5">
                 <div class="mx-auto mobile-show ">
                     <ul class="mobile-show list-group list-group-horizontal position-relative overflow-auto w-75 mx-auto">
-                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                        <li class=" text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
                             <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
                                 <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 28px !important; width: auto !important">
                             </a>
                         </li>
 
-                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                        <li class=" text-center px-1 mx-auto">
                             <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
                                 <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 28px !important; width: auto !important">
                             </a>
                         </li>
 
-                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                        <li class=" text-center px-1 mx-auto">
                             <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
                                 <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 28px !important; width: auto !important">
                             </a>
                         </li>
 
-                        <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                        <li class=" text-center px-1 mx-auto">
                             <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
                                 <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 28px !important; width: auto !important">
                             </a>
@@ -185,7 +195,7 @@ else
 
                 @foreach ($similarblog as $blog)
                     <div class="col-lg-4 col-md-4 mb-4">
-                        <div class="card bg-black rounded-0 mx-2 my-2 " style="height: 425px !important;">
+                        <div class="card rounded-0 mx-2 my-2 ">
 
                             @if (file_exists('uploads/blogs/'.$blog->id.'/'.$blog->image_url))
                                 <a href="{{url( $langSeg .'/'.'blogs_detail'.'/'.$blog->slug_link)}}">
@@ -202,15 +212,15 @@ else
                                     {{$blog->$name_var}}
                                 </a>
                             </h4>
-                            <div class="card-body d-flex align-items-end flex-column px-0">
+                            <div class="card-body d-flex align-items-end flex-column px-0 h-100">
 
                                 <p class="card-text mb-3 d-flex align-items-baseline mt-auto" style="line-height: 1.3 !important; color: gray !important; font-size: .9rem !important; text-align: justify !important;">
                                     {{ \Illuminate\Support\Str::limit(strip_tags($blog->$description_var), $limit = 150, $end = '...') }}
                                 </p>
-                                <small class="fw-light" style="color:  !important; font-size: 0.8rem !important;">{{ $blog->created_at->diffForHumans() }}</small>
+                                <small class="fw-light" style="color:  !important; font-size: 0.8rem !important;">{{ $blog->updated_at->diffForHumans() }}</small>
 
                             </div>
-                            <div class="card-footer px-0">
+                            {{-- <div class="card-footer px-0"> --}}
 
                                 {{-- <a href="{{url( $langSeg .'/'.'blogs_detail'.'/'.$blog->slug_link)}}" class="btn btn-outline-white btn-sm">
                                     {{ trans('frontLang.readMore') }}
@@ -219,7 +229,7 @@ else
                                 {{-- <a style="float: right;" href="{{url( $langSeg .'/'.'blogs_detail'.'/'.$blog->slug_link)}}" class="btn btn btn-outline-white btn-sm">
                                     <i class="fas fa-eye"> </i> {{ trans('frontLang.view') }} {{$blog->views}}
                                 </a> --}}
-                            </div>
+                            {{-- </div> --}}
                         </div>
                     </div>
                 @endforeach

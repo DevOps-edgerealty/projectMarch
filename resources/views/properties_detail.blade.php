@@ -75,6 +75,16 @@
         color: black !important;
         background-color: #fff !important;
     }
+
+    .card {
+                margin: 12px !important;
+                color: #cccccc !important;
+                background-color: #1c1c1c !important;
+                border: 0.5px solid rgb(86, 86, 86) !important;
+                border-radius: 0 !important;
+                transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+                transition-duration: 0.5s !important;
+    }
 </style>
 
 
@@ -298,7 +308,7 @@
 
 
 <section class="desktop-show">
-    <div class="mb-5 " style="background-color: #000; height: 90px; border-bottom: #848484 1px solid;" >
+    <div class="mb-5 " style="background-color: #1c1c1c; height: 90px; " >
     </div>
 </section>
 
@@ -709,7 +719,7 @@
     <section class="desktop-show" style="direction: rtl">
         <div class="container-fluid containerization mt-3">
             <div class="row">
-                <div class="col-lg-9 shadow p-3">
+                <div class="col-lg-9 p-3">
                     <span id="about_mobile" class="" style="text-align: justify !important; color: #fff !important; font-size: 1.5em !important; line-height: 1 !important; ">
                             {!! html_entity_decode($property_detail->$description_var) !!}
                     </span>
@@ -1143,7 +1153,7 @@
                                         <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div> --}}
-                                    <div class="modal-body bg-dark">
+                                    <div class="modal-body">
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($property->images  as $single_img)
@@ -1297,7 +1307,7 @@
                                             <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                                         </div> --}}
-                                        <div class="modal-body bg-dark">
+                                        <div class="modal-body ">
                                             <div class="row">
                                                 <div class="col-lg-6 mb-3">
                                                     @foreach($property->images  as $single_img)
@@ -1632,9 +1642,9 @@
         </div>
     </div> --}}
 
-    <section class="d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; right: 100px; float: right !important; z-index: 5000000; background-color: #000 !important;">
-        <div class="container-fluid" style="width: 380px; float: right; height: 135px;">
-            <div class="row" style="border: 0.5px #848484 solid; ">
+    <section class="d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; right: 100px; float: right !important; z-index: 5000000; background-color: #1c1c1c !important;">
+        <div class="container-fluid" style="width: 380px; float: right; height: 135px; background-color: #1c1c1c !important;">
+            <div class="row" style="border: 0.5px #848484 solid; background-color: #1c1c1c !important;">
                 <div class="col-lg-4 d-flex my-auto">
                     @if (file_exists('uploads/agents/'.$agent->id.'/'.$agent->image))
                         <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
@@ -1679,26 +1689,26 @@
                                 </div>
                             </div>
                             <div class="mx-auto ">
-                                <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                                <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                                    <li class=" text-white  text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
                                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
                                             <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
                                         </a>
                                     </li>
 
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                    <li class=" text-white text-center px-1 mx-auto">
                                         <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
                                             <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
                                         </a>
                                     </li>
 
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                    <li class=" text-white text-center px-1 mx-auto">
                                         <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
                                             <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
                                         </a>
                                     </li>
 
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                    <li class=" text-white text-center px-1 mx-auto">
                                         <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
                                             <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
                                         </a>
@@ -1709,68 +1719,6 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="row">
-            <div class="card " style="max-width: 540px; min-width: 540px;">
-                <div class="row">
-                    <div class="col-md-4 d-flex my-auto">
-                        @if (file_exists('public/assets/images/agents/'.$agent->id.'/'.$agent->image))
-                            <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                                <img src="{{ URL::asset('public/assets/images/agents/'.$agent->id.'/'.$agent->image) }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" rounded-0 style="width: 130px; height: 130px;" alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';"/>
-                            </a>
-                        @else
-                            <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
-                                <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="img-fluid rounded-circle rounded-0 mx-auto my-auto" style="width: 130px; height: 130px;"  alt="agent-image" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
-                            </a>
-                        @endif
-                    </div>
-                    <div class="col-md-8 py-0">
-                        <div class="card-body py-4">
-                            <h5 class="card-title">
-                                {{ $agent->name_en }}
-                            </h5>
-                            <p class="card-text">
-                                {{ $agent->language_en }}
-                            </p>
-                            <div class="mx-auto my-2 w-100">
-                                <button class="btn btn-sm rounded-0 btn-outline-white" >
-                                    EMAIL
-                                </button>
-                                <button class="btn btn-sm rounded-0 btn-outline-white" >
-                                    WhatsApp
-                                </button>
-                            </div>
-                            <div class="mx-auto ">
-                                <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
-                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
     </section>
     {{-- AGENT CARD STICKY TOP --}}
 
@@ -1840,7 +1788,7 @@
             <div class="row" >
 
                 {{-- description --}}
-                <div class="col-lg-9 shadow p-3" style="min-height: 500px !important;">
+                <div class="col-lg-9 p-3" style="min-height: 500px !important;">
                     <span id="about_mobile" class="" style="text-align: justify !important; color: #fff !important; font-size: 1em !important; line-height: 1 !important; ">
                         {!! html_entity_decode($property_detail->$description_var) !!}
                     </span>
@@ -1884,12 +1832,12 @@
                                         <input type="text" class="form-control text-white" placeholder="Full Name" aria-label="Full Name" name="name" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
                                     </div>
                                     <div class="input-group mb-3">
-                                        <input type="phone" name="phone" class="form-control w-100 iti-phone rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #000 !important; width: 100% !important;" placeholder="{{ trans('frontLang.phone') }}" required />
+                                        <input type="phone" name="phone" class="form-control w-100 iti-phone rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #1c1c1c !important; width: 100% !important;" placeholder="{{ trans('frontLang.phone') }}" required />
                                     </div>
                                     <div class="input-group mb-3">
                                         <input type="email" class="form-control text-white" name="email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
                                     </div>
-                                    <button type="submit" class="btn btn-block bg-white text-dark rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #292828">
+                                    <button type="submit" class="btn btn-block bg-white text-dark rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #1c1c1c1">
                                         <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
 
                                         <span class="btn-txt">
@@ -1905,26 +1853,26 @@
                                 </p>
                                 <div class="col-6 mx-auto mb-2">
                                     <div class="mx-auto ">
-                                        <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
-                                            <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                                        <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                                            <li class="  text-white  text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
                                                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
                                                     <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
                                                 </a>
                                             </li>
 
-                                            <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                            <li class="  text-white  text-center px-1 mx-auto">
                                                 <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
                                                     <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
                                                 </a>
                                             </li>
 
-                                            <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                            <li class="  text-white  text-center px-1 mx-auto">
                                                 <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
                                                     <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
                                                 </a>
                                             </li>
 
-                                            <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                            <li class="  text-white  text-center px-1 mx-auto">
                                                 <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
                                                     <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
                                                 </a>
@@ -2098,12 +2046,12 @@
                     {{-- mobile book a viewing --}}
                     <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
-                            <div class="modal-content bg-black">
+                            <div class="modal-content ">
                                 <div class="modal-header py-2">
                                     <h5 class="modal-title text-center text-white" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }} </h5>
                                     {{-- <button type="button" class="btn-close text-white bg-white" data-mdb-dismiss="modal" aria-label="Close"></button> --}}
                                 </div>
-                                <div class="modal-body bg-black">
+                                <div class="modal-body ">
                                     <div class="row">
 
                                         <div class="col-lg-12">
@@ -2115,12 +2063,12 @@
 
                                                 <div class="mb-4">
                                                     <label for="" class="text-white">{{ trans('frontLang.selectdate') }}</label>
-                                                    <input name="book_date" type="date" class="form-control bg-black form-control-lg border border-white text-white"  name="viewing Date" required>
+                                                    <input name="book_date" type="date" class="form-control  form-control-lg border border-white text-white"  name="viewing Date" required>
 
                                                 </div>
                                                 <div class="mb-4">
                                                     <label for="" class="text-white">{{ trans('frontLang.selecttime') }}</label>
-                                                    <select name="book_time"  class="form-control bg-black form-control-lg border border-white text-white"  required>
+                                                    <select name="book_time"  class="form-control  form-control-lg border border-white text-white"  required>
                                                         <option value="9:00 AM">9:00 AM</option>
                                                         <option value="10:00 AM">10:00 AM</option>
                                                         <option value="11:00 AM">11:00 AM</option>
@@ -2139,19 +2087,19 @@
                                                 </div>
 
                                                 <div class=" mb-4">
-                                                    <input type="text" name="name" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.fullname') }}"  required />
+                                                    <input type="text" name="name" class="form-control   form-control-lg border border-white" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
                                                 </div>
 
                                                 <!-- Email input -->
                                                 <div class="mb-4">
-                                                    <input type="phone" name="phone" class="form-control bg-black  form-control-lg iti-phone border border-white" placeholder="{{ trans('frontLang.phone') }}" required />
+                                                    <input type="phone" name="phone" class="form-control   form-control-lg iti-phone border border-white" placeholder="{{ trans('frontLang.phone') }}" required />
 
                                                 </div>
 
                                                 <!-- Email input -->
                                                 <div class="mb-4">
-                                                    <input type="email" name="email" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.email') }}" required />
+                                                    <input type="email" name="email" class="form-control   form-control-lg border border-white" placeholder="{{ trans('frontLang.email') }}" required />
 
                                                 </div>
 
@@ -2184,7 +2132,7 @@
 
 
     {{-- similar properties --}}
-    <section class="mt-3 mobile-show" style="background-color: #000;">
+    <section class="mt-3 mobile-show">
         <div class="container">
             <div class="row">
                 <br>
@@ -2194,7 +2142,7 @@
 
                     @foreach ($properties as $property)
                         <div class="col-lg- mb-5 mt-2">
-                            <div class="card bg-black rounded-0 border border-white border-1" style="height: 460px;">
+                            <div class="card rounded-0 border border-white border-1" style="height: 460px;">
                                 <div class="communities-newlaunch"></div>
                                 @foreach($property->images  as $single_img)
                                     @if($property->images->first()==$single_img)
@@ -2208,7 +2156,7 @@
                                     @if ($property->type_id == '1')
                                         <div class="AED skill" style="display: block !important">
                                             <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                <span style="color: #fff; ">
+                                                <span style="color: #ccc; ">
                                                     AED {{ number_format($property->price) }}
                                                 </span>
                                             </h5>
@@ -2216,7 +2164,7 @@
 
                                         <div class="USD skill">
                                             <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                <span style="color: #fff;">
+                                                <span style="color: #ccc;">
                                                     {{ number_format($property->price_usd) }} USD </b>
                                                 </span>
                                             </h5>
@@ -2226,7 +2174,7 @@
                                             <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
                                                 {{ trans('frontLang.yearly') }}
 
-                                                <span style="color: #fff; ">
+                                                <span style="color: #ccc; ">
                                                     AED {{ number_format($property->price) }}
                                                 </span>
                                             </h5>
@@ -2235,7 +2183,7 @@
                                         <div class="USD skill">
                                             <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
                                                 {{ trans('frontLang.yearly') }}
-                                                <span style="color: #fff;">
+                                                <span style="color: #ccc;">
                                                     {{ number_format($property->price_usd) }} USD </b>
                                                 </span>
                                             </h5>
@@ -2255,11 +2203,11 @@
                                     </p>
 
                                     <div class="row" style="display:block;font-size: 15px;" >
-                                        <span style="color: #848484">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
+                                        <span style="color: #ccc">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
 
-                                        <span style="color: #848484">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
+                                        <span style="color: #ccc">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
 
-                                        <span style="color: #848484">
+                                        <span style="color: #ccc">
                                             @if ($langSeg == 'en')
                                                 {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
                                             @else
@@ -2277,7 +2225,7 @@
                                         <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div> --}}
-                                    <div class="modal-body bg-dark">
+                                    <div class="modal-body ">
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
                                                 @foreach($property->images  as $single_img)
@@ -2337,7 +2285,7 @@
 
 
     <section class="mt-3 desktop-show" style="z-index: -100 !important;">
-        <div class="container-fluid containerization" style="background-color: #000 !important;" >
+        <div class="container-fluid containerization" >
             <div class="row">
 
                 <div class="col-lg-9">
@@ -2349,7 +2297,7 @@
 
                         @foreach ($properties as $property)
                             <div class="col-lg-4 mb-4 mt-2">
-                                <div class="card bg-black rounded-0 " style="height: 480px; border: 0.5px #848484 solid;">
+                                <div class="card rounded-0 " style="height: 500px; border: 0.5px #ccc solid; background-color: #1c1c1c !important;">
                                     <div class="communities-newlaunch"></div>
                                     @foreach($property->images  as $single_img)
                                         @if($property->images->first()==$single_img)
@@ -2364,7 +2312,7 @@
                                         @if ($property->type_id == '1')
                                             <div class="AED skill" style="display: block !important">
                                                 <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    <span style="color: #fff; ">
+                                                    <span style="color: #ccc; ">
                                                         AED {{ number_format($property->price) }}
                                                     </span>
                                                 </h5>
@@ -2372,7 +2320,7 @@
 
                                             <div class="USD skill">
                                                 <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    <span style="color: #fff;">
+                                                    <span style="color: #ccc;">
                                                         {{ number_format($property->price_usd) }} USD </b>
                                                     </span>
                                                 </h5>
@@ -2382,7 +2330,7 @@
                                                 <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
                                                     {{ trans('frontLang.yearly') }}
 
-                                                    <span style="color: #fff; ">
+                                                    <span style="color: #ccc; ">
                                                         AED {{ number_format($property->price) }}
                                                     </span>
                                                 </h5>
@@ -2391,7 +2339,7 @@
                                             <div class="USD skill">
                                                 <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
                                                     {{ trans('frontLang.yearly') }}
-                                                    <span style="color: #fff;">
+                                                    <span style="color: #ccc;">
                                                         {{ number_format($property->price_usd) }} USD </b>
                                                     </span>
                                                 </h5>
@@ -2409,11 +2357,11 @@
                                         </p>
 
                                         <div class="row" style="display:block;font-size: 15px;" >
-                                            <span style="color: #848484" class="fw-light">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
+                                            <span style="color: #ccc" class="fw-light">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
 
-                                            <span style="color: #848484" class="fw-light">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
+                                            <span style="color: #ccc" class="fw-light">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
 
-                                            <span style="color: #848484" class="fw-light">
+                                            <span style="color: #ccc" class="fw-light">
                                                 @if ($langSeg == 'en')
                                                     {{ $property->area}} {{ trans('frontLang.sqFt') }}</span>
                                                 @else
@@ -2432,7 +2380,7 @@
                                             <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                                         </div> --}}
-                                        <div class="modal-body bg-dark">
+                                        <div class="modal-body ">
                                             <div class="row">
                                                 <div class="col-lg-6 mb-3">
                                                     @foreach($property->images  as $single_img)
@@ -2502,9 +2450,9 @@
     <div class="modal-dialog modal-dialog-centered " style="width: 1800px !important;">
         <div class="modal-content rounded-0 rounded-0 border border-1 border-white m-3 p-0">
 
-            <div class="modal-body p-0 bg-black">
+            <div class="modal-body p-0 ">
                 <div class="desktop-show row p-0 m-0">
-                    <div class="col-lg-4 text-white m-0 p-0 bg-black d-flex flex-column">
+                    <div class="col-lg-4 text-white m-0 p-0  d-flex flex-column">
                         <div class="my-auto mx-auto p-3">
                             <p class="fw-bold" style="font-size: 1.8rem !important;">
                                 {{ trans('frontLang.getintouch') }}
@@ -2576,7 +2524,7 @@
     <div class="modal-dialog modal-dialog-centered " style="width: 1800px !important;">
         <div class="modal-content rounded-0 rounded-0 border border-1 border-white m-3 p-0">
 
-            <div class="modal-body p-0 bg-black">
+            <div class="modal-body p-0 ">
                 <div class="desktop-show row p-0 m-0">
                     {{-- <div class="col-lg-4 text-white m-0 p-0 bg-black d-flex flex-column">
                         <div class="my-auto mx-auto p-3">
@@ -2673,7 +2621,7 @@
     <div class="modal-dialog modal-sm modal-dialog-centered " >
         <div class="modal-content rounded-0 rounded-0 border border-1 border-white m-3 p-0">
 
-            <div class="modal-body p-0 bg-black">
+            <div class="modal-body p-0 ">
                 <div class="desktop-show row p-0 m-0">
                     <div class="col-12 m-0 p-0 bg-white">
                         <div class="p-5">

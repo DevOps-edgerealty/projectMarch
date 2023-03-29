@@ -28,7 +28,7 @@
     <header>
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgb(0 0 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3  style="text-transform: uppercase;">Check Your Invoice</h3>
@@ -43,7 +43,7 @@
 <section class="mt-5">
     <div class="container">
 
-        <h3 class="text-center">Check Your Invoice</h3>
+        {{-- <h3 class="text-center">Check Your Invoice</h3> --}}
 
     </div>
 </section>
@@ -82,7 +82,7 @@
 
                             </div>
                             <div class="col-lg-4 mb-4">
-                                <button type="submit" class="btn btn-dark btn-block btn-lg" >
+                                <button type="submit" class="btn btn-block btn-lg" style="background-color: #1c1c1c !important; color: #fff !important;">
                                     Submit
                                 </button>
                             </div>

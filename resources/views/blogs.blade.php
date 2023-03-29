@@ -113,6 +113,15 @@ else
                 border: 0.5px solid #000 !important;
                 cursor: pointer !important;
             }
+            .card {
+                margin: 12px !important;
+                color: #cccccc !important;
+                background-color: #1c1c1c !important;
+                /* border: 0.5px solid rgb(86, 86, 86) !important; */
+                border-radius: 0 !important;
+                transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+                transition-duration: 0.5s !important;
+            }
 
 
         </style>
@@ -123,7 +132,7 @@ else
 
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgba(0, 0, 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3>{{ trans('frontLang.blogs') }}</h3>
@@ -167,14 +176,14 @@ else
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" >
 
             @foreach($blogs->chunk(4) as $chunk)
             <div class="card-group">
 
 
                 @foreach($chunk as $blog)
-                <div class="card bg-black rounded-0 mx-2 my-2" style="height: 450px !important;">
+                <div class="card  rounded-0 mx-2 my-2" >
 
                     @if (file_exists('uploads/blogs/'.$blog->id.'/'.$blog->image_url))
                         <a href="{{url( $langSeg .'/'.'blogs_detail'.'/'.$blog->slug_link)}}">
@@ -191,7 +200,7 @@ else
                             {{$blog->$name_var}}
                         </a>
                     </h4>
-                    <div class="card-body d-flex align-items-end flex-column px-0 h-100">
+                    <div class="card-body d-flex align-items-end flex-column px-0">
 
                         <p class="card-text mb-3 d-flex align-items-baseline mt-auto" style="line-height: 1.3 !important; color: gray !important; font-size: .9rem !important; text-align: justify !important;">
 
@@ -203,7 +212,7 @@ else
                         {{-- <small class="fw-light" style="color:  !important; font-size: 0.8rem !important;">{{ $blog->updated_at->diffForHumans() }}</small> --}}
 
                     </div>
-                    <div class="card-footer px-0">
+                    {{-- <div class="card-footer px-0"> --}}
 
                         {{-- <a href="{{url( $langSeg .'/'.'blogs_detail'.'/'.$blog->slug_link)}}" class="btn btn-outline-white btn-sm">
                             {{ trans('frontLang.readMore') }}
@@ -212,7 +221,7 @@ else
                         {{-- <a style="float: right;" href="{{url( $langSeg .'/'.'blogs_detail'.'/'.$blog->slug_link)}}" class="btn btn btn-outline-white btn-sm">
                             <i class="fas fa-eye"> </i> {{ trans('frontLang.view') }} {{$blog->views}}
                         </a> --}}
-                    </div>
+                    {{-- </div> --}}
                 </div>
 
                 @endforeach
@@ -224,7 +233,19 @@ else
             <style>
                 .pagination > li > a,
                 .pagination > li > span {
-                    color: #fff !important; // use your own color here
+                    color: #ccc !important; // use your own color here
+                }
+
+
+                .pagination > .disabled > a,
+                .pagination > .disabled > a:focus,
+                .pagination > .disabled > a:hover,
+                .pagination > .disabled > span,
+                .pagination > .disabled > span:focus,
+                .pagination > .disabled > span:hover {
+                    background-color: #1c1c1c !important;
+                    border-color: green;
+                    color: #ccc !important;
                 }
 
                 .pagination > .active > a,
@@ -233,9 +254,9 @@ else
                 .pagination > .active > span,
                 .pagination > .active > span:focus,
                 .pagination > .active > span:hover {
-                    background-color: #fff;
+                    background-color: #ccc;
                     border-color: green;
-                    color: #000 !important;
+                    color: #1c1c1c !important;
                 }
             </style>
 

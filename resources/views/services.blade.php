@@ -32,9 +32,13 @@
     line-height: 1.6 !important;
   }
   .card {
-    background-color: #000 !important;
-    color: #fff !important;
-
+                margin: 12px !important;
+                color: #cccccc !important;
+                background-color: #1c1c1c !important;
+                border: 0.5px solid rgb(86, 86, 86) !important;
+                border-radius: 0 !important;
+                transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+                transition-duration: 0.5s !important;
   }
   .card > .card-body,
   .card > .card-body > p {
@@ -53,7 +57,7 @@
     <header>
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgb(0 0 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                 <div class="text-white">
                     <h3>{{ trans('frontLang.services') }}</h3>
@@ -184,7 +188,7 @@
       <div class="container-fluid containerization">
           <div class="row mb-4">
               <div class="col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card" >
                       <div class=" hover-overlay ripple" data-mdb-ripple-color="light">
                           <img src="{{URL::asset('public/assets/images/services/research-advisory-edge.jpg')}}" class="img-fluid" />
                       </div>
@@ -305,7 +309,7 @@
           <div class="row mb-4">
 
               <div class="col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card" style="height: 600px !important;">
                       <div class="hover-overlay ripple" data-mdb-ripple-color="light">
                           <img src="{{URL::asset('public/assets/images/services/research-advisory-edge.jpg')}}" class="img-fluid" />
                       </div>
@@ -322,7 +326,7 @@
               </div>
 
               <div class="col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card" style="height: 600px !important;">
                       <div class=" hover-overlay ripple" data-mdb-ripple-color="light">
                           <img src="{{URL::asset('public/assets/images/services/property-management-edgerealty.jpg')}}" class="img-fluid" />
 
@@ -341,7 +345,7 @@
               </div>
 
               <div class="col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card" style="height: 600px !important;">
                       <div class=" hover-overlay ripple" data-mdb-ripple-color="light">
                           <img src="{{URL::asset('public/assets/images/services/mortgages-edgerealty.jpg')}}" class="img-fluid" />
                       </div>
@@ -358,7 +362,7 @@
               </div>
 
               <div class="col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card" style="height: 600px !important;">
                       <div class=" hover-overlay ripple" data-mdb-ripple-color="light">
                           <img src="{{URL::asset('public/assets/images/services/marketing.jpg')}}" class="img-fluid" />
                       </div>
@@ -377,7 +381,7 @@
 
 
               <div class="col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card" style="height: 600px !important;">
                       <div class=" hover-overlay ripple" data-mdb-ripple-color="light">
                           <img src="{{URL::asset('public/assets/images/services/property-snaging.jpg')}}" class="img-fluid" />
                       </div>
@@ -394,7 +398,7 @@
               </div>
 
               <div class="col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card" style="height: 600px !important;">
                       <div class=" hover-overlay ripple" data-mdb-ripple-color="light">
                           <img src="{{URL::asset('public/assets/images/services/crm.jpg')}}" class="img-fluid" />
                       </div>
@@ -403,7 +407,7 @@
                         <p class="card-text mb-3" style="line-height:24px">
                           One of the most overlooked aspect in today’s real estate market is effective customer relationship management,
                           handover, and project management. To ensure our clients are well-informed and up to date on the latest developments in the real estate industry, we offer a full-service CRM solution for developers that require world-class customer service in line with the top industry standards.
-                          We also provide handover and project management services to help developers better understand client requirements during the development cycle from a unique perspective.
+
                         </p>
 
                       </div>

@@ -26,7 +26,7 @@
     }
     a {
         color: white !important;
-        text-decoration: underline !important;
+        /* text-decoration: underline !important; */
     }
     .card  {
         color: #fff !important;
@@ -52,10 +52,10 @@
         color: #fff !important;
     }
 
-    .btn:hover {
+    /* .btn:hover {
         box-shadow: 0px 0px 30px #9a9a9a !important;
         opacity: 1 !important;
-    }
+    } */
     @media only screen and (max-width: 800px) {
         .slick-track {
             height: 200px !important;
@@ -234,7 +234,7 @@
     </section>
 
     @if(count($project) > 0)
-        <section class="mt-5" style="background-color: #000; direction: rtl">
+        <section class="mt-5" style="background-color: #1c1c1c; direction: rtl">
             <div class="container-fluid containerization mt-5">
 
                 <div class="row">
@@ -417,7 +417,7 @@
     </section>
 
     @if(count($project) > 0)
-        <section class="mt-5" style="background-color: #000;">
+        <section class="mt-5" style="background-color: #1c1c1c;">
             <div class="container-fluid containerization mt-5">
 
                 <div class="row">

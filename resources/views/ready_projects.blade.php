@@ -25,12 +25,24 @@
     line-height: 1.6 !important;
   }
   .card {
-    color: #000 !important;
+    color: #1c1c1c !important;
 
   }
 
     a {
-        color: #fff !important;
+        color: #ccc !important;
+    }
+
+    header {
+        z-index: 100 !important;
+    }
+
+    .navbar1 {
+        transition:all 0.5s !important;
+    }
+
+    .navbar-scrolled {
+        background-color: #1c1c1c !important;
     }
 
 
@@ -41,10 +53,10 @@
         scroll-behavior: smooth;
     }
     input, select {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #ccc !important;
         border-radius: 0px !important;
-        border: 1px solid #fff !important;
+        border: 1px solid #ccc !important;
     }
     .btn {
         /* transition: transform 5s  !important; */
@@ -56,22 +68,31 @@
         /* box-shadow: -5px 5px 1px #a2a2a2 !important; */
         /* translate: 2px -2px !important; */
         opacity: 1 !important;
-        background-color: #fff !important;
-        color: #000 !important;
+        background-color: #ccc !important;
+        color: #1c1c1c !important;
         transform: scale(1) !important;
-        border: 2px solid #000 !important;
+        border: 2px solid #1c1c1c !important;
 
         cursor: pointer !important;
     }
     .card {
-        color: #fff !important;
-        background-color: #000 !important;
-        border: 0.5px solid gray !important;
+        margin: 12px !important;
+        color: #cccccc !important;
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
         border-radius: 0 !important;
         transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
-        transition-duration: 0.125s !important;
+        transition-duration: 0.5s !important;
+    }
 
+    .modal-content {
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
+    }
 
+    .submitBtn {
+        background-color: #1c1c1c !important;
+        color: #fff;
     }
 
     .card-footer {
@@ -85,7 +106,7 @@
         /* margin-left: 20px !important;
         margin-right: 20px !important; */
         /* border: 5px solid #000 !important; */
-    } */
+    */
 </style>
 
 <?php
@@ -127,7 +148,7 @@
 
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgba(0, 0, 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
             <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100">
                 <div class="text-white">
                     <h3 class="mt-5"  style="text-transform: uppercase;"> {{ trans('frontLang.readyProjects') }} </h3><br>
@@ -238,7 +259,7 @@
                                         <button type="button" class="btn-close" style="margin:0;" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body ">
-                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                        <div class="m-0 w-100 p-0 mx-auto py-1">
                                             <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
                                                 {{ trans('frontLang.requestdetail') }}
                                             </p>
@@ -252,7 +273,7 @@
                                                 @endforeach
                                             </div>
                                             <div class="col-lg-6">
-                                                <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                                <div class="m-0 w-100 p-0 mx-auto py-1">
                                                     <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
                                                         {{ trans('frontLang.requestdetail') }}
                                                     </p>
@@ -304,6 +325,35 @@
 
                 </div>
                 <div class="col-lg-12 mt-5 text-center">
+                    <style>
+                                .pagination > li > a,
+                                .pagination > li > span {
+                                    color: #ccc !important; // use your own color here
+                                }
+
+
+                                .pagination > .disabled > a,
+                                .pagination > .disabled > a:focus,
+                                .pagination > .disabled > a:hover,
+                                .pagination > .disabled > span,
+                                .pagination > .disabled > span:focus,
+                                .pagination > .disabled > span:hover {
+                                    background-color: #1c1c1c !important;
+                                    border-color: green;
+                                    color: #ccc !important;
+                                }
+
+                                .pagination > .active > a,
+                                .pagination > .active > a:focus,
+                                .pagination > .active > a:hover,
+                                .pagination > .active > span,
+                                .pagination > .active > span:focus,
+                                .pagination > .active > span:hover {
+                                    background-color: #ccc;
+                                    border-color: green;
+                                    color: #1c1c1c !important;
+                                }
+                            </style>
                     {!! $project->links() !!}
                 </div>
 
@@ -412,8 +462,8 @@
                                         <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div> --}}
-                                    <div class="modal-body bg-black rounded-0 border border-1 border-white">
-                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                    <div class="modal-body  rounded-0 border border-1 border-white">
+                                        <div class="m-0 w-100 p-0 mx-auto  py-1">
                                             <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
                                                 {{ trans('frontLang.requestdetail') }}
                                             </p>
@@ -485,34 +535,34 @@
                 </div>
                 <div class="col-lg-12 mt-5  py-1 my-auto rounded-5">
                     <style>
-                        .pagination > li > a,
-                        .pagination > li > span {
-                            color: #fff !important; // use your own color here
-                        }
+                                .pagination > li > a,
+                                .pagination > li > span {
+                                    color: #ccc !important; // use your own color here
+                                }
 
 
-                        .pagination > .disabled > a,
-                        .pagination > .disabled > a:focus,
-                        .pagination > .disabled > a:hover,
-                        .pagination > .disabled > span,
-                        .pagination > .disabled > span:focus,
-                        .pagination > .disabled > span:hover {
-                            background-color: #000 !important;
-                            border-color: green;
-                            color: #fff !important;
-                        }
+                                .pagination > .disabled > a,
+                                .pagination > .disabled > a:focus,
+                                .pagination > .disabled > a:hover,
+                                .pagination > .disabled > span,
+                                .pagination > .disabled > span:focus,
+                                .pagination > .disabled > span:hover {
+                                    background-color: #1c1c1c !important;
+                                    border-color: green;
+                                    color: #ccc !important;
+                                }
 
-                        .pagination > .active > a,
-                        .pagination > .active > a:focus,
-                        .pagination > .active > a:hover,
-                        .pagination > .active > span,
-                        .pagination > .active > span:focus,
-                        .pagination > .active > span:hover {
-                            background-color: #fff;
-                            border-color: green;
-                            color: #000 !important;
-                        }
-                    </style>
+                                .pagination > .active > a,
+                                .pagination > .active > a:focus,
+                                .pagination > .active > a:hover,
+                                .pagination > .active > span,
+                                .pagination > .active > span:focus,
+                                .pagination > .active > span:hover {
+                                    background-color: #ccc;
+                                    border-color: green;
+                                    color: #1c1c1c !important;
+                                }
+                            </style>
                     {!! $project->links() !!}
                 </div>
 

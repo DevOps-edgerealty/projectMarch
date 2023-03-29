@@ -34,7 +34,7 @@
     }
 
     #List{
-        background-color: #000 !important;
+        background-color: #1c1c1c !important;
     }
 
     /*
@@ -47,24 +47,24 @@
     } */
 
     input, select {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: #1c1c1c !important;
+        color: #ccc !important;
         border-radius: 0px !important;
-        border: 1px solid #fff !important;
+        border: 1px solid #ccc !important;
     }
 
     .nav-pills .nav-link.active {
-        background-color: #fff !important;
-        color: #000 !important;
-        border: 1px solid #000 !important;
+        background-color: #ccc !important;
+        color: #1c1c1c !important;
+        border: 1px solid #1c1c1c !important;
         border-radius: 0 !important;
 
         }
 
     .nav-link {
-        background-color: #000 !important;
-        color: #fff !important;
-        border: 1px solid #fff !important;
+        background-color: #1c1c1c !important;
+        color: #ccc !important;
+        border: 1px solid #ccc !important;
         border-radius: 0 !important;
 
     }
@@ -97,13 +97,23 @@
         cursor: pointer !important;
     }
     .card {
-        color: #fff !important;
-        background-color: #000 !important;
-        border: 0.5px solid gray !important;
+        margin: 12px !important;
+        color: #cccccc !important;
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
         border-radius: 0 !important;
-        transition-timing-function: cubic-bezier(.52,.56,.53,.51) !important;
-        transition-duration: 0.1s !important;
+        transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+        transition-duration: 0.5s !important;
+    }
 
+    .modal-content {
+        background-color: #1c1c1c !important;
+        border: 0.5px solid rgb(86, 86, 86) !important;
+    }
+
+    .submitBtn {
+        background-color: #1c1c1c !important;
+        color: #fff;
     }
 
     .card-footer {
@@ -166,7 +176,7 @@
 
         <!-- Background image -->
         <div id="intro-page-properties" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: rgba(0, 0, 0);">
+            <div class="mask" style="background-color: #1c1c1c;">
                 <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
                     <div class="text-white">
                         <h3 class="mt-5 mb-5"  style="text-transform: uppercase;">{{$PageHeading}}</h3><br>
@@ -240,7 +250,7 @@
                                         <div class="col-md-11">
                                             <div class="input-group">
                                                 <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -6px !important;"></span>
-                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
+                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg " placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
                                                 <button type="submit" class="btn btn-white rounded-0 shadow-none"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
@@ -258,7 +268,7 @@
                                         <div class="row mt-3">
                                             <div class="col-lg-2">
                                                 <div class=" mb-4">
-                                                    <select name="property_type" class="form-select form-select-lg bg-black text-white" aria-label="Default select example" >
+                                                    <select name="property_type" class="form-select form-select-lg " aria-label="Default select example" >
                                                         <option value="" {{@$property_type == "" ? 'selected' : ''}}> {{ trans('frontLang.propertyType') }}</option>
                                                         <option value="1" {{@$property_type == "1" ? 'selected' : ''}}>{{ trans('frontLang.Apartment') }}</option>
                                                         <option value="3" {{@$property_type == "3" ? 'selected' : ''}}>{{ trans('frontLang.Commercial') }}</option>
@@ -568,7 +578,7 @@
                                         <div class="col-md-11">
                                             <div class="input-group">
                                                 <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -6px !important;"></span>
-                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
+                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg " placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
                                                 <button type="submit" class="btn btn-white rounded-0 shadow-none"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
@@ -586,7 +596,7 @@
                                         <div class="row mt-3">
                                             <div class="col-lg-2">
                                                 <div class=" mb-4">
-                                                    <select name="property_type" class="form-select form-select-lg bg-black text-white" aria-label="Default select example" >
+                                                    <select name="property_type" class="form-select form-select-lg" aria-label="Default select example" >
                                                         <option value="" {{@$property_type == "" ? 'selected' : ''}}> {{ trans('frontLang.propertyType') }}</option>
                                                         <option value="1" {{@$property_type == "1" ? 'selected' : ''}}>{{ trans('frontLang.Apartment') }}</option>
                                                         <option value="3" {{@$property_type == "3" ? 'selected' : ''}}>{{ trans('frontLang.Commercial') }}</option>
@@ -692,6 +702,8 @@
                                 </form>
                             </div>
                         </div>
+
+
                         <div  class="tab-pane" id="ex2-pills-2-pro" role="tabpanel" aria-labelledby="ex2-tab-2" >
                             <div class="form-group has-search">
                                 <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="GET">
@@ -713,7 +725,7 @@
                                         <div class="col-md-11">
                                             <div class="input-group">
                                                 <span class="fa fa-search form-control-feedback m-0 p-0" style="margin-top: -6px !important;"></span>
-                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg bg-black" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
+                                                <input type="search" value="{{@$request->search}}" name="search" id="search" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchh') }}" aria-label="Search"/>
                                                 <button type="submit" class="btn btn-white rounded-0 shadow-none"><i class="fas fa-search"></i></button>
                                             </div>
                                         </div>
@@ -1015,7 +1027,7 @@
                                             <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                             <button type="button" class="btn-close bg-white" style="color: white !important;" data-mdb-dismiss="modal" aria-label="Close"></button>
                                         </div> --}}
-                                        <div class="modal-body bg-black " style="border: 0.25px solid grey !important; ">
+                                        <div class="modal-body  " >
 
                                             <div class="row p-4">
                                                 <div class="col-lg-6 mb-3">
@@ -1081,7 +1093,7 @@
                             <style>
                                 .pagination > li > a,
                                 .pagination > li > span {
-                                    color: #fff !important; // use your own color here
+                                    color: #ccc !important; // use your own color here
                                 }
 
 
@@ -1091,9 +1103,9 @@
                                 .pagination > .disabled > span,
                                 .pagination > .disabled > span:focus,
                                 .pagination > .disabled > span:hover {
-                                    background-color: #000 !important;
+                                    background-color: #1c1c1c !important;
                                     border-color: green;
-                                    color: #fff !important;
+                                    color: #ccc !important;
                                 }
 
                                 .pagination > .active > a,
@@ -1102,9 +1114,9 @@
                                 .pagination > .active > span,
                                 .pagination > .active > span:focus,
                                 .pagination > .active > span:hover {
-                                    background-color: #fff;
+                                    background-color: #ccc;
                                     border-color: green;
-                                    color: #000 !important;
+                                    color: #1c1c1c !important;
                                 }
                             </style>
 
@@ -1183,35 +1195,56 @@
 
                                 @if ($langSeg == 'ar')
                                     <div class="card-body  px-3 py-0" style="direction: rtl">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                @if ($property->type_id == '1')
+                                                    <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> <span style="color:;"> $ {{ number_format($property->price_usd) }} </span></b></h5>
+                                                    <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> <span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} </span></b></h5>
+                                                @else
 
-                                        @if ($property->type_id == '1')
-                                            <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> <span style="color:;"> $ {{ number_format($property->price_usd) }} </span></b></h5>
-                                            <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> <span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} </span></b></h5>
-                                        @else
+                                                    <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b><span style="color:;"> $ {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
+                                                    <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b><span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
+                                                @endif
 
-                                            <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b><span style="color:;"> $ {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
-                                            <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b><span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
-                                        @endif
-
-                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <p class="card-title" style="color: #848484 !important; font-size: 0.95vw !important;">{{ $property->$title_var }}</p>
-                                        </a>
-                                        <!--<p><i class="fas fa-map-marker-alt fw-light" style="color: green"> </i> {{ $property->locationss->$name_var }} </p>-->
+                                                <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                    <p class="card-title" style="color: #848484 !important; font-size: 0.95vw !important;">{{ $property->$title_var }}</p>
+                                                </a>
+                                                <!--<p><i class="fas fa-map-marker-alt fw-light" style="color: green"> </i> {{ $property->locationss->$name_var }} </p>-->
 
 
 
-                                        {{-- <hr> --}}
-                                        <div class="row" >
-                                            <div class="col-lg-12" style="display:block;" >
-                                                <span class="ps-0 pe-2" style="color: #848484;margin-right: 15px;  font-size: 0.75vw !important;"> <i class="fas fa-bed"></i>  {{$property->bedrooms}} {{ trans('frontLang.bedrooms') }} </span> <span style="color: #848484">&#x2022;</span>
+                                                {{-- <hr> --}}
+                                                <div class="row" >
+                                                    <div class="col-lg-12" style="display:block;" >
+                                                        <span class="ps-0 pe-2" style="color: #848484;margin-right: 15px;  font-size: 0.75vw !important;"> <i class="fas fa-bed"></i>  {{$property->bedrooms}} {{ trans('frontLang.bedrooms') }} </span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.95vw !important;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} {{ trans('frontLang.bathrooms') }}</span> <span style="color: #848484">&#x2022;</span>
+                                                        <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.95vw !important;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} {{ trans('frontLang.bathrooms') }}</span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.95vw !important;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                        <span class="px-2" style="color: #848484;margin-right: 15px;  font-size: 0.95vw !important;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
 
+                                                    </div>
+
+                                                </div>
                                             </div>
 
+
+                                            <div class="col-md-4">
+                                                @foreach($agents  as $agent)
+                                                    @if($property->agent_id == $agent->id)
+                                                    {{$property->agent_id}}
+                                                    {{$agent->image}}
+                                                        @if (file_exists(public_path().'uploads/agents/'.$property->agent_id.'/'.$agent->image))
+                                                            {{-- <img src="{{ URL::asset('public/assets/images/agents'.$agent->id.'/'.$agent->image) }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0"  alt="agent"> --}}
+                                                            <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: " class="card-img-top rounded-0 pe-0 " alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                                        @else
+                                                            <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0 pe-0"  alt="agent">
+                                                        @endif
+                                                    @endif
+                                                @endforeach
+                                            </div>
                                         </div>
+
+
 
                                     </div>
 
@@ -1226,43 +1259,62 @@
                                 @else
                                     <div class="card-body px-3 py-0">
 
-                                        @if ($property->type_id == '1')
-                                            @if ($langSeg == 'ru')
-                                                <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }}</span></b></h5>
-                                                <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }}</span></b></h5>
-                                            @else
-                                                <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }} </span></b></h5>
-                                                <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} </span></b></h5>
-                                            @endif
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                @if ($property->type_id == '1')
+                                                    @if ($langSeg == 'ru')
+                                                        <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }}</span></b></h5>
+                                                        <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }}</span></b></h5>
+                                                    @else
+                                                        <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }} </span></b></h5>
+                                                        <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b>{{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} </span></b></h5>
+                                                    @endif
 
-                                        @else
+                                                @else
 
-                                            <h5 class="my-3 USD skill" style="font-size: 1.4rem !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }} </b> </span></h5>
-                                            <h5 class="my-3 AED skill" style="font-size: 1.4rem !important; display: block !important"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}</b> </span></h5>
-                                        @endif
+                                                    <h5 class="my-3 USD skill" style="font-size: 1.4rem !important; display: none"> <b> $ <span style="color: #fff;">  {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }} </b> </span></h5>
+                                                    <h5 class="my-3 AED skill" style="font-size: 1.4rem !important; display: block !important"> <b> {{ trans('frontLang.AED') }} <span style="color: #fff;">  {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}</b> </span></h5>
+                                                @endif
 
-                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                            <p class=""  style="  font-size: 0.95vw !important; color: #848484 !important;">
-                                                {{ $property->$title_var }}
-                                            </p>
-                                        </a>
-                                        <!--<p class=""> {{ $property->locationss->$name_var }} </p>-->
+                                                <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                    <p class=""  style="  font-size: 0.95vw !important; color: #848484 !important;">
+                                                        {{ $property->$title_var }}
+                                                    </p>
+                                                </a>
+                                                <!--<p class=""> {{ $property->locationss->$name_var }} </p>-->
 
 
 
-                                        {{-- <hr> --}}
-                                        <div class="row mt-2" >
-                                            <div class="col-lg-12" style="display:block;" >
-                                                <span class="ps-0 pe-2" style="color: #848484;  font-size: 0.95vw !important;">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
+                                                {{-- <hr> --}}
+                                                <div class="row mt-2" >
+                                                    <div class="col-lg-12" style="display:block;" >
+                                                        <span class="ps-0 pe-2" style="color: #848484;  font-size: 0.95vw !important;">  {{$property->bedrooms}} {{ trans('frontLang.bed') }} </span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="px-2" style="color: #848484;  font-size: 0.95vw !important;">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
+                                                        <span class="px-2" style="color: #848484;  font-size: 0.95vw !important;">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span> <span style="color: #848484">&#x2022;</span>
 
-                                                <span class="px-2" style="color: #848484;  font-size: 0.95vw !important;"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                        <span class="px-2" style="color: #848484;  font-size: 0.95vw !important;"> {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
 
+                                                    </div>
+
+
+                                                </div>
                                             </div>
+                                            <div class="col-md-4 pt-2">
+                                                @foreach($agents  as $agent)
+                                                    @if($property->agent_id == $agent->id)
 
-
+                                                        @if (file_exists(public_path().'uploads/agents/'.$property->agent_id.'/'.$agent->image))
+                                                            {{-- <img src="{{ URL::asset('public/assets/images/agents'.$agent->id.'/'.$agent->image) }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0"  alt="agent"> --}}
+                                                            <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: " class="card-img-top rounded-0 pe-0 " alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
+                                                        @else
+                                                            <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: ; width: 100%; border-radius: 50%;" class="mt-0 pe-0"  alt="agent">
+                                                        @endif
+                                                    @endif
+                                                @endforeach
+                                            </div>
                                         </div>
+
+
 
                                     </div>
 
@@ -1286,8 +1338,8 @@
                                         <h5 class="modal-title text-center" id="exampleModalLabel">{{ trans('frontLang.requestdetail') }} </h5>
                                         <button type="button" class="btn-close bg-white" style="color: white !important;" data-mdb-dismiss="modal" aria-label="Close"></button>
                                     </div> --}}
-                                    <div class="modal-body bg-black " style="border: 0.25px solid grey !important; ">
-                                        <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                    <div class="modal-body ">
+                                        <div class="m-0 w-100 p-0 mx-auto py-1">
                                             <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
                                                 {{ trans('frontLang.requestdetail') }}
                                             </p>
@@ -1427,7 +1479,7 @@
                     <style>
                         .pagination > li > a,
                         .pagination > li > span {
-                            color: #fff !important; // use your own color here
+                            color: #ccc !important; // use your own color here
                         }
 
 
@@ -1437,9 +1489,9 @@
                         .pagination > .disabled > span,
                         .pagination > .disabled > span:focus,
                         .pagination > .disabled > span:hover {
-                            background-color: #000 !important;
+                            background-color: #1c1c1c !important;
                             border-color: green;
-                            color: #fff !important;
+                            color: #ccc !important;
                         }
 
                         .pagination > .active > a,
@@ -1448,9 +1500,9 @@
                         .pagination > .active > span,
                         .pagination > .active > span:focus,
                         .pagination > .active > span:hover {
-                            background-color: #fff;
+                            background-color: #ccc;
                             border-color: green;
-                            color: #000 !important;
+                            color: #1c1c1c !important;
                         }
                     </style>
 

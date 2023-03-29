@@ -103,6 +103,15 @@
     .lineHeight {
         line-height: 1.5 !important;
     }
+    .card {
+                margin: 12px !important;
+                color: #cccccc !important;
+                background-color: #1c1c1c !important;
+                border: 0.5px solid rgb(86, 86, 86) !important;
+                border-radius: 0 !important;
+                transition-timing-function: cubic-bezier(.17,.67,.83,.67) !important;
+                transition-duration: 0.5s !important;
+  }
 </style>
     <?php
     $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

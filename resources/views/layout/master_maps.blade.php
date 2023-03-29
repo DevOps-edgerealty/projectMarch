@@ -330,7 +330,7 @@
 
 	</head>
 
-	<body class="bg-black text-white">
+	<body class=" text-white" style="background-color: #1c1c1c !important; color: #cccccc !important;">
 
         @include('layout.header_maps')
 
