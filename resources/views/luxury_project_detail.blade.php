@@ -74,12 +74,95 @@
     }
 
 
+    /*
+        PAYMENT PLAN - MOBILE - ENGLISH
+    */
+    .payment-plan-section .property-info {
+        width: 100% !important;
+    }
+
+    .payment-plan-section .inner {
+        background-color: #1c1c1c !important;
+        /* text-align: right !important; */
+        color: #ccc !important;
+        padding-top: 0 !important;
+        padding-bottom: 15 !important;
+        font-weight: 400 !important;
+        font-size: 1em !important;
+    }
+
+    .payment-plan-section .icon {
+        color: #ccc !important;
+        font-weight: 400 !important;
+        font-size: 1em !important;
+        margin-bottom: 0px !important;
+    }
+
+
+
+    /*
+        PAYMENT PLAN - MOBILE - ARABIC
+    */
+    .payment-plan-section-ar .property-info {
+        width: 100% !important;
+    }
+
+    .payment-plan-section-ar .inner {
+        background-color: #1c1c1c !important;
+        text-align: right !important;
+        color: #ccc !important;
+        padding-top: 0 !important;
+        padding-bottom: 15 !important;
+        font-weight: 400 !important;
+        font-size: 1em !important;
+    }
+
+    .payment-plan-section-ar .icon {
+        color: #ccc !important;
+        font-weight: 400 !important;
+        font-size: 1em !important;
+        margin-bottom: 0px !important;
+    }
+
+
+
+    /*
+        NEARBY PLACES - MOBILE - EN & AR
+    */
+    .nearby-places-section-mobile .table-bordered {
+        background-color: #1c1c1c !important;
+        border: 0.5px #ccc solid !important;
+        text-align: left !important;
+    }
+
+    .nearby-places-section-mobile  td, tr {
+        color: #ccc !important;
+        padding: 10px !important;
+        text-align: left !important;
+    }
+
+
+
+    /*
+        NEARBY PLACES - MOBILE - EN & AR
+    */
+    .nearby-places-section-mobile-ar .table-bordered {
+        background-color: #1c1c1c !important;
+        border: 0.5px #ccc solid !important;
+        text-align: right !important;
+    }
+    .nearby-places-section-mobile-ar  td, tr {
+        color: #ccc !important;
+        padding: 10px !important;
+        text-align: right !important;
+    }
+
+
+
 </style>
 
 <?php
     $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
-
 
     $uri_segments = explode('/', $uri_path);
 
@@ -870,11 +953,11 @@
     <section class="mt-5 mb-5 mobile-show" dir="rtl">
         <div class="container">
             <div class="row">
-                <h3 class="mb-4">{{ trans('frontLang.amenities') }}</h3>
+                <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
                 @foreach ($features_array as $feature_id => $feature_name)
                     @foreach ($features as $feature)
                         @if($feature == $feature_id)
-                            <div class="col-lg-12 mb-2" style="width: 100%; color: #fff !important;" >
+                            <div class="col-lg-12 mb-2" style="width: 100%; color: #ccc !important;" >
                                 <i class="far fa-check-circle"></i> &nbsp; {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
@@ -888,11 +971,11 @@
     <section class="mt-5 mb-5 mobile-show">
         <div class="container">
             <div class="row">
-                <h3 class="mb-4">{{ trans('frontLang.amenities') }}</h3>
+                <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
                 @foreach ($features_array as $feature_id => $feature_name)
                     @foreach ($features as $feature)
                         @if($feature == $feature_id)
-                            <div class="col-lg-12 mb-2" style="width: 100%; color: #fff !important;" >
+                            <div class="col-lg-12 mb-2" style="width: 100%; color: #ccc !important;" >
                                 <i class="far fa-check-circle"></i> &nbsp; {!!  $feature_name[$name_var] !!}
                             </div>
                         @endif
@@ -918,28 +1001,8 @@
                                 {{ trans('frontLang.payment') }}
                             </b>
                         </h3>
-                        <div class="row">
-                            <style>
-                                .property-info {
-                                    width: 100% !important;
-                                }
+                        <div class="row payment-plan-section-ar">
 
-                                .inner {
-                                    background-color: #000 !important;
-                                    text-align: right !important;
-                                    color: #fff !important;
-                                    padding-top: 0 !important;
-                                    padding-bottom: 15 !important;
-                                    font-weight: 400 !important;
-                                    font-size: 1em !important;
-                                }
-                                .icon {
-                                    color: #fff !important;
-                                    font-weight: 400 !important;
-                                    font-size: 1em !important;
-                                    margin-bottom: 0px !important;
-                                }
-                            </style>
 
                             {!! $project_detail->$payment_plan_mob_var !!}
 
@@ -960,28 +1023,7 @@
                                 {{ trans('frontLang.payment') }}
                             </b>
                         </h3>
-                        <div class="row">
-                            <style>
-                                .property-info {
-                                    width: 100% !important;
-                                }
-
-                                .inner {
-                                    background-color: #000 !important;
-                                    text-align: left !important;
-                                    color: #fff !important;
-                                    padding-top: 0 !important;
-                                    padding-bottom: 15 !important;
-                                    font-weight: 400 !important;
-                                    font-size: 1em !important;
-                                }
-                                .icon {
-                                    color: #fff !important;
-                                    font-weight: 400 !important;
-                                    font-size: 1em !important;
-                                    margin-bottom: 0px !important;
-                                }
-                            </style>
+                        <div class="row payment-plan-section text-left">
 
                             {!! $project_detail->$payment_plan_mob_var !!}
 
@@ -993,6 +1035,34 @@
     @endif
 @endif
 
+{{-- NEARBY PLACES MOBILE --}}
+@if($langSeg == 'ar')
+    <section class="mobile-show mt-5 mb-5 " dir="rtl">
+        <div class="container-fluid containerization">
+            <div class="row">
+                <h3 class="mt-5 mb-3">{{ trans('frontLang.Nearbyplaces') }}</h3>
+                    <div class="col-lg-12">
+                        <div class="row nearby-places-section-mobile-ar" >
+                            {!!html_entity_decode($project_detail->$near_by_places_var)!!}
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+@elseif($langSeg == 'en')
+    <section class="mobile-show mt-5 mb-5">
+        <div class="container-fluid containerization">
+            <div class="row">
+                <h3 class="mt-5 mb-3">{{ trans('frontLang.Nearbyplaces') }}</h3>
+                    <div class="col-lg-12">
+                        <div class="row nearby-places-section-mobile" >
+                            {!!html_entity_decode($project_detail->$near_by_places_var)!!}
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+@endif
 
 
 
@@ -1266,29 +1336,63 @@
         </div>
     </section>
 
-    {{-- <section class="mt-5 mobile-show"  dir="rtl">
-        <div class="container">
-            <div class="row">
-                <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
-                @foreach ($features_array as $feature_id => $feature_name)
-                    @foreach ($features as $feature)
-                        @if($feature == $feature_id)
-                            <div class="col-lg-3 mb-2" style="width: 50%; color: #fff !important;" >
-                                <i class="far fa-check-circle"></i> {!!  $feature_name[$name_var] !!}
-                            </div>
-                        @endif
-                    @endforeach
-                @endforeach
+    {{-- PAYMENT PLAN --}}
+    @if ( $project_detail->pro_status == '1')
+        @if  ($project_detail->payment_en != '')
+            <section class="mt-4 desktop-show" dir="rtl">
+                <div class="container-fluid containerization">
+                        <h3 class="mb-4"><b> {{ trans('frontLang.payment') }}</b></h3>
+                        <div class="row">
+                            <style>
+                                .inner {
+                                    background-color: #1c1c1c !important;
+                                    color: #ccc !important;
+                                    border: 0px #ccc solid !important;
+                                    text-align: right !important;
+                                }
+                                .icon {
+                                    color: #ccc !important;
+                                }
+                            </style>
+                            {!! $project_detail->$payment_var !!}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
+    @endif
 
+    {{-- NEARBY PLACES --}}
+    <section class="desktop-show mt-5 mb-5 " dir="rtl">
+        <div class="container-fluid containerization">
+            <div class="row">
+                <h3 class="mb-5">{{ trans('frontLang.Nearbyplaces') }}</h3>
+                    <div class="col-lg-12">
+                        <div class="row" >
+                            <style>
+                                .table-bordered {
+                                    background-color: #1c1c1c !important;
+                                    border: 0.5px #ccc solid !important;
+                                    text-align: center !important;
+                                }
+                                td {
+                                    color: #ccc !important;
+                                    padding: 10px !important;
+                                    text-align: center !important;
+                                }
+                            </style>
+                            {!!html_entity_decode($project_detail->$near_by_places_var)!!}
+                        </div>
+                    </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
 
-    <section class="mt-5 mb-5 desktop-show"  dir="rtl">
+    <section class="mt-5 mb-5 pb-3 desktop-show"  dir="rtl">
         <div class="container-fluid containerization">
             <hr>
-            <div class="row">
+            <div class="row pb-5">
                 <div class="col-md-6">
                     <style>
                         iframe{
@@ -1358,21 +1462,9 @@
                             </style>
                             {!! $project_detail->$payment_var !!}
                         </div>
-
-
                     </div>
                 </div>
             </section>
-
-            {{-- <section class="mt-4 mobile-show">
-                <div class="container">
-                        <h3 class="text-center mb-4"><b> {{ trans('frontLang.payment') }}</b></h3>
-                        <div class="row">
-                            {!! $project_detail->$payment_plan_mob_var !!}
-                        </div>
-                    </div>
-                </div>
-            </section> --}}
         @endif
     @endif
 
@@ -1388,9 +1480,12 @@
                                 .table-bordered {
                                     background-color: #1c1c1c !important;
                                     border: 0.5px #ccc solid !important;
+                                    text-align: center !important;
                                 }
                                 td {
                                     color: #ccc !important;
+                                    padding: 10px !important;
+                                    text-align: center !important;
                                 }
                             </style>
                             {!!html_entity_decode($project_detail->$near_by_places_var)!!}
@@ -1509,7 +1604,7 @@
 @endif
 
 
-
+{{-- MODALS --}}
 @if ($langSeg == 'ar')
     <div class="modal fade" id="exampleModal-download" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="direction: rtl">
         <div class="modal-dialog modal-dialog-centered">
@@ -1686,6 +1781,7 @@
 
 
 </script>
+
 
 <script>
     function myFunction2en() {

@@ -41,7 +41,6 @@ else
 
 
 
-
 @section('meta_detail')
 
         <title> {{ trans('frontLang.blogs') }}</title>

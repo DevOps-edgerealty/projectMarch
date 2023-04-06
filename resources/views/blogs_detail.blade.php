@@ -135,23 +135,27 @@ else
                 <div class="col-12 mx-auto">
                     <ul class="list-group list-group-horizontal-sm mx-auto d-flex justify-content-center" style="background-color: #1c1c1c !important; color: #ccc !important;">
                         <li class="list-group-item text-center" style="background-color: #1c1c1c !important; color: #ccc !important">
-                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" class="" style="height: 35px !important">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" class="" style="height: 35px !important">
+                            </a>
                         </li>
 
                         <li class="list-group-item text-center " style="background-color: #1c1c1c !important; color: #ccc !important">
-                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" class="" style="height: 35px !important">
+                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" class="" style="height: 35px !important">
+                            </a>
                         </li>
 
                         <li class="list-group-item text-center " style="background-color: #1c1c1c !important; color: #ccc !important">
-                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" class="" style="height: 35px !important">
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" class="" style="height: 35px !important">
+                            </a>
                         </li>
 
                         <li class="list-group-item text-center " style="background-color: #1c1c1c !important; color: #ccc !important">
-                            <img src="{{ URL::asset('public/assets/asset/sm/yt.png') }}" class="" style="height: 35px !important">
-                        </li>
-
-                        <li class="list-group-item text-center " style="background-color: #1c1c1c !important; color: #ccc !important">
-                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" class="" style="height: 35px !important">
+                            <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" class="" style="height: 35px !important">
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -209,15 +213,14 @@ else
                             {{-- <img src="{{ URL::asset('uploads/blogs/'.$blog->id.'/'.$blog->image_url) }}" class="card-img-top" style="width: 100%;;" alt="blog-image-here"/> --}}
                             <h4 class="card-title px-0 text-justify">
                                 <a href="{{url( $langSeg .'/'.'blogs_detail'.'/'.$blog->slug_link)}}" class="text-white text-justify" style="font-size: 1.1rem !important; line-height: 0.5 !important;">
-                                    {{$blog->$name_var}}
+                                    {{ Str::limit($blog->$name_var, 43) }}
                                 </a>
                             </h4>
                             <div class="card-body d-flex align-items-end flex-column px-0 h-100">
-
                                 <p class="card-text mb-3 d-flex align-items-baseline mt-auto" style="line-height: 1.3 !important; color: gray !important; font-size: .9rem !important; text-align: justify !important;">
                                     {{ \Illuminate\Support\Str::limit(strip_tags($blog->$description_var), $limit = 150, $end = '...') }}
                                 </p>
-                                <small class="fw-light" style="color:  !important; font-size: 0.8rem !important;">{{ $blog->updated_at->diffForHumans() }}</small>
+                                {{-- <small class="fw-light" style="color:  !important; font-size: 0.8rem !important;">{{ $blog->updated_at->diffForHumans() }}</small> --}}
 
                             </div>
                             {{-- <div class="card-footer px-0"> --}}

@@ -537,9 +537,11 @@
         </div>
     </div> --}}
 
+
+
     <section class=" d-md-block d-lg-block d-none scroll_card_1"  style="position: fixed !important; top: -200; left: 100px; float: left !important; z-index: 30000 !important; background-color: ">
         <div class="container-fluid" style="width: 380px; float: right; height: 135px;">
-            <div class="row" style="border: 0.5px #848484 solid;">
+            <div class="row" style="border: 0.5px #848484 solid; background-color: #1c1c1c !important;">
                 <div class="col-lg-4 d-flex my-auto">
                     @if (file_exists('uploads/agents/'.$agent->id.'/'.$agent->image))
                         <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$agent->id)}}" class="my-auto">
@@ -560,6 +562,16 @@
                                 {{ $agent->language_en }}
                             </p>
                             <div class="row mx-auto my-2 w-100">
+                                {{-- <div class="col-lg-6 p-0">
+                                    <a href="mailto:lead@edgerealty.ae" class="btn btn-sm rounded-0 btn-white w-100 text-decoration-none shadow-none " style="font-size: .8em;">
+                                        {{ trans('frontLang.email_footer') }}
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 p-0 ps-1">
+                                    <a href="https://wa.me/?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" class="btn btn-sm rounded-0 btn-white w-100 text-decoration-none shadow-none " style="font-size: .8em;">
+                                        {{ trans('frontLang.whatsapp') }}
+                                    </a>
+                                </div> --}}
                                 <div class="col-lg-6 p-0">
                                     <a href="mailto:lead@edgerealty.ae" class="btn btn-sm rounded-0 btn-outline-white w-100 text-decoration-none " style="font-size: .8em;">
                                         {{ trans('frontLang.email_footer') }}
@@ -574,26 +586,26 @@
                                 </div>
                             </div>
                             <div class="mx-auto ">
-                                <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                                <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                                    <li class=" text-white  text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
                                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
                                             <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
                                         </a>
                                     </li>
 
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                    <li class=" text-white text-center px-1 mx-auto">
                                         <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
                                             <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
                                         </a>
                                     </li>
 
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                    <li class=" text-white text-center px-1 mx-auto">
                                         <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
                                             <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
                                         </a>
                                     </li>
 
-                                    <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                    <li class=" text-white text-center px-1 mx-auto">
                                         <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
                                             <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
                                         </a>
@@ -763,7 +775,7 @@
                                         <input type="text" class="form-control text-white" placeholder="Full Name" aria-label="Full Name" name="name" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
                                     </div>
                                     <div class="input-group mb-3">
-                                        <input type="phone" name="phone" class="form-control w-100 iti-phone rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #000 !important; width: 100% !important;" placeholder="{{ trans('frontLang.phone') }}" required />
+                                        <input type="phone" name="phone" class="form-control w-100 iti-phone rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #1c1c1c !important; width: 100% !important;" placeholder="{{ trans('frontLang.phone') }}" required />
                                     </div>
                                     <div class="input-group mb-3">
                                         <input type="email" class="form-control text-white" name="email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
@@ -771,7 +783,7 @@
                                     <button type="submit" class="btn btn-block bg-white text-dark rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #292828">
                                         <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
 
-                                        <span class="btn-txt">
+                                        <span class="btn-txt">  
                                             {{ trans('frontLang.registerInterest') }}
                                         </span>
                                     </button>
@@ -906,7 +918,6 @@
                 <div class="col-lg-12">
                     <h3 class="mb-2">حول هذا العقار</h3>
                     <span >
-
                         <style>
                             p {
                                 color: #fff !important; font-size: 1rem !important; line-height: 1.8 !important; text-align: justify !important;
@@ -1060,7 +1071,7 @@
 
     {{-- similar properties --}}
     {{-- similar properties --}}
-    <section class="mt-3 mobile-show" style="background-color: #000;">
+    <section class="mt-3 mobile-show" style="background-color: #1c1c1c !important;">
         <div class="container">
             <div class="row">
                 <br>
@@ -1203,7 +1214,7 @@
 
                     @else
                         <p class="text-muted my-5">
-                            No Properties for Sale or Rent
+                            غير متاح وحدات مشابهه
                         </p>
                     @endif
 
@@ -1212,7 +1223,7 @@
     </section>
 
     <section class="mt-3 desktop-show" style="z-index: -100 !important; direction: RTL">
-        <div class="container-fluid containerization" style="background-color: #000 !important;" >
+        <div class="container-fluid containerization" style="background-color: #1c1c1c !important;" >
             <div class="row">
 
                 <div class="col-lg-9">

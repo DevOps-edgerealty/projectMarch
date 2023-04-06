@@ -932,7 +932,7 @@
                                             @endif
 
                                             <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
-                                                <p class="card-title" style="color: #848484 !important;">{{ $property->$title_ar }}</p>
+                                                <p class="card-title" style="color: #848484 !important;">{{ $property->$title_var }}</p>
                                             </a>
                                             <!--<p><i class="fas fa-map-marker-alt fw-light" style="color: green"> </i> {{ $property->locationss->$name_var }} </p>-->
 
