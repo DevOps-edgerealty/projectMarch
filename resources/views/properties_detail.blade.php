@@ -783,7 +783,7 @@
                                     <button type="submit" class="btn btn-block bg-white text-dark rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #292828">
                                         <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
 
-                                        <span class="btn-txt">  
+                                        <span class="btn-txt">
                                             {{ trans('frontLang.registerInterest') }}
                                         </span>
                                     </button>
@@ -2057,7 +2057,7 @@
                     {{-- mobile book a viewing --}}
                     <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
-                            <div class="modal-content ">
+                            <div class="modal-content " style="background-color: #1c1c1c !important;">
                                 <div class="modal-header py-2">
                                     <h5 class="modal-title text-center text-white" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }} </h5>
                                     {{-- <button type="button" class="btn-close text-white bg-white" data-mdb-dismiss="modal" aria-label="Close"></button> --}}
@@ -2142,6 +2142,9 @@
     </section>
 
 
+
+
+
     {{-- similar properties --}}
     <section class="mt-3 mobile-show">
         <div class="container">
@@ -2152,7 +2155,7 @@
                     @if($properties->count() != 0)
 
                     @foreach ($properties as $property)
-                        <div class="col-lg- mb-5 mt-2">
+                        <div class="col-lg- mb-2 mt-2">
                             <div class="card rounded-0 border border-white border-1" style="height: 460px;">
                                 <div class="communities-newlaunch"></div>
                                 @foreach($property->images  as $single_img)
@@ -2290,6 +2293,45 @@
                         </p>
                     @endif
 
+            </div>
+        </div>
+    </section>
+
+    <section class="mobile-show mb-2">
+        <div class="row my-3 ">
+            <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
+                <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
+                {{ trans('frontLang.agentCardShare') }}
+            </p>
+            <div class="col-12 mx-auto mb-2">
+                <div class="mx-auto ">
+                    <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                    <li class=" text-white  text-center px-1 mx-auto my-2" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: 100% !important">
+                        </a>
+                    </li>
+
+                    <li class=" text-white text-center px-1 mx-auto my-2">
+                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: 100% !important">
+                        </a>
+                    </li>
+
+                    <li class=" text-white text-center px-1 mx-auto my-2">
+                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: 100% !important">
+                        </a>
+                    </li>
+
+                    <li class=" text-white text-center px-1 mx-auto my-2">
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: 100% !important">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+                </div>
             </div>
         </div>
     </section>

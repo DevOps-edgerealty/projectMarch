@@ -513,6 +513,45 @@
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.Developer') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$developers->$name_var}} </p>
 
+                        <br>
+
+                        <div class="row my-3 ">
+                            <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
+                                <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
+                                {{ trans('frontLang.agentCardShare') }}
+                            </p>
+                            <div class="col-12 mx-auto mb-2">
+                                <div class="mx-auto ">
+                                    <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                                    <li class=" text-white  text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" text-white text-center px-1 mx-auto">
+                                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" text-white text-center px-1 mx-auto">
+                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" text-white text-center px-1 mx-auto">
+                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </span>
                 </div>
             </div>
@@ -699,6 +738,45 @@
 
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.Developer') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$developers->$name_var}} </p>
+
+                        <br>
+
+                        <div class="row my-3 ">
+                            <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
+                                <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
+                                {{ trans('frontLang.agentCardShare') }}
+                            </p>
+                            <div class="col-12 mx-auto mb-2">
+                                <div class="mx-auto ">
+                                    <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                                    <li class=" text-white  text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" text-white text-center px-1 mx-auto">
+                                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" text-white text-center px-1 mx-auto">
+                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+
+                                    <li class=" text-white text-center px-1 mx-auto">
+                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: 100% !important">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </span>
                 </div>
@@ -1064,6 +1142,88 @@
     </section>
 @endif
 
+{{-- SHARE MOBILE --}}
+@if($langSeg == 'ar')
+    <div class="my-5 mobile-show">
+
+        <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
+            <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
+            {{ trans('frontLang.agentCardShare') }}
+        </p>
+
+        <div class="row my-3">
+            <div class="col-6 mx-auto mb-2">
+                <div class="mx-auto ">
+                    <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                        <li class="  text-white  text-center px-1 mx-auto my-2" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class="  text-white  text-center px-1 mx-auto my-2">
+                            <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class="  text-white  text-center px-1 mx-auto my-2">
+                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class="  text-white  text-center px-1 mx-auto my-2">
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: auto !important">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+@elseIF($langSeg == 'en')
+    <div class="my-5 mobile-show">
+
+        <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
+            <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
+            {{ trans('frontLang.agentCardShare') }}
+        </p>
+
+        <div class="row my-3">
+            <div class="col-6 mx-auto mb-2">
+                <div class="mx-auto ">
+                    <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                        <li class="  text-white  text-center px-1 mx-auto my-2" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class="  text-white  text-center px-1 mx-auto my-2">
+                            <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class="  text-white  text-center px-1 mx-auto my-2">
+                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: auto !important">
+                            </a>
+                        </li>
+
+                        <li class="  text-white  text-center px-1 mx-auto my-2">
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: auto !important">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
 
 
 {{-- ABOUT THE COMMUNITY --}}
