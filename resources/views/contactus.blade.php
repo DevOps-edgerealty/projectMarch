@@ -28,7 +28,7 @@ if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
 }
 else
 {
-    $langSeg = 'en';
+    $langSeg = 'ar';
 }
 
 ?>
@@ -114,7 +114,7 @@ if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
 }
 else
 {
-    $langSeg = 'en';
+    $langSeg = 'ar';
 }
 
 ?>
@@ -226,13 +226,14 @@ else
 @if ($langSeg == 'ar')
 <section class="mt-3 mb-5" >
     <div class="container-fluid containerization">
-        <div class="row shadow bg-body" style="direction: rtl">
+        <div class="row" style="direction: rtl; background-color: #1c1c1c !important;">
+
 
             <div class="col-lg-6 mt-3 mb-3" >
                 <h3>المكتب الرئيسي</h3>
-                <h6><i class="fas fa-map-marker-alt"> </i>  معرض رقم 4 مبنى أسوار - الوصل - شارع الشيخ زايد ، دبي</h6>
-                <h6><i class="far fa-clock"> </i> من الاثنين الى السبت 9 صباحا الى 6 مساءا </h6>
-                <h6> <a href="tel:0097143881856" class=""> 97143881856+ </a> <i class="fas fa-phone-alt"> </i></h6>
+                <h6 class="my-3 py-1"><i class="fas fa-map-marker-alt"> </i>  معرض رقم 4 مبنى أسوار - الوصل - شارع الشيخ زايد ، دبي</h6>
+                <h6 class="my-3 py-1"><i class="far fa-clock"> </i> من الاثنين الى السبت 9 صباحا الى 6 مساءا </h6>
+                <h6 class="my-3 py-1"> <a href="tel:0097143881856" class=""> 97143881856+ </a> <i class="fas fa-phone-alt"> </i></h6>
 
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14440.226682186727!2d55.2671464!3d25.2013113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x424936f85dc4d24a!2sEdge%20Realty!5e0!3m2!1sen!2sae!4v1627281665507!5m2!1sen!2sae" width="100%" height="400"  allowfullscreen="" loading="lazy"></iframe>
@@ -246,9 +247,8 @@ else
                 <h6 class="my-3 py-1"> <a href="tel:0097145807142" class=""> 97145807142+ </a> <i class="fas fa-phone-alt"> </i> </h6>
                 <h6 class="my-3 py-1"><i class="far fa-clock"> </i> من السبت إلى الخميس من الساعة 10 صباحًا حتى الساعة 10 مساءً </h6>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57761.53267375268!2d55.253780429410945!3d25.1999918568654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4264371b53e7%3A0x8bd6cda3ab913cad!2sCity%20Walk!5e0!3m2!1sen!2sae!4v1627283517356!5m2!1sen!2sae" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14439.565875912738!2d55.2654178!3d25.2068823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82642d0792bb3c7!2sEdge%20Realty%20-%20Citywalk!5e0!3m2!1sen!2sae!4v1630221126274!5m2!1sen!2sae" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
 
 
 
