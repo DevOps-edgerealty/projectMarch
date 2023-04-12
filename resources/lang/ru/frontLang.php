@@ -266,6 +266,7 @@ return array (
   'Premium' => 'Премиум',
   'Feature' => 'Особенности',
   'contactUs' => 'Контакт',
+  'ContactUsHeader' => 'Контакт',
   'recentlyListedProperties' => 'Недавно размещенная недвижимость',
   'details' => 'Детали',
   'propertyStatus' => 'Статус недвижимости',
@@ -328,6 +329,7 @@ return array (
   'Mission' => 'Миссия и видение',
   'Contactus' => 'Свяжитесь с нами',
   'Careers' => 'Карьера',
+  'Careersheader' => 'Карьера',
   'Team' => 'Наша команда',
 
   'startingfrom' => 'Начиная с',

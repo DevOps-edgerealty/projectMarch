@@ -81,7 +81,7 @@ Route::post('/{lang}/blogs-sortby','BlogsController@blogs_sortBy');
 
 Route::get('/{lang?}/blogs_detail/{id}','BlogsController@detail');
 
-Route::get('/{lang?}/agent_detail/{id}','FronthomeController@team_detail');
+Route::get('/{lang?}/agent_detail/{t}','FronthomeController@team_detail');
 
 Route::get('/{lang?}/services','FronthomeController@services');
 

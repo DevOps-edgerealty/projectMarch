@@ -253,7 +253,7 @@
                     <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
 
                     <!-- Linkedin -->
-                    <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-youtube"></i></a>
+                    {{-- <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-youtube"></i></a> --}}
 
             </section>
             <!-- Section: Social media -->
@@ -422,7 +422,7 @@
                     <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
 
                     <!-- Linkedin -->
-                    <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-youtube"></i></a>
+                    {{-- <a class="btn btn-link btn-floating btn-lg text-white m-1" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-youtube"></i></a> --}}
 
             </section>
             <!-- Section: Social media -->
@@ -473,21 +473,20 @@
                             </a>
                         </p>
                         <!-- Facebook -->
-                        <div class="m-0 p-0" style="margin-left: -20px !important;">
-                            <a class="btn btn-link btn-floating btn-lg text-white m-0"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
+                        <div class="m-0 p-0" style="margin-left: 0px !important;">
+                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
 
                             <!-- Twitter -->
-                            <a class="btn btn-link btn-floating btn-lg text-white m-0" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
-
+                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://twitter.com/edgerealtydubai" role="button" data-mdb-ripple-color="white" ><i class="fab fa-twitter"></i></a>
 
                             <!-- Instagram -->
-                            <a class="btn btn-link btn-floating btn-lg text-white m-0" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank" href="https://www.instagram.com/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-instagram"></i></a>
 
                             <!-- Linkedin -->
-                            <a  class="btn btn-link btn-floating btn-lg text-white m-0" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
+                            <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
 
                             <!-- Linkedin -->
-                            <a  class="btn btn-link btn-floating btn-lg text-white m-0" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
+                            {{-- <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a> --}}
                         </div>
                     </div>
                     <!-- Grid column -->
@@ -496,7 +495,7 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-0" style="text-align: right !important">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
-                            {{ trans('frontLang.Aboutus') }}
+                            <a href="<?php echo  url('/'.$langSeg.'/aboutus');?>">{{ trans('frontLang.Aboutus') }}</a>
                         </h6>
                         <p class="my-1">
                             <a href="<?php echo  url('/'.$langSeg.'/aboutus');?>" class="text-reset">{{ trans('frontLang.companyOverView') }}</a>
@@ -542,7 +541,7 @@
 
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
-                            {{ trans('frontLang.Luxuryprojects') }}
+                            <a href="<?php echo  url('/'.$langSeg.'/dubai-luxury-projects');?>">{{ trans('frontLang.Luxuryprojects') }}</a>
                         </h6>
                         {{-- {{$footerLuxuryProjects}} --}}
                         @foreach($footerLuxuryProjects as $data)
@@ -560,7 +559,7 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0" style="text-align: right !important">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
-                            {{ trans('frontLang.Dubaicommunities') }}
+                            <a href="<?php echo  url('/'.$langSeg.'/dubai-communities');?>">{{ trans('frontLang.Dubaicommunities') }}</a>
                         </h6>
 
                         @foreach($footerCommunities as $data)
@@ -578,7 +577,7 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0" style="text-align: right !important">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style="text-align: right !important; font-size: 0.95vw !important;">
-                            {{ trans('frontLang.Dubaidevelopers') }}
+                            <a href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>">{{ trans('frontLang.Dubaidevelopers') }}</a>
                         </h6>
 
                         @foreach($footerDevelopers as $data)
@@ -722,7 +721,7 @@
                             </a>
                         </p>
                         <!-- Facebook -->
-                        <div class="m-0 p-0" style="margin-left: -40px !important;">
+                        <div class="m-0 p-0" style="margin-left: 0px !important;">
                             <a class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;"  target="_blank"href="https://www.facebook.com/Edge-Realty-109809967096901" role="button" data-mdb-ripple-color="white" ><i class="fab fa-facebook-f"></i></a>
 
                             <!-- Twitter -->
@@ -735,7 +734,7 @@
                             <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.linkedin.com/company/edgerealtydubai"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-linkedin"></i></a>
 
                             <!-- Linkedin -->
-                            <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a>
+                            {{-- <a  class="btn btn-link btn-floating btn-lg m-0" style=" font-size: 1em !important; color: #ABB7B7 !important; border: 0 !important;" target="_blank"href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"  role="button" data-mdb-ripple-color="white" ><i class="fab fa-youtube"></i></a> --}}
                         </div>
                     </div>
 
@@ -743,7 +742,7 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-0 mb-0">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
-                            {{ trans('frontLang.Aboutus') }}
+                            <a href="<?php echo  url('/'.$langSeg.'/aboutus');?>">{{ trans('frontLang.Aboutus') }}</a>
                         </h6>
                         <p class="my-1">
                             <a href="<?php echo  url('/'.$langSeg.'/aboutus');?>" class="text-reset">{{ trans('frontLang.companyOverView') }}</a>
@@ -788,7 +787,7 @@
 
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
-                            {{ trans('frontLang.Luxuryprojects') }}
+                            <a href="<?php echo  url('/'.$langSeg.'/dubai-luxury-projects');?>">{{ trans('frontLang.Luxuryprojects') }}</a>
                         </h6>
                         {{-- {{$footerLuxuryProjects}} --}}
                         @foreach($footerLuxuryProjects as $data)
@@ -805,7 +804,7 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-0 mb-md-0 mb-0">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
-                            {{ trans('frontLang.Dubaicommunities') }}
+                            <a href="<?php echo  url('/'.$langSeg.'/dubai-communities');?>">{{ trans('frontLang.Dubaicommunities') }}</a>
                         </h6>
 
                         @foreach($footerCommunities as $data)
@@ -822,7 +821,7 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-0">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4 text-decoration-underline" style=" font-size: 0.95vw !important;">
-                            {{ trans('frontLang.Dubaidevelopers') }}
+                            <a href="<?php echo  url('/'.$langSeg.'/dubai-developers');?>">{{ trans('frontLang.Dubaidevelopers') }}</a>
                         </h6>
 
                         @foreach($footerDevelopers as $data)

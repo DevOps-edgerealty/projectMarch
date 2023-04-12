@@ -25,8 +25,11 @@
         letter-spacing: .05rem !important;
     }
     a {
-        color: white !important;
+        color: #ccc !important;
         /* text-decoration: underline !important; */
+    }
+    h1, h2, h3, h4, h5 h6, p {
+        color: #ccc !important;
     }
     html, body {
         max-width: 100%;
@@ -50,6 +53,13 @@
         border: 2px solid #000 !important;
 
         cursor: pointer !important;
+    }
+
+    input, select {
+        background-color: #1c1c1c !important;
+        color: #ccc !important;
+        border-radius: 0px !important;
+        border: 1px solid #ccc !important;
     }
 
     .card {
@@ -162,23 +172,25 @@ else
 
                     @foreach ($communities as $community)
                         <div class="col-lg-4 mt-5">
-                            <div class="card border border-1 p-0 rounded-0 border-white bg-black text-white">
+                            <div class="card border border-1 p-0 rounded-0 border-white" style="color: #ccc !important;">
                                 @foreach ($community->images as $image)
                                     <a href="{{url( $langSeg .'/'.'dubai-communities'.'/'.$community->slug_link)}}" class="border-bottom border-white">
                                         <img src="{{ URL::asset('uploads/communities/images/'. $community->id .'/'.$image->image) }}" style="height: 270px" class="card-img-top rounded-0" alt="..." />
                                     </a>
                                     @if ($langSeg == 'ar')
-                                    <div class="card-body text-white" style="padding: 0.8rem;direction: rtl">
-                                        <a href="{{url( $langSeg .'/'.'dubai-communities'.'/'.$community->slug_link)}}" class="text-dark">
-                                            <h5 class="card-title text-white text-decoration-none fw-bold" style="font-size: 1.2rem">{{$community->$title_var}} </h5>
-                                            <b>{{ trans('frontLang.projects') }} : {{$community->projects_count}}</b>
-                                        </a>
+                                        <div class="card-body text-white" style="padding: 0.8rem;direction: rtl">
+                                            <a href="{{url( $langSeg .'/'.'dubai-communities'.'/'.$community->slug_link)}}" class="text-dark" style="color: #ccc !important;">
+                                                <h5 class="card-title text-decoration-none fw-bold" style="font-size: 1.2rem; color: #ccc !important;">
+                                                    {{$community->$title_var}}
+                                                </h5>
+                                                <b>{{ trans('frontLang.projects') }} : {{$community->projects_count}}</b>
+                                            </a>
 
-                                    </div>
+                                        </div>
                                     @else
                                     <div class="card-body text-white" style="padding: 0.8rem">
                                         <a href="{{url( $langSeg .'/'.'dubai-communities'.'/'.$community->slug_link)}}" class="text-white text-decoration-none">
-                                            <h5 class="card-title text-white"  style="font-size: 1.2rem">{{$community->$title_var}} </h5>
+                                            <h5 class="card-title"  style="font-size: 1.2rem; color: #ccc !important;">{{$community->$title_var}} </h5>
                                             <b>{{ trans('frontLang.projects') }} : {{$community->projects_count}}</b>
                                         </a>
                                     </div>
@@ -186,15 +198,15 @@ else
 
                                 @endforeach
 
-                                <div class="card-footer text-muted " style="padding: 0.75rem 0rem;">
+                                <div class="card-footer  border-0" style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
-                                            <td style="text-align: center;border-right: 1px solid; width: 50%; color: #000 !important;">
-                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $community->id }}" style="color: #fff !important;">
+                                            <td style="text-align: center; border-right: 1px solid #ccc; width: 50%; color: #ccc !important;">
+                                                <a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $community->id }}" style="color: #ccc !important;">
                                                     <i class="far fa-envelope text-white"> </i> {{ trans('frontLang.requestdetail') }}
                                                 </a>
                                             </td>
-                                            <td style="text-align: center;width: 50%; color: #fff !important;">
+                                            <td style="text-align: center;width: 50%; color: #ccc !important;">
                                                 <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important;">
                                                     <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }}
                                                 </a>
@@ -253,9 +265,9 @@ else
 
                         <div class="modal modal-md fade rounded-0" id="exampleModal-{{ $community->id }}" tabindex="-1" aria-labelledby="get_in_touch_desktop" aria-hidden="true"  >
                             <div class="modal-dialog modal-dialog-centered " style="width: 1800px !important;">
-                                <div class="modal-content rounded-0 rounded-0 border border-1 border-white m-3 p-0">
+                                <div class="modal-content rounded-0 rounded-0 border border-1 border-white m-3 p-0" >
 
-                                    <div class="modal-body p-0 bg-black">
+                                    <div class="modal-body p-0" style="color: #ccc !important; background-color: #1c1c1c !important;">
                                         <div class="desktop-show row p-0 m-0">
                                             {{-- <div class="col-lg-4 text-white m-0 p-0 bg-black d-flex flex-column">
                                                 <div class="my-auto mx-auto p-3">
@@ -269,39 +281,39 @@ else
                                                     <p style="font-size: .9rem !important;">{{ trans('frontLang.website') }}</p>
                                                 </div>
                                             </div> --}}
-                                            <div class="col-lg-12 m-0 p-0 bg-white">
-                                                <div class="m-0 w-100 p-0 mx-auto bg-black py-1">
+                                            <div class="col-lg-12 m-0 p-0" style="color: #ccc !important; backrgound-color: #1c1c1c !important;">
+                                                {{-- <div class="m-0 w-100 p-0 mx-auto bg-black py-1" style="color: #ccc !important; background-color: #1c1c1c !important;">
                                                     <p class="fw-bold text-white text-center m-0 p-0" style="font-size: 1.8rem !important;">
                                                         {{ trans('frontLang.getintouch') }}
                                                     </p>
-                                                </div>
+                                                </div> --}}
                                                 <div class="p-3">
                                                     {{-- <form class="contact-form" id="getInTouch" action="javascript:void(0)"> --}}
                                                     <form class="contact-form" id="getInTouch" method="post" action="{{URL('/contactus/submit')}}">
                                                         @csrf
                                                         @honeypot
 
-                                                        <h3 class="text-center text-dark mb-4">{{$community->$title_var}}</h3>
+                                                        <h3 class="text-center mb-4">{{$community->$title_var}}</h3>
                                                         <input type="hidden" name="project" value="{{$community->id}}" />
                                                         <input type="hidden" name="project_name" value="{{$community->title_var}}" />
 
                                                         <div class=" mb-4">
-                                                            <p class="text-dark mb-1">{{ trans('frontLang.fullnamerequest') }}</p>
-                                                            <input type="text" name="name" class="form-control form-control-lg bg-white border border-1 border-dark rounded-0" placeholder="{{ trans('frontLang.fullname') }}"  required />
+                                                            <p class=" mb-1">{{ trans('frontLang.fullnamerequest') }}</p>
+                                                            <input type="text" name="name" class="form-control form-control-lg border border-1 border-dark rounded-0" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
                                                         </div>
 
                                                         <!-- Email input -->
                                                         <div class="mb-4">
-                                                            <p class="text-dark mb-1">{{ trans('frontLang.emailrequest') }}</p>
-                                                            <input type="email" name="email" class="form-control form-control-lg bg-white border border-1 border-dark rounded-0" placeholder="{{ trans('frontLang.email') }}" required />
+                                                            <p class=" mb-1">{{ trans('frontLang.emailrequest') }}</p>
+                                                            <input type="email" name="email" class="form-control form-control-lg border border-1 border-dark rounded-0" placeholder="{{ trans('frontLang.email') }}" required />
 
                                                         </div>
 
                                                         <!-- Email input -->
                                                         <div class="mb-4">
-                                                            <p class="text-dark mb-1">{{ trans('frontLang.phonerequest') }}</p>
-                                                            <input type="phone" name="phone" class="form-control form-control-lg bg-white border border-1 border-dark rounded-0 iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
+                                                            <p class=" mb-1">{{ trans('frontLang.phonerequest') }}</p>
+                                                            <input type="phone" name="phone" class="form-control form-control-lg border border-1 border-dark rounded-0 iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
                                                         </div>
 
                                                         <div class="d-flex mx-auto flex-row">
@@ -314,7 +326,7 @@ else
 
                                                                 {{-- <i class="czi-user mr-2 ml-n1"></i> --}}
 
-                                                                <span class="btn-txt">
+                                                                <span class="btn-txt" style="color: #ccc !important;">
                                                                     {{ trans('frontLang.submit') }}
                                                                 </span>
                                                             </button>

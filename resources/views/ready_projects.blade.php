@@ -136,7 +136,7 @@
     }
     else
     {
-        $langSeg = 'en';
+        $langSeg = 'ar';
     }
 
 ?>
@@ -145,24 +145,19 @@
 
     <header>
 
-
         <!-- Background image -->
         <div id="intro-page" class="bg-image shadow-2-strong">
             <div class="mask" style="background-color: #1c1c1c;">
-            <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100">
-                <div class="text-white">
-                    <h3 class="mt-5"  style="text-transform: uppercase;"> {{ trans('frontLang.readyProjects') }} </h3><br>
-                    {{-- <div class="row search-width" >
-
-                    </div> --}}
-                    <!-- Pills content -->
-
+                <div class="container-fluid containerization d-flex align-items-center justify-content-center text-center h-100">
+                    <div class="text-white">
+                        <h3 class="mt-5"  style="text-transform: uppercase;"> {{ trans('frontLang.readyProjects') }} </h3><br>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         <!-- Background image -->
-        </header>
+
+    </header>
 
 
 

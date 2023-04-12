@@ -1931,6 +1931,7 @@ class FronthomeController extends Controller
         $this->data['footerCommunities'] = $footerCommunities;
 
         $slug_link = $id;
+        dd($slug_link);
         //
         if ($lang != "") {
             // Set Language
@@ -1940,7 +1941,6 @@ class FronthomeController extends Controller
 
 
 		$conLag = App::getLocale();
-
 
         $projects = Project::with(['images','developers','project_types'])->where('status', '1')->where('agent_id',$slug_link)->get();
 

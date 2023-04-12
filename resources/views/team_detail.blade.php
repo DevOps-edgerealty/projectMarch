@@ -178,7 +178,7 @@ else
 
             <div class="col-lg-8">
                 <h3 class="text-uppercase fw-bold" style="font-size: 1.6rem !important;">
-                    Lorem Ipsum
+                    {{ $agent->$name_var }}
                 </h3>
 
                 <p class="fw-light text-capitalize" style="font-size: 1rem !important">

@@ -797,7 +797,6 @@ class PropertiesController extends Controller
 
         $this->data['types'] = Type::all();
 
-
         $this->data['project_types'] = ProjectType::all();
 
         $this->data['beds'] = Bed::all();
@@ -824,7 +823,7 @@ class PropertiesController extends Controller
 
         $this->data['PageHeading'] = $Pageheading;
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','6')->where('type_id','1')->orderby('id','DESC')->paginate(15);
+        $properties = Property::with(['images', 'locationss','cityss'])->where('cat_id','9')->where('type_id','1')->orderby('id','DESC')->paginate(15);
 
         //return $properties;
 

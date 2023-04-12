@@ -214,7 +214,7 @@
 
                     <div class="col-lg-9">
 
-                            <h2> إيدج ريالتي</h2><br>
+                            {{-- <h2> إيدج ريالتي</h2><br> --}}
                             <p  class="lineHeight">إيدج ريالتي هي شركة عقارية تقدم خدمات البحث عن العقارات وتسويق العقارات والمبيعات والإيجارات وإدارة الأصول. نحن نقدم خدمة البحث عن الممتلكات العقارات واسعة النطاق في الأسواق التجارية والسكنية لكل من المستثمرين والملاك . تشمل خدمتنا الوصول إلى العقارات الحصرية  ، والخبرة في التفاوض ، والاستشارات القانونية ، والمساعدة في جميع مراحل عملية النقل وتقديم خدمة ما بعد البيع بما في ذلك خدمات إدارة المنازل والممتلكات والإيجارات.
 
                                 في إيدج ريالتي  يعني نموذج العمل لدينا أن كل وكيل محترف ومستقل في منطقته ، مما يجعلنا في وضع فريد لنقدم ، لعملائنا ، تجربة أكثر تعمقا وثاقبة علي مدي سنوات طوال من الخبرات العقارية في عمليات البيع والشراء والايجار والادارة الكاملة للعقارات في جميع مناطق دبي .</p>
@@ -256,7 +256,7 @@
 
                     <div class="col-lg-9">
 
-                            <h2>ОСНОВАННАЯ В 2011 ГОДУ, НАША КОМПАНИЯ ЯВЛЯЕТСЯ ОДНИМ ИЗ ВЕДУЩИХ АГЕНТСТВ НЕДВИЖИМОСТИ ВДУБАИ</h2><br>
+                            <p class="lineHeight">ОСНОВАННАЯ В 2011 ГОДУ, НАША КОМПАНИЯ ЯВЛЯЕТСЯ ОДНИМ ИЗ ВЕДУЩИХ АГЕНТСТВ НЕДВИЖИМОСТИ ВДУБАИ</p><br>
 
                             <p class="lineHeight">Edge Realty — это агентство недвижимости, предлагающее поиск и маркетинг недвижимости, продажу, сдачу в аренду и услуги по управлению активами.</p>
                             <p class="lineHeight"> Мы предоставляем широкий спектр услуг по поиску и приобретению недвижимости на коммерческой основе и жилой недвижимости как для инвесторов, так и для арендаторов. Наши услуги включают доступ к эксклюзивным объектам недвижимости, независимые консультации, опыт ведения переговоров, юридические консультации, помощь в процессе оформления сделки, а также послепродажное обслуживание, включая управление домом и недвижимостью и услуги по сдаче в аренду.</p>
@@ -352,28 +352,29 @@
                             1750+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Portals Listing
+                            بوابة الوكلاء
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold" style="font-size: 1.5rem !important;">
                             390+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Off plan Projects
+                            مشاريع تحت الإنشاء
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold" style="font-size: 1.5rem !important;">
                             60+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Nationalities
+                            الجنسيات 
+
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold" style="font-size: 1.5rem !important;">
                             28+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Team
+                            الفريق
                         </p>
                     </div>
 
@@ -382,28 +383,29 @@
                             1750+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Portals Listing
+                            بوابة الوكلاء
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold" style="font-size: 1.5rem !important;">
                             390+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Off plan Projects
+                            مشاريع تحت الإنشاء
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold" style="font-size: 1.5rem !important;">
                             60+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Nationalities
+                            الجنسيات 
+
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold" style="font-size: 1.5rem !important;">
                             28+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Team
+                            الفريق
                         </p>
                     </div>
                 </div>
@@ -449,28 +451,28 @@
                             1750+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Portals Listing
+                            списки недвижимости
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold">
                             390+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Off plan Projects
+                            внеплановые проекты
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold">
                             60+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Nationalities
+                            национальности
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold">
                             28+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Team
+                            Команда
                         </p>
                     </div>
 
@@ -479,28 +481,28 @@
                             1750+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Portals Listing
+                            списки недвижимости
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold">
                             390+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Off plan Projects
+                            внеплановые проекты
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold">
                             60+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Nationalities
+                            национальности
                         </p><br>
 
                         <p class="my-0 py-0 fw-bold">
                             28+
                         </p>
                         <p class="text-justify lineHeight" style="font-size: 1.1rem !important; text-align: justify !important;">
-                            Team
+                            Команда
                         </p>
                     </div>
                 </div>
@@ -614,12 +616,12 @@
 
     @if ($langSeg == 'ar')
 
-        <section class="mt-5">
+        <section class="my-5">
             <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 430px !important; ">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important; ">
                             <a href="{{url( $langSeg .'/'.'team')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/1.1.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -637,7 +639,7 @@
 
 
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 400px;height: 430px !important; ">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%;height: 100% !important; ">
                             <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/company.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -657,7 +659,7 @@
 
 
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 400px;height: 430px !important; ">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%;height: 100% !important; ">
                             <a href="{{url( $langSeg .'/'.'career')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/hire.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -679,12 +681,12 @@
 
     @elseif( $langSeg == 'ru' )
 
-        <section class="mt-5">
+        <section class="my-5 ">
             <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 430px !important; ">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important; ">
                             <a href="{{url( $langSeg .'/'.'team')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/1.1.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -693,7 +695,7 @@
                                     <h5 class="card-title text-white">{{ trans('frontLang.aboutMeetOurTeam') }}</h5>
                                 </a>
 
-                                <p class="card-text text-capitalize" style="line-height: 1.3 !important; color: grey !important;">
+                                <p class=" text-capitalize" style="line-height: 1.3 !important; color: grey !important; height: 5em !important; font-size: 16px !important;">
                                     {{ trans('frontLang.aboutMeetOurTeamBody') }}
                                 </p>
                             </div>
@@ -702,7 +704,7 @@
 
 
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 400px; height: 430px !important;">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important;">
                             <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/company.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -712,8 +714,9 @@
                                     <h5 class="card-title text-white">{{ trans('frontLang.aboutCompanyBrandGuideline') }}</h5>
                                 </a>
 
-                                <p class="card-text text-capitalize" style="line-height: 1.3 !important; color: grey !important;">
-                                    {{ trans('frontLang.aboutCompanyBrandGuidelineBody') }}
+                                <p class=" text-capitalize" style="line-height: 1.3 !important; color: grey !important; height: 5em !important; font-size: 16px !important;">
+                                    {{-- {{ trans('frontLang.aboutCompanyBrandGuidelineBody') }} --}}
+                                    Опыт и знания, необходимые для того, чтобы наши клиенты принимали обоснованные инвестиционные решения для получения максимальной прибыли.
                                 </p>
                             </div>
                         </div>
@@ -722,7 +725,7 @@
 
 
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 400px; height: 430px !important;">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important;">
                             <a href="{{url( $langSeg .'/'.'career')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/hire.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -731,7 +734,7 @@
                                     <h5 class="card-title text-white">{{ trans('frontLang.aboutHiring') }}</h5>
                                 </a>
 
-                                <p class="card-text text-capitalize" style="line-height: 1.3 !important; color: grey !important;">
+                                <p class=" text-capitalize" style="line-height: 1.3 !important; color: grey !important; height: 5em !important; font-size: 16px !important;">
                                     {{ trans('frontLang.aboutHiringBody') }}
                                 </p>
                             </div>
@@ -744,12 +747,12 @@
 
     @else
 
-        <section class="mt-5">
+        <section class="my-5">
             <div class="container-fluid containerization">
                 {{-- <hr> --}}
                 <div class="row">
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 430px !important; ">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important; ">
                             <a href="{{url( $langSeg .'/'.'team')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/1.1.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -767,7 +770,7 @@
 
 
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 430px !important;">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important;">
                             <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/company.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>
@@ -787,7 +790,7 @@
 
 
                     <div class="col-lg-4 text-white">
-                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 430px !important;">
+                        <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important;">
                             <a href="{{url( $langSeg .'/'.'career')}}">
                                 <img src="{{URL::asset('public/assets/asset/about/hire.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
                             </a>

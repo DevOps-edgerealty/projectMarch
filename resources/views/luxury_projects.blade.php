@@ -198,11 +198,18 @@
 
                                             <div class="row mt-2">
                                                 <ul style="color: white" class="font-ul">
-                                                    @if($projects->project_price == 'Price On Request')
+                                                    {{-- @if($projects->project_price == 'Price On Request')
                                                         <li  class="text-white">{{ trans('frontLang.Price') }}   :  <span style="color: #777777"> تعرف علي السعر الأن </span> </li>
                                                     @else
                                                         <li  class="text-white USD skill" style="display: none">{{ trans('frontLang.Price') }}   :  <span style="color: #777777"> {{$projects->project_price_usd}} $</span> </li>
                                                         <li  class="text-white AED skill" style="display: block !important">{{ trans('frontLang.Price') }}   :  <span style="color: #777777"> {{$projects->project_price}} {{ trans('frontLang.AED') }}</span> </li>
+                                                    @endif --}}
+
+                                                    @if(preg_match('/\d/', $projects->project_price))
+                                                        <li class=" USD skill" style="display: none; color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">$ {{$projects->project_price}}</span> </li>
+                                                        <li class=" AED skill" style="display: block !important; color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">{{ trans('frontLang.AED') }} {{$projects->project_price}}</span> </li>
+                                                    @else
+                                                        <li  style="color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484"> اطلب السعر الان</span> </li>
                                                     @endif
 
                                                     <li  class="text-white">{{ trans('frontLang.bedrooms') }} : <span style="color: #777777"> {{$projects->bedrooms}}</span></li>
@@ -358,29 +365,53 @@
                             <div class="card-body">
                                 <a href="{{url($langSeg .'/'.'dubai-luxury-projects'.'/'.$projects->slug_link)}}" ><h2 class="card-title" style="color: #fff">{{$projects->$project_title_var}}</h2></a>
                             <p class="card-text">
+
                                 <div class="row">
+
                                     <div class="col-lg-6" style="width: 50%">
+
                                         <div class="row mt-2">
                                             <ul style="color: white" class="font-ul">
-                                                @if ($langSeg == 'ru')
-                                                    <li class="text-white">{{ trans('frontLang.Price') }}   : $ <span style="color: #848484">{{$projects->project_price_usd}}</span> </li>
+                                                @if(preg_match('/\d/', $projects->project_price))
+                                                    <li class=" USD skill" style="display: none; color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">$ {{$projects->project_price}}</span> </li>
+                                                    <li class=" AED skill" style="display: block !important; color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">{{ trans('frontLang.AED') }} {{$projects->project_price}}</span> </li>
                                                 @else
-                                                    <li class="text-white USD skill" style="display: none">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">$ {{$projects->project_price}}</span> </li>
-                                                    <li class="text-white AED skill" style="display: block !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">{{ trans('frontLang.AED') }} {{$projects->project_price}}</span> </li>
+                                                    @if ($langSeg == 'ru')
+                                                        <li  style="color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484"> Цена по запросу</span> </li>
+                                                    @else
+                                                        <li  style="color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484"> On Request</span> </li>
+                                                    @endif
                                                 @endif
-                                                <li class="text-white">{{ trans('frontLang.bedrooms') }} : <span style="color: #848484">{{$projects->bedrooms}}</span></li>
-                                                <li class="text-white">{{ trans('frontLang.location') }} : <span style="color: #848484"> {{$projects->locationz->$name_var}}</span></li>
+
+
+                                                {{-- @if ($langSeg == 'ru')
+                                                    @if(preg_match('/\d/', $projects->project_price))
+                                                        <li style="color: #ccc !important">{{ trans('frontLang.Price') }}   : $ <span style="color: #848484">{{$projects->project_price_usd}}</span> </li>
+                                                    @else
+                                                        Цена по запросу
+                                                    @endif
+                                                @else
+                                                    @if(preg_match('/\d/', $projects->project_price))
+                                                        <li style="" style="display: none; color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">$ {{$projects->project_price}}</span> </li>
+                                                        <li class=" AED skill" style="display: block !important; color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">{{ trans('frontLang.AED') }} {{$projects->project_price}}</span> </li>
+                                                    @else
+                                                        <li style="" style="color: #ccc !important">{{ trans('frontLang.Price') }}   :  <span style="color: #848484">$ Price On Request</span> </li>
+                                                    @endif
+
+                                                @endif --}}
+                                                <li style="color: #ccc !important">{{ trans('frontLang.bedrooms') }} : <span style="color: #848484">{{$projects->bedrooms}}</span></li>
+                                                <li style="color: #ccc !important">{{ trans('frontLang.location') }} : <span style="color: #848484"> {{$projects->locationz->$name_var}}</span></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="col-lg-6" style="width: 50%">
                                         <div class="row mt-2">
                                             <ul style="color: #848484" class="font-ul">
-                                                <li class="text-white" >{{ trans('frontLang.projectType') }} :<span style="color: #848484"> @foreach ($projects->project_types as $project_type)
+                                                <li style="color: #ccc !important">{{ trans('frontLang.projectType') }} :<span style="color: #848484"> @foreach ($projects->project_types as $project_type)
                                                     {{$project_type->$type_title_var}}
                                                 @endforeach </span></li>
-                                                <li class="text-white" >{{ trans('frontLang.floorNo') }} : <span style="color: #848484"> {{$projects->no_floors}}</span></li>
-                                                <li class="text-white" >{{ trans('frontLang.unitsize') }} : <span style="color: #848484"> {{$projects->size}}</span></li>
+                                                <li style="color: #ccc !important">{{ trans('frontLang.floorNo') }} : <span style="color: #848484"> {{$projects->no_floors}}</span></li>
+                                                <li style="color: #ccc !important" >{{ trans('frontLang.unitsize') }} : <span style="color: #848484"> {{$projects->size}}</span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -550,10 +581,20 @@
                                     <div class="col-lg-6" style="width: 50%">
                                         <div class="row mt-2">
                                             <ul style="color: white" class="font-ul">
-                                                @if ($langSeg == 'ru')
-                                                    <li class="text-white">{{ trans('frontLang.Price') }}   : $ <span style="color: #777777">{{$projects->project_price_usd}}</span> </li>
+
+
+                                                @if(preg_match('/\d/', $projects->project_price))
+                                                    @if ($langSeg == 'ru')
+                                                        <li class="text-white">{{ trans('frontLang.Price') }}   : <span style="color: #777777"> $ {{$projects->project_price_usd}}</span> </li>
+                                                    @else
+                                                        <li class="text-white">{{ trans('frontLang.Price') }}   : {{ trans('frontLang.AED') }} <span style="color: #777777">{{$projects->project_price}}</span> </li>
+                                                    @endif
                                                 @else
-                                                    <li class="text-white">{{ trans('frontLang.Price') }}   : {{ trans('frontLang.AED') }} <span style="color: #777777">{{$projects->project_price}}</span> </li>
+                                                    @if ($langSeg == 'ru')
+                                                        <li class="text-white">{{ trans('frontLang.Price') }}   : <span style="color: #777777">Цена по запросу</span> </li>
+                                                    @else
+                                                        <li class="text-white">{{ trans('frontLang.Price') }}   : <span style="color: #777777">On Request</span> </li>
+                                                    @endif
                                                 @endif
                                                 <li class="text-white">{{ trans('frontLang.bedrooms') }} : <span style="color: #777777">{{$projects->bedrooms}}</span></li>
                                                 <li class="text-white">{{ trans('frontLang.location') }} : <span style="color: #777777"> {{$projects->locationz->$name_var}}</span></li>

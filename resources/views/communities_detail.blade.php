@@ -157,7 +157,10 @@
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
-        }
+    }
+    iframe {
+        width: 100% !important;
+    }
 </style>
 
 <section style="background-color: #000">
@@ -176,8 +179,8 @@
         <div class="container-fluid containerization">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3> {{$communities->$community_title_var}}</h3>
-                    <p style="line-height: 1.5 !important; text-align: justify;">{!! $communities->$description_var !!}</p>
+                    <h3 style="text-align: center !important;"> {{$communities->$community_title_var}}</h3>
+                    <p style="line-height: 1.5 !important; text-align: justify !important;">{!! $communities->$description_var !!}</p>
                 </div>
 
             </div>
@@ -212,7 +215,7 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-dark btn-block btn-lg">
+                        <button type="submit" class="btn btn-block btn-lg" style="background-color: #1c1c1c !important;">
                             {{ trans('frontLang.submit') }}
                         </button>
                     </form>
@@ -254,7 +257,7 @@
 
                                     <div class="card-body" style="padding: 0.5rem">
                                         <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><h5 class="card-title">{{$projects->$project_title_var}}</h5></a>
-                                    <p><i class="fas fa-map-marker-alt" style="color: green"></i> {{$projects->locationz->$name_var}}</p>
+                                    <p> {{$projects->locationz->$name_var}}</p>
                                     <p class="card-text">
                                         {{ trans('frontLang.projectType') }} : @foreach ($projects->project_types as $project_type)
                                         {{$project_type->$type_title_var}}
@@ -359,8 +362,8 @@
         <div class="container-fluid containerization">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3> {{$communities->$community_title_var}}</h3>
-                    <p>{!! $communities->$description_var !!}</p>
+                    <h3 style="text-align: center !important;"> {{$communities->$community_title_var}}</h3>
+                    <p style="line-height: 1.5 !important; text-align: justify !important;">{!! $communities->$description_var !!}</p>
                 </div>
 
             </div>
@@ -395,7 +398,7 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-dark btn-block btn-lg">
+                        <button type="submit" class="btn btn-block btn-lg" style="background-color: #1c1c1c !important;">
                             {{ trans('frontLang.submit') }}
                         </button>
                     </form>
@@ -410,6 +413,7 @@
 
                 <h3 class="mb-4">{{ trans('frontLang.locationMap') }}</h3>
                 <div class="col-lg-12">
+
                     {!! $communities->map_embed_code !!}
                 </div>
             </div>

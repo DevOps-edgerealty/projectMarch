@@ -772,13 +772,13 @@
                                     <input type="hidden" name="property_id" value="{{ $property_detail->id }}">
                                     <div class="input-group mb-3">
 
-                                        <input type="text" class="form-control text-white" placeholder="Full Name" aria-label="Full Name" name="name" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
+                                        <input type="text" class="form-control text-white" placeholder="{{ trans('frontLang.name') }}" aria-label="Full Name" name="name" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
                                     </div>
                                     <div class="input-group mb-3">
                                         <input type="phone" name="phone" class="form-control w-100 iti-phone rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #1c1c1c !important; width: 100% !important;" placeholder="{{ trans('frontLang.phone') }}" required />
                                     </div>
                                     <div class="input-group mb-3">
-                                        <input type="email" class="form-control text-white" name="email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
+                                        <input type="email" class="form-control text-white" name="email" placeholder="{{ trans('frontLang.email') }}" aria-label="Email" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
                                     </div>
                                     <button type="submit" class="btn btn-block bg-white text-dark rounded-0 " style="border: 0.5px #848484 solid !important; background-color: #292828">
                                         <i class="loading-icon fa-lg fas fa-spinner fa-spin d-none"></i> &nbsp;
@@ -796,26 +796,26 @@
                                 </p>
                                 <div class="col-6 mx-auto mb-2">
                                     <div class="mx-auto ">
-                                        <ul class="list-group list-group-horizontal-sm bg-black text-center mx-auto">
-                                            <li class=" bg-black text-white bg-black text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                                        <ul class="list-group list-group-horizontal-sm text-center mx-auto">
+                                            <li class=" text-white text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
                                                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
                                                     <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 18px !important; width: 100% !important">
                                                 </a>
                                             </li>
 
-                                            <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                            <li class=" text-white text-center px-1 mx-auto">
                                                 <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
                                                     <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 18px !important; width: 100% !important">
                                                 </a>
                                             </li>
 
-                                            <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                            <li class=" text-white text-center px-1 mx-auto">
                                                 <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
                                                     <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 18px !important; width: 100% !important">
                                                 </a>
                                             </li>
 
-                                            <li class=" bg-black text-white bg-black text-center px-1 mx-auto">
+                                            <li class=" text-white text-center px-1 mx-auto">
                                                 <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
                                                     <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 18px !important; width: 100% !important">
                                                 </a>

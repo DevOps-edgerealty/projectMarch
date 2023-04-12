@@ -466,21 +466,24 @@
                     <span class="text-right">
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.startingfrom') }} </p>
                         <p class="m-0 p-0 bullet_points">
-                            <div class="AED skill" style="display: block !important">
+                            @if(preg_match('/\d/', $project_detail->project_price))
+                                <div class="AED skill" style="display: block !important">
+                                    <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
+                                        {{ $project_detail->project_price }}
+                                        {{ trans('frontLang.AED') }}
+                                    </p>
+                                </div>
+                                <div class="USD skill">
+                                    <p class="card-title p-auto m-auto  m-0 p-0 bullet_points" point_highlighted >
+                                        {{ $project_detail->project_price_usd }}
+                                        USD
+                                    </p>
+                                </div>
+                            @else
                                 <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
-                                    {{ $project_detail->project_price }}
-                                    {{ trans('frontLang.AED') }}
+                                    اطلب السعر الان
                                 </p>
-                            </div>
-
-                            <div class="USD skill">
-                                <p class="card-title p-auto m-auto  m-0 p-0 bullet_points" point_highlighted >
-
-                                    {{ $project_detail->project_price_usd }}
-                                    USD
-
-                                </p>
-                            </div>
+                            @endif
                         </p>
 
                         <br>
@@ -602,22 +605,30 @@
                             <p style="margin-right: 10px" class="my-0">
                                 {{ trans('frontLang.startingfrom') }}
                             </p>
-                            <div class="AED skill " style="display: block !important">
-                                <p style="color: #fff; font-size: 1em" class="">
-                                    <span class="fw-bold"> {{ trans('frontLang.AED') }}
-                                    {{ $project_detail->project_price }}</span>
+
+                            @if(preg_match('/\d/', $project_detail->project_price))
+                                <div class="AED skill " style="display: block !important">
+                                    <p style="color: #ccc; font-size: 1em" class="">
+                                        <span class="fw-bold"> {{ trans('frontLang.AED') }}
+                                        {{ $project_detail->project_price }}</span>
+                                    </p>
+                                </div>
+                                <div class="USD skill ">
+                                    <p style="color: #ccc; font-size: 1em" class="">
+                                       <span class="fw-bold">
+                                            USD
+                                            {{ $project_detail->project_price_usd }}
+                                        </span>
+                                    </p>
+                                </div>
+                            @else
+                                <p style="color: #ccc; font-size: 1em" class="">
+                                    <span class="fw-bold">
+                                        اطلب السعر الان
+                                    </span>
                                 </p>
-                            </div>
-                            <div class="USD skill ">
-                                <p style="color: #fff; font-size: 1em" class="">
-                                    USD
-                                    {{ $project_detail->project_price_usd }}
-                                </p>
-                            </div>
-                            {{-- <select class="" name="skill_dropdown" id="skill_dropdown" style="width: 80px;margin-left:10px;margin-top: -9px;">
-                                <option value="AED">AED</option>
-                                <option value="USD">USD</option>
-                            </select> --}}
+                            @endif
+
                         </div>
 
                         <div class="col-6">
@@ -690,57 +701,79 @@
                         }
                     </style>
                     <span class="text-left">
+
+                        {{-- PRICING --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.startingfrom') }} </p>
+
                         <p class="m-0 p-0 bullet_points">
-                            <div class="AED skill" style="display: block !important">
+                            @if(preg_match('/\d/', $project_detail->project_price))
+                                <div class="AED skill" style="display: block !important">
+                                    <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
+                                        {{ $project_detail->project_price }}
+                                        {{ trans('frontLang.AED') }}
+                                    </p>
+                                </div>
+                                <div class="USD skill">
+                                    <p class="card-title p-auto m-auto  m-0 p-0 bullet_points" point_highlighted >
+                                        {{ $project_detail->project_price_usd }}
+                                        USD
+                                    </p>
+                                </div>
+                            @else
                                 <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
-                                    {{ $project_detail->project_price }}
-                                    {{ trans('frontLang.AED') }}
-                                </p>
-                            </div>
-
-                            <div class="USD skill">
-                                <p class="card-title p-auto m-auto  m-0 p-0 bullet_points" point_highlighted >
-
-                                    {{ $project_detail->project_price_usd }}
-                                    USD
+                                    @if ($langSeg == 'ru')
+                                        Цена по запросу
+                                    @else
+                                        {{ $project_detail->project_price }}
+                                    @endif
 
                                 </p>
-                            </div>
+                            @endif
                         </p>
+                        {{-- PRICING --}}
 
                         <br>
 
+                        {{-- BEDROOMS --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.bedrooms') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->bedrooms_ar}} </p>
+                        {{-- BEDROOMS --}}
 
                         <br>
 
+                        {{-- LOCATION --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.location') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->locationz->$name_var}} </p>
-
+                        {{-- LOCATION --}}
 
                         <br>
 
+                        {{-- PROJECT NAME --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.projectname') }} </p>
                         <p class="m-0 p-0 bullet_points point_highlighted"> {{$project_detail->$title_var}} </p>
+                        {{-- PROJECT NAME --}}
 
                         <br>
 
+                        {{-- PROJECT TYPE --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.projectType') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">
                             @foreach ($project_detail->project_types as $project_type)
                                 {{$project_type->$type_title_var}}
                             @endforeach
                         </p>
+                        {{-- PROJECT TYPE --}}
 
                         <br>
 
+                        {{-- DEVELOPER --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.Developer') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$developers->$name_var}} </p>
+                        {{-- DEVELOPER --}}
 
                         <br>
 
+                        {{-- SHARE ICONS --}}
                         <div class="row my-3 ">
                             <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
                                 <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
@@ -777,6 +810,8 @@
                                 </div>
                             </div>
                         </div>
+                        {{-- SHARE ICONS --}}
+
 
                     </span>
                 </div>
@@ -824,37 +859,50 @@
 
                     {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
                     <div class="row">
+
+
+
+                        {{-- PRICING --}}
                         <div class="col-6" style="">
                             <p style="margin-right: 10px" class="my-0">
                                 {{ trans('frontLang.startingfrom') }}
                             </p>
-                            <div class="AED skill " style="display: block !important">
+
+                            @if(preg_match('/\d/', $project_detail->project_price))
+                                <div class="AED skill " style="display: block !important">
+                                    <p style="color: #ccc; font-size: 1em" class="">
+                                        <span class="fw-bold"> {{ trans('frontLang.AED') }}
+                                        {{ $project_detail->project_price }}</span>
+                                    </p>
+                                </div>
+                                <div class="USD skill ">
+                                    <p style="color: #ccc; font-size: 1em" class="">
+                                       <span class="fw-bold">
+                                            USD
+                                            {{ $project_detail->project_price_usd }}
+                                        </span>
+                                    </p>
+                                </div>
+                            @else
                                 <p style="color: #ccc; font-size: 1em" class="">
-                                    <span class="fw-bold"> {{ trans('frontLang.AED') }}
-                                    {{ $project_detail->project_price }}</span>
+                                    <span class="fw-bold">
+                                        @if ($langSeg == 'ru')
+                                            Цена по запросу
+                                        @else
+                                            {{ $project_detail->project_price }}
+                                        @endif
+                                    </span>
                                 </p>
-                            </div>
-                            <div class="USD skill ">
-                                <p style="color: #ccc; font-size: 1em" class="">
-                                    USD
-                                    {{ $project_detail->project_price_usd }}
-                                </p>
-                            </div>
-                            {{-- <select class="" name="skill_dropdown" id="skill_dropdown" style="width: 80px;margin-left:10px;margin-top: -9px;">
-                                <option value="AED">AED</option>
-                                <option value="USD">USD</option>
-                            </select> --}}
+                            @endif
                         </div>
 
+
+
+                        {{-- BEDROOMS --}}
                         <div class="col-6">
                             <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white w-100 rounded-0">
                                 {{ trans('frontLang.requestdetail') }}
                             </a>
-                            {{-- <a href="#mobile-info-section" >
-                                <div class="btn btn-outline-white w-100 rounded-0">
-                                    {{ trans('frontLang.readMore') }}
-                                </div>
-                            </a> --}}
                         </div>
                     </div>
 
@@ -1453,7 +1501,7 @@
     <div class="container-fluid" style="padding-right: 0px; padding-left: 0px;">
         <style>
             .crousal-img-height {
-                height: 400px !important;
+                height: 500px !important;
             }
         </style>
 
@@ -1874,7 +1922,7 @@
 
 <script>
     $('.autoplay').slick({
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
         arrows: true,
@@ -1906,12 +1954,7 @@
                 slidesToScroll: 1
             }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
-
-        // fade: true,
     });
 
 
