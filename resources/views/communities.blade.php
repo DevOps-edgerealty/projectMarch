@@ -146,6 +146,18 @@ else
     </div>
 
 </section>
+@elseif ($langSeg == 'ru')
+<section class="">
+    <div class="container-fluid containerization">
+        <div class="row">
+            {{-- <h3 class="text-left">{{ trans('frontLang.dubaiCommunities') }}</h3> --}}
+            <P style="font-size: 16px;line-height: 25px;">Are you looking for the best area to live in Dubai? With Edge Realty comprehensive Dubai area guides, you can discover which areas are best for living in Dubai. Learn more about the best in the area, as well as what you can expect to get in one of the most popular neighbourhoods within Dubai.</p>
+
+        </div>
+
+    </div>
+
+</section>
 @else
 <section class="">
     <div class="container-fluid containerization">

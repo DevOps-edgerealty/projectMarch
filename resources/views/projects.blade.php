@@ -123,7 +123,7 @@ if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
 }
 else
 {
-    $langSeg = 'en';
+    $langSeg = 'ar';
 }
 
 ?>
@@ -453,7 +453,7 @@ else
 
                                     <p class="my-0 fw-light" style="font-size: .8rem !important;">{{ trans('frontLang.Handover') }} : {{$projects->est_completion_en}}</p>
 
-                                    <p class="card-text">
+                                    <p class="my-0 fw-light" style="font-size: .8rem !important;">
 
                                         @foreach ($projects->project_types as $project_type)
                                             {{ trans('frontLang.projectType') }} : {{$project_type->$type_title_var}}

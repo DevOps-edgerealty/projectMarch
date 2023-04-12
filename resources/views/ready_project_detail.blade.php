@@ -439,7 +439,7 @@
                 <div class="col-md-9">
                     <div class="row pe-4">
                         <div class="col-md-7">
-                            <h3 class="mb-4">Overview</h3>
+                            <h3 class="mb-4">{{ trans('frontLang.overview')}}</h3>
 
                         </div>
                         <div class="col-md-5 mx-auto">
