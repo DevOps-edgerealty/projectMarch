@@ -145,16 +145,16 @@ else
             <div class="card-group">
 
                 @foreach($chunk as $blog)
-                <div class="col-lg-3 px-3 py-3">
-                    <div class="card bg-black rounded-0 mx-3 my-2" style="height: 480px !important;">
+                <div class="col-md-3 px-0 py-3 mx-0">
+                    <div class="card bg-black rounded-0 mx-auto my-2" style="height: 100% !important;">
 
                         @if (file_exists('uploads/agents/'.$blog->id.'/'.$blog->image))
                             <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$blog->id)}}">
-                                <img src="{{ URL::asset('uploads/agents/'.$blog->id.'/'.$blog->image) }}" class="card-img-top rounded-0" rounded-0 style="width: 100%; height: 350px; border: none; " alt="blog-image-here"/>
+                                <img src="{{ URL::asset('uploads/agents/'.$blog->id.'/'.$blog->image) }}" class="card-img-top rounded-0" rounded-0 style="width: 100%; height: 450px; border: none; " alt="blog-image-here"/>
                             </a>
                         @else
                             <a href="{{url( $langSeg .'/'.'agent_detail'.'/'.$blog->id)}}" class="border: none !important;">
-                                <img src="{{ URL::asset('public/assets/images/agents/1/1.jpg') }}" class="card-img-top rounded-0" style="width: 100%; height: 350px; border: none !important; "  alt="blog-image-here">
+                                <img src="{{ URL::asset('uploads/agents/1/qw.jpg') }}" class="card-img-top rounded-0" style="width: 100%; height: 450px; border: none !important; "  alt="blog-image-here">
                             </a>
                         @endif
 
@@ -230,7 +230,7 @@ else
             <div class="card-group">
 
                 @foreach($chunk as $blog)
-                <div class="col-xs-2 px-3 py-3">
+                <div class="col-xs-2 px-3 py-1">
                     <div class="card bg-black rounded-0 mx-3 my-2" style="height: 450px !important;">
 
                         @if (file_exists('uploads/agents/'.$blog->id.'/'.$blog->image))

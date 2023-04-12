@@ -1930,9 +1930,10 @@ class FronthomeController extends Controller
 
         $this->data['footerCommunities'] = $footerCommunities;
 
-        $slug_link = $id;
-        dd($slug_link);
-        //
+        $slug_link = $id;  //agent id
+
+        // dd($slug_link);
+
         if ($lang != "") {
             // Set Language
             App::setLocale($lang);
@@ -1942,17 +1943,21 @@ class FronthomeController extends Controller
 
 		$conLag = App::getLocale();
 
-        $projects = Project::with(['images','developers','project_types'])->where('status', '1')->where('agent_id',$slug_link)->get();
+        // $projects = Project::with(['images','developers','project_types'])->where('status', '1')->where('agent_id',$slug_link)->get();
 
-        $properties = Property::with(['images', 'locationss','cityss'])->where('status', '1')->where('agent_id',$slug_link)->get();
+        $properties_for_sale = Property::with(['images', 'locationss','cityss'])->where('status', '1')->where('type_id','1')->where('agent_id', $slug_link)->get();
+
+        $properties_for_rent = Property::with(['images', 'locationss','cityss'])->where('status', '1')->where('type_id','2')->where('agent_id', $slug_link)->get();
+
+        // dd($properties);
 
         $agent = Agents::where('id', $slug_link)->where('status', '1')->get();
 
         // dd($properties);
 
-        $this->data['projects'] = $projects;
+        $this->data['properties_for_sale'] = $properties_for_sale;
 
-        $this->data['properties'] = $properties;
+        $this->data['properties_for_rent'] = $properties_for_rent;
 
         $this->data['agent'] = $agent[0];
 
