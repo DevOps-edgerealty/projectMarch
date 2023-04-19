@@ -2504,7 +2504,7 @@
         z-index: 1001;
     }
     #popup {
-        width: 800px;
+        width: 100%;
         height: 400px;
         background: #FFFFFF;
         /* border: 5px solid #000; */
@@ -2521,6 +2521,7 @@
         width: 400px;
         height: 200px;
         background: #FFFFFF;
+        margin-top: 200px;
         /* border: 5px solid #000; */
         /* border-radius: 25px; */
         /* -moz-border-radius: 25px; */
@@ -2532,15 +2533,21 @@
     }
 </style>
 
-<div id="ac-wrapper" style="display: none !important;" class="d-flex flex-column mx-auto h-100 d-md-block d-lg-block d-none">
-    <div id="popup" class="my-auto mx-auto text-dark">
+<button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#popupBoxDesktop">
+  Launch demo modal
+</button>
+
+
+
+<div id="ac-wrapper" style="display: none !important;" class="d-flex flex-column mx-auto h-100 d-md-block d-lg-block d-none my-auto align-items-center justify-content-center ">
+    <div id="popup" class="my-auto mx-auto text-dark justify-content-center">
         <img src="{{ URL('public/assets/asset/email_icon.png') }}" style="height: 40px; width:40px;" class="position-absolute ms-2 mt-2">
-        <div class="row h-100 p-5 ">
+        <div class="row h-100 p-5 my-auto align-middle">
             <div class="col-6 p-2 d-flex flex-column mx-auto my-auto h-100 " style="border-right: 1px solid #000 !important;">
                 <div class="row my-auto mx-auto h-100">
                     <div class="row my-auto mx-auto">
                         <p class="mx-auto fw-bold" style="font-size: 2.2rem; line-height: 1.2 !important;">
-                            Sign Up <br> and Stay Informed
+                             Stay Informed
                         </p>
                         <p class="mx-auto mt-3 px-2 text-justify" style="font-size: 1.2rem !important">
                             Join over 20,000 members to get weekly updates on new off-plan launches and latest news & tips
@@ -2555,13 +2562,13 @@
                         <form>
                             <!-- Email input -->
                             <div class="form-outline rounded-0 mb-4">
-                                <input type="text" id="form1Example1" class="form-control rounded-0 "/>
+                                <input type="text" id="form1Example1" class="form-control rounded-0" style="background-color: #fff !important;"/>
                                 <label class="form-label text-center rounded-0" for="form1Example1">Name</label>
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline rounded-0 mb-4">
-                                <input type="email" id="form1Example2" class="form-control rounded-0 " />
+                                <input type="email" id="form1Example2" class="form-control rounded-0"  style="background-color: #fff !important;"/>
                                 <label class="form-label text-center rounded-0" for="form1Example2">Email</label>
                             </div>
 
@@ -2571,7 +2578,7 @@
                         </form>
                         {{-- <p class="text-decoration-underline text-dark " onClick="PopUp('hide">I'm not interested</p> --}}
 
-                        <button class="text-decoration-underline mt-3" onClick="PopUp('hide')">I'm Not Interested</button>
+                        <button class="text-decoration-underline mt-3" onClick="PopUpModal('hide')">I'm Not Interested</button>
                     </div>
 
                 </div>
@@ -2694,56 +2701,72 @@
 </script>
 
 <script scope>
-    function PopUp(hideOrshow) {
-        if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
-        else document.getElementById('ac-wrapper').removeAttribute('style');
-    }
-
-    setTimeout(function() {
-            $('#myModal').modal();
-        }, 2000);
-
-    window.onload = function () {
-        setTimeout(function () {
-            PopUp('show');
-        }, 3000);
-
-    }
-
-    window.onload = function () {
-        setTimeout(function () {
-            PopUp2('show');
-        }, 3000);
-    }
+    // function PopUpModal(hideOrshow) {
+    //     if (hideOrshow == 'hide') document.getElementById('popupBoxDesktop').style.display = "none";
+    //     else document.getElementById('popupBoxDesktop').removeAttribute('style');
+    // }
 
 
-     $(document).ready(function() {
-        $('.slider').slick({
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 10,
-            speed: 1500,
-            index: 2,
-            focusOnSelect:true,
-            responsive: [{
-            breakpoint: 768,
-            settings: {
-                arrows: true,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 1
-            }
-            }, {
-            breakpoint: 480,
-            settings: {
-                arrows: false,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 1
-            }
-            }]
-        });
-    });
+
+
+    // function PopUpModal() {
+    //     $('#popupBoxDesktop').modal().hide();
+    //     $('#popupBoxDesktop').removeClass("show");
+    // }
+
+    // setTimeout(function() {
+    //     $('#popupBoxDesktop').modal().show();
+    //     $('#popupBoxDesktop').addClass("show");
+    // }, 2000);
+
+    // window.onload = () => {
+    //     setTimeout(() => {
+    //         $('#popupBoxDesktop').modal().show();
+    //         $('#popupBoxDesktop').addClass("show");
+    //     }, 2000);
+    // }
+
+    // window.onload = function () {
+    //     setTimeout(function () {
+    //         PopUp('show');
+    //     }, 3000);
+
+    // }
+
+    // window.onload = function () {
+    //     setTimeout(function () {
+    //         PopUp2('show');
+    //     }, 3000);
+    // }
+
+
+    //  $(document).ready(function() {
+    //     $('.slider').slick({
+    //         centerMode: true,
+    //         centerPadding: '60px',
+    //         slidesToShow: 10,
+    //         speed: 1500,
+    //         index: 2,
+    //         focusOnSelect:true,
+    //         responsive: [{
+    //         breakpoint: 768,
+    //         settings: {
+    //             arrows: true,
+    //             centerMode: true,
+    //             centerPadding: '40px',
+    //             slidesToShow: 1
+    //         }
+    //         }, {
+    //         breakpoint: 480,
+    //         settings: {
+    //             arrows: false,
+    //             centerMode: true,
+    //             centerPadding: '40px',
+    //             slidesToShow: 1
+    //         }
+    //         }]
+    //     });
+    // });
 
 
 

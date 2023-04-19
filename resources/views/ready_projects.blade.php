@@ -136,7 +136,7 @@
     }
     else
     {
-        $langSeg = 'ar';
+        $langSeg = 'en';
     }
 
 ?>
@@ -208,14 +208,14 @@
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project as $projects)
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-3 p-0">
                             <div class="card">
 
 
 
                                 @foreach($projects->images  as $single_img)
                                     @if($projects->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-ready-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="{{$projects->$project_title_var}}"></a>
+                                    <a href="{{url($langSeg .'/'.'dubai-ready-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}"></a>
                                     @endif
                                 @endforeach
 
@@ -234,10 +234,10 @@
                                 </p>
 
                                 </div>
-                                <div class="card-footer text-muted" style="padding: 0.75rem 0rem;">
+                                <div class=" text-muted" style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
-                                            <td style="text-align: center;border-left: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                            <td style="text-align: center; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
                                             <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>
@@ -410,7 +410,7 @@
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project as $projects)
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-3 p-0">
                             <div class="card bg-black text-white border rounded-0">
 
 
@@ -438,10 +438,10 @@
                                 </p>
 
                                 </div>
-                                <div class="card-footer text-muted" style="padding: 0.75rem 0rem;">
+                                <div class=" text-muted" style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
-                                            <td style="text-align: center;border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                            <td style="text-align: center; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #000"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
                                             <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important"> <i class="fab fa-whatsapp"></i>  {{ trans('frontLang.whatsapp') }} </a></td>
                                         </tr>
                                     </table>

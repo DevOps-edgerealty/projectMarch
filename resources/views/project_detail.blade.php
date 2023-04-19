@@ -29,10 +29,10 @@
 @section('content')
 
 <style>
-  p{
-    line-height: 1.6 !important;
-    color: #ccc !important;
-  }
+    p{
+        line-height: 1.6 !important;
+        color: #ccc !important;
+    }
     td > a {
         color: #ccc !important;
     }
@@ -155,6 +155,25 @@
         color: #ccc !important;
         padding: 10px !important;
         text-align: right !important;
+    }
+
+    span {
+        color: #ccc !important;
+    }
+    span, p, b {
+        color: #ccc !important;
+    }
+
+    span, font {
+        color: #ccc !important;
+    }
+
+    span, p {
+        color: #ccc !important;
+    }
+
+    .project-header-img{
+        height: 650px !important;
     }
 
 
@@ -292,10 +311,10 @@
 
     @foreach($project_detail->images  as $single_img)
             @if($project_detail->images->first()==$single_img)
-                <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$single_img->image) }}" style="height: 650px" class="card-img-top" alt="">
-                <div class="mx-auto" style=" position: absolute; top: 250px; color:#fff; width: 100%">
-                    <h1 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->$title_var}}</b></h1>
-                    <h3 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->locationz->$name_var}}</b></h3>
+                <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$single_img->image) }}"  class="card-img-top project-header-img" alt="{{$project_detail->$title_var}}" style="height: 650px !important">
+                <div class="mx-auto" style=" position: absolute; top: 250px; color:#fff !important; width: 100%">
+                    <h1 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold !important;">{{$project_detail->$title_var}}</h1>-->
+                    <h3 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold !important;">{{$project_detail->locationz->$name_var}}</h3>-->
 
                     {{-- <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-dark btn-lg mt-4 rounded-0 w-75 testbutton" style="background-color: #000">
                         {{ trans('frontLang.requestdetail') }}
@@ -336,9 +355,9 @@
     @foreach($project_detail->images  as $single_img)
             @if($project_detail->images->first()==$single_img)
                 <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$single_img->image) }}" style="height: 700px" class="card-img-top" alt="">
-                <div class="" style=" position: absolute; top: 250px; color:#fff ">
-                    <h1 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->$title_var}}</b></h1>
-                    <h3 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->locationz->$name_var}}</b></h3>
+                <div class="" style=" position: absolute; top: 250px; color:#fff !important ">
+                    <h1 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold; color: #fff !important; font-weight: bold !important">{{$project_detail->$title_var}}</h1>
+                    <h3 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold;  color: #fff !important; font-weight: bold !important">{{$project_detail->locationz->$name_var}}</h3>
 
                     <style>
                         .testbutton:hover {
@@ -642,7 +661,7 @@
                         </div>
                     </div>
 
-                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
+                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms_ar}} </span></p>
                     <p> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
                     <p> {{ trans('frontLang.name') }} <br> <span class="fw-bold"> {{$project_detail->$title_var}}</span></p>
                     <p>
@@ -684,7 +703,9 @@
                                 {{ trans('frontLang.requestdetail') }}
                             </a>
                         </div>
-                        <span style="color: grey !important; text-align: justify; pe-5">{!! $project_detail->$description_var !!}</span>
+                        <span style="color: #ccc !important; text-align: justify; pe-5">
+                            {!! $project_detail->$description_var !!}
+                        </span>
                     </div>
 
                 </div>
@@ -736,7 +757,7 @@
 
                         {{-- BEDROOMS --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.bedrooms') }}</p>
-                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->bedrooms_ar}} </p>
+                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->bedrooms}} </p>
                         {{-- BEDROOMS --}}
 
                         <br>

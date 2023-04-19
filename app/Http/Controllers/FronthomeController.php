@@ -1515,8 +1515,9 @@ class FronthomeController extends Controller
 
         $this->data['footerCommunities'] = $footerCommunities;
 
-        $Leads = new Leads();
+        $url = $request->page_url;
 
+        $Leads = new Leads();
 
 		$Leads->page_url = $request->url_path;
 		$Leads->full_name = $request->name;
@@ -1532,6 +1533,7 @@ class FronthomeController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'phone_number' => $request->get('phone'),
+            'url' => $request->get('page_url'),
 
         ), function($message) use ($request)
           {

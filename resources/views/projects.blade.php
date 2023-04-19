@@ -123,7 +123,7 @@ if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
 }
 else
 {
-    $langSeg = 'ar';
+    $langSeg = 'en';
 }
 
 ?>
@@ -205,7 +205,7 @@ else
 
                                 @foreach($projects->images  as $single_img)
                                     @if($projects->images->first()==$single_img)
-                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top" alt="{{$projects->$project_title_var}}"></a>
+                                    <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}"></a>
                                     @endif
                                 @endforeach
 
@@ -238,7 +238,7 @@ else
                                     </p>
 
                                 </div>
-                                <div class="card-footer text-muted" style="padding: 0.75rem 0rem;">
+                                <div class=" text-muted" style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
@@ -409,7 +409,7 @@ else
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($project as $projects)
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-2 p-0">
                             <div class="card bg-black text-white rounded-0 border border-1 border-white"  style="height: 550px !important;">
 
                                 @if ($projects->project_status == '1')
@@ -461,7 +461,7 @@ else
                                     </p>
 
                                 </div>
-                                <div class="card-footer text-muted" style="padding: 0.75rem 0rem;">
+                                <div class=" text-muted" style="padding: 0.75rem 0rem;">
                                     <table style="width: 100%">
                                         <tr>
                                             <td style="text-align: center;border-right: 1px solid; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-{{ $projects->id }}" style="color: #fff"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>

@@ -640,14 +640,14 @@
 
                     <div class="col-lg-4 text-white">
                         <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%;height: 100% !important; ">
-                            <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
+                            {{-- <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}"> --}}
                                 <img src="{{URL::asset('public/assets/asset/about/company.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
-                            </a>
+                            {{-- </a> --}}
 
                             <div class="card-body px-3">
-                                <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
+                                {{-- <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}"> --}}
                                     <h5 class="card-title text-white">{{ trans('frontLang.aboutCompanyBrandGuideline') }}</h5>
-                                </a>
+                                {{-- </a> --}}
 
                                 <p class="card-text text-capitalize" style="line-height: 1.3 !important; color: grey !important;">
                                     {{ trans('frontLang.aboutCompanyBrandGuidelineBody') }}
@@ -705,14 +705,14 @@
 
                     <div class="col-lg-4 text-white">
                         <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important;">
-                            <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
+                            {{-- <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}"> --}}
                                 <img src="{{URL::asset('public/assets/asset/about/company.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
-                            </a>
+                            {{-- </a> --}}
 
                             <div class="card-body px-3">
-                                <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
+                                {{-- <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}"> --}}
                                     <h5 class="card-title text-white">{{ trans('frontLang.aboutCompanyBrandGuideline') }}</h5>
-                                </a>
+                                {{-- </a> --}}
 
                                 <p class=" text-capitalize" style="line-height: 1.3 !important; color: grey !important; height: 5em !important; font-size: 16px !important;">
                                     {{-- {{ trans('frontLang.aboutCompanyBrandGuidelineBody') }} --}}
@@ -771,14 +771,14 @@
 
                     <div class="col-lg-4 text-white">
                         <div class="card bg-black textwhite my-5 rounded-0" style="width: 100%; height: 100% !important;">
-                            <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
+                            {{-- <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}"> --}}
                                 <img src="{{URL::asset('public/assets/asset/about/company.jpg')}}" style="width: 100%; height: 300px;" class="card-img-top rounded-0" alt="Hollywood Sign on The Hill"/>
-                            </a>
+                            {{-- </a> --}}
 
                             <div class="card-body px-3">
-                                <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}">
+                                {{-- <a href="{{URL::asset('uploads/Edge Realty Company Profile.pdf')}}"> --}}
                                     <h5 class="card-title text-white">{{ trans('frontLang.aboutCompanyBrandGuideline') }}</h5>
-                                </a>
+                                {{-- </a> --}}
 
                                 <p class="card-text text-capitalize" style="line-height: 1.3 !important; color: grey !important;">
                                     {{ trans('frontLang.aboutCompanyBrandGuidelineBody') }}

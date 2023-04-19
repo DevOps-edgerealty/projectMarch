@@ -27,6 +27,13 @@
 
       </tr>
 
+      <tr>
+
+        <td style="padding-left: 20px"><b>URL :</b> </td>
+        <td>{{ $url }}</td>
+
+      </tr>
+
 
 
     </tbody>

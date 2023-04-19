@@ -106,134 +106,6 @@
 			]
 		}</script>
 
-        <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "4z18c8ed9x");
-        </script>
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150425659-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-150425659-1');
-        </script>
-
-        <script>
-            function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') {
-                window.location = url;
-                }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-697745610/cftWCLiXm-kCEMqB28wC',
-                'event_callback': callback
-            });
-            return false;
-            }
-        </script>
-        <meta name="yandex-verification" content="64dfa255856fcfc6" />
-        <!-- Yandex.Metrika counter -->
-        {{-- <script type="text/javascript" >
-           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-           ym(88839809, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true
-           });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/88839809" style="position:absolute; left:-9999px;" alt="" /></div></noscript> --}}
-        <!-- /Yandex.Metrika counter -->
-
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(93165723, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true,
-                webvisor:true
-        });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/93165723" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
-
-        <!-- Hotjar Tracking Code for edgerealty.ae -->
-        <script>
-            (function(h,o,t,j,a,r){
-                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:2587060,hjsv:6};
-                a=o.getElementsByTagName('head')[0];
-                r=o.createElement('script');r.async=1;
-                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-        </script>
-
-
-        <!-- Global site tag (gtag.js) - Google Ads: 697745610 -->
-        <script async src=https://www.googletagmanager.com/gtag/js?id=AW-697745610></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-697745610');
-        </script>
-
-
-        <!-- Facebook Pixel Code -->
-        <script>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '935332510555908');
-            fbq('track', 'PageView');
-            </script>
-            <noscript>
-                <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=935332510555908&ev=PageView&noscript=1"
-            />
-            </noscript>
-            <!-- End Facebook Pixel Code -->
-
-
-            <!-- Pinterest Tag -->
-            <script>
-                !function(e){if(!window.pintrk){window.pintrk = function () {
-                window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-                n=window.pintrk;n.queue=[],n.version="3.0";var
-                t=document.createElement("script");t.async=!0,t.src=e;var
-                r=document.getElementsByTagName("script")[0];
-                r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-                pintrk('load', '2613929980669', {em: '<user_email_address>'});
-                pintrk('page');
-                </script>
-                <noscript>
-                <img height="1" width="1" style="display:none;" alt=""
-                src="https://ct.pinterest.com/v3/?event=init&tid=2613929980669&pd[em]=<hashed_email_address>&noscript=1" />
-            </noscript>
-            <!-- end Pinterest Tag -->
-
 
         <?php
         $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -454,6 +326,175 @@
         </div>
 
 
+        <!-- POPUP -->
+            <style>
+                #ac-wrapper {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, .5);
+                    z-index: 1001;
+                }
+                #ac-wrapper1 {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, .5);
+                    z-index: 1001;
+                }
+                #popup {
+                    width: 100%;
+                    height: 450px;
+                    background: #FFFFFF;
+                    /* border: 5px solid #000; */
+                    /* border-radius: 25px; */
+                    /* -moz-border-radius: 25px; */
+                    /* -webkit-border-radius: 25px; */
+                    /* box-shadow: #64686e 0px 0px 3px 3px; */
+                    /* -moz-box-shadow: #64686e 0px 0px 3px 3px; */
+                    /* -webkit-box-shadow: #64686e 0px 0px 3px 3px; */
+                    position: relative;
+                }
+                /* .subscription-desktop{
+                    background-image: url('{{ asset('assets/images/sub1.png') }}');
+                } */
+            </style>
+
+            {{-- desktop popup --}}
+            <div class="modal fade " id="popupBoxDesktop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                    <div class="modal-content rounded-0">
+                        <div class="modal-body " style="background-image: url('{{URL::asset('public/assets/images/sub3.png')}}')">
+                            {{-- <img src="{{ URL('public/assets/asset/email_icon.png') }}" style="height: 40px; width:40px;" class="position-absolute ms-2 mt-2"> --}}
+                            <div class="row h-100 p-3 my-auto align-middle">
+
+
+                                <div class="col-12 p-3 d-flex flex-column mx-auto my-auto h-100" >
+                                    <img src="{{ URL('public/assets/images/logo-black.png') }}" style="height: 70px; width:auto;" class="mx-auto">
+
+                                    <div class="row mx-auto h-100 my-0">
+                                        <p class="mx-auto fw-bold text-center m-0 pt-3" style="font-size: 2rem; line-height: 1.2 !important; color: #525252 !important">
+                                            Register Your Interest!
+                                        </p>
+                                        <p class=" container mx-auto mt-3 px-5 text-center " style="font-size: 1.2rem !important; color: #525252 !important; text-align: center !important; line-height: 1.5 !important;">
+                                            Leave your details below and we will reach you right away!
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 h-100 mx-auto text-center">
+                                    <div class="row my-auto mx-auto h-100 p-3 rounded-3 shadow"  style="background-color: #fff !important;">
+                                        <form class="contact-form py-2" method="post" action="{{URL('/request_detail/submit')}}">
+                                            @csrf
+                                            <!-- Name input -->
+                                            <div class="form-outline rounded-0 mb-4">
+                                                <input type="text" id="form1Example1" name="name" class="form-control  " style="background-color: #fff !important; color: #1c1c1c !important" required/>
+                                                <label class="form-label text-center rounded-0" for="form1Example1">Name</label>
+                                            </div>
+
+                                            <!-- Phone input -->
+                                            <div class="mb-4">
+                                                <input type="phone" name="phone" id="phone-iti"
+                                                class="form-control bg-white text-dark form-control-lg  iti-phone"
+                                                placeholder="{{ trans('frontLang.phone') }}"
+                                                required
+                                                style="background-color: #fff !important; color: #1c1c1c !important"/>
+                                            </div>
+
+                                            {{-- URL --}}
+                                            <input type="hidden" name="page_url" value="{{ url()->current() }}">
+
+                                            <!-- Email input -->
+                                            <div class="form-outline rounded-0 mb-4">
+                                                <input type="email" id="form1Example2" name="email" class="form-control  "  style="background-color: #fff !important; color: #1c1c1c !important" required/>
+                                                <label class="form-label text-center rounded-0" for="form1Example2">Email</label>
+                                            </div>
+
+                                            <!-- Submit button -->
+                                            <button type="submit" class="btn btn-block rounded-0 text-uppercase" id="popup-submit" style="background-color: #1c1c1c !important; color: #ccc !important;">SUBSCRIBE</button>
+
+                                        </form>
+                                        {{-- <p class="text-decoration-underline text-dark " onClick="PopUp('hide">I'm not interested</p> --}}
+                                    </div>
+                                    <button class="text-decoration-underline mt-3 mx-auto text-center" style="text-decoration: none !important; color: #848484 !important;" data-mdb-dismiss="modal" id="popup-yes">I'm not interested</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            {{-- mobile popup --}}
+            <div class="modal top fade " id="popupBoxMobile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                <div class="modal-dialog modal-lg  modal-dialog-centered">
+                    <div class="modal-content rounded-0">
+                        <div class="modal-body " style="background-image: url('{{URL::asset('public/assets/images/sub3.png')}}')">
+                            {{-- <img src="{{ URL('public/assets/asset/email_icon.png') }}" style="height: 40px; width:40px;" class="position-absolute ms-2 mt-2"> --}}
+                            <div class="row h-100 p-0 my-auto align-middle">
+
+
+                                <div class="col-12 p-3 d-flex flex-column mx-auto my-auto h-100" >
+                                    <img src="{{ URL('public/assets/images/logo-black.png') }}" style="height: 70px; width:auto;" class="mx-auto">
+
+                                    <div class="row mx-auto h-100 my-0">
+                                        <p class="mx-auto fw-bold text-center m-0 pt-3" style="font-size: 1.5rem; line-height: 1.2 !important; color: #525252 !important">
+                                            Register Your Interest!
+                                        </p>
+                                        <p class=" container mx-auto mt-3 px-1 text-center " style="font-size: 1rem !important; color: #525252 !important; text-align: center !important; line-height: 1.5 !important;">
+                                            Leave your details below and we will reach you right away!
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 h-100 mx-auto text-center">
+                                    <div class="row my-auto mx-auto h-100 p-2 rounded-1 shadow"  style="background-color: #fff !important;">
+                                        <form class="contact-form py-2" method="post" action="{{URL('/request_detail/submit')}}">
+                                            @csrf
+                                            <!-- Name input -->
+                                            <div class="form-outline rounded-0 mb-4">
+                                                <input type="text" id="form1Example1" name="name" class="form-control  " style="background-color: #fff !important; color: #1c1c1c !important" required/>
+                                                <label class="form-label text-center rounded-0" for="form1Example1">Name</label>
+                                            </div>
+
+                                            <!-- Phone input -->
+                                            <div class="mb-4">
+                                                <input type="phone" name="phone" id="phone-iti"
+                                                class="form-control bg-white text-dark form-control-lg  iti-phone"
+                                                placeholder="{{ trans('frontLang.phone') }}"
+                                                required
+                                                style="background-color: #fff !important; color: #1c1c1c !important"/>
+                                            </div>
+
+                                            {{-- URL --}}
+                                            <input type="hidden" name="page_url" value="{{ url()->current() }}">
+
+                                            <!-- Email input -->
+                                            <div class="form-outline rounded-0 mb-4">
+                                                <input type="email" id="form1Example2" name="email" class="form-control  "  style="background-color: #fff !important; color: #1c1c1c !important" required/>
+                                                <label class="form-label text-center rounded-0" for="form1Example2">Email</label>
+                                            </div>
+
+                                            <!-- Submit button -->
+                                            <button type="submit" class="btn btn-block rounded-0 text-uppercase" id="popup-submit-mobile" style="background-color: #1c1c1c !important; color: #ccc !important;">SUBSCRIBE</button>
+
+                                        </form>
+                                        {{-- <p class="text-decoration-underline text-dark " onClick="PopUp('hide">I'm not interested</p> --}}
+                                    </div>
+                                    <button class="text-decoration-underline mt-3 mx-auto text-center" style="text-decoration: none !important; color: #848484 !important;" data-mdb-dismiss="modal" id="popup-yes-mobile">I'm not interested</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- POPUP -->
+
+
         <script src="{{URL::asset('public/assets/js/autocomplete.js')}}" type="text/javascript"></script>
 		<script src="{{URL::asset('public/assets/js/script.js')}}" type="text/javascript"></script>
         <script src="{{URL::asset('public/assets/js/map.js')}}" type="text/javascript"></script>
@@ -519,6 +560,296 @@
             }
 
         </script>
+
+
+
+
+
+
+        {{-- POPUP FUNCTION --}}
+        <script>
+
+            $(document).ready(function(){
+                if ($(window).width() > 991) {
+                    // showPopup()
+                    // $('#popupBoxDesktop').modal('show');
+                    // setInterval(showPopup, 10000);
+                } else {
+                    // $('#popupBoxMobile').modal('show');
+                    // showPopupMobile()
+                    // setInterval(showPopupMobile, 10000);
+                }
+            });
+
+            function showPopup(){
+                var YesBtn = localStorage.getItem("YesBtn");
+
+                var popup_submit = localStorage.getItem("popup_submit");
+
+                //CHECK IF POPUP WAS NOT CLOSED BY USER
+                if(YesBtn != 1 && popup_submit != 1){
+
+                    setTimeout(() => {
+
+                        $('#popupBoxDesktop').modal('show');
+
+                        //IF USER CLOSED POPUP, SET A STATUS IN USER'S BROWSER
+                        $('#popup-yes').on('click', function(){
+
+                            //SET LOCALSTORAGE
+                            var popup_closed_at = new Date();
+
+                            localStorage.setItem("popup_closed_at", popup_closed_at);
+
+                            localStorage.setItem("YesBtn", 1);
+
+                            //HIDE MODAL
+                            $('#popupBoxDesktop').modal('hide');
+                        });
+
+                        $('#popup-submit').on('click', function(){
+
+                            //SET LOCALSTORAGE
+                            localStorage.setItem("popup_submit", 1);
+
+                            //SET CURRENT TIMESTAMP FOR SUBMISSION
+                            var popup_submited_at = new Date();
+                            localStorage.setItem("popup_submited_at", popup_submited_at);
+
+                        })
+                    }, 2000);
+
+                } else if(YesBtn == 1 && popup_submit != 1) {
+
+                    //GET CURRENT TIME
+                    var popup_time_page_load_at = new Date();
+
+                    // GET TIME FROM
+                    var popup_time_closed_at = new Date(localStorage.getItem("popup_closed_at"));
+
+                    var popup_time_difference = popup_time_page_load_at - popup_time_closed_at ;
+
+                    if(popup_time_difference > 60000)
+                    {
+                        localStorage.removeItem("YesBtn");
+
+                        localStorage.removeItem("popup_closed_at");
+
+                        setTimeout(() => {
+                            $('#popupBoxDesktop').modal('show');
+
+                            //IF USER CLOSED POPUP, SET A STATUS IN USER'S BROWSER
+                            $('#popup-yes').on('click', function(){
+
+                                //SET LOCALSTORAGE
+                                var popup_closed_at = new Date();
+                                localStorage.setItem("popup_closed_at", popup_closed_at);
+
+                                localStorage.setItem("YesBtn", 1);
+
+                                //HIDE MODAL
+                                $('#popupBoxDesktop').modal('hide');
+                            })
+
+                            $('#popup-submit').on('click', function(){
+
+                                //SET LOCALSTORAGE
+                                localStorage.setItem("popup_submit", 1);
+
+                                //SET CURRENT TIMESTAMP FOR SUBMISSION
+                                var popup_submited_at = new Date();
+                                localStorage.setItem("popup_submited_at", popup_submited_at);
+
+                            })
+                        }, 2000);
+                    }
+
+
+                } else if (popup_submit == 1){
+
+                    //GET CURRENT TIME
+                    var popup_time_page_load_at = new Date();
+
+                    // GET TIME FROM
+                    var popup_submited_at = new Date(localStorage.getItem("popup_submited_at"));
+
+                    var popup_time_difference = popup_time_page_load_at - popup_submited_at ;
+
+                    if(popup_time_difference > 3600000)
+                    {
+                        localStorage.removeItem("popup_submit");
+
+                        localStorage.removeItem("popup_submited_at");
+
+                        setTimeout(() => {
+                            $('#popupBoxDesktop').modal('show');
+
+                            //IF USER CLOSED POPUP, SET A STATUS IN USER'S BROWSER
+                            $('#popup-yes').on('click', function(){
+
+                                //SET LOCALSTORAGE
+                                var popup_closed_at = new Date();
+                                localStorage.setItem("popup_closed_at", popup_closed_at);
+
+                                localStorage.setItem("YesBtn", 1);
+
+                                //HIDE MODAL
+                                $('#popupBoxDesktop').modal('hide');
+                            })
+
+                            $('#popup-submit').on('click', function(){
+
+                                //SET LOCALSTORAGE
+                                localStorage.setItem("popup_submit", 1);
+
+                                //SET CURRENT TIMESTAMP FOR SUBMISSION
+                                var popup_submited_at = new Date();
+                                localStorage.setItem("popup_submited_at", popup_submited_at);
+
+                            })
+                        }, 2000);
+                    }
+                }
+            };
+
+
+
+            function showPopupMobile(){
+                var YesBtn = localStorage.getItem("YesBtn");
+
+                var popup_submit = localStorage.getItem("popup_submit");
+
+                //CHECK IF POPUP WAS NOT CLOSED BY USER
+                if(YesBtn != 1 && popup_submit != 1){
+
+                    setTimeout(() => {
+
+                        $('#popupBoxMobile').modal('show');
+
+                        //IF USER CLOSED POPUP, SET A STATUS IN USER'S BROWSER
+                        $('#popup-yes-mobile').on('click', function(){
+
+                            //SET LOCALSTORAGE
+                            var popup_closed_at = new Date();
+
+                            localStorage.setItem("popup_closed_at", popup_closed_at);
+
+                            localStorage.setItem("YesBtn", 1);
+
+                            //HIDE MODAL
+                            $('#popupBoxMobile').modal('hide');
+                        });
+
+                        $('#popup-submit-mobile').on('click', function(){
+
+                            //SET LOCALSTORAGE
+                            localStorage.setItem("popup_submit", 1);
+
+                            //SET CURRENT TIMESTAMP FOR SUBMISSION
+                            var popup_submited_at = new Date();
+                            localStorage.setItem("popup_submited_at", popup_submited_at);
+
+                        })
+                    }, 2000);
+
+                } else if(YesBtn == 1 && popup_submit != 1) {
+
+                    //GET CURRENT TIME
+                    var popup_time_page_load_at = new Date();
+
+                    // GET TIME FROM
+                    var popup_time_closed_at = new Date(localStorage.getItem("popup_closed_at"));
+
+                    var popup_time_difference = popup_time_page_load_at - popup_time_closed_at ;
+
+                    if(popup_time_difference > 60000)
+                    {
+                        localStorage.removeItem("YesBtn");
+
+                        localStorage.removeItem("popup_closed_at");
+
+                        setTimeout(() => {
+                            $('#popupBoxMobile').modal('show');
+
+                            //IF USER CLOSED POPUP, SET A STATUS IN USER'S BROWSER
+                            $('#popup-yes-mobile').on('click', function(){
+
+                                //SET LOCALSTORAGE
+                                var popup_closed_at = new Date();
+                                localStorage.setItem("popup_closed_at", popup_closed_at);
+
+                                localStorage.setItem("YesBtn", 1);
+
+                                //HIDE MODAL
+                                $('#popupBoxMobile').modal('hide');
+                            })
+
+                            $('#popup-submit-mobile').on('click', function(){
+
+                                //SET LOCALSTORAGE
+                                localStorage.setItem("popup_submit", 1);
+
+                                //SET CURRENT TIMESTAMP FOR SUBMISSION
+                                var popup_submited_at = new Date();
+                                localStorage.setItem("popup_submited_at", popup_submited_at);
+                            })
+                        }, 2000);
+                    }
+
+
+                } else if (popup_submit == 1){
+
+                    //GET CURRENT TIME
+                    var popup_time_page_load_at = new Date();
+
+                    // GET TIME FROM
+                    var popup_submited_at = new Date(localStorage.getItem("popup_submited_at"));
+
+                    var popup_time_difference = popup_time_page_load_at - popup_submited_at ;
+
+                    if(popup_time_difference > 3600000)
+                    {
+                        localStorage.removeItem("popup_submit");
+
+                        localStorage.removeItem("popup_submited_at");
+
+                        setTimeout(() => {
+                            $('#popupBoxMobile').modal('show');
+
+                            //IF USER CLOSED POPUP, SET A STATUS IN USER'S BROWSER
+                            $('#popup-yes-mobile').on('click', function(){
+
+                                //SET LOCALSTORAGE
+                                var popup_closed_at = new Date();
+                                localStorage.setItem("popup_closed_at", popup_closed_at);
+
+                                localStorage.setItem("YesBtn", 1);
+
+                                //HIDE MODAL
+                                $('#popupBoxMobile').modal('hide');
+                            })
+
+                            $('#popup-submit-mobile').on('click', function(){
+
+                                //SET LOCALSTORAGE
+                                localStorage.setItem("popup_submit", 1);
+
+                                //SET CURRENT TIMESTAMP FOR SUBMISSION
+                                var popup_submited_at = new Date();
+                                localStorage.setItem("popup_submited_at", popup_submited_at);
+
+                            })
+                        }, 2000);
+                    }
+                }
+            };
+
+        </script>
+
+
+
+
+
 
         {{-- <script>
           $(document).ready(function() {
