@@ -597,7 +597,8 @@ return array (
     'OurTeam' => 'OUR TEAM',
     'MoreFilter' => 'More Filter',
     'Handover' => 'Handover',
-
+    'popupDesc' => 'Leave your details below and we will reach you right away!',
+    'popupNotInterested' => "I'm not interested",
 
 
 
