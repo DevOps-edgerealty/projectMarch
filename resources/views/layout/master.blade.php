@@ -243,9 +243,6 @@
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="dWIUAMD1"></script>
 
-
-
-
         @include('layout.header')
 
         @yield('content')
@@ -280,7 +277,6 @@
         </div>
 
         <a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks" class="float" target="_blank">
-
             <i class="fab fa-whatsapp my-float"></i>
         </a>
 
@@ -324,7 +320,6 @@
                 </div>
             </div>
         </div>
-
 
         <!-- POPUP -->
             <style>

@@ -151,12 +151,9 @@ else
     <div class="container-fluid containerization">
         <div class="row">
             {{-- <h3 class="text-left">{{ trans('frontLang.dubaiCommunities') }}</h3> --}}
-            <P style="font-size: 16px;line-height: 25px;">Are you looking for the best area to live in Dubai? With Edge Realty comprehensive Dubai area guides, you can discover which areas are best for living in Dubai. Learn more about the best in the area, as well as what you can expect to get in one of the most popular neighbourhoods within Dubai.</p>
-
+            <P style="font-size: 16px;line-height: 25px;">Вы ищете лучший район для жизни в Дубае? С помощью всеобъемлющих путеводителей по районам Дубая от Edge Realty вы сможете узнать, какие районы лучше всего подходят для жизни в Дубае. Узнайте больше о лучших районах, а также о том, на что вы можете рассчитывать в одном из самых популярных районов Дубая.</p>
         </div>
-
     </div>
-
 </section>
 @else
 <section class="">

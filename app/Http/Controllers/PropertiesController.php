@@ -390,6 +390,8 @@ class PropertiesController extends Controller
 
         $this->data['amenities_array'] = $amenities_array;
 
+        // dd($amenities_array, $amenities);
+
         $this->data['amenities'] = $amenities;
 
 

@@ -717,7 +717,7 @@
                         <p class="my-4">
                             <a style="color: #ABB7B7 ;text-transform: lowercase; font-size: 0.95vw !important;" href="mailto:info@edgerealty.ae" class="__cf_email__" data-cfemail="a5cccbc3cae5c3cccbc1cdcad0d6c08bc6cac8">
                             <i class="fas fa-envelope me-3"></i>
-                            info@edgerealty.ae
+                            {{ trans('frontLang.email') }}
                             </a>
                         </p>
                         <!-- Facebook -->

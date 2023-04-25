@@ -313,7 +313,7 @@
 </section>
 
 
-{{-- ARABIC --}}
+
 @if ($langSeg == 'ar')
     <style>
         .breadcrumb-item + .breadcrumb-item:before {
@@ -330,12 +330,17 @@
             <div class="row">
 
                 <div class="col-lg-12 mb-4">
-                    {{-- <nav aria-label="breadcrumb">
+                    <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class="text-white"><i class="fas fa-home"> </i> {{ trans('frontLang.Home') }}</a></li>
+                            @if ($property_detail->type_id == '1')
+                                <li class="breadcrumb-item text-white"><a href="{{url($langSeg .'/dubai-properties/sale/apartment-for-sale-in-Dubai')}}" class="text-white"> شقق للبيع</a></li>
+                            @else
+                                <li class="breadcrumb-item text-white"><a href="{{url($langSeg .'/dubai-properties/rent/apartment-for-rent-in-Dubai')}}" class="text-white"> شقق للايجار</a></li>
+                            @endif
                             <li class="breadcrumb-item active text-white" aria-current="page">{{$property_detail->$title_var}}</li>
                         </ol>
-                    </nav> --}}
+                    </nav>
 
                     <h3 class="fw-bold">
                         {{$property_detail->$title_var}}
@@ -420,7 +425,7 @@
                 <div class="col-lg-5 position-relative">
                     <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}">
                         <button class="desktop-show position-absolute btn btn-lg btn-outline-white rounded-0 bg-dark text-white my-auto" style="bottom: 45px; left: 130px; z-index: 100 !important;">
-                            Show all photos
+                            إظهار الصور
                         </button>
                     </a>
                     <a href="{{url($langSeg .'/'.'properties/map')}} ">
@@ -857,6 +862,27 @@
         </div>
     </section>
 
+
+    {{-- Amenities --}}
+    <section class="desktop-show mt-2 mb-2" dir="rtl">
+        <div class="container-fluid containerization">
+            <div class="row">
+                <div class="row">
+                    <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
+                    @foreach ($amenities_array as $amenity_id => $amenity_name)
+                        @foreach ($amenities as $amenity)
+                            @if($amenity == $amenity_id)
+                                <div class="col-lg-3 mb-4" style="color: #ccc">
+                                    <i class="far fa-check-circle"></i>  <span >{!!  $amenity_name[$amenity_name_var] !!}</span>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- map & description Desktop --}}
     {{-- <section class="desktop-show mt-4 mb-2" style="direction: rtl">
         <div class="container-fluid containerization">
@@ -920,7 +946,7 @@
                     <span >
                         <style>
                             p {
-                                color: #fff !important; font-size: 1rem !important; line-height: 1.8 !important; text-align: justify !important;
+                                color: #ccc !important; font-size: 1rem !important; line-height: 1.8 !important; text-align: justify !important;
                             }
                         </style>
 
@@ -951,45 +977,104 @@
                 </div>
             </div>
 
-            <div class="my-3">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a style="width:50%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white"><i class="fas fa-phone-alt fa-2x"> </i>  </a>
 
-                        {{-- <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#book_a_viewing_mobile" class="btn btn-outline-white"><i class="far fa-calendar-check fa-2x"> </i></a> --}}
+            @if($langSeg == 'ar')
+                    <section class="mt-5 mb-5 mobile-show" dir="rtl">
+                        <div class="container">
+                            <div class="row">
+                                <h3 class="mb-3 mt-4 fw-light ">{{ trans('frontLang.amenities') }}</h3>
+                                @foreach ($amenities_array as $amenity_id => $amenity_name)
+                                    @foreach ($amenities as $amenity)
+                                        @if($amenity == $amenity_id)
+                                            <div class="col-lg-12 mb-2" style="width: 100%; color: #ccc !important;" >
+                                                <i class="far fa-check-circle"></i> &nbsp; {!!  $amenity_name[$amenity_name_var] !!}
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endforeach
 
-                        <a style="width:50%" class=" btn btn-outline-white" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
+                            </div>
+                        </div>
+                    </section>
+                @else
+                    <section class="mt-5 mb-5 mobile-show">
+                        <div class="container">
+                            <div class="row">
+                                <h3 class="mb-3 mt-4 fw-light ">{{ trans('frontLang.amenities') }}</h3>
+                                @foreach ($amenities_array as $amenity_id => $amenity_name)
+                                    @foreach ($amenities as $amenity)
+                                        @if($amenity == $amenity_id)
+                                            <div class="col-lg-12 mb-2" style="width: 100%; color: #ccc !important;" >
+                                                <i class="far fa-check-circle"></i> &nbsp; {!!  $amenity_name[$amenity_name_var] !!}
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endforeach
 
+                            </div>
+                        </div>
+                    </section>
+                @endif
+
+
+            <div class="row mx-auto mb-4 mt-4">
+
+                <div class="col-lg-12">
+                    <?php
+
+                    $Property_map_embed_code=str_replace('style="border:0"','',$property_detail->map_embed_code);
+
+                    $Property_map_embed_code=str_replace('frameborder="0"','',$Property_map_embed_code);
+
+                    echo $Property_map_embed_code=str_replace('width="','style="height: 200px !important;width:100%!important" width="',$Property_map_embed_code);
+
+                    ?>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+            {{-- <div class="row mt-0 mb-3 border-top border-bottom border-white py-3"> --}}
+            <div class="row mt-0 mb-3 py-3">
+
+                <div class="row mt-0 mb-0 mx-auto">
+                    <div class="col-lg-12 mx-auto">
+                        <a style="width:32%" href="tel:{{$property_detail->agentss->phone}}" class="btn btn-outline-white rounded-0 "><i class="fas fa-phone-alt fa-2x"> </i>  </a>
+
+                        <a style="width:32%" href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-mobile-property" class="btn btn-outline-white rounded-0 "><i class="far fa-calendar-check fa-2x"> </i></a>
+
+                        <a style="width:32%" class=" btn btn-outline-white rounded-0 " href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
                             <i class="fab fa-whatsapp fa-2x"> </i>
                         </a>
                     </div>
 
-
+                    {{-- mobile book a viewing --}}
                     <div class="modal fade" id="exampleModal-mobile-property" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered rounded-0">
-                            <div class="modal-content bg-black">
+                            <div class="modal-content " style="background-color: #1c1c1c !important;">
                                 <div class="modal-header py-2">
                                     <h5 class="modal-title text-center text-white" id="exampleModalLabel">{{ trans('frontLang.bookaviewing') }} </h5>
                                     {{-- <button type="button" class="btn-close text-white bg-white" data-mdb-dismiss="modal" aria-label="Close"></button> --}}
                                 </div>
-                                <div class="modal-body bg-black">
+                                <div class="modal-body ">
                                     <div class="row">
 
                                         <div class="col-lg-12">
                                             <h6 class="text-center text-white mb-4">{{$property_detail->$title_var}}</h6>
-                                            <form class="contact-form" method="post" action="{{URL('/book_view/submit')}}">
+                                            <form class="contact-form" method="post" id="bookAViewingmobile" action="{{URL('/book_view/submit')}}">
                                                 @csrf
                                                 @honeypot
                                                 <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
 
                                                 <div class="mb-4">
                                                     <label for="" class="text-white">{{ trans('frontLang.selectdate') }}</label>
-                                                    <input name="book_date" type="date" class="form-control bg-black form-control-lg border border-white text-white"  name="viewing Date" required>
+                                                    <input name="book_date" type="date" class="form-control  form-control-lg border border-white text-white"  name="viewing Date" required>
 
                                                 </div>
                                                 <div class="mb-4">
                                                     <label for="" class="text-white">{{ trans('frontLang.selecttime') }}</label>
-                                                    <select name="book_time"  class="form-control bg-black form-control-lg border border-white text-white"  required>
+                                                    <select name="book_time"  class="form-control  form-control-lg border border-white text-white"  required>
                                                         <option value="9:00 AM">9:00 AM</option>
                                                         <option value="10:00 AM">10:00 AM</option>
                                                         <option value="11:00 AM">11:00 AM</option>
@@ -1008,19 +1093,19 @@
                                                 </div>
 
                                                 <div class=" mb-4">
-                                                    <input type="text" name="name" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.fullname') }}"  required />
+                                                    <input type="text" name="name" class="form-control   form-control-lg border border-white" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
                                                 </div>
 
                                                 <!-- Email input -->
                                                 <div class="mb-4">
-                                                    <input type="phone" name="phone" class="form-control bg-black  form-control-lg iti-phone border border-white" placeholder="{{ trans('frontLang.phone') }}" required />
+                                                    <input type="phone" name="phone" class="form-control   form-control-lg iti-phone border border-white" placeholder="{{ trans('frontLang.phone') }}" required />
 
                                                 </div>
 
                                                 <!-- Email input -->
                                                 <div class="mb-4">
-                                                    <input type="email" name="email" class="form-control bg-black  form-control-lg border border-white" placeholder="{{ trans('frontLang.email') }}" required />
+                                                    <input type="email" name="email" class="form-control   form-control-lg border border-white" placeholder="{{ trans('frontLang.email') }}" required />
 
                                                 </div>
 
@@ -1046,20 +1131,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mx-auto mb-4">
 
-                <div class="col-lg-12">
-                    <?php
-
-                    $Property_map_embed_code=str_replace('style="border:0"','',$property_detail->map_embed_code);
-
-                    $Property_map_embed_code=str_replace('frameborder="0"','',$Property_map_embed_code);
-
-                    echo $Property_map_embed_code=str_replace('width="','style="height: 200px !important;width:100%!important" width="',$Property_map_embed_code);
-
-                    ?>
-                </div>
-            </div>
 
         </div>
 
@@ -1080,8 +1152,8 @@
                     @if($properties->count() != 0)
 
                     @foreach ($properties as $property)
-                        <div class="col-lg- mb-5 mt-2">
-                            <div class="card bg-black rounded-0 border border-white border-1" style="height: 460px;">
+                        <div class="col-lg-4 mb-5 mt-2 d-flex align-items-stretch">
+                            <div class="card rounded-0 h-100" style="height: 460px;">
                                 <div class="communities-newlaunch"></div>
                                 @foreach($property->images  as $single_img)
                                     @if($property->images->first()==$single_img)
@@ -1091,68 +1163,52 @@
                                     @endif
                                 @endforeach
 
-                                <div class="card-body px-3" style="padding: 0rem">
-                                    @if ($property->type_id == '1')
-                                        <div class="AED skill" style="display: block !important">
-                                            <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                <span style="color: #fff; ">
-                                                    AED {{ number_format($property->price) }}
-                                                </span>
-                                            </h5>
-                                        </div>
+                                <div class="card-body px-3 py-0" style="direction: rtl">
+                                    <div class="row" style="height: 100% !important;">
 
-                                        <div class="USD skill">
-                                            <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                <span style="color: #fff;">
-                                                    {{ number_format($property->price_usd) }} USD </b>
-                                                </span>
-                                            </h5>
-                                        </div>
-                                    @else
-                                        <div class="AED skill" style="display: block !important">
-                                            <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                {{ trans('frontLang.yearly') }}
 
-                                                <span style="color: #fff; ">
-                                                    AED {{ number_format($property->price) }}
-                                                </span>
-                                            </h5>
-                                        </div>
-
-                                        <div class="USD skill">
-                                            <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                {{ trans('frontLang.yearly') }}
-                                                <span style="color: #fff;">
-                                                    {{ number_format($property->price_usd) }} USD </b>
-                                                </span>
-                                            </h5>
-                                        </div>
-                                    @endif
-
-                                    <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}"  class="my-0">
-                                        <h6 class="card-title fw-light text-white mt-2 mb-0" style="font-size: 1rem !important">
-                                            {{ Str::limit($property->$title_var, 80) }}
-                                        </h6>
-                                    </a>
-                                    <p class="fw-light mt-0">
-                                        {{ $property->locationss->$name_var }}
-                                    </p>
-
-                                    <p class="card-text">
-                                    </p>
-
-                                    <div class="row" style="display:block;font-size: 15px;" >
-                                        <span style="color: #848484">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
-
-                                        <span style="color: #848484">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
-
-                                        <span style="color: #848484">
-                                            @if ($langSeg == 'en')
-                                                {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                        <div class="col-md-12 d-flex align-items-start flex-column">
+                                            @if ($property->type_id == '1')
+                                                <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> <span style="color:;"> $ {{ number_format($property->price_usd) }} </span></b></h5>
+                                                <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> <span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} </span></b></h5>
                                             @else
-                                                {{ round($property->area/10.764, 2) }} {{ trans('frontLang.sqFt') }}
+
+                                                <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b><span style="color:;"> $ {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
+                                                <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b><span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
                                             @endif
+
+                                            <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                <p class="card-title" style="color: #848484 !important; font-size: 0.95vw !important;">{{ $property->$title_var }}</p>
+                                            </a>
+
+
+
+                                            {{-- <hr> --}}
+                                            <div class="row mt-auto w-100" >
+                                                <div class="col-lg-12 d-flex justify-content-around px-0" style="display:block;">
+                                                    <span class="ps-0 pe-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"> <i class="fas fa-bed"></i>  {{$property->bedrooms}}  </span> <span style="color: #848484">&#x2022;</span>
+
+                                                    <span class="px-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} </span> <span style="color: #848484">&#x2022;</span>
+
+                                                    <span class="px-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        {{-- <div class="col-md-4 align-self-center">
+                                            @foreach($agents  as $agent)
+                                                @if($property->agent_id == $agent->id)
+                                                    <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: 100px; width: 100%; border-radius: 50%; border: 0.5px solid #848484 !important;" class="mt-0 pe-0 shadow"  alt="pr-agent" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
+                                                @endif
+                                            @endforeach
+                                        </div> --}}
+
+
                                     </div>
+
+
+
                                 </div>
 
                             </div>
@@ -1234,8 +1290,8 @@
                         @if($properties->count() != 0)
 
                         @foreach ($properties as $property)
-                            <div class="col-lg-4 mb-4 mt-2">
-                                <div class="card bg-black rounded-0 " style="height: 480px; border: 0.5px #848484 solid;">
+                            <div class="col-lg-4 mb-5 mt-2 p-0 mx-0 d-flex align-items-stretch">
+                                <div class="card rounded-0 h-100" style="height: 460px;">
                                     <div class="communities-newlaunch"></div>
                                     @foreach($property->images  as $single_img)
                                         @if($property->images->first()==$single_img)
@@ -1245,69 +1301,56 @@
                                         @endif
                                     @endforeach
 
-                                    <div class="card-body px-3 h-100" style="padding: 0rem">
+                                    <div class="card-body px-3 py-0 " style="direction: rtl">
+                                        <div class="row" style="height: 100% !important;">
 
-                                        @if ($property->type_id == '1')
-                                            <div class="AED skill" style="display: block !important">
-                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    <span style="color: #fff; ">
-                                                        AED {{ number_format($property->price) }}
-                                                    </span>
-                                                </h5>
-                                            </div>
 
-                                            <div class="USD skill">
-                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    <span style="color: #fff;">
-                                                        {{ number_format($property->price_usd) }} USD </b>
-                                                    </span>
-                                                </h5>
-                                            </div>
-                                        @else
-                                            <div class="AED skill" style="display: block !important">
-                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    {{ trans('frontLang.yearly') }}
-
-                                                    <span style="color: #fff; ">
-                                                        AED {{ number_format($property->price) }}
-                                                    </span>
-                                                </h5>
-                                            </div>
-
-                                            <div class="USD skill">
-                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    {{ trans('frontLang.yearly') }}
-                                                    <span style="color: #fff;">
-                                                        {{ number_format($property->price_usd) }} USD </b>
-                                                    </span>
-                                                </h5>
-                                            </div>
-                                        @endif
-
-                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}"  class="my-0">
-                                            <h6 class="card-title fw-light mt-2 mb-0" style="color: #848484 !important; font-size: 1rem !important">
-                                                {{ Str::limit($property->$title_var, 50) }}
-                                            </h6>
-                                        </a>
-
-                                        <p class="fw-light mt-3" style="color: #848484 !important;">
-                                            {{ $property->locationss->$name_var }}
-                                        </p>
-
-                                        <div class="row" style="display:block;font-size: 15px;" >
-                                            <span style="color: #848484" class="fw-light">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
-
-                                            <span style="color: #848484" class="fw-light">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
-
-                                            <span style="color: #848484" class="fw-light">
-                                                @if ($langSeg == 'en')
-                                                    {{ $property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                            <div class="col-md-12 d-flex align-items-start flex-column">
+                                                @if ($property->type_id == '1')
+                                                    <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> <span style="color:;"> $ {{ number_format($property->price_usd) }} </span></b></h5>
+                                                    <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> <span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} </span></b></h5>
                                                 @else
-                                                    {{ round($property->area/10.764, 2) }} {{ trans('frontLang.sqFt') }}
+
+                                                    <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b><span style="color:;"> $ {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
+                                                    <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b><span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
                                                 @endif
-                                            </span>
+
+                                                <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                    <p class="card-title" style="color: #848484 !important; font-size: 0.95vw !important;">{{ $property->$title_var }}</p>
+                                                </a>
+
+
+
+                                                {{-- <hr> --}}
+                                                <div class="row mt-auto w-100 pb-2" >
+                                                    <div class="col-lg-12 d-flex justify-content-around px-0" style="display:block;">
+                                                        <span class="ps-0 pe-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"> <i class="fas fa-bed"></i>  {{$property->bedrooms}}  </span> <span style="color: #848484">&#x2022;</span>
+
+                                                        <span class="px-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} </span> <span style="color: #848484">&#x2022;</span>
+
+                                                        <span class="px-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {{-- <div class="col-md-4 align-self-center">
+                                                @foreach($agents  as $agent)
+                                                    @if($property->agent_id == $agent->id)
+                                                        <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: 100px; width: 100%; border-radius: 50%; border: 0.5px solid #848484 !important;" class="mt-0 pe-0 shadow"  alt="pr-agent" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
+                                                    @endif
+                                                @endforeach
+                                            </div> --}}
                                         </div>
                                     </div>
+
+                                    {{-- <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; direction: rtl">
+                                        <table style="width: 100%">
+                                            <tr>
+                                                <td style="text-align: center; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-desk-ar-{{ $property->id }}" style="color: #ccc !important;  font-size: 0.95vw !important;"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important;  font-size: 0.95vw !important;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                            </tr>
+                                        </table>
+                                    </div> --}}
 
                                 </div>
                             </div>
@@ -1382,7 +1425,7 @@
 
 
 
-{{-- ENGLISH --}}
+
 @else
 
     {{-- header / breadcrumbs --}}
@@ -1391,12 +1434,27 @@
             <div class="row">
                 <div class="col-lg-10 mb-4">
 
-                    {{-- <nav aria-label="breadcrumb">
+                    <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item text-white"><a href="{{URL('')}}" class="text-white"><i class="fas fa-home"> </i> {{ trans('frontLang.Home') }}</a></li>
+                            @if ($property_detail->type_id == '1')
+
+                                @if($langSeg =='ru')
+                                    <li class="breadcrumb-item text-white"><a href="{{url($langSeg .'/dubai-properties/sale/apartment-for-sale-in-Dubai')}}" class="text-white">  Квартиры на продажу</a></li>
+                                @else
+                                    <li class="breadcrumb-item text-white"><a href="{{url($langSeg .'/dubai-properties/sale/apartment-for-sale-in-Dubai')}}" class="text-white"> Apartments for Sale</a></li>
+                                @endif
+                            @else
+                                @if($langSeg =='ru')
+                                    <li class="breadcrumb-item text-white"><a href="{{url($langSeg .'/dubai-properties/rent/apartment-for-rent-in-Dubai')}}" class="text-white"> Квартиры в аренду</a></li>
+                                @else
+                                    <li class="breadcrumb-item text-white"><a href="{{url($langSeg .'/dubai-properties/rent/apartment-for-rent-in-Dubai')}}" class="text-white"> Apartments for Rent</a></li>
+                                @endif
+                            @endif
+
                             <li class="breadcrumb-item active text-white" aria-current="page">{{$property_detail->$title_var}}</li>
                         </ol>
-                    </nav> --}}
+                    </nav>
 
                     <h3 class="fw-bold">
                         {{$property_detail->$title_var}}
@@ -1504,32 +1562,39 @@
             <div class="row">
                 <div class="col-md-6 position-relative">
                     <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}">
-                        <button
-                            class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn"
-                            style="bottom: 45px; left: 130px; z-index: 100 !important;"
-                            >
-                            Show all photos
-                        </button>
+                        @if($langSeg == 'ru')
+                            <button
+                                class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn"
+                                style="bottom: 45px; left: 90px; z-index: 100 !important;">
+                                Показать фотографии
+                            </button>
+                        @else
+                            <button
+                                class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn"
+                                style="bottom: 45px; left: 130px; z-index: 100 !important;">
+                                Show All Photos
+                            </button>
+                        @endif
                     </a>
 
-                        @isset($mapLocation)
-                            @if($mapLocation == 'true')
-                                <a href="{{url($langSeg .'/'.'properties/map/1/'.$property_detail->id)}}">
-                                    <button class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn" style="bottom: 45px; left: 330px; z-index: 100 !important;">
-                                        {{ trans('frontLang.map') }}
-                                    </button>
-                                </a>
-                            @else
-                                 <button
-                                    class="desktop-show position-absolute bg-black btn btn-lg rounded-0 text-white my-auto mapBtn"
-                                    style="bottom: 45px; left: 330px; z-index: 100 !important;"
-                                    data-mdb-toggle="tooltip"
-                                    title="Location Not Available"
-                                >
+                    @isset($mapLocation)
+                        @if($mapLocation == 'true')
+                            <a href="{{url($langSeg .'/'.'properties/map/1/'.$property_detail->id)}}">
+                                <button class="desktop-show position-absolute btn btn-lg rounded-0 bg-black text-white my-auto mapBtn" style="bottom: 45px; left: 330px; z-index: 100 !important;">
                                     {{ trans('frontLang.map') }}
                                 </button>
-                            @endif
-                        @endisset
+                            </a>
+                        @else
+                                <button
+                                class="desktop-show position-absolute bg-black btn btn-lg rounded-0 text-white my-auto mapBtn"
+                                style="bottom: 45px; left: 330px; z-index: 100 !important;"
+                                data-mdb-toggle="tooltip"
+                                title="Location Not Available"
+                            >
+                                {{ trans('frontLang.map') }}
+                            </button>
+                        @endif
+                    @endisset
 
                     <a data-fslightbox="property-carousel" href="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}">
                         <img src="{{ URL::asset('uploads/properties/'.$property_detail->id.'/'.$property_detail->images[0]->image) }}"
@@ -1597,26 +1662,6 @@
                     </div>
 
                 </div>
-
-                {{-- <div class="col-lg-3">
-
-                        <img src="{{URL::asset('uploads/agents/2/cpagent-1629363032.jpeg')}}"  alt="">
-                        <div class="col-lg-12" >
-                            <h4 class="text-left mt-2">{{$property_detail->agentss->$name_var}}</h4>
-                            <h6 class="text-left mt-2">{{$property_detail->agentss->$designation_var}}</h6>
-                            <h6 class="text-left mt-2">{{$property_detail->agentss->$language_var}}</h6>
-                        </div>
-
-                        <a href="tel:{{$property_detail->agentss->phone}}" class="btn btn-primary btn-lg btn-block mt-4"><i style="margin-right: 10px" class="fas fa-phone-alt"> </i> {{ trans('frontLang.Callnow') }}</a>
-
-                        <a  class="first btn btn-dark btn-lg btn-block"><i style="margin-right: 10px" class="far fa-calendar-check"> </i> {{ trans('frontLang.bookaviewing') }}</a>
-
-                        <a class="first btn btn-success btn-lg btn-block" href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank">
-
-                            <i style="margin-right: 10px" class="fab fa-whatsapp"> </i> {{ trans('frontLang.whatsapp') }}
-                        </a>
-
-                </div> --}}
 
             </div>
         </div>
@@ -1929,57 +1974,27 @@
     </section>
 
 
-    {{-- map  & long description Desktop --}}
-    {{-- <section class="desktop-show mt-2 mb-2">
+    {{-- Amenities --}}
+    <section class="desktop-show mt-2 mb-2">
         <div class="container-fluid containerization">
             <div class="row">
-                <div class="col-lg-9">
-
-                    <h3 class="mb-2 mt-2 fw-bold ">
-                        {{ trans('frontLang.aboutthisproperty') }}
-                    </h3>
-
-                    <span id="about_mobile" class="" style="text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important; ">
-
-                        <span id="less" style="display: inline !important; text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important;">
-                            {{ strip_tags(substr($property_detail->$description_var, 0, 200)) }} ...
-                        </span>
-
-                        <br>
-
-                        @if ( strlen(($property_detail->$description_var)) > 100 )
-
-                            <span id="more" style="display: none !important; text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important;">
-                                {{ strip_tags(html_entity_decode($property_detail->$description_var)) }}
-                            </span>
-
-                            <br>
-                            <br>
-
-                            <button onclick="myFunction2()" class="btn btn-outline-white btn-sm" id="readMoreBtn">
-                                Read more
-                            </button>
-                        @else
-                            {!! html_entity_decode($property_detail->$description_var) !!}
-                        @endif
-                    </span>
-
-                </div>
-
-                <div class="col-lg-3 my-5 mx-auto">
-                    <?php
-
-                        $Property_map_embed_code=str_replace('style="border:0"','',$property_detail->map_embed_code);
-
-                        $Property_map_embed_code=str_replace('frameborder="0"','',$Property_map_embed_code);
-
-                        echo $Property_map_embed_code=str_replace('height="','style="height:200px !important; width: 310px !important;" height="',$Property_map_embed_code);
-
-                    ?>
+                <div class="row">
+                    <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
+                    @foreach ($amenities_array as $amenity_id => $amenity_name)
+                        @foreach ($amenities as $amenity)
+                            @if($amenity == $amenity_id)
+                                <div class="col-lg-3 mb-4" style="color: #ccc">
+                                    <i class="far fa-check-circle"></i>  <span >{!!  $amenity_name[$amenity_name_var] !!}</span>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endforeach
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
+
+
 
     {{-- description & map mobile view --}}
     <section class="mobile-show mt-2 mb-2">
@@ -2006,23 +2021,57 @@
                         {{-- <span id="lessmobile" style="display: inline !important; text-align: justify !important; color: grey !important; font-size: 1em !important; line-height: 1 !important;">
                             {{ strip_tags(substr($property_detail->$description_var, 0, 250)) }} ...
                         </span>
-
                         <br> --}}
 
                         {{-- @if ( strlen(($property_detail->$description_var)) > 250 )
-
                             <span id="moremobile" style="display: none !important; text-align: justify !important; color: grey !important; font-size: 1em !important; line-height: 1 !important;">
                                 {{ strip_tags(html_entity_decode($property_detail->$description_var)) }}
                             </span>
-
                             <br>
-
                             <button onclick="myFunction2mobile()" class="btn btn-outline-white btn-sm" id="readMoreBtnmobile">
                                 Read more
                             </button>
                         @endif --}}
                     </span>
                 </div>
+
+                @if($langSeg == 'ar')
+                    <section class="mt-5 mb-5 mobile-show" dir="rtl">
+                        <div class="container">
+                            <div class="row">
+                                <h3 class="mb-2 mt-2 fw-light ">{{ trans('frontLang.amenities') }}</h3>
+                                @foreach ($amenities_array as $amenity_id => $amenity_name)
+                                    @foreach ($amenities as $amenity)
+                                        @if($amenity == $amenity_id)
+                                            <div class="col-lg-12 mb-2" style="width: 100%; color: #ccc !important;" >
+                                                <i class="far fa-check-circle"></i> &nbsp; {!!  $amenity_name[$amenity_name_var] !!}
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endforeach
+
+                            </div>
+                        </div>
+                    </section>
+                @else
+                    <section class="mt-5 mb-5 mobile-show">
+                        <div class="container">
+                            <div class="row">
+                                <h3 class="mb-3 mt-4 fw-light ">{{ trans('frontLang.amenities') }}</h3>
+                                @foreach ($amenities_array as $amenity_id => $amenity_name)
+                                    @foreach ($amenities as $amenity)
+                                        @if($amenity == $amenity_id)
+                                            <div class="col-lg-12 mb-2" style="width: 100%; color: #ccc !important;" >
+                                                <i class="far fa-check-circle"></i> &nbsp; {!!  $amenity_name[$amenity_name_var] !!}
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endforeach
+
+                            </div>
+                        </div>
+                    </section>
+                @endif
 
                 <div class="col-lg-3 my-4 mx-auto">
                     <?php
@@ -2032,7 +2081,6 @@
                         $Property_map_embed_code=str_replace('frameborder="0"','',$Property_map_embed_code);
 
                         echo $Property_map_embed_code=str_replace('height="','style="height:200px !important; width: 100% !important;" height="',$Property_map_embed_code);
-
                     ?>
                 </div>
             </div>
@@ -2140,6 +2188,7 @@
 
         </div>
     </section>
+
 
 
 
@@ -2298,40 +2347,36 @@
     </section>
 
     <section class="mobile-show mb-2">
-        <div class="row my-3 ">
+        <div class="row mt-auto w-100" >
             <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
                 <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
                 {{ trans('frontLang.agentCardShare') }}
             </p>
-            <div class="col-12 mx-auto mb-2">
-                <div class="mx-auto ">
-                    <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
-                    <li class=" text-white  text-center px-1 mx-auto my-2" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
-                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: 100% !important">
-                        </a>
-                    </li>
+            <div class="col-lg-12 d-flex justify-content-around" style="display:block;" >
+                <span class="ps-0 pe-2" style="color: #848484;  font-size: 16px !important;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                        <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: 100% !important">
+                    </a>
+                </span>
 
-                    <li class=" text-white text-center px-1 mx-auto my-2">
-                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
-                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: 100% !important">
-                        </a>
-                    </li>
+                <span class="px-2" style="color: #848484;  font-size: 16px !important;">
+                    <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                        <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: 100% !important">
+                    </a>
+                </span>
 
-                    <li class=" text-white text-center px-1 mx-auto my-2">
-                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
-                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: 100% !important">
-                        </a>
-                    </li>
+                <span class="px-2" style="color: #848484;  font-size: 16px !important;">
+                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                        <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: 100% !important">
+                    </a>
+                </span>
 
-                    <li class=" text-white text-center px-1 mx-auto my-2">
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
-                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: 100% !important">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-                </div>
+                <span class="px-2" style="color: #848484;  font-size: 16px !important;">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                        <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: 100% !important">
+                    </a>
+                </span>
+
             </div>
         </div>
     </section>
@@ -2349,8 +2394,8 @@
                         @if($properties->count() != 0)
 
                         @foreach ($properties as $property)
-                            <div class="col-lg-4 mb-4 mt-2">
-                                <div class="card rounded-0 " style="height: 500px; border: 0.5px #ccc solid; background-color: #1c1c1c !important;">
+                            <div class="col-lg-4 mb-5 mt-2 p-0 mx-0 d-flex align-items-stretch">
+                                <div class="card rounded-0 h-100" >
                                     <div class="communities-newlaunch"></div>
                                     @foreach($property->images  as $single_img)
                                         @if($property->images->first()==$single_img)
@@ -2360,69 +2405,57 @@
                                         @endif
                                     @endforeach
 
-                                    <div class="card-body px-3 h-100" style="padding: 0rem">
+                                    <div class="card-body px-3 py-0" >
+                                        <div class="row" style="height: 100% !important;">
 
-                                        @if ($property->type_id == '1')
-                                            <div class="AED skill" style="display: block !important">
-                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    <span style="color: #ccc; ">
-                                                        AED {{ number_format($property->price) }}
-                                                    </span>
-                                                </h5>
-                                            </div>
 
-                                            <div class="USD skill">
-                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    <span style="color: #ccc;">
-                                                        {{ number_format($property->price_usd) }} USD </b>
-                                                    </span>
-                                                </h5>
-                                            </div>
-                                        @else
-                                            <div class="AED skill" style="display: block !important">
-                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    {{ trans('frontLang.yearly') }}
-
-                                                    <span style="color: #ccc; ">
-                                                        AED {{ number_format($property->price) }}
-                                                    </span>
-                                                </h5>
-                                            </div>
-
-                                            <div class="USD skill">
-                                                <h5 style="font-size: 1.5rem !important" class="fw-bold mt-3">
-                                                    {{ trans('frontLang.yearly') }}
-                                                    <span style="color: #ccc;">
-                                                        {{ number_format($property->price_usd) }} USD </b>
-                                                    </span>
-                                                </h5>
-                                            </div>
-                                        @endif
-
-                                        <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}"  class="my-0">
-                                            <h6 class="card-title fw-light mt-2 mb-0" style="color: #848484 !important; font-size: 1rem !important">
-                                                {{ Str::limit($property->$title_var, 50) }}
-                                            </h6>
-                                        </a>
-
-                                        <p class="fw-light mt-3" style="color: #848484 !important;">
-                                            {{ $property->locationss->$name_var }}
-                                        </p>
-
-                                        <div class="row" style="display:block;font-size: 15px;" >
-                                            <span style="color: #ccc" class="fw-light">  {{$property->bedrooms}} {{ trans('frontLang.bed') }}  </span>
-
-                                            <span style="color: #ccc" class="fw-light">  {{$property->bathrooms}} {{ trans('frontLang.bath') }}</span>
-
-                                            <span style="color: #ccc" class="fw-light">
-                                                @if ($langSeg == 'en')
-                                                    {{ $property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                            <div class="col-md-12 d-flex align-items-start flex-column">
+                                                @if ($property->type_id == '1')
+                                                    <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b> <span style="color:;"> $ {{ number_format($property->price_usd) }} </span></b></h5>
+                                                    <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b> <span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} </span></b></h5>
                                                 @else
-                                                    {{ round($property->area/10.764, 2) }} {{ trans('frontLang.sqFt') }}
+
+                                                    <h5 class="my-3 USD skill" style=" font-size: 1.2vw !important; display: none"> <b><span style="color:;"> $ {{ number_format($property->price_usd) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
+                                                    <h5 class="my-3 AED skill" style=" font-size: 1.2vw !important; display: block !important"> <b><span style="color:;"> {{ trans('frontLang.AED') }} {{ number_format($property->price) }} {{ trans('frontLang.yearly') }}  </b> </span></h5>
                                                 @endif
-                                            </span>
+
+                                                <a href="{{url($langSeg .'/'.'dubai-property'.'/'.$property->slug_link)}}" >
+                                                    <p class="card-title" style="color: #848484 !important; font-size: 0.95vw !important;">{{ $property->$title_var }}</p>
+                                                </a>
+
+
+
+                                                {{-- <hr> --}}
+                                                <div class="row mt-auto w-100 pb-2" >
+                                                    <div class="col-lg-12 d-flex justify-content-around px-0" style="display:block;">
+                                                        <span class="ps-0 pe-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"> <i class="fas fa-bed"></i>  {{$property->bedrooms}}  </span> <span style="color: #848484">&#x2022;</span>
+
+                                                        <span class="px-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"><i class="fas fa-bath"></i>  {{$property->bathrooms}} </span> <span style="color: #848484">&#x2022;</span>
+
+                                                        <span class="px-0" style="color: #848484;margin-right: 0;  font-size: 0.95vw !important;"><i class="fas fa-chart-area"></i>  {{$property->area}} {{ trans('frontLang.sqFt') }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {{-- <div class="col-md-4 align-self-center">
+                                                @foreach($agents  as $agent)
+                                                    @if($property->agent_id == $agent->id)
+                                                        <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: 100px; width: 100%; border-radius: 50%; border: 0.5px solid #848484 !important;" class="mt-0 pe-0 shadow"  alt="pr-agent" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
+                                                    @endif
+                                                @endforeach
+                                            </div> --}}
                                         </div>
                                     </div>
+
+
+                                    {{-- <div class="card-footer text-muted border-top-0" style="padding: 0.75rem 0rem; ">
+                                        <table style="width: 100%">
+                                            <tr>
+                                                <td style="text-align: center; width: 50%"><a href="#"  data-mdb-toggle="modal" data-mdb-target="#exampleModal-desk-ar-{{ $property->id }}" style="color: #ccc !important;  font-size: 0.95vw !important;"><i class="far fa-envelope"> </i> {{ trans('frontLang.requestdetail') }} </a> </td>
+                                                <td style="text-align: center;width: 50%"><a href="https://wa.me/971585602665?text=Hello Edge Realty  team, I would like to have a consultation session. Please assist me! Thanks"  target="_blank" style="color: rgb(31, 190, 31) !important;  font-size: 0.95vw !important;"> <i class="fab fa-whatsapp"></i> {{ trans('frontLang.whatsapp') }} </a></td>
+                                            </tr>
+                                        </table>
+                                    </div> --}}
 
                                 </div>
                             </div>

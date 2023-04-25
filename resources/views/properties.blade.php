@@ -954,13 +954,7 @@
                                                 @foreach($agents  as $agent)
                                                     @if($property->agent_id == $agent->id)
                                                         <div class="col-4 align-self-center mx-auto text-center">
-                                                            {{-- @if (file_exists(public_path().'uploads/agents/'.$property->agent_id.'/'.$agent->image))
-                                                                <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: " class="card-img-top rounded-0 pe-0 " alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/asset/img-error.webp') }}';">
-                                                            @else
-                                                                <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: auto; width: 100%;  border: 0.5px solid #848484 !important;" class="mt-0 pe-0 shadow"  alt="agent">
-                                                            @endif --}}
-                                                            <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: auto; width: auto; border-radius: 50%;  border: 0.5px solid #848484 !important;" class="mt-0 pe-0 shadow mx-auto" alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
-
+                                                            <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: auto; width: auto; border-radius: 50% !important;" class="mt-0 pe-0 shadow mx-auto rounded-circle" alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
                                                         </div>
 
                                                         <div class="col-8 align-self-center">
@@ -1036,7 +1030,7 @@
                                                             @else
                                                                 <img src="{{ URL::asset('public/assets/images/edge.webp') }}" style="height: auto; width: 100%;  border: 0.5px solid #848484 !important;" class="mt-0 pe-0 shadow"  alt="agent">
                                                             @endif --}}
-                                                            <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: auto; width: auto; border-radius: 50%;  border: 0.5px solid #848484 !important;" class="mt-0 pe-0 shadow mx-auto" alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
+                                                            <img src="{{ URL::asset('uploads/agents/'.$property->agent_id.'/'.$agent->image) }}" style="height: auto; width: auto; border-radius: 50% !important;" class="mt-0 pe-0 shadow mx-auto rounded-circle" alt="Listing" onerror="this.onerror=null;this.src='{{ URL::asset('public/assets/images/edge.webp') }}';">
 
                                                         </div>
 

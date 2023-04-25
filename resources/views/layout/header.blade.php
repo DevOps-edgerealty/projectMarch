@@ -134,7 +134,7 @@
     }
 
     .navbar1 {
-        transition:all 0.5s !important;
+        transition: all 0.5s !important;
     }
 
     .navbar-scrolled {
@@ -971,9 +971,6 @@
                                 </div>
                             </li>
                         @endif
-
-
-
                     </ul>
                 </nav>
             </div>
@@ -1060,206 +1057,88 @@
                     <span></span>
                     <span></span>
                 </button>
-
-
             </div>
 
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"  style="background-color: #1c1c1c !important">
-                    <div class="offcanvas-header">
-                        <h5 id="offcanvasRightLabel">{{ trans('frontLang.searchh') }}</h5>
-                        <button type="button" class="btn-close text-reset" style="background-color: #fff !important;" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
-                    </div>
-                    <div class="offcanvas-body ">
-                        <div class="row">
-                            <div class="col-lg-12">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"  style="background-color: #1c1c1c !important">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">{{ trans('frontLang.searchh') }}</h5>
+                    <button type="button" class="btn-close text-reset" style="background-color: #fff !important;" data-mdb-dismiss="offcanvas" aria-label="Close" ></button>
+                </div>
+                <div class="offcanvas-body ">
+                    <div class="row">
+                        <div class="col-lg-12">
 
-                                <!-- Pills navs -->
-                                <ul class="nav nav-pills nav-fill mb-3" id="ex1" role="tablist">
-                                    <li class="nav-item w-100" role="presentation">
-                                        <a class="nav-link rounded-0" style="background-color: #0c5e03 !important; border: 0 !important;"  href="{{ url($langSeg.'/properties/map/1') }}">{{ trans('frontLang.map') }}</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active rounded-0  " id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1" role="tab" aria-controls="ex2-pills-1" aria-selected="true">{{ trans('frontLang.buy') }}</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link rounded-0  " id="ex2-tab-2" data-mdb-toggle="pill" href="#ex2-pills-2" role="tab" aria-controls="ex2-pills-2" aria-selected="false">{{ trans('frontLang.Rent') }}</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link rounded-0  " id="ex2-tab-3" data-mdb-toggle="pill" href="#ex2-pills-3" role="tab" aria-controls="ex2-pills-3" aria-selected="false">{{ trans('frontLang.off-plan') }}</a>
-                                    </li>
-                                </ul>
-                                <!-- Pills navs -->
-                                <!-- Pills content -->
-                                <div class="tab-content" id="ex2-content">
-                                    <div class="tab-pane fade show active" id="ex2-pills-1" role="tabpanel" aria-labelledby="ex2-tab-1">
-                                        <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="post" >
-                                            @csrf
-                                            @honeypot
-                                            <input type="hidden" name="property_type_id" value="1" />
-                                            <div class="row">
+                            <!-- Pills navs -->
+                            <ul class="nav nav-pills nav-fill mb-3" id="ex1" role="tablist">
+                                <li class="nav-item w-100" role="presentation">
+                                    <a class="nav-link rounded-0" style="background-color: #0c5e03 !important; border: 0 !important;"  href="{{ url($langSeg.'/properties/map/1') }}">{{ trans('frontLang.map') }}</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active rounded-0  " id="ex2-tab-1" data-mdb-toggle="pill" href="#ex2-pills-1" role="tab" aria-controls="ex2-pills-1" aria-selected="true">{{ trans('frontLang.buy') }}</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link rounded-0  " id="ex2-tab-2" data-mdb-toggle="pill" href="#ex2-pills-2" role="tab" aria-controls="ex2-pills-2" aria-selected="false">{{ trans('frontLang.Rent') }}</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link rounded-0  " id="ex2-tab-3" data-mdb-toggle="pill" href="#ex2-pills-3" role="tab" aria-controls="ex2-pills-3" aria-selected="false">{{ trans('frontLang.off-plan') }}</a>
+                                </li>
+                            </ul>
+                            <!-- Pills navs -->
+                            <!-- Pills content -->
+                            <div class="tab-content" id="ex2-content">
+                                <div class="tab-pane fade show active" id="ex2-pills-1" role="tabpanel" aria-labelledby="ex2-tab-1">
+                                    <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="post" >
+                                        @csrf
+                                        @honeypot
+                                        <input type="hidden" name="property_type_id" value="1" />
+                                        <div class="row">
 
 
-                                                <div class="col-lg-12 mt-3 mb-4">
-                                                    <div class="input-group has-search">
-                                                        <span class="fa fa-search form-control-feedback"></span>
-                                                        <input type="search" name="search" id="search-mobile" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
-                                                    </div>
-                                                    <div id="List-mobile"></div>
-                                                    {{ csrf_field() }}
+                                            <div class="col-lg-12 mt-3 mb-4">
+                                                <div class="input-group has-search">
+                                                    <span class="fa fa-search form-control-feedback"></span>
+                                                    <input type="search" name="search" id="search-mobile" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
                                                 </div>
+                                                <div id="List-mobile"></div>
+                                                {{ csrf_field() }}
+                                            </div>
 
 
-                                                <div class="col-lg-12">
-                                                    <div class=" mb-4">
+                                            <div class="col-lg-12">
+                                                <div class=" mb-4">
 
-                                                        <select name="property_type" class="form-select form-select-lg" aria-label="Default select example" >
-                                                            <option  value=""> {{ trans('frontLang.propertyType') }}</option>
-                                                            <option  value="1">{{ trans('frontLang.Apartment') }}</option>
-                                                            <option  value="3">{{ trans('frontLang.Commercial') }}</option>
-                                                            <option  value="7">{{ trans('frontLang.Duplex') }}</option>
-                                                            <option  value="2">{{ trans('frontLang.Villa') }}</option>
+                                                    <select name="property_type" class="form-select form-select-lg" aria-label="Default select example" >
+                                                        <option  value=""> {{ trans('frontLang.propertyType') }}</option>
+                                                        <option  value="1">{{ trans('frontLang.Apartment') }}</option>
+                                                        <option  value="3">{{ trans('frontLang.Commercial') }}</option>
+                                                        <option  value="7">{{ trans('frontLang.Duplex') }}</option>
+                                                        <option  value="2">{{ trans('frontLang.Villa') }}</option>
 
-
-                                                        </select>
-                                                    </div>
-
-
-                                                </div>
-
-                                                <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
-                                                    <select name="min_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
-                                                        <option  value=""> {{ trans('frontLang.minBedrooms') }}</option>
-                                                        <option value="0">Studio</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
 
                                                     </select>
                                                 </div>
-                                                <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
-                                                    <select name="max_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
-                                                            <option  value=""> {{ trans('frontLang.maxBedrooms') }}</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                    </select>
-                                                </div>
 
-                                                <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
-                                                    <select name="min_price" class="form-select form-select-lg" aria-label="Default select example" >
-
-                                                        <option  selected="" value="">{{ trans('frontLang.minPrice') }}</option>
-                                                        <option  value="250000">250,000</option>
-                                                        <option  value="500000">500,000</option>
-                                                        <option  value="750000">750,000</option>
-                                                        <option  value="1000000">1,000,000</option>
-                                                        <option  value="2000000">2,000,000</option>
-                                                        <option  value="3000000">3,000,000</option>
-                                                        <option  value="4000000">4,000,000</option>
-                                                        <option  value="5000000">5,000,000</option>
-                                                        <option  value="6000000">6,000,000</option>
-                                                        <option  value="7000000">7,000,000</option>
-                                                        <option  value="8000000">8,000,000</option>
-                                                        <option  value="9000000">9,000,000</option>
-                                                        <option  value="10000000">10,000,000</option>
-                                                        <option  value="20000000">20,000,000</option>
-                                                        <option  value="30000000">30,000,000</option>
-                                                        <option  value="40000000">40,000,000</option>
-                                                        <option  value="50000000">50,000,000</option>
-                                                        <option  value="60000000">60,000,000</option>
-                                                        <option  value="70000000">70,000,000</option>
-                                                        <option  value="80000000">80,000,000</option>
-
-
-                                                </select>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
-                                                    <select name="max_price" class="form-select form-select-lg" aria-label="Default select example" >
-
-                                                        <option selected="" value="">{{ trans('frontLang.maxPrice') }}</option>
-                                                        <option  value="250000">250,000</option>
-                                                        <option  value="500000">500,000</option>
-                                                        <option  value="750000">750,000</option>
-                                                        <option  value="1000000">1,000,000</option>
-                                                        <option  value="2000000">2,000,000</option>
-                                                        <option  value="3000000">3,000,000</option>
-                                                        <option  value="4000000">4,000,000</option>
-                                                        <option  value="5000000">5,000,000</option>
-                                                        <option  value="6000000">6,000,000</option>
-                                                        <option  value="7000000">7,000,000</option>
-                                                        <option  value="8000000">8,000,000</option>
-                                                        <option  value="9000000">9,000,000</option>
-                                                        <option  value="10000000">10,000,000</option>
-                                                        <option  value="20000000">20,000,000</option>
-                                                        <option  value="30000000">30,000,000</option>
-                                                        <option  value="40000000">40,000,000</option>
-                                                        <option  value="50000000">50,000,000</option>
-                                                        <option  value="60000000">60,000,000</option>
-                                                        <option  value="70000000">70,000,000</option>
-                                                        <option  value="80000000">80,000,000</option>
-                                                </select>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <button type="submit" class="btn btn-outline-white btn-block btn-lg" >
-                                                        {{ trans('frontLang.searchh') }}
-                                                    </button>
-                                                </div>
 
                                             </div>
 
-                                        </form>
-                                    </div>
-                                    <div class="tab-pane fade" id="ex2-pills-2" role="tabpanel" aria-labelledby="ex2-tab-2">
-                                        <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="post" >
-                                            @csrf
-                                            @honeypot
-                                            <div class="row">
+                                            <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
+                                                <select name="min_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
+                                                    <option  value=""> {{ trans('frontLang.minBedrooms') }}</option>
+                                                    <option value="0">Studio</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
 
-                                                <input type="hidden" name="property_type_id" value="2" />
-                                                <div class="col-lg-12 mt-3 mb-4">
-                                                    <div class="input-group has-search">
-
-                                                        <span class="fa fa-search form-control-feedback"></span>
-                                                        <input type="search" name="search" id="search-mobile-1" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
-
-                                                    </div>
-                                                    <div id="List-mobile-1"></div>
-                                                    {{ csrf_field() }}
-                                                </div>
-
-
-                                                <div class="col-lg-12">
-                                                    <div class=" mb-4">
-
-                                                        <select name="property_type" class="form-select form-select-lg" aria-label="Default select example" >
-                                                            <option  value=""> {{ trans('frontLang.propertyType') }}</option>
-                                                            <option  value="1">{{ trans('frontLang.Apartment') }}</option>
-                                                            <option  value="3">{{ trans('frontLang.Commercial') }}</option>
-                                                            <option  value="7">{{ trans('frontLang.Duplex') }}</option>
-                                                            <option  value="2">{{ trans('frontLang.Villa') }}</option>
-
-
-                                                        </select>
-                                                    </div>
-
-
-                                                </div>
-
-                                                <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
-                                                    <select name="min_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
-                                                        <option  value=""> {{ trans('frontLang.minBedrooms') }}</option>
-                                                        <option value="0">Studio</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
+                                                <select name="max_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
+                                                        <option  value=""> {{ trans('frontLang.maxBedrooms') }}</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -1268,153 +1147,278 @@
                                                         <option value="6">6</option>
                                                         <option value="7">7</option>
                                                         <option value="8">8</option>
-
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
-                                                    <select name="max_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
-                                                            <option  value=""> {{ trans('frontLang.maxBedrooms') }}</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
-                                                    <select name="min_price" class="form-select form-select-lg" aria-label="Default select example" >
-
-                                                        <option  selected="" value="">{{ trans('frontLang.minPrice') }}</option>
-                                                        <option  value="250000">250,000</option>
-                                                        <option  value="500000">500,000</option>
-                                                        <option  value="750000">750,000</option>
-                                                        <option  value="1000000">1,000,000</option>
-                                                        <option  value="2000000">2,000,000</option>
-                                                        <option  value="3000000">3,000,000</option>
-                                                        <option  value="4000000">4,000,000</option>
-                                                        <option  value="5000000">5,000,000</option>
-                                                        <option  value="6000000">6,000,000</option>
-                                                        <option  value="7000000">7,000,000</option>
-                                                        <option  value="8000000">8,000,000</option>
-                                                        <option  value="9000000">9,000,000</option>
-                                                        <option  value="10000000">10,000,000</option>
-                                                        <option  value="20000000">20,000,000</option>
-                                                        <option  value="30000000">30,000,000</option>
-                                                        <option  value="40000000">40,000,000</option>
-                                                        <option  value="50000000">50,000,000</option>
-                                                        <option  value="60000000">60,000,000</option>
-                                                        <option  value="70000000">70,000,000</option>
-                                                        <option  value="80000000">80,000,000</option>
-
-
+                                                        <option value="9">9</option>
                                                 </select>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
-                                                    <select name="max_price" class="form-select form-select-lg" aria-label="Default select example" >
+                                            </div>
 
-                                                        <option selected="" value="">{{ trans('frontLang.maxPrice') }}</option>
-                                                        <option  value="250000">250,000</option>
-                                                        <option  value="500000">500,000</option>
-                                                        <option  value="750000">750,000</option>
-                                                        <option  value="1000000">1,000,000</option>
-                                                        <option  value="2000000">2,000,000</option>
-                                                        <option  value="3000000">3,000,000</option>
-                                                        <option  value="4000000">4,000,000</option>
-                                                        <option  value="5000000">5,000,000</option>
-                                                        <option  value="6000000">6,000,000</option>
-                                                        <option  value="7000000">7,000,000</option>
-                                                        <option  value="8000000">8,000,000</option>
-                                                        <option  value="9000000">9,000,000</option>
-                                                        <option  value="10000000">10,000,000</option>
-                                                        <option  value="20000000">20,000,000</option>
-                                                        <option  value="30000000">30,000,000</option>
-                                                        <option  value="40000000">40,000,000</option>
-                                                        <option  value="50000000">50,000,000</option>
-                                                        <option  value="60000000">60,000,000</option>
-                                                        <option  value="70000000">70,000,000</option>
-                                                        <option  value="80000000">80,000,000</option>
+                                            <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
+                                                <select name="min_price" class="form-select form-select-lg" aria-label="Default select example" >
+
+                                                    <option  selected="" value="">{{ trans('frontLang.minPrice') }}</option>
+                                                    <option  value="250000">250,000</option>
+                                                    <option  value="500000">500,000</option>
+                                                    <option  value="750000">750,000</option>
+                                                    <option  value="1000000">1,000,000</option>
+                                                    <option  value="2000000">2,000,000</option>
+                                                    <option  value="3000000">3,000,000</option>
+                                                    <option  value="4000000">4,000,000</option>
+                                                    <option  value="5000000">5,000,000</option>
+                                                    <option  value="6000000">6,000,000</option>
+                                                    <option  value="7000000">7,000,000</option>
+                                                    <option  value="8000000">8,000,000</option>
+                                                    <option  value="9000000">9,000,000</option>
+                                                    <option  value="10000000">10,000,000</option>
+                                                    <option  value="20000000">20,000,000</option>
+                                                    <option  value="30000000">30,000,000</option>
+                                                    <option  value="40000000">40,000,000</option>
+                                                    <option  value="50000000">50,000,000</option>
+                                                    <option  value="60000000">60,000,000</option>
+                                                    <option  value="70000000">70,000,000</option>
+                                                    <option  value="80000000">80,000,000</option>
 
 
-                                                </select>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <button type="submit" class="btn btn-outline-white btn-block btn-lg" >
-                                                        {{ trans('frontLang.searchh') }}
-                                                    </button>
-                                                </div>
-                                            </form>
+                                            </select>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
+                                                <select name="max_price" class="form-select form-select-lg" aria-label="Default select example" >
+
+                                                    <option selected="" value="">{{ trans('frontLang.maxPrice') }}</option>
+                                                    <option  value="250000">250,000</option>
+                                                    <option  value="500000">500,000</option>
+                                                    <option  value="750000">750,000</option>
+                                                    <option  value="1000000">1,000,000</option>
+                                                    <option  value="2000000">2,000,000</option>
+                                                    <option  value="3000000">3,000,000</option>
+                                                    <option  value="4000000">4,000,000</option>
+                                                    <option  value="5000000">5,000,000</option>
+                                                    <option  value="6000000">6,000,000</option>
+                                                    <option  value="7000000">7,000,000</option>
+                                                    <option  value="8000000">8,000,000</option>
+                                                    <option  value="9000000">9,000,000</option>
+                                                    <option  value="10000000">10,000,000</option>
+                                                    <option  value="20000000">20,000,000</option>
+                                                    <option  value="30000000">30,000,000</option>
+                                                    <option  value="40000000">40,000,000</option>
+                                                    <option  value="50000000">50,000,000</option>
+                                                    <option  value="60000000">60,000,000</option>
+                                                    <option  value="70000000">70,000,000</option>
+                                                    <option  value="80000000">80,000,000</option>
+                                            </select>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <button type="submit" class="btn btn-outline-white btn-block btn-lg" >
+                                                    {{ trans('frontLang.searchh') }}
+                                                </button>
+                                            </div>
+
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="ex2-pills-3" role="tabpanel" aria-labelledby="ex2-tab-3">
-                                        <form action="{{URL('/'.$langSeg.'/offplan_search')}}" method="post" >
-                                            @csrf
-                                            @honeypot
-                                            <div class="row">
+
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="ex2-pills-2" role="tabpanel" aria-labelledby="ex2-tab-2">
+                                    <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="post" >
+                                        @csrf
+                                        @honeypot
+                                        <div class="row">
+
+                                            <input type="hidden" name="property_type_id" value="2" />
+                                            <div class="col-lg-12 mt-3 mb-4">
+                                                <div class="input-group has-search">
+
+                                                    <span class="fa fa-search form-control-feedback"></span>
+                                                    <input type="search" name="search" id="search-mobile-1" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
+
+                                                </div>
+                                                <div id="List-mobile-1"></div>
+                                                {{ csrf_field() }}
+                                            </div>
 
 
+                                            <div class="col-lg-12">
+                                                <div class=" mb-4">
 
-                                                <div class="col-lg-12 mt-3 mb-4">
-                                                    <div class="input-group has-search">
+                                                    <select name="property_type" class="form-select form-select-lg" aria-label="Default select example" >
+                                                        <option  value=""> {{ trans('frontLang.propertyType') }}</option>
+                                                        <option  value="1">{{ trans('frontLang.Apartment') }}</option>
+                                                        <option  value="3">{{ trans('frontLang.Commercial') }}</option>
+                                                        <option  value="7">{{ trans('frontLang.Duplex') }}</option>
+                                                        <option  value="2">{{ trans('frontLang.Villa') }}</option>
 
-                                                        <span class="fa fa-search form-control-feedback"></span>
-                                                        <input type="search" name="search" id="search-mobile-2" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
 
-                                                    </div>
-                                                    <div id="List-mobile-2"></div>
-                                                    {{ csrf_field() }}
+                                                    </select>
                                                 </div>
 
 
-                                                <div class="col-lg-12">
-                                                    <div class=" mb-4">
+                                            </div>
 
-                                                        <select name="property_type" class="form-select form-select-lg" aria-label="Default select example" >
+                                            <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
+                                                <select name="min_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
+                                                    <option  value=""> {{ trans('frontLang.minBedrooms') }}</option>
+                                                    <option value="0">Studio</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
+                                                <select name="max_bedroom" class="form-select form-select-lg" aria-label="Default select example" >
+                                                        <option  value=""> {{ trans('frontLang.maxBedrooms') }}</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
+                                                <select name="min_price" class="form-select form-select-lg" aria-label="Default select example" >
+
+                                                    <option  selected="" value="">{{ trans('frontLang.minPrice') }}</option>
+                                                    <option  value="250000">250,000</option>
+                                                    <option  value="500000">500,000</option>
+                                                    <option  value="750000">750,000</option>
+                                                    <option  value="1000000">1,000,000</option>
+                                                    <option  value="2000000">2,000,000</option>
+                                                    <option  value="3000000">3,000,000</option>
+                                                    <option  value="4000000">4,000,000</option>
+                                                    <option  value="5000000">5,000,000</option>
+                                                    <option  value="6000000">6,000,000</option>
+                                                    <option  value="7000000">7,000,000</option>
+                                                    <option  value="8000000">8,000,000</option>
+                                                    <option  value="9000000">9,000,000</option>
+                                                    <option  value="10000000">10,000,000</option>
+                                                    <option  value="20000000">20,000,000</option>
+                                                    <option  value="30000000">30,000,000</option>
+                                                    <option  value="40000000">40,000,000</option>
+                                                    <option  value="50000000">50,000,000</option>
+                                                    <option  value="60000000">60,000,000</option>
+                                                    <option  value="70000000">70,000,000</option>
+                                                    <option  value="80000000">80,000,000</option>
 
 
-                                                            <option  value=""> {{ trans('frontLang.propertyType') }}</option>
-                                                            <option  value="1">{{ trans('frontLang.Apartment') }}</option>
-                                                            <option  value="3">{{ trans('frontLang.Commercial') }}</option>
-                                                            <option  value="7">{{ trans('frontLang.Duplex') }}</option>
-                                                            <option  value="2">{{ trans('frontLang.Villa') }}</option>
+                                            </select>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-6 mb-3">
+                                                <select name="max_price" class="form-select form-select-lg" aria-label="Default select example" >
+
+                                                    <option selected="" value="">{{ trans('frontLang.maxPrice') }}</option>
+                                                    <option  value="250000">250,000</option>
+                                                    <option  value="500000">500,000</option>
+                                                    <option  value="750000">750,000</option>
+                                                    <option  value="1000000">1,000,000</option>
+                                                    <option  value="2000000">2,000,000</option>
+                                                    <option  value="3000000">3,000,000</option>
+                                                    <option  value="4000000">4,000,000</option>
+                                                    <option  value="5000000">5,000,000</option>
+                                                    <option  value="6000000">6,000,000</option>
+                                                    <option  value="7000000">7,000,000</option>
+                                                    <option  value="8000000">8,000,000</option>
+                                                    <option  value="9000000">9,000,000</option>
+                                                    <option  value="10000000">10,000,000</option>
+                                                    <option  value="20000000">20,000,000</option>
+                                                    <option  value="30000000">30,000,000</option>
+                                                    <option  value="40000000">40,000,000</option>
+                                                    <option  value="50000000">50,000,000</option>
+                                                    <option  value="60000000">60,000,000</option>
+                                                    <option  value="70000000">70,000,000</option>
+                                                    <option  value="80000000">80,000,000</option>
 
 
-                                                        </select>
-                                                    </div>
-
-
-                                                </div>
-
-
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <button type="submit" class="btn btn-outline-white btn-block btn-lg" >
-                                                        {{ trans('frontLang.searchh') }}
-                                                    </button>
-                                                </div>
+                                            </select>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <button type="submit" class="btn btn-outline-white btn-block btn-lg" >
+                                                    {{ trans('frontLang.searchh') }}
+                                                </button>
                                             </div>
                                         </form>
-
                                     </div>
                                 </div>
+                                <div class="tab-pane fade" id="ex2-pills-3" role="tabpanel" aria-labelledby="ex2-tab-3">
+                                    <form action="{{URL('/'.$langSeg.'/offplan_search')}}" method="post" >
+                                        @csrf
+                                        @honeypot
+                                        <div class="row">
 
-                                <!-- Pills content -->
+
+
+                                            <div class="col-lg-12 mt-3 mb-4">
+                                                <div class="input-group has-search">
+
+                                                    <span class="fa fa-search form-control-feedback"></span>
+                                                    <input type="search" name="search" id="search-mobile-2" class="form-control form-control-lg" placeholder="{{ trans('frontLang.searchbyarea') }}" aria-label="Search"/>
+
+                                                </div>
+                                                <div id="List-mobile-2"></div>
+                                                {{ csrf_field() }}
+                                            </div>
+
+
+                                            <div class="col-lg-12">
+                                                <div class=" mb-4">
+
+                                                    <select name="property_type" class="form-select form-select-lg" aria-label="Default select example" >
+
+
+                                                        <option  value=""> {{ trans('frontLang.propertyType') }}</option>
+                                                        <option  value="1">{{ trans('frontLang.Apartment') }}</option>
+                                                        <option  value="3">{{ trans('frontLang.Commercial') }}</option>
+                                                        <option  value="7">{{ trans('frontLang.Duplex') }}</option>
+                                                        <option  value="2">{{ trans('frontLang.Villa') }}</option>
+
+
+                                                    </select>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <button type="submit" class="btn btn-outline-white btn-block btn-lg" >
+                                                    {{ trans('frontLang.searchh') }}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
                             </div>
+
+                            <!-- Pills content -->
                         </div>
-
                     </div>
-                </div>
 
+                </div>
+            </div>
         </div>
     </div>
 
 </header>
 
 @endif
+<script>
+    const navEl = document.querySelector('.navbar1');
 
+    window.addEventListener('scroll', () => {
+        if(window.scrollY >= 56) {
+            navEl.classList.add('navbar-scrolled');
+        } else if (window.scrollY < 56) {
+            navEl.classList.remove('navbar-scrolled');
+        }
+    })
+</script>
 
 

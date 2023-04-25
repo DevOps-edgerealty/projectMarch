@@ -34,8 +34,8 @@
                             <!-- general form elements -->
                             <div class="card card-primary">
                                 <div class="card-header">
-                                <h3 class="card-title">Invoice Create</h3>
-                                <a href="{{url('admin/invoice/show')}}" class="btn btn-secondary float-right"><i class="fas fa-arrow-left"></i> Back</a>
+                                    <h3 class="card-title">Invoice Create</h3>
+                                    <a href="{{url('admin/invoice/show')}}" class="btn btn-secondary float-right"><i class="fas fa-arrow-left"></i> Back</a>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
@@ -52,7 +52,7 @@
 
                                             </label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('name','', array('placeholder' => '','class' => 'form-control','id'=>'name','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                                                {!! Form::text('name','', array('placeholder' => '','class' => 'form-control','id'=>'name'=>'', 'dir'=>trans('backLang.ltr'))) !!}
 
                                             </div>
                                         </div>
@@ -65,7 +65,7 @@
 
                                             </label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('address','United Arab Emirates', array('placeholder' => '','class' => 'form-control','id'=>'address','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
+                                                {!! Form::text('address','United Arab Emirates', array('placeholder' => '','class' => 'form-control','id'=>'address'=>'', 'dir'=>trans('backLang.ltr'))) !!}
 
                                             </div>
                                         </div>
@@ -100,14 +100,14 @@
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Invoice Number</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('invoice_number','', array('class' => 'form-control','id'=>'invoice_number','required'=>'')) !!}
+                                                {!! Form::text('invoice_number','', array('class' => 'form-control','id'=>'invoice_number'=>'')) !!}
                                             </div>
                                         </div>
 
                                         <div class="col-sm-6">
                                             <label class="col-sm-4 form-control-label">Emirates</label>
                                             <div class="col-sm-12">
-                                                {!! Form::select('city_id', $cities_array, null,  ['placeholder' => 'Select','class' => 'form-control','id'=>'city_id','required'=>''])!!}
+                                                {!! Form::select('city_id', $cities_array, null,  ['placeholder' => 'Select','class' => 'form-control','id'=>'city_id'=>''])!!}
                                             </div>
                                         </div>
                                     </div>
@@ -116,13 +116,13 @@
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Invoice Date</label>
                                             <div class="col-sm-12">
-                                                {!! Form::date('invoice_date','', array('class' => 'form-control','id'=>'phone','required'=>'')) !!}
+                                                {!! Form::date('invoice_date','', array('class' => 'form-control','id'=>'phone'=>'')) !!}
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Contract Date</label>
                                             <div class="col-sm-12">
-                                                {!! Form::date('contract_date','', array('class' => 'form-control','id'=>'phone','required'=>'')) !!}
+                                                {!! Form::date('contract_date','', array('class' => 'form-control','id'=>'phone'=>'')) !!}
                                             </div>
                                         </div>
 
@@ -148,13 +148,13 @@
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Unit Price</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('unit_price','', array('class' => 'form-control','id'=>'phone','required'=>'', 'placeholder'=>'maximum 999,999,999')) !!}
+                                                {!! Form::text('unit_price','', array('class' => 'form-control','id'=>'phone'=>'', 'placeholder'=>'maximum 999,999,999')) !!}
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Amount</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('amount','', array('class' => 'form-control','id'=>'phone','required'=>'', 'placeholder'=>'maximum 999,999,999')) !!}
+                                                {!! Form::text('amount','', array('class' => 'form-control','id'=>'phone'=>'', 'placeholder'=>'maximum 999,999,999')) !!}
                                             </div>
                                         </div>
 
@@ -228,13 +228,13 @@
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Gross</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('gross_amount','', array('class' => 'form-control','id'=>'phone','required'=>'', 'placeholder'=>'maximum 999,999,999')) !!}
+                                                {!! Form::text('gross_amount','', array('class' => 'form-control','id'=>'phone'=>'', 'placeholder'=>'maximum 999,999,999')) !!}
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">VAT 5% Amount</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('vat_amount','', array('class' => 'form-control','id'=>'phone','required'=>'')) !!}
+                                                {!! Form::text('vat_amount','', array('class' => 'form-control','id'=>'phone'=>'')) !!}
                                             </div>
                                         </div>
 
@@ -244,7 +244,7 @@
                                         <div class="col-sm-6">
                                             <label for="name" class="col-sm-4 form-control-label">Total Amount</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('total_amount','', array('class' => 'form-control','id'=>'phone','required'=>'', 'placeholder'=>'maximum 999,999,999')) !!}
+                                                {!! Form::text('total_amount','', array('class' => 'form-control','id'=>'phone'=>'', 'placeholder'=>'maximum 999,999,999')) !!}
                                             </div>
                                         </div>
 
@@ -255,7 +255,7 @@
                                         <div class="col-sm-12">
                                             <label for="name" class="col-sm-2 form-control-label">Amount in Words</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('amount_words','', array('class' => 'form-control','id'=>'phone','required'=>'')) !!}
+                                                {!! Form::text('amount_words','', array('class' => 'form-control','id'=>'phone'=>'')) !!}
                                             </div>
                                         </div>
                                     </div>
@@ -263,7 +263,7 @@
                                         <div class="col-sm-12">
                                             <label for="name" class="col-sm-2 form-control-label">VAT Amount in Words</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('vat_amount_words','', array('class' => 'form-control','id'=>'phone','required'=>'')) !!}
+                                                {!! Form::text('vat_amount_words','', array('class' => 'form-control','id'=>'phone'=>'')) !!}
                                             </div>
                                         </div>
 
@@ -272,7 +272,7 @@
                                         <div class="col-sm-12">
                                             <label for="name" class="col-sm-2 form-control-label">Description 1</label>
                                             <div class="col-sm-12">
-                                                {!! Form::text('description','', array('class' => 'form-control','id'=>'phone','required'=>'')) !!}
+                                                {!! Form::text('description','', array('class' => 'form-control','id'=>'phone'=>'')) !!}
                                             </div>
                                         </div>
 

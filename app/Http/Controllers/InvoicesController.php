@@ -59,6 +59,7 @@ class InvoicesController extends Controller
      */
     public function store(Request $request)
     {
+
         //
         $bool=0;
         $invoice_no = $request->invoice_number;
@@ -83,10 +84,12 @@ class InvoicesController extends Controller
                 $invoice->phone = $request->phone;
                 $invoice->Emirates = $request->city_id;
                 $invoice->email = $request->email;
+
                 $invoice->invoice_date = $request->invoice_date;
                 $invoice->trn = $request->trn_number;
                 $invoice->invoice_no = $request->invoice_number;
-                // $invoice->contract_no = $request->contract_no;
+
+                $invoice->contract_no = $request->invoice_number;
                 $invoice->contract_date = $request->contract_date;
 
                 $invoice->unit_price = $request->unit_price;
@@ -109,6 +112,7 @@ class InvoicesController extends Controller
                 $invoice->total_amount = $request->total_amount;
                 $invoice->amount_words = $request->amount_words;
                 $invoice->VAT_words = $request->vat_amount_words;
+
                 $invoice->description = $request->description;
                 $invoice->description_2 = $request->description_2;
                 $invoice->description_3 = $request->description_3;
@@ -119,8 +123,8 @@ class InvoicesController extends Controller
 
               } catch (\Exception $e) {
 
-                //   return $e->getMessage();
-                  return Redirect::to('admin/invoice/show')->with('error','Invalid data input format. Please check and re-enter.');
+                  dd($e->getMessage());
+                //   return Redirect::to('admin/invoice/show')->with('error','Invalid data input format. Please check and re-enter.');
               }
 
             return Redirect::to('admin/invoice/show')->withSuccess('message','Record has Been Uploaded.');
@@ -191,7 +195,8 @@ class InvoicesController extends Controller
                 $invoice->invoice_date = $request->invoice_date;
                 $invoice->trn = $request->trn_number;
                 $invoice->invoice_no = $request->invoice_number;
-                // $invoice->contract_no = $request->contract_no;
+
+                $invoice->contract_no = $request->invoice_number;
                 $invoice->contract_date = $request->contract_date;
 
                 $invoice->unit_price = $request->unit_price;
