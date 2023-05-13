@@ -145,6 +145,11 @@
                             <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
                                 @csrf
 
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                 <div class="mb-4">
                                     <input style="direction: rtl;" type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
@@ -286,6 +291,12 @@
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
+
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -412,6 +423,12 @@
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
+
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -539,6 +556,11 @@
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -623,6 +645,11 @@
                             <h3 class="text-center mb-3">{{ trans('frontLang.requestdetail') }}</h3>
                             <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
                                 @csrf
+
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
 
                                 <div class=" mb-4">
                                     <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -776,6 +803,12 @@
                                                     <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                     <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                         @csrf
+
+                                                        <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                                         <input type="hidden" name="project" value="{{$projects->id}}" />
                                                         <div class=" mb-4">
                                                             <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -929,6 +962,12 @@
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
+
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -1082,6 +1121,12 @@
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
+
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />

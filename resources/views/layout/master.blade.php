@@ -108,7 +108,7 @@
 
 
             <?php
-            $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+                $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
                 $uri_segments = explode('/', $uri_path);
                 $seg1 = $uri_segments[1];
                 if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru' )
@@ -236,11 +236,20 @@
             </script>
 
 
+
+
+            {{-- <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}" async defer></script> --}}
+            <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+
+
+
         </head>
 
         <body class=" text-white" style="background-color: #1c1c1c !important; color: #cccccc !important;">
 
             <div id="fb-root"></div>
+
             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="dWIUAMD1"></script>
 
             @include('layout.header')
@@ -290,6 +299,11 @@
                         <div class="modal-body bg-black">
                             <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
                                 @csrf
+
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
 
                                 <div class=" mb-4">
                                     <input type="text" name="name" class="form-control form-control-lg" placeholder="Full Name"  required />
@@ -387,6 +401,10 @@
                                         <div class="row my-auto mx-auto h-100 p-2 rounded-3 shadow"  style="background-color: #fff !important;">
                                             <form class="contact-form py-2" method="post" action="{{URL('/request_detail/submit')}}">
                                                 @csrf
+                                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                 <!-- Name input -->
                                                 <div class="form-outline rounded-0 mb-3">
                                                     <input type="text" id="form1Example1" name="name" class="form-control  " style="background-color: #fff !important; color: #1c1c1c !important" required/>
@@ -454,6 +472,11 @@
                                         <div class="row my-auto mx-auto h-100 p-2 rounded-1 shadow"  style="background-color: #fff !important;">
                                             <form class="contact-form py-2" method="post" action="{{URL('/request_detail/submit')}}">
                                                 @csrf
+
+                                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                 <!-- Name input -->
                                                 <div class="form-outline rounded-0 mb-2">
                                                     <input type="text" id="form1Example1" name="name" class="form-control  " style="background-color: #fff !important; color: #1c1c1c !important" required/>
@@ -545,9 +568,6 @@
                 });
 
 
-
-
-
                 function AllowOnlyNumbers(e) {
 
                 e = (e) ? e : window.event;
@@ -557,12 +577,7 @@
 
                 return (/^\d+$/.test(str));
                 }
-
             </script>
-
-
-
-
 
 
             {{-- POPUP FUNCTION --}}
@@ -571,14 +586,14 @@
                 $(document).ready(function(){
                     if ($(window).width() > 991) {
                         // showPopup()
-                        setTimeout(showPopup(), 5000);
+                        // setTimeout(showPopup(), 5000);
                         // $('#popupBoxDesktop').modal('show');
                         // setInterval(showPopup, 2000);
                     } else {
                         // $('#popupBoxMobile').modal('show');
                         // showPopupMobile()
                         // setInterval(showPopupMobile, 5000);
-                        setTimeout(showPopupMobile(), 5000);
+                        // setTimeout(showPopupMobile(), 5000);
                     }
                 });
 
@@ -1028,24 +1043,102 @@
             </script>
 
 
-
-
-
-
             {{-- <script>
-            $(document).ready(function() {
-                $("body").on("contextmenu", function(e) {
-                    return false;
-                    });
-                });
                 $(document).ready(function() {
-                $('body').bind('cut copy', function(e) {
-                    e.preventDefault();
+                    $("body").on("contextmenu", function(e) {
+                        return false;
+                        });
                     });
-                });
-        </script> --}}
+                    $(document).ready(function() {
+                    $('body').bind('cut copy', function(e) {
+                        e.preventDefault();
+                        });
+                    });
+            </script> --}}
+
 
         <script src="{{URL::asset('public/assets/js/fslightbox.js')}}"></script>
+
+
+        {{-- script for sending UTM via form --}}
+        <script>
+            var queryForm = function(settings){
+
+                // STORE THE UTM IN SESSION STORAGE
+
+                    var reset = settings && settings.reset ? settings.reset : false;
+
+                    var self = window.location.toString();
+
+                    var querystring = self.split("?");
+
+                    if (querystring.length > 1) {
+
+                        var pairs = querystring[1].split("&");
+
+                        for (i in pairs) {
+
+                            var keyval = pairs[i].split("=");
+
+                            if (reset || sessionStorage.getItem(keyval[0]) === null) {
+                                sessionStorage.setItem(keyval[0], decodeURIComponent(keyval[1]));
+                            }
+                        }
+                    }
+
+                // STORE THE UTM IN SESSION STORAGE
+
+
+                // READ THE UTM IN SESSION STORAGE INTO INPUT VALUES
+
+                    var hiddenFields = document.querySelector(".utm_parameters");
+
+                    var utm_parameters = document.getElementsByClassName("utm_parameters");  //Get all hidden inputs with utm_parameters in form submission
+
+                    // GET UTM PARAMETERS STORED IN SESSION
+                    var utm_campaign = sessionStorage.getItem('utm_campaign');
+
+                    var utm_source = sessionStorage.getItem('utm_source');
+
+                    var utm_id = sessionStorage.getItem('utm_id');
+
+                    var utm_medium = sessionStorage.getItem('utm_medium');
+
+
+                    /**
+                     * LOOP THROUGH THE UTM PARAMETERS
+                     * COLLECTED FROM THE PAGE
+                     * AND APPEND THE UTM PARAMETERS
+                     * COLLECTED FROM THE SESSION STORAGE
+                    */
+                    for(var i = 0, length = utm_parameters.length; i < length; i++) {
+
+                        if(document.getElementsByName(utm_parameters[i].name)[0].name == 'utm_source') {
+
+                            document.getElementsByName(utm_parameters[i].name)[0].value = utm_source;
+
+                        }else if(document.getElementsByName(utm_parameters[i].name)[0].name == 'utm_medium') {
+
+                            document.getElementsByName(utm_parameters[i].name)[0].value = utm_medium;
+
+                        }else if(document.getElementsByName(utm_parameters[i].name)[0].name == 'utm_id') {
+
+                            document.getElementsByName(utm_parameters[i].name)[0].value = utm_id;
+
+                        }else if(document.getElementsByName(utm_parameters[i].name)[0].name == 'utm_campaign') {
+
+                            document.getElementsByName(utm_parameters[i].name)[0].value = utm_campaign;
+                        }
+                        // console.log(document.getElementsByName(utm_parameters[i].name)[0].name+': '+document.getElementsByName(utm_parameters[i].name)[0].value)
+                    }
+
+                // READ THE UTM IN SESSION STORAGE INTO INPUT VALUES
+
+            }
+
+            setTimeout(function(){queryForm();}, 5000);
+
+        </script>
 
         </body>
 

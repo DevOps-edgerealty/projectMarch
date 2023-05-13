@@ -85,16 +85,24 @@
                                         <div class="form-group">
                                             <label>Select Agent</label>
                                             <select name="agent" id="agent" class="form-control">
-                                                @if ($agents)
-                                                    @foreach ($agents as $agent)
-                                                        <option value="{{ $agent->id}}">{{ $agent->name_en }}</option>
-                                                    @endforeach
+                                                @if(is_null($properties->agent_id))
+                                                    @if ($agents)
+                                                        @foreach ($agents as $agent)
+                                                            <option value="{{ $agent->id}}">{{ $agent->name_en }}</option>
+                                                        @endforeach
+                                                    @endif
+                                                @else
+                                                    @if ($agents)
+                                                        @foreach ($agents as $agent)
+                                                            @if($agent->id == $properties->agent_id)
+                                                                <option value="{{ $agent->id}}">{{ $agent->name_en }}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
                                                 @endif
                                             </select>
                                           </div>
-
                                     </div>
-
 
                                 </div>
 
@@ -134,8 +142,8 @@
                                           </div>
 
                                     </div>
-                                    
-                                    
+
+
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label>Reference Number</label>

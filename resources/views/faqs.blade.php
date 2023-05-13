@@ -351,6 +351,11 @@ else
                     <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
                         @csrf
 
+                        <input type="text" name="utm_source" class="utm_parameters" hidden>
+                        <input type="text" name="utm_id" class="utm_parameters" hidden>
+                        <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                        <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                         <div class="mb-4">
                             <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
@@ -577,6 +582,11 @@ else
                     <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
                         @csrf
 
+                        <input type="text" name="utm_source" class="utm_parameters" hidden>
+                        <input type="text" name="utm_id" class="utm_parameters" hidden>
+                        <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                        <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                         <div class="mb-4">
                             <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
@@ -784,6 +794,11 @@ else
                 <div class="col-lg-4 offset-md-4">
                     <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
                         @csrf
+
+                        <input type="text" name="utm_source" class="utm_parameters" hidden>
+                        <input type="text" name="utm_id" class="utm_parameters" hidden>
+                        <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                        <input type="text" name="utm_medium" class="utm_parameters" hidden>
 
                         <div class="mb-4">
                             <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />

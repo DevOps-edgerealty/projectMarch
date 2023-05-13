@@ -214,7 +214,9 @@
 
                                     @foreach($projects->images  as $single_img)
                                         @if($projects->images->first()==$single_img)
-                                        <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" ><img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}"></a>
+                                        <a href="{{url($langSeg .'/'.'dubai-new-projects'.'/'.$projects->slug_link)}}" >
+                                            <img src="{{ URL::asset('uploads/projects/images/'.$projects->id.'/'.$single_img->image) }}" style="height: 300px" class="card-img-top rounded-0" alt="{{$projects->$project_title_var}}">
+                                        </a>
                                         @endif
                                     @endforeach
 

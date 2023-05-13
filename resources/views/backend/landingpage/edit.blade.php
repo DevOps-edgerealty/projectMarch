@@ -80,7 +80,7 @@
 
                                         <div class="col-sm-12">
                                             <label for="exampleInputName">Meta Keyword [ English ]</label>
-                                            {!! Form::text('meta_keyword_en',$landingpage->meta_keywords_en, array('placeholder' => '','class' => 'form-control','id'=>'meta_keyword_en','required'=>'')) !!}
+                                            {!! Form::text('meta_keywords_en',$landingpage->meta_keywords_en, array('placeholder' => '','class' => 'form-control','id'=>'meta_keyword_en','required'=>'')) !!}
                                         </div>
 
 
@@ -90,7 +90,7 @@
 
                                         <div class="col-sm-12">
                                             <label for="exampleInputName">Meta Keyword [ Russian ]</label>
-                                            {!! Form::text('meta_keyword_ru',$landingpage->meta_keywords_ru, array('placeholder' => '','class' => 'form-control','id'=>'meta_keyword_en','required'=>'')) !!}
+                                            {!! Form::text('meta_keywords_ru',$landingpage->meta_keywords_ru, array('placeholder' => '','class' => 'form-control','id'=>'meta_keyword_en','required'=>'')) !!}
                                         </div>
 
 
@@ -100,7 +100,7 @@
 
                                         <div class="col-sm-12">
                                             <label for="exampleInputName">Meta Keyword [ العربية ]</label>
-                                            {!! Form::text('meta_keyword_ar',$landingpage->meta_keywords_ar, array('placeholder' => '','class' => 'form-control','dir'=>trans('backLang.rtl'),'id'=>'meta_keyword_ar','required'=>'')) !!}
+                                            {!! Form::text('meta_keywords_ar',$landingpage->meta_keywords_ar, array('placeholder' => '','class' => 'form-control','dir'=>trans('backLang.rtl'),'id'=>'meta_keyword_ar','required'=>'')) !!}
                                         </div>
 
 
@@ -119,7 +119,7 @@
 
                                         <div class="col-sm-12">
                                             <label for="exampleInputName">Meta Discription [ English ]</label>
-                                            {!! Form::text('meta_discription_en',$landingpage->meta_description_en, array('placeholder' => '','class' => 'form-control','id'=>'meta_discription_en','required'=>'')) !!}
+                                            {!! Form::text('meta_description_en',$landingpage->meta_description_en, array('placeholder' => '','class' => 'form-control','id'=>'meta_discription_en','required'=>'')) !!}
                                         </div>
 
 
@@ -128,7 +128,7 @@
 
                                         <div class="col-sm-12">
                                             <label for="exampleInputName">Meta Discription [ Russian ]</label>
-                                            {!! Form::text('meta_discription_ru',$landingpage->meta_description_ru, array('placeholder' => '','class' => 'form-control','id'=>'meta_discription_en','required'=>'')) !!}
+                                            {!! Form::text('meta_description_ru',$landingpage->meta_description_ru, array('placeholder' => '','class' => 'form-control','id'=>'meta_discription_en','required'=>'')) !!}
                                         </div>
 
 
@@ -137,7 +137,7 @@
 
                                         <div class="col-sm-12">
                                             <label for="exampleInputName">Meta Discription [ العربية ]</label>
-                                            {!! Form::text('meta_discription_ar',$landingpage->meta_description_ar, array('placeholder' => '','class' => 'form-control','dir'=>trans('backLang.rtl'),'id'=>'meta_discription_ar','required'=>'')) !!}
+                                            {!! Form::text('meta_description_ar',$landingpage->meta_description_ar, array('placeholder' => '','class' => 'form-control','dir'=>trans('backLang.rtl'),'id'=>'meta_discription_ar','required'=>'')) !!}
                                         </div>
 
 

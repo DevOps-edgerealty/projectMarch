@@ -243,6 +243,12 @@ $secondimage=true;
 
                         <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
                             @csrf
+
+                            <input type="text" name="utm_source" class="utm_parameters" hidden>
+                            <input type="text" name="utm_id" class="utm_parameters" hidden>
+                            <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                            <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                             <input type="hidden" name="project" value="{{$project_detail->id}}" />
                             <div class="mb-4">
                                 <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -607,6 +613,12 @@ $secondimage=true;
 
                             <form class="contact-form" method="post" action="{{URL('/project_document/submit')}}">
                                 @csrf
+
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                 @foreach ($project_detail->documents as $document)
                                     <input type="hidden" id="custId" name="document_id" value="{{$document->project_id}}">
                                     <input type="hidden" id="custId" name="document_name" value="{{$document->document}}">
@@ -659,6 +671,12 @@ $secondimage=true;
 
                             <form class="contact-form" method="post" action="{{URL('/project_document/submit')}}">
                                 @csrf
+
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                 @foreach ($project_detail->documents as $document)
                                     <input type="hidden" id="custId" name="document_id" value="{{$document->project_id}}">
                                     <input type="hidden" id="custId" name="document_name" value="{{$document->document}}">
@@ -783,6 +801,10 @@ $secondimage=true;
                 <div class="col-lg-4 offset-md-4">
                     <form class="contact-form" method="post" action="{{URL('/request_detail_project_detail/submit')}}">
                         @csrf
+                            <input type="text" name="utm_source" class="utm_parameters" hidden>
+                            <input type="text" name="utm_id" class="utm_parameters" hidden>
+                            <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                            <input type="text" name="utm_medium" class="utm_parameters" hidden>
 
                             <input type="hidden" id="custId" name="url_path" value="{{Request::path()}}">
                             <input type="hidden" name="project" value="{{$project_detail->id}}" />
@@ -906,6 +928,11 @@ $secondimage=true;
                 <div class="col-lg-4 offset-md-4">
                     <form class="contact-form" method="post" action="{{URL('/request_detail_project_detail/submit')}}">
                         @csrf
+
+                        <input type="text" name="utm_source" class="utm_parameters" hidden>
+                        <input type="text" name="utm_id" class="utm_parameters" hidden>
+                        <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                        <input type="text" name="utm_medium" class="utm_parameters" hidden>
 
                             <input type="hidden" id="custId" name="url_path" value="{{Request::path()}}">
                             <input type="hidden" name="project" value="{{$project_detail->id}}" />
@@ -1083,6 +1110,12 @@ $secondimage=true;
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
+
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class="mb-4">
                                                         <input style="direction: rtl" type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -1241,6 +1274,10 @@ $secondimage=true;
                                                 <h4 class="text-center mb-4">{{$projects->$project_title_var}}</h4>
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -1294,6 +1331,10 @@ $secondimage=true;
 
                                                 <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />

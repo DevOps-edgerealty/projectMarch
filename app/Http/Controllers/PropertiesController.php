@@ -1299,9 +1299,14 @@ class PropertiesController extends Controller
         $this->data['footerCommunities'] = $footerCommunities;
 
 
+
         $properties = Property::with(['images', 'locationss','cityss'])->orderBy('id', 'desc')->get();
 
+        $properties_count = Property::with(['images', 'locationss','cityss'])->orderBy('id', 'desc')->count();
+
         $this->data['properties'] = $properties;
+
+        $this->data['properties_count'] = $properties_count;
 
         return view('backend.properties.show',$this->data);
 

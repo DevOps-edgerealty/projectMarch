@@ -27,7 +27,35 @@
         <td>{{ $email }}</td>
 
       </tr>
-  
+
+      <tr>
+
+        <td style="padding-left: 20px"><b>UTM Campaign :</b> </td>
+        <td>{{ $utm_campaign }}</td>
+
+      </tr>
+
+      <tr>
+
+        <td style="padding-left: 20px"><b>UTM Source :</b> </td>
+        <td>{{ $utm_source }}</td>
+
+      </tr>
+
+      <tr>
+
+        <td style="padding-left: 20px"><b>UTM Medium :</b> </td>
+        <td>{{ $utm_medium }}</td>
+
+      </tr>
+
+      <tr>
+
+        <td style="padding-left: 20px"><b>UTM ID :</b> </td>
+        <td>{{ $utm_id }}</td>
+
+      </tr>
+
 
 
     </tbody>

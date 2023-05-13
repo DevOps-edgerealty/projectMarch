@@ -114,7 +114,7 @@ if($seg1 == 'en' || $seg1 == 'ar' || $seg1 == 'ru')
 }
 else
 {
-    $langSeg = 'ar';
+    $langSeg = 'en';
 }
 
 ?>
@@ -167,18 +167,18 @@ else
 
     <header>
 
-
         <!-- Background image -->
-        <div id="intro-page" class="bg-image shadow-2-strong">
-            <div class="mask" style="background-color: #1c1c1c;">
-            <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
-                <div class="text-white">
-                    <h3  style="text-transform: uppercase;">{{ trans('frontLang.Contactus') }}</h3>
+            <div id="intro-page" class="bg-image shadow-2-strong">
+                <div class="mask" style="background-color: #1c1c1c;">
+                    <div class="container d-flex align-items-center justify-content-center text-center h-100" style="margin-top: 40px;">
+                        <div class="text-white">
+                            <h3 style="text-transform: uppercase;">{{ trans('frontLang.Contactus') }}</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
         <!-- Background image -->
+
     </header>
 
 
@@ -218,9 +218,6 @@ else
 
     </div>
 
-
-
-
 </section>
 
 @if ($langSeg == 'ar')
@@ -235,9 +232,7 @@ else
                 <h6 class="my-3 py-1"><i class="far fa-clock"> </i> من الاثنين الى السبت 9 صباحا الى 6 مساءا </h6>
                 <h6 class="my-3 py-1"> <a href="tel:0097143881856" class=""> 97143881856+ </a> <i class="fas fa-phone-alt"> </i></h6>
 
-
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14440.226682186727!2d55.2671464!3d25.2013113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x424936f85dc4d24a!2sEdge%20Realty!5e0!3m2!1sen!2sae!4v1627281665507!5m2!1sen!2sae" width="100%" height="400"  allowfullscreen="" loading="lazy"></iframe>
-
             </div>
 
 
@@ -250,19 +245,21 @@ else
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14439.565875912738!2d55.2654178!3d25.2068823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82642d0792bb3c7!2sEdge%20Realty%20-%20Citywalk!5e0!3m2!1sen!2sae!4v1630221126274!5m2!1sen!2sae" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
-
-
         </div>
 
         <div class="col-lg-12 mt-5 mb-4">
             <h3 class="text-center">{{ trans('frontLang.getInTouchh') }}</h3>
             <p class="text-center">{{ trans('frontLang.KindlyFillGetIntouch') }}</p>
         </div>
+
         <div class="col-lg-6 offset-md-3  ">
 
-            <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
+            <form class="contact-form" method="post"  action="{{URL('/contactus/submit')}}">
                 @csrf
-
+                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                <input type="text" name="utm_medium" class="utm_parameters" hidden>
                 <div class="mb-4">
                     <input style="direction: rtl;" type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
@@ -286,6 +283,8 @@ else
                 <button type="submit" class="btn btn-outline-white btn-lg btn-block ">
                     {{ trans('frontLang.submit') }}
                 </button>
+
+                <button class="btn btn-outline-white btn-lg btn-block g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key')}}" data-callback="onSubmit">Submit</button>
             </form>
         </div>
 
@@ -330,6 +329,11 @@ else
 
             <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
                 @csrf
+
+                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                <input type="text" name="utm_medium" class="utm_parameters" hidden>
 
                 <div class=" mb-4">
                     <input type="text" name="name" class="form-control form-control-lg" placeholder="ПОЛНОЕ ИМЯ"  required />
@@ -397,10 +401,26 @@ else
             <h3 class="text-center">Get in Touch</h3>
             <p class="text-center">Kindly fill in your details below and one of our Edge Realty Property Consultants will be in touch with you soon.</p>
         </div>
+
         <div class="col-lg-6 offset-md-3 ">
 
-            <form class="contact-form" method="post" action="{{URL('/contactus/submit')}}">
+            @isset($error)
+                <div class="alert alert-light" role="alert">
+                    Something went wrong! Please try again later or reach our hotline if error still persists.
+                </div>
+            @endisset
+
+            <form class="contact-form" method="post" id="demo-form" action="{{URL('/contactus/submit')}}">
                 @csrf
+
+                @honeypot
+
+
+                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                <input type="text" name="utm_medium" class="utm_parameters" hidden>
+                <input type="text" name="page_url" value="edgerealty.ae/{{ $langSeg }}/contactus" hidden>
 
                 <div class=" mb-4">
                     <input type="text" name="name" class="form-control form-control-lg" placeholder="Full Name"  required />
@@ -410,22 +430,21 @@ else
                 <!-- Email input -->
                 <div class="mb-4">
                     <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="Phone Number" required />
-
                 </div>
 
                 <!-- Email input -->
                 <div class="mb-4">
                     <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required />
-
                 </div>
+
                 <div class="mb-4">
                     <textarea name="message" class="form-control" id="textAreaExample" rows="3" placeholder="Message"></textarea>
-
                 </div>
-                @honeypot
-                <button type="submit" class="btn btn-outline-white btn-lg btn-block ">
-                    Submit
-                </button>
+
+
+                <div class="mb-4 cf-turnstile" data-sitekey="0x4AAAAAAAEb5OovW6ZXj2wR"></div>
+
+                <button class="btn btn-outline-white btn-lg btn-block g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}" data-callback="onSubmit">Submit</button>
             </form>
         </div>
 
@@ -436,30 +455,18 @@ else
 @endif
 
 
+<script>
+// This function is called when the Turnstile script is loaded and ready to be used.
+// The function name matches the "onload=..." parameter.
+function _turnstileCb() {
+    console.debug('_turnstileCb called');
 
-
-{{-- <section class="mt-5 mb-5">
-    <div class="container">
-        <div class="row text-center">
-                    <h3 class="mb-4"> {{ trans('frontLang.connectwithus') }}</h3>
-                    <div class="col-lg-12">
-                        <a style="padding-right: 20px" href="https://www.facebook.com/Edge-Realty-109809967096901" target="_blank"><i class="fab fa-facebook-f "></i></a>
-                        <a style="padding-right: 20px" href="https://twitter.com/edgerealtydubai" target="_blank"><i class="fab fa-twitter "></i></a>
-                        <a style="padding-right: 20px" href="https://www.instagram.com/edgerealtydubai" target="_blank"<i class="fab fa-instagram "></i></a>
-                        <a style="padding-right: 20px" href="https://www.linkedin.com/company/edgerealtydubai" target="_blank"><i class="fab fa-linkedin "></i></a>
-                        <a style="padding-right: 20px" href="https://www.youtube.com/channel/UCSz0j-0Ct8SWrPFvgk30lWQ"><i class="fab fa-youtube "></i></a>
-
-
-
-                    </div>
-
-
-
-
-
-        </div>
-    </div>
-</section> --}}
+    turnstile.render('#myWidget', {
+      sitekey: '0x4AAAAAAAEb5OovW6ZXj2wR',
+      theme: 'light',
+    });
+}
+</script>
 
 
 

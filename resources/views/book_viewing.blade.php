@@ -55,6 +55,10 @@
             <div class="col-lg-6 offset-md-3">
                 <form class="contact-form" method="post" action="{{URL('/book_viewing/submit')}}">
                     @csrf
+                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
                     @honeypot
                         <div class="row mb-4">
                             <div class="col-lg-6">

@@ -173,7 +173,12 @@
     }
 
     .project-header-img{
-        height: 650px !important;
+        height: auto !important;
+    }
+
+    .point_highlighted{
+        font-weight: bolder !important;
+        font-size: 1.2em !important;
     }
 
 
@@ -311,16 +316,16 @@
 
     @foreach($project_detail->images  as $single_img)
             @if($project_detail->images->first()==$single_img)
-                <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$single_img->image) }}"  class="card-img-top project-header-img" alt="{{$project_detail->$title_var}}" style="height: 650px !important">
-                <div class="mx-auto" style=" position: absolute; top: 250px; color:#fff; width: 100%">
-                    <!--<h1 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->$title_var}}</b></h1>-->
-                    <!--<h3 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold;"><b>{{$project_detail->locationz->$name_var}}</b></h3>-->
+                <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$single_img->image) }}"  class="card-img-top project-header-img" alt="{{$project_detail->$title_var}}" style="height: auto !important">
+                {{-- <div class="mx-auto" style=" position: absolute; top: 250px; color:#fff !important; width: 100%">
+                    <h1 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold !important;">{{$project_detail->$title_var}}</h1>-->
+                    <h3 style="text-shadow: 1px 1px 1px #000; text-align: center; text-transform: capitalize; font-weight: bold !important;">{{$project_detail->locationz->$name_var}}</h3>-->
 
-                    {{-- <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-dark btn-lg mt-4 rounded-0 w-75 testbutton" style="background-color: #000">
+                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-dark btn-lg mt-4 rounded-0 w-75 testbutton" style="background-color: #000">
                         {{ trans('frontLang.requestdetail') }}
-                    </a> --}}
+                    </a>
 
-                </div>
+                </div> --}}
             @endif
     @endforeach
     </div>
@@ -355,7 +360,7 @@
     @foreach($project_detail->images  as $single_img)
             @if($project_detail->images->first()==$single_img)
                 <img src="{{ URL::asset('uploads/projects/images/'.$project_detail->id.'/'.$single_img->image) }}" style="height: 700px" class="card-img-top" alt="">
-                <div class="" style=" position: absolute; top: 250px; color:#fff ">
+                <div class="" style=" position: absolute; top: 250px; color:#fff !important ">
                     <h1 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold; color: #fff !important; font-weight: bold !important">{{$project_detail->$title_var}}</h1>
                     <h3 style="text-shadow: 1px 1px 1px #000; text-transform: capitalize; font-weight: bold;  color: #fff !important; font-weight: bold !important">{{$project_detail->locationz->$name_var}}</h3>
 
@@ -376,7 +381,6 @@
     @endforeach
     </div>
 </section>
-
 
 
 
@@ -403,22 +407,25 @@
 
                         <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
                             @csrf
+
+                            <input type="text" name="utm_source" class="utm_parameters" hidden>
+                            <input type="text" name="utm_id" class="utm_parameters" hidden>
+                            <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                            <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                             <input type="hidden" name="project" value="{{$project_detail->id}}" />
                             <div class="mb-4">
                                 <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
-
                             </div>
 
                             <!-- Email input -->
                             <div class="mb-4">
                                 <input type="phone" name="phone" class="form-control form-control-lg iti-phone" placeholder="{{ trans('frontLang.phone') }}" required />
-
                             </div>
 
                             <!-- Email input -->
                             <div class="mb-4">
                                 <input type="email" name="email" class="form-control form-control-lg" placeholder="{{ trans('frontLang.email') }}" required />
-
                             </div>
                             @honeypot
                             {{-- <button type="submit" class="btn btn-dark btn-lg btn-block">
@@ -448,54 +455,28 @@
 
 
 
-
-{{-- project Intro description desktop & mobile--}}
-@if ($langSeg == 'ar')
-    <section class="desktop-show" dir="rtl">
+{{-- NEW PROJECT OVERVIEW AND DESCRIPTION - DESKTOP --}}
+@if($langSeg == 'ar')
+    <section class="desktop-show" dir="rtl" >
         <div class="container-fluid containerization my-5" >
-
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="row pe-4">
-                        <div class="col-md-7">
-                            <h3 class="mb-4">{{ trans('frontLang.overview')}}</h3>
-
-                        </div>
-                        <div class="col-md-5 mx-auto">
-                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: #1c1c1c;">
-                                {{ trans('frontLang.requestdetail') }}
-                            </a>
-                        </div>
-                        <span style="color: grey !important; text-align: justify; pe-5">{!! $project_detail->$description_var !!}</span>
-                    </div>
-
-                </div>
-
-                <div class="col-md-3 text-right ps-5">
-                    <style>
-                        .bullet_points {
-                            font-size: 20px !important;
-                            text-align: right !important;
-                        }
-
-                        .point_highlighted {
-                            font-weight: 800 !important;
-                        }
-                    </style>
-                    <span class="text-right">
+            <div class="d-flex justify-content-between">
+                    <div class="col-auto" >
+                        {{-- PRICE --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.startingfrom') }} </p>
+
                         <p class="m-0 p-0 bullet_points">
                             @if(preg_match('/\d/', $project_detail->project_price))
                                 <div class="AED skill" style="display: block !important">
                                     <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
-                                        {{ $project_detail->project_price }}
                                         {{ trans('frontLang.AED') }}
+                                        {{ $project_detail->project_price }}
                                     </p>
                                 </div>
                                 <div class="USD skill">
-                                    <p class="card-title p-auto m-auto  m-0 p-0 bullet_points" point_highlighted >
-                                        {{ $project_detail->project_price_usd }}
+                                    <p class="card-title p-auto m-auto  m-0 p-0 bullet_points point_highlighted ">
                                         USD
+                                        {{ $project_detail->project_price_usd }}
+
                                     </p>
                                 </div>
                             @else
@@ -504,121 +485,282 @@
                                 </p>
                             @endif
                         </p>
+                        {{-- PRICE --}}
+                    </div>
 
-                        <br>
+                    <div style="height: 75px !important; border: 0.5px solid #ccc !important;"></div>
 
+                    <div class="col-auto" >
+                        {{-- BEDROOMS --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.bedrooms') }}</p>
-                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->bedrooms_ar}} </p>
+                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->bedrooms}} </p>
+                        {{--  --}}
+                    </div>
 
-                        <br>
+                    <div style="height: 75px !important; border: 0.5px solid #ccc !important;"></div>
 
+                    <div class="col-auto" >
+                        {{-- LOCATION --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.location') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->locationz->$name_var}} </p>
+                        {{-- LOCATION --}}
+                    </div>
 
+                    <div style="height: 75px !important; border: 0.5px solid #ccc !important;"></div>
 
-                        <br>
-
-                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.projectname') }} </p>
-                        <p class="m-0 p-0 bullet_points point_highlighted"> {{$project_detail->$title_var}} </p>
-
-                        <br>
-
+                    <div class="col-auto" >
+                        {{-- PROJECT TYPE --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.projectType') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">
                             @foreach ($project_detail->project_types as $project_type)
                                 {{$project_type->$type_title_var}}
                             @endforeach
                         </p>
+                        {{-- PROJECT TYPE --}}
+                    </div>
 
-                        <br>
+                    <div style="height: 75px !important; border: 0.5px solid #ccc !important;"></div>
 
+                    <div class="col-auto" >
+                        {{-- DEVELOPER --}}
                         <p class="m-0 p-0 bullet_points">{{ trans('frontLang.Developer') }}</p>
                         <p class="m-0 p-0 bullet_points point_highlighted">  {{$developers->$name_var}} </p>
+                        {{-- DEVELOPER --}}
+                    </div>
 
-                        <br>
+            </div>
+        </div>
+    </section>
+@else
+    <section class="desktop-show" >
+        <div class="container-fluid containerization my-5" >
+            <div class="d-flex justify-content-between">
+                    <div class="col-auto" >
+                        {{-- PRICE --}}
+                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.startingfrom') }} </p>
 
-                        <div class="row my-3 ">
-                            <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
-                                <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
-                                {{ trans('frontLang.agentCardShare') }}
-                            </p>
-                            <div class="col-12 mx-auto mb-2">
-                                <div class="mx-auto ">
-                                    <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
-                                    <li class=" text-white  text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" text-white text-center px-1 mx-auto">
-                                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" text-white text-center px-1 mx-auto">
-                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" text-white text-center px-1 mx-auto">
-                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <p class="m-0 p-0 bullet_points">
+                            @if(preg_match('/\d/', $project_detail->project_price))
+                                <div class="AED skill" style="display: block !important">
+                                    <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
+                                        {{ trans('frontLang.AED') }}
+                                        {{ $project_detail->project_price }}
+                                    </p>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="USD skill">
+                                    <p class="card-title p-auto m-auto  m-0 p-0 bullet_points point_highlighted ">
+                                        USD
+                                        {{ $project_detail->project_price_usd }}
+                                    </p>
+                                </div>
+                            @else
+                                <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
+                                    @if ($langSeg == 'ru')
+                                        Цена по запросу
+                                    @else
+                                        {{ $project_detail->project_price }}
+                                    @endif
 
-                    </span>
-                </div>
+                                </p>
+                            @endif
+                        </p>
+                        {{-- PRICE --}}
+                    </div>
+
+                    <div style="height: 75px !important; border: 0.5px solid #ccc !important;"></div>
+
+                    <div class="col-auto" >
+                        {{-- BEDROOMS --}}
+                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.bedrooms') }}</p>
+                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->bedrooms}} </p>
+                        {{--  --}}
+                    </div>
+
+                    <div style="height: 75px !important; border: 0.5px solid #ccc !important;"></div>
+
+                    <div class="col-auto" >
+                        {{-- LOCATION --}}
+                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.location') }}</p>
+                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->locationz->$name_var}} </p>
+                        {{-- LOCATION --}}
+                    </div>
+
+                    <div style="height: 75px !important; border: 0.5px solid #ccc !important;"></div>
+
+                    <div class="col-auto" >
+                        {{-- PROJECT TYPE --}}
+                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.projectType') }}</p>
+                        <p class="m-0 p-0 bullet_points point_highlighted">
+                            @foreach ($project_detail->project_types as $project_type)
+                                {{$project_type->$type_title_var}}
+                            @endforeach
+                        </p>
+                        {{-- PROJECT TYPE --}}
+                    </div>
+
+                    <div style="height: 75px !important; border: 0.5px solid #ccc !important;"></div>
+
+                    <div class="col-auto" >
+                        {{-- DEVELOPER --}}
+                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.Developer') }}</p>
+                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$developers->$name_var}} </p>
+                        {{-- DEVELOPER --}}
+                    </div>
+
             </div>
+        </div>
+    </section>
+@endif
 
 
-
-            {{-- <div class="row">
-                <div class="col-md-9 pe-5">
-                    <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
-                </div>
-
-                <div class="col-md-3 ps-5">
-
-
-                </div>
-            </div> --}}
-
-            {{-- <div class="row">
-                <div class="col-md-12">
-                    <h3 class="mb-4">Overview</h3>
-                </div>
-            </div>
+{{-- project Intro description desktop & mobile--}}
+@if ($langSeg == 'ar')
+    <section class="desktop-show" dir="rtl">
+        <div class="container-fluid containerization my-5" >
 
             <div class="row">
-                <div class="col-md-12">
-                    <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
-                </div>
-            </div>
 
-            <div class="row my-5">
-                <div class="col-md-12 mx-auto text-center">
-                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-50 mx-auto testbutton" style="background-color: #000">
+                <div class="col-md-7">
+                    <h3 class="mb-4">{{ trans('frontLang.overview')}}</h3>
+                </div>
+
+                <div class="col-md-5 mx-auto">
+                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: #1c1c1c;">
                         {{ trans('frontLang.requestdetail') }}
                     </a>
                 </div>
-            </div> --}}
+
+                <span style="color: grey !important; text-align: justify; pe-5">{!! $project_detail->$description_var !!}</span>
+
         </div>
     </section>
 
     <section class="mobile-show" >
+
         <div class="container-fluid containerization" id="mobile-info-section" dir="rtl">
+            <div class="row py-3" style="margin-top: 0; position: relative; padding-right: 10px; padding-left: 10px;">
+                <div class="col-lg-12 shadow py-3 px-1 mb-0 " style="color: #ccc !important;">
+
+                    {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
+                    <div class="row">
+
+
+                        {{-- PRICING --}}
+                        <div class="col-6" style="">
+                            <p style="margin-right: 10px; font-size: .9em !important;" class="my-0">
+                                {{ trans('frontLang.name') }}
+                            </p>
+
+                            <p style="color: #ccc; font-size: .9em" class="fw-bold">
+                                {{ $project_detail->$title_var }}</span>
+                            </p>
+
+                        </div>
+
+
+
+                        {{-- BEDROOMS --}}
+                        <div class="col-6">
+
+                            <p style="margin-right: 10px; font-size: .9em !important;" class="my-0">
+                                {{ trans('frontLang.startingfrom') }}
+                            </p>
+
+                            @if(preg_match('/\d/', $project_detail->project_price))
+                                <div class="AED skill " style="display: block !important">
+                                    <p style="color: #ccc; font-size: .9em" class="">
+                                        <span class="fw-bold"> {{ trans('frontLang.AED') }}
+                                        {{ $project_detail->project_price }}</span>
+                                    </p>
+                                </div>
+                                <div class="USD skill ">
+                                    <p style="color: #ccc; font-size: .9em" class="">
+                                        <span class="fw-bold">
+                                            USD
+                                            {{ $project_detail->project_price_usd }}
+                                        </span>
+                                    </p>
+                                </div>
+                            @else
+                                <p style="color: #ccc; font-size: .9em" class="">
+                                    <span class="fw-bold">
+                                        اطلب السعر الان
+                                    </span>
+                                </p>
+                            @endif
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+
+                        {{-- BEDROOMS --}}
+                        <div class="col-6" style="">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
+                        </div>
+
+
+                        {{-- LOCATION --}}
+                        <div class="col-6">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        {{-- TYPE --}}
+                        <div class="col-6">
+                            <p style="font-size: .9em !important;">
+                                @foreach ($project_detail->project_types as $project_type)
+                                    {{ trans('frontLang.projectType') }} <br> <span class="fw-bold"> {{$project_type->$type_title_var}}</span>
+                                @endforeach
+                            </p>
+                        </div>
+
+
+                        {{-- developer --}}
+                        <div class="col-6">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> <span class="fw-bold"> {{$developers->$name_var}}</span></a></p>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        {{-- COMPLETION YEAR --}}
+                        <div class="col-6" style="">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.completionYear') }}  <br> <span class="fw-bold"> {{$project_detail->est_completion_en}}</span></p>
+                        </div>
+
+                        {{-- COMMUNITY TYPE --}}
+                        <div class="col-6" style="">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.communitytype') }} <br> <span class="fw-bold"> {{$project_detail->$ownership_var}}</span></p>
+                        </div>
+
+                    </div>
+
+                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white w-100 rounded-0">
+                        {{ trans('frontLang.requestdetail') }}
+                    </a>
+
+                    {{-- <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button> --}}
+
+                </div>
+            </div>
+
+
+        </div>
+
+        {{-- <div class="container-fluid containerization" id="mobile-info-section" dir="rtl">
             <div class="row" style="margin-top: 0; position: relative; padding-right: 10px; padding-left: 10px;">
                 <div class="col-lg-12 shadow py-3 px-1 mb-0 " >
 
-                    {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
                     <div class="row">
                         <div class="col-6" style="">
                             <p style="margin-right: 10px" class="my-0">
@@ -651,17 +793,13 @@
                         </div>
 
                         <div class="col-6">
-                                {{-- <div class="btn btn-outline-white w-100 rounded-0">
-                                    {{ trans('frontLang.readMore') }} --}}
-
                                 <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white w-100 rounded-0">
                                     {{ trans('frontLang.requestdetail') }}
                                 </a>
-                                {{-- </div> --}}
                         </div>
                     </div>
 
-                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
+                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms_ar}} </span></p>
                     <p> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
                     <p> {{ trans('frontLang.name') }} <br> <span class="fw-bold"> {{$project_detail->$title_var}}</span></p>
                     <p>
@@ -676,14 +814,13 @@
 
                     <p> {{ trans('frontLang.communitytype') }} <br> <span class="fw-bold"> {{$project_detail->$ownership_var}}</span></p>
 
-                    {{-- <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button> --}}
 
 
                 </div>
             </div>
 
 
-        </div>
+        </div> --}}
     </section>
 
 
@@ -692,220 +829,69 @@
         <div class="container-fluid containerization my-5" >
 
             <div class="row">
-                <div class="col-md-9">
-                    <div class="row pe-4">
-                        <div class="col-md-7">
-                            <h3 class="mb-4">Overview</h3>
-
-                        </div>
-                        <div class="col-md-5 mx-auto">
-                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: ##1c1c1c;">
-                                {{ trans('frontLang.requestdetail') }}
-                            </a>
-                        </div>
-                        <span style="color: #ccc !important; text-align: justify; pe-5">
-                            {!! $project_detail->$description_var !!}
-                        </span>
-                    </div>
-
-                </div>
-
-                <div class="col-md-3 text-left ps-5">
-                    <style>
-                        .bullet_points {
-                            font-size: 20px !important;
-                            text-align: left !important;
-                        }
-
-                        .point_highlighted {
-                            font-weight: 800 !important;
-                        }
-                    </style>
-                    <span class="text-left">
-
-                        {{-- PRICING --}}
-                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.startingfrom') }} </p>
-
-                        <p class="m-0 p-0 bullet_points">
-                            @if(preg_match('/\d/', $project_detail->project_price))
-                                <div class="AED skill" style="display: block !important">
-                                    <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
-                                        {{ $project_detail->project_price }}
-                                        {{ trans('frontLang.AED') }}
-                                    </p>
-                                </div>
-                                <div class="USD skill">
-                                    <p class="card-title p-auto m-auto  m-0 p-0 bullet_points" point_highlighted >
-                                        {{ $project_detail->project_price_usd }}
-                                        USD
-                                    </p>
-                                </div>
-                            @else
-                                <p class="card-title p-auto m-auto m-0 p-0 bullet_points point_highlighted">
-                                    @if ($langSeg == 'ru')
-                                        Цена по запросу
-                                    @else
-                                        {{ $project_detail->project_price }}
-                                    @endif
-
-                                </p>
-                            @endif
-                        </p>
-                        {{-- PRICING --}}
-
-                        <br>
-
-                        {{-- BEDROOMS --}}
-                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.bedrooms') }}</p>
-                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->bedrooms_var}} </p>
-                        {{-- BEDROOMS --}}
-
-                        <br>
-
-                        {{-- LOCATION --}}
-                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.location') }}</p>
-                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$project_detail->locationz->$name_var}} </p>
-                        {{-- LOCATION --}}
-
-                        <br>
-
-                        {{-- PROJECT NAME --}}
-                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.projectname') }} </p>
-                        <p class="m-0 p-0 bullet_points point_highlighted"> {{$project_detail->$title_var}} </p>
-                        {{-- PROJECT NAME --}}
-
-                        <br>
-
-                        {{-- PROJECT TYPE --}}
-                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.projectType') }}</p>
-                        <p class="m-0 p-0 bullet_points point_highlighted">
-                            @foreach ($project_detail->project_types as $project_type)
-                                {{$project_type->$type_title_var}}
-                            @endforeach
-                        </p>
-                        {{-- PROJECT TYPE --}}
-
-                        <br>
-
-                        {{-- DEVELOPER --}}
-                        <p class="m-0 p-0 bullet_points">{{ trans('frontLang.Developer') }}</p>
-                        <p class="m-0 p-0 bullet_points point_highlighted">  {{$developers->$name_var}} </p>
-                        {{-- DEVELOPER --}}
-
-                        <br>
-
-                        {{-- SHARE ICONS --}}
-                        <div class="row my-3 ">
-                            <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
-                                <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
-                                {{ trans('frontLang.agentCardShare') }}
-                            </p>
-                            <div class="col-12 mx-auto mb-2">
-                                <div class="mx-auto ">
-                                    <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
-                                    <li class=" text-white  text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" text-white text-center px-1 mx-auto">
-                                        <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" text-white text-center px-1 mx-auto">
-                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-
-                                    <li class=" text-white text-center px-1 mx-auto">
-                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
-                                            <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: 100% !important">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- SHARE ICONS --}}
-
-
-                    </span>
-                </div>
-            </div>
-
-
-
-            {{-- <div class="row">
-                <div class="col-md-9 pe-5">
-                    <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
-                </div>
-
-                <div class="col-md-3 ps-5">
-
-
-                </div>
-            </div> --}}
-
-            {{-- <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-7">
                     <h3 class="mb-4">Overview</h3>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <span style="color: grey !important; text-align: justify">{!! $project_detail->$description_var !!}</span>
                 </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col-md-12 mx-auto text-center">
-                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-50 mx-auto testbutton" style="background-color: #000">
+                <div class="col-md-5 mx-auto">
+                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white btn-lg rounded-0 w-100 mx-auto testbutton shadow-none" style="background-color: ##1c1c1c;">
                         {{ trans('frontLang.requestdetail') }}
                     </a>
                 </div>
-            </div> --}}
+                <span style="color: #ccc !important; text-align: justify; pe-5">
+                    {!! $project_detail->$description_var !!}
+                </span>
+            </div>
         </div>
     </section>
 
     <section class="mobile-show" >
         <div class="container-fluid containerization" id="mobile-info-section">
-            <div class="row" style="margin-top: 0; position: relative; padding-right: 10px; padding-left: 10px;">
+            <div class="row py-3" style="margin-top: 0; position: relative; padding-right: 10px; padding-left: 10px;">
                 <div class="col-lg-12 shadow py-3 px-1 mb-0 " style="color: #ccc !important;">
 
                     {{-- <div class="col-lg-12" style="display:flex;align-items: baseline"> --}}
                     <div class="row">
 
 
-
                         {{-- PRICING --}}
                         <div class="col-6" style="">
-                            <p style="margin-right: 10px" class="my-0">
+                            <p style="margin-right: 10px; font-size: .9em !important;" class="my-0">
+                                {{ trans('frontLang.name') }}
+                            </p>
+
+                            <p style="color: #ccc; font-size: .9em" class="fw-bold">
+                                {{ $project_detail->$title_var }}</span>
+                            </p>
+
+                        </div>
+
+
+
+                        {{-- BEDROOMS --}}
+                        <div class="col-6">
+
+                            <p style="margin-right: 10px; font-size: .9em !important;" class="my-0">
                                 {{ trans('frontLang.startingfrom') }}
                             </p>
 
                             @if(preg_match('/\d/', $project_detail->project_price))
                                 <div class="AED skill " style="display: block !important">
-                                    <p style="color: #ccc; font-size: 1em" class="">
+                                    <p style="color: #ccc; font-size: .9em" class="">
                                         <span class="fw-bold"> {{ trans('frontLang.AED') }}
                                         {{ $project_detail->project_price }}</span>
                                     </p>
                                 </div>
                                 <div class="USD skill ">
-                                    <p style="color: #ccc; font-size: 1em" class="">
-                                       <span class="fw-bold">
+                                    <p style="color: #ccc; font-size: .9em" class="">
+                                        <span class="fw-bold">
                                             USD
                                             {{ $project_detail->project_price_usd }}
                                         </span>
                                     </p>
                                 </div>
                             @else
-                                <p style="color: #ccc; font-size: 1em" class="">
+                                <p style="color: #ccc; font-size: .9em" class="">
                                     <span class="fw-bold">
                                         @if ($langSeg == 'ru')
                                             Цена по запросу
@@ -915,35 +901,68 @@
                                     </span>
                                 </p>
                             @endif
+
+
                         </div>
 
 
-
-                        {{-- BEDROOMS --}}
-                        <div class="col-6">
-                            <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white w-100 rounded-0">
-                                {{ trans('frontLang.requestdetail') }}
-                            </a>
-                        </div>
                     </div>
 
-                    <p> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
-                    <p> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
-                    <p> {{ trans('frontLang.name') }} <br> <span class="fw-bold"> {{$project_detail->$title_var}}</span></p>
-                    <p>
-                        @foreach ($project_detail->project_types as $project_type)
-                            {{ trans('frontLang.projectType') }} <br> <span class="fw-bold"> {{$project_type->$type_title_var}}</span>
-                        @endforeach
-                    </p>
 
-                    <p> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> <span class="fw-bold"> {{$developers->$name_var}}</span></a></p>
+                    <div class="row">
 
-                    <p> {{ trans('frontLang.completionYear') }}  <br> <span class="fw-bold"> {{$project_detail->est_completion_en}}</span></p>
+                        {{-- BEDROOMS --}}
+                        <div class="col-6" style="">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.bedrooms') }}   <br> <span class="fw-bold"> {{$project_detail->bedrooms}} </span></p>
+                        </div>
 
-                    <p> {{ trans('frontLang.communitytype') }} <br> <span class="fw-bold"> {{$project_detail->$ownership_var}}</span></p>
+
+                        {{-- LOCATION --}}
+                        <div class="col-6">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.location') }} <br> <span class="fw-bold"> {{$project_detail->locationz->$name_var}}</span></p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        {{-- TYPE --}}
+                        <div class="col-6">
+                            <p style="font-size: .9em !important;">
+                                @foreach ($project_detail->project_types as $project_type)
+                                    {{ trans('frontLang.projectType') }} <br> <span class="fw-bold"> {{$project_type->$type_title_var}}</span>
+                                @endforeach
+                            </p>
+                        </div>
+
+
+                        {{-- developer --}}
+                        <div class="col-6">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.Developer') }} <br> <a href="{{url($langSeg .'/'.'dubai-developers'.'/'.$developers->slug_link)}}"> <span class="fw-bold"> {{$developers->$name_var}}</span></a></p>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        {{-- COMPLETION YEAR --}}
+                        <div class="col-6" style="">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.completionYear') }}  <br> <span class="fw-bold"> {{$project_detail->est_completion_en}}</span></p>
+                        </div>
+
+                        {{-- COMMUNITY TYPE --}}
+                        <div class="col-6" style="">
+                            <p style="font-size: .9em !important;"> {{ trans('frontLang.communitytype') }} <br> <span class="fw-bold"> {{$project_detail->$ownership_var}}</span></p>
+                        </div>
+
+                    </div>
+
+                    <a data-mdb-toggle="modal" data-mdb-target="#requestDetails" class="btn btn-outline-white w-100 rounded-0">
+                        {{ trans('frontLang.requestdetail') }}
+                    </a>
 
                     {{-- <button class="first btn btn-white btn-lg btn-block mt-4  rounded-0 shadow-none">{{ trans('frontLang.requestdetail') }} </button> --}}
-
 
                 </div>
             </div>
@@ -1671,6 +1690,8 @@
         </div>
     </section>
 
+
+
     {{-- PAYMENT PLAN --}}
     @if ( $project_detail->pro_status == '1')
         @if  ($project_detail->payment_en != '')
@@ -1723,6 +1744,55 @@
             </div>
         </div>
     </section>
+
+
+
+    <section class="desktop-show my-5 py-5 ">
+        <div class="container-fluid containerization">
+            <div class="row  mx-auto my-5 " style="width: 50% !important;">
+                <p class="mx-auto text-center my-3 bullet_points" style="text-align: center !important" >
+                    <i class="fa fa-share text-white" aria-hidden="true" style="height: 13px !important;"></i>
+                    {{ trans('frontLang.agentCardShare') }}
+                </p>
+                <div class="col-12 mx-auto mb-2">
+                    <div class="mx-auto ">
+                        <ul class="list-group list-group-horizontal-sm  text-center mx-auto">
+                        <li class=" text-white  text-center px-1 mx-auto" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/fb.png') }}" style="height: 26px !important; width: 100% !important">
+                            </a>
+                        </li>
+
+                        <li class=" text-white text-center px-1 mx-auto">
+                            <a href="whatsapp://send?text={{ urlencode(Request::fullUrl()) }} Hello Edge Realty, I would like to have a consultation session. Please assist me! Thanks" data-action="share/whatsapp/share" target="_blank">
+                                <img src="{{ URL::asset('public/assets/asset/sm/wa.png') }}" style="height: 26px !important; width: 100% !important">
+                            </a>
+                        </li>
+
+                        <li class=" text-white text-center px-1 mx-auto">
+                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/tw.png') }}" style="height: 26px !important; width: 100% !important">
+                            </a>
+                        </li>
+
+                        <li class=" text-white text-center px-1 mx-auto">
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source={{ urlencode(Request::fullUrl()) }}">
+                                <img src="{{ URL::asset('public/assets/asset/sm/in.png') }}" style="height: 26px !important; width: 100% !important">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
 
     {{-- <section class="my-5 mobile-show">
         <div class="container my-5">
@@ -1823,6 +1893,7 @@
                         }
                     </style>
                     {!!html_entity_decode($project_detail->$community_var)!!}
+
                 </div>
 
             </div>
@@ -1850,6 +1921,12 @@
 
                             <form class="contact-form" method="post" action="{{URL('/project_document/submit')}}">
                                 @csrf
+
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                 @foreach ($project_detail->documents as $document)
                                     <input type="hidden" id="custId" name="document_id" value="{{$document->project_id}}">
                                     <input type="hidden" id="custId" name="document_name" value="{{$document->document}}">
@@ -1902,6 +1979,12 @@
 
                             <form class="contact-form" method="post" action="{{URL('/project_document/submit')}}">
                                 @csrf
+
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                 @foreach ($project_detail->documents as $document)
                                     <input type="hidden" id="custId" name="document_id" value="{{$document->project_id}}">
                                     <input type="hidden" id="custId" name="document_name" value="{{$document->document}}">

@@ -37,14 +37,6 @@
         background-color: #1c1c1c !important;
     }
 
-    /*
-
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-        height: 100%;
-        scroll-behavior: smooth;
-    } */
 
     input, select {
         background-color: #1c1c1c !important;
@@ -68,13 +60,6 @@
         border-radius: 0 !important;
 
     }
-
-    /* .nav-pills .nav-item: hover {
-        background-color: #fff !important;
-        color: #000 !important;
-        border: 1px solid #fff !important;
-        border-redius: 0 !important;
-    } */
 
     a {
         color: #fff !important;

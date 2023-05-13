@@ -9,6 +9,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Properties</h1>
+            <p>Total of <b>{{$properties_count}}</b> properties</p>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -100,8 +101,9 @@
                   </table>
                 </div>
 
-                {{-- {!! $leads->appends($_GET)->links() !!} --}}
-                {{-- {!! $properties->appends($_GET)->links() !!} --}}
+
+                {{-- {!! $leads->appends($_GET)->links() !!}
+                {!! $properties->appends($_GET)->links() !!} --}}
                 <!-- /.card-body -->
               </div>
               <!-- /.card -->

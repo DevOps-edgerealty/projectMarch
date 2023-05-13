@@ -30,8 +30,7 @@ class MailController extends Controller
             'user_message' => $request->get('contact_message'),
         ), function($message) use ($request)
           {
-
-             $message->to('edgdxb1@gmail.com')->subject('Dxb Properties');
+            $message->to('edgdxb1@gmail.com')->subject('Dxb Properties');
           });
 
         return back()->with('success', 'Thank you for contact us!');

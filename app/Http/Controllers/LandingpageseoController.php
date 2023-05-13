@@ -128,28 +128,46 @@ class LandingpageseoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
 
         $Landingpageseo = Landingpageseos::find($id);
+
+        // $meta_title_en = $request->title_en;
+        // $meta_title_ar = $request->title_ar;
+        // $meta_title_ru = $request->title_ru;
+
+        // $meta_keywords_en = $request->keywords_en;
+        // $meta_keywords_ru = $request->keywords_ru;
+        // $meta_keywords_ar = $request->keywords_ar;
+
+        // $meta_description_en = $request->description_en;
+        // $meta_description_ru = $request->description_ru;
+        // $meta_description_ar = $request->description_ar;
+
+        // if($meta_title_en != null){
+        //     $Landingpageseo->meta_title_en = $meta_title_en;
+        // }
+        // if($meta_title_en != null){
+        //     $Landingpageseo->meta_title_en = $meta_title_en;
+        // }
+
 
 
         if (!empty($Landingpageseo)) {
 
+            $Landingpageseo->meta_title_en = $request->meta_title_en;
+            $Landingpageseo->meta_title_ru = $request->meta_title_ru;
+            $Landingpageseo->meta_title_ar = $request->meta_title_ar;
 
-            $Landingpageseo->meta_title_en = $request->title_en;
-            $Landingpageseo->meta_title_ru = $request->title_ru;
-            $Landingpageseo->meta_title_ar = $request->title_ar;
-            $Landingpageseo->meta_keywords_en = $request->keywords_en;
-            $Landingpageseo->meta_keywords_ru = $request->keywords_ru;
-            $Landingpageseo->meta_keywords_ar = $request->keywords_ar;
-            $Landingpageseo->meta_description_en = $request->description_en;
-            $Landingpageseo->meta_description_ru = $request->description_ru;
-            $Landingpageseo->meta_description_ar = $request->description_ar;
+            $Landingpageseo->meta_keywords_en = $request->meta_keywords_en;
+            $Landingpageseo->meta_keywords_ru = $request->meta_keywords_ru;
+            $Landingpageseo->meta_keywords_ar = $request->meta_keywords_ar;
 
-
+            $Landingpageseo->meta_description_en = $request->meta_description_en;
+            $Landingpageseo->meta_description_ru = $request->meta_description_ru;
+            $Landingpageseo->meta_description_ar = $request->meta_description_ar;
 
 			$Landingpageseo->save();
-
 
             return Redirect::to('admin/landingpageseo/show')->withSuccess('message','Record has Been Updated.');
         }

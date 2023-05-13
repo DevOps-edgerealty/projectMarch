@@ -23,7 +23,7 @@ use Validator;
 use App\Models\Dld;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Storage;
-
+// use DerekCodes\TurnstileLaravel\TurnstileLaravel;
 
 
 
@@ -1117,12 +1117,9 @@ class FronthomeController extends Controller
 
         $this->data['footerCommunities'] = $footerCommunities;
 
-
         $project_id=$request->project;
 
 		$Project = Project::find($project_id);
-
-
 
 		$Leads = new Leads();
 
@@ -1141,6 +1138,10 @@ class FronthomeController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'phone_number' => $request->get('phone'),
+            'utm_campaign' => $request->get('utm_campaign'),
+            'utm_id' => $request->get('utm_id'),
+            'utm_source' => $request->get('utm_source'),
+            'utm_medium' => $request->get('utm_medium'),
         ), function($message) use ($request)
           {
              $message->to('lead@edgerealty.ae')->subject('Edge Realty');
@@ -1395,6 +1396,189 @@ class FronthomeController extends Controller
 
     public function contactus_email( Request $request)
     {
+        // READ THE REPONSE FROM CAPTCHA
+
+        $cf_data = [
+            'secret' => '0x4AAAAAAAEb5KX7EUMlyiQA6_12i6y16Bw',
+            'response' => $request->get('cf-turnstile-response'),
+            'remoteip' => $_SERVER['REMOTE_ADDR'],
+        ];
+
+
+
+        // LOAD CURL EXTENSION IN PHP
+
+        $php_curl = curl_init();
+
+        curl_setopt_array($php_curl, array(
+            CURLOPT_URL => "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30000,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => json_encode($cf_data),
+            CURLOPT_HTTPHEADER => array(
+            // Set POST here requred headers
+                "accept: */*",
+                "accept-language: en-US,en;q=0.8",
+                "content-type: application/json",
+            ),
+        ));
+
+        $final_results = curl_exec($php_curl);
+
+        $err = curl_error($php_curl);
+
+        curl_close($php_curl);  // CLOSE CURL EXTENSION IN PHP
+
+
+
+        /**
+         *
+         * CHECK FOR ANY BUGS IN RUNNING THE CURL SCRIPT
+         *
+         * IF ERROR CONSIST THEN LOAD HOME PAGE AND SUBMIT ISSUE IN SLACK
+         *
+         * IF POSITIVE - CHECK FOR FAILED VERIFICATION
+         *
+         * IF FAILED - LOAD HOME PAGE AND NOTIFY IN SLACK
+         *
+         * IF SUCCESS - SUBMIT FORM AND SEND EMAIL
+         *
+         */
+        if ($err) {
+
+            $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+            $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+            $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+            $this->data['error'] = 'error';
+
+            $this->data['footerDevelopers'] = $footerDevelopers;
+
+            $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+            $this->data['footerCommunities'] = $footerCommunities;
+
+            dd($err);
+
+            return redirect('/');
+
+        } else {
+
+            $response = json_decode($final_results);
+
+            // FAILED VERIFICATION
+            if($response->success == false)
+            {
+                $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+                $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+                $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+                $this->data['error'] = 'error';
+
+                $this->data['footerDevelopers'] = $footerDevelopers;
+
+                $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+                $this->data['footerCommunities'] = $footerCommunities;
+
+                Log::critical('Lead Page Loaded!');
+
+                return redirect("/");
+            }
+
+
+            // SUCCESS VERIFICATION
+
+            $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
+
+            $footerCommunities = Community::with(['images'])->orderBy('id', 'desc')->take(8)->get();
+
+            $footerDevelopers = Developer::with(['images'])->orderBy('id', 'asc')->take(8)->get();
+
+            $this->data['footerDevelopers'] = $footerDevelopers;
+
+            $this->data['footerLuxuryProjects'] = $footerLuxuryProjects;
+
+            $this->data['footerCommunities'] = $footerCommunities;
+
+            $utm_parameters =
+
+                "UTM Campaign - ".$request->utm_campaign."<br><br>
+
+                UTM Source - ".$request->utm_source."<br><br>
+
+                UTM_Medium - ".$request->utm_medium;
+
+            if($request->utm_campaign != "")
+            {
+                $Leads = new Leads();
+
+                $Leads->full_name = $request->name;
+                $Leads->phone = $request->phone;
+                $Leads->email = $request->email;
+
+                $Leads->utm_parameter = $utm_parameters;
+                $Leads->source = "Website/Paid";
+
+                $Leads->source = $request->message;
+
+                $Leads->page_url = $request->page_url;
+                $Leads->ip_address = $_SERVER["REMOTE_ADDR"];
+                $Leads->type_id = 1;
+
+                $Leads->save();
+
+            } else {
+                $Leads = new Leads();
+
+                $Leads->full_name = $request->name;
+                $Leads->phone = $request->phone;
+                $Leads->email = $request->email;
+
+                $Leads->utm_parameter = "Organic";
+                $Leads->source = "Website/Organic";
+
+                $Leads->source = $request->message;
+
+                $Leads->page_url = $request->page_url;
+                $Leads->ip_address = $_SERVER["REMOTE_ADDR"];
+                $Leads->type_id = 1;
+
+                $Leads->save();
+            }
+
+
+
+            \Mail::send('email/contactus_email',
+                array(
+                    'name' => $request->get('name'),
+                    'email' => $request->get('email'),
+                    'phone_number' => $request->get('phone'),
+                    'user_message' => $request->get('message'),
+                    'utm_campaign' => $request->get('utm_campaign'),
+                    'utm_source' => $request->get('utm_source'),
+                    'utm_id' => $request->get('utm_id'),
+                    'utm_medium' => $request->get('utm_medium'),
+                ), function($message) use ($request)
+            {
+                $message->to('lead@edgerealty.ae')->subject('Edge Realty');
+            });
+
+            return redirect('/en/thankyou');
+        }
+    }
+
+
+    public function contactus_index_page( Request $request)
+    {
 
         $footerLuxuryProjects = Project::with(['images','developers','project_types'])->where('project_status', '3')->orderBy('id', 'desc')->take(8)->get();
 
@@ -1408,29 +1592,67 @@ class FronthomeController extends Controller
 
         $this->data['footerCommunities'] = $footerCommunities;
 
-        $Leads = new Leads();
+        $utm_parameters =
+            "UTM Campaign - ".$request->utm_campaign."<br><br>
+            UTM Source - ".$request->utm_source."<br><br>
+            UTM_Medium - ".$request->utm_medium;
+
+        if($request->utm_campaign != "")
+        {
+            $Leads = new Leads();
+
+            $Leads->page_url = $request->url_path;
+            $Leads->full_name = $request->name;
+            $Leads->phone = $request->phone;
+            $Leads->email = $request->email;
+
+            $Leads->utm_parameters = $utm_parameters;
+            $Leads->source = "Website/Paid";
+
+            $Leads->page_url = url()->previous();
+            $Leads->ip_address = $_SERVER["REMOTE_ADDR"];
+            $Leads->type_id = 1;
+
+            $Leads->save();
+
+        } else {
+            $Leads = new Leads();
+
+            $Leads->page_url = $request->url_path;
+            $Leads->full_name = $request->name;
+            $Leads->phone = $request->phone;
+            $Leads->email = $request->email;
+
+            $Leads->utm_parameters = "Organic";
+            $Leads->source = "Website/Organic";
+
+            $Leads->page_url = url()->previous();
+
+            $Leads->ip_address = $_SERVER["REMOTE_ADDR"];
+            $Leads->type_id = 1;
+
+            $Leads->save();
+        }
 
 
-		$Leads->page_url = $request->url_path;
-		$Leads->full_name = $request->name;
-		$Leads->phone = $request->phone;
-		$Leads->email = $request->email;
-		$Leads->page_url = url()->previous();
-		$Leads->ip_address = $_SERVER["REMOTE_ADDR"];
-		$Leads->type_id = 1;
-		$Leads->save();
 
-        \Mail::send('email/contactus_email',
+
+        \Mail::send('email/homePage_email',
         array(
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'phone_number' => $request->get('phone'),
             'user_message' => $request->get('message'),
+            'utm_campaign' => $request->get('utm_campaign'),
+            'utm_source' => $request->get('utm_source'),
+            'utm_id' => $request->get('utm_id'),
+            'utm_medium' => $request->get('utm_medium'),
+            'inquiry' => $request->get('inquiry'),
+            'page_url' => $request->get('page_url'),
         ), function($message) use ($request)
-          {
-
+        {
             $message->to('lead@edgerealty.ae')->subject('Edge Realty');
-          });
+        });
 
         //   \Mail::send('email/user_email',
         //   array(
@@ -1441,7 +1663,7 @@ class FronthomeController extends Controller
         //        $message->to($request->email)->subject('Edge Realty Registration');
         //     });
 
-          return redirect('/en/thankyou');
+        return redirect('/en/thankyou');
     }
 
     public function mortgage_email( Request $request)

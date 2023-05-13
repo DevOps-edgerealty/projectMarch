@@ -15,6 +15,8 @@
         <meta name="description" content="{{$property_detail->$meta_description_var}}"/>
         <meta name="keywords" content=" {{$property_detail->$meta_keywords_var}} "/>
 
+
+
 @endsection
 
 
@@ -775,6 +777,10 @@
                                     <input type="hidden" name="page_url" value="{{ url()->current() }}">
                                     <input type="hidden" name="agent_id" value="{{ $agent->id }}">
                                     <input type="hidden" name="property_id" value="{{ $property_detail->id }}">
+
+
+
+
                                     <div class="input-group mb-3">
 
                                         <input type="text" class="form-control text-white" placeholder="{{ trans('frontLang.name') }}" aria-label="Full Name" name="name" aria-describedby="basic-addon1" style="border: 0.5px #848484 solid !important;" required>
@@ -863,79 +869,7 @@
     </section>
 
 
-    {{-- Amenities --}}
-    <section class="desktop-show mt-2 mb-2" dir="rtl">
-        <div class="container-fluid containerization">
-            <div class="row">
-                <div class="row">
-                    <h3 class="mb-5">{{ trans('frontLang.amenities') }}</h3>
-                    @foreach ($amenities_array as $amenity_id => $amenity_name)
-                        @foreach ($amenities as $amenity)
-                            @if($amenity == $amenity_id)
-                                <div class="col-lg-3 mb-4" style="color: #ccc">
-                                    <i class="far fa-check-circle"></i>  <span >{!!  $amenity_name[$amenity_name_var] !!}</span>
-                                </div>
-                            @endif
-                        @endforeach
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
 
-    {{-- map & description Desktop --}}
-    {{-- <section class="desktop-show mt-4 mb-2" style="direction: rtl">
-        <div class="container-fluid containerization">
-            <div class="row">
-                <div class="col-lg-9">
-                    <h3 class="mb-2">حول هذا العقار</h3>
-                    <span style="text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important; ">
-
-                        <span id="" class="" style="text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important; ">
-
-                            <span id="lessen" style="display: inline !important; text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important;">
-                                {{ strip_tags(substr($property_detail->$description_var, 0, 200)) }} ...
-                            </span>
-
-                            <br>
-
-                            @if ( strlen(($property_detail->$description_var)) > 100 )
-
-                                <span id="moreen" style="display: none !important; text-align: justify !important; color: grey !important; font-size: 1.2rem !important; line-height: 1 !important;">
-                                    {{ strip_tags(html_entity_decode($property_detail->$description_var)) }}
-                                </span>
-
-                                <br>
-                                <br>
-
-                                <button onclick="myFunction2en()" class="btn btn-outline-white btn-sm" id="readMoreBtnen">
-                                    Read more
-                                </button>
-                            @else
-                                {!! html_entity_decode($property_detail->$description_var) !!}
-                            @endif
-                        </span>
-                    </span>
-
-                </div>
-                <div class="col-lg-3 my-5 mx-auto">
-                <?php
-
-                    $Property_map_embed_code=str_replace('style="border:0"','',$property_detail->map_embed_code);
-
-                    $Property_map_embed_code=str_replace('frameborder="0"','',$Property_map_embed_code);
-
-                    echo $Property_map_embed_code=str_replace('height="','style="height:200px !important; width: 310px !important;" height="',$Property_map_embed_code);
-
-                ?>
-            </div>
-
-            </div>
-
-
-
-        </div>
-    </section> --}}
 
     {{-- description & map mobile view --}}
     <section class="mobile-show mt-5 mb-5" style="direction: rtl">
@@ -978,7 +912,7 @@
             </div>
 
 
-            @if($langSeg == 'ar')
+            {{-- @if($langSeg == 'ar')
                     <section class="mt-5 mb-5 mobile-show" dir="rtl">
                         <div class="container">
                             <div class="row">
@@ -1014,7 +948,7 @@
                             </div>
                         </div>
                     </section>
-                @endif
+                @endif --}}
 
 
             <div class="row mx-auto mb-4 mt-4">
@@ -1065,6 +999,10 @@
                                             <form class="contact-form" method="post" id="bookAViewingmobile" action="{{URL('/book_view/submit')}}">
                                                 @csrf
                                                 @honeypot
+                                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                 <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
 
                                                 <div class="mb-4">
@@ -1234,6 +1172,10 @@
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_property/submit')}}">
                                                     @csrf
                                                     @honeypot
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                     <input type="hidden" name="property" value="{{$property->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -1375,6 +1317,10 @@
                                                     <form class="contact-form" method="post" action="{{URL('/request_detail_property/submit')}}">
                                                         @csrf
                                                         @honeypot
+                                                        <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                         <input type="hidden" name="property" value="{{$property->id}}" />
                                                         <div class=" mb-4">
                                                             <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -1879,6 +1825,10 @@
                                 <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_property/submit')}}">
                                     @csrf
                                     @honeypot
+                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                     <input type="hidden" name="property" value="{{ $property_detail->id }}">
                                     <input type="hidden" name="page_url" value="{{ url()->current() }}">
                                     <input type="hidden" name="agent_id" value="{{ $agent->id }}">
@@ -1975,7 +1925,7 @@
 
 
     {{-- Amenities --}}
-    <section class="desktop-show mt-2 mb-2">
+    {{-- <section class="desktop-show mt-2 mb-2">
         <div class="container-fluid containerization">
             <div class="row">
                 <div class="row">
@@ -1992,7 +1942,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 
@@ -2035,7 +1985,7 @@
                     </span>
                 </div>
 
-                @if($langSeg == 'ar')
+                {{-- @if($langSeg == 'ar')
                     <section class="mt-5 mb-5 mobile-show" dir="rtl">
                         <div class="container">
                             <div class="row">
@@ -2071,7 +2021,7 @@
                             </div>
                         </div>
                     </section>
-                @endif
+                @endif --}}
 
                 <div class="col-lg-3 my-4 mx-auto">
                     <?php
@@ -2118,6 +2068,10 @@
                                             <form class="contact-form" method="post" id="bookAViewingmobile" action="{{URL('/book_view/submit')}}">
                                                 @csrf
                                                 @honeypot
+                                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                 <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
 
                                                 <div class="mb-4">
@@ -2302,6 +2256,10 @@
                                                 <form class="contact-form" method="post" action="{{URL('/request_detail_property/submit')}}">
                                                     @csrf
                                                     @honeypot
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                     <input type="hidden" name="property" value="{{$property->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -2555,6 +2513,10 @@
                             <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_property/submit')}}">
                                 @csrf
                                 @honeypot
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                 <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
 
                                 <div class=" mb-4">
@@ -2640,6 +2602,10 @@
                             <form class="contact-form" method="post" id="bookAViewing" action="{{URL('/book_view/submit')}}">
                             @csrf
                             @honeypot
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                 <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
                                 <div class="row mb-4">
                                     <div class="col-lg-6">
@@ -2715,6 +2681,10 @@
                             <form class="contact-form" method="post" action="{{URL('/book_view/submit')}}">
                             @csrf
                             @honeypot
+                                <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                 <input type="hidden" id="custId" name="property_id" value="{{$property_detail->id}}">
                                 <div class="row mb-4">
                                     <div class="col-lg-6">
@@ -2770,18 +2740,15 @@
     </div>
 </div>
 
+
+
+
+
 <script type="text/javascript">
     $("#datepicker-desk").datepicker({ minDate: 0 });
 </script>
 
 <script>
-    // $(function() {
-    //     if($(document).scrollTop() > 100){
-    //         $('.sticky-example').css({'display: 'none'});
-    //     };
-    // });
-
-
 
     window.onscroll = function() {
         if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
@@ -2809,36 +2776,6 @@
             }
         }
     };
-
-
-    // window.onscroll = function() {
-    //     if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-    //         document.getElementById("scroll-ar").style.top = "10px";
-    //         document.getElementById("fixed_card_ar").style.display = "none";
-    //     } else {
-    //         document.getElementById("scroll-ar").style.top = "-200px";
-    //         document.getElementById("fixed_card_ar").style.display = "block";
-    //     }
-    // };
-
-    // function scrollFunction() {
-
-    // }
-
-    // $(window).scroll(function()
-    // {
-    // if($(window).scrollTop() > 200)
-    //     {
-    //     $(".sticky-example").fadeIn("slow");
-    //     }
-    // });
-    // $(window).scroll(function()
-    // {
-    // if($(window).scrollTop() < 100)
-    //     {
-    //     $(".sticky-example").fadeOut("fast");
-    //     }
-    // });
 
 </script>
 

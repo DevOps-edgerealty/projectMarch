@@ -193,6 +193,10 @@
     <div class="container-fluid containerization">
         <form method="post" action="{{URL('/career/submit')}}" enctype="multipart/form-data">
             @csrf
+            <input type="text" name="utm_source" class="utm_parameters" hidden>
+            <input type="text" name="utm_id" class="utm_parameters" hidden>
+            <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+            <input type="text" name="utm_medium" class="utm_parameters" hidden>
             <div class="row">
 
                     {{-- <div class="col-lg-12 mb-4">
@@ -527,6 +531,10 @@
     <div class="container-fluid containerization">
         <form method="post" action="{{URL('/career/submit')}}" enctype="multipart/form-data">
             @csrf
+            <input type="text" name="utm_source" class="utm_parameters" hidden>
+            <input type="text" name="utm_id" class="utm_parameters" hidden>
+            <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+            <input type="text" name="utm_medium" class="utm_parameters" hidden>
             <div class="row">
 
                     {{-- <div class="col-lg-12 mb-4">
@@ -860,6 +868,10 @@
     <div class="container-fluid containerization">
         <form method="post" action="{{URL('/career/submit')}}" enctype="multipart/form-data">
             @csrf
+            <input type="text" name="utm_source" class="utm_parameters" hidden>
+            <input type="text" name="utm_id" class="utm_parameters" hidden>
+            <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+            <input type="text" name="utm_medium" class="utm_parameters" hidden>
             <div class="row">
 
                     {{-- <div class="col-lg-12 mb-4">

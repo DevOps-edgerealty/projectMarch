@@ -277,6 +277,11 @@
                                                 <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
                                                     @honeypot
+
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class="mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
@@ -478,6 +483,10 @@
                                                 <form class="contact-form" id="getInTouch" method="post" action="{{URL('/request_detail_project/submit')}}">
                                                     @csrf
                                                     @honeypot
+                                                    <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                    <input type="text" name="utm_medium" class="utm_parameters" hidden>
                                                     <input type="hidden" name="project" value="{{$projects->id}}" />
                                                     <div class=" mb-4">
                                                         <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />

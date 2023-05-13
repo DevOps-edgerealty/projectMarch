@@ -1,4 +1,4 @@
-<h2>Contact Us</h2><br>
+<h2>Home Page</h2><br>
 
 
 
@@ -61,6 +61,20 @@
 
       </tr>
 
+      <tr>
+
+        <td style="padding-left: 20px"><b>Page URL :</b> </td>
+        <td>{{ $page_url }}</td>
+
+      </tr>
+
+      <tr>
+
+        <td style="padding-left: 20px"><b>Inquiry :</b> </td>
+        <td>{{ $inquiry }}</td>
+
+      </tr>
+
 
     </tbody>
 </table>
@@ -69,3 +83,4 @@
 <br>
 
 <h2>Thank You</h2>
+<p>This is a systematically generated message. Do not attempt to reply to this email.</p>

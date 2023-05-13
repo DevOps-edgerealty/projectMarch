@@ -302,6 +302,11 @@ else
                                                         @csrf
                                                         @honeypot
 
+                                                        <input type="text" name="utm_source" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_id" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                                                        <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                                                         <h3 class="text-center mb-4">{{$community->$title_var}}</h3>
                                                         <input type="hidden" name="project" value="{{$community->id}}" />
                                                         <input type="hidden" name="project_name" value="{{$community->title_var}}" />

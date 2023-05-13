@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d87d487fddfac7bf7750545b82ba45a4",
+    "content-hash": "48cd6736591a2b927bd04369d23f3a0a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4706,6 +4706,56 @@
                 }
             ],
             "time": "2020-05-05T10:53:32+00:00"
+        },
+        {
+            "name": "derekcodes/turnstile-laravel",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/derekcodes-io/turnstile-laravel.git",
+                "reference": "700b546de2ee09d7ec37d187afd5312a6e1edd7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/derekcodes-io/turnstile-laravel/zipball/700b546de2ee09d7ec37d187afd5312a6e1edd7e",
+                "reference": "700b546de2ee09d7ec37d187afd5312a6e1edd7e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "DerekCodes\\TurnstileLaravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Derek Codes",
+                    "email": "derek@derekcodes.io",
+                    "homepage": "https://www.derekcodes.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package to facilite the server side validation of Cloudflare's Turnstile captcha service.",
+            "homepage": "https://github.com/derekcodes-io/turnstile-laravel",
+            "keywords": [
+                "cloudflare",
+                "derekcodes",
+                "laravel",
+                "turnstile",
+                "turnstile-laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/derekcodes-io/turnstile-laravel/issues",
+                "source": "https://github.com/derekcodes-io/turnstile-laravel/tree/v1.0.1"
+            },
+            "time": "2023-01-05T15:33:49+00:00"
         },
         {
             "name": "doctrine/instantiator",

@@ -147,8 +147,7 @@ Route::get('/invoice', 'FronthomeController@check_invoice');
 
 
 
-// Form Submition Routes
-
+// Form Submition Routes    
 
 Route::post('/request_detail_project/submit','FronthomeController@request_detail_project');
 
@@ -159,6 +158,8 @@ Route::post('/request_detail_property/submit','FronthomeController@request_detai
 Route::post('/request_detail_community/submit','FronthomeController@request_detail_community');
 
 Route::post('/contactus/submit','FronthomeController@contactus_email');
+
+Route::post('/contactus/submit/index','FronthomeController@contactus_index_page');
 
 Route::post('/mortgage/submit','FronthomeController@mortgage_email');
 
@@ -185,8 +186,6 @@ Route::get('/{lang}/dubai-new-projects/{id}',"ProjectController@detail");
 Route::get('/{lang}/dubai-ready-projects/{id}',"ProjectController@ready_detail");
 
 Route::get('/{lang}/dubai-ready-projects',"ProjectController@ready_projects");
-
-
 
 Route::get('/{lang}/dubai-luxury-projects',"ProjectController@luxury_projects");
 
@@ -261,7 +260,7 @@ Route::get('/logout', function () {
 
     return redirect('/login');
 
-    })->name('logout');
+})->name('logout');
 
 
 

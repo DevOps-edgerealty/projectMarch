@@ -205,6 +205,8 @@
                                 <form action="{{URL('/'.$langSeg.'/properties_search_ar')}}" method="GET" style="direction: rtl">
                                     @csrf
                                     @honeypot
+
+
                                     <input type="hidden" name="property_type_id" value="1" />
                                     <div class="input-group">
 
@@ -322,6 +324,8 @@
                                 <form action="{{URL('/'.$langSeg.'/properties_search_ar')}}" method="GET" style="direction: rtl">
                                     @csrf
                                     @honeypot
+
+
                                     <input type="hidden" name="property_type_id" value="2" />
                                     <div class="input-group">
 
@@ -438,6 +442,7 @@
                                 <form action="{{URL('/'.$langSeg.'/offplan_search_ar')}}" method="post" style="direction: rtl">
                                     @csrf
                                     @honeypot
+
                                     <div class="input-group">
 
                                         <input type="search" name="search" id="search-arabic-2" class="form-control form-control-lg" placeholder="البحث عن طريق المشاريع" aria-label="Search"/>
@@ -484,6 +489,7 @@
                                 <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="GET" >
                                     @csrf
                                     @honeypot
+
                                     <input type="hidden" name="property_type_id" value="1" />
                                     <div class="input-group">
 
@@ -601,6 +607,9 @@
                                 <form action="{{URL('/'.$langSeg.'/properties_search')}}" method="GET" >
                                     @csrf
                                     @honeypot
+
+
+
                                     <input type="hidden" name="property_type_id" value="2" />
                                     <div class="input-group">
 
@@ -717,6 +726,8 @@
                                 <form action="{{URL('/'.$langSeg.'/offplan_search')}}" method="post" >
                                     @csrf
                                     @honeypot
+
+
                                     <div class="input-group">
 
                                         <input type="search" name="search" id="search-2" class="form-control form-control-lg" placeholder="Search By Projects" aria-label="Search"/>
@@ -1467,6 +1478,12 @@
                     <form class="contact-form" method="post" action="{{URL('/request_detail/submit')}}">
                         @csrf
                         @honeypot
+
+                        <input type="text" name="utm_source" class="utm_parameters" hidden>
+                        <input type="text" name="utm_id" class="utm_parameters" hidden>
+                        <input type="text" name="utm_campaign" class="utm_parameters" hidden>
+                        <input type="text" name="utm_medium" class="utm_parameters" hidden>
+
                         <div class=" mb-4">
                             <input type="text" name="name" class="form-control form-control-lg" placeholder="{{ trans('frontLang.fullname') }}"  required />
 
